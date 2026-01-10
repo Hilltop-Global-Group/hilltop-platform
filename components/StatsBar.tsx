@@ -26,7 +26,6 @@ function Counter({ end, duration = 2000, suffix = '' }: CounterProps) {
             const now = Date.now();
             const progress = Math.min((now - startTime) / duration, 1);
             
-            // Easing function for smooth animation
             const easeOutQuart = 1 - Math.pow(1 - progress, 4);
             const current = Math.floor(startValue + (end - startValue) * easeOutQuart);
             
@@ -83,3 +82,5 @@ export default function StatsBar() {
     </section>
   );
 }
+
+

@@ -7,7 +7,6 @@ export default function WhyChoose() {
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Left: Text Content */}
           <div>
             <h2 className="font-heading font-bold text-4xl sm:text-5xl mb-6" style={{ color: '#1D3160' }}>
               Why Choose Hilltop Global Group
@@ -39,7 +38,6 @@ export default function WhyChoose() {
             </button>
           </div>
 
-          {/* Right: Video/Image Placeholder */}
           <div className="relative">
             <div className="aspect-video bg-gray-200 rounded-lg overflow-hidden relative">
               <img
@@ -59,4 +57,5 @@ export default function WhyChoose() {
     </section>
   );
 }
+
 

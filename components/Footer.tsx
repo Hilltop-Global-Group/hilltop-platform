@@ -6,7 +6,6 @@ import { Mail, Phone, MapPin, Linkedin, Instagram, Facebook } from 'lucide-react
 export default function Footer() {
   return (
     <footer className="bg-white border-t border-gray-200">
-      {/* Get in Touch Section */}
       <div className="py-16" style={{ backgroundColor: '#1D3160' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -55,11 +54,9 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Footer Links */}
       <div className="py-12 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            {/* Navigation Links */}
             <div>
               <h4 className="font-heading font-bold text-lg mb-4" style={{ color: '#1D3160' }}>
                 Navigation Links
@@ -75,7 +72,6 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* Contact Info */}
             <div>
               <h4 className="font-heading font-bold text-lg mb-4" style={{ color: '#1D3160' }}>
                 Contact Info
@@ -87,7 +83,6 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* Newsletter */}
             <div>
               <h4 className="font-heading font-bold text-lg mb-4" style={{ color: '#1D3160' }}>
                 Newsletter Signup
@@ -111,7 +106,6 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Bottom Bar */}
       <div className="py-6 bg-white border-t border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-center text-gray-500 text-sm">
@@ -122,3 +116,5 @@ export default function Footer() {
     </footer>
   );
 }
+
+

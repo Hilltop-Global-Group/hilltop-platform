@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
 
 const heroImages = [
   'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/Copy-of-20230518_122404-scaled-e1695315573707.jpg',
@@ -21,20 +20,20 @@ export default function Hero() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage((prev) => (prev + 1) % heroImages.length);
-    }, 5000); // Change image every 5 seconds
+    }, 4000);
 
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <section className="relative pt-32 pb-20 overflow-hidden" style={{ backgroundColor: '#1D3160' }}>
+    <section className="relative min-h-screen overflow-hidden flex items-center justify-center" style={{ backgroundColor: '#1D3160' }}>
       {/* Background Image Slider */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 z-0">
         {heroImages.map((image, index) => (
           <div
             key={index}
-            className={`absolute inset-0 transition-opacity duration-1000 ${
-              index === currentImage ? 'opacity-30' : 'opacity-0'
+            className={`absolute inset-0 transition-all duration-[2000ms] ${
+              index === currentImage ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
             }`}
             style={{
               backgroundImage: `url('${image}')`,
@@ -44,39 +43,66 @@ export default function Hero() {
             }}
           />
         ))}
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-black/40" />
       </div>
 
+      {/* Navy Gradient Overlay */}
+      <div 
+        className="absolute inset-0 z-[1]"
+        style={{
+          background: `
+            radial-gradient(120% 70% at 50% 100%, rgba(29,49,96,0.55) 0%, rgba(29,49,96,0.0) 50%),
+            linear-gradient(180deg, rgba(29,49,96,0.9) 0%, rgba(39,66,122,0.5) 55%, rgba(29,49,96,0.75) 100%)
+          `
+        }}
+      />
+
       {/* Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center">
-          {/* Main Heading */}
-          <h1 className="font-heading font-bold text-5xl sm:text-6xl lg:text-7xl text-white mb-4">
+      <div className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-10 relative z-10 text-center py-20">
+        {/* Eyebrow Badge */}
+        <div className="mb-6 animate-fadeUp" style={{ animationDelay: '0.1s' }}>
+          <span className="inline-flex items-center gap-2 px-4 py-2 text-xs sm:text-sm font-semibold uppercase tracking-wider text-white bg-white/10 border border-white/20 rounded-full backdrop-blur-md">
+            Focused In Africa
+          </span>
+        </div>
+
+        {/* Main Heading */}
+        <h1 
+          className="font-heading font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white mb-5 animate-fadeUp leading-tight"
+          style={{ 
+            animationDelay: '0.2s',
+            textShadow: '0 12px 32px rgba(0,0,0,0.35)',
+            letterSpacing: '-0.015em'
+          }}
+        >
           Experiential Learning
-          </h1>
-          
-          {/* Subheadings */}
-          <div className="space-y-2 mb-6">
-            <p className="text-2xl sm:text-3xl font-heading font-semibold" style={{ color: '#F4A261' }}>
-              Focused In Africa
-            </p>
-            
-          </div>
+        </h1>
 
-          {/* Description */}
-          <p className="text-lg text-white/80 max-w-2xl mx-auto mb-10">
-            Transformative internships and cultural immersion in Africa.
-          </p>
+        {/* Subtitle */}
+        <p 
+          className="text-lg sm:text-xl md:text-2xl font-semibold text-white max-w-3xl mx-auto mb-8 animate-fadeUp"
+          style={{ 
+            animationDelay: '0.35s',
+            textShadow: '0 10px 28px rgba(0,0,0,0.35)'
+          }}
+        >
+          Transformative internships and cultural immersion in Africa.
+        </p>
 
-          {/* CTA Button */}
+        {/* CTA Button */}
+        <div className="animate-fadeUp" style={{ animationDelay: '0.5s' }}>
           <Link
             href="#learn-more"
-            className="inline-flex items-center gap-2 px-8 py-4 font-heading font-bold text-sm tracking-wide rounded hover:bg-opacity-90 transition-all"
-            style={{ backgroundColor: '#F4A261', color: '#1D3160' }}
+            className="group inline-flex items-center gap-2 px-8 py-4 font-heading font-bold text-base tracking-wide text-primary-navy bg-white border-2 border-white rounded-full shadow-[0_8px_24px_rgba(255,255,255,0.18)] transition-all duration-300 hover:bg-primary-navy hover:text-white hover:border-primary-navy hover:-translate-y-1 hover:scale-105 hover:shadow-[0_15px_35px_rgba(29,49,96,0.4)]"
           >
             Learn more
-            <ArrowRight size={18} />
+            <svg 
+              className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" 
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
           </Link>
         </div>
       </div>
@@ -87,16 +113,16 @@ export default function Hero() {
           <button
             key={index}
             onClick={() => setCurrentImage(index)}
-            className={`w-2 h-2 rounded-full transition-all ${
-              index === currentImage ? 'w-8 bg-white' : 'bg-white/50'
+            className={`h-2 rounded-full transition-all duration-300 ${
+              index === currentImage ? 'w-8 bg-white' : 'w-2 bg-white/50 hover:bg-white/70'
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}
       </div>
 
-      {/* Decorative bottom wave */}
-      <div className="absolute bottom-0 left-0 right-0">
+      {/* Wave Divider */}
+      <div className="absolute bottom-0 left-0 right-0 z-[2]">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" className="w-full">
           <path fill="#ffffff" d="M0,50 Q360,0 720,50 T1440,50 L1440,100 L0,100 Z"></path>
         </svg>
@@ -104,3 +130,5 @@ export default function Hero() {
     </section>
   );
 }
+
+

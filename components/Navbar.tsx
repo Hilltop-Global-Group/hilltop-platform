@@ -1,7 +1,7 @@
 'use client';
 
-import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 
 const navLinks = [
@@ -105,3 +105,5 @@ export default function Navbar() {
     </nav>
   );
 }
+
+

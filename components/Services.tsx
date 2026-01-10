@@ -38,7 +38,6 @@ export default function Services() {
   return (
     <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="font-heading font-bold text-4xl sm:text-5xl mb-4" style={{ color: '#1D3160' }}>
             Explore Our Key Services
@@ -48,7 +47,6 @@ export default function Services() {
           </p>
         </div>
 
-        {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => {
             const Icon = service.icon;
@@ -60,24 +58,20 @@ export default function Services() {
                   animation: `fadeInUp 0.6s ease-out ${index * 0.15}s both`
                 }}
               >
-                {/* Image Section */}
                 <div className="relative h-56 overflow-hidden">
                   <div
                     className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
                     style={{ backgroundImage: `url('${service.image}')` }}
                   />
-                  {/* Gradient Overlay */}
                   <div 
                     className="absolute inset-0 opacity-60 group-hover:opacity-40 transition-opacity duration-500"
                     style={{ background: `linear-gradient(to bottom, transparent, ${service.color})` }}
                   />
                   
-                  {/* Icon */}
                   <div className="absolute top-4 right-4 p-3 bg-white/90 backdrop-blur-sm rounded-full shadow-lg transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-12">
                     <Icon size={24} style={{ color: service.color }} strokeWidth={2} />
                   </div>
 
-                  {/* Number Badge */}
                   <div 
                     className="absolute top-4 left-4 w-10 h-10 rounded-full flex items-center justify-center font-heading font-bold text-white text-lg shadow-lg"
                     style={{ backgroundColor: service.color }}
@@ -86,7 +80,6 @@ export default function Services() {
                   </div>
                 </div>
 
-                {/* Content Section */}
                 <div className="p-6">
                   <h3 className="font-heading font-bold text-xl mb-3 transition-colors duration-300 group-hover:text-opacity-80" style={{ color: service.color }}>
                     {service.title}
@@ -95,7 +88,6 @@ export default function Services() {
                     {service.description}
                   </p>
                   
-                  {/* CTA */}
                   <Link
                     href="#learn-more"
                     className="inline-flex items-center gap-2 font-heading font-semibold text-sm transition-all duration-300 group-hover:gap-4"
@@ -106,7 +98,6 @@ export default function Services() {
                   </Link>
                 </div>
 
-                {/* Animated Border */}
                 <div 
                   className="absolute inset-0 border-2 border-transparent group-hover:border-current rounded-2xl transition-all duration-500 pointer-events-none"
                   style={{ color: service.color }}
@@ -117,7 +108,6 @@ export default function Services() {
         </div>
       </div>
 
-      {/* CSS Animations */}
       <style jsx>{`
         @keyframes fadeInUp {
           from {
@@ -133,3 +123,5 @@ export default function Services() {
     </section>
   );
 }
+
+
