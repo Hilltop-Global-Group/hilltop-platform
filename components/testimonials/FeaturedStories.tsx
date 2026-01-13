@@ -6,7 +6,7 @@ const featuredStories = [
     role: "Business Intern",
     location: "Accra, Ghana",
     university: "Howard University",
-    image: "http://hilltopglobalgroup.com/wp-content/uploads/2023/09/Copy-of-20230521_170109-scaled-e1759311926763.jpg",
+    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Replace with actual video ID
     quote: "The internship placement was seamless. I gained real-world skills that I use daily. Working with a fintech startup in Accra opened my eyes to the innovation happening across Africa. This experience fundamentally changed my career trajectory.",
     fullStory: "Coming from Howard University, I thought I knew what to expect from an international internship. But Hilltop exceeded all expectations. The support, the placement, the cultural immersion – everything was exceptional.",
   },
@@ -15,7 +15,7 @@ const featuredStories = [
     role: "Tech Innovation Fellow",
     location: "Kigali, Rwanda",
     university: "Georgetown University",
-    image: "http://hilltopglobalgroup.com/wp-content/uploads/2023/09/Copy-of-20230521_172314-scaled-e1759312776245.jpg",
+    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Replace with actual video ID
     quote: "Hilltop Global provided exceptional support throughout my study abroad journey. The ALU collaboration gave me access to incredible resources and a network I'll leverage for years to come.",
     fullStory: "As a computer science major, I wanted hands-on experience with African tech innovation. The placement with a healthtech startup in Kigali was perfect. I learned agile development, worked with real clients, and contributed to a product that's now serving thousands.",
   },
@@ -24,7 +24,7 @@ const featuredStories = [
     role: "Social Impact Intern",
     location: "Accra, Ghana",
     university: "KNUST",
-    image: "http://hilltopglobalgroup.com/wp-content/uploads/2023/09/2.jpg",
+    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Replace with actual video ID
     quote: "An unforgettable experience that changed my career trajectory forever. I learned more in 4 weeks than I did in an entire semester. The mentorship, the projects, the cultural exposure – all world-class.",
     fullStory: "Working with a social enterprise focused on agricultural supply chains taught me about business, sustainability, and community impact. The Friday leadership sessions were incredible, and the cultural excursions helped me understand the broader context of development work in Ghana.",
   },
@@ -51,22 +51,28 @@ export default function FeaturedStories() {
                 index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
               } gap-8 items-center bg-gray-50 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500`}
             >
-              <div className="lg:w-1/2 relative h-96 lg:h-full w-full">
-                <div
-                  className="absolute inset-0 bg-cover bg-center"
-                  style={{ backgroundImage: `url('${story.image}')` }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+              {/* YouTube Video Section */}
+              <div className="lg:w-1/2 w-full p-6 lg:p-8">
+                <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                  <iframe
+                    className="absolute top-0 left-0 w-full h-full rounded-2xl shadow-lg"
+                    src={story.videoUrl}
+                    title={`${story.name} Testimonial Video`}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                </div>
                 
-                <div className="absolute bottom-6 left-6 right-6 text-white">
-                  <div className="flex items-center gap-2 mb-2">
-                    <MapPin size={16} />
-                    <span className="text-sm">{story.location}</span>
-                  </div>
-                  <p className="text-sm opacity-80">{story.university}</p>
+                <div className="mt-4 flex items-center gap-2 text-gray-600">
+                  <MapPin size={16} style={{ color: '#F4A261' }} />
+                  <span className="text-sm font-semibold">{story.location}</span>
+                  <span className="text-sm">•</span>
+                  <span className="text-sm">{story.university}</span>
                 </div>
               </div>
 
+              {/* Text Content Section */}
               <div className="lg:w-1/2 p-8 lg:p-12">
                 <Quote size={48} style={{ color: '#F4A261' }} className="mb-4" />
                 
