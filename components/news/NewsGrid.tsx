@@ -8,6 +8,7 @@ import Image from 'next/image';
 interface WordPressPost {
   id: number;
   date: string;
+  slug: string;
   title: { rendered: string };
   excerpt: { rendered: string };
   categories: number[];
@@ -20,7 +21,6 @@ interface WordPressPost {
     }>;
     'wp:term'?: Array<Array<{ name: string }>>;
   };
-  link: string;
 }
 
 interface Category {
@@ -167,16 +167,14 @@ export default function NewsGrid({ posts, categories }: NewsGridProps) {
                     </p>
 
                     <div className="flex items-center justify-between pt-4 border-t border-gray-200">
-                      <a
-                        href={post.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                      <Link
+                        href={`/news/${post.slug}`}
                         className="inline-flex items-center gap-1 text-sm font-semibold transition-all duration-300 group-hover:gap-2"
                         style={{ color: '#1D3160' }}
                       >
                         Read More
                         <ArrowRight size={16} />
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </article>

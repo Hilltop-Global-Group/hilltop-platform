@@ -21,7 +21,7 @@ export default function ProgramDetails() {
           </div>
 
           <div className="bg-gray-50 p-6 rounded-2xl text-center">
-            <Check size={32} className="mx-auto mb-3" style={{ color: '#1D3160' }} strokeWeight={2.5} />
+            <Check size={32} className="mx-auto mb-3" style={{ color: '#1D3160' }} strokeWidth={2.5} />
             <p className="font-semibold text-gray-900">4-week in-country</p>
             <p className="text-sm text-gray-600 mt-2">Full immersion experience with structured support</p>
           </div>
