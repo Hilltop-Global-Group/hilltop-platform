@@ -14,36 +14,61 @@ export default function JourneyProgress() {
     };
 
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Initial call
+    handleScroll();
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
     <div className="fixed top-0 left-0 right-0 z-50 pointer-events-none">
-      {/* Progress bar */}
-      <div className="h-1 bg-gray-200/50 backdrop-blur-sm">
+      {/* Multi-layered progress bar */}
+      <div className="relative h-2 bg-gradient-to-r from-navy-900/10 via-gold-400/10 to-navy-900/10 backdrop-blur-sm">
+        {/* Background shimmer */}
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer" />
+        
+        {/* Main progress */}
         <div
-          className="h-full bg-gradient-to-r from-navy-600 via-gold-400 to-navy-600 transition-all duration-300 ease-out relative"
+          className="absolute inset-y-0 left-0 bg-gradient-to-r from-navy-900 via-gold-400 to-navy-600 transition-all duration-300 ease-out"
           style={{ width: `${scrollProgress}%` }}
         >
-          {/* Glowing dot at the end */}
-          <div className="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-gold-400 rounded-full shadow-lg shadow-gold-400/50 animate-pulse" />
+          {/* Inner glow */}
+          <div className="absolute inset-0 bg-gradient-to-r from-navy-600/50 via-gold-300/50 to-navy-700/50 blur-sm" />
+          
+          {/* Animated glowing dot at the end */}
+          <div className="absolute right-0 top-1/2 -translate-y-1/2">
+            <div className="relative">
+              <div className="absolute inset-0 w-4 h-4 bg-gold-400/50 rounded-full blur-md animate-pulse" />
+              <div className="relative w-3 h-3 bg-gold-400 rounded-full shadow-lg shadow-gold-400/70 border-2 border-white" />
+            </div>
+          </div>
         </div>
       </div>
 
-      {/* Journey status text */}
+      {/* Journey status badge */}
       {scrollProgress > 5 && (
-        <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-md rounded-full px-4 py-2 shadow-lg">
-          <div className="flex items-center gap-2">
-            <div className="w-2 h-2 bg-gold-400 rounded-full animate-pulse" />
-            <span className="text-xs font-semibold text-navy-900">
-              {scrollProgress < 25 && 'Beginning the journey...'}
-              {scrollProgress >= 25 && scrollProgress < 50 && 'Discovering our story...'}
-              {scrollProgress >= 50 && scrollProgress < 75 && 'Exploring our values...'}
-              {scrollProgress >= 75 && scrollProgress < 95 && 'Meeting the team...'}
-              {scrollProgress >= 95 && 'Journey complete! 🎉'}
-            </span>
+        <div className="absolute top-6 right-6 bg-white/95 backdrop-blur-xl rounded-2xl px-6 py-3 shadow-2xl border-2 border-gold-400/20 pointer-events-auto">
+          <div className="flex items-center gap-3">
+            <div className="relative">
+              <div className="w-3 h-3 bg-gold-400 rounded-full animate-pulse" />
+              <div className="absolute inset-0 w-3 h-3 bg-gold-400 rounded-full blur-sm" />
+            </div>
+            <div>
+              <div className="text-[10px] font-bold text-gold-400 uppercase tracking-wider mb-0.5">
+                Journey Progress
+              </div>
+              <div className="text-xs font-bold text-navy-900">
+                {scrollProgress < 16.67 && 'Introduction'}
+                {scrollProgress >= 16.67 && scrollProgress < 33.33 && 'Our Journey'}
+                {scrollProgress >= 33.33 && scrollProgress < 50 && 'Impact Metrics'}
+                {scrollProgress >= 50 && scrollProgress < 66.67 && 'Core Values'}
+                {scrollProgress >= 66.67 && scrollProgress < 83.33 && 'Our Approach'}
+                {scrollProgress >= 83.33 && scrollProgress < 95 && 'The Team'}
+                {scrollProgress >= 95 && 'Complete ✓'}
+              </div>
+            </div>
+            <div className="ml-2 px-3 py-1 bg-navy-900 text-gold-400 rounded-lg text-xs font-bold">
+              {Math.round(scrollProgress)}%
+            </div>
           </div>
         </div>
       )}

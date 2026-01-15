@@ -82,25 +82,29 @@ export default function ImpactMetrics() {
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
-          backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
+          backgroundImage: 'radial-gradient(circle at 2px 2px, #F4A261 1px, transparent 0)',
           backgroundSize: '48px 48px',
         }} />
       </div>
 
+      {/* Animated gradient orbs */}
+      <div className="absolute top-20 left-20 w-96 h-96 bg-gold-400/20 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute bottom-20 right-20 w-80 h-80 bg-gold-400/10 rounded-full blur-3xl" />
+
       {/* Accent lines */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold-400 to-transparent" />
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold-400 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-2 bg-gold-400" />
+      <div className="absolute bottom-0 left-0 right-0 h-2 bg-gold-400" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <ScrollReveal animation="fade-down">
           <div className="text-center mb-16">
-            <span className="inline-block text-sm font-semibold text-gold-400 uppercase tracking-wider mb-4 border border-gold-400/30 px-4 py-2 rounded-full">
+            <span className="inline-block text-sm font-bold text-black uppercase tracking-wider mb-4 border-2 border-gold-400 px-6 py-2 rounded-full bg-gold-400">
               Our Impact
             </span>
-            <h2 className="font-heading font-bold text-4xl sm:text-5xl mb-4">
+            <h2 className="font-heading font-bold text-4xl sm:text-5xl mb-4 text-white">
               Numbers That Tell Our Story
             </h2>
-            <p className="text-lg text-white/70 max-w-2xl mx-auto">
+            <p className="text-lg text-white max-w-2xl mx-auto">
               Every number represents a life touched, a dream realized, a future transformed
             </p>
           </div>
@@ -115,26 +119,34 @@ export default function ImpactMetrics() {
             >
               <div className="relative group">
                 {/* Card */}
-                <div className="relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-gold-400/50 transition-all duration-500 hover:-translate-y-2">
-                  <div className="text-center">
-                    <div className="font-heading font-bold text-6xl mb-2 text-white">
-                      <Counter end={metric.value} />
-                      <span className="text-gold-400">{metric.suffix}</span>
+                <div className="relative bg-white rounded-2xl p-8 border-4 border-gold-400 hover:border-navy-900 transition-all duration-500 hover:-translate-y-2 overflow-hidden hover:shadow-2xl hover:shadow-gold-400/50">
+                  {/* Background glow on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-gold-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500" />
+                  
+                  <div className="relative text-center">
+                    <div className="font-heading font-bold text-6xl mb-2">
+                      <span className="text-navy-900 group-hover:text-gold-400 transition-colors">
+                        <Counter end={metric.value} />
+                      </span>
+                      <span className="text-gold-400 group-hover:text-navy-900 transition-colors">{metric.suffix}</span>
                     </div>
-                    <h3 className="font-heading font-bold text-xl mb-3 text-white">
+                    <h3 className="font-heading font-bold text-xl mb-3 text-navy-900 group-hover:text-black transition-colors">
                       {metric.label}
                     </h3>
-                    <p className="text-sm text-white/60 leading-relaxed">
+                    <p className="text-sm text-black leading-relaxed">
                       {metric.description}
                     </p>
                   </div>
 
+                  {/* Corner accent */}
+                  <div className="absolute top-0 right-0 w-20 h-20 border-t-4 border-r-4 border-navy-900/0 group-hover:border-navy-900 rounded-tr-2xl transition-all duration-500" />
+                  
                   {/* Bottom accent */}
-                  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-transparent via-gold-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute bottom-0 left-0 right-0 h-2 bg-navy-900 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
 
                 {/* Hover glow */}
-                <div className="absolute inset-0 bg-gold-400/5 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
+                <div className="absolute inset-0 bg-gold-400/20 rounded-2xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
               </div>
             </ScrollReveal>
           ))}

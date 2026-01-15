@@ -24,15 +24,18 @@ export default function AboutPage() {
       {/* Journey progress indicator on the left */}
       <JourneyConnector />
       
-      <AboutHero />
-      <FeaturedVideo />
-      <JourneyInteractive />
-      <ImpactMetrics />
-      <MinimalValues />
-      <EmpoweringFutures />
-      <Team />
-      <Testimonials />
-      <AboutCTA />
+      {/* Main content with left padding to avoid sidebar overlap */}
+      <div className="xl:pl-0">
+        <AboutHero />
+        <FeaturedVideo />
+        <JourneyInteractive />
+        <ImpactMetrics />
+        <MinimalValues />
+        <EmpoweringFutures />
+        <Team />
+        <Testimonials />
+        <AboutCTA />
+      </div>
     </main>
   );
 }

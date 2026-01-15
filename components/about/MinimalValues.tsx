@@ -38,17 +38,25 @@ export default function MinimalValues() {
   const [hoveredValue, setHoveredValue] = useState<string | null>(null);
 
   return (
-    <section className="py-24 bg-gray-50 relative overflow-hidden">
+    <section className="py-24 bg-white relative overflow-hidden">
+      {/* Decorative elements */}
+      <div className="absolute top-20 left-10 w-72 h-72 bg-gold-400/20 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-navy-900/10 rounded-full blur-3xl" />
+      
+      {/* Top and bottom borders */}
+      <div className="absolute top-0 left-0 right-0 h-2 bg-navy-900" />
+      <div className="absolute bottom-0 left-0 right-0 h-2 bg-gold-400" />
+      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <ScrollReveal animation="fade-down">
           <div className="text-center mb-20">
-            <span className="inline-block text-sm font-semibold text-gold-400 uppercase tracking-wider mb-4 border border-gold-400/30 px-4 py-2 rounded-full">
+            <span className="inline-block text-sm font-bold text-black uppercase tracking-wider mb-4 border-2 border-gold-400 px-6 py-2 rounded-full bg-gold-400">
               Our Values
             </span>
             <h2 className="font-heading font-bold text-4xl sm:text-5xl text-navy-900 mb-4">
               What Defines Us
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-black max-w-2xl mx-auto">
               The principles that guide every decision, every program, every partnership
             </p>
           </div>
@@ -64,27 +72,30 @@ export default function MinimalValues() {
               <div
                 onMouseEnter={() => setHoveredValue(value.id)}
                 onMouseLeave={() => setHoveredValue(null)}
-                className={`relative bg-white rounded-2xl overflow-hidden transition-all duration-500 cursor-pointer group ${
+                className={`relative rounded-2xl overflow-hidden transition-all duration-500 cursor-pointer group border-4 ${
                   hoveredValue === value.id
-                    ? 'shadow-2xl scale-[1.02]'
-                    : 'shadow-lg hover:shadow-xl'
+                    ? 'shadow-2xl shadow-gold-400/50 scale-[1.02] border-gold-400 bg-navy-900'
+                    : 'shadow-lg hover:shadow-xl border-navy-900 bg-white'
                 }`}
               >
                 {/* Left accent bar */}
                 <div
-                  className={`absolute left-0 top-0 bottom-0 w-1 bg-navy-900 transition-all duration-500 ${
-                    hoveredValue === value.id ? 'w-2' : ''
+                  className={`absolute left-0 top-0 bottom-0 transition-all duration-500 ${
+                    hoveredValue === value.id ? 'w-4 bg-gold-400' : 'w-2 bg-navy-900'
                   }`}
                 />
 
                 <div className="p-8 md:p-12">
                   <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-12">
                     {/* Number */}
-                    <div className="flex-shrink-0">
+                    <div className="flex-shrink-0 relative">
+                      {hoveredValue === value.id && (
+                        <div className="absolute inset-0 bg-gold-400/30 blur-2xl" />
+                      )}
                       <span
-                        className={`font-heading font-bold transition-all duration-500 ${
+                        className={`relative font-heading font-bold transition-all duration-500 ${
                           hoveredValue === value.id
-                            ? 'text-8xl text-navy-900'
+                            ? 'text-8xl text-gold-400'
                             : 'text-7xl text-gray-200'
                         }`}
                       >
@@ -95,10 +106,14 @@ export default function MinimalValues() {
                     {/* Content */}
                     <div className="flex-1">
                       <div className="mb-3">
-                        <h3 className="font-heading font-bold text-3xl text-navy-900 mb-1">
+                        <h3 className={`font-heading font-bold text-3xl mb-1 transition-colors duration-500 ${
+                          hoveredValue === value.id ? 'text-white' : 'text-navy-900'
+                        }`}>
                           {value.title}
                         </h3>
-                        <p className="text-sm text-gold-400 font-semibold uppercase tracking-wide">
+                        <p className={`text-sm font-semibold uppercase tracking-wide transition-colors duration-500 ${
+                          hoveredValue === value.id ? 'text-gold-400' : 'text-gold-400'
+                        }`}>
                           {value.tagline}
                         </p>
                       </div>
@@ -110,7 +125,9 @@ export default function MinimalValues() {
                             : 'max-h-0 md:max-h-40 opacity-0 md:opacity-100'
                         }`}
                       >
-                        <p className="text-gray-700 leading-relaxed">
+                        <p className={`leading-relaxed transition-colors duration-500 ${
+                          hoveredValue === value.id ? 'text-white' : 'text-black'
+                        }`}>
                           {value.description}
                         </p>
                       </div>
@@ -119,15 +136,15 @@ export default function MinimalValues() {
                     {/* Arrow indicator */}
                     <div className="flex-shrink-0">
                       <div
-                        className={`w-10 h-10 rounded-full border-2 border-navy-900 flex items-center justify-center transition-all duration-500 ${
+                        className={`w-12 h-12 rounded-full border-2 flex items-center justify-center transition-all duration-500 ${
                           hoveredValue === value.id
-                            ? 'bg-navy-900 rotate-45'
-                            : 'bg-transparent'
+                            ? 'bg-gold-400 border-gold-400 rotate-45'
+                            : 'bg-transparent border-navy-900'
                         }`}
                       >
                         <svg
-                          className={`w-5 h-5 transition-colors duration-500 ${
-                            hoveredValue === value.id ? 'text-white' : 'text-navy-900'
+                          className={`w-6 h-6 transition-colors duration-500 ${
+                            hoveredValue === value.id ? 'text-black' : 'text-navy-900'
                           }`}
                           fill="none"
                           viewBox="0 0 24 24"
@@ -147,10 +164,15 @@ export default function MinimalValues() {
 
                 {/* Bottom border animation */}
                 <div
-                  className={`h-1 bg-gradient-to-r from-navy-900 via-gold-400 to-navy-900 transition-all duration-500 ${
-                    hoveredValue === value.id ? 'opacity-100' : 'opacity-0'
+                  className={`h-3 transition-all duration-500 ${
+                    hoveredValue === value.id ? 'opacity-100 bg-gold-400' : 'opacity-0 bg-navy-900'
                   }`}
                 />
+                
+                {/* Glow effect */}
+                {hoveredValue === value.id && (
+                  <div className="absolute inset-0 bg-gold-400/10 blur-2xl pointer-events-none" />
+                )}
               </div>
             </ScrollReveal>
           ))}

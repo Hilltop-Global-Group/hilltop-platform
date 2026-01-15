@@ -55,25 +55,29 @@ export default function JourneyInteractive() {
   const [activeStep, setActiveStep] = useState(0);
 
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
-      {/* Subtle background grid */}
-      <div className="absolute inset-0 opacity-[0.02]">
+    <section className="py-24 bg-black relative overflow-hidden">
+      {/* Animated background pattern */}
+      <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
-          backgroundImage: 'linear-gradient(#1D3160 1px, transparent 1px), linear-gradient(90deg, #1D3160 1px, transparent 1px)',
-          backgroundSize: '50px 50px',
+          backgroundImage: 'radial-gradient(circle at 2px 2px, #F4A261 1px, transparent 0)',
+          backgroundSize: '48px 48px',
         }} />
       </div>
+
+      {/* Accent shapes */}
+      <div className="absolute top-20 right-20 w-64 h-64 bg-gold-400/20 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 left-20 w-96 h-96 bg-navy-900/30 rounded-full blur-3xl" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <ScrollReveal animation="fade-down">
           <div className="text-center mb-16">
-            <span className="inline-block text-sm font-semibold text-gold-400 uppercase tracking-wider mb-4 border border-gold-400/30 px-4 py-2 rounded-full">
+            <span className="inline-block text-sm font-bold text-black uppercase tracking-wider mb-4 border-2 border-gold-400 px-6 py-2 rounded-full bg-gold-400">
               Our Journey
             </span>
-            <h2 className="font-heading font-bold text-4xl sm:text-5xl text-navy-900 mb-4">
+            <h2 className="font-heading font-bold text-4xl sm:text-5xl text-white mb-4">
               A Decade of Transformation
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-white max-w-2xl mx-auto">
               Click through the chapters of our story to see how we've grown and evolved
             </p>
           </div>
@@ -81,20 +85,20 @@ export default function JourneyInteractive() {
 
         {/* Timeline Navigation */}
         <ScrollReveal animation="fade-up" delay={100}>
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
+          <div className="flex flex-wrap justify-center gap-4 mb-16">
             {journeySteps.map((step, index) => (
               <button
                 key={step.id}
                 onClick={() => setActiveStep(index)}
-                className={`relative px-6 py-3 rounded-full font-semibold transition-all duration-500 ${
+                className={`relative px-8 py-4 rounded-xl font-bold transition-all duration-500 border-2 ${
                   activeStep === index
-                    ? 'bg-navy-900 text-white shadow-xl scale-110'
-                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                    ? 'bg-gold-400 border-gold-400 text-black shadow-2xl shadow-gold-400/50 scale-110'
+                    : 'bg-navy-900 border-navy-900 text-white hover:bg-navy-800 hover:border-gold-400'
                 }`}
               >
-                <span className="relative z-10">{step.year}</span>
+                <span className="relative z-10 text-sm">{step.year}</span>
                 {activeStep === index && (
-                  <div className="absolute inset-0 bg-navy-900 rounded-full blur-xl opacity-30 animate-pulse" />
+                  <div className="absolute inset-0 bg-gold-400 rounded-xl blur-xl opacity-50 animate-pulse" />
                 )}
               </button>
             ))}
@@ -112,97 +116,99 @@ export default function JourneyInteractive() {
                   : 'opacity-0 scale-95 absolute inset-0 pointer-events-none'
               }`}
             >
-              <div className="grid md:grid-cols-2 gap-12 items-center">
-                {/* Image Side */}
-                <div className="relative group">
-                  <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl">
-                    <Image
-                      src={step.image}
-                      alt={step.title}
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
-                    {/* Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-navy-900/80 via-navy-900/20 to-transparent" />
-                    
-                    {/* Floating year badge */}
-                    <div className="absolute top-6 left-6 bg-white/95 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg">
-                      <span className="font-heading font-bold text-2xl text-navy-900">
-                        {step.year}
-                      </span>
-                    </div>
+              <div className="bg-white rounded-3xl p-8 md:p-12 shadow-2xl border-4 border-gold-400">
+                <div className="grid md:grid-cols-2 gap-12 items-center">
+                  {/* Image Side */}
+                  <div className="relative group">
+                    <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl border-4 border-navy-900">
+                      <Image
+                        src={step.image}
+                        alt={step.title}
+                        fill
+                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                      {/* Overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                      
+                      {/* Floating year badge */}
+                      <div className="absolute top-6 left-6 bg-gold-400 px-6 py-3 rounded-xl shadow-2xl border-2 border-black">
+                        <span className="font-heading font-bold text-2xl text-black">
+                          {step.year}
+                        </span>
+                      </div>
 
-                    {/* Stats overlay */}
-                    <div className="absolute bottom-6 left-6 right-6 flex gap-4">
-                      {step.stats.map((stat) => (
-                        <div
-                          key={stat.label}
-                          className="flex-1 bg-white/95 backdrop-blur-sm rounded-xl p-4 text-center"
-                        >
-                          <div className="font-heading font-bold text-2xl text-navy-900 mb-1">
-                            {stat.value}
+                      {/* Stats overlay */}
+                      <div className="absolute bottom-6 left-6 right-6 flex gap-4">
+                        {step.stats.map((stat) => (
+                          <div
+                            key={stat.label}
+                            className="flex-1 bg-white rounded-xl p-4 text-center border-2 border-gold-400"
+                          >
+                            <div className="font-heading font-bold text-3xl text-navy-900 mb-1">
+                              {stat.value}
+                            </div>
+                            <div className="text-xs text-black font-semibold uppercase tracking-wide">
+                              {stat.label}
+                            </div>
                           </div>
-                          <div className="text-xs text-gray-600 font-semibold uppercase tracking-wide">
-                            {stat.label}
-                          </div>
-                        </div>
-                      ))}
+                        ))}
+                      </div>
                     </div>
+
+                    {/* Decorative border */}
+                    <div className="absolute -inset-4 border-4 border-gold-400/30 rounded-2xl -z-10" />
                   </div>
 
-                  {/* Decorative border */}
-                  <div className="absolute -inset-4 border-2 border-navy-900/10 rounded-2xl -z-10" />
-                </div>
-
-                {/* Content Side */}
-                <div className="space-y-6">
-                  <div>
-                    <div className="inline-block mb-4">
-                      <span className="text-7xl font-heading font-bold text-navy-900/5">
-                        0{index + 1}
-                      </span>
+                  {/* Content Side */}
+                  <div className="space-y-6">
+                    <div>
+                      <div className="inline-block mb-4">
+                        <span className="text-8xl font-heading font-bold text-gold-400/20">
+                          0{index + 1}
+                        </span>
+                      </div>
+                      <h3 className="font-heading font-bold text-4xl text-navy-900 mb-6">
+                        {step.title}
+                      </h3>
+                      <p className="text-lg text-black leading-relaxed">
+                        {step.description}
+                      </p>
                     </div>
-                    <h3 className="font-heading font-bold text-4xl text-navy-900 mb-6">
-                      {step.title}
-                    </h3>
-                    <p className="text-lg text-gray-700 leading-relaxed">
-                      {step.description}
-                    </p>
-                  </div>
 
-                  {/* Progress indicator */}
-                  <div className="pt-8">
-                    <div className="flex gap-2">
-                      {journeySteps.map((_, idx) => (
-                        <button
-                          key={idx}
-                          onClick={() => setActiveStep(idx)}
-                          className={`h-1 rounded-full transition-all duration-500 ${
-                            idx === activeStep
-                              ? 'w-16 bg-navy-900'
-                              : 'w-8 bg-gray-300 hover:bg-gray-400'
-                          }`}
-                        />
-                      ))}
+                    {/* Progress indicator */}
+                    <div className="pt-8">
+                      <div className="flex gap-3">
+                        {journeySteps.map((_, idx) => (
+                          <button
+                            key={idx}
+                            onClick={() => setActiveStep(idx)}
+                            className={`h-2 rounded-full transition-all duration-500 ${
+                              idx === activeStep
+                                ? 'w-20 bg-gold-400 shadow-lg shadow-gold-400/50'
+                                : 'w-10 bg-gray-300 hover:bg-navy-900'
+                            }`}
+                          />
+                        ))}
+                      </div>
                     </div>
-                  </div>
 
-                  {/* Navigation arrows */}
-                  <div className="flex gap-4 pt-4">
-                    <button
-                      onClick={() => setActiveStep(Math.max(0, activeStep - 1))}
-                      disabled={activeStep === 0}
-                      className="px-6 py-3 rounded-full font-semibold border-2 border-navy-900 text-navy-900 hover:bg-navy-900 hover:text-white disabled:opacity-30 disabled:cursor-not-allowed transition-all duration-300"
-                    >
-                      Previous
-                    </button>
-                    <button
-                      onClick={() => setActiveStep(Math.min(journeySteps.length - 1, activeStep + 1))}
-                      disabled={activeStep === journeySteps.length - 1}
-                      className="px-6 py-3 rounded-full font-semibold bg-navy-900 text-white hover:bg-navy-800 disabled:opacity-30 disabled:cursor-not-allowed transition-all duration-300 shadow-lg"
-                    >
-                      Next Chapter
-                    </button>
+                    {/* Navigation arrows */}
+                    <div className="flex gap-4 pt-4">
+                      <button
+                        onClick={() => setActiveStep(Math.max(0, activeStep - 1))}
+                        disabled={activeStep === 0}
+                        className="px-8 py-4 rounded-xl font-bold border-2 border-navy-900 text-navy-900 hover:bg-navy-900 hover:text-white disabled:opacity-20 disabled:cursor-not-allowed transition-all duration-300"
+                      >
+                        Previous
+                      </button>
+                      <button
+                        onClick={() => setActiveStep(Math.min(journeySteps.length - 1, activeStep + 1))}
+                        disabled={activeStep === journeySteps.length - 1}
+                        className="px-8 py-4 rounded-xl font-bold bg-gold-400 text-black border-2 border-gold-400 hover:bg-black hover:text-gold-400 hover:border-black disabled:opacity-20 disabled:cursor-not-allowed transition-all duration-300 shadow-xl shadow-gold-400/50"
+                      >
+                        Next Chapter
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
