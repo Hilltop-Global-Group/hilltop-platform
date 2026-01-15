@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import { Quote } from 'lucide-react';
+import ScrollReveal from './ScrollReveal';
 
 const testimonials = [
   {
@@ -68,14 +69,16 @@ export default function Testimonials() {
   return (
     <section className="py-20 bg-gray-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
-        <div className="text-center">
-          <h2 className="font-heading font-bold text-4xl sm:text-5xl mb-4" style={{ color: '#1D3160' }}>
-            Trusted by Students & Partners
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            We don't just facilitate placements; we build futures. See what our community has to say about the Hilltop experience.
-          </p>
-        </div>
+        <ScrollReveal animation="fade-down">
+          <div className="text-center">
+            <h2 className="font-heading font-bold text-4xl sm:text-5xl mb-4" style={{ color: '#1D3160' }}>
+              Trusted by Students & Partners
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              We don't just facilitate placements; we build futures. See what our community has to say about the Hilltop experience.
+            </p>
+          </div>
+        </ScrollReveal>
       </div>
 
       <div 

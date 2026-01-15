@@ -1,5 +1,10 @@
 import AboutHero from '@/components/about/AboutHero';
-import Journey from '@/components/about/Journey';
+import JourneyProgress from '@/components/about/JourneyProgress';
+import JourneyConnector from '@/components/about/JourneyConnector';
+import FeaturedVideo from '@/components/about/FeaturedVideo';
+import JourneyInteractive from '@/components/about/JourneyInteractive';
+import ImpactMetrics from '@/components/about/ImpactMetrics';
+import MinimalValues from '@/components/about/MinimalValues';
 import EmpoweringFutures from '@/components/about/EmpoweringFutures';
 import Team from '@/components/about/Team';
 import Testimonials from '@/components/about/Testimonials';
@@ -12,9 +17,18 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <main>
+    <main className="relative">
+      {/* Progress bar at top */}
+      <JourneyProgress />
+      
+      {/* Journey progress indicator on the left */}
+      <JourneyConnector />
+      
       <AboutHero />
-      <Journey />
+      <FeaturedVideo />
+      <JourneyInteractive />
+      <ImpactMetrics />
+      <MinimalValues />
       <EmpoweringFutures />
       <Team />
       <Testimonials />

@@ -1,4 +1,5 @@
 import { Facebook, Linkedin, Instagram } from 'lucide-react';
+import ScrollReveal from './ScrollReveal';
 
 const teamMembers = [
   {
@@ -37,19 +38,24 @@ export default function Team() {
   return (
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="font-heading font-bold text-4xl sm:text-5xl mb-4" style={{ color: '#1D3160' }}>
-            Meet Our Team
-          </h2>
-          <p className="text-xl text-gray-600">Our People</p>
-        </div>
+        <ScrollReveal animation="fade-down">
+          <div className="text-center mb-16">
+            <h2 className="font-heading font-bold text-4xl sm:text-5xl mb-4" style={{ color: '#1D3160' }}>
+              Meet Our Team
+            </h2>
+            <p className="text-xl text-gray-600">Our People</p>
+          </div>
+        </ScrollReveal>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {teamMembers.map((member, index) => (
-            <div
+            <ScrollReveal
               key={index}
-              className="group relative bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+              animation="zoom-in"
+              delay={index * 100}
             >
+              <div className="group relative bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+              >
               <div className="relative h-80 overflow-hidden">
                 <div
                   className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
@@ -91,6 +97,7 @@ export default function Team() {
                 </div>
               </div>
             </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>
