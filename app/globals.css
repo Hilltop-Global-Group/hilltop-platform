@@ -33,31 +33,6 @@ html {
   background: #2a4a7a;
 }
 
-/* Hero Fade Up Animation */
-@keyframes fadeUp {
-  0% {
-    opacity: 0;
-    transform: translateY(12px) scale(0.98);
-    filter: blur(4px);
-  }
-  60% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-    filter: blur(0);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-    filter: blur(0);
-  }
-}
-
-.animate-fadeUp {
-  opacity: 0;
-  animation: fadeUp 0.9s cubic-bezier(0.2, 0.9, 0.2, 1) forwards;
-  will-change: opacity, transform, filter;
-}
-
 /* Marquee Animation */
 @keyframes marquee {
   0% {
