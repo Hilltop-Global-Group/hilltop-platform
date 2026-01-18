@@ -9,7 +9,12 @@ async function getInternships() {
     );
     
     if (!res.ok) return [];
-    return res.json();
+    const allInternships = await res.json();
+    
+    // Filter for OPEN internships only
+    return allInternships.filter((internship: any) => 
+      internship.meta._internship_application_status !== 'closed'
+    );
   } catch (error) {
     console.error('Error fetching WordPress internships:', error);
     return [];
