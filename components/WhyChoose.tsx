@@ -9,7 +9,7 @@ export default function WhyChoose() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
             <h2 className="font-heading font-bold text-4xl sm:text-5xl mb-6" style={{ color: '#1D3160' }}>
-              Why Choose Hilltop Global Group
+              Why You Should Choose Hilltop Global Group
             </h2>
             <p className="font-body text-gray-600 text-lg leading-relaxed mb-8">
               We design immersive, experience-driven programs across Africa that transform travel into purposeful learning. Our internships place you on real, project-driven teams in high-growth sectors so you gain practical skills and measurable impact. Whether onsite or virtual, we deliver expert-led cultural and professional immersion and manage logistics end to end so you can focus on growth.
