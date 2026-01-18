@@ -20,14 +20,14 @@ const features = [
 
 export default function EmpoweringFutures() {
   return (
-    <section className="py-24 bg-black relative overflow-hidden">
+    <section className="py-24 bg-white relative overflow-hidden">
       {/* Background accent */}
-      <div className="absolute top-0 left-0 right-0 h-2 bg-gold-400" />
-      <div className="absolute bottom-0 left-0 right-0 h-2 bg-navy-900" />
+      <div className="absolute top-0 left-0 right-0 h-2 bg-navy-900" />
+      <div className="absolute bottom-0 left-0 right-0 h-2 bg-gold-400" />
       
       {/* Decorative orbs */}
       <div className="absolute top-20 right-10 w-96 h-96 bg-gold-400/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 left-10 w-80 h-80 bg-navy-900/20 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 left-10 w-80 h-80 bg-navy-900/10 rounded-full blur-3xl" />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <ScrollReveal animation="fade-down">
@@ -35,7 +35,7 @@ export default function EmpoweringFutures() {
             <span className="inline-block text-sm font-bold text-black uppercase tracking-wider mb-4 border-2 border-gold-400 px-6 py-2 rounded-full bg-gold-400">
               What We Offer
             </span>
-            <h2 className="font-heading font-bold text-4xl sm:text-5xl text-white mb-4">
+            <h2 className="font-heading font-bold text-4xl sm:text-5xl text-navy-900 mb-4">
               Empowering Global Futures
             </h2>
           </div>
@@ -51,7 +51,7 @@ export default function EmpoweringFutures() {
               >
                 <div className="group relative bg-white p-10 rounded-2xl border-4 border-navy-900 hover:border-gold-400 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-gold-400/50">
                   {/* Large number background */}
-                  <div className="absolute top-8 right-8 text-8xl font-heading font-bold text-gold-400/10 group-hover:text-gold-400/20 select-none transition-colors duration-500">
+                  <div className="absolute top-8 right-8 text-8xl font-heading font-bold text-gray-200 group-hover:text-gold-400/20 select-none transition-colors duration-500">
                     {feature.number}
                   </div>
 
@@ -65,7 +65,7 @@ export default function EmpoweringFutures() {
                     <h3 className="font-heading font-bold text-3xl text-navy-900 mb-4 group-hover:text-black transition-colors">
                       {feature.title}
                     </h3>
-                    <p className="text-black leading-relaxed text-lg">
+                    <p className="text-gray-700 leading-relaxed text-lg">
                       {feature.description}
                     </p>
 

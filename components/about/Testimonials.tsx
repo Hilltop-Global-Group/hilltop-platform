@@ -46,35 +46,56 @@ export default function Testimonials() {
 
     let animationFrameId: number;
     let scrollPosition = 0;
-    const scrollSpeed = 0.5;
+    const scrollSpeed = 1;
 
     const scroll = () => {
       scrollPosition += scrollSpeed;
+      const maxScroll = scrollContainer.scrollWidth / 3; // Only scroll through one set
       
-      if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) {
+      if (scrollPosition >= maxScroll) {
         scrollPosition = 0;
-        scrollContainer.scrollLeft = 0;
-      } else {
-        scrollContainer.scrollLeft = scrollPosition;
       }
       
+      scrollContainer.scrollLeft = scrollPosition;
       animationFrameId = requestAnimationFrame(scroll);
     };
 
     animationFrameId = requestAnimationFrame(scroll);
 
-    return () => cancelAnimationFrame(animationFrameId);
+    // Pause on hover
+    const handleMouseEnter = () => cancelAnimationFrame(animationFrameId);
+    const handleMouseLeave = () => {
+      animationFrameId = requestAnimationFrame(scroll);
+    };
+
+    scrollContainer.addEventListener('mouseenter', handleMouseEnter);
+    scrollContainer.addEventListener('mouseleave', handleMouseLeave);
+
+    return () => {
+      cancelAnimationFrame(animationFrameId);
+      scrollContainer.removeEventListener('mouseenter', handleMouseEnter);
+      scrollContainer.removeEventListener('mouseleave', handleMouseLeave);
+    };
   }, []);
 
   return (
-    <section className="py-20 bg-gray-50 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+    <section className="py-24 bg-gray-50 relative overflow-hidden">
+      {/* Background accents */}
+      <div className="absolute top-0 left-0 right-0 h-2 bg-navy-900" />
+      <div className="absolute bottom-0 left-0 right-0 h-2 bg-gold-400" />
+      <div className="absolute top-20 left-20 w-96 h-96 bg-gold-400/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 right-20 w-80 h-80 bg-navy-900/10 rounded-full blur-3xl" />
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 relative z-10">
         <ScrollReveal animation="fade-down">
           <div className="text-center">
-            <h2 className="font-heading font-bold text-4xl sm:text-5xl mb-4" style={{ color: '#1D3160' }}>
+            <span className="inline-block text-sm font-bold text-black uppercase tracking-wider mb-4 border-2 border-gold-400 px-6 py-2 rounded-full bg-gold-400">
+              Testimonials
+            </span>
+            <h2 className="font-heading font-bold text-4xl sm:text-5xl mb-6 text-navy-900">
               Trusted by Students & Partners
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
               We don't just facilitate placements; we build futures. See what our community has to say about the Hilltop experience.
             </p>
           </div>
@@ -83,31 +104,33 @@ export default function Testimonials() {
 
       <div 
         ref={scrollRef}
-        className="flex gap-6 overflow-x-hidden"
+        className="flex gap-6 overflow-x-hidden relative z-10"
         style={{ 
           scrollBehavior: 'auto',
           WebkitOverflowScrolling: 'touch'
         }}
       >
-        {/* Duplicate testimonials for seamless loop */}
+        {/* Triple testimonials for seamless infinite loop */}
         {[...testimonials, ...testimonials, ...testimonials].map((testimonial, index) => (
           <div
             key={index}
-            className="flex-shrink-0 w-[400px] bg-white p-8 rounded-2xl shadow-lg"
+            className="flex-shrink-0 w-[450px] bg-white p-10 rounded-2xl shadow-2xl border-4 border-navy-900 hover:border-gold-400 transition-all duration-300"
           >
-            <div className="mb-4">
-              <Quote size={40} style={{ color: '#F4A261' }} />
+            <div className="mb-6">
+              <div className="w-14 h-14 rounded-full bg-gold-400 flex items-center justify-center">
+                <Quote size={28} className="text-navy-900" />
+              </div>
             </div>
             
-            <p className="text-gray-700 text-lg mb-6 leading-relaxed">
-              {testimonial.quote}
+            <p className="text-black text-lg mb-8 leading-relaxed font-medium">
+              "{testimonial.quote}"
             </p>
             
-            <div className="border-t pt-4" style={{ borderColor: '#F4A261' }}>
-              <p className="font-heading font-bold text-lg" style={{ color: '#1D3160' }}>
+            <div className="border-t-4 border-gold-400 pt-6">
+              <p className="font-heading font-bold text-xl text-navy-900 mb-1">
                 {testimonial.name}
               </p>
-              <p className="text-gray-600 text-sm">
+              <p className="text-gray-600 text-sm font-semibold uppercase tracking-wide">
                 {testimonial.title}
               </p>
             </div>

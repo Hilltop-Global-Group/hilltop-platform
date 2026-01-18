@@ -101,10 +101,10 @@ export default function ImpactMetrics() {
             <span className="inline-block text-sm font-bold text-black uppercase tracking-wider mb-4 border-2 border-gold-400 px-6 py-2 rounded-full bg-gold-400">
               Our Impact
             </span>
-            <h2 className="font-heading font-bold text-4xl sm:text-5xl mb-4 text-white">
+            <h2 className="font-heading font-bold text-4xl sm:text-5xl mb-4" style={{ color: '#F4A261' }}>
               Numbers That Tell Our Story
             </h2>
-            <p className="text-lg text-white max-w-2xl mx-auto">
+            <p className="text-lg max-w-2xl mx-auto" style={{ color: '#F4A261' }}>
               Every number represents a life touched, a dream realized, a future transformed
             </p>
           </div>
@@ -124,16 +124,14 @@ export default function ImpactMetrics() {
                   <div className="absolute inset-0 bg-gradient-to-br from-gold-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500" />
                   
                   <div className="relative text-center">
-                    <div className="font-heading font-bold text-6xl mb-2">
-                      <span className="text-navy-900 group-hover:text-gold-400 transition-colors">
-                        <Counter end={metric.value} />
-                      </span>
-                      <span className="text-gold-400 group-hover:text-navy-900 transition-colors">{metric.suffix}</span>
+                    <div className="font-heading font-bold text-6xl mb-2" style={{ color: '#1D3160' }}>
+                      <Counter end={metric.value} />
+                      {metric.suffix}
                     </div>
-                    <h3 className="font-heading font-bold text-xl mb-3 text-navy-900 group-hover:text-black transition-colors">
+                    <h3 className="font-heading font-bold text-xl mb-3" style={{ color: '#1D3160' }}>
                       {metric.label}
                     </h3>
-                    <p className="text-sm text-black leading-relaxed">
+                    <p className="text-sm text-gray-700 leading-relaxed">
                       {metric.description}
                     </p>
                   </div>

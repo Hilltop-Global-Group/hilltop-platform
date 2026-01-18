@@ -55,18 +55,18 @@ export default function JourneyInteractive() {
   const [activeStep, setActiveStep] = useState(0);
 
   return (
-    <section className="py-24 bg-black relative overflow-hidden">
+    <section className="py-24 bg-gray-50 relative overflow-hidden">
       {/* Animated background pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
-          backgroundImage: 'radial-gradient(circle at 2px 2px, #F4A261 1px, transparent 0)',
+          backgroundImage: 'radial-gradient(circle at 2px 2px, #1D3160 1px, transparent 0)',
           backgroundSize: '48px 48px',
         }} />
       </div>
 
       {/* Accent shapes */}
       <div className="absolute top-20 right-20 w-64 h-64 bg-gold-400/20 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 left-20 w-96 h-96 bg-navy-900/30 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 left-20 w-96 h-96 bg-navy-900/10 rounded-full blur-3xl" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <ScrollReveal animation="fade-down">
@@ -74,10 +74,10 @@ export default function JourneyInteractive() {
             <span className="inline-block text-sm font-bold text-black uppercase tracking-wider mb-4 border-2 border-gold-400 px-6 py-2 rounded-full bg-gold-400">
               Our Journey
             </span>
-            <h2 className="font-heading font-bold text-4xl sm:text-5xl text-white mb-4">
+            <h2 className="font-heading font-bold text-4xl sm:text-5xl text-navy-900 mb-4">
               A Decade of Transformation
             </h2>
-            <p className="text-lg text-white max-w-2xl mx-auto">
+            <p className="text-lg text-gray-700 max-w-2xl mx-auto">
               Click through the chapters of our story to see how we've grown and evolved
             </p>
           </div>
@@ -85,15 +85,17 @@ export default function JourneyInteractive() {
 
         {/* Timeline Navigation */}
         <ScrollReveal animation="fade-up" delay={100}>
-          <div className="flex flex-wrap justify-center gap-4 mb-16">
+          <div className="flex flex-wrap justify-center gap-4 mb-16" suppressHydrationWarning>
             {journeySteps.map((step, index) => (
               <button
                 key={step.id}
                 onClick={() => setActiveStep(index)}
-                className={`relative px-8 py-4 rounded-xl font-bold transition-all duration-500 border-2 ${
+                suppressHydrationWarning
+                style={activeStep === index ? {} : { backgroundColor: '#FFFFFF', color: '#1D3160', borderColor: '#1D3160' }}
+                className={`relative px-8 py-4 rounded-xl font-bold transition-all duration-500 border-2 hover:opacity-90 ${
                   activeStep === index
                     ? 'bg-gold-400 border-gold-400 text-black shadow-2xl shadow-gold-400/50 scale-110'
-                    : 'bg-navy-900 border-navy-900 text-white hover:bg-navy-800 hover:border-gold-400'
+                    : ''
                 }`}
               >
                 <span className="relative z-10 text-sm">{step.year}</span>

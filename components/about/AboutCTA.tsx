@@ -6,34 +6,49 @@ import ScrollReveal from './ScrollReveal';
 
 export default function AboutCTA() {
   return (
-    <section className="relative py-20 overflow-hidden" style={{ backgroundColor: '#1D3160' }}>
-      <div className="absolute inset-0 bg-gradient-to-br from-primary-navy via-[#27427a] to-primary-navy opacity-90" />
+    <section className="relative py-24 overflow-hidden" style={{ backgroundColor: '#1D3160' }}>
+      {/* Top and bottom gold borders */}
+      <div className="absolute top-0 left-0 right-0 h-2" style={{ backgroundColor: '#F4A261' }} />
+      <div className="absolute bottom-0 left-0 right-0 h-2" style={{ backgroundColor: '#F4A261' }} />
+      
+      {/* Background decorative elements */}
+      <div className="absolute top-20 left-20 w-96 h-96 bg-gold-400/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 right-20 w-80 h-80 bg-gold-400/20 rounded-full blur-3xl animate-pulse" />
       
       <ScrollReveal animation="zoom-in">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <h2 className="font-heading font-bold text-4xl sm:text-5xl text-white mb-6">
+          <h2 className="font-heading font-bold text-5xl sm:text-6xl mb-8" style={{ color: '#FFFFFF' }}>
             Take the Next Step with Us
           </h2>
           
-          <p className="text-xl text-white/90 mb-10 max-w-3xl mx-auto">
+          <p className="text-xl mb-12 max-w-3xl mx-auto leading-relaxed font-medium" style={{ color: '#FFFFFF' }}>
             Join us in shaping your future today. Explore our education services, internship opportunities, and study abroad programs designed to enhance your experience and career prospects.
           </p>
 
-          <div className="flex flex-wrap gap-4 justify-center">
+          <div className="flex flex-wrap gap-6 justify-center">
             <Link
-              href="/education"
-              className="inline-flex items-center gap-2 px-8 py-4 font-heading font-bold text-base tracking-wide text-primary-navy bg-white border-2 border-white rounded-full shadow-lg transition-all duration-300 hover:bg-primary-navy hover:text-white hover:scale-105"
+              href="/internships"
+              className="inline-flex items-center gap-3 px-10 py-5 font-heading font-bold text-lg tracking-wide rounded-xl shadow-2xl transition-all duration-300 hover:scale-105"
+              style={{ 
+                color: '#000000',
+                backgroundColor: '#F4A261',
+                border: '4px solid #F4A261'
+              }}
             >
-              Get Started
-              <ArrowRight size={20} />
+              Explore Internships
+              <ArrowRight size={24} />
             </Link>
             
             <Link
-              href="#contact"
-              className="inline-flex items-center gap-2 px-8 py-4 font-heading font-bold text-base tracking-wide text-white bg-white/10 border-2 border-white rounded-full backdrop-blur-sm transition-all duration-300 hover:bg-white/20 hover:scale-105"
+              href="/education"
+              className="inline-flex items-center gap-3 px-10 py-5 font-heading font-bold text-lg tracking-wide bg-transparent rounded-xl backdrop-blur-sm transition-all duration-300 hover:scale-105 group"
+              style={{ 
+                color: '#FFFFFF',
+                border: '4px solid #FFFFFF'
+              }}
             >
-              Contact Us
-              <ArrowRight size={20} />
+              <span className="group-hover:text-[#1D3160] transition-colors">View Programs</span>
+              <ArrowRight size={24} className="group-hover:text-[#1D3160] transition-colors" />
             </Link>
           </div>
         </div>
