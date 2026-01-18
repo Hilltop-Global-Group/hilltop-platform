@@ -15,7 +15,7 @@ export default function RwandaKeyDetails() {
           <div className="bg-gray-50 p-6 rounded-2xl">
             <p className="text-sm text-gray-600 mb-2">Applications Close:</p>
             <p className="font-bold text-xl" style={{ color: '#F4A261' }}>March 14, 2026</p>
-          </div>
+          </div> 
 
           <div className="bg-gray-50 p-6 rounded-2xl">
             <p className="text-sm text-gray-600 mb-2">Pre-departure Sessions:</p>

@@ -35,7 +35,7 @@ export default function RwandaApplication() {
           style={{ backgroundColor: '#1D3160' }}
         >
           Apply Now
-          <ArrowRight size={20} />
+          <ArrowRight size={20} /> 
         </button>
 
         <div className="mt-16 p-8 bg-gray-50 rounded-2xl text-left">
