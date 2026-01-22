@@ -22,6 +22,11 @@ export const metadata: Metadata = {
   title: "Hilltop Global Group | International Internships in Africa",
   description: "Gain real-world professional experience through internships in Ghana and Rwanda. Transform your career with Hilltop Global Group.",
   keywords: ["international internships", "africa internships", "ghana internships", "rwanda internships", "study abroad", "global experience"],
+  icons: {
+    icon: "/logos/fav.ico",
+    shortcut: "/logos/fav.ico",
+    apple: "/logos/fav.ico",
+  },
 };
 
 export default function RootLayout({
