@@ -122,8 +122,8 @@ export default function Hero() {
       </div>
 
       {/* Wave Divider */}
-      <div className="absolute bottom-0 left-0 right-0 z-[2]">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" className="w-full">
+      <div className="absolute bottom-0 left-0 right-0 z-[2] -mb-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" className="w-full block">
           <path fill="#ffffff" d="M0,50 Q360,0 720,50 T1440,50 L1440,100 L0,100 Z"></path>
         </svg>
       </div>
