@@ -18,7 +18,11 @@ interface Internship {
     _internship_duration?: string;
     _internship_format?: string;
     _internship_gallery?: string;
+    _internship_application_status?: string;
   };
+  internship_locations?: Array<{ id: number; name: string }>;
+  internship_fields?: Array<{ id: number; name: string }>;
+  internship_programs?: Array<{ id: number; name: string }>;
   _embedded?: {
     'wp:featuredmedia'?: Array<{
       source_url: string;
