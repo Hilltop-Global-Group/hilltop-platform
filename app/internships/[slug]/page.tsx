@@ -95,8 +95,9 @@ function decodeHtmlEntities(text: string) {
   return text.replace(/&#?\w+;/g, match => entities[match] || match);
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const internship = await getInternship(params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const internship = await getInternship(slug);
   
   if (!internship) {
     return {
@@ -110,8 +111,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-export default async function InternshipPage({ params }: { params: { slug: string } }) {
-  const internship = await getInternship(params.slug);
+export default async function InternshipPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const internship = await getInternship(slug);
 
   if (!internship) {
     notFound();
