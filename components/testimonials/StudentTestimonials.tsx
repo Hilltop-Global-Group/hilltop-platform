@@ -119,25 +119,25 @@ const testimonialsColumn3 = [
 
 function TestimonialCard({ testimonial }: { testimonial: typeof testimonialsColumn1[0] }) {
   return (
-    <div className="flex-shrink-0 w-[380px] bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 mb-6">
-      <div className="flex items-center gap-1 mb-4">
+    <div className="flex-shrink-0 w-[300px] sm:w-[380px] bg-white p-4 sm:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 mb-4 sm:mb-6">
+      <div className="flex items-center gap-1 mb-3 sm:mb-4">
         {[...Array(testimonial.rating)].map((_, i) => (
-          <Star key={i} size={18} fill="#F4A261" style={{ color: '#F4A261' }} />
+          <Star key={i} size={16} className="sm:w-[18px] sm:h-[18px]" fill="#F4A261" style={{ color: '#F4A261' }} />
         ))}
       </div>
 
-      <Quote size={36} style={{ color: '#F4A261' }} className="mb-4" />
+      <Quote size={28} className="sm:w-9 sm:h-9 mb-3 sm:mb-4" style={{ color: '#F4A261' }} />
       
-      <p className="text-gray-700 text-base mb-6 leading-relaxed">
+      <p className="text-gray-700 text-sm sm:text-base mb-4 sm:mb-6 leading-relaxed">
         "{testimonial.quote}"
       </p>
       
-      <div className="border-t pt-4" style={{ borderColor: '#F4A261' }}>
-        <p className="font-heading font-bold text-lg" style={{ color: '#1D3160' }}>
+      <div className="border-t pt-3 sm:pt-4" style={{ borderColor: '#F4A261' }}>
+        <p className="font-heading font-bold text-base sm:text-lg" style={{ color: '#1D3160' }}>
           {testimonial.name}
         </p>
-        <p className="text-gray-600 text-sm">{testimonial.role}</p>
-        <p className="text-gray-500 text-sm">{testimonial.university}</p>
+        <p className="text-gray-600 text-xs sm:text-sm">{testimonial.role}</p>
+        <p className="text-gray-500 text-xs sm:text-sm">{testimonial.university}</p>
       </div>
     </div>
   );
@@ -202,9 +202,9 @@ export default function StudentTestimonials() {
         </div>
       </div>
 
-      <div className="flex gap-6 justify-center max-w-7xl mx-auto px-4">
+      <div className="flex gap-3 sm:gap-6 justify-center max-w-7xl mx-auto px-2 sm:px-4">
         {/* Column 1 - Scrolling Down */}
-        <div className="overflow-hidden h-[800px] w-full max-w-[380px]">
+        <div className="overflow-hidden h-[600px] sm:h-[800px] w-full max-w-[300px] sm:max-w-[380px]">
           <div ref={column1Ref} className="flex flex-col">
             {[...testimonialsColumn1, ...testimonialsColumn1].map((testimonial, index) => (
               <TestimonialCard key={`col1-${index}`} testimonial={testimonial} />
@@ -213,7 +213,7 @@ export default function StudentTestimonials() {
         </div>
 
         {/* Column 2 - Scrolling Up (opposite to Column 1) */}
-        <div className="overflow-hidden h-[800px] w-full max-w-[380px]">
+        <div className="overflow-hidden h-[600px] sm:h-[800px] w-full max-w-[300px] sm:max-w-[380px]">
           <div ref={column2Ref} className="flex flex-col">
             {[...testimonialsColumn2, ...testimonialsColumn2].map((testimonial, index) => (
               <TestimonialCard key={`col2-${index}`} testimonial={testimonial} />
@@ -221,8 +221,8 @@ export default function StudentTestimonials() {
           </div>
         </div>
 
-        {/* Column 3 - Scrolling Down (opposite to Column 2) */}
-        <div className="overflow-hidden h-[800px] w-full max-w-[380px]">
+        {/* Column 3 - Scrolling Down (opposite to Column 2) - Hidden on mobile */}
+        <div className="hidden md:block overflow-hidden h-[800px] w-full max-w-[380px]">
           <div ref={column3Ref} className="flex flex-col">
             {[...testimonialsColumn3, ...testimonialsColumn3].map((testimonial, index) => (
               <TestimonialCard key={`col3-${index}`} testimonial={testimonial} />
