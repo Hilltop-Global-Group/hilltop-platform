@@ -43,12 +43,6 @@ export default function TestimonialsHero() {
           </div>
         </div>
       </div>
-
-      <div className="absolute bottom-0 left-0 right-0">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 80" className="w-full">
-          <path fill="#ffffff" d="M0,40 Q360,0 720,40 T1440,40 L1440,80 L0,80 Z"></path>
-        </svg>
-      </div>
     </section>
   );
 }

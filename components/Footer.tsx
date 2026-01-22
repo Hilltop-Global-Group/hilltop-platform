@@ -51,6 +51,22 @@ export default function Footer() {
               </a>
             ))}
           </div>
+
+          {/* Google Maps Embed */}
+          <div className="mt-12 max-w-5xl mx-auto">
+            <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-white/20">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3105.102731919874!2d-77.027459!3d38.898766!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7b795ab298343%3A0x7fca3fbfe9beb021!2sMetro%20Offices!5e0!3m2!1sen!2suk!4v1769112077900!5m2!1sen!2suk" 
+                width="100%" 
+                height="450" 
+                style={{ border: 0 }} 
+                allowFullScreen 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full"
+              />
+            </div>
+          </div>
         </div>
       </div>
 
