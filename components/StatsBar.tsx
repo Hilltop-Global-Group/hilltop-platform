@@ -54,7 +54,7 @@ function Counter({ end, duration = 2000, suffix = '' }: CounterProps) {
   }, [end, duration, hasAnimated]);
 
   return (
-    <div ref={counterRef} className="text-5xl font-heading font-bold mb-2" style={{ color: '#1D3160' }}>
+    <div ref={counterRef} className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-2" style={{ color: '#1D3160' }}>
       {count}{suffix}
     </div>
   );
@@ -70,11 +70,11 @@ export default function StatsBar() {
   return (
     <section className="py-12 bg-white border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+        <div className="grid grid-cols-3 gap-4 sm:gap-8 text-center">
           {stats.map((stat) => (
             <div key={stat.label}>
               <Counter end={stat.value} suffix={stat.suffix} />
-              <div className="text-gray-600 font-body">{stat.label}</div>
+              <div className="text-gray-600 font-body text-sm sm:text-base">{stat.label}</div>
             </div>
           ))}
         </div>
