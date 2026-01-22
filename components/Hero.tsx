@@ -91,8 +91,8 @@ export default function Hero() {
         {/* CTA Button */}
         <div className="animate-fadeUp" style={{ animationDelay: '0.5s' }}>
           <Link
-            href="#learn-more"
-            className="group inline-flex items-center gap-2 px-8 py-4 font-heading font-bold text-base tracking-wide text-primary-navy bg-white border-2 border-white rounded-full shadow-[0_8px_24px_rgba(255,255,255,0.18)] transition-all duration-300 hover:bg-primary-navy hover:text-white hover:border-primary-navy hover:-translate-y-1 hover:scale-105 hover:shadow-[0_15px_35px_rgba(29,49,96,0.4)]"
+            href="/about"
+            className="group inline-flex items-center gap-2 px-8 py-4 font-heading font-bold text-base tracking-wide text-primary-navy bg-white border-2 border-white rounded shadow-[0_8px_24px_rgba(255,255,255,0.18)] transition-all duration-300 hover:bg-primary-navy hover:text-white hover:border-primary-navy hover:-translate-y-1 hover:scale-105 hover:shadow-[0_15px_35px_rgba(29,49,96,0.4)]"
           >
             Learn more
             <svg 

@@ -11,7 +11,6 @@ const navLinks = [
   { name: 'INTERNSHIPS', href: '/internships' },
   { name: 'TESTIMONIALS', href: '/testimonials' },
   { name: 'NEWS', href: '/news' },
-  { name: 'CONTACT', href: '/contact' },
 ];
 
 export default function Navbar() {
