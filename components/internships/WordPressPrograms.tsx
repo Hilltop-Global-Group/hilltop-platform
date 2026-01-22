@@ -90,20 +90,14 @@ export default async function WordPressPrograms() {
             const cardColor = index % 2 === 0 ? '#1D3160' : '#F4A261';
             const isClosed = internship.meta._internship_application_status === 'closed';
             
-            const CardWrapper = isClosed ? 'div' : Link;
-            const cardProps = isClosed 
-              ? { key: internship.id }
-              : { key: internship.id, href: `/internships/${internship.slug}` };
+            const cardClassName = `bg-white rounded-3xl overflow-hidden shadow-xl transition-all duration-500 ${
+              isClosed 
+                ? 'opacity-75 cursor-not-allowed' 
+                : 'group hover:shadow-2xl hover:-translate-y-2 cursor-pointer'
+            }`;
             
-            return (
-              <CardWrapper
-                {...cardProps}
-                className={`bg-white rounded-3xl overflow-hidden shadow-xl transition-all duration-500 ${
-                  isClosed 
-                    ? 'opacity-75 cursor-not-allowed' 
-                    : 'group hover:shadow-2xl hover:-translate-y-2 cursor-pointer'
-                }`}
-              >
+            const cardContent = (
+              <>
                 {/* Image Header */}
                 <div className="relative h-64 overflow-hidden">
                   <div
@@ -218,7 +212,17 @@ export default async function WordPressPrograms() {
                     )}
                   </div>
                 </div>
-              </CardWrapper>
+              </>
+            );
+            
+            return isClosed ? (
+              <div key={internship.id} className={cardClassName}>
+                {cardContent}
+              </div>
+            ) : (
+              <Link key={internship.id} href={`/internships/${internship.slug}`} className={cardClassName}>
+                {cardContent}
+              </Link>
             );
           })}
         </div>
