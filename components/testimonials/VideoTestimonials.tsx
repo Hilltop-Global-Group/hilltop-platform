@@ -34,13 +34,13 @@ export default function VideoTestimonials() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-8">
           {videos.map((video, index) => (
             <div
               key={index}
               className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
             >
-              <div className="relative h-64 overflow-hidden cursor-pointer">
+              <div className="relative h-48 sm:h-64 overflow-hidden cursor-pointer">
                 <div
                   className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
                   style={{ backgroundImage: `url('${video.thumbnail}')` }}
@@ -49,9 +49,9 @@ export default function VideoTestimonials() {
                 
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div 
-                    className="w-20 h-20 rounded-full flex items-center justify-center bg-white/90 backdrop-blur-sm group-hover:scale-110 transition-all duration-300 shadow-xl"
+                    className="w-12 h-12 sm:w-20 sm:h-20 rounded-full flex items-center justify-center bg-white/90 backdrop-blur-sm group-hover:scale-110 transition-all duration-300 shadow-xl"
                   >
-                    <Play size={32} style={{ color: '#1D3160' }} fill="#1D3160" className="ml-1" />
+                    <Play size={24} className="sm:w-8 sm:h-8" style={{ color: '#1D3160' }} fill="#1D3160" />
                   </div>
                 </div>
 
@@ -60,11 +60,11 @@ export default function VideoTestimonials() {
                 </div>
               </div>
               
-              <div className="p-6">
-                <h3 className="font-heading font-bold text-xl mb-3" style={{ color: '#1D3160' }}>
+              <div className="p-3 sm:p-6">
+                <h3 className="font-heading font-bold text-sm sm:text-xl mb-2 sm:mb-3" style={{ color: '#1D3160' }}>
                   {video.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-600 leading-relaxed text-xs sm:text-base">
                   {video.description}
                 </p>
               </div>

@@ -94,7 +94,7 @@ export default function Footer() {
               </h4>
               <ul className="space-y-2 text-gray-600">
                 <li>(123) 456-7890</li>
-                <li>info@hilltopglobal.com</li>
+                <li>contactus@hilltopglobalgroup.com</li>
                 <li>700 12th Street NW, Suite 700.<br />Washington, DC 20005</li>
               </ul>
             </div>
