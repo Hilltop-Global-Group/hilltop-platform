@@ -11,6 +11,7 @@ const navLinks = [
   { name: 'INTERNSHIPS', href: '/internships' },
   { name: 'TESTIMONIALS', href: '/testimonials' },
   { name: 'NEWS', href: '/news' },
+  { name: 'CONTACT', href: '/contact' },
 ];
 
 export default function Navbar() {
@@ -58,7 +59,7 @@ export default function Navbar() {
           {/* CTA Button */}
           <div className="hidden lg:block">
             <Link
-              href="#apply"
+              href="/contact"
               className="inline-block px-6 py-2.5 text-white font-heading font-bold text-sm tracking-wide rounded hover:bg-opacity-90 transition-all"
               style={{ backgroundColor: '#1D3160' }}
             >
@@ -91,7 +92,7 @@ export default function Navbar() {
                 </Link>
               ))}
               <Link
-                href="#apply"
+                href="/contact"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="inline-block px-6 py-2.5 text-white font-heading font-bold text-sm tracking-wide rounded text-center"
                 style={{ backgroundColor: '#1D3160' }}

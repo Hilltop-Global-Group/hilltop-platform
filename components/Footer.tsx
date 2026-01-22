@@ -78,9 +78,9 @@ export default function Footer() {
                 Navigation Links
               </h4>
               <ul className="space-y-2">
-                {['Home', 'About', 'Education', 'Internships', 'Testimonials', 'News'].map((link) => (
+                {['Home', 'About', 'Education', 'Internships', 'Testimonials', 'News', 'Contact'].map((link) => (
                   <li key={link}>
-                    <Link href={`/${link.toLowerCase()}`} className="text-gray-600 hover:opacity-80 transition-opacity">
+                    <Link href={link === 'Home' ? '/' : `/${link.toLowerCase()}`} className="text-gray-600 hover:opacity-80 transition-opacity">
                       {link}
                     </Link>
                   </li>
