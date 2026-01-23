@@ -54,7 +54,7 @@ function Counter({ end, duration = 2000, suffix = '' }: CounterProps) {
   }, [end, duration, hasAnimated]);
 
   return (
-    <div ref={counterRef} className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-2" style={{ color: '#1D3160' }}>
+    <div ref={counterRef} className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold mb-2" style={{ color: '#1D3160' }}>
       {count}{suffix}
     </div>
   );

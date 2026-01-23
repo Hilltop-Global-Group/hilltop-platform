@@ -59,7 +59,7 @@ export default function Navbar() {
           <div className="hidden lg:block">
             <Link
               href="/contact"
-              className="inline-block px-6 py-2.5 text-white font-heading font-bold text-sm tracking-wide rounded hover:bg-opacity-90 transition-all"
+              className="inline-block px-6 py-2.5 text-white font-serif font-bold text-sm tracking-wide rounded hover:bg-opacity-90 transition-all"
               style={{ backgroundColor: '#1D3160' }}
             >
               START YOUR JOURNEY
@@ -93,7 +93,7 @@ export default function Navbar() {
               <Link
                 href="/contact"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="inline-block px-6 py-2.5 text-white font-heading font-bold text-sm tracking-wide rounded text-center"
+                className="inline-block px-6 py-2.5 text-white font-serif font-bold text-sm tracking-wide rounded text-center"
                 style={{ backgroundColor: '#1D3160' }}
               >
                 START YOUR JOURNEY

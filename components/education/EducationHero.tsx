@@ -19,7 +19,7 @@ export default function EducationHero() {
             </span>
           </div>
           
-          <h1 className="font-heading font-bold text-4xl sm:text-5xl text-white mb-4">
+          <h1 className="font-serif font-bold text-4xl sm:text-5xl text-white mb-4">
             Education Programs
           </h1>
           

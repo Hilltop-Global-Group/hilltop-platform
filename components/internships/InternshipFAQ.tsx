@@ -53,7 +53,7 @@ export default function InternshipFAQ() {
     <section id="faq" className="py-20 bg-gray-50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="font-heading font-bold text-4xl sm:text-5xl mb-6" style={{ color: '#1D3160' }}>
+          <h2 className="font-serif font-bold text-4xl sm:text-5xl mb-6" style={{ color: '#1D3160' }}>
             Frequently Asked Questions
           </h2>
           <p className="text-xl text-gray-600">
@@ -65,13 +65,13 @@ export default function InternshipFAQ() {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg"
+              className="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg"
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
                 className="w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none"
               >
-                <span className="font-heading font-bold text-lg pr-4" style={{ color: '#1D3160' }}>
+                <span className="font-serif font-bold text-lg pr-4" style={{ color: '#1D3160' }}>
                   {faq.question}
                 </span>
                 <ChevronDown

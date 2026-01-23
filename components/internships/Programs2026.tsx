@@ -66,7 +66,7 @@ export default async function Programs2026() {
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="font-heading font-bold text-4xl sm:text-5xl mb-6" style={{ color: '#1D3160' }}>
+          <h2 className="font-serif font-bold text-4xl sm:text-5xl mb-6" style={{ color: '#1D3160' }}>
             Explore Our 2026 Internships
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto">
@@ -88,7 +88,7 @@ export default async function Programs2026() {
             return (
               <div
                 key={internship.id}
-                className="bg-white rounded-3xl overflow-hidden shadow-xl opacity-75"
+                className="bg-white rounded-lg overflow-hidden shadow-md opacity-75"
               >
                 {/* Image Header */}
                 <div className="relative h-64 overflow-hidden">
@@ -113,7 +113,7 @@ export default async function Programs2026() {
                   </div>
 
                   <div className="absolute bottom-4 left-4 right-4">
-                    <h3 className="font-heading font-bold text-2xl md:text-3xl text-white line-clamp-2">
+                    <h3 className="font-serif font-bold text-2xl md:text-3xl text-white line-clamp-2">
                       {decodeHtmlEntities(internship.title.rendered)}
                     </h3>
                   </div>
@@ -170,7 +170,7 @@ export default async function Programs2026() {
                   <div className="flex flex-col sm:flex-row gap-4">
                     <button
                       disabled
-                      className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3 font-heading font-bold text-white rounded-xl cursor-not-allowed opacity-50"
+                      className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3 font-serif font-bold text-white rounded-xl cursor-not-allowed opacity-50"
                       style={{ backgroundColor: '#6B7280' }}
                     >
                       Applications Closed

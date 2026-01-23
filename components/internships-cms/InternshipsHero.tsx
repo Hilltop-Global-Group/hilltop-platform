@@ -19,7 +19,7 @@ export default function InternshipsHero() {
             </span>
           </div>
           
-          <h1 className="font-heading font-bold text-5xl sm:text-6xl lg:text-7xl text-white mb-6">
+          <h1 className="font-serif font-bold text-5xl sm:text-6xl lg:text-7xl text-white mb-6">
             Internship Opportunities
           </h1>
           

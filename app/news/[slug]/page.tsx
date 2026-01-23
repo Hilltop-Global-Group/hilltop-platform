@@ -121,7 +121,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
 
           {/* Title */}
           <h1 
-            className="font-heading font-bold text-4xl sm:text-5xl lg:text-6xl text-white mb-6"
+            className="font-serif font-bold text-4xl sm:text-5xl lg:text-6xl text-white mb-6"
             dangerouslySetInnerHTML={{ __html: post.title.rendered }}
           />
 
@@ -143,7 +143,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
       {featuredImage && (
         <section className="py-0">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="relative w-full h-96 sm:h-[500px] rounded-3xl overflow-hidden shadow-2xl -mt-20 z-10">
+            <div className="relative w-full h-96 sm:h-[500px] rounded-lg overflow-hidden shadow-lg -mt-20 z-10">
               <Image
                 src={featuredImage}
                 alt={post.title.rendered}
@@ -161,7 +161,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div 
             className="prose prose-lg max-w-none
-              prose-headings:font-heading prose-headings:font-bold
+              prose-headings:font-serif prose-headings:font-bold
               prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6
               prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-4
               prose-p:text-gray-700 prose-p:leading-relaxed prose-p:mb-6
@@ -170,7 +170,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
               prose-ul:my-6 prose-ul:list-disc prose-ul:pl-6
               prose-ol:my-6 prose-ol:list-decimal prose-ol:pl-6
               prose-li:text-gray-700 prose-li:mb-2
-              prose-img:rounded-2xl prose-img:shadow-lg prose-img:my-8
+              prose-img:rounded-lg prose-img:shadow-lg prose-img:my-8
               prose-blockquote:border-l-4 prose-blockquote:border-accent-gold prose-blockquote:pl-6 prose-blockquote:italic prose-blockquote:text-gray-600"
             dangerouslySetInnerHTML={{ __html: post.content.rendered }}
           />
@@ -180,7 +180,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
       {/* CTA Section */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-heading font-bold text-3xl mb-6" style={{ color: '#1D3160' }}>
+          <h2 className="font-serif font-bold text-3xl mb-6" style={{ color: '#1D3160' }}>
             Ready to Get Started?
           </h2>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
@@ -189,14 +189,14 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
           <div className="flex flex-wrap gap-4 justify-center">
             <Link
               href="/internships"
-              className="px-8 py-4 font-heading font-bold text-white rounded-xl transition-all duration-300 hover:scale-105 shadow-lg"
+              className="px-8 py-4 font-serif font-bold text-white rounded-xl transition-all duration-300 hover:scale-105 shadow-lg"
               style={{ backgroundColor: '#1D3160' }}
             >
               Explore Internships
             </Link>
             <Link
               href="/education"
-              className="px-8 py-4 font-heading font-bold rounded-xl transition-all duration-300 hover:scale-105 shadow-lg border-2"
+              className="px-8 py-4 font-serif font-bold rounded-xl transition-all duration-300 hover:scale-105 shadow-lg border-2"
               style={{ borderColor: '#1D3160', color: '#1D3160' }}
             >
               View Programs

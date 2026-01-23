@@ -18,7 +18,7 @@ export default function FeaturedVideo() {
               Featured Interview
             </span>
           </div>
-          <h2 className="font-heading font-bold text-4xl sm:text-5xl text-navy-900 mb-6">
+          <h2 className="font-serif font-bold text-4xl sm:text-5xl text-navy-900 mb-6">
             He's Changing How the World Sees Africa – One Student at a Time
           </h2>
           <p className="text-lg text-gray-700 max-w-3xl mx-auto">
@@ -28,7 +28,7 @@ export default function FeaturedVideo() {
         </div>
 
         {/* Video Container */}
-        <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-navy-900">
+        <div className="relative rounded-lg overflow-hidden shadow-lg bg-navy-900">
           {/* Decorative gradient overlay on edges */}
           <div className="absolute inset-0 bg-gradient-to-tr from-navy-600/20 via-transparent to-gold-400/20 pointer-events-none z-10" />
           
@@ -58,7 +58,7 @@ export default function FeaturedVideo() {
                     <div className="absolute inset-0 rounded-full blur-3xl scale-150 group-hover:scale-[1.8] transition-transform duration-500" style={{ backgroundColor: 'rgba(244, 162, 97, 0.4)' }} />
                     
                     {/* Play button circle - navy with gold border */}
-                    <div className="relative w-28 h-28 rounded-full flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-300" style={{ 
+                    <div className="relative w-28 h-28 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300" style={{ 
                       background: 'linear-gradient(to bottom right, #1D3160, #0f1a3d)',
                       border: '4px solid #F4A261'
                     }}>
@@ -96,7 +96,7 @@ export default function FeaturedVideo() {
 
         {/* Quote */}
         <div className="mt-12 text-center">
-          <div className="max-w-3xl mx-auto p-8 rounded-2xl border-4 border-gold-400" style={{ backgroundColor: '#1D3160' }}>
+          <div className="max-w-3xl mx-auto p-8 rounded-lg border-4 border-gold-400" style={{ backgroundColor: '#1D3160' }}>
             <p className="text-white text-xl font-semibold italic mb-4">
               "Education is the most powerful weapon which you can use to change the world."
             </p>

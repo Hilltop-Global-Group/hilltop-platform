@@ -63,7 +63,7 @@ export default function ImpactStats() {
     <section ref={sectionRef} className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="font-heading font-bold text-4xl sm:text-5xl mb-6" style={{ color: '#1D3160' }}>
+          <h2 className="font-serif font-bold text-4xl sm:text-5xl mb-6" style={{ color: '#1D3160' }}>
             Our Impact
           </h2>
           <p className="text-xl text-gray-600">
@@ -77,23 +77,23 @@ export default function ImpactStats() {
             return (
               <div
                 key={index}
-                className="text-center p-8 bg-gray-50 rounded-2xl hover:shadow-xl transition-all duration-500"
+                className="text-center p-8 bg-gray-50 rounded-lg hover:shadow-md transition-all duration-500"
                 style={{
                   animation: hasAnimated ? `fadeInUp 0.6s ease-out ${index * 0.1}s both` : 'none'
                 }}
               >
                 <div 
-                  className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6"
+                  className="w-16 h-16 rounded-lg flex items-center justify-center mx-auto mb-6"
                   style={{ backgroundColor: index % 2 === 0 ? '#1D3160' : '#F4A261' }}
                 >
                   <Icon size={32} className="text-white" strokeWidth={2} />
                 </div>
                 
-                <div className="text-5xl font-heading font-bold mb-2" style={{ color: '#1D3160' }}>
+                <div className="text-5xl font-serif font-bold mb-2" style={{ color: '#1D3160' }}>
                   {hasAnimated ? stat.number : 0}{stat.suffix}
                 </div>
                 
-                <div className="font-heading font-bold text-lg mb-2" style={{ color: '#1D3160' }}>
+                <div className="font-serif font-bold text-lg mb-2" style={{ color: '#1D3160' }}>
                   {stat.label}
                 </div>
                 

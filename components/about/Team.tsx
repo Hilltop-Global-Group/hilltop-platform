@@ -28,7 +28,7 @@ export default function Team() {
             <span className="inline-block text-sm font-bold text-black uppercase tracking-wider mb-4 border-2 border-gold-400 px-6 py-2 rounded-full bg-gold-400">
               The Team
             </span>
-            <h2 className="font-heading font-bold text-4xl sm:text-5xl text-navy-900 mb-4">
+            <h2 className="font-serif font-bold text-4xl sm:text-5xl text-navy-900 mb-4">
               Meet Our Team
             </h2>
             <p className="text-lg text-gray-700 max-w-2xl mx-auto">
@@ -44,7 +44,7 @@ export default function Team() {
               animation="zoom-in"
               delay={index * 100}
             >
-              <div className="group relative bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-4 border-navy-900 hover:border-gold-400">
+              <div className="group relative bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-lg transition-all duration-500 hover:-translate-y-2 border-4 border-navy-900 hover:border-gold-400">
                 <div className="relative h-[500px] overflow-hidden">
                   <div
                     className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
@@ -56,7 +56,7 @@ export default function Team() {
                     <p className="text-sm font-bold mb-2 uppercase tracking-wide" style={{ color: '#F4A261' }}>
                       {member.role}
                     </p>
-                    <h3 className="font-heading font-bold text-3xl mb-6" style={{ color: '#FFFFFF' }}>
+                    <h3 className="font-serif font-bold text-3xl mb-6" style={{ color: '#FFFFFF' }}>
                       {member.name}
                     </h3>
                     

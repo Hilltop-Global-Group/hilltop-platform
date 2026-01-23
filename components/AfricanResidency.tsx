@@ -8,10 +8,10 @@ export default function AfricanResidency() {
     <section className="py-20" style={{ backgroundColor: '#1D3160' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="font-heading font-bold text-4xl sm:text-5xl text-white mb-6">
+          <h2 className="font-serif font-bold text-4xl sm:text-5xl text-white mb-6">
             Explore More About what Hilltop Does
           </h2>
-          <h3 className="font-heading font-bold text-3xl mb-4" style={{ color: '#F4A261' }}>
+          <h3 className="font-serif font-bold text-3xl mb-4" style={{ color: '#F4A261' }}>
             Hilltop's African Business Residency
           </h3>
           <p className="font-body text-white/80 text-lg max-w-2xl mx-auto">
@@ -38,7 +38,7 @@ export default function AfricanResidency() {
         <div className="text-center">
           <Link
             href="#learn-more"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded font-heading font-bold text-sm tracking-wide hover:bg-opacity-90 transition-all"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded font-serif font-bold text-sm tracking-wide hover:bg-opacity-90 transition-all"
             style={{ backgroundColor: '#F4A261', color: '#1D3160' }}
           >
             Learn More

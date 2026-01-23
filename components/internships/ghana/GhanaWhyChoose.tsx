@@ -31,7 +31,7 @@ export default function GhanaWhyChoose() {
           {reasons.map((reason) => (
             <div
               key={reason.number}
-              className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
+              className="bg-white p-8 rounded-lg shadow-lg hover:shadow-md transition-all duration-300"
             >
               <div className="flex items-start gap-4">
                 <div 
@@ -41,7 +41,7 @@ export default function GhanaWhyChoose() {
                   {reason.number}
                 </div>
                 <div>
-                  <h3 className="font-heading font-bold text-xl mb-3" style={{ color: '#1D3160' }}>
+                  <h3 className="font-serif font-bold text-xl mb-3" style={{ color: '#1D3160' }}>
                     {reason.title}
                   </h3>
                   <p className="text-gray-700 leading-relaxed">

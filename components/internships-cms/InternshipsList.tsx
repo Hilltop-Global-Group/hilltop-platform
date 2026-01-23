@@ -79,13 +79,13 @@ export default function InternshipsList({ internships, locations, fields }: Inte
         <div className="mb-12 space-y-6">
           {/* Location Filter */}
           <div>
-            <h3 className="font-heading font-semibold text-lg mb-3" style={{ color: '#1D3160' }}>
+            <h3 className="font-serif font-semibold text-lg mb-3" style={{ color: '#1D3160' }}>
               Filter by Location
             </h3>
             <div className="flex flex-wrap gap-3">
               <button
                 onClick={() => setActiveLocation(null)}
-                className={`px-6 py-3 font-heading font-semibold text-sm rounded-full transition-all duration-300 ${
+                className={`px-6 py-3 font-serif font-semibold text-sm rounded-full transition-all duration-300 ${
                   activeLocation === null
                     ? 'text-white shadow-lg'
                     : 'text-gray-700 bg-gray-100 hover:bg-gray-200'
@@ -102,7 +102,7 @@ export default function InternshipsList({ internships, locations, fields }: Inte
                   <button
                     key={location.id}
                     onClick={() => setActiveLocation(location.id)}
-                    className={`px-6 py-3 font-heading font-semibold text-sm rounded-full transition-all duration-300 ${
+                    className={`px-6 py-3 font-serif font-semibold text-sm rounded-full transition-all duration-300 ${
                       activeLocation === location.id
                         ? 'text-white shadow-lg'
                         : 'text-gray-700 bg-gray-100 hover:bg-gray-200'
@@ -119,13 +119,13 @@ export default function InternshipsList({ internships, locations, fields }: Inte
 
           {/* Field Filter */}
           <div>
-            <h3 className="font-heading font-semibold text-lg mb-3" style={{ color: '#1D3160' }}>
+            <h3 className="font-serif font-semibold text-lg mb-3" style={{ color: '#1D3160' }}>
               Filter by Field
             </h3>
             <div className="flex flex-wrap gap-3">
               <button
                 onClick={() => setActiveField(null)}
-                className={`px-6 py-3 font-heading font-semibold text-sm rounded-full transition-all duration-300 ${
+                className={`px-6 py-3 font-serif font-semibold text-sm rounded-full transition-all duration-300 ${
                   activeField === null
                     ? 'text-white shadow-lg'
                     : 'text-gray-700 bg-gray-100 hover:bg-gray-200'
@@ -142,7 +142,7 @@ export default function InternshipsList({ internships, locations, fields }: Inte
                   <button
                     key={field.id}
                     onClick={() => setActiveField(field.id)}
-                    className={`px-6 py-3 font-heading font-semibold text-sm rounded-full transition-all duration-300 ${
+                    className={`px-6 py-3 font-serif font-semibold text-sm rounded-full transition-all duration-300 ${
                       activeField === field.id
                         ? 'text-white shadow-lg'
                         : 'text-gray-700 bg-gray-100 hover:bg-gray-200'
@@ -173,7 +173,7 @@ export default function InternshipsList({ internships, locations, fields }: Inte
               return (
                 <article
                   key={internship.id}
-                  className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+                  className="group bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-lg transition-all duration-500 hover:-translate-y-2"
                 >
                   <div className="relative h-56 overflow-hidden bg-gray-200">
                     {featuredImage ? (
@@ -209,7 +209,7 @@ export default function InternshipsList({ internships, locations, fields }: Inte
 
                   <div className="p-6">
                     <h3 
-                      className="font-heading font-bold text-xl mb-3 line-clamp-2" 
+                      className="font-serif font-bold text-xl mb-3 line-clamp-2" 
                       style={{ color: '#1D3160' }}
                       dangerouslySetInnerHTML={{ __html: internship.title.rendered }}
                     />

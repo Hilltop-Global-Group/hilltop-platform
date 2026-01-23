@@ -9,7 +9,7 @@ export default function Partners() {
   return (
     <section className="py-16 bg-white border-y border-gray-200 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <p className="text-center font-heading font-semibold text-gray-400 text-sm tracking-widest uppercase mb-12">
+        <p className="text-center font-serif font-semibold text-gray-400 text-sm tracking-widest uppercase mb-12">
           Our Partners
         </p>
 
@@ -28,7 +28,7 @@ export default function Partners() {
                   className="flex items-center justify-center px-12 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 flex-shrink-0"
                   style={{ minWidth: '200px' }}
                 >
-                  <span className="font-heading font-bold text-2xl text-gray-400 whitespace-nowrap">
+                  <span className="font-serif font-bold text-2xl text-gray-400 whitespace-nowrap">
                     {partner.logo}
                   </span>
                 </div>
@@ -40,7 +40,7 @@ export default function Partners() {
                   className="flex items-center justify-center px-12 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 flex-shrink-0"
                   style={{ minWidth: '200px' }}
                 >
-                  <span className="font-heading font-bold text-2xl text-gray-400 whitespace-nowrap">
+                  <span className="font-serif font-bold text-2xl text-gray-400 whitespace-nowrap">
                     {partner.logo}
                   </span>
                 </div>
@@ -52,7 +52,7 @@ export default function Partners() {
                   className="flex items-center justify-center px-12 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 flex-shrink-0"
                   style={{ minWidth: '200px' }}
                 >
-                  <span className="font-heading font-bold text-2xl text-gray-400 whitespace-nowrap">
+                  <span className="font-serif font-bold text-2xl text-gray-400 whitespace-nowrap">
                     {partner.logo}
                   </span>
                 </div>

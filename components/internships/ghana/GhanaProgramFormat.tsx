@@ -2,7 +2,7 @@ export default function GhanaProgramFormat() {
   return (
     <section className="py-20 bg-gray-50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="font-heading font-bold text-4xl mb-8 text-center" style={{ color: '#1D3160' }}>
+        <h2 className="font-serif font-bold text-4xl mb-8 text-center" style={{ color: '#1D3160' }}>
           Program Format
         </h2>
         <p className="text-xl text-gray-600 text-center mb-12">
@@ -10,15 +10,15 @@ export default function GhanaProgramFormat() {
         </p>
 
         <div className="grid md:grid-cols-2 gap-8">
-          <div className="bg-white p-8 rounded-2xl shadow-lg">
+          <div className="bg-white p-8 rounded-lg shadow-lg">
             <div className="text-center mb-6">
               <div 
-                className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold"
+                className="w-16 h-16 rounded-lg flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold"
                 style={{ backgroundColor: '#1D3160' }}
               >
                 1
               </div>
-              <h3 className="font-heading font-bold text-2xl" style={{ color: '#1D3160' }}>
+              <h3 className="font-serif font-bold text-2xl" style={{ color: '#1D3160' }}>
                 Option 1: Full In-Country
               </h3>
             </div>
@@ -27,15 +27,15 @@ export default function GhanaProgramFormat() {
             </p>
           </div>
 
-          <div className="bg-white p-8 rounded-2xl shadow-lg">
+          <div className="bg-white p-8 rounded-lg shadow-lg">
             <div className="text-center mb-6">
               <div 
-                className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold"
+                className="w-16 h-16 rounded-lg flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold"
                 style={{ backgroundColor: '#F4A261' }}
               >
                 2
               </div>
-              <h3 className="font-heading font-bold text-2xl" style={{ color: '#1D3160' }}>
+              <h3 className="font-serif font-bold text-2xl" style={{ color: '#1D3160' }}>
                 Option 2: Hybrid Format
               </h3>
             </div>

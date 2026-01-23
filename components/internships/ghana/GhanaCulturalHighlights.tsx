@@ -35,7 +35,7 @@ export default function GhanaCulturalHighlights() {
   return (
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="font-heading font-bold text-4xl mb-6 text-center" style={{ color: '#1D3160' }}>
+        <h2 className="font-serif font-bold text-4xl mb-6 text-center" style={{ color: '#1D3160' }}>
           Cultural Highlights
         </h2>
         <p className="text-xl text-gray-600 text-center mb-12">
@@ -46,7 +46,7 @@ export default function GhanaCulturalHighlights() {
           {highlights.map((highlight, index) => (
             <div
               key={index}
-              className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500"
+              className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-lg transition-all duration-500"
             >
               <div className="relative h-80">
                 <div
@@ -56,7 +56,7 @@ export default function GhanaCulturalHighlights() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
                 
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                  <h3 className="font-heading font-bold text-2xl mb-2">
+                  <h3 className="font-serif font-bold text-2xl mb-2">
                     {highlight.title}
                   </h3>
                   <p className="text-white/90">

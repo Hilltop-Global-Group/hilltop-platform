@@ -92,7 +92,7 @@ export default function Testimonials() {
             <span className="inline-block text-sm font-bold text-black uppercase tracking-wider mb-4 border-2 border-gold-400 px-6 py-2 rounded-full bg-gold-400">
               Testimonials
             </span>
-            <h2 className="font-heading font-bold text-4xl sm:text-5xl mb-6 text-navy-900">
+            <h2 className="font-serif font-bold text-4xl sm:text-5xl mb-6 text-navy-900">
               Trusted by Students & Partners
             </h2>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto">
@@ -114,7 +114,7 @@ export default function Testimonials() {
         {[...testimonials, ...testimonials, ...testimonials].map((testimonial, index) => (
           <div
             key={index}
-            className="flex-shrink-0 w-[450px] bg-white p-10 rounded-2xl shadow-2xl border-4 border-navy-900 hover:border-gold-400 transition-all duration-300"
+            className="flex-shrink-0 w-[450px] bg-white p-10 rounded-lg shadow-lg border-4 border-navy-900 hover:border-gold-400 transition-all duration-300"
           >
             <div className="mb-6">
               <div className="w-14 h-14 rounded-full bg-gold-400 flex items-center justify-center">
@@ -127,7 +127,7 @@ export default function Testimonials() {
             </p>
             
             <div className="border-t-4 border-gold-400 pt-6">
-              <p className="font-heading font-bold text-xl text-navy-900 mb-1">
+              <p className="font-serif font-bold text-xl text-navy-900 mb-1">
                 {testimonial.name}
               </p>
               <p className="text-gray-600 text-sm font-semibold uppercase tracking-wide">

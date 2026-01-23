@@ -53,7 +53,7 @@ export default function MinimalValues() {
             <span className="inline-block text-sm font-bold text-black uppercase tracking-wider mb-4 border-2 border-gold-400 px-6 py-2 rounded-full bg-gold-400">
               Our Values
             </span>
-            <h2 className="font-heading font-bold text-4xl sm:text-5xl text-navy-900 mb-4">
+            <h2 className="font-serif font-bold text-4xl sm:text-5xl text-navy-900 mb-4">
               What Defines Us
             </h2>
             <p className="text-lg text-black max-w-2xl mx-auto">
@@ -72,10 +72,10 @@ export default function MinimalValues() {
               <div
                 onMouseEnter={() => setHoveredValue(value.id)}
                 onMouseLeave={() => setHoveredValue(null)}
-                className={`relative rounded-2xl overflow-hidden transition-all duration-500 cursor-pointer group border-4 ${
+                className={`relative rounded-lg overflow-hidden transition-all duration-500 cursor-pointer group border-4 ${
                   hoveredValue === value.id
-                    ? 'shadow-2xl shadow-gold-400/50 scale-[1.02] border-gold-400 bg-navy-900'
-                    : 'shadow-lg hover:shadow-xl border-navy-900 bg-white'
+                    ? 'shadow-lg shadow-gold-400/50 scale-[1.02] border-gold-400 bg-navy-900'
+                    : 'shadow-lg hover:shadow-md border-navy-900 bg-white'
                 }`}
               >
                 {/* Left accent bar */}
@@ -93,7 +93,7 @@ export default function MinimalValues() {
                         <div className="absolute inset-0 bg-gold-400/30 blur-2xl" />
                       )}
                       <span
-                        className={`relative font-heading font-bold transition-all duration-500 ${
+                        className={`relative font-serif font-bold transition-all duration-500 ${
                           hoveredValue === value.id
                             ? 'text-8xl text-gold-400'
                             : 'text-7xl text-gray-200'
@@ -106,7 +106,7 @@ export default function MinimalValues() {
                     {/* Content */}
                     <div className="flex-1">
                       <div className="mb-3">
-                        <h3 className={`font-heading font-bold text-3xl mb-1 transition-colors duration-500 ${
+                        <h3 className={`font-serif font-bold text-3xl mb-1 transition-colors duration-500 ${
                           hoveredValue === value.id ? 'text-white' : 'text-navy-900'
                         }`}>
                           {value.title}

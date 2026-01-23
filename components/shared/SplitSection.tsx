@@ -35,7 +35,7 @@ export default function SplitSection({
         >
           <div className="max-w-xl">
             <div className={`border-2 ${borderColor} p-8 sm:p-10 lg:p-12 rounded-lg backdrop-blur-sm`}>
-              <h2 className={`font-heading font-bold text-3xl sm:text-4xl lg:text-5xl mb-6 ${textColor}`}>
+              <h2 className={`font-serif font-bold text-3xl sm:text-4xl lg:text-5xl mb-6 ${textColor}`}>
                 {title}
               </h2>
               <div className={`text-base sm:text-lg leading-relaxed ${textColor} opacity-90`}>

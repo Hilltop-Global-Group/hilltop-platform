@@ -2,7 +2,7 @@ export default function GhanaFormat() {
   return (
     <section className="py-20 bg-white">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="font-heading font-bold text-4xl sm:text-5xl mb-12 text-center" style={{ color: '#1D3160' }}>
+        <h2 className="font-serif font-bold text-4xl sm:text-5xl mb-12 text-center" style={{ color: '#1D3160' }}>
           Program Format
         </h2>
 
@@ -11,7 +11,7 @@ export default function GhanaFormat() {
         </p>
 
         <div className="grid md:grid-cols-2 gap-8">
-          <div className="bg-gray-50 p-8 rounded-2xl shadow-lg border-2 border-transparent hover:border-current transition-all duration-300" style={{ color: '#1D3160' }}>
+          <div className="bg-gray-50 p-8 rounded-lg shadow-lg border-2 border-transparent hover:border-current transition-all duration-300" style={{ color: '#1D3160' }}>
             <div className="text-center mb-4">
               <div 
                 className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold"
@@ -19,7 +19,7 @@ export default function GhanaFormat() {
               >
                 1
               </div>
-              <h3 className="font-heading font-bold text-2xl mb-2" style={{ color: '#1D3160' }}>
+              <h3 className="font-serif font-bold text-2xl mb-2" style={{ color: '#1D3160' }}>
                 Option 1: Full In-Country
               </h3>
             </div>
@@ -28,7 +28,7 @@ export default function GhanaFormat() {
             </p>
           </div>
 
-          <div className="bg-gray-50 p-8 rounded-2xl shadow-lg border-2 border-transparent hover:border-current transition-all duration-300" style={{ color: '#F4A261' }}>
+          <div className="bg-gray-50 p-8 rounded-lg shadow-lg border-2 border-transparent hover:border-current transition-all duration-300" style={{ color: '#F4A261' }}>
             <div className="text-center mb-4">
               <div 
                 className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold"
@@ -36,7 +36,7 @@ export default function GhanaFormat() {
               >
                 2
               </div>
-              <h3 className="font-heading font-bold text-2xl mb-2" style={{ color: '#1D3160' }}>
+              <h3 className="font-serif font-bold text-2xl mb-2" style={{ color: '#1D3160' }}>
                 Option 2: Hybrid Format
               </h3>
             </div>

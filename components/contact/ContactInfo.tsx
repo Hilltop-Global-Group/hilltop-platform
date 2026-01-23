@@ -32,7 +32,7 @@ export default function ContactInfo() {
     <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="font-heading font-bold text-3xl sm:text-4xl mb-4" style={{ color: '#1D3160' }}>
+          <h2 className="font-serif font-bold text-3xl sm:text-4xl mb-4" style={{ color: '#1D3160' }}>
             Contact Information
           </h2>
           <p className="text-gray-600 text-lg">
@@ -44,7 +44,7 @@ export default function ContactInfo() {
           {contactDetails.map((detail, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              className="bg-white rounded-lg p-6 shadow-lg hover:shadow-md transition-all duration-300 hover:-translate-y-1"
             >
               <div
                 className="w-14 h-14 rounded-full flex items-center justify-center mb-4"
@@ -53,7 +53,7 @@ export default function ContactInfo() {
                 <detail.icon size={28} className="text-white" />
               </div>
 
-              <h3 className="font-heading font-bold text-xl mb-3" style={{ color: '#1D3160' }}>
+              <h3 className="font-serif font-bold text-xl mb-3" style={{ color: '#1D3160' }}>
                 {detail.title}
               </h3>
 

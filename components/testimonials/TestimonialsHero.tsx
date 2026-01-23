@@ -19,7 +19,7 @@ export default function TestimonialsHero() {
             </span>
           </div>
           
-          <h1 className="font-heading font-bold text-4xl sm:text-5xl text-white mb-4">
+          <h1 className="font-serif font-bold text-4xl sm:text-5xl text-white mb-4">
             Testimonials
           </h1>
           
@@ -29,15 +29,15 @@ export default function TestimonialsHero() {
 
           <div className="flex flex-wrap justify-center gap-8 sm:gap-12">
             <div className="text-center">
-              <p className="text-3xl sm:text-4xl font-heading font-bold text-white mb-1">500+</p>
+              <p className="text-3xl sm:text-4xl font-serif font-bold text-white mb-1">500+</p>
               <p className="text-sm text-white/70">Students Placed</p>
             </div>
             <div className="text-center">
-              <p className="text-3xl sm:text-4xl font-heading font-bold text-white mb-1">50+</p>
+              <p className="text-3xl sm:text-4xl font-serif font-bold text-white mb-1">50+</p>
               <p className="text-sm text-white/70">Partner Organizations</p>
             </div>
             <div className="text-center">
-              <p className="text-3xl sm:text-4xl font-heading font-bold text-white mb-1">15+</p>
+              <p className="text-3xl sm:text-4xl font-serif font-bold text-white mb-1">15+</p>
               <p className="text-sm text-white/70">University Partners</p>
             </div>
           </div>

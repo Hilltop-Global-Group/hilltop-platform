@@ -46,7 +46,7 @@ export default function JourneyProgress() {
 
       {/* Journey status badge */}
       {scrollProgress > 5 && (
-        <div className="absolute top-6 right-6 bg-white/98 backdrop-blur-xl rounded-2xl px-6 py-4 shadow-2xl border-4 border-navy-900 pointer-events-auto">
+        <div className="absolute top-6 right-6 bg-white/98 backdrop-blur-xl rounded-lg px-6 py-4 shadow-lg border-4 border-navy-900 pointer-events-auto">
           <div className="flex items-center gap-4">
             <div className="relative">
               <div className="w-4 h-4 bg-gold-400 rounded-full animate-pulse" />

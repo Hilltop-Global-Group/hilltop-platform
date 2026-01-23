@@ -39,7 +39,7 @@ export default function Services() {
     <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="font-heading font-bold text-4xl sm:text-5xl mb-4" style={{ color: '#1D3160' }}>
+          <h2 className="font-serif font-bold text-4xl sm:text-5xl mb-4" style={{ color: '#1D3160' }}>
             Explore Our Key Services
           </h2>
           <p className="font-body text-gray-600 text-lg max-w-3xl mx-auto">
@@ -53,7 +53,7 @@ export default function Services() {
             return (
               <div
                 key={service.title}
-                className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+                className="group relative bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-lg transition-all duration-500 hover:-translate-y-2"
                 style={{
                   animation: `fadeInUp 0.6s ease-out ${index * 0.15}s both`
                 }}
@@ -73,7 +73,7 @@ export default function Services() {
                   </div>
 
                   <div 
-                    className="absolute top-4 left-4 w-10 h-10 rounded-full flex items-center justify-center font-heading font-bold text-white text-lg shadow-lg"
+                    className="absolute top-4 left-4 w-10 h-10 rounded-full flex items-center justify-center font-serif font-bold text-white text-lg shadow-lg"
                     style={{ backgroundColor: service.color }}
                   >
                     {index + 1}
@@ -81,7 +81,7 @@ export default function Services() {
                 </div>
 
                 <div className="p-6">
-                  <h3 className="font-heading font-bold text-xl mb-3 transition-colors duration-300 group-hover:text-opacity-80" style={{ color: service.color }}>
+                  <h3 className="font-serif font-bold text-xl mb-3 transition-colors duration-300 group-hover:text-opacity-80" style={{ color: service.color }}>
                     {service.title}
                   </h3>
                   <p className="font-body text-gray-600 text-sm leading-relaxed mb-4 line-clamp-4">
@@ -90,7 +90,7 @@ export default function Services() {
                   
                   <Link
                     href="#learn-more"
-                    className="inline-flex items-center gap-2 font-heading font-semibold text-sm transition-all duration-300 group-hover:gap-4"
+                    className="inline-flex items-center gap-2 font-serif font-semibold text-sm transition-all duration-300 group-hover:gap-4"
                     style={{ color: service.color }}
                   >
                     Learn more
@@ -99,7 +99,7 @@ export default function Services() {
                 </div>
 
                 <div 
-                  className="absolute inset-0 border-2 border-transparent group-hover:border-current rounded-2xl transition-all duration-500 pointer-events-none"
+                  className="absolute inset-0 border-2 border-transparent group-hover:border-current rounded-lg transition-all duration-500 pointer-events-none"
                   style={{ color: service.color }}
                 />
               </div>

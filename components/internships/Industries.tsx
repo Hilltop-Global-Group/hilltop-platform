@@ -5,7 +5,7 @@ export default function Industries() {
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="font-heading font-bold text-4xl sm:text-5xl mb-6" style={{ color: '#1D3160' }}>
+          <h2 className="font-serif font-bold text-4xl sm:text-5xl mb-6" style={{ color: '#1D3160' }}>
             Industries & Sample Work
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto">
@@ -15,16 +15,16 @@ export default function Industries() {
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Ghana */}
-          <div className="bg-gray-50 rounded-3xl p-8">
+          <div className="bg-gray-50 rounded-lg p-8">
             <div className="flex items-center gap-4 mb-6">
               <div 
-                className="w-16 h-16 rounded-2xl flex items-center justify-center text-white text-2xl font-bold"
+                className="w-16 h-16 rounded-lg flex items-center justify-center text-white text-2xl font-bold"
                 style={{ backgroundColor: '#1D3160' }}
               >
                 GH
               </div>
               <div>
-                <h3 className="font-heading font-bold text-3xl" style={{ color: '#1D3160' }}>
+                <h3 className="font-serif font-bold text-3xl" style={{ color: '#1D3160' }}>
                   Ghana's Key Industries
                 </h3>
                 <p className="text-gray-600">Accra & regional hubs</p>
@@ -55,7 +55,7 @@ export default function Industries() {
             </div>
 
             <div className="border-t pt-6">
-              <h4 className="font-heading font-bold text-lg mb-4" style={{ color: '#1D3160' }}>
+              <h4 className="font-serif font-bold text-lg mb-4" style={{ color: '#1D3160' }}>
                 Sample Work Projects
               </h4>
               <div className="space-y-2">
@@ -79,16 +79,16 @@ export default function Industries() {
           </div>
 
           {/* Rwanda */}
-          <div className="bg-gray-50 rounded-3xl p-8">
+          <div className="bg-gray-50 rounded-lg p-8">
             <div className="flex items-center gap-4 mb-6">
               <div 
-                className="w-16 h-16 rounded-2xl flex items-center justify-center text-white text-2xl font-bold"
+                className="w-16 h-16 rounded-lg flex items-center justify-center text-white text-2xl font-bold"
                 style={{ backgroundColor: '#F4A261' }}
               >
                 RW
               </div>
               <div>
-                <h3 className="font-heading font-bold text-3xl" style={{ color: '#1D3160' }}>
+                <h3 className="font-serif font-bold text-3xl" style={{ color: '#1D3160' }}>
                   Rwanda's Key Industries
                 </h3>
                 <p className="text-gray-600">Kigali & surrounding hubs</p>
@@ -119,7 +119,7 @@ export default function Industries() {
             </div>
 
             <div className="border-t pt-6">
-              <h4 className="font-heading font-bold text-lg mb-4" style={{ color: '#1D3160' }}>
+              <h4 className="font-serif font-bold text-lg mb-4" style={{ color: '#1D3160' }}>
                 Sample Work Projects
               </h4>
               <div className="space-y-2">

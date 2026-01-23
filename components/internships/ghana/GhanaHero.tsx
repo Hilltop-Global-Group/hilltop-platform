@@ -13,12 +13,12 @@ export default function GhanaHero() {
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center">
-          <h1 className="font-heading font-bold text-5xl sm:text-6xl lg:text-7xl text-white mb-6">
+          <h1 className="font-serif font-bold text-5xl sm:text-6xl lg:text-7xl text-white mb-6">
             Ghana Internship Program
           </h1>
           
           <div className="mb-8">
-            <h2 className="font-heading font-bold text-3xl sm:text-4xl text-white mb-4">
+            <h2 className="font-serif font-bold text-3xl sm:text-4xl text-white mb-4">
               2026 Ghana Internship Program
             </h2>
             <p className="text-xl text-white/90">

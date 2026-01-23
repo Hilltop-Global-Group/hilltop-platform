@@ -13,7 +13,7 @@ export default function ContactHero() {
       
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center">
-          <h1 className="font-heading font-bold text-4xl sm:text-5xl text-white mb-4">
+          <h1 className="font-serif font-bold text-4xl sm:text-5xl text-white mb-4">
             Get in Touch
           </h1>
           

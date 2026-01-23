@@ -35,7 +35,7 @@ export default function EmpoweringFutures() {
             <span className="inline-block text-sm font-bold text-black uppercase tracking-wider mb-4 border-2 border-gold-400 px-6 py-2 rounded-full bg-gold-400">
               What We Offer
             </span>
-            <h2 className="font-heading font-bold text-4xl sm:text-5xl text-navy-900 mb-4">
+            <h2 className="font-serif font-bold text-4xl sm:text-5xl text-navy-900 mb-4">
               Empowering Global Futures
             </h2>
           </div>
@@ -49,20 +49,20 @@ export default function EmpoweringFutures() {
                 animation="fade-up"
                 delay={index * 150}
               >
-                <div className="group relative bg-white p-10 rounded-2xl border-4 border-navy-900 hover:border-gold-400 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-gold-400/50">
+                <div className="group relative bg-white p-10 rounded-lg border-4 border-navy-900 hover:border-gold-400 transition-all duration-500 hover:-translate-y-2 hover:shadow-lg hover:shadow-gold-400/50">
                   {/* Large number background */}
-                  <div className="absolute top-8 right-8 text-8xl font-heading font-bold text-gray-200 group-hover:text-gold-400/20 select-none transition-colors duration-500">
+                  <div className="absolute top-8 right-8 text-8xl font-serif font-bold text-gray-200 group-hover:text-gold-400/20 select-none transition-colors duration-500">
                     {feature.number}
                   </div>
 
                   <div className="relative">
                     <div className="mb-6">
-                      <span className="inline-block w-16 h-16 rounded-xl bg-navy-900 text-gold-400 font-heading font-bold text-xl flex items-center justify-center shadow-lg group-hover:bg-gold-400 group-hover:text-black border-2 border-gold-400 group-hover:scale-110 transition-all duration-500">
+                      <span className="inline-block w-16 h-16 rounded-xl bg-navy-900 text-gold-400 font-serif font-bold text-xl flex items-center justify-center shadow-lg group-hover:bg-gold-400 group-hover:text-black border-2 border-gold-400 group-hover:scale-110 transition-all duration-500">
                         {feature.number}
                       </span>
                     </div>
 
-                    <h3 className="font-heading font-bold text-3xl text-navy-900 mb-4 group-hover:text-black transition-colors">
+                    <h3 className="font-serif font-bold text-3xl text-navy-900 mb-4 group-hover:text-black transition-colors">
                       {feature.title}
                     </h3>
                     <p className="text-gray-700 leading-relaxed text-lg">

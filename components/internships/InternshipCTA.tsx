@@ -15,7 +15,7 @@ export default function InternshipCTA() {
       
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-12">
-          <h2 className="font-heading font-bold text-4xl sm:text-5xl lg:text-6xl text-white mb-6">
+          <h2 className="font-serif font-bold text-4xl sm:text-5xl lg:text-6xl text-white mb-6">
             Apply Today, Transform Tomorrow
           </h2>
           
@@ -28,7 +28,7 @@ export default function InternshipCTA() {
         <div className="grid md:grid-cols-2 gap-6 mb-12 max-w-3xl mx-auto">
           <a
             href="mailto:support@hilltopglobalgroup.com"
-            className="group bg-white/10 backdrop-blur-sm border-2 border-white/20 rounded-2xl p-6 hover:bg-white/20 transition-all duration-300 hover:scale-105"
+            className="group bg-white/10 backdrop-blur-sm border-2 border-white/20 rounded-lg p-6 hover:bg-white/20 transition-all duration-300 hover:scale-105"
           >
             <div className="flex items-center gap-4 mb-3">
               <div 
@@ -47,7 +47,7 @@ export default function InternshipCTA() {
 
           <a
             href="tel:+12024992284"
-            className="group bg-white/10 backdrop-blur-sm border-2 border-white/20 rounded-2xl p-6 hover:bg-white/20 transition-all duration-300 hover:scale-105"
+            className="group bg-white/10 backdrop-blur-sm border-2 border-white/20 rounded-lg p-6 hover:bg-white/20 transition-all duration-300 hover:scale-105"
           >
             <div className="flex items-center gap-4 mb-3">
               <div 
@@ -68,7 +68,7 @@ export default function InternshipCTA() {
         {/* CTA Button */}
         <div className="text-center">
           <button
-            className="group inline-flex items-center justify-center gap-3 px-12 py-5 font-heading font-bold text-lg tracking-wide text-primary-navy bg-white border-2 border-white rounded-full shadow-2xl transition-all duration-300 hover:bg-primary-navy hover:text-white hover:scale-105"
+            className="group inline-flex items-center justify-center gap-3 px-12 py-5 font-serif font-bold text-lg tracking-wide text-primary-navy bg-white border-2 border-white rounded-full shadow-lg transition-all duration-300 hover:bg-primary-navy hover:text-white hover:scale-105"
           >
             Start Your Application
             <ArrowRight size={22} className="transition-transform duration-300 group-hover:translate-x-1" />

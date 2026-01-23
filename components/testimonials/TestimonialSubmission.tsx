@@ -46,7 +46,7 @@ export default function TestimonialSubmission() {
     <section className="py-20 bg-gray-50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="font-heading font-bold text-4xl sm:text-5xl mb-6" style={{ color: '#1D3160' }}>
+          <h2 className="font-serif font-bold text-4xl sm:text-5xl mb-6" style={{ color: '#1D3160' }}>
             Share Your Story
           </h2>
           <p className="text-xl text-gray-600">
@@ -54,7 +54,7 @@ export default function TestimonialSubmission() {
           </p>
         </div>
 
-        <div className="bg-white p-8 md:p-12 rounded-3xl shadow-xl">
+        <div className="bg-white p-8 md:p-12 rounded-lg shadow-md">
           {submitted ? (
             <div className="text-center py-12">
               <div 
@@ -63,7 +63,7 @@ export default function TestimonialSubmission() {
               >
                 <Send size={40} className="text-white" />
               </div>
-              <h3 className="font-heading font-bold text-3xl mb-4" style={{ color: '#1D3160' }}>
+              <h3 className="font-serif font-bold text-3xl mb-4" style={{ color: '#1D3160' }}>
                 Thank You!
               </h3>
               <p className="text-gray-600 text-lg">
@@ -200,7 +200,7 @@ export default function TestimonialSubmission() {
 
               <button
                 type="submit"
-                className="w-full inline-flex items-center justify-center gap-3 px-8 py-4 font-heading font-bold text-lg text-white rounded-xl transition-all duration-300 hover:scale-105 shadow-lg"
+                className="w-full inline-flex items-center justify-center gap-3 px-8 py-4 font-serif font-bold text-lg text-white rounded-xl transition-all duration-300 hover:scale-105 shadow-lg"
                 style={{ backgroundColor: '#1D3160' }}
               >
                 Submit Testimonial

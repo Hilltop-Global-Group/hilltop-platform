@@ -70,7 +70,7 @@ export default async function WordPressPrograms() {
     <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="font-heading font-bold text-4xl sm:text-5xl mb-6" style={{ color: '#1D3160' }}>
+          <h2 className="font-serif font-bold text-4xl sm:text-5xl mb-6" style={{ color: '#1D3160' }}>
             More Internship Programs
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -90,10 +90,10 @@ export default async function WordPressPrograms() {
             const cardColor = index % 2 === 0 ? '#1D3160' : '#F4A261';
             const isClosed = internship.meta._internship_application_status === 'closed';
             
-            const cardClassName = `bg-white rounded-3xl overflow-hidden shadow-xl transition-all duration-500 ${
+            const cardClassName = `bg-white rounded-lg overflow-hidden shadow-md transition-all duration-500 ${
               isClosed 
                 ? 'opacity-75 cursor-not-allowed' 
-                : 'group hover:shadow-2xl hover:-translate-y-2 cursor-pointer'
+                : 'group hover:shadow-lg hover:-translate-y-2 cursor-pointer'
             }`;
             
             const cardContent = (
@@ -123,7 +123,7 @@ export default async function WordPressPrograms() {
                   </div>
 
                   <div className="absolute bottom-4 left-4 right-4">
-                    <h3 className="font-heading font-bold text-2xl md:text-3xl text-white line-clamp-2">
+                    <h3 className="font-serif font-bold text-2xl md:text-3xl text-white line-clamp-2">
                       {decodeHtmlEntities(internship.title.rendered)}
                     </h3>
                   </div>
@@ -187,7 +187,7 @@ export default async function WordPressPrograms() {
                     {isClosed ? (
                       <button
                         disabled
-                        className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3 font-heading font-bold text-white rounded-xl cursor-not-allowed opacity-50"
+                        className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3 font-serif font-bold text-white rounded-xl cursor-not-allowed opacity-50"
                         style={{ backgroundColor: '#6B7280' }}
                       >
                         Applications Closed
@@ -195,7 +195,7 @@ export default async function WordPressPrograms() {
                     ) : (
                       <Link
                         href={`/internships/${internship.slug}`}
-                        className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3 font-heading font-bold text-white rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                        className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3 font-serif font-bold text-white rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg"
                         style={{ backgroundColor: cardColor }}
                       >
                         Learn more

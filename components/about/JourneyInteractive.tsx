@@ -74,7 +74,7 @@ export default function JourneyInteractive() {
             <span className="inline-block text-sm font-bold text-black uppercase tracking-wider mb-4 border-2 border-gold-400 px-6 py-2 rounded-full bg-gold-400">
               Our Journey
             </span>
-            <h2 className="font-heading font-bold text-4xl sm:text-5xl text-navy-900 mb-4">
+            <h2 className="font-serif font-bold text-4xl sm:text-5xl text-navy-900 mb-4">
               A Decade of Transformation
             </h2>
             <p className="text-lg text-gray-700 max-w-2xl mx-auto">
@@ -94,7 +94,7 @@ export default function JourneyInteractive() {
                 style={activeStep === index ? {} : { backgroundColor: '#FFFFFF', color: '#1D3160', borderColor: '#1D3160' }}
                 className={`relative px-8 py-4 rounded-xl font-bold transition-all duration-500 border-2 hover:opacity-90 ${
                   activeStep === index
-                    ? 'bg-gold-400 border-gold-400 text-black shadow-2xl shadow-gold-400/50 scale-110'
+                    ? 'bg-gold-400 border-gold-400 text-black shadow-lg shadow-gold-400/50 scale-110'
                     : ''
                 }`}
               >
@@ -118,11 +118,11 @@ export default function JourneyInteractive() {
                   : 'opacity-0 scale-95 absolute inset-0 pointer-events-none'
               }`}
             >
-              <div className="bg-white rounded-3xl p-8 md:p-12 shadow-2xl border-4 border-gold-400">
+              <div className="bg-white rounded-lg p-8 md:p-12 shadow-lg border-4 border-gold-400">
                 <div className="grid md:grid-cols-2 gap-12 items-center">
                   {/* Image Side */}
                   <div className="relative group">
-                    <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl border-4 border-navy-900">
+                    <div className="relative h-[500px] rounded-lg overflow-hidden shadow-lg border-4 border-navy-900">
                       <Image
                         src={step.image}
                         alt={step.title}
@@ -133,8 +133,8 @@ export default function JourneyInteractive() {
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
                       
                       {/* Floating year badge */}
-                      <div className="absolute top-6 left-6 bg-gold-400 px-6 py-3 rounded-xl shadow-2xl border-2 border-black">
-                        <span className="font-heading font-bold text-2xl text-black">
+                      <div className="absolute top-6 left-6 bg-gold-400 px-6 py-3 rounded-xl shadow-lg border-2 border-black">
+                        <span className="font-serif font-bold text-2xl text-black">
                           {step.year}
                         </span>
                       </div>
@@ -146,7 +146,7 @@ export default function JourneyInteractive() {
                             key={stat.label}
                             className="flex-1 bg-white rounded-xl p-4 text-center border-2 border-gold-400"
                           >
-                            <div className="font-heading font-bold text-3xl text-navy-900 mb-1">
+                            <div className="font-serif font-bold text-3xl text-navy-900 mb-1">
                               {stat.value}
                             </div>
                             <div className="text-xs text-black font-semibold uppercase tracking-wide">
@@ -158,18 +158,18 @@ export default function JourneyInteractive() {
                     </div>
 
                     {/* Decorative border */}
-                    <div className="absolute -inset-4 border-4 border-gold-400/30 rounded-2xl -z-10" />
+                    <div className="absolute -inset-4 border-4 border-gold-400/30 rounded-lg -z-10" />
                   </div>
 
                   {/* Content Side */}
                   <div className="space-y-6">
                     <div>
                       <div className="inline-block mb-4">
-                        <span className="text-8xl font-heading font-bold text-gold-400/20">
+                        <span className="text-8xl font-serif font-bold text-gold-400/20">
                           0{index + 1}
                         </span>
                       </div>
-                      <h3 className="font-heading font-bold text-4xl text-navy-900 mb-6">
+                      <h3 className="font-serif font-bold text-4xl text-navy-900 mb-6">
                         {step.title}
                       </h3>
                       <p className="text-lg text-black leading-relaxed">
@@ -206,7 +206,7 @@ export default function JourneyInteractive() {
                       <button
                         onClick={() => setActiveStep(Math.min(journeySteps.length - 1, activeStep + 1))}
                         disabled={activeStep === journeySteps.length - 1}
-                        className="px-8 py-4 rounded-xl font-bold bg-gold-400 text-black border-2 border-gold-400 hover:bg-black hover:text-gold-400 hover:border-black disabled:opacity-20 disabled:cursor-not-allowed transition-all duration-300 shadow-xl shadow-gold-400/50"
+                        className="px-8 py-4 rounded-xl font-bold bg-gold-400 text-black border-2 border-gold-400 hover:bg-black hover:text-gold-400 hover:border-black disabled:opacity-20 disabled:cursor-not-allowed transition-all duration-300 shadow-md shadow-gold-400/50"
                       >
                         Next Chapter
                       </button>

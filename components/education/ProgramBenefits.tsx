@@ -17,7 +17,7 @@ export default function ProgramBenefits() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="font-heading font-bold text-4xl sm:text-5xl mb-6" style={{ color: '#1D3160' }}>
+            <h2 className="font-serif font-bold text-4xl sm:text-5xl mb-6" style={{ color: '#1D3160' }}>
               Why Choose Our Programs?
             </h2>
             <p className="text-xl text-gray-600 mb-8">
@@ -50,7 +50,7 @@ export default function ProgramBenefits() {
           <div className="relative">
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4">
-                <div className="h-48 rounded-2xl overflow-hidden shadow-lg">
+                <div className="h-48 rounded-lg overflow-hidden shadow-lg">
                   <div
                     className="w-full h-full bg-cover bg-center transform transition-transform duration-700 hover:scale-110"
                     style={{
@@ -58,7 +58,7 @@ export default function ProgramBenefits() {
                     }}
                   />
                 </div>
-                <div className="h-64 rounded-2xl overflow-hidden shadow-lg">
+                <div className="h-64 rounded-lg overflow-hidden shadow-lg">
                   <div
                     className="w-full h-full bg-cover bg-center transform transition-transform duration-700 hover:scale-110"
                     style={{
@@ -68,7 +68,7 @@ export default function ProgramBenefits() {
                 </div>
               </div>
               <div className="space-y-4 mt-8">
-                <div className="h-64 rounded-2xl overflow-hidden shadow-lg">
+                <div className="h-64 rounded-lg overflow-hidden shadow-lg">
                   <div
                     className="w-full h-full bg-cover bg-center transform transition-transform duration-700 hover:scale-110"
                     style={{
@@ -76,7 +76,7 @@ export default function ProgramBenefits() {
                     }}
                   />
                 </div>
-                <div className="h-48 rounded-2xl overflow-hidden shadow-lg">
+                <div className="h-48 rounded-lg overflow-hidden shadow-lg">
                   <div
                     className="w-full h-full bg-cover bg-center transform transition-transform duration-700 hover:scale-110"
                     style={{

@@ -183,7 +183,7 @@ export default async function InternshipPage({ params }: { params: Promise<{ slu
 
           <div className="text-center mb-12">
             <h1 
-              className="font-heading font-bold text-5xl sm:text-6xl lg:text-7xl text-white mb-6"
+              className="font-serif font-bold text-5xl sm:text-6xl lg:text-7xl text-white mb-6"
               dangerouslySetInnerHTML={{ __html: internship.title.rendered }}
             />
             
@@ -205,9 +205,9 @@ export default async function InternshipPage({ params }: { params: Promise<{ slu
 
           {/* Feature Cards */}
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            <div className="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20">
+            <div className="bg-white/10 backdrop-blur-md p-6 rounded-lg border border-white/20">
               <Globe size={40} className="text-white mb-4" strokeWidth={1.5} />
-              <h3 className="font-heading font-bold text-xl text-white mb-2">
+              <h3 className="font-serif font-bold text-xl text-white mb-2">
                 Gain global work experience
               </h3>
               <p className="text-white/80">
@@ -215,9 +215,9 @@ export default async function InternshipPage({ params }: { params: Promise<{ slu
               </p>
             </div>
 
-            <div className="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20">
+            <div className="bg-white/10 backdrop-blur-md p-6 rounded-lg border border-white/20">
               <TrendingUp size={40} className="text-white mb-4" strokeWidth={1.5} />
-              <h3 className="font-heading font-bold text-xl text-white mb-2">
+              <h3 className="font-serif font-bold text-xl text-white mb-2">
                 Cross-cultural leadership
               </h3>
               <p className="text-white/80">
@@ -225,9 +225,9 @@ export default async function InternshipPage({ params }: { params: Promise<{ slu
               </p>
             </div>
 
-            <div className="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20">
+            <div className="bg-white/10 backdrop-blur-md p-6 rounded-lg border border-white/20">
               <Users size={40} className="text-white mb-4" strokeWidth={1.5} />
-              <h3 className="font-heading font-bold text-xl text-white mb-2">
+              <h3 className="font-serif font-bold text-xl text-white mb-2">
                 Network & mentorship
               </h3>
               <p className="text-white/80">
@@ -266,18 +266,18 @@ export default async function InternshipPage({ params }: { params: Promise<{ slu
               </svg>
               <span className="text-sm font-bold uppercase tracking-wider">Program Overview</span>
             </div>
-            <h2 className="font-heading font-bold text-4xl md:text-5xl mb-4" style={{ color: '#1D3160' }}>
+            <h2 className="font-serif font-bold text-4xl md:text-5xl mb-4" style={{ color: '#1D3160' }}>
               About the Program
             </h2>
             <div className="w-24 h-1 mx-auto" style={{ backgroundColor: '#F4A261' }} />
           </div>
 
           {/* Content Card */}
-          <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12 border border-gray-100">
+          <div className="bg-white rounded-lg shadow-lg p-8 md:p-12 border border-gray-100">
             <div 
               className="prose prose-lg max-w-none
                 prose-p:text-gray-700 prose-p:leading-relaxed prose-p:mb-6
-                prose-headings:font-heading prose-headings:font-bold prose-headings:mb-4
+                prose-headings:font-serif prose-headings:font-bold prose-headings:mb-4
                 prose-h2:text-3xl prose-h3:text-2xl prose-h4:text-xl
                 prose-ul:space-y-3 prose-ul:my-6
                 prose-li:text-gray-700 prose-li:pl-2
@@ -310,17 +310,17 @@ export default async function InternshipPage({ params }: { params: Promise<{ slu
       {internship.meta._internship_format && (
         <section className="py-16 bg-gray-50">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="font-heading font-bold text-4xl mb-6" style={{ color: '#1D3160' }}>
+            <h2 className="font-serif font-bold text-4xl mb-6" style={{ color: '#1D3160' }}>
               Program Format
             </h2>
             <p className="text-xl text-gray-600 mb-8">Two Flexible Participation Options:</p>
 
             <div className="grid md:grid-cols-2 gap-6 mb-8">
-              <div className="bg-white p-8 rounded-2xl shadow-lg">
+              <div className="bg-white p-8 rounded-lg shadow-lg">
                 <div className="w-12 h-12 rounded-full flex items-center justify-center mb-4" style={{ backgroundColor: '#F4A261' }}>
                   <span className="text-white font-bold text-xl">1</span>
                 </div>
-                <h3 className="font-heading font-bold text-2xl mb-3" style={{ color: '#1D3160' }}>
+                <h3 className="font-serif font-bold text-2xl mb-3" style={{ color: '#1D3160' }}>
                   Option 1: Full In-Country
                 </h3>
                 <p className="text-gray-700">
@@ -328,11 +328,11 @@ export default async function InternshipPage({ params }: { params: Promise<{ slu
                 </p>
               </div>
 
-              <div className="bg-white p-8 rounded-2xl shadow-lg">
+              <div className="bg-white p-8 rounded-lg shadow-lg">
                 <div className="w-12 h-12 rounded-full flex items-center justify-center mb-4" style={{ backgroundColor: '#1D3160' }}>
                   <span className="text-white font-bold text-xl">2</span>
                 </div>
-                <h3 className="font-heading font-bold text-2xl mb-3" style={{ color: '#1D3160' }}>
+                <h3 className="font-serif font-bold text-2xl mb-3" style={{ color: '#1D3160' }}>
                   Option 2: Hybrid Format
                 </h3>
                 <p className="text-gray-700">
@@ -351,7 +351,7 @@ export default async function InternshipPage({ params }: { params: Promise<{ slu
       {/* Key Details */}
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading font-bold text-4xl mb-12" style={{ color: '#1D3160' }}>
+          <h2 className="font-serif font-bold text-4xl mb-12" style={{ color: '#1D3160' }}>
             Key Details
           </h2>
 
@@ -398,7 +398,7 @@ export default async function InternshipPage({ params }: { params: Promise<{ slu
       {/* Application Section */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-3xl p-8 sm:p-12 shadow-xl text-center">
+          <div className="bg-white rounded-lg p-8 sm:p-12 shadow-md text-center">
             <div className="mb-8">
               <span 
                 className="inline-block px-4 py-2 rounded-full text-sm font-bold text-white mb-6 shadow-lg" 
@@ -408,7 +408,7 @@ export default async function InternshipPage({ params }: { params: Promise<{ slu
               >
                 {internship.meta._internship_application_status === 'closed' ? 'Applications Closed' : 'Applications Open'}
               </span>
-              <h2 className="font-heading font-bold text-3xl mb-4" style={{ color: '#1D3160' }}>
+              <h2 className="font-serif font-bold text-3xl mb-4" style={{ color: '#1D3160' }}>
                 Apply to this Program
               </h2>
               {internship.meta._internship_application_deadline && (
@@ -424,7 +424,7 @@ export default async function InternshipPage({ params }: { params: Promise<{ slu
             {internship.meta._internship_application_status === 'closed' ? (
               <button
                 disabled
-                className="inline-block px-10 py-4 font-heading font-bold text-white rounded-xl cursor-not-allowed opacity-60 shadow-lg"
+                className="inline-block px-10 py-4 font-serif font-bold text-white rounded-xl cursor-not-allowed opacity-60 shadow-lg"
                 style={{ backgroundColor: '#6B7280' }}
               >
                 Applications Closed - Check Back Later
@@ -432,7 +432,7 @@ export default async function InternshipPage({ params }: { params: Promise<{ slu
             ) : (
               <Link
                 href="/internships#apply"
-                className="inline-block px-10 py-4 font-heading font-bold text-white rounded-xl transition-all duration-300 hover:scale-105 shadow-lg"
+                className="inline-block px-10 py-4 font-serif font-bold text-white rounded-xl transition-all duration-300 hover:scale-105 shadow-lg"
                 style={{ backgroundColor: '#1D3160' }}
               >
                 Apply Now
@@ -445,7 +445,7 @@ export default async function InternshipPage({ params }: { params: Promise<{ slu
       {/* Payment Terms */}
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading font-bold text-3xl mb-6" style={{ color: '#1D3160' }}>
+          <h2 className="font-serif font-bold text-3xl mb-6" style={{ color: '#1D3160' }}>
             Payment Terms & Plan Options
           </h2>
           <ul className="space-y-3 text-gray-700 leading-relaxed">
@@ -472,22 +472,22 @@ export default async function InternshipPage({ params }: { params: Promise<{ slu
       {/* Sample Week */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading font-bold text-4xl mb-12 text-center" style={{ color: '#1D3160' }}>
+          <h2 className="font-serif font-bold text-4xl mb-12 text-center" style={{ color: '#1D3160' }}>
             Sample Week
           </h2>
           
           <div className="grid md:grid-cols-3 gap-6">
-            <div className="bg-white p-6 rounded-2xl shadow-lg text-center">
+            <div className="bg-white p-6 rounded-lg shadow-lg text-center">
               <div className="font-bold text-lg mb-3" style={{ color: '#1D3160' }}>Mon–Thu</div>
               <p className="text-gray-600">On-site internship, project work, and supervisor check-ins.</p>
             </div>
 
-            <div className="bg-white p-6 rounded-2xl shadow-lg text-center">
+            <div className="bg-white p-6 rounded-lg shadow-lg text-center">
               <div className="font-bold text-lg mb-3" style={{ color: '#F4A261' }}>Fridays</div>
               <p className="text-gray-600">Leadership and development sessions or project-based sessions.</p>
             </div>
 
-            <div className="bg-white p-6 rounded-2xl shadow-lg text-center">
+            <div className="bg-white p-6 rounded-lg shadow-lg text-center">
               <div className="font-bold text-lg mb-3" style={{ color: '#1D3160' }}>Saturday & Sunday</div>
               <p className="text-gray-600">Cultural excursions, community engagement, or personal time.</p>
             </div>
@@ -499,7 +499,7 @@ export default async function InternshipPage({ params }: { params: Promise<{ slu
       {galleryImages.length > 0 && (
         <section className="py-16 bg-white">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="font-heading font-bold text-4xl mb-4 text-center" style={{ color: '#1D3160' }}>
+            <h2 className="font-serif font-bold text-4xl mb-4 text-center" style={{ color: '#1D3160' }}>
               Cultural Highlights
             </h2>
             <p className="text-center text-gray-600 mb-12">
@@ -510,7 +510,7 @@ export default async function InternshipPage({ params }: { params: Promise<{ slu
               {galleryImages.map((image: any, index: number) => (
                 <div 
                   key={image.id}
-                  className="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+                  className="group relative rounded-lg overflow-hidden shadow-lg hover:shadow-lg transition-all duration-500 hover:-translate-y-2"
                 >
                   <div className="relative h-64">
                     <Image
@@ -522,7 +522,7 @@ export default async function InternshipPage({ params }: { params: Promise<{ slu
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                     
                     <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                      <h3 className="font-heading font-bold text-xl mb-2">
+                      <h3 className="font-serif font-bold text-xl mb-2">
                         {image.customTitle || `Activity ${index + 1}`}
                       </h3>
                     </div>
@@ -537,7 +537,7 @@ export default async function InternshipPage({ params }: { params: Promise<{ slu
       {/* Contact Section */}
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-heading font-bold text-4xl mb-6" style={{ color: '#1D3160' }}>
+          <h2 className="font-serif font-bold text-4xl mb-6" style={{ color: '#1D3160' }}>
             Questions?
           </h2>
           <p className="text-xl text-gray-600 mb-8">

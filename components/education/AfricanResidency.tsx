@@ -32,7 +32,7 @@ export default function AfricanResidency() {
     <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="font-heading font-bold text-4xl sm:text-5xl mb-6" style={{ color: '#1D3160' }}>
+          <h2 className="font-serif font-bold text-4xl sm:text-5xl mb-6" style={{ color: '#1D3160' }}>
             African Business Residency
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -41,7 +41,7 @@ export default function AfricanResidency() {
         </div>
 
         <div className="mb-12">
-          <h3 className="font-heading font-bold text-3xl mb-8 text-center" style={{ color: '#1D3160' }}>
+          <h3 className="font-serif font-bold text-3xl mb-8 text-center" style={{ color: '#1D3160' }}>
             Program Objectives
           </h3>
           
@@ -51,7 +51,7 @@ export default function AfricanResidency() {
               return (
                 <div
                   key={index}
-                  className="group bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                  className="group bg-white p-6 rounded-lg shadow-md hover:shadow-md transition-all duration-300 hover:-translate-y-1"
                 >
                   <div className="flex items-start gap-4">
                     <div 
@@ -71,7 +71,7 @@ export default function AfricanResidency() {
         </div>
 
         {/* Image Banner */}
-        <div className="relative h-80 rounded-3xl overflow-hidden shadow-2xl">
+        <div className="relative h-80 rounded-lg overflow-hidden shadow-lg">
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{
@@ -80,7 +80,7 @@ export default function AfricanResidency() {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-primary-navy/90 to-primary-navy/50 flex items-center justify-center">
             <div className="text-center text-white px-6">
-              <h3 className="font-heading font-bold text-3xl sm:text-4xl mb-4">
+              <h3 className="font-serif font-bold text-3xl sm:text-4xl mb-4">
                 Transform Your Students' Global Perspective
               </h3>
               <p className="text-xl text-white/90 max-w-2xl mx-auto">

@@ -8,7 +8,7 @@ export default function Newsletter() {
   return (
     <section className="py-20 bg-gray-50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="font-heading font-bold text-4xl mb-4" style={{ color: '#1D3160' }}>
+        <h2 className="font-serif font-bold text-4xl mb-4" style={{ color: '#1D3160' }}>
           Stay Updated with Us
         </h2>
         <p className="font-body text-gray-600 text-lg mb-8">
@@ -26,7 +26,7 @@ export default function Newsletter() {
             />
             <button
               type="submit"
-              className="px-8 py-3 rounded font-heading font-bold text-sm tracking-wide text-white hover:bg-opacity-90 transition-all"
+              className="px-8 py-3 rounded font-serif font-bold text-sm tracking-wide text-white hover:bg-opacity-90 transition-all"
               style={{ backgroundColor: '#1D3160' }}
             >
               SUBSCRIBE

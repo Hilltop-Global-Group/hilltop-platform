@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="py-16" style={{ backgroundColor: '#1D3160' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="font-heading font-bold text-4xl text-white mb-4">
+            <h2 className="font-serif font-bold text-4xl text-white mb-4">
               Get in Touch
             </h2>
             <p className="font-body text-white/80 text-lg">
@@ -54,7 +54,7 @@ export default function Footer() {
 
           {/* Google Maps Embed */}
           <div className="mt-12 max-w-5xl mx-auto">
-            <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-white/20">
+            <div className="rounded-lg overflow-hidden shadow-lg border-4 border-white/20">
               <iframe 
                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3105.102731919874!2d-77.027459!3d38.898766!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7b795ab298343%3A0x7fca3fbfe9beb021!2sMetro%20Offices!5e0!3m2!1sen!2suk!4v1769112077900!5m2!1sen!2suk" 
                 width="100%" 
@@ -74,7 +74,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             <div>
-              <h4 className="font-heading font-bold text-lg mb-4" style={{ color: '#1D3160' }}>
+              <h4 className="font-serif font-bold text-lg mb-4" style={{ color: '#1D3160' }}>
                 Navigation Links
               </h4>
               <ul className="space-y-2">
@@ -89,7 +89,7 @@ export default function Footer() {
             </div>
 
             <div>
-              <h4 className="font-heading font-bold text-lg mb-4" style={{ color: '#1D3160' }}>
+              <h4 className="font-serif font-bold text-lg mb-4" style={{ color: '#1D3160' }}>
                 Contact Info
               </h4>
               <ul className="space-y-2 text-gray-600">
@@ -100,7 +100,7 @@ export default function Footer() {
             </div>
 
             <div>
-              <h4 className="font-heading font-bold text-lg mb-4" style={{ color: '#1D3160' }}>
+              <h4 className="font-serif font-bold text-lg mb-4" style={{ color: '#1D3160' }}>
                 Newsletter Signup
               </h4>
               <form className="space-y-3">
@@ -111,7 +111,7 @@ export default function Footer() {
                 />
                 <button
                   type="submit"
-                  className="w-full px-4 py-2 rounded font-heading font-bold text-sm text-white hover:bg-opacity-90 transition-all"
+                  className="w-full px-4 py-2 rounded font-serif font-bold text-sm text-white hover:bg-opacity-90 transition-all"
                   style={{ backgroundColor: '#1D3160' }}
                 >
                   SUBSCRIBE

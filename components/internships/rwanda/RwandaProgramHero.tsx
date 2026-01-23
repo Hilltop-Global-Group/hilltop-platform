@@ -28,7 +28,7 @@ export default function RwandaProgramHero() {
         </div>
 
         {/* ALU Collaboration Banner */}
-        <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-6 mb-12 max-w-4xl mx-auto shadow-xl">
+        <div className="bg-white/95 backdrop-blur-sm rounded-lg p-6 mb-12 max-w-4xl mx-auto shadow-md">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex flex-col md:flex-row items-center gap-4">
               <p className="text-sm text-gray-600 whitespace-nowrap">In collaboration with</p>
@@ -55,7 +55,7 @@ export default function RwandaProgramHero() {
         </div>
 
         <div className="text-center mb-12">
-          <h1 className="font-heading font-bold text-5xl sm:text-6xl lg:text-7xl text-white mb-6">
+          <h1 className="font-serif font-bold text-5xl sm:text-6xl lg:text-7xl text-white mb-6">
             2026 Rwanda Internship Program
           </h1>
           
@@ -71,9 +71,9 @@ export default function RwandaProgramHero() {
 
         {/* Feature Cards */}
         <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          <div className="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20">
+          <div className="bg-white/10 backdrop-blur-md p-6 rounded-lg border border-white/20">
             <Globe size={40} className="text-white mb-4" strokeWidth={1.5} />
-            <h3 className="font-heading font-bold text-xl text-white mb-2">
+            <h3 className="font-serif font-bold text-xl text-white mb-2">
               Gain global work experience
             </h3>
             <p className="text-white/80">
@@ -81,9 +81,9 @@ export default function RwandaProgramHero() {
             </p>
           </div>
 
-          <div className="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20">
+          <div className="bg-white/10 backdrop-blur-md p-6 rounded-lg border border-white/20">
             <TrendingUp size={40} className="text-white mb-4" strokeWidth={1.5} />
-            <h3 className="font-heading font-bold text-xl text-white mb-2">
+            <h3 className="font-serif font-bold text-xl text-white mb-2">
               Cross-cultural leadership
             </h3>
             <p className="text-white/80">
@@ -91,9 +91,9 @@ export default function RwandaProgramHero() {
             </p>
           </div>
 
-          <div className="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20">
+          <div className="bg-white/10 backdrop-blur-md p-6 rounded-lg border border-white/20">
             <Users size={40} className="text-white mb-4" strokeWidth={1.5} />
-            <h3 className="font-heading font-bold text-xl text-white mb-2">
+            <h3 className="font-serif font-bold text-xl text-white mb-2">
               Network & mentorship
             </h3>
             <p className="text-white/80">

@@ -67,7 +67,7 @@ export default function NewsGrid({ posts, categories }: NewsGridProps) {
           <div className="flex flex-wrap gap-3 justify-center">
             <button
               onClick={() => setActiveCategory(null)}
-              className={`px-6 py-3 font-heading font-semibold text-sm rounded-full transition-all duration-300 ${
+              className={`px-6 py-3 font-serif font-semibold text-sm rounded-full transition-all duration-300 ${
                 activeCategory === null
                   ? 'text-white shadow-lg'
                   : 'text-gray-700 bg-gray-100 hover:bg-gray-200'
@@ -84,7 +84,7 @@ export default function NewsGrid({ posts, categories }: NewsGridProps) {
                 <button
                   key={category.id}
                   onClick={() => setActiveCategory(category.id)}
-                  className={`px-6 py-3 font-heading font-semibold text-sm rounded-full transition-all duration-300 ${
+                  className={`px-6 py-3 font-serif font-semibold text-sm rounded-full transition-all duration-300 ${
                     activeCategory === category.id
                       ? 'text-white shadow-lg'
                       : 'text-gray-700 bg-gray-100 hover:bg-gray-200'
@@ -114,7 +114,7 @@ export default function NewsGrid({ posts, categories }: NewsGridProps) {
               return (
                 <article
                   key={post.id}
-                  className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+                  className="group bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-lg transition-all duration-500 hover:-translate-y-2"
                 >
                   <div className="relative h-56 overflow-hidden bg-gray-200">
                     {featuredImage ? (
@@ -157,7 +157,7 @@ export default function NewsGrid({ posts, categories }: NewsGridProps) {
                     </div>
 
                     <h3 
-                      className="font-heading font-bold text-xl mb-3 line-clamp-2" 
+                      className="font-serif font-bold text-xl mb-3 line-clamp-2" 
                       style={{ color: '#1D3160' }}
                       dangerouslySetInnerHTML={{ __html: post.title.rendered }}
                     />

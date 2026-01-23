@@ -39,7 +39,7 @@ export default function ContactForm() {
     <section className="py-20 bg-white">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="font-heading font-bold text-3xl sm:text-4xl mb-4" style={{ color: '#1D3160' }}>
+          <h2 className="font-serif font-bold text-3xl sm:text-4xl mb-4" style={{ color: '#1D3160' }}>
             Send Us a Message
           </h2>
           <p className="text-gray-600 text-lg">
@@ -47,7 +47,7 @@ export default function ContactForm() {
           </p>
         </div>
 
-        <form onSubmit={handleSubmit} className="bg-gray-50 rounded-3xl p-8 sm:p-12 shadow-lg">
+        <form onSubmit={handleSubmit} className="bg-gray-50 rounded-lg p-8 sm:p-12 shadow-lg">
           <div className="grid md:grid-cols-2 gap-6 mb-6">
             <div>
               <label htmlFor="name" className="block text-sm font-semibold mb-2" style={{ color: '#1D3160' }}>
@@ -153,7 +153,7 @@ export default function ContactForm() {
 
           <button
             type="submit"
-            className="w-full sm:w-auto px-8 py-4 rounded-xl text-white font-heading font-bold text-lg flex items-center justify-center gap-2 hover:opacity-90 transition-all duration-300 hover:scale-105 shadow-lg"
+            className="w-full sm:w-auto px-8 py-4 rounded-xl text-white font-serif font-bold text-lg flex items-center justify-center gap-2 hover:opacity-90 transition-all duration-300 hover:scale-105 shadow-lg"
             style={{ backgroundColor: '#1D3160' }}
           >
             Send Message

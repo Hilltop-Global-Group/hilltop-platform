@@ -6,7 +6,7 @@ export default function Partnership() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
           <div>
-            <h2 className="font-heading font-bold text-4xl sm:text-5xl mb-6" style={{ color: '#1D3160' }}>
+            <h2 className="font-serif font-bold text-4xl sm:text-5xl mb-6" style={{ color: '#1D3160' }}>
               University Partnerships
             </h2>
             <div className="space-y-4 text-lg text-gray-700 leading-relaxed">
@@ -23,11 +23,11 @@ export default function Partnership() {
           </div>
 
           <div className="grid grid-cols-2 gap-6">
-            <div className="bg-gray-50 p-6 rounded-2xl hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+            <div className="bg-gray-50 p-6 rounded-lg hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
               <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-4" style={{ backgroundColor: '#F4A261' }}>
                 <Building2 size={28} className="text-white" strokeWidth={2} />
               </div>
-              <h3 className="font-heading font-bold text-lg mb-2" style={{ color: '#1D3160' }}>
+              <h3 className="font-serif font-bold text-lg mb-2" style={{ color: '#1D3160' }}>
                 Accommodation
               </h3>
               <p className="text-gray-600 text-sm">
@@ -35,11 +35,11 @@ export default function Partnership() {
               </p>
             </div>
 
-            <div className="bg-gray-50 p-6 rounded-2xl hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+            <div className="bg-gray-50 p-6 rounded-lg hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
               <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-4" style={{ backgroundColor: '#1D3160' }}>
                 <Globe2 size={28} className="text-white" strokeWidth={2} />
               </div>
-              <h3 className="font-heading font-bold text-lg mb-2" style={{ color: '#1D3160' }}>
+              <h3 className="font-serif font-bold text-lg mb-2" style={{ color: '#1D3160' }}>
                 In-Country Logistics
               </h3>
               <p className="text-gray-600 text-sm">
@@ -47,11 +47,11 @@ export default function Partnership() {
               </p>
             </div>
 
-            <div className="bg-gray-50 p-6 rounded-2xl hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+            <div className="bg-gray-50 p-6 rounded-lg hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
               <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-4" style={{ backgroundColor: '#F4A261' }}>
                 <Users2 size={28} className="text-white" strokeWidth={2} />
               </div>
-              <h3 className="font-heading font-bold text-lg mb-2" style={{ color: '#1D3160' }}>
+              <h3 className="font-serif font-bold text-lg mb-2" style={{ color: '#1D3160' }}>
                 Business Visits
               </h3>
               <p className="text-gray-600 text-sm">
@@ -59,11 +59,11 @@ export default function Partnership() {
               </p>
             </div>
 
-            <div className="bg-gray-50 p-6 rounded-2xl hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+            <div className="bg-gray-50 p-6 rounded-lg hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
               <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-4" style={{ backgroundColor: '#1D3160' }}>
                 <Lightbulb size={28} className="text-white" strokeWidth={2} />
               </div>
-              <h3 className="font-heading font-bold text-lg mb-2" style={{ color: '#1D3160' }}>
+              <h3 className="font-serif font-bold text-lg mb-2" style={{ color: '#1D3160' }}>
                 Project Design
               </h3>
               <p className="text-gray-600 text-sm">

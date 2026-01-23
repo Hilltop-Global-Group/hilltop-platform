@@ -10,12 +10,12 @@ export default function GhanaApplication() {
           </span>
         </div>
 
-        <h2 className="font-heading font-bold text-4xl mb-8" style={{ color: '#1D3160' }}>
+        <h2 className="font-serif font-bold text-4xl mb-8" style={{ color: '#1D3160' }}>
           Apply to the Ghana Program
         </h2>
 
-        <div className="bg-gray-50 p-12 rounded-3xl shadow-lg mb-8">
-          <div className="w-48 h-48 mx-auto bg-white rounded-2xl shadow-md flex items-center justify-center mb-6">
+        <div className="bg-gray-50 p-12 rounded-lg shadow-lg mb-8">
+          <div className="w-48 h-48 mx-auto bg-white rounded-lg shadow-md flex items-center justify-center mb-6">
             <QrCode size={120} style={{ color: '#1D3160' }} />
           </div>
           <p className="text-gray-600 font-semibold">Scan to apply</p>
@@ -31,15 +31,15 @@ export default function GhanaApplication() {
         </p>
 
         <button 
-          className="inline-flex items-center gap-2 px-10 py-4 font-heading font-bold text-lg text-white rounded-full transition-all duration-300 hover:scale-105 shadow-lg"
+          className="inline-flex items-center gap-2 px-10 py-4 font-serif font-bold text-lg text-white rounded-full transition-all duration-300 hover:scale-105 shadow-lg"
           style={{ backgroundColor: '#1D3160' }}
         >
           Apply Now
           <ArrowRight size={20} />
         </button>
 
-        <div className="mt-16 p-8 bg-gray-50 rounded-2xl text-left">
-          <h3 className="font-heading font-bold text-2xl mb-4" style={{ color: '#1D3160' }}>
+        <div className="mt-16 p-8 bg-gray-50 rounded-lg text-left">
+          <h3 className="font-serif font-bold text-2xl mb-4" style={{ color: '#1D3160' }}>
             Payment Terms & Plan Options
           </h3>
           <ul className="space-y-3 text-gray-700">

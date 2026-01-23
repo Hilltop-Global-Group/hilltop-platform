@@ -27,7 +27,7 @@ export default function GhanaProgramHero() {
         </div>
 
         <div className="text-center mb-12">
-          <h1 className="font-heading font-bold text-5xl sm:text-6xl lg:text-7xl text-white mb-6">
+          <h1 className="font-serif font-bold text-5xl sm:text-6xl lg:text-7xl text-white mb-6">
             2026 Ghana Internship Program
           </h1>
           
@@ -43,9 +43,9 @@ export default function GhanaProgramHero() {
 
         {/* Feature Cards */}
         <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          <div className="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20">
+          <div className="bg-white/10 backdrop-blur-md p-6 rounded-lg border border-white/20">
             <Globe size={40} className="text-white mb-4" strokeWidth={1.5} />
-            <h3 className="font-heading font-bold text-xl text-white mb-2">
+            <h3 className="font-serif font-bold text-xl text-white mb-2">
               Gain global work experience
             </h3>
             <p className="text-white/80">
@@ -53,9 +53,9 @@ export default function GhanaProgramHero() {
             </p>
           </div>
 
-          <div className="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20">
+          <div className="bg-white/10 backdrop-blur-md p-6 rounded-lg border border-white/20">
             <TrendingUp size={40} className="text-white mb-4" strokeWidth={1.5} />
-            <h3 className="font-heading font-bold text-xl text-white mb-2">
+            <h3 className="font-serif font-bold text-xl text-white mb-2">
               Cross-cultural leadership
             </h3>
             <p className="text-white/80">
@@ -63,9 +63,9 @@ export default function GhanaProgramHero() {
             </p>
           </div>
 
-          <div className="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20">
+          <div className="bg-white/10 backdrop-blur-md p-6 rounded-lg border border-white/20">
             <Users size={40} className="text-white mb-4" strokeWidth={1.5} />
-            <h3 className="font-heading font-bold text-xl text-white mb-2">
+            <h3 className="font-serif font-bold text-xl text-white mb-2">
               Network & mentorship
             </h3>
             <p className="text-white/80">

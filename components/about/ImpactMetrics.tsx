@@ -101,7 +101,7 @@ export default function ImpactMetrics() {
             <span className="inline-block text-sm font-bold text-black uppercase tracking-wider mb-4 border-2 border-gold-400 px-6 py-2 rounded-full bg-gold-400">
               Our Impact
             </span>
-            <h2 className="font-heading font-bold text-4xl sm:text-5xl mb-4" style={{ color: '#F4A261' }}>
+            <h2 className="font-serif font-bold text-4xl sm:text-5xl mb-4" style={{ color: '#F4A261' }}>
               Numbers That Tell Our Story
             </h2>
             <p className="text-lg max-w-2xl mx-auto" style={{ color: '#F4A261' }}>
@@ -119,16 +119,16 @@ export default function ImpactMetrics() {
             >
               <div className="relative group">
                 {/* Card */}
-                <div className="relative bg-white rounded-2xl p-8 border-4 border-gold-400 hover:border-navy-900 transition-all duration-500 hover:-translate-y-2 overflow-hidden hover:shadow-2xl hover:shadow-gold-400/50">
+                <div className="relative bg-white rounded-lg p-8 border-4 border-gold-400 hover:border-navy-900 transition-all duration-500 hover:-translate-y-2 overflow-hidden hover:shadow-lg hover:shadow-gold-400/50">
                   {/* Background glow on hover */}
                   <div className="absolute inset-0 bg-gradient-to-br from-gold-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500" />
                   
                   <div className="relative text-center">
-                    <div className="font-heading font-bold text-6xl mb-2" style={{ color: '#1D3160' }}>
+                    <div className="font-serif font-bold text-6xl mb-2" style={{ color: '#1D3160' }}>
                       <Counter end={metric.value} />
                       {metric.suffix}
                     </div>
-                    <h3 className="font-heading font-bold text-xl mb-3" style={{ color: '#1D3160' }}>
+                    <h3 className="font-serif font-bold text-xl mb-3" style={{ color: '#1D3160' }}>
                       {metric.label}
                     </h3>
                     <p className="text-sm text-gray-700 leading-relaxed">
@@ -144,7 +144,7 @@ export default function ImpactMetrics() {
                 </div>
 
                 {/* Hover glow */}
-                <div className="absolute inset-0 bg-gold-400/20 rounded-2xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
+                <div className="absolute inset-0 bg-gold-400/20 rounded-lg blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
               </div>
             </ScrollReveal>
           ))}

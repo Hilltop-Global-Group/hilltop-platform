@@ -21,7 +21,7 @@ export default function NewsletterSignup() {
   return (
     <section className="py-20 bg-gray-50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-gradient-to-br from-primary-navy to-[#27427a] rounded-3xl p-12 text-center shadow-2xl">
+        <div className="bg-gradient-to-br from-primary-navy to-[#27427a] rounded-lg p-12 text-center shadow-lg">
           <div 
             className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6"
             style={{ backgroundColor: '#F4A261' }}
@@ -29,7 +29,7 @@ export default function NewsletterSignup() {
             <Mail size={40} className="text-white" />
           </div>
 
-          <h2 className="font-heading font-bold text-4xl text-white mb-4">
+          <h2 className="font-serif font-bold text-4xl text-white mb-4">
             Stay in the Loop
           </h2>
           
@@ -38,14 +38,14 @@ export default function NewsletterSignup() {
           </p>
 
           {subscribed ? (
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-8">
               <div 
                 className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
                 style={{ backgroundColor: '#F4A261' }}
               >
                 <Send size={32} className="text-white" />
               </div>
-              <h3 className="font-heading font-bold text-2xl text-white mb-2">
+              <h3 className="font-serif font-bold text-2xl text-white mb-2">
                 Thank You!
               </h3>
               <p className="text-white/80">
@@ -64,7 +64,7 @@ export default function NewsletterSignup() {
               />
               <button
                 type="submit"
-                className="px-8 py-4 font-heading font-bold rounded-xl text-primary-navy transition-all duration-300 hover:scale-105 shadow-lg whitespace-nowrap"
+                className="px-8 py-4 font-serif font-bold rounded-xl text-primary-navy transition-all duration-300 hover:scale-105 shadow-lg whitespace-nowrap"
                 style={{ backgroundColor: '#F4A261' }}
               >
                 Subscribe

@@ -28,7 +28,7 @@ export default function Accommodation() {
     <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="font-heading font-bold text-4xl sm:text-5xl mb-6" style={{ color: '#1D3160' }}>
+          <h2 className="font-serif font-bold text-4xl sm:text-5xl mb-6" style={{ color: '#1D3160' }}>
             Accommodation & Local Support
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto">
@@ -43,7 +43,7 @@ export default function Accommodation() {
             return (
               <div
                 key={index}
-                className="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                className="bg-white p-6 rounded-lg shadow-md hover:shadow-md transition-all duration-300 hover:-translate-y-1"
               >
                 <div 
                   className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
@@ -51,7 +51,7 @@ export default function Accommodation() {
                 >
                   <Icon size={24} className="text-white" strokeWidth={2} />
                 </div>
-                <h3 className="font-heading font-bold text-lg mb-2" style={{ color: '#1D3160' }}>
+                <h3 className="font-serif font-bold text-lg mb-2" style={{ color: '#1D3160' }}>
                   {amenity.text}
                 </h3>
                 <p className="text-gray-600 text-sm">
@@ -63,7 +63,7 @@ export default function Accommodation() {
         </div>
 
         <div 
-          className="bg-white rounded-2xl p-8 shadow-lg mb-8"
+          className="bg-white rounded-lg p-8 shadow-lg mb-8"
           style={{ borderLeft: '4px solid #F4A261' }}
         >
           <p className="text-gray-700 text-sm">
@@ -73,7 +73,7 @@ export default function Accommodation() {
 
         {/* Transport & Support */}
         <div className="grid md:grid-cols-2 gap-8">
-          <div className="bg-white p-8 rounded-2xl shadow-lg">
+          <div className="bg-white p-8 rounded-lg shadow-lg">
             <div className="flex items-center gap-4 mb-6">
               <div 
                 className="w-14 h-14 rounded-xl flex items-center justify-center"
@@ -81,7 +81,7 @@ export default function Accommodation() {
               >
                 <Car size={28} className="text-white" strokeWidth={2} />
               </div>
-              <h3 className="font-heading font-bold text-2xl" style={{ color: '#1D3160' }}>
+              <h3 className="font-serif font-bold text-2xl" style={{ color: '#1D3160' }}>
                 Transport & Accessibility
               </h3>
             </div>
@@ -100,7 +100,7 @@ export default function Accommodation() {
             </ul>
           </div>
 
-          <div className="bg-white p-8 rounded-2xl shadow-lg">
+          <div className="bg-white p-8 rounded-lg shadow-lg">
             <div className="flex items-center gap-4 mb-6">
               <div 
                 className="w-14 h-14 rounded-xl flex items-center justify-center"
@@ -108,7 +108,7 @@ export default function Accommodation() {
               >
                 <HeadphonesIcon size={28} className="text-white" strokeWidth={2} />
               </div>
-              <h3 className="font-heading font-bold text-2xl" style={{ color: '#1D3160' }}>
+              <h3 className="font-serif font-bold text-2xl" style={{ color: '#1D3160' }}>
                 Local Support
               </h3>
             </div>

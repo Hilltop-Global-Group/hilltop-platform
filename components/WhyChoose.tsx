@@ -8,7 +8,7 @@ export default function WhyChoose() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="font-heading font-bold text-4xl sm:text-5xl mb-6" style={{ color: '#1D3160' }}>
+            <h2 className="font-serif font-bold text-4xl sm:text-5xl mb-6" style={{ color: '#1D3160' }}>
               Why You Should Choose Hilltop Global Group
             </h2>
             <p className="font-body text-gray-600 text-lg leading-relaxed mb-8">
@@ -16,7 +16,7 @@ export default function WhyChoose() {
             </p>
 
             <div className="mb-8">
-              <h3 className="font-heading font-bold text-2xl mb-4" style={{ color: '#1D3160' }}>
+              <h3 className="font-serif font-bold text-2xl mb-4" style={{ color: '#1D3160' }}>
                 Mission
               </h3>
               <p className="font-body text-gray-600 leading-relaxed mb-6">
@@ -33,7 +33,7 @@ export default function WhyChoose() {
               </ul>
             </div>
 
-            <button className="inline-flex items-center gap-2 px-6 py-3 rounded font-heading font-bold text-sm tracking-wide hover:bg-opacity-90 transition-all" style={{ backgroundColor: '#F4A261', color: '#1D3160' }}>
+            <button className="inline-flex items-center gap-2 px-6 py-3 rounded font-serif font-bold text-sm tracking-wide hover:bg-opacity-90 transition-all" style={{ backgroundColor: '#F4A261', color: '#1D3160' }}>
               WATCH MORE
             </button>
           </div>

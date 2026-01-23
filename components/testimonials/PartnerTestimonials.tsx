@@ -32,7 +32,7 @@ export default function PartnerTestimonials() {
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="font-heading font-bold text-4xl sm:text-5xl mb-6" style={{ color: '#1D3160' }}>
+          <h2 className="font-serif font-bold text-4xl sm:text-5xl mb-6" style={{ color: '#1D3160' }}>
             Partner & University Feedback
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -44,17 +44,17 @@ export default function PartnerTestimonials() {
           {partnerTestimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-gray-50 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500"
+              className="bg-gray-50 p-8 rounded-lg shadow-lg hover:shadow-md transition-all duration-500"
             >
               <div className="flex items-start gap-4 mb-6">
                 <div 
-                  className="w-16 h-16 rounded-2xl flex items-center justify-center"
+                  className="w-16 h-16 rounded-lg flex items-center justify-center"
                   style={{ backgroundColor: index % 2 === 0 ? '#1D3160' : '#F4A261' }}
                 >
                   <Building2 size={32} className="text-white" strokeWidth={2} />
                 </div>
                 <div className="flex-1">
-                  <p className="font-heading font-bold text-lg" style={{ color: '#1D3160' }}>
+                  <p className="font-serif font-bold text-lg" style={{ color: '#1D3160' }}>
                     {testimonial.name}
                   </p>
                   <p className="text-gray-600 text-sm">{testimonial.role}</p>

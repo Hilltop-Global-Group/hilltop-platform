@@ -13,7 +13,7 @@ export default function AboutHero() {
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center">
-          <h1 className="font-heading font-bold text-5xl sm:text-6xl text-white">
+          <h1 className="font-serif font-bold text-5xl sm:text-6xl text-white">
             About Us
           </h1>
         </div>

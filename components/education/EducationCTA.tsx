@@ -16,7 +16,7 @@ export default function EducationCTA() {
       
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center">
-          <h2 className="font-heading font-bold text-4xl sm:text-5xl lg:text-6xl text-white mb-6">
+          <h2 className="font-serif font-bold text-4xl sm:text-5xl lg:text-6xl text-white mb-6">
             Ready to Expand Your Program?
           </h2>
           
@@ -27,7 +27,7 @@ export default function EducationCTA() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="#contact"
-              className="group inline-flex items-center justify-center gap-3 px-10 py-5 font-heading font-bold text-lg tracking-wide text-primary-navy bg-white border-2 border-white rounded-full shadow-xl transition-all duration-300 hover:bg-primary-navy hover:text-white hover:scale-105 hover:shadow-2xl"
+              className="group inline-flex items-center justify-center gap-3 px-10 py-5 font-serif font-bold text-lg tracking-wide text-primary-navy bg-white border-2 border-white rounded-full shadow-md transition-all duration-300 hover:bg-primary-navy hover:text-white hover:scale-105 hover:shadow-lg"
             >
               <Mail size={22} className="transition-transform duration-300 group-hover:scale-110" />
               Contact Us
@@ -35,7 +35,7 @@ export default function EducationCTA() {
             
             <Link
               href="/about"
-              className="group inline-flex items-center justify-center gap-3 px-10 py-5 font-heading font-bold text-lg tracking-wide text-white bg-white/10 border-2 border-white rounded-full backdrop-blur-sm transition-all duration-300 hover:bg-white/20 hover:scale-105"
+              className="group inline-flex items-center justify-center gap-3 px-10 py-5 font-serif font-bold text-lg tracking-wide text-white bg-white/10 border-2 border-white rounded-full backdrop-blur-sm transition-all duration-300 hover:bg-white/20 hover:scale-105"
             >
               Learn More
               <ArrowRight size={22} className="transition-transform duration-300 group-hover:translate-x-1" />

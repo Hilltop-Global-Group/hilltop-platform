@@ -35,7 +35,7 @@ export default function FeaturedStories() {
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="font-heading font-bold text-4xl sm:text-5xl mb-6" style={{ color: '#1D3160' }}>
+          <h2 className="font-serif font-bold text-4xl sm:text-5xl mb-6" style={{ color: '#1D3160' }}>
             Featured Stories
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -49,13 +49,13 @@ export default function FeaturedStories() {
               key={index}
               className={`flex flex-col ${
                 index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
-              } gap-8 items-center bg-gray-50 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500`}
+              } gap-8 items-center bg-gray-50 rounded-lg overflow-hidden shadow-lg hover:shadow-lg transition-all duration-500`}
             >
               {/* YouTube Video Section */}
               <div className="lg:w-1/2 w-full p-6 lg:p-8">
                 <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
                   <iframe
-                    className="absolute top-0 left-0 w-full h-full rounded-2xl shadow-lg"
+                    className="absolute top-0 left-0 w-full h-full rounded-lg shadow-lg"
                     src={story.videoUrl}
                     title={`${story.name} Testimonial Video`}
                     frameBorder="0"
@@ -76,7 +76,7 @@ export default function FeaturedStories() {
               <div className="lg:w-1/2 p-8 lg:p-12">
                 <Quote size={48} style={{ color: '#F4A261' }} className="mb-4" />
                 
-                <blockquote className="text-2xl font-heading font-semibold mb-6" style={{ color: '#1D3160' }}>
+                <blockquote className="text-2xl font-serif font-semibold mb-6" style={{ color: '#1D3160' }}>
                   "{story.quote}"
                 </blockquote>
 
@@ -85,7 +85,7 @@ export default function FeaturedStories() {
                 </p>
 
                 <div className="border-t pt-6" style={{ borderColor: '#F4A261' }}>
-                  <p className="font-heading font-bold text-xl" style={{ color: '#1D3160' }}>
+                  <p className="font-serif font-bold text-xl" style={{ color: '#1D3160' }}>
                     {story.name}
                   </p>
                   <p className="text-gray-600">{story.role}</p>

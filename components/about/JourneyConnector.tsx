@@ -29,7 +29,7 @@ export default function JourneyConnector() {
 
   return (
     <div className="fixed left-0 top-1/2 -translate-y-1/2 hidden xl:block z-40 pointer-events-auto">
-      <div className="relative bg-white/95 backdrop-blur-md shadow-2xl rounded-r-2xl border-r-4 border-navy-900 overflow-hidden">
+      <div className="relative bg-white/95 backdrop-blur-md shadow-lg rounded-r-2xl border-r-4 border-navy-900 overflow-hidden">
         {/* Decorative top accent */}
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-navy-900 via-gold-400 to-navy-900" />
         
@@ -112,7 +112,7 @@ export default function JourneyConnector() {
                     
                     {/* Label */}
                     <div
-                      className={`font-heading font-bold text-xs transition-all duration-500 ${
+                      className={`font-serif font-bold text-xs transition-all duration-500 ${
                         isActive ? 'text-navy-900' : 'text-gray-500'
                       }`}
                     >

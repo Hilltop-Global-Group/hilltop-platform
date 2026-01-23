@@ -7,7 +7,7 @@ export default function GhanaProgramOverview() {
             <img
               src="http://hilltopglobalgroup.com/wp-content/uploads/2023/09/IMG_4280-1-scaled-e1759312955679.jpg"
               alt="Accra skyline & business districts"
-              className="w-full h-64 object-cover rounded-2xl shadow-lg mb-4"
+              className="w-full h-64 object-cover rounded-lg shadow-lg mb-4"
             />
             <p className="text-center text-gray-600 text-sm">Accra skyline & business districts</p>
           </div>
@@ -15,7 +15,7 @@ export default function GhanaProgramOverview() {
             <img
               src="http://hilltopglobalgroup.com/wp-content/uploads/2023/09/Copy-of-20230521_172314-scaled-e1759312776245.jpg"
               alt="Historical sites"
-              className="w-full h-64 object-cover rounded-2xl shadow-lg mb-4"
+              className="w-full h-64 object-cover rounded-lg shadow-lg mb-4"
             />
             <p className="text-center text-gray-600 text-sm">Historical sites</p>
           </div>
@@ -23,14 +23,14 @@ export default function GhanaProgramOverview() {
             <img
               src="http://hilltopglobalgroup.com/wp-content/uploads/2023/09/Copy-of-20230521_170109-scaled-e1759311926763.jpg"
               alt="Markets & creative streets"
-              className="w-full h-64 object-cover rounded-2xl shadow-lg mb-4"
+              className="w-full h-64 object-cover rounded-lg shadow-lg mb-4"
             />
             <p className="text-center text-gray-600 text-sm">Markets & creative streets</p>
           </div>
         </div>
 
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-heading font-bold text-4xl mb-6" style={{ color: '#1D3160' }}>
+          <h2 className="font-serif font-bold text-4xl mb-6" style={{ color: '#1D3160' }}>
             About the Program
           </h2>
           <p className="text-gray-700 text-lg leading-relaxed">

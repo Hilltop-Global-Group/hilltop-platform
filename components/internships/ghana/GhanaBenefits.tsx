@@ -28,12 +28,12 @@ export default function GhanaBenefits() {
             return (
               <div key={index} className="text-center">
                 <div 
-                  className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4"
+                  className="w-16 h-16 rounded-lg flex items-center justify-center mx-auto mb-4"
                   style={{ backgroundColor: '#F4A261' }}
                 >
                   <Icon size={32} className="text-white" strokeWidth={2} />
                 </div>
-                <h3 className="font-heading font-bold text-xl mb-2" style={{ color: '#1D3160' }}>
+                <h3 className="font-serif font-bold text-xl mb-2" style={{ color: '#1D3160' }}>
                   {benefit.title}
                 </h3>
                 <p className="text-gray-600">
@@ -55,33 +55,33 @@ export default function GhanaBenefits() {
 
         {/* Image Grid */}
         <div className="grid md:grid-cols-3 gap-6 mt-12">
-          <div className="relative h-64 rounded-2xl overflow-hidden shadow-lg group">
+          <div className="relative h-64 rounded-lg overflow-hidden shadow-lg group">
             <div
               className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
               style={{ backgroundImage: `url('http://hilltopglobalgroup.com/wp-content/uploads/2023/09/Copy-of-20230518_122404-scaled-e1695315573707.jpg')` }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
-              <p className="text-white font-heading font-bold text-lg">Accra skyline & business districts</p>
+              <p className="text-white font-serif font-bold text-lg">Accra skyline & business districts</p>
             </div>
           </div>
 
-          <div className="relative h-64 rounded-2xl overflow-hidden shadow-lg group">
+          <div className="relative h-64 rounded-lg overflow-hidden shadow-lg group">
             <div
               className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
               style={{ backgroundImage: `url('http://hilltopglobalgroup.com/wp-content/uploads/2023/09/Copy-of-20230521_170109-scaled-e1759311926763.jpg')` }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
-              <p className="text-white font-heading font-bold text-lg">Historical sites</p>
+              <p className="text-white font-serif font-bold text-lg">Historical sites</p>
             </div>
           </div>
 
-          <div className="relative h-64 rounded-2xl overflow-hidden shadow-lg group">
+          <div className="relative h-64 rounded-lg overflow-hidden shadow-lg group">
             <div
               className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
               style={{ backgroundImage: `url('http://hilltopglobalgroup.com/wp-content/uploads/2023/09/2.jpg')` }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
-              <p className="text-white font-heading font-bold text-lg">Markets & creative streets</p>
+              <p className="text-white font-serif font-bold text-lg">Markets & creative streets</p>
             </div>
           </div>
         </div>
