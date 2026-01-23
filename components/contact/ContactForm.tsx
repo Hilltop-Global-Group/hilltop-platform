@@ -60,8 +60,7 @@ export default function ContactForm() {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-opacity-50"
-                style={{ focusRingColor: '#1D3160' }}
+                className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#1D3160] focus:ring-opacity-50"
                 placeholder="John Doe"
               />
             </div>
@@ -77,8 +76,7 @@ export default function ContactForm() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-opacity-50"
-                style={{ focusRingColor: '#1D3160' }}
+                className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#1D3160] focus:ring-opacity-50"
                 placeholder="john@example.com"
               />
             </div>
@@ -95,8 +93,7 @@ export default function ContactForm() {
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-opacity-50"
-                style={{ focusRingColor: '#1D3160' }}
+                className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#1D3160] focus:ring-opacity-50"
                 placeholder="+1 (555) 000-0000"
               />
             </div>
@@ -110,8 +107,7 @@ export default function ContactForm() {
                 name="program"
                 value={formData.program}
                 onChange={handleChange}
-                className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-opacity-50"
-                style={{ focusRingColor: '#1D3160' }}
+                className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#1D3160] focus:ring-opacity-50"
               >
                 <option value="">Select a program</option>
                 <option value="ghana">Ghana Internship Program</option>
@@ -134,8 +130,7 @@ export default function ContactForm() {
               value={formData.subject}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-opacity-50"
-              style={{ focusRingColor: '#1D3160' }}
+              className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#1D3160] focus:ring-opacity-50"
               placeholder="What would you like to discuss?"
             />
           </div>
@@ -151,8 +146,7 @@ export default function ContactForm() {
               onChange={handleChange}
               required
               rows={6}
-              className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-opacity-50 resize-none"
-              style={{ focusRingColor: '#1D3160' }}
+              className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#1D3160] focus:ring-opacity-50 resize-none"
               placeholder="Tell us more about your inquiry..."
             />
           </div>
