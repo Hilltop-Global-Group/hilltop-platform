@@ -5,19 +5,16 @@ import { motion } from 'framer-motion';
 
 const videos = [
   {
-    title: 'See What Previous Participants Experienced',
-    description: 'See past students\' transformative experiences across Africa. Discover the impact, growth, and connections made during their internship journeys.',
-    thumbnail: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/Copy-of-20230518_122404-scaled-e1695315573707.jpg',
-  },
-  {
     title: 'Ghana Internship Experience 2024',
     description: 'Students share highlights from their journey of growth, learning, and cultural discovery.',
-    thumbnail: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/Copy-of-20230521_170109-scaled-e1759311926763.jpg',
+    thumbnail: 'http://hilltopglobalgroup.com/wp-content/uploads/2025/10/summer2024.jpg',
+    videoUrl: 'https://player.vimeo.com/video/1009903690?h=a03fa111f9',
   },
   {
     title: 'Hilltop Internships: Global Connections Across Africa',
     description: 'A collective look at our programs—where learning meets culture and innovation.',
-    thumbnail: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/Copy-of-20230521_172314-scaled-e1759312776245.jpg',
+    thumbnail: 'http://hilltopglobalgroup.com/wp-content/uploads/2025/10/all.jpg',
+    videoUrl: 'https://vimeo.com/1132264308',
   },
 ];
 
@@ -25,11 +22,14 @@ export default function VideoTestimonials() {
   return (
     <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {videos.map((video, index) => (
-            <motion.div
+            <motion.a
               key={index}
-              className="group bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2"
+              href={video.videoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 block"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
@@ -63,11 +63,11 @@ export default function VideoTestimonials() {
                 <p className="text-gray-600 leading-relaxed">
                   {video.description}
                 </p>
-                <button className="mt-4 text-sm font-semibold hover:underline" style={{ color: '#F4A261' }}>
+                <span className="mt-4 inline-block text-sm font-semibold hover:underline" style={{ color: '#F4A261' }}>
                   Watch →
-                </button>
+                </span>
               </div>
-            </motion.div>
+            </motion.a>
           ))}
         </div>
       </div>
