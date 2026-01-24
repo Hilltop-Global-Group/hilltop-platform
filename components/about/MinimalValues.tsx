@@ -53,10 +53,10 @@ export default function MinimalValues() {
             <span className="inline-block text-sm font-bold text-black uppercase tracking-wider mb-4 border-2 border-gold-400 px-6 py-2 rounded-full bg-gold-400">
               Our Values
             </span>
-            <h2 className="font-serif font-bold text-4xl sm:text-5xl text-navy-900 mb-4">
+            <h2 className="font-serif font-bold text-4xl sm:text-5xl mb-4" style={{ color: '#1D3160' }}>
               What Defines Us
             </h2>
-            <p className="text-lg text-black max-w-2xl mx-auto">
+            <p className="text-lg text-gray-700 max-w-2xl mx-auto">
               The principles that guide every decision, every program, every partnership
             </p>
           </div>
@@ -105,14 +105,12 @@ export default function MinimalValues() {
                     {/* Content */}
                     <div className="flex-1">
                       <div className="mb-3">
-                        <h3 className={`font-serif font-bold text-3xl mb-1 transition-colors duration-500 ${
-                          hoveredValue === value.id ? 'text-white' : 'text-navy-900'
-                        }`}>
+                        <h3 className={`font-serif font-bold text-3xl mb-1 transition-colors duration-500`}
+                          style={{ color: hoveredValue === value.id ? '#FFFFFF' : '#1D3160' }}>
                           {value.title}
                         </h3>
-                        <p className={`text-sm font-semibold uppercase tracking-wide transition-colors duration-500 ${
-                          hoveredValue === value.id ? 'text-gold-400' : 'text-gold-400'
-                        }`}>
+                        <p className={`text-sm font-semibold uppercase tracking-wide transition-colors duration-500`}
+                          style={{ color: '#F4A261' }}>
                           {value.tagline}
                         </p>
                       </div>
@@ -125,7 +123,7 @@ export default function MinimalValues() {
                         }`}
                       >
                         <p className={`leading-relaxed transition-colors duration-500 ${
-                          hoveredValue === value.id ? 'text-white' : 'text-black'
+                          hoveredValue === value.id ? 'text-white' : 'text-gray-700'
                         }`}>
                           {value.description}
                         </p>

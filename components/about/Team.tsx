@@ -28,7 +28,7 @@ export default function Team() {
             <span className="inline-block text-sm font-bold text-black uppercase tracking-wider mb-4 border-2 border-gold-400 px-6 py-2 rounded-full bg-gold-400">
               The Team
             </span>
-            <h2 className="font-serif font-bold text-4xl sm:text-5xl text-navy-900 mb-4">
+            <h2 className="font-serif font-bold text-4xl sm:text-5xl mb-4" style={{ color: '#1D3160' }}>
               Meet Our Team
             </h2>
             <p className="text-lg text-gray-700 max-w-2xl mx-auto">

@@ -19,7 +19,7 @@ export default function FeaturedVideo() {
               Featured Interview
             </span>
           </div>
-          <h2 className="font-serif font-bold text-4xl sm:text-5xl text-navy-900 mb-6">
+          <h2 className="font-serif font-bold text-4xl sm:text-5xl mb-6" style={{ color: '#1D3160' }}>
             He's Changing How the World Sees Africa – One Student at a Time
           </h2>
           <p className="text-lg text-gray-700 max-w-3xl mx-auto">

@@ -35,7 +35,7 @@ export default function EmpoweringFutures() {
             <span className="inline-block text-sm font-bold text-black uppercase tracking-wider mb-4 border-2 border-gold-400 px-6 py-2 rounded-full bg-gold-400">
               What We Offer
             </span>
-            <h2 className="font-serif font-bold text-4xl sm:text-5xl text-navy-900 mb-4">
+            <h2 className="font-serif font-bold text-4xl sm:text-5xl mb-4" style={{ color: '#1D3160' }}>
               Empowering Global Futures
             </h2>
           </div>
@@ -62,7 +62,7 @@ export default function EmpoweringFutures() {
                       </span>
                     </div>
 
-                    <h3 className="font-serif font-bold text-3xl text-navy-900 mb-4 group-hover:text-black transition-colors">
+                    <h3 className="font-serif font-bold text-3xl mb-4 group-hover:text-black transition-colors" style={{ color: '#1D3160' }}>
                       {feature.title}
                     </h3>
                     <p className="text-gray-700 leading-relaxed text-lg">

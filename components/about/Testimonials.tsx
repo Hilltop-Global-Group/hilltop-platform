@@ -92,7 +92,7 @@ export default function Testimonials() {
             <span className="inline-block text-sm font-bold text-black uppercase tracking-wider mb-4 border-2 border-gold-400 px-6 py-2 rounded-full bg-gold-400">
               Testimonials
             </span>
-            <h2 className="font-serif font-bold text-4xl sm:text-5xl mb-6 text-navy-900">
+            <h2 className="font-serif font-bold text-4xl sm:text-5xl mb-6" style={{ color: '#1D3160' }}>
               Trusted by Students & Partners
             </h2>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto">
