@@ -124,9 +124,9 @@ export default function ImpactMetrics() {
                   <div className="absolute inset-0 bg-gradient-to-br from-gold-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500" />
                   
                   <div className="relative text-center">
-                    <div className="font-serif font-bold text-6xl mb-2" style={{ color: '#1D3160' }}>
+                    <div className="font-serif font-bold text-6xl mb-2 flex items-center justify-center" style={{ color: '#1D3160' }}>
                       <Counter end={metric.value} />
-                      {metric.suffix}
+                      <span>{metric.suffix}</span>
                     </div>
                     <h3 className="font-serif font-bold text-xl mb-3" style={{ color: '#1D3160' }}>
                       {metric.label}
