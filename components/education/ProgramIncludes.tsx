@@ -1,4 +1,7 @@
+'use client';
+
 import { Briefcase, Landmark, Heart, Palmtree } from 'lucide-react';
+import FadeIn from '../FadeIn';
 
 const includes = [
   {
@@ -31,49 +34,47 @@ export default function ProgramIncludes() {
   return (
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="font-serif font-bold text-4xl sm:text-5xl mb-6" style={{ color: '#1D3160' }}>
-            Each Study Abroad Program Includes
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            A comprehensive experience combining education, culture, service, and adventure
-          </p>
-        </div>
+        <FadeIn>
+          <div className="text-center mb-16">
+            <h2 className="font-serif font-bold text-4xl sm:text-5xl mb-6" style={{ color: '#1D3160' }}>
+              Each Study Abroad Program Includes
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              A comprehensive experience combining education, culture, service, and adventure
+            </p>
+          </div>
+        </FadeIn>
 
         <div className="grid md:grid-cols-2 gap-8">
           {includes.map((item, index) => {
             const Icon = item.icon;
             return (
-              <div
-                key={index}
-                className="group relative bg-white rounded-lg p-8 shadow-lg hover:shadow-lg transition-all duration-500 hover:-translate-y-2 border-2 border-gray-100"
-                style={{
-                  animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both`
-                }}
-              >
-                <div className="flex items-start gap-6">
-                  <div 
-                    className="flex-shrink-0 w-16 h-16 rounded-lg flex items-center justify-center transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6 shadow-lg"
-                    style={{ backgroundColor: item.color }}
-                  >
-                    <Icon size={32} className="text-white" strokeWidth={2} />
+              <FadeIn key={index} delay={index * 0.1}>
+                <div className="group relative bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-1 border-2 border-gray-100">
+                  <div className="flex items-start gap-6">
+                    <div 
+                      className="flex-shrink-0 w-16 h-16 rounded-lg flex items-center justify-center transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6 shadow-lg"
+                      style={{ backgroundColor: item.color }}
+                    >
+                      <Icon size={32} className="text-white" strokeWidth={2} />
+                    </div>
+                    
+                    <div className="flex-1">
+                      <h3 className="font-serif font-bold text-2xl mb-3" style={{ color: item.color }}>
+                        {item.title}
+                      </h3>
+                      <p className="text-gray-600 text-lg leading-relaxed">
+                        {item.description}
+                      </p>
+                    </div>
                   </div>
-                  
-                  <div className="flex-1">
-                    <h3 className="font-serif font-bold text-2xl mb-3" style={{ color: item.color }}>
-                      {item.title}
-                    </h3>
-                    <p className="text-gray-600 text-lg leading-relaxed">
-                      {item.description}
-                    </p>
-                  </div>
-                </div>
 
-                <div 
-                  className="absolute inset-0 border-2 border-transparent group-hover:border-current rounded-lg transition-all duration-500 pointer-events-none"
-                  style={{ color: item.color }}
-                />
-              </div>
+                  <div 
+                    className="absolute inset-0 border-2 border-transparent group-hover:border-current rounded-xl transition-all duration-500 pointer-events-none"
+                    style={{ color: item.color }}
+                  />
+                </div>
+              </FadeIn>
             );
           })}
         </div>

@@ -1,3 +1,8 @@
+'use client';
+
+import { motion } from 'framer-motion';
+import FadeIn from '../FadeIn';
+
 export default function EducationHero() {
   return (
     <section className="relative pt-24 pb-16 overflow-hidden" style={{ backgroundColor: '#1D3160' }}>
@@ -13,19 +18,28 @@ export default function EducationHero() {
       
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center">
-          <div className="mb-4">
+          <motion.div 
+            className="mb-4"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
             <span className="inline-flex items-center gap-2 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-white bg-white/10 border border-white/20 rounded-full backdrop-blur-md">
               Study Abroad Programs
             </span>
-          </div>
+          </motion.div>
           
-          <h1 className="font-serif font-bold text-4xl sm:text-5xl text-white mb-4">
-            Education Programs
-          </h1>
+          <FadeIn delay={0.2}>
+            <h1 className="font-serif font-bold text-4xl sm:text-5xl text-white mb-4">
+              Education Programs
+            </h1>
+          </FadeIn>
           
-          <p className="text-base sm:text-lg text-white/85 max-w-2xl mx-auto">
-            Transformational study abroad experiences that expand your university's international program footprint in Africa.
-          </p>
+          <FadeIn delay={0.35}>
+            <p className="text-base sm:text-lg text-white/85 max-w-2xl mx-auto">
+              Transformational study abroad experiences that expand your university's international program footprint in Africa.
+            </p>
+          </FadeIn>
         </div>
       </div>
     </section>
