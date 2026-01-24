@@ -133,8 +133,8 @@ export default function JourneyInteractive() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
                     
                     {/* Floating year badge */}
-                    <div className="absolute top-6 left-6 bg-gold-400 px-6 py-3 rounded-xl shadow-lg border-2 border-black">
-                      <span className="font-serif font-bold text-2xl text-black">
+                    <div className="absolute top-6 left-6 bg-gold-400 px-6 py-3 rounded-xl shadow-lg border-2 border-white">
+                      <span className="font-serif font-bold text-2xl text-white">
                         {journeySteps[activeStep].year}
                       </span>
                     </div>
