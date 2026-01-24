@@ -95,35 +95,16 @@ export default function MinimalValues() {
             >
               <div
                 onClick={() => handleCardClick(value.id)}
-                onMouseEnter={() => handleMouseEnter(value.id)}
-                onMouseLeave={handleMouseLeave}
-                className={`relative rounded-lg overflow-hidden transition-all duration-500 cursor-pointer group border-4 ${
-                  hoveredValue === value.id
-                    ? 'shadow-lg shadow-gold-400/50 scale-[1.02] border-gold-400 bg-navy-900'
-                    : 'shadow-lg hover:shadow-md border-navy-900 bg-white'
-                }`}
+                className="relative rounded-lg overflow-hidden transition-all duration-500 cursor-pointer group border-4 border-navy-900 bg-white shadow-lg hover:shadow-xl"
               >
                 {/* Left accent bar */}
-                <div
-                  className={`absolute left-0 top-0 bottom-0 transition-all duration-500 ${
-                    hoveredValue === value.id ? 'w-4 bg-gold-400' : 'w-2 bg-navy-900'
-                  }`}
-                />
+                <div className="absolute left-0 top-0 bottom-0 w-2 bg-navy-900" />
 
                 <div className="p-8 md:p-12">
                   <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-12">
                     {/* Number */}
                     <div className="flex-shrink-0 relative">
-                      {hoveredValue === value.id && (
-                        <div className="absolute inset-0 bg-gold-400/30 blur-2xl" />
-                      )}
-                      <span
-                        className={`relative font-serif font-bold transition-all duration-500 ${
-                          hoveredValue === value.id
-                            ? 'text-8xl text-gold-400'
-                            : 'text-7xl text-gray-200'
-                        }`}
-                      >
+                      <span className="relative font-serif font-bold text-7xl text-gray-200">
                         {value.number}
                       </span>
                     </div>
@@ -131,12 +112,10 @@ export default function MinimalValues() {
                     {/* Content */}
                     <div className="flex-1">
                       <div className="mb-3">
-                        <h3 className={`font-serif font-bold text-3xl mb-1 transition-colors duration-500`}
-                          style={{ color: hoveredValue === value.id ? '#FFFFFF' : '#1D3160' }}>
+                        <h3 className="font-serif font-bold text-3xl mb-1" style={{ color: '#1D3160' }}>
                           {value.title}
                         </h3>
-                        <p className={`text-sm font-semibold uppercase tracking-wide transition-colors duration-500`}
-                          style={{ color: '#F4A261' }}>
+                        <p className="text-sm font-semibold uppercase tracking-wide" style={{ color: '#F4A261' }}>
                           {value.tagline}
                         </p>
                       </div>
@@ -148,28 +127,22 @@ export default function MinimalValues() {
                             : 'max-h-0 md:max-h-40 opacity-0 md:opacity-100'
                         }`}
                       >
-                        <p 
-                          className="leading-relaxed transition-colors duration-500"
-                          style={{ color: hoveredValue === value.id ? '#FFFFFF' : '#4B5563' }}
-                        >
+                        <p className="leading-relaxed text-gray-700">
                           {value.description}
                         </p>
                       </div>
                     </div>
 
-                    {/* Arrow indicator */}
-                    <div className="flex-shrink-0">
+                    {/* Arrow indicator - only show on mobile */}
+                    <div className="flex-shrink-0 md:hidden">
                       <div
-                        className={`w-12 h-12 rounded-full border-2 flex items-center justify-center transition-all duration-500 ${
-                          hoveredValue === value.id
-                            ? 'bg-gold-400 border-gold-400 rotate-45'
-                            : 'bg-transparent border-navy-900'
+                        className={`w-12 h-12 rounded-full border-2 border-navy-900 flex items-center justify-center transition-transform duration-500 ${
+                          hoveredValue === value.id ? 'rotate-90' : ''
                         }`}
+                        style={{ backgroundColor: '#1D3160' }}
                       >
                         <svg
-                          className={`w-6 h-6 transition-colors duration-500 ${
-                            hoveredValue === value.id ? 'text-black' : 'text-navy-900'
-                          }`}
+                          className="w-6 h-6 text-white"
                           fill="none"
                           viewBox="0 0 24 24"
                           stroke="currentColor"
@@ -178,7 +151,7 @@ export default function MinimalValues() {
                             strokeLinecap="round"
                             strokeLinejoin="round"
                             strokeWidth={2}
-                            d="M9 5l7 7-7 7"
+                            d="M19 9l-7 7-7-7"
                           />
                         </svg>
                       </div>
@@ -186,17 +159,6 @@ export default function MinimalValues() {
                   </div>
                 </div>
 
-                {/* Bottom border animation */}
-                <div
-                  className={`h-3 transition-all duration-500 ${
-                    hoveredValue === value.id ? 'opacity-100 bg-gold-400' : 'opacity-0 bg-navy-900'
-                  }`}
-                />
-                
-                {/* Glow effect */}
-                {hoveredValue === value.id && (
-                  <div className="absolute inset-0 bg-gold-400/10 blur-2xl pointer-events-none" />
-                )}
               </div>
             </FadeIn>
           ))}
