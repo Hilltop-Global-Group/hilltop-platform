@@ -2,8 +2,39 @@
 
 import Link from 'next/link';
 import { Mail, Phone, MapPin, Linkedin, Instagram, Facebook } from 'lucide-react';
+import { FaTiktok, FaXTwitter } from 'react-icons/fa6';
 
 export default function Footer() {
+  const socialLinks = [
+    { 
+      icon: Linkedin, 
+      href: 'https://www.linkedin.com/company/hilltopglobally',
+      label: 'LinkedIn'
+    },
+    { 
+      icon: Facebook, 
+      href: 'https://www.facebook.com/hilltopglobally',
+      label: 'Facebook'
+    },
+    { 
+      icon: Instagram, 
+      href: 'https://www.instagram.com/hilltopglobally',
+      label: 'Instagram'
+    },
+    { 
+      icon: FaTiktok, 
+      href: 'https://www.tiktok.com/@hilltopglobally',
+      label: 'TikTok',
+      isReactIcon: true
+    },
+    { 
+      icon: FaXTwitter, 
+      href: 'https://x.com/hilltopglobally',
+      label: 'X (Twitter)',
+      isReactIcon: true
+    },
+  ];
+
   return (
     <footer style={{ backgroundColor: '#1D3160' }}>
       <div className="py-16">
@@ -37,17 +68,20 @@ export default function Footer() {
           </div>
 
           <div className="flex justify-center gap-6 mt-12">
-            {[
-              { icon: Linkedin, href: '#' },
-              { icon: Facebook, href: '#' },
-              { icon: Instagram, href: '#' },
-            ].map((social, index) => (
+            {socialLinks.map((social, index) => (
               <a
                 key={index}
                 href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+                aria-label={social.label}
               >
-                <social.icon size={20} className="text-white" />
+                {social.isReactIcon ? (
+                  <social.icon size={20} className="text-white" />
+                ) : (
+                  <social.icon size={20} className="text-white" />
+                )}
               </a>
             ))}
           </div>
