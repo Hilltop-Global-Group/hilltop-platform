@@ -13,12 +13,15 @@ interface Internship {
   meta: {
     _internship_start_date?: string;
     _internship_end_date?: string;
+    _internship_application_opens?: string;
     _internship_application_deadline?: string;
-    _internship_cost?: string;
     _internship_duration?: string;
-    _internship_format?: string;
     _internship_gallery?: string;
     _internship_application_status?: string;
+    _internship_hybrid_available?: string;
+    _internship_hybrid_cost?: string;
+    _internship_incountry_available?: string;
+    _internship_incountry_cost?: string;
   };
   internship_locations?: Array<{ id: number; name: string }>;
   internship_fields?: Array<{ id: number; name: string }>;
@@ -306,44 +309,144 @@ export default async function InternshipPage({ params }: { params: Promise<{ slu
         </div>
       </section>
 
-      {/* Program Format */}
-      {internship.meta._internship_format && (
-        <section className="py-16 bg-gray-50">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="font-serif font-bold text-4xl mb-6" style={{ color: '#1D3160' }}>
-              Program Format
-            </h2>
-            <p className="text-xl text-gray-600 mb-8">Two Flexible Participation Options:</p>
-
-            <div className="grid md:grid-cols-2 gap-6 mb-8">
-              <div className="bg-white p-8 rounded-lg shadow-lg">
-                <div className="w-12 h-12 rounded-full flex items-center justify-center mb-4" style={{ backgroundColor: '#F4A261' }}>
-                  <span className="text-white font-bold text-xl">1</span>
-                </div>
-                <h3 className="font-serif font-bold text-2xl mb-3" style={{ color: '#1D3160' }}>
-                  Option 1: Full In-Country
-                </h3>
-                <p className="text-gray-700">
-                  {internship.meta._internship_duration} in-country (full duration abroad)
-                </p>
+      {/* Program Format & Pricing */}
+      {(internship.meta._internship_hybrid_available === '1' || internship.meta._internship_incountry_available === '1') && (
+        <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-50">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-4" style={{ backgroundColor: '#1D3160', color: 'white' }}>
+                <DollarSign size={18} />
+                <span className="text-sm font-bold uppercase tracking-wider">Choose Your Format</span>
               </div>
-
-              <div className="bg-white p-8 rounded-lg shadow-lg">
-                <div className="w-12 h-12 rounded-full flex items-center justify-center mb-4" style={{ backgroundColor: '#1D3160' }}>
-                  <span className="text-white font-bold text-xl">2</span>
-                </div>
-                <h3 className="font-serif font-bold text-2xl mb-3" style={{ color: '#1D3160' }}>
-                  Option 2: Hybrid Format
-                </h3>
-                <p className="text-gray-700">
-                  Three weeks in-country + one week remote (pre-departure virtual component)
-                </p>
-              </div>
+              <h2 className="font-serif font-bold text-4xl md:text-5xl mb-4" style={{ color: '#1D3160' }}>
+                Flexible Participation Options
+              </h2>
+              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                Select the format that best fits your schedule and goals
+              </p>
             </div>
 
-            <p className="text-gray-600 text-center">
-              This flexible structure allows participants to begin their internship remotely before joining the cohort on-site for the in-country phase.
-            </p>
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* In-Country Format */}
+              {internship.meta._internship_incountry_available === '1' && (
+                <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border-2 border-transparent hover:border-[#F4A261]">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="w-16 h-16 rounded-full flex items-center justify-center" style={{ backgroundColor: '#F4A261' }}>
+                      <Building size={28} className="text-white" />
+                    </div>
+                    <div>
+                      <h3 className="font-serif font-bold text-2xl" style={{ color: '#1D3160' }}>
+                        Full In-Country
+                      </h3>
+                      {internship.meta._internship_incountry_cost && (
+                        <p className="text-3xl font-bold" style={{ color: '#F4A261' }}>
+                          {internship.meta._internship_incountry_cost}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-4 mb-6">
+                    <div className="flex items-start gap-3">
+                      <div className="w-5 h-5 rounded-full flex items-center justify-center mt-1" style={{ backgroundColor: '#F4A261' }}>
+                        <span className="text-white text-xs font-bold">✓</span>
+                      </div>
+                      <p className="text-gray-700 flex-1">
+                        <strong>Four weeks entirely in-country</strong> with full cultural immersion
+                      </p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="w-5 h-5 rounded-full flex items-center justify-center mt-1" style={{ backgroundColor: '#F4A261' }}>
+                        <span className="text-white text-xs font-bold">✓</span>
+                      </div>
+                      <p className="text-gray-700 flex-1">
+                        Complete hands-on experience with host organizations
+                      </p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="w-5 h-5 rounded-full flex items-center justify-center mt-1" style={{ backgroundColor: '#F4A261' }}>
+                        <span className="text-white text-xs font-bold">✓</span>
+                      </div>
+                      <p className="text-gray-700 flex-1">
+                        Maximum networking and community engagement opportunities
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="pt-6 border-t border-gray-200">
+                    <p className="text-sm text-gray-500 italic">
+                      Ideal for students seeking deep cultural immersion and professional development
+                    </p>
+                  </div>
+                </div>
+              )}
+
+              {/* Hybrid Format */}
+              {internship.meta._internship_hybrid_available === '1' && (
+                <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border-2 border-transparent hover:border-[#1D3160]">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="w-16 h-16 rounded-full flex items-center justify-center" style={{ backgroundColor: '#1D3160' }}>
+                      <Globe size={28} className="text-white" />
+                    </div>
+                    <div>
+                      <h3 className="font-serif font-bold text-2xl" style={{ color: '#1D3160' }}>
+                        Hybrid Format
+                      </h3>
+                      {internship.meta._internship_hybrid_cost && (
+                        <p className="text-3xl font-bold" style={{ color: '#F4A261' }}>
+                          {internship.meta._internship_hybrid_cost}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-4 mb-6">
+                    <div className="flex items-start gap-3">
+                      <div className="w-5 h-5 rounded-full flex items-center justify-center mt-1" style={{ backgroundColor: '#1D3160' }}>
+                        <span className="text-white text-xs font-bold">✓</span>
+                      </div>
+                      <p className="text-gray-700 flex-1">
+                        <strong>Three weeks in-country</strong> plus one week remote orientation
+                      </p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="w-5 h-5 rounded-full flex items-center justify-center mt-1" style={{ backgroundColor: '#1D3160' }}>
+                        <span className="text-white text-xs font-bold">✓</span>
+                      </div>
+                      <p className="text-gray-700 flex-1">
+                        Pre-departure virtual component to prepare for your experience
+                      </p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="w-5 h-5 rounded-full flex items-center justify-center mt-1" style={{ backgroundColor: '#1D3160' }}>
+                        <span className="text-white text-xs font-bold">✓</span>
+                      </div>
+                      <p className="text-gray-700 flex-1">
+                        Flexible structure allowing remote work before joining the cohort on-site
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="pt-6 border-t border-gray-200">
+                    <p className="text-sm text-gray-500 italic">
+                      Perfect balance of remote preparation and in-person experience
+                    </p>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Additional note if both are available */}
+            {internship.meta._internship_hybrid_available === '1' && internship.meta._internship_incountry_available === '1' && (
+              <div className="mt-12 text-center">
+                <div className="inline-flex items-center gap-2 px-6 py-3 rounded-lg" style={{ backgroundColor: '#1D3160', color: 'white' }}>
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span className="font-semibold">You'll select your preferred format during the application process</span>
+                </div>
+              </div>
+            )}
           </div>
         </section>
       )}
@@ -355,40 +458,88 @@ export default async function InternshipPage({ params }: { params: Promise<{ slu
             Key Details
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-x-12 gap-y-6">
+          <div className="grid md:grid-cols-2 gap-x-12 gap-y-8">
+            {internship.meta._internship_application_opens && (
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style={{ backgroundColor: '#F4A261' }}>
+                  <Calendar size={24} className="text-white" />
+                </div>
+                <div>
+                  <p className="text-gray-600 mb-1">Applications Open:</p>
+                  <p className="text-xl font-bold" style={{ color: '#1D3160' }}>
+                    {formatDate(internship.meta._internship_application_opens)}
+                  </p>
+                </div>
+              </div>
+            )}
+
             {internship.meta._internship_application_deadline && (
-              <div>
-                <p className="text-gray-600 mb-2">Applications Close:</p>
-                <p className="text-2xl font-bold" style={{ color: '#F4A261' }}>
-                  {formatDate(internship.meta._internship_application_deadline)}
-                </p>
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style={{ backgroundColor: '#F4A261' }}>
+                  <Calendar size={24} className="text-white" />
+                </div>
+                <div>
+                  <p className="text-gray-600 mb-1">Application Deadline:</p>
+                  <p className="text-xl font-bold" style={{ color: '#1D3160' }}>
+                    {formatDate(internship.meta._internship_application_deadline)}
+                  </p>
+                </div>
               </div>
             )}
 
             {internship.meta._internship_start_date && internship.meta._internship_end_date && (
-              <div>
-                <p className="text-gray-600 mb-2">Internship Dates:</p>
-                <p className="text-2xl font-bold" style={{ color: '#F4A261' }}>
-                  {formatShortDate(internship.meta._internship_start_date)} – {formatShortDate(internship.meta._internship_end_date)}
-                </p>
-              </div>
-            )}
-
-            {internship.meta._internship_cost && (
-              <div>
-                <p className="text-gray-600 mb-2">Cost ({internship.meta._internship_duration}):</p>
-                <p className="text-2xl font-bold" style={{ color: '#F4A261' }}>
-                  {internship.meta._internship_cost}
-                </p>
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style={{ backgroundColor: '#1D3160' }}>
+                  <Clock size={24} className="text-white" />
+                </div>
+                <div>
+                  <p className="text-gray-600 mb-1">Program Dates:</p>
+                  <p className="text-xl font-bold" style={{ color: '#1D3160' }}>
+                    {formatShortDate(internship.meta._internship_start_date)} – {formatShortDate(internship.meta._internship_end_date)}
+                  </p>
+                </div>
               </div>
             )}
 
             {internship.meta._internship_duration && (
-              <div>
-                <p className="text-gray-600 mb-2">Duration:</p>
-                <p className="text-2xl font-bold" style={{ color: '#F4A261' }}>
-                  {internship.meta._internship_duration}
-                </p>
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style={{ backgroundColor: '#1D3160' }}>
+                  <Clock size={24} className="text-white" />
+                </div>
+                <div>
+                  <p className="text-gray-600 mb-1">Duration:</p>
+                  <p className="text-xl font-bold" style={{ color: '#1D3160' }}>
+                    {internship.meta._internship_duration}
+                  </p>
+                </div>
+              </div>
+            )}
+
+            {locationTerms.length > 0 && (
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style={{ backgroundColor: '#F4A261' }}>
+                  <MapPin size={24} className="text-white" />
+                </div>
+                <div>
+                  <p className="text-gray-600 mb-1">Location:</p>
+                  <p className="text-xl font-bold" style={{ color: '#1D3160' }}>
+                    {locationTerms.map((l: any) => l.name).join(', ')}
+                  </p>
+                </div>
+              </div>
+            )}
+
+            {fieldTerms.length > 0 && (
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style={{ backgroundColor: '#1D3160' }}>
+                  <TrendingUp size={24} className="text-white" />
+                </div>
+                <div>
+                  <p className="text-gray-600 mb-1">Fields:</p>
+                  <p className="text-xl font-bold" style={{ color: '#1D3160' }}>
+                    {fieldTerms.map((f: any) => f.name).join(', ')}
+                  </p>
+                </div>
               </div>
             )}
           </div>

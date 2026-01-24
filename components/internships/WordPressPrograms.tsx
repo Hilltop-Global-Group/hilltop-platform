@@ -164,22 +164,59 @@ export default async function WordPressPrograms() {
                   </div>
 
                   {internship.excerpt?.rendered && (
-                    <p className="text-gray-700 leading-relaxed mb-4">
+                    <p className="text-gray-700 leading-relaxed mb-6">
                       {stripHtml(internship.excerpt.rendered)}
                     </p>
                   )}
 
-                  {internship.meta._internship_format && (
-                    <div 
-                      className="p-4 rounded-xl mb-6"
-                      style={{ backgroundColor: `${cardColor}15` }}
-                    >
-                      <p className="text-sm text-gray-700 leading-relaxed">
-                        <span className="font-semibold">Format:</span>{' '}
-                        {internship.meta._internship_format === 'in-country' && '4-week in-country program'}
-                        {internship.meta._internship_format === 'hybrid' && 'Hybrid format: 3 weeks in-country + 1 week remote'}
-                        {internship.meta._internship_format === 'virtual' && 'Virtual program'}
-                      </p>
+                  {/* Format Options with Pricing */}
+                  {(internship.meta._internship_hybrid_available === '1' || internship.meta._internship_incountry_available === '1') && (
+                    <div className="mb-6 space-y-3">
+                      <p className="text-sm font-bold text-gray-900 mb-3">Available Formats:</p>
+                      
+                      {internship.meta._internship_incountry_available === '1' && (
+                        <div 
+                          className="p-3 rounded-lg border-2"
+                          style={{ 
+                            borderColor: cardColor,
+                            backgroundColor: `${cardColor}08`
+                          }}
+                        >
+                          <div className="flex items-center justify-between">
+                            <div className="flex-1">
+                              <p className="font-semibold text-gray-900 text-sm">Full In-Country</p>
+                              <p className="text-xs text-gray-600">4 weeks entirely in-country</p>
+                            </div>
+                            {internship.meta._internship_incountry_cost && (
+                              <p className="font-bold text-lg" style={{ color: cardColor }}>
+                                {internship.meta._internship_incountry_cost}
+                              </p>
+                            )}
+                          </div>
+                        </div>
+                      )}
+
+                      {internship.meta._internship_hybrid_available === '1' && (
+                        <div 
+                          className="p-3 rounded-lg border-2"
+                          style={{ 
+                            borderColor: cardColor,
+                            backgroundColor: `${cardColor}08`
+                          }}
+                        >
+                          <div className="flex items-center justify-between">
+                            <div className="flex-1">
+                              <p className="font-semibold text-gray-900 text-sm">Hybrid Format</p>
+                              <p className="text-xs text-gray-600">3 weeks in-country + 1 week remote</p>
+                            </div>
+                            {internship.meta._internship_hybrid_cost && (
+                              <p className="font-bold text-lg" style={{ color: cardColor }}>
+                                {internship.meta._internship_hybrid_cost}
+                              </p>
+                            )}
+                          </div>
+                        </div>
+                      )}
                     </div>
                   )}
 
