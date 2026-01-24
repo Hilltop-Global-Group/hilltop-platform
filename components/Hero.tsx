@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
+import FadeIn from './FadeIn';
 
 const heroImages = [
   'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/Copy-of-20230518_122404-scaled-e1695315573707.jpg',
@@ -59,52 +61,60 @@ export default function Hero() {
       {/* Content */}
       <div className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-10 relative z-10 text-center py-20">
         {/* Eyebrow Badge */}
-        <div className="mb-6 animate-fadeUp" style={{ animationDelay: '0.1s' }}>
+        <FadeIn delay={0.1}>
           <span className="inline-flex items-center gap-2 px-4 py-2 text-xs sm:text-sm font-semibold uppercase tracking-wider text-white bg-white/10 border border-white/20 rounded-full backdrop-blur-md">
             Focused In Africa
           </span>
-        </div>
+        </FadeIn>
 
         {/* Main Heading */}
-        <h1 
-          className="font-serif font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white mb-5 animate-fadeUp leading-tight"
-          style={{ 
-            animationDelay: '0.2s',
-            textShadow: '0 12px 32px rgba(0,0,0,0.35)',
-            letterSpacing: '-0.015em'
-          }}
-        >
-          Experiential Learning
-        </h1>
+        <FadeIn delay={0.2}>
+          <h1 
+            className="font-serif font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white mb-5 leading-tight"
+            style={{ 
+              textShadow: '0 12px 32px rgba(0,0,0,0.35)',
+              letterSpacing: '-0.015em'
+            }}
+          >
+            Experiential Learning
+          </h1>
+        </FadeIn>
 
         {/* Subtitle */}
-        <p 
-          className="text-lg sm:text-xl md:text-2xl font-semibold text-white max-w-3xl mx-auto mb-8 animate-fadeUp"
-          style={{ 
-            animationDelay: '0.35s',
-            textShadow: '0 10px 28px rgba(0,0,0,0.35)'
-          }}
-        >
-          Transformative internships and cultural immersion in Africa.
-        </p>
+        <FadeIn delay={0.35}>
+          <p 
+            className="text-lg sm:text-xl md:text-2xl font-semibold text-white max-w-3xl mx-auto mb-8"
+            style={{ 
+              textShadow: '0 10px 28px rgba(0,0,0,0.35)'
+            }}
+          >
+            Transformative internships and cultural immersion in Africa.
+          </p>
+        </FadeIn>
 
         {/* CTA Button */}
-        <div className="animate-fadeUp" style={{ animationDelay: '0.5s' }}>
-          <Link
-            href="/about"
-            className="group inline-flex items-center gap-2 px-8 py-4 font-serif font-bold text-base tracking-wide text-primary-navy bg-white border-2 border-white rounded shadow-[0_8px_24px_rgba(255,255,255,0.18)] transition-all duration-300 hover:bg-primary-navy hover:text-white hover:border-primary-navy hover:-translate-y-1 hover:scale-105 hover:shadow-[0_15px_35px_rgba(29,49,96,0.4)]"
+        <FadeIn delay={0.5}>
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ duration: 0.2 }}
           >
-            Learn more
-            <svg 
-              className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" 
-              fill="none" 
-              stroke="currentColor" 
-              viewBox="0 0 24 24"
+            <Link
+              href="/about"
+              className="group inline-flex items-center gap-2 px-8 py-4 font-serif font-bold text-base tracking-wide text-primary-navy bg-white border-2 border-white rounded shadow-[0_8px_24px_rgba(255,255,255,0.18)] transition-all duration-300 hover:bg-primary-navy hover:text-white hover:border-primary-navy hover:shadow-[0_15px_35px_rgba(29,49,96,0.4)]"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </Link>
-        </div>
+              Learn more
+              <svg 
+                className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
+          </motion.div>
+        </FadeIn>
       </div>
 
       {/* Slider Indicators */}

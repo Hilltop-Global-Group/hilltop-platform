@@ -62,21 +62,3 @@ html {
 .animate-shimmer {
   animation: shimmer 3s infinite;
 }
-
-/* Partner Logo Scroll Animation */
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-33.333%);
-  }
-}
-
-.animate-scroll {
-  animation: scroll 20s linear infinite;
-}
-
-.animate-scroll:hover {
-  animation-play-state: paused;
-}

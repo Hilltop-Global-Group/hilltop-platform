@@ -92,8 +92,8 @@ export default async function WordPressPrograms() {
             
             const cardClassName = `bg-white rounded-lg overflow-hidden shadow-md transition-all duration-500 ${
               isClosed 
-                ? 'opacity-75 cursor-not-allowed' 
-                : 'group hover:shadow-lg hover:-translate-y-2 cursor-pointer'
+                ? 'opacity-75' 
+                : 'group hover:shadow-lg hover:-translate-y-2'
             }`;
             
             const cardContent = (
@@ -185,22 +185,18 @@ export default async function WordPressPrograms() {
 
                   <div className="flex flex-col sm:flex-row gap-4">
                     {isClosed ? (
-                      <button
-                        disabled
-                        className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3 font-serif font-bold text-white rounded-xl cursor-not-allowed opacity-50"
+                      <div className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3 font-serif font-bold text-white rounded-xl cursor-not-allowed opacity-50"
                         style={{ backgroundColor: '#6B7280' }}
                       >
                         Applications Closed
-                      </button>
+                      </div>
                     ) : (
-                      <Link
-                        href={`/internships/${internship.slug}`}
-                        className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3 font-serif font-bold text-white rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                      <div className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3 font-serif font-bold text-white rounded-xl transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg"
                         style={{ backgroundColor: cardColor }}
                       >
                         Learn more
                         <ArrowRight size={18} />
-                      </Link>
+                      </div>
                     )}
                     {internship.meta._internship_application_deadline && (
                       <div className="text-center sm:text-left">

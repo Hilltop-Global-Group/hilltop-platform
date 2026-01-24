@@ -1,68 +1,51 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import { motion, useInView, useSpring, useTransform } from 'framer-motion';
 
 interface CounterProps {
   end: number;
-  duration?: number;
   suffix?: string;
 }
 
-function Counter({ end, duration = 2000, suffix = '' }: CounterProps) {
-  const [count, setCount] = useState(0);
+function Counter({ end, suffix = '' }: CounterProps) {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
   const [hasAnimated, setHasAnimated] = useState(false);
-  const counterRef = useRef<HTMLDivElement>(null);
+  
+  const motionValue = useSpring(0, { 
+    duration: 2000,
+    bounce: 0
+  });
+  
+  const display = useTransform(motionValue, (latest) => 
+    Math.floor(latest).toString()
+  );
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting && !hasAnimated) {
-          setHasAnimated(true);
-          
-          const startTime = Date.now();
-          const startValue = 0;
-          
-          const animate = () => {
-            const now = Date.now();
-            const progress = Math.min((now - startTime) / duration, 1);
-            
-            const easeOutQuart = 1 - Math.pow(1 - progress, 4);
-            const current = Math.floor(startValue + (end - startValue) * easeOutQuart);
-            
-            setCount(current);
-            
-            if (progress < 1) {
-              requestAnimationFrame(animate);
-            }
-          };
-          
-          animate();
-        }
-      },
-      { threshold: 0.5 }
-    );
-
-    if (counterRef.current) {
-      observer.observe(counterRef.current);
+    if (isInView && !hasAnimated) {
+      setHasAnimated(true);
+      motionValue.set(end);
     }
-
-    return () => {
-      if (counterRef.current) {
-        observer.unobserve(counterRef.current);
-      }
-    };
-  }, [end, duration, hasAnimated]);
+  }, [isInView, hasAnimated, end, motionValue]);
 
   return (
-    <div ref={counterRef} className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold mb-2" style={{ color: '#1D3160' }}>
-      {count}{suffix}
-    </div>
+    <motion.div 
+      ref={ref}
+      initial={{ opacity: 0, scale: 0.5 }}
+      animate={isInView ? { opacity: 1, scale: 1 } : {}}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold mb-2" 
+      style={{ color: '#1D3160' }}
+    >
+      <motion.span>{display}</motion.span>{suffix}
+    </motion.div>
   );
 }
 
 export default function StatsBar() {
   const stats = [
-    { label: 'Total Projects', value: 15, suffix: '' },
+    { label: 'Total Projects', value: 50, suffix: '+' },
     { label: 'Years Served', value: 10, suffix: '+' },
     { label: 'African Countries', value: 5, suffix: '+' },
   ];
@@ -71,11 +54,17 @@ export default function StatsBar() {
     <section className="py-12 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-3 gap-4 sm:gap-8 text-center">
-          {stats.map((stat) => (
-            <div key={stat.label}>
+          {stats.map((stat, index) => (
+            <motion.div 
+              key={stat.label}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1, duration: 0.5 }}
+            >
               <Counter end={stat.value} suffix={stat.suffix} />
               <div className="text-gray-600 font-body text-sm sm:text-base">{stat.label}</div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

@@ -5,8 +5,8 @@ import { Mail, Phone, MapPin, Linkedin, Instagram, Facebook } from 'lucide-react
 
 export default function Footer() {
   return (
-    <footer className="bg-white border-t border-gray-200">
-      <div className="py-16" style={{ backgroundColor: '#1D3160' }}>
+    <footer style={{ backgroundColor: '#1D3160' }}>
+      <div className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="font-serif font-bold text-4xl text-white mb-4">
@@ -67,66 +67,71 @@ export default function Footer() {
               />
             </div>
           </div>
-        </div>
-      </div>
 
-      <div className="py-12 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <div>
-              <h4 className="font-serif font-bold text-lg mb-4" style={{ color: '#1D3160' }}>
-                Navigation Links
-              </h4>
-              <ul className="space-y-2">
-                {['Home', 'About', 'Education', 'Internships', 'Testimonials', 'News', 'Contact'].map((link) => (
-                  <li key={link}>
-                    <Link href={link === 'Home' ? '/' : `/${link.toLowerCase()}`} className="text-gray-600 hover:opacity-80 transition-opacity">
-                      {link}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          {/* Navigation Links */}
+          <div className="mt-16 pt-12 border-t border-white/20">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+              <div>
+                <h4 className="font-serif font-bold text-lg mb-4 text-white">
+                  Quick Links
+                </h4>
+                <ul className="space-y-2">
+                  {['Home', 'About', 'Education', 'Internships'].map((link) => (
+                    <li key={link}>
+                      <Link href={link === 'Home' ? '/' : `/${link.toLowerCase()}`} className="text-white/70 hover:text-white transition-colors">
+                        {link}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              
+              <div>
+                <h4 className="font-serif font-bold text-lg mb-4 text-white">
+                  Resources
+                </h4>
+                <ul className="space-y-2">
+                  {['Testimonials', 'News', 'Contact'].map((link) => (
+                    <li key={link}>
+                      <Link href={`/${link.toLowerCase()}`} className="text-white/70 hover:text-white transition-colors">
+                        {link}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-            <div>
-              <h4 className="font-serif font-bold text-lg mb-4" style={{ color: '#1D3160' }}>
-                Contact Info
-              </h4>
-              <ul className="space-y-2 text-gray-600">
-                <li>(123) 456-7890</li>
-                <li>contactus@hilltopglobalgroup.com</li>
-                <li>700 12th Street NW, Suite 700.<br />Washington, DC 20005</li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-serif font-bold text-lg mb-4" style={{ color: '#1D3160' }}>
-                Newsletter Signup
-              </h4>
-              <form className="space-y-3">
-                <input
-                  type="email"
-                  placeholder="Email Address"
-                  className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-gray-400"
-                />
-                <button
-                  type="submit"
-                  className="w-full px-4 py-2 rounded font-serif font-bold text-sm text-white hover:bg-opacity-90 transition-all"
-                  style={{ backgroundColor: '#1D3160' }}
-                >
-                  SUBSCRIBE
-                </button>
-              </form>
+              <div className="col-span-2">
+                <h4 className="font-serif font-bold text-lg mb-4 text-white">
+                  Stay Connected
+                </h4>
+                <p className="text-white/70 text-sm mb-4">
+                  Subscribe to our newsletter for updates on programs and opportunities.
+                </p>
+                <form className="flex gap-2">
+                  <input
+                    type="email"
+                    placeholder="Your email"
+                    className="flex-1 px-4 py-2 rounded bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-white/40"
+                  />
+                  <button
+                    type="submit"
+                    className="px-6 py-2 rounded font-serif font-bold text-sm hover:bg-opacity-90 transition-all"
+                    style={{ backgroundColor: '#F4A261', color: '#1D3160' }}
+                  >
+                    Subscribe
+                  </button>
+                </form>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
 
-      <div className="py-6 bg-white border-t border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-gray-500 text-sm">
-            © {new Date().getFullYear()} Hilltop Global Group. All rights reserved.
-          </p>
+          {/* Copyright */}
+          <div className="mt-8 pt-8 border-t border-white/20 text-center">
+            <p className="text-white/60 text-sm">
+              © {new Date().getFullYear()} Hilltop Global Group. All rights reserved.
+            </p>
+          </div>
         </div>
       </div>
     </footer>
