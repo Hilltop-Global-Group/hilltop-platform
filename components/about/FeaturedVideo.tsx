@@ -112,9 +112,9 @@ export default function FeaturedVideo() {
         <div className="mt-12 text-center">
           <div className="max-w-3xl mx-auto p-8 rounded-lg border-4 border-gold-400" style={{ backgroundColor: '#1D3160' }}>
             <p className="text-white text-xl font-semibold italic mb-4">
-              "Education is the most powerful weapon which you can use to change the world."
+              "Shaping the African narrative is taking control of our story and showcasing it to the world."
             </p>
-            <p className="text-white text-lg font-bold">— Nelson Mandela</p>
+            <p className="text-white text-lg font-bold">— Phil Agbeko (CEO at Hilltop Global Group)</p>
           </div>
         </div>
       </div>
