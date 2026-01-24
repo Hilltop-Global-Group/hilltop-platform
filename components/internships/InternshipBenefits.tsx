@@ -49,7 +49,7 @@ export default function InternshipBenefits() {
 
   const itemVariants = {
     hidden: { y: 30, opacity: 0 },
-    visible: { y: 0, opacity: 1, transition: { duration: 0.6, ease: "easeOut" } },
+    visible: { y: 0, opacity: 1 },
   };
 
   return (
@@ -78,6 +78,7 @@ export default function InternshipBenefits() {
                 key={index}
                 className="group bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2"
                 variants={itemVariants}
+                transition={{ duration: 0.6 }}
               >
                 <div className="relative h-48 overflow-hidden">
                   <div

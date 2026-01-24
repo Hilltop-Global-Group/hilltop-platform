@@ -33,14 +33,14 @@ export default function VideoTestimonials() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
-              transition={{ delay: index * 0.15, duration: 0.6, ease: "easeOut" }}
+              transition={{ delay: index * 0.15, duration: 0.6 }}
             >
               <div className="relative h-56 overflow-hidden cursor-pointer">
                 <motion.div
                   className="absolute inset-0 bg-cover bg-center"
                   style={{ backgroundImage: `url('${video.thumbnail}')` }}
                   whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.7, ease: "easeOut" }}
+                  transition={{ duration: 0.7 }}
                 />
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors duration-300" />
                 
@@ -48,7 +48,7 @@ export default function VideoTestimonials() {
                   <motion.div 
                     className="w-16 h-16 rounded-full flex items-center justify-center bg-white/90 backdrop-blur-sm transition-all duration-300"
                     style={{ backgroundColor: '#F4A261' }}
-                    whileHover={{ scale: 1.15, brightness: 1.1 }}
+                    whileHover={{ scale: 1.15 }}
                     transition={{ duration: 0.3 }}
                   >
                     <Play size={28} className="text-white ml-1" fill="white" />

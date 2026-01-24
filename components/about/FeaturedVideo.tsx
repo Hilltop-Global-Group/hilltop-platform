@@ -61,7 +61,6 @@ export default function FeaturedVideo() {
                     transition={{
                       duration: 2,
                       repeat: Infinity,
-                      ease: "easeInOut"
                     }}
                   >
                     {/* Outer glow ring - gold */}

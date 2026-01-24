@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import FadeIn from '../FadeIn';
 
 const values = [
@@ -36,6 +36,31 @@ const values = [
 
 export default function MinimalValues() {
   const [hoveredValue, setHoveredValue] = useState<string | null>(null);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+
+  // Detect if it's a touch device
+  useEffect(() => {
+    setIsTouchDevice('ontouchstart' in window || navigator.maxTouchPoints > 0);
+  }, []);
+
+  const handleCardClick = (id: string) => {
+    // Toggle card state
+    setHoveredValue(hoveredValue === id ? null : id);
+  };
+
+  const handleMouseEnter = (id: string) => {
+    // Only activate hover on non-touch devices
+    if (!isTouchDevice) {
+      setHoveredValue(id);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    // Only deactivate hover on non-touch devices
+    if (!isTouchDevice) {
+      setHoveredValue(null);
+    }
+  };
 
   return (
     <section className="py-24 bg-white relative overflow-hidden">
@@ -69,8 +94,9 @@ export default function MinimalValues() {
               delay={index * 0.1}
             >
               <div
-                onMouseEnter={() => setHoveredValue(value.id)}
-                onMouseLeave={() => setHoveredValue(null)}
+                onClick={() => handleCardClick(value.id)}
+                onMouseEnter={() => handleMouseEnter(value.id)}
+                onMouseLeave={handleMouseLeave}
                 className={`relative rounded-lg overflow-hidden transition-all duration-500 cursor-pointer group border-4 ${
                   hoveredValue === value.id
                     ? 'shadow-lg shadow-gold-400/50 scale-[1.02] border-gold-400 bg-navy-900'
@@ -122,9 +148,10 @@ export default function MinimalValues() {
                             : 'max-h-0 md:max-h-40 opacity-0 md:opacity-100'
                         }`}
                       >
-                        <p className={`leading-relaxed transition-colors duration-500 ${
-                          hoveredValue === value.id ? 'text-white' : 'text-gray-700'
-                        }`}>
+                        <p 
+                          className="leading-relaxed transition-colors duration-500"
+                          style={{ color: hoveredValue === value.id ? '#FFFFFF' : '#4B5563' }}
+                        >
                           {value.description}
                         </p>
                       </div>

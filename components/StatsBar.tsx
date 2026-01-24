@@ -34,7 +34,7 @@ function Counter({ end, suffix = '' }: CounterProps) {
       ref={ref}
       initial={{ opacity: 0, scale: 0.5 }}
       animate={isInView ? { opacity: 1, scale: 1 } : {}}
-      transition={{ duration: 0.5, ease: "easeOut" }}
+      transition={{ duration: 0.5 }}
       className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold mb-2" 
       style={{ color: '#1D3160' }}
     >

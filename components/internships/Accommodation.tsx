@@ -39,7 +39,7 @@ export default function Accommodation() {
 
   const itemVariants = {
     hidden: { y: 30, opacity: 0 },
-    visible: { y: 0, opacity: 1, transition: { duration: 0.5, ease: "easeOut" } },
+    visible: { y: 0, opacity: 1 },
   };
 
   return (
@@ -65,10 +65,11 @@ export default function Accommodation() {
           {amenities.map((amenity, index) => {
             const Icon = amenity.icon;
             return (
-              <motion.div
+                <motion.div
                 key={index}
                 className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
                 variants={itemVariants}
+                transition={{ duration: 0.5 }}
               >
                 <div 
                   className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
