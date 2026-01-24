@@ -95,7 +95,7 @@ export default function AfricanResidency() {
               whileTap={{ scale: 0.95 }}
             >
               <Link
-                href="#learn-more"
+                href="/education"
                 className="inline-flex items-center gap-3 px-10 py-5 rounded-xl font-serif font-bold text-lg tracking-wide border-2 border-white transition-all duration-300 hover:bg-white hover:text-[#0a192f] shadow-lg"
                 style={{ backgroundColor: 'transparent', color: '#FFFFFF' }}
               >
