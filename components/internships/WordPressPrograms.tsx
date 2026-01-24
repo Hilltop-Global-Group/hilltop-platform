@@ -67,11 +67,11 @@ export default async function WordPressPrograms() {
   }
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section id="internship-programs" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="font-serif font-bold text-4xl sm:text-5xl mb-6" style={{ color: '#1D3160' }}>
-            More Internship Programs
+            Internship Programs
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Explore additional internship opportunities designed to provide meaningful professional experiences and cultural immersion across Africa.
