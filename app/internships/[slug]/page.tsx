@@ -176,7 +176,7 @@ export default async function InternshipPage({ params }: { params: Promise<{ slu
           {/* Back Button */}
           <div className="mb-8">
             <Link
-              href="/internships-cms"
+              href="/internships#internship-programs"
               className="inline-flex items-center gap-2 px-4 py-2 text-white/90 hover:text-white bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full border border-white/20 transition-all duration-300 hover:scale-105"
             >
               <ArrowLeft size={20} />
