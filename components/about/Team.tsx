@@ -1,4 +1,4 @@
-import { Facebook, Linkedin, Instagram } from 'lucide-react';
+import { Linkedin } from 'lucide-react';
 import FadeIn from '../FadeIn';
 
 const teamMembers = [
@@ -6,16 +6,19 @@ const teamMembers = [
     name: 'Phil Agbeko',
     role: 'Founder & CEO',
     image: 'https://via.placeholder.com/400x400/1D3160/FFFFFF?text=PA',
+    linkedin: 'https://www.linkedin.com/in/philagbeko/',
   },
   {
-    name: 'Sarah N.',
-    role: 'Operations Director',
-    image: 'https://via.placeholder.com/400x400/1D3160/FFFFFF?text=SN',
+    name: 'Osa Imohe',
+    role: 'Co-Founder',
+    image: 'https://via.placeholder.com/400x400/1D3160/FFFFFF?text=OI',
+    linkedin: 'https://www.linkedin.com/in/osaimohe/',
   },
   {
-    name: 'Michael K.',
-    role: 'Program Manager',
-    image: 'https://via.placeholder.com/400x400/1D3160/FFFFFF?text=MK',
+    name: 'Faata Faleera Adam',
+    role: 'Africa Operations Manager',
+    image: 'https://via.placeholder.com/400x400/1D3160/FFFFFF?text=FA',
+    linkedin: 'https://www.linkedin.com/in/faata-faleera-a-170683a1/',
   },
 ];
 
@@ -61,28 +64,14 @@ export default function Team() {
                     
                     <div className="flex gap-3">
                       <a
-                        href="#"
+                        href={member.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="p-3 rounded-full hover:bg-white transition-all duration-300 hover:scale-110"
                         style={{ backgroundColor: '#F4A261' }}
-                        aria-label="Facebook"
-                      >
-                        <Facebook size={20} style={{ color: '#1D3160' }} />
-                      </a>
-                      <a
-                        href="#"
-                        className="p-3 rounded-full hover:bg-white transition-all duration-300 hover:scale-110"
-                        style={{ backgroundColor: '#F4A261' }}
-                        aria-label="LinkedIn"
+                        aria-label={`${member.name} LinkedIn`}
                       >
                         <Linkedin size={20} style={{ color: '#1D3160' }} />
-                      </a>
-                      <a
-                        href="#"
-                        className="p-3 rounded-full hover:bg-white transition-all duration-300 hover:scale-110"
-                        style={{ backgroundColor: '#F4A261' }}
-                        aria-label="Instagram"
-                      >
-                        <Instagram size={20} style={{ color: '#1D3160' }} />
                       </a>
                     </div>
                   </div>
