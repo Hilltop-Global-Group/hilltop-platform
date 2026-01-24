@@ -1,3 +1,5 @@
+'use client';
+
 import { 
   Clock, 
   Wifi, 
@@ -10,6 +12,7 @@ import {
   Car,
   HeadphonesIcon
 } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const amenities = [
   { icon: Clock, text: '24-hour front desk & on-site security', description: 'Reputable hotels with round-the-clock staff and security presence' },
@@ -24,8 +27,23 @@ const amenities = [
 ];
 
 export default function Accommodation() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: 30, opacity: 0 },
+    visible: { y: 0, opacity: 1, transition: { duration: 0.5, ease: "easeOut" } },
+  };
+
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="font-serif font-bold text-4xl sm:text-5xl mb-6" style={{ color: '#1D3160' }}>
@@ -37,13 +55,20 @@ export default function Accommodation() {
         </div>
 
         {/* Amenities Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <motion.div
+          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           {amenities.map((amenity, index) => {
             const Icon = amenity.icon;
             return (
-              <div
+              <motion.div
                 key={index}
-                className="bg-white p-6 rounded-lg shadow-md hover:shadow-md transition-all duration-300 hover:-translate-y-1"
+                className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+                variants={itemVariants}
               >
                 <div 
                   className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
@@ -57,10 +82,10 @@ export default function Accommodation() {
                 <p className="text-gray-600 text-sm">
                   {amenity.description}
                 </p>
-              </div>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
 
         <div 
           className="bg-white rounded-lg p-8 shadow-lg mb-8"

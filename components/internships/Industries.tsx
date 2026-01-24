@@ -2,7 +2,7 @@ import { CheckCircle2 } from 'lucide-react';
 
 export default function Industries() {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="font-serif font-bold text-4xl sm:text-5xl mb-6" style={{ color: '#1D3160' }}>
@@ -18,7 +18,7 @@ export default function Industries() {
           <div className="bg-gray-50 rounded-lg p-8">
             <div className="flex items-center gap-4 mb-6">
               <div 
-                className="w-16 h-16 rounded-lg flex items-center justify-center text-white text-2xl font-bold"
+                className="w-16 h-16 rounded-full flex items-center justify-center text-white text-2xl font-bold ring-2 ring-offset-2 ring-blue-100"
                 style={{ backgroundColor: '#1D3160' }}
               >
                 GH
@@ -58,7 +58,7 @@ export default function Industries() {
               <h4 className="font-serif font-bold text-lg mb-4" style={{ color: '#1D3160' }}>
                 Sample Work Projects
               </h4>
-              <div className="space-y-2">
+              <div className="space-y-4">
                 {[
                   'Market research, trend analysis, competitor mapping',
                   'Product testing, UX feedback & user insights reports',
@@ -66,9 +66,9 @@ export default function Industries() {
                   'Drafting/editing proposals, decks & investor briefs',
                   'Design social calendars & support community events/partnerships',
                 ].map((item, idx) => (
-                  <div key={idx} className="flex items-start gap-2">
-                    <span className="font-bold" style={{ color: '#F4A261' }}>{idx + 1}</span>
-                    <p className="text-gray-600">{item}</p>
+                  <div key={idx} className="flex items-start gap-3">
+                    <CheckCircle2 size={18} className="flex-shrink-0 mt-0.5" style={{ color: '#1D3160' }} strokeWidth={2.5} />
+                    <p className="text-gray-700">{item}</p>
                   </div>
                 ))}
               </div>
@@ -82,7 +82,7 @@ export default function Industries() {
           <div className="bg-gray-50 rounded-lg p-8">
             <div className="flex items-center gap-4 mb-6">
               <div 
-                className="w-16 h-16 rounded-lg flex items-center justify-center text-white text-2xl font-bold"
+                className="w-16 h-16 rounded-full flex items-center justify-center text-white text-2xl font-bold ring-2 ring-offset-2 ring-blue-100"
                 style={{ backgroundColor: '#F4A261' }}
               >
                 RW
@@ -122,7 +122,7 @@ export default function Industries() {
               <h4 className="font-serif font-bold text-lg mb-4" style={{ color: '#1D3160' }}>
                 Sample Work Projects
               </h4>
-              <div className="space-y-2">
+              <div className="space-y-4">
                 {[
                   'Customer discovery interviews & market mapping',
                   'Build process guides, SOPs & operational toolkits',
@@ -130,9 +130,9 @@ export default function Industries() {
                   'Draft social content, brand storytelling & marketing assets',
                   'Collect data & prepare dashboards or analytics reports',
                 ].map((item, idx) => (
-                  <div key={idx} className="flex items-start gap-2">
-                    <span className="font-bold" style={{ color: '#1D3160' }}>{idx + 1}</span>
-                    <p className="text-gray-600">{item}</p>
+                  <div key={idx} className="flex items-start gap-3">
+                    <CheckCircle2 size={18} className="flex-shrink-0 mt-0.5" style={{ color: '#1D3160' }} strokeWidth={2.5} />
+                    <p className="text-gray-700">{item}</p>
                   </div>
                 ))}
               </div>

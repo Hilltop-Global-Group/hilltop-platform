@@ -84,11 +84,11 @@ export default function InternshipCTA() {
           <p className="text-white/70 text-sm mb-6">
             Join students from leading universities worldwide
           </p>
-          <div className="flex flex-wrap justify-center gap-8 opacity-70">
-            <span className="text-white font-semibold text-lg">Georgetown</span>
-            <span className="text-white font-semibold text-lg">Howard University</span>
-            <span className="text-white font-semibold text-lg">ALU</span>
-            <span className="text-white font-semibold text-lg">KNUST</span>
+          <div className="flex flex-wrap justify-center gap-4">
+            <span className="bg-white/10 text-white px-4 py-2 rounded-full text-sm font-semibold tracking-wide uppercase">Georgetown</span>
+            <span className="bg-white/10 text-white px-4 py-2 rounded-full text-sm font-semibold tracking-wide uppercase">Howard</span>
+            <span className="bg-white/10 text-white px-4 py-2 rounded-full text-sm font-semibold tracking-wide uppercase">ALU</span>
+            <span className="bg-white/10 text-white px-4 py-2 rounded-full text-sm font-semibold tracking-wide uppercase">KNUST</span>
           </div>
         </div>
       </div>

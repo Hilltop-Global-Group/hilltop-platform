@@ -14,25 +14,25 @@ export default function ProgramDetails() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          <div className="bg-gray-50 p-6 rounded-lg text-center">
-            <X size={32} className="mx-auto mb-3" style={{ color: '#F4A261' }} strokeWidth={2.5} />
+          <div className="bg-gray-50 p-6 rounded-lg text-center hover:-translate-y-1 transition-all duration-300">
+            <X size={32} className="mx-auto mb-3 text-gray-400" strokeWidth={2.5} />
             <p className="font-semibold text-gray-900">Flights not included</p>
             <p className="text-sm text-gray-600 mt-2">Students arrange flights independently. Hilltop provides assistance.</p>
           </div>
 
-          <div className="bg-gray-50 p-6 rounded-lg text-center">
+          <div className="bg-gray-50 p-6 rounded-lg text-center hover:-translate-y-1 transition-all duration-300">
             <Check size={32} className="mx-auto mb-3" style={{ color: '#1D3160' }} strokeWidth={2.5} />
             <p className="font-semibold text-gray-900">4-week in-country</p>
             <p className="text-sm text-gray-600 mt-2">Full immersion experience with structured support</p>
           </div>
 
-          <div className="bg-gray-50 p-6 rounded-lg text-center">
+          <div className="bg-gray-50 p-6 rounded-lg text-center hover:-translate-y-1 transition-all duration-300">
             <Check size={32} className="mx-auto mb-3" style={{ color: '#1D3160' }} strokeWidth={2.5} />
             <p className="font-semibold text-gray-900">Cohort-based support</p>
             <p className="text-sm text-gray-600 mt-2">Community learning with peer groups</p>
           </div>
 
-          <div className="bg-gray-50 p-6 rounded-lg text-center">
+          <div className="bg-gray-50 p-6 rounded-lg text-center hover:-translate-y-1 transition-all duration-300">
             <Check size={32} className="mx-auto mb-3" style={{ color: '#1D3160' }} strokeWidth={2.5} />
             <p className="font-semibold text-gray-900">Credit documentation</p>
             <p className="text-sm text-gray-600 mt-2">Support for academic credit verification</p>

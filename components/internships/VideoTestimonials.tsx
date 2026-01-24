@@ -1,4 +1,7 @@
+'use client';
+
 import { Play } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const videos = [
   {
@@ -24,24 +27,32 @@ export default function VideoTestimonials() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-3 gap-8">
           {videos.map((video, index) => (
-            <div
+            <motion.div
               key={index}
-              className="group bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-lg transition-all duration-500 hover:-translate-y-2"
+              className="group bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ delay: index * 0.15, duration: 0.6, ease: "easeOut" }}
             >
               <div className="relative h-56 overflow-hidden cursor-pointer">
-                <div
-                  className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                <motion.div
+                  className="absolute inset-0 bg-cover bg-center"
                   style={{ backgroundImage: `url('${video.thumbnail}')` }}
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.7, ease: "easeOut" }}
                 />
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors duration-300" />
                 
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div 
-                    className="w-16 h-16 rounded-full flex items-center justify-center bg-white/90 backdrop-blur-sm group-hover:scale-110 transition-all duration-300"
+                  <motion.div 
+                    className="w-16 h-16 rounded-full flex items-center justify-center bg-white/90 backdrop-blur-sm transition-all duration-300"
                     style={{ backgroundColor: '#F4A261' }}
+                    whileHover={{ scale: 1.15, brightness: 1.1 }}
+                    transition={{ duration: 0.3 }}
                   >
                     <Play size={28} className="text-white ml-1" fill="white" />
-                  </div>
+                  </motion.div>
                 </div>
               </div>
               
@@ -56,7 +67,7 @@ export default function VideoTestimonials() {
                   Watch →
                 </button>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

@@ -1,4 +1,7 @@
+'use client';
+
 import { Users, Briefcase, Globe, TrendingUp, Heart, Award } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const benefits = [
   {
@@ -34,6 +37,21 @@ const benefits = [
 ];
 
 export default function InternshipBenefits() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: 30, opacity: 0 },
+    visible: { y: 0, opacity: 1, transition: { duration: 0.6, ease: "easeOut" } },
+  };
+
   return (
     <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -46,13 +64,20 @@ export default function InternshipBenefits() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <motion.div
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           {benefits.map((benefit, index) => {
             const Icon = benefit.icon;
             return (
-              <div
+              <motion.div
                 key={index}
-                className="group bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-lg transition-all duration-500 hover:-translate-y-2"
+                className="group bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2"
+                variants={itemVariants}
               >
                 <div className="relative h-48 overflow-hidden">
                   <div
@@ -79,10 +104,10 @@ export default function InternshipBenefits() {
                     {benefit.description}
                   </p>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
