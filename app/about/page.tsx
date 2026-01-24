@@ -1,5 +1,4 @@
 import AboutHero from '@/components/about/AboutHero';
-import JourneyProgress from '@/components/about/JourneyProgress';
 import FeaturedVideo from '@/components/about/FeaturedVideo';
 import JourneyInteractive from '@/components/about/JourneyInteractive';
 import ImpactMetrics from '@/components/about/ImpactMetrics';
@@ -17,9 +16,6 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <main className="relative">
-      {/* Progress bar below navbar */}
-      <JourneyProgress />
-      
       <AboutHero />
       <FeaturedVideo />
       <JourneyInteractive />

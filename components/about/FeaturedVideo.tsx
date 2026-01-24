@@ -3,6 +3,7 @@
 import { Play } from 'lucide-react';
 import { useState } from 'react';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 export default function FeaturedVideo() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -53,25 +54,39 @@ export default function FeaturedVideo() {
                 
                 {/* Custom Hilltop Play Button */}
                 <div className="absolute inset-0 flex items-center justify-center z-20">
-                  <div className="relative">
+                  <motion.div
+                    animate={{
+                      scale: [1, 1.1, 1],
+                    }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                  >
                     {/* Outer glow ring - gold */}
                     <div className="absolute inset-0 rounded-full blur-3xl scale-150 group-hover:scale-[1.8] transition-transform duration-500" style={{ backgroundColor: 'rgba(244, 162, 97, 0.4)' }} />
                     
                     {/* Play button circle - navy with gold border */}
-                    <div className="relative w-28 h-28 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300" style={{ 
-                      background: 'linear-gradient(to bottom right, #1D3160, #0f1a3d)',
-                      border: '4px solid #F4A261'
-                    }}>
+                    <motion.div 
+                      className="relative w-28 h-28 rounded-full flex items-center justify-center shadow-lg transition-transform duration-300" 
+                      style={{ 
+                        background: 'linear-gradient(to bottom right, #1D3160, #0f1a3d)',
+                        border: '4px solid #F4A261'
+                      }}
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.9 }}
+                    >
                       {/* Play icon - gold */}
                       <Play className="w-12 h-12 ml-1" style={{ color: '#F4A261', fill: '#F4A261' }} strokeWidth={2} />
-                    </div>
+                    </motion.div>
                     
                     {/* Subtle pulse animation ring */}
                     <div className="absolute inset-0 rounded-full animate-ping" style={{ 
                       border: '2px solid rgba(244, 162, 97, 0.5)',
                       animationDuration: '2s' 
                     }} />
-                  </div>
+                  </motion.div>
                 </div>
                 
                 {/* Watch hint */}

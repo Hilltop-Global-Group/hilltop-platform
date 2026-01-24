@@ -1,5 +1,5 @@
 import { Facebook, Linkedin, Instagram } from 'lucide-react';
-import ScrollReveal from './ScrollReveal';
+import FadeIn from '../FadeIn';
 
 const teamMembers = [
   {
@@ -8,14 +8,14 @@ const teamMembers = [
     image: 'https://via.placeholder.com/400x400/1D3160/FFFFFF?text=PA',
   },
   {
-    name: 'Team Member',
+    name: 'Sarah N.',
     role: 'Operations Director',
-    image: 'https://via.placeholder.com/400x400/1D3160/FFFFFF?text=TM',
+    image: 'https://via.placeholder.com/400x400/1D3160/FFFFFF?text=SN',
   },
   {
-    name: 'Team Member',
+    name: 'Michael K.',
     role: 'Program Manager',
-    image: 'https://via.placeholder.com/400x400/1D3160/FFFFFF?text=TM',
+    image: 'https://via.placeholder.com/400x400/1D3160/FFFFFF?text=MK',
   },
 ];
 
@@ -23,7 +23,7 @@ export default function Team() {
   return (
     <section className="py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <ScrollReveal animation="fade-down">
+        <FadeIn>
           <div className="text-center mb-16">
             <span className="inline-block text-sm font-bold text-black uppercase tracking-wider mb-4 border-2 border-gold-400 px-6 py-2 rounded-full bg-gold-400">
               The Team
@@ -35,16 +35,15 @@ export default function Team() {
               Passionate professionals dedicated to transforming education across Africa
             </p>
           </div>
-        </ScrollReveal>
+        </FadeIn>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {teamMembers.map((member, index) => (
-            <ScrollReveal
+            <FadeIn
               key={index}
-              animation="zoom-in"
-              delay={index * 100}
+              delay={index * 0.15}
             >
-              <div className="group relative bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-lg transition-all duration-500 hover:-translate-y-2 border-4 border-navy-900 hover:border-gold-400">
+              <div className="group relative bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-4 border-navy-900 hover:border-gold-400">
                 <div className="relative h-[500px] overflow-hidden">
                   <div
                     className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
@@ -89,7 +88,7 @@ export default function Team() {
                   </div>
                 </div>
               </div>
-            </ScrollReveal>
+            </FadeIn>
           ))}
         </div>
       </div>

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import ScrollReveal from './ScrollReveal';
+import FadeIn from '../FadeIn';
 
 const values = [
   {
@@ -48,7 +48,7 @@ export default function MinimalValues() {
       <div className="absolute bottom-0 left-0 right-0 h-2 bg-gold-400" />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <ScrollReveal animation="fade-down">
+        <FadeIn>
           <div className="text-center mb-20">
             <span className="inline-block text-sm font-bold text-black uppercase tracking-wider mb-4 border-2 border-gold-400 px-6 py-2 rounded-full bg-gold-400">
               Our Values
@@ -60,14 +60,13 @@ export default function MinimalValues() {
               The principles that guide every decision, every program, every partnership
             </p>
           </div>
-        </ScrollReveal>
+        </FadeIn>
 
         <div className="space-y-6">
           {values.map((value, index) => (
-            <ScrollReveal
+            <FadeIn
               key={value.id}
-              animation="fade-up"
-              delay={index * 100}
+              delay={index * 0.1}
             >
               <div
                 onMouseEnter={() => setHoveredValue(value.id)}
@@ -174,7 +173,7 @@ export default function MinimalValues() {
                   <div className="absolute inset-0 bg-gold-400/10 blur-2xl pointer-events-none" />
                 )}
               </div>
-            </ScrollReveal>
+            </FadeIn>
           ))}
         </div>
       </div>

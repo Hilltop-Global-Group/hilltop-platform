@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import ScrollReveal from './ScrollReveal';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const journeySteps = [
   {
@@ -108,115 +109,142 @@ export default function JourneyInteractive() {
         </ScrollReveal>
 
         {/* Content Area */}
-        <div className="relative">
-          {journeySteps.map((step, index) => (
-            <div
-              key={step.id}
-              className={`transition-all duration-700 ${
-                activeStep === index
-                  ? 'opacity-100 scale-100 relative'
-                  : 'opacity-0 scale-95 absolute inset-0 pointer-events-none'
-              }`}
-            >
-              <div className="bg-white rounded-lg p-8 md:p-12 shadow-lg border-4 border-gold-400">
-                <div className="grid md:grid-cols-2 gap-12 items-center">
-                  {/* Image Side */}
-                  <div className="relative group">
-                    <div className="relative h-[500px] rounded-lg overflow-hidden shadow-lg border-4 border-navy-900">
-                      <Image
-                        src={step.image}
-                        alt={step.title}
-                        fill
-                        className="object-cover transition-transform duration-700 group-hover:scale-105"
-                      />
-                      {/* Overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-                      
-                      {/* Floating year badge */}
-                      <div className="absolute top-6 left-6 bg-gold-400 px-6 py-3 rounded-xl shadow-lg border-2 border-black">
-                        <span className="font-serif font-bold text-2xl text-black">
-                          {step.year}
-                        </span>
-                      </div>
-
-                      {/* Stats overlay */}
-                      <div className="absolute bottom-6 left-6 right-6 flex gap-4">
-                        {step.stats.map((stat) => (
-                          <div
-                            key={stat.label}
-                            className="flex-1 bg-white rounded-xl p-4 text-center border-2 border-gold-400"
-                          >
-                            <div className="font-serif font-bold text-3xl text-navy-900 mb-1">
-                              {stat.value}
-                            </div>
-                            <div className="text-xs text-black font-semibold uppercase tracking-wide">
-                              {stat.label}
-                            </div>
-                          </div>
-                        ))}
-                      </div>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeStep}
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -20 }}
+            transition={{ duration: 0.5 }}
+            className="relative"
+          >
+            <div className="bg-white rounded-lg p-8 md:p-12 shadow-lg border-4 border-gold-400">
+              <div className="grid md:grid-cols-2 gap-12 items-center">
+                {/* Image Side */}
+                <div className="relative group">
+                  <div className="relative h-[500px] rounded-lg overflow-hidden shadow-lg border-4 border-navy-900">
+                    <Image
+                      src={journeySteps[activeStep].image}
+                      alt={journeySteps[activeStep].title}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    {/* Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                    
+                    {/* Floating year badge */}
+                    <div className="absolute top-6 left-6 bg-gold-400 px-6 py-3 rounded-xl shadow-lg border-2 border-black">
+                      <span className="font-serif font-bold text-2xl text-black">
+                        {journeySteps[activeStep].year}
+                      </span>
                     </div>
 
-                    {/* Decorative border */}
-                    <div className="absolute -inset-4 border-4 border-gold-400/30 rounded-lg -z-10" />
+                    {/* Stats overlay */}
+                    <div className="absolute bottom-6 left-6 right-6 flex gap-4">
+                      {journeySteps[activeStep].stats.map((stat) => (
+                        <div
+                          key={stat.label}
+                          className="flex-1 bg-white rounded-xl p-4 text-center border-2 border-gold-400"
+                        >
+                          <div className="font-serif font-bold text-3xl text-navy-900 mb-1">
+                            {stat.value}
+                          </div>
+                          <div className="text-xs text-black font-semibold uppercase tracking-wide">
+                            {stat.label}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
                   </div>
 
-                  {/* Content Side */}
-                  <div className="space-y-6">
-                    <div>
-                      <div className="inline-block mb-4">
-                        <span className="text-8xl font-serif font-bold text-gold-400/20">
-                          0{index + 1}
-                        </span>
-                      </div>
-                      <h3 className="font-serif font-bold text-4xl text-navy-900 mb-6">
-                        {step.title}
-                      </h3>
-                      <p className="text-lg text-black leading-relaxed">
-                        {step.description}
-                      </p>
-                    </div>
+                  {/* Decorative border */}
+                  <div className="absolute -inset-4 border-4 border-gold-400/30 rounded-lg -z-10" />
+                </div>
 
-                    {/* Progress indicator */}
-                    <div className="pt-8">
-                      <div className="flex gap-3">
-                        {journeySteps.map((_, idx) => (
-                          <button
-                            key={idx}
-                            onClick={() => setActiveStep(idx)}
-                            className={`h-2 rounded-full transition-all duration-500 ${
-                              idx === activeStep
-                                ? 'w-20 bg-gold-400 shadow-lg shadow-gold-400/50'
-                                : 'w-10 bg-gray-300 hover:bg-navy-900'
-                            }`}
-                          />
-                        ))}
-                      </div>
+                {/* Content Side */}
+                <div className="space-y-6">
+                  <div>
+                    <div className="inline-block mb-4">
+                      <span className="text-8xl font-serif font-bold text-gold-400/20">
+                        0{activeStep + 1}
+                      </span>
                     </div>
+                    <h3 className="font-serif font-bold text-4xl text-navy-900 mb-6">
+                      {journeySteps[activeStep].title}
+                    </h3>
+                    <p className="text-lg text-black leading-relaxed">
+                      {journeySteps[activeStep].description}
+                    </p>
+                  </div>
 
-                    {/* Navigation arrows */}
-                    <div className="flex gap-4 pt-4">
-                      <button
-                        onClick={() => setActiveStep(Math.max(0, activeStep - 1))}
-                        disabled={activeStep === 0}
-                        className="px-8 py-4 rounded-xl font-bold border-2 border-navy-900 text-navy-900 hover:bg-navy-900 hover:text-white disabled:opacity-20 disabled:cursor-not-allowed transition-all duration-300"
-                      >
-                        Previous
-                      </button>
-                      <button
-                        onClick={() => setActiveStep(Math.min(journeySteps.length - 1, activeStep + 1))}
-                        disabled={activeStep === journeySteps.length - 1}
-                        className="px-8 py-4 rounded-xl font-bold bg-gold-400 text-black border-2 border-gold-400 hover:bg-black hover:text-gold-400 hover:border-black disabled:opacity-20 disabled:cursor-not-allowed transition-all duration-300 shadow-md shadow-gold-400/50"
-                      >
-                        Next Chapter
-                      </button>
+                  {/* Progress indicator */}
+                  <div className="pt-8">
+                    <div className="flex gap-3">
+                      {journeySteps.map((_, idx) => (
+                        <button
+                          key={idx}
+                          onClick={() => setActiveStep(idx)}
+                          className={`h-2 rounded-full transition-all duration-500 ${
+                            idx === activeStep
+                              ? 'w-20 bg-gold-400 shadow-lg shadow-gold-400/50'
+                              : 'w-10 bg-gray-300 hover:bg-navy-900'
+                          }`}
+                        />
+                      ))}
                     </div>
+                  </div>
+
+                  {/* Navigation arrows */}
+                  <div className="flex gap-4 pt-4">
+                    <motion.button
+                      onClick={() => setActiveStep(Math.max(0, activeStep - 1))}
+                      disabled={activeStep === 0}
+                      className="group px-8 py-4 rounded-xl font-bold border-2 border-navy-900 text-navy-900 disabled:opacity-20 disabled:cursor-not-allowed transition-all duration-300"
+                      style={{
+                        backgroundColor: 'transparent'
+                      }}
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      onMouseEnter={(e) => {
+                        if (activeStep !== 0) {
+                          e.currentTarget.style.backgroundColor = '#1D3160';
+                          e.currentTarget.style.color = 'white';
+                        }
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.backgroundColor = 'transparent';
+                        e.currentTarget.style.color = '#1D3160';
+                      }}
+                    >
+                      Previous
+                    </motion.button>
+                    <motion.button
+                      onClick={() => setActiveStep(Math.min(journeySteps.length - 1, activeStep + 1))}
+                      disabled={activeStep === journeySteps.length - 1}
+                      className="group px-8 py-4 rounded-xl font-bold bg-gold-400 text-black border-2 border-gold-400 disabled:opacity-20 disabled:cursor-not-allowed transition-all duration-300 shadow-md shadow-gold-400/50"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      onMouseEnter={(e) => {
+                        if (activeStep !== journeySteps.length - 1) {
+                          e.currentTarget.style.backgroundColor = 'black';
+                          e.currentTarget.style.color = '#F4A261';
+                          e.currentTarget.style.borderColor = 'black';
+                        }
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.backgroundColor = '#F4A261';
+                        e.currentTarget.style.color = 'black';
+                        e.currentTarget.style.borderColor = '#F4A261';
+                      }}
+                    >
+                      Next Chapter
+                    </motion.button>
                   </div>
                 </div>
               </div>
             </div>
-          ))}
-        </div>
+          </motion.div>
+        </AnimatePresence>
       </div>
     </section>
   );
