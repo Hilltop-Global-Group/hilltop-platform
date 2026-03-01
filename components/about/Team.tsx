@@ -9,10 +9,10 @@ const teamMembers = [
     linkedin: 'https://www.linkedin.com/in/philagbeko/',
   },
   {
-    name: 'Osa Imohe',
+    name: 'Nanya Osamor',
     role: 'Co-Founder',
-    image: 'https://via.placeholder.com/400x400/1D3160/FFFFFF?text=OI',
-    linkedin: 'https://www.linkedin.com/in/osaimohe/',
+    image: 'https://via.placeholder.com/400x400/1D3160/FFFFFF?text=NO',
+    linkedin: 'https://www.linkedin.com/in/nanyaosamor/',
   },
   {
     name: 'Faata Faleera Adam',

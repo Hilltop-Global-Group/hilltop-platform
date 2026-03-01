@@ -17,7 +17,7 @@ const metrics = [
     description: 'Lives changed through our programs',
   },
   {
-    value: 5,
+    value: 7,
     suffix: '+',
     label: 'African Countries',
     description: 'Expanding opportunities across the continent',

@@ -263,3 +263,8 @@ import { motion } from 'framer-motion';
 Server is running at: **http://localhost:3000**
 Go to about page and hard refresh your browser!
 
+
+
+
+
+
