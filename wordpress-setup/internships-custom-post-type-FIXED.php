@@ -114,7 +114,8 @@ function internship_details_callback($post) {
     $application_deadline = get_post_meta($post->ID, '_internship_application_deadline', true);
     $duration = get_post_meta($post->ID, '_internship_duration', true);
     $application_status = get_post_meta($post->ID, '_internship_application_status', true);
-    
+    $is_past = get_post_meta($post->ID, '_internship_is_past', true);
+
     // Format availability and pricing
     $hybrid_available = get_post_meta($post->ID, '_internship_hybrid_available', true);
     $hybrid_cost = get_post_meta($post->ID, '_internship_hybrid_cost', true);
@@ -195,6 +196,15 @@ function internship_details_callback($post) {
                 <option value="closed" <?php selected($application_status, 'closed'); ?>>Applications Closed</option>
             </select>
             <p style="color: #666; font-size: 12px; margin: 5px 0 0 0;">Controls the badge displayed on cards</p>
+        </div>
+
+        <div class="internship-field" style="background: #fff3cd; border: 1px solid #ffc107; border-radius: 6px; padding: 16px;">
+            <label style="font-weight: bold; color: #856404;">📦 Move to Past Internships</label>
+            <label style="display: flex; align-items: center; gap: 10px; margin-top: 8px; cursor: pointer; font-weight: normal;">
+                <input type="checkbox" name="internship_is_past" value="1" <?php checked($is_past, '1'); ?> style="width: 18px; height: 18px;">
+                <span>Mark this internship as a <strong>past program</strong></span>
+            </label>
+            <p style="color: #856404; font-size: 12px; margin: 8px 0 0 0;">⚠️ When checked, this internship moves to the "Past Internships" tab on the website and will no longer appear under "Current Internships".</p>
         </div>
     </div>
 
@@ -309,6 +319,10 @@ function save_internship_details($post_id) {
         }
     }
 
+    // Save the "is past" checkbox (unchecked = not in POST, so we handle it explicitly)
+    $is_past = isset($_POST['internship_is_past']) ? '1' : '0';
+    update_post_meta($post_id, '_internship_is_past', $is_past);
+
     // Save format availability (checkboxes)
     update_post_meta($post_id, '_internship_hybrid_available', isset($_POST['internship_hybrid_available']) ? '1' : '0');
     update_post_meta($post_id, '_internship_incountry_available', isset($_POST['internship_incountry_available']) ? '1' : '0');
@@ -332,6 +346,7 @@ function expose_internship_meta_in_rest() {
         '_internship_application_deadline',
         '_internship_duration',
         '_internship_application_status',
+        '_internship_is_past',
         '_internship_hybrid_available',
         '_internship_hybrid_cost',
         '_internship_incountry_available',
@@ -583,13 +598,14 @@ function disable_acf_validation_for_internship_meta() {
             '_internship_application_deadline',
             '_internship_duration',
             '_internship_application_status',
+            '_internship_is_past',
             '_internship_hybrid_available',
             '_internship_hybrid_cost',
             '_internship_incountry_available',
             '_internship_incountry_cost',
             '_internship_gallery',
         );
-        
+
         if (in_array($field['name'], $our_fields)) {
             return true; // Always valid
         }

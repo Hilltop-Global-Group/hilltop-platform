@@ -43,8 +43,46 @@ export default function Accommodation() {
   };
 
   return (
-    <section className="py-20 bg-slate-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative overflow-hidden py-20 bg-slate-50">
+
+      {/* Decorative: wave path — top edge */}
+      <motion.div aria-hidden className="pointer-events-none absolute top-0 left-0 right-0" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.4, ease: [0.25, 0.1, 0.25, 1] }}>
+        <svg width="100%" height="55" viewBox="0 0 1440 55" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 30 C180 0, 360 55, 540 28 S900 0, 1080 30 S1350 55, 1440 28" stroke="#1D3160" strokeWidth="1.5" fill="none" opacity="0.07"/>
+          <path d="M0 42 C300 14, 600 60, 900 38 S1260 10, 1440 42" stroke="#1D3160" strokeWidth="1" fill="none" opacity="0.04"/>
+        </svg>
+      </motion.div>
+
+      {/* Decorative: concentric arcs — top right */}
+      <motion.div aria-hidden className="pointer-events-none absolute -top-16 -right-16" initial={{ opacity: 0, scale: 0.85 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.6, ease: [0.25, 0.1, 0.25, 1] }}>
+        <svg width="360" height="360" viewBox="0 0 360 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="360" cy="0" r="300" stroke="#1D3160" strokeWidth="2" fill="none" opacity="0.06" />
+          <circle cx="360" cy="0" r="230" stroke="#1D3160" strokeWidth="1.5" fill="none" opacity="0.05" />
+          <circle cx="360" cy="0" r="160" stroke="#1D3160" strokeWidth="1" fill="none" opacity="0.04" />
+          <circle cx="360" cy="0" r="90"  stroke="#1D3160" strokeWidth="1" fill="none" opacity="0.03" />
+        </svg>
+      </motion.div>
+
+      {/* Decorative: dot grid — bottom left */}
+      <motion.div aria-hidden className="pointer-events-none absolute bottom-8 left-8" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.4, delay: 0.25, ease: [0.25, 0.1, 0.25, 1] }}>
+        <svg width="150" height="150" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+          {[0,1,2,3,4].map(row => [0,1,2,3,4].map(col => (
+            <circle key={`${row}-${col}`} cx={15 + col * 30} cy={15 + row * 30} r="3" fill="#1D3160" opacity="0.1" />
+          )))}
+        </svg>
+      </motion.div>
+
+      {/* Decorative: diagonal lines — bottom right */}
+      <motion.div aria-hidden className="pointer-events-none absolute -bottom-8 -right-8" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.4, delay: 0.35, ease: [0.25, 0.1, 0.25, 1] }}>
+        <svg width="220" height="220" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="0" y1="80"  x2="80"  y2="0"   stroke="#1D3160" strokeWidth="1.5" opacity="0.07" />
+          <line x1="0" y1="130" x2="130" y2="0"   stroke="#1D3160" strokeWidth="1" opacity="0.05" />
+          <line x1="0" y1="180" x2="180" y2="0"   stroke="#1D3160" strokeWidth="1" opacity="0.04" />
+          <line x1="30" y1="220" x2="220" y2="30" stroke="#1D3160" strokeWidth="1" opacity="0.03" />
+        </svg>
+      </motion.div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           <h2 className="font-serif font-bold text-4xl sm:text-5xl mb-6" style={{ color: '#1D3160' }}>
             Accommodation & Local Support
@@ -139,7 +177,7 @@ export default function Accommodation() {
               </h3>
             </div>
             <p className="text-gray-700 mb-4">
-              Each destination has a dedicated Hilltop on-ground coordinator available 24/7 to:
+              Each destination has a dedicated Hilltop on-ground coordinator available to:
             </p>
             <ul className="space-y-2 text-gray-600">
               <li className="flex items-start gap-2">

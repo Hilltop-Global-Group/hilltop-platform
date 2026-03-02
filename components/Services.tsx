@@ -38,8 +38,39 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative overflow-hidden py-20 bg-gray-50">
+
+      {/* Decorative: concentric arc — top left */}
+      <motion.div aria-hidden className="pointer-events-none absolute -top-20 -left-20" initial={{ opacity: 0, scale: 0.85 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.6, ease: [0.25, 0.1, 0.25, 1] }}>
+        <svg width="420" height="420" viewBox="0 0 420 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="0" cy="0" r="370" stroke="#1D3160" strokeWidth="2" fill="none" opacity="0.06" />
+          <circle cx="0" cy="0" r="290" stroke="#1D3160" strokeWidth="1.5" fill="none" opacity="0.05" />
+          <circle cx="0" cy="0" r="210" stroke="#1D3160" strokeWidth="1" fill="none" opacity="0.04" />
+        </svg>
+      </motion.div>
+
+      {/* Decorative: dot grid — bottom right */}
+      <motion.div aria-hidden className="pointer-events-none absolute bottom-8 right-8" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.4, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}>
+        <svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+          {[0,1,2,3,4,5].map(row => [0,1,2,3,4,5].map(col => (
+            <circle key={`${row}-${col}`} cx={13 + col * 27} cy={13 + row * 27} r="3" fill="#1D3160" opacity="0.09" />
+          )))}
+        </svg>
+      </motion.div>
+
+      {/* Decorative: wave top edge */}
+      <motion.div aria-hidden className="pointer-events-none absolute top-0 left-0 right-0" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.4, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}>
+        <svg width="100%" height="50" viewBox="0 0 1440 50" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 28 C240 5, 480 50, 720 26 S1200 3, 1440 28" stroke="#1D3160" strokeWidth="1.5" fill="none" opacity="0.06"/>
+        </svg>
+      </motion.div>
+
+      {/* Decorative: soft navy blob — center right */}
+      <motion.div aria-hidden className="pointer-events-none absolute top-1/2 -right-20 -translate-y-1/2" initial={{ opacity: 0, scale: 0.7 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 2, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+        style={{ width: 340, height: 340, borderRadius: '50%', backgroundColor: '#1D3160', opacity: 0.03, filter: 'blur(80px)' }}
+      />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <FadeIn>
           <div className="text-center mb-16">
             <h2 className="font-serif font-bold text-4xl sm:text-5xl mb-4" style={{ color: '#1D3160' }}>

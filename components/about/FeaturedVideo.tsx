@@ -9,8 +9,41 @@ export default function FeaturedVideo() {
   const [isPlaying, setIsPlaying] = useState(false);
 
   return (
-    <section className="py-24 bg-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative overflow-hidden py-24 bg-white">
+
+      {/* Decorative: quarter-arc — top right */}
+      <motion.div aria-hidden className="pointer-events-none absolute -top-16 -right-16" initial={{ opacity: 0, scale: 0.85 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.6, ease: [0.25, 0.1, 0.25, 1] }}>
+        <svg width="380" height="380" viewBox="0 0 380 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="380" cy="0" r="320" stroke="#1D3160" strokeWidth="2" fill="none" opacity="0.06" />
+          <circle cx="380" cy="0" r="240" stroke="#1D3160" strokeWidth="1.5" fill="none" opacity="0.04" />
+          <circle cx="380" cy="0" r="160" stroke="#1D3160" strokeWidth="1" fill="none" opacity="0.03" />
+        </svg>
+      </motion.div>
+
+      {/* Decorative: dot grid — bottom left */}
+      <motion.div aria-hidden className="pointer-events-none absolute bottom-10 left-10" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.4, delay: 0.25, ease: [0.25, 0.1, 0.25, 1] }}>
+        <svg width="150" height="150" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+          {[0,1,2,3,4].map(row => [0,1,2,3,4].map(col => (
+            <circle key={`${row}-${col}`} cx={15 + col * 30} cy={15 + row * 30} r="3" fill="#1D3160" opacity="0.08" />
+          )))}
+        </svg>
+      </motion.div>
+
+      {/* Decorative: diagonal lines — top left */}
+      <motion.div aria-hidden className="pointer-events-none absolute -top-6 -left-6" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.4, delay: 0.35, ease: [0.25, 0.1, 0.25, 1] }}>
+        <svg width="220" height="220" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="0" y1="70"  x2="70"  y2="0"   stroke="#1D3160" strokeWidth="1.5" opacity="0.07" />
+          <line x1="0" y1="120" x2="120" y2="0"   stroke="#1D3160" strokeWidth="1" opacity="0.05" />
+          <line x1="0" y1="170" x2="170" y2="0"   stroke="#1D3160" strokeWidth="1" opacity="0.04" />
+        </svg>
+      </motion.div>
+
+      {/* Decorative: soft blob — bottom right */}
+      <motion.div aria-hidden className="pointer-events-none absolute -bottom-10 right-1/4" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 2, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+        style={{ width: 350, height: 200, borderRadius: '50%', backgroundColor: '#1D3160', opacity: 0.025, filter: 'blur(70px)' }}
+      />
+
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-6 py-2 bg-gold-400 rounded-full mb-6 border-2 border-navy-900">

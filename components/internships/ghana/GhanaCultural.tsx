@@ -12,7 +12,7 @@ const culturalHighlights = [
   {
     title: 'Makola Market',
     description: 'Makola Market and other markets to purchase souvenirs',
-    image: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/IMG_4280-1-scaled-e1759312955679.jpg',
+    image: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/6.jpg',
   },
   {
     title: 'Kwame Nkrumah Memorial',

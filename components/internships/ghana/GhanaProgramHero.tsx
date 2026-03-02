@@ -8,7 +8,7 @@ export default function GhanaProgramHero() {
         <div 
           className="absolute inset-0 bg-cover bg-center opacity-50"
           style={{ 
-            backgroundImage: `url('http://hilltopglobalgroup.com/wp-content/uploads/2023/09/IMG_4280-1-scaled-e1759312955679.jpg')` 
+            backgroundImage: `url('http://hilltopglobalgroup.com/wp-content/uploads/2023/09/6.jpg')` 
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-br from-primary-navy via-[#27427a] to-primary-navy opacity-50" />

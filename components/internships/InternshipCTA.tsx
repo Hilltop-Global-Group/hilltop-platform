@@ -1,4 +1,7 @@
+'use client';
+
 import { Mail, Phone, ArrowRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function InternshipCTA() {
   return (
@@ -12,6 +15,40 @@ export default function InternshipCTA() {
         />
         <div className="absolute inset-0 bg-gradient-to-br from-primary-navy via-[#27427a] to-primary-navy opacity-90" />
       </div>
+
+      {/* Decorative: concentric white rings — top left */}
+      <motion.div aria-hidden className="pointer-events-none absolute -top-24 -left-24" initial={{ opacity: 0, scale: 0.85 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.8, ease: [0.25, 0.1, 0.25, 1] }}>
+        <svg width="460" height="460" viewBox="0 0 460 460" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="0" cy="0" r="400" stroke="#FFFFFF" strokeWidth="1.5" fill="none" opacity="0.06" />
+          <circle cx="0" cy="0" r="310" stroke="#FFFFFF" strokeWidth="1" fill="none" opacity="0.04" />
+          <circle cx="0" cy="0" r="220" stroke="#FFFFFF" strokeWidth="1" fill="none" opacity="0.03" />
+        </svg>
+      </motion.div>
+
+      {/* Decorative: white dot grid — bottom right */}
+      <motion.div aria-hidden className="pointer-events-none absolute bottom-10 right-10" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.4, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}>
+        <svg width="140" height="140" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+          {[0,1,2,3,4].map(row => [0,1,2,3,4].map(col => (
+            <circle key={`${row}-${col}`} cx={14 + col * 28} cy={14 + row * 28} r="2.5" fill="#FFFFFF" opacity="0.07" />
+          )))}
+        </svg>
+      </motion.div>
+
+      {/* Decorative: white diagonal lines — top right */}
+      <motion.div aria-hidden className="pointer-events-none absolute -top-8 -right-8" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.4, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}>
+        <svg width="240" height="240" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="240" y1="80" x2="160" y2="0" stroke="#FFFFFF" strokeWidth="1.5" opacity="0.06"/>
+          <line x1="240" y1="140" x2="100" y2="0" stroke="#FFFFFF" strokeWidth="1" opacity="0.05"/>
+          <line x1="240" y1="200" x2="40" y2="0" stroke="#FFFFFF" strokeWidth="1" opacity="0.04"/>
+        </svg>
+      </motion.div>
+
+      {/* Decorative: white horizontal rule accents — center */}
+      <motion.div aria-hidden className="pointer-events-none absolute top-1/2 left-0 right-0 -translate-y-1/2" initial={{ opacity: 0, scaleX: 0 }} animate={{ opacity: 1, scaleX: 1 }} transition={{ duration: 1.4, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}>
+        <svg width="100%" height="4" viewBox="0 0 1440 4" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="0" y1="2" x2="1440" y2="2" stroke="#FFFFFF" strokeWidth="1" opacity="0.04" strokeDasharray="8 16"/>
+        </svg>
+      </motion.div>
       
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-12">

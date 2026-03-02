@@ -19,10 +19,10 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ["var(--font-inter)", "sans-serif"],
+        sans: ["var(--font-open-sans)", "sans-serif"],
         serif: ["var(--font-merriweather)", "serif"],
-        heading: ["var(--font-merriweather)", "serif"], // Alias for backwards compatibility
-        body: ["var(--font-inter)", "sans-serif"], // Alias for backwards compatibility
+        heading: ["var(--font-merriweather)", "serif"],
+        body: ["var(--font-open-sans)", "sans-serif"],
       },
     },
   },

@@ -57,13 +57,38 @@ export default function JourneyInteractive() {
 
   return (
     <section className="py-24 bg-gray-50 relative overflow-hidden">
-      {/* Animated background pattern */}
+      {/* Background dot pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
           backgroundImage: 'radial-gradient(circle at 2px 2px, #1D3160 1px, transparent 0)',
           backgroundSize: '48px 48px',
         }} />
       </div>
+
+      {/* Decorative: concentric arcs — top right */}
+      <motion.div aria-hidden className="pointer-events-none absolute -top-20 -right-20" initial={{ opacity: 0, scale: 0.85 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.6, ease: [0.25, 0.1, 0.25, 1] }}>
+        <svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="400" cy="0" r="340" stroke="#1D3160" strokeWidth="2" fill="none" opacity="0.07" />
+          <circle cx="400" cy="0" r="260" stroke="#1D3160" strokeWidth="1.5" fill="none" opacity="0.05" />
+          <circle cx="400" cy="0" r="180" stroke="#1D3160" strokeWidth="1" fill="none" opacity="0.04" />
+        </svg>
+      </motion.div>
+
+      {/* Decorative: wavy top edge */}
+      <motion.div aria-hidden className="pointer-events-none absolute top-0 left-0 right-0" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.4, ease: [0.25, 0.1, 0.25, 1] }}>
+        <svg width="100%" height="55" viewBox="0 0 1440 55" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 30 C180 5, 360 55, 540 28 S900 5, 1080 30 S1350 55, 1440 28" stroke="#1D3160" strokeWidth="1.5" fill="none" opacity="0.08"/>
+        </svg>
+      </motion.div>
+
+      {/* Decorative: dot cluster — bottom left */}
+      <motion.div aria-hidden className="pointer-events-none absolute bottom-10 left-10" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.4, delay: 0.25, ease: [0.25, 0.1, 0.25, 1] }}>
+        <svg width="130" height="130" viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+          {[0,1,2,3,4].map(row => [0,1,2,3,4].map(col => (
+            <circle key={`${row}-${col}`} cx={13 + col * 26} cy={13 + row * 26} r="2.5" fill="#1D3160" opacity="0.1" />
+          )))}
+        </svg>
+      </motion.div>
 
       {/* Accent shapes */}
       <div className="absolute top-20 right-20 w-64 h-64 bg-gold-400/20 rounded-full blur-3xl" />

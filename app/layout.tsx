@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Merriweather, Inter } from "next/font/google";
+import { Merriweather, Open_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -13,8 +13,8 @@ const merriweather = Merriweather({
   display: "swap",
 });
 
-const inter = Inter({
-  variable: "--font-inter",
+const openSans = Open_Sans({
+  variable: "--font-open-sans",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   display: "swap",
@@ -39,7 +39,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${merriweather.variable} ${inter.variable} font-sans antialiased`}
+        className={`${merriweather.variable} ${openSans.variable} font-sans antialiased`}
       >
         <Navbar />
         {children}

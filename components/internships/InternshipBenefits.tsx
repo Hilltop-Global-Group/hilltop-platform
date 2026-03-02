@@ -20,7 +20,7 @@ const benefits = [
     icon: Globe,
     title: 'Gain global work experience with African innovators',
     description: 'Engage in project-driven placements across fintech, agritech, healthtech and creative industries — build concrete skills, portfolios and networks that accelerate your career.',
-    image: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/IMG_4280-1-scaled-e1759312955679.jpg',
+    image: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/6.jpg',
   },
   {
     icon: TrendingUp,
@@ -53,7 +53,65 @@ export default function InternshipBenefits() {
   };
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="relative overflow-hidden py-20 bg-gray-50">
+
+      {/* Decorative: concentric partial rings — top right (navy on gray) */}
+      <motion.div
+        aria-hidden
+        className="pointer-events-none absolute -top-16 -right-16"
+        initial={{ opacity: 0, scale: 0.85 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1.6, ease: [0.25, 0.1, 0.25, 1] }}
+      >
+        <svg width="380" height="380" viewBox="0 0 380 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="380" cy="0" r="320" stroke="#1D3160" strokeWidth="2" fill="none" opacity="0.06" />
+          <circle cx="380" cy="0" r="240" stroke="#1D3160" strokeWidth="1.5" fill="none" opacity="0.05" />
+          <circle cx="380" cy="0" r="160" stroke="#1D3160" strokeWidth="1" fill="none" opacity="0.04" />
+          <circle cx="380" cy="0" r="80"  stroke="#1D3160" strokeWidth="1" fill="none" opacity="0.03" />
+        </svg>
+      </motion.div>
+
+      {/* Decorative: 6x5 dot grid — bottom left (navy on gray) */}
+      <motion.div
+        aria-hidden
+        className="pointer-events-none absolute bottom-8 left-8"
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1.4, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
+      >
+        <svg width="160" height="130" viewBox="0 0 160 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+          {[0, 1, 2, 3, 4].map(row =>
+            [0, 1, 2, 3, 4, 5].map(col => (
+              <circle
+                key={`${row}-${col}`}
+                cx={12 + col * 28}
+                cy={12 + row * 26}
+                r="3"
+                fill="#1D3160"
+                opacity="0.1"
+              />
+            ))
+          )}
+        </svg>
+      </motion.div>
+
+      {/* Decorative: soft navy blob — center left (navy on gray) */}
+      <motion.div
+        aria-hidden
+        className="pointer-events-none absolute top-1/3 -left-24"
+        initial={{ opacity: 0, scale: 0.7 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 2, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+        style={{
+          width: 300,
+          height: 300,
+          borderRadius: '50%',
+          backgroundColor: '#1D3160',
+          opacity: 0.03,
+          filter: 'blur(70px)',
+        }}
+      />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="font-serif font-bold text-4xl sm:text-5xl mb-6" style={{ color: '#1D3160' }}>

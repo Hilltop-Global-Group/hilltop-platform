@@ -10,7 +10,7 @@ const heroImages = [
   'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/Copy-of-20230521_170109-scaled-e1759311926763.jpg',
   'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/Copy-of-20230521_172314-scaled-e1759312776245.jpg',
   'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/2.jpg',
-  'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/IMG_4280-1-scaled-e1759312955679.jpg',
+  'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/6.jpg',
   'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/7A0B6637-94DF-4B8B-A888-04AE2A2917CD.jpg',
   'http://hilltopglobalgroup.com/wp-content/uploads/2025/09/performance-e1759310784853.jpg',
   'http://hilltopglobalgroup.com/wp-content/uploads/2021/12/2-5.png',
@@ -58,10 +58,47 @@ export default function Hero() {
         }}
       />
 
+      {/* Decorative: white concentric rings — top right */}
+      <motion.div aria-hidden className="pointer-events-none absolute -top-20 -right-20 z-[1]" initial={{ opacity: 0, scale: 0.85 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.8, ease: [0.25, 0.1, 0.25, 1] }}>
+        <svg width="460" height="460" viewBox="0 0 460 460" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="460" cy="0" r="400" stroke="#FFFFFF" strokeWidth="1.5" fill="none" opacity="0.05" />
+          <circle cx="460" cy="0" r="310" stroke="#FFFFFF" strokeWidth="1" fill="none" opacity="0.04" />
+          <circle cx="460" cy="0" r="220" stroke="#FFFFFF" strokeWidth="1" fill="none" opacity="0.03" />
+          <circle cx="460" cy="0" r="130" stroke="#FFFFFF" strokeWidth="0.75" fill="none" opacity="0.02" />
+        </svg>
+      </motion.div>
+
+      {/* Decorative: white dot grid — bottom left */}
+      <motion.div aria-hidden className="pointer-events-none absolute bottom-12 left-12 z-[1]" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.4, delay: 0.25, ease: [0.25, 0.1, 0.25, 1] }}>
+        <svg width="130" height="130" viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+          {[0,1,2,3,4].map(row => [0,1,2,3,4].map(col => (
+            <circle key={`${row}-${col}`} cx={13 + col * 26} cy={13 + row * 26} r="2.5" fill="#FFFFFF" opacity="0.07" />
+          )))}
+        </svg>
+      </motion.div>
+
+      {/* Decorative: white diagonal lines — bottom right */}
+      <motion.div aria-hidden className="pointer-events-none absolute -bottom-6 -right-6 z-[1]" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.4, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}>
+        <svg width="220" height="220" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="0" y1="75"  x2="75"  y2="0"   stroke="#FFFFFF" strokeWidth="1.5" opacity="0.06" />
+          <line x1="0" y1="130" x2="130" y2="0"   stroke="#FFFFFF" strokeWidth="1" opacity="0.04" />
+          <line x1="0" y1="185" x2="185" y2="0"   stroke="#FFFFFF" strokeWidth="1" opacity="0.03" />
+        </svg>
+      </motion.div>
+
+      {/* Decorative: white cross marks — scattered */}
+      <motion.div aria-hidden className="pointer-events-none absolute top-16 left-16 z-[1]" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.2, delay: 0.55, ease: [0.25, 0.1, 0.25, 1] }}>
+        <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="25" y1="0" x2="25" y2="50" stroke="#FFFFFF" strokeWidth="1" opacity="0.14"/>
+          <line x1="0" y1="25" x2="50" y2="25" stroke="#FFFFFF" strokeWidth="1" opacity="0.14"/>
+          <circle cx="25" cy="25" r="3" fill="#FFFFFF" opacity="0.1"/>
+        </svg>
+      </motion.div>
+
       {/* Content */}
       <div className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-10 relative z-10 text-center py-20">
         {/* Eyebrow Badge */}
-        <FadeIn delay={0.1}>
+        <FadeIn delay={0.1} className="mb-5">
           <span className="inline-flex items-center gap-2 px-4 py-2 text-xs sm:text-sm font-semibold uppercase tracking-wider text-white bg-white/10 border border-white/20 rounded-full backdrop-blur-md">
             Focused In Africa
           </span>

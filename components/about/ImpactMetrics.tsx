@@ -23,7 +23,7 @@ const metrics = [
     description: 'Expanding opportunities across the continent',
   },
   {
-    value: 15,
+    value: 50,
     suffix: '+',
     label: 'Total Projects',
     description: 'Diverse programs tailored to student needs',
@@ -90,6 +90,40 @@ export default function ImpactMetrics() {
       {/* Animated gradient orbs */}
       <div className="absolute top-20 left-20 w-96 h-96 bg-gold-400/20 rounded-full blur-3xl animate-pulse" />
       <div className="absolute bottom-20 right-20 w-80 h-80 bg-gold-400/10 rounded-full blur-3xl" />
+
+      {/* Decorative: white concentric rings — top right */}
+      <div className="pointer-events-none absolute -top-20 -right-20 opacity-100" aria-hidden>
+        <svg width="440" height="440" viewBox="0 0 440 440" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="440" cy="0" r="380" stroke="#FFFFFF" strokeWidth="1.5" fill="none" opacity="0.05" />
+          <circle cx="440" cy="0" r="290" stroke="#FFFFFF" strokeWidth="1" fill="none" opacity="0.04" />
+          <circle cx="440" cy="0" r="200" stroke="#FFFFFF" strokeWidth="1" fill="none" opacity="0.03" />
+        </svg>
+      </div>
+
+      {/* Decorative: white dot grid — bottom left */}
+      <div className="pointer-events-none absolute bottom-10 left-10" aria-hidden>
+        <svg width="140" height="140" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+          {[0,1,2,3,4].map(row => [0,1,2,3,4].map(col => (
+            <circle key={`${row}-${col}`} cx={14 + col * 28} cy={14 + row * 28} r="2.5" fill="#FFFFFF" opacity="0.07" />
+          )))}
+        </svg>
+      </div>
+
+      {/* Decorative: white diagonal lines — bottom right */}
+      <div className="pointer-events-none absolute -bottom-4 -right-4" aria-hidden>
+        <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="0" y1="70"  x2="70"  y2="0"   stroke="#FFFFFF" strokeWidth="1.5" opacity="0.07" />
+          <line x1="0" y1="120" x2="120" y2="0"   stroke="#FFFFFF" strokeWidth="1" opacity="0.05" />
+          <line x1="0" y1="170" x2="170" y2="0"   stroke="#FFFFFF" strokeWidth="1" opacity="0.04" />
+        </svg>
+      </div>
+
+      {/* Decorative: white horizontal dashes — center */}
+      <div className="pointer-events-none absolute top-1/2 left-0 right-0 -translate-y-1/2" aria-hidden>
+        <svg width="100%" height="4" viewBox="0 0 1440 4" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="0" y1="2" x2="1440" y2="2" stroke="#FFFFFF" strokeWidth="1" opacity="0.05" strokeDasharray="8 16"/>
+        </svg>
+      </div>
 
       {/* Accent lines */}
       <div className="absolute top-0 left-0 right-0 h-2 bg-gold-400" />

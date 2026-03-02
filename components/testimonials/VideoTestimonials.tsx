@@ -5,7 +5,7 @@ const videos = [
     title: 'Ghana 2024: Student Perspectives',
     description: 'Students share their transformative journey in Accra, from startup internships to cultural exploration.',
     duration: '3:45',
-    thumbnail: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/IMG_4280-1-scaled-e1759312955679.jpg',
+    thumbnail: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/6.jpg',
   },
   {
     title: 'Rwanda Innovation Hub Experience',

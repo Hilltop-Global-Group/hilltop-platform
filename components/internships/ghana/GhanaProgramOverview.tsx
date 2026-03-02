@@ -5,7 +5,7 @@ export default function GhanaProgramOverview() {
         <div className="grid lg:grid-cols-3 gap-8 mb-12">
           <div className="lg:col-span-1">
             <img
-              src="http://hilltopglobalgroup.com/wp-content/uploads/2023/09/IMG_4280-1-scaled-e1759312955679.jpg"
+              src="http://hilltopglobalgroup.com/wp-content/uploads/2023/09/6.jpg"
               alt="Accra skyline & business districts"
               className="w-full h-64 object-cover rounded-lg shadow-lg mb-4"
             />

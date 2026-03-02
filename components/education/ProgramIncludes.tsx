@@ -1,6 +1,7 @@
 'use client';
 
 import { Briefcase, Landmark, Heart, Palmtree } from 'lucide-react';
+import { motion } from 'framer-motion';
 import FadeIn from '../FadeIn';
 
 const includes = [
@@ -32,8 +33,43 @@ const includes = [
 
 export default function ProgramIncludes() {
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative overflow-hidden py-20 bg-white">
+
+      {/* Decorative: concentric rings — bottom right */}
+      <motion.div aria-hidden className="pointer-events-none absolute -bottom-20 -right-20" initial={{ opacity: 0, scale: 0.85 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.6, ease: [0.25, 0.1, 0.25, 1] }}>
+        <svg width="420" height="420" viewBox="0 0 420 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="420" cy="420" r="360" stroke="#1D3160" strokeWidth="2" fill="none" opacity="0.06" />
+          <circle cx="420" cy="420" r="280" stroke="#1D3160" strokeWidth="1.5" fill="none" opacity="0.04" />
+          <circle cx="420" cy="420" r="200" stroke="#1D3160" strokeWidth="1" fill="none" opacity="0.03" />
+        </svg>
+      </motion.div>
+
+      {/* Decorative: wavy path — top edge */}
+      <motion.div aria-hidden className="pointer-events-none absolute top-0 left-0 right-0" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.4, ease: [0.25, 0.1, 0.25, 1] }}>
+        <svg width="100%" height="50" viewBox="0 0 1440 50" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 28 C240 5, 480 50, 720 25 S1200 3, 1440 28" stroke="#1D3160" strokeWidth="1.5" fill="none" opacity="0.06"/>
+        </svg>
+      </motion.div>
+
+      {/* Decorative: dot grid — top left */}
+      <motion.div aria-hidden className="pointer-events-none absolute top-10 left-8" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.2, delay: 0.25, ease: [0.25, 0.1, 0.25, 1] }}>
+        <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          {[0,1,2,3].map(row => [0,1,2,3].map(col => (
+            <circle key={`${row}-${col}`} cx={12 + col * 26} cy={12 + row * 26} r="2.5" fill="#1D3160" opacity="0.09" />
+          )))}
+        </svg>
+      </motion.div>
+
+      {/* Decorative: diagonal lines — top right */}
+      <motion.div aria-hidden className="pointer-events-none absolute -top-4 -right-4" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.4, delay: 0.35, ease: [0.25, 0.1, 0.25, 1] }}>
+        <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="200" y1="70"  x2="130" y2="0"   stroke="#1D3160" strokeWidth="1.5" opacity="0.07" />
+          <line x1="200" y1="120" x2="80"  y2="0"   stroke="#1D3160" strokeWidth="1" opacity="0.05" />
+          <line x1="200" y1="170" x2="30"  y2="0"   stroke="#1D3160" strokeWidth="1" opacity="0.04" />
+        </svg>
+      </motion.div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <FadeIn>
           <div className="text-center mb-16">
             <h2 className="font-serif font-bold text-4xl sm:text-5xl mb-6" style={{ color: '#1D3160' }}>

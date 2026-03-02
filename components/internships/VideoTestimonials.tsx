@@ -20,7 +20,65 @@ const videos = [
 
 export default function VideoTestimonials() {
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="relative overflow-hidden py-20 bg-gray-50">
+
+      {/* Decorative: diagonal crossing stripes — top left (navy on gray) */}
+      <motion.div
+        aria-hidden
+        className="pointer-events-none absolute -top-8 -left-8"
+        initial={{ opacity: 0, scale: 0.85 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1.4, ease: [0.25, 0.1, 0.25, 1] }}
+      >
+        <svg width="240" height="240" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="0" y1="60"  x2="60"  y2="0"   stroke="#1D3160" strokeWidth="1.5" opacity="0.07" />
+          <line x1="0" y1="100" x2="100" y2="0"   stroke="#1D3160" strokeWidth="1.5" opacity="0.06" />
+          <line x1="0" y1="140" x2="140" y2="0"   stroke="#1D3160" strokeWidth="1"   opacity="0.05" />
+          <line x1="0" y1="180" x2="180" y2="0"   stroke="#1D3160" strokeWidth="1"   opacity="0.04" />
+          <line x1="20" y1="220" x2="220" y2="20" stroke="#1D3160" strokeWidth="1"   opacity="0.04" />
+          <line x1="60" y1="240" x2="240" y2="60" stroke="#1D3160" strokeWidth="1"   opacity="0.03" />
+        </svg>
+      </motion.div>
+
+      {/* Decorative: large quarter-arc — bottom right (navy on gray) */}
+      <motion.div
+        aria-hidden
+        className="pointer-events-none absolute -bottom-20 -right-20"
+        initial={{ opacity: 0, scale: 0.85 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1.6, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
+      >
+        <svg width="360" height="360" viewBox="0 0 360 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="360" cy="360" r="300" stroke="#1D3160" strokeWidth="2" fill="none" opacity="0.06" />
+          <circle cx="360" cy="360" r="220" stroke="#1D3160" strokeWidth="1.5" fill="none" opacity="0.05" />
+          <circle cx="360" cy="360" r="140" stroke="#1D3160" strokeWidth="1" fill="none" opacity="0.04" />
+        </svg>
+      </motion.div>
+
+      {/* Decorative: dot grid — top right (navy on gray) */}
+      <motion.div
+        aria-hidden
+        className="pointer-events-none absolute top-10 right-10"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.2, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+      >
+        <svg width="100" height="80" viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          {[0, 1, 2].map(row =>
+            [0, 1, 2, 3].map(col => (
+              <circle
+                key={`${row}-${col}`}
+                cx={12 + col * 26}
+                cy={12 + row * 28}
+                r="2.5"
+                fill="#1D3160"
+                opacity="0.1"
+              />
+            ))
+          )}
+        </svg>
+      </motion.div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {videos.map((video, index) => (

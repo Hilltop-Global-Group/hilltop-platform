@@ -85,6 +85,24 @@ export default function Testimonials() {
       <div className="absolute bottom-0 left-0 right-0 h-2 bg-gold-400" />
       <div className="absolute top-20 left-20 w-96 h-96 bg-gold-400/10 rounded-full blur-3xl" />
       <div className="absolute bottom-20 right-20 w-80 h-80 bg-navy-900/10 rounded-full blur-3xl" />
+
+      {/* Decorative: concentric arcs — top right */}
+      <div className="pointer-events-none absolute -top-16 -right-16" aria-hidden>
+        <svg width="360" height="360" viewBox="0 0 360 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="360" cy="0" r="300" stroke="#1D3160" strokeWidth="2" fill="none" opacity="0.08" />
+          <circle cx="360" cy="0" r="220" stroke="#1D3160" strokeWidth="1.5" fill="none" opacity="0.06" />
+          <circle cx="360" cy="0" r="140" stroke="#1D3160" strokeWidth="1" fill="none" opacity="0.04" />
+        </svg>
+      </div>
+
+      {/* Decorative: dot grid — bottom left */}
+      <div className="pointer-events-none absolute bottom-10 left-10" aria-hidden>
+        <svg width="140" height="140" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+          {[0,1,2,3,4].map(row => [0,1,2,3,4].map(col => (
+            <circle key={`${row}-${col}`} cx={14 + col * 28} cy={14 + row * 28} r="2.5" fill="#1D3160" opacity="0.09" />
+          )))}
+        </svg>
+      </div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 relative z-10">
         <ScrollReveal animation="fade-down">
