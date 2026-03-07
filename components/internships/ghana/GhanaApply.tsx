@@ -30,7 +30,7 @@ export default function GhanaApply() {
                 <span className="font-bold">Application deadline:</span> March 14, 2026
               </p>
               <p className="text-gray-600 mb-8">
-                Spots are limited — early application is strongly advised.
+                Spots are limited. Early application is strongly advised.
               </p>
 
               <button

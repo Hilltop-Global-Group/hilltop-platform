@@ -8,15 +8,15 @@ import FadeIn from '../FadeIn';
 const features = [
   {
     title: 'Customized Programs',
-    description: 'Tailored experiences designed to meet your institution\'s specific goals'
+    description: 'Every itinerary is built around your institution\'s learning objectives, calendar, and budget.'
   },
   {
-    title: 'Expert Support',
-    description: 'End-to-end program management from planning to execution'
+    title: 'Full-Service Management',
+    description: 'From pre-departure briefings to in-country logistics to post-program reporting.'
   },
   {
-    title: 'Proven Success',
-    description: 'Trusted by leading universities for transformative African experiences'
+    title: 'Proven Track Record',
+    description: 'Trusted by Georgetown, Howard, Morehouse, Spelman, and Duke, among others.'
   }
 ];
 
@@ -63,7 +63,7 @@ export default function EducationCTA() {
               Partner With Us
             </p>
             <h2 className="font-serif font-bold text-4xl md:text-5xl text-white mb-6">
-              Ready to Expand Your Program?
+              Let's Design Your Next Africa Program
             </h2>
             <p className="text-gray-300 text-lg max-w-2xl mx-auto leading-relaxed">
               Partner with Hilltop to create transformational study abroad experiences in Africa for your students.
@@ -111,7 +111,7 @@ export default function EducationCTA() {
                 className="inline-flex items-center gap-3 px-10 py-5 rounded-xl font-serif font-bold text-lg tracking-wide border-2 border-white transition-all duration-300 hover:bg-white hover:text-[#0a192f] shadow-lg"
                 style={{ backgroundColor: 'transparent', color: '#FFFFFF' }}
               >
-                Contact Us
+                Start a Program Conversation
                 <ArrowRight size={22} className="transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
             </motion.div>

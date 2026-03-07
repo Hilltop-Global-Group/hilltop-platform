@@ -53,7 +53,7 @@ export default function FeaturedVideo() {
             </span>
           </div>
           <h2 className="font-serif font-bold text-4xl sm:text-5xl mb-6" style={{ color: '#1D3160' }}>
-            He's Changing How the World Sees Africa – One Student at a Time
+            He's Changing How the World Sees Africa, One Student at a Time
           </h2>
           <p className="text-lg text-gray-700 max-w-3xl mx-auto">
             Watch our CEO share the vision behind Hilltop Global Group and how we're 
@@ -77,7 +77,7 @@ export default function FeaturedVideo() {
                 {/* YouTube Thumbnail */}
                 <Image
                   src="https://img.youtube.com/vi/TePyT3KoOZk/maxresdefault.jpg"
-                  alt="Video thumbnail"
+                  alt="Phil Agbeko, Founder and CEO of Hilltop Global Group, speaking about African education"
                   fill
                   className="object-cover"
                 />
@@ -133,7 +133,7 @@ export default function FeaturedVideo() {
               <iframe
                 className="absolute top-0 left-0 w-full h-full"
                 src="https://www.youtube.com/embed/TePyT3KoOZk?autoplay=1"
-                title="He's Changing How the World Sees Africa – One Student at a Time"
+                title="He's Changing How the World Sees Africa, One Student at a Time"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               />
@@ -147,7 +147,7 @@ export default function FeaturedVideo() {
             <p className="text-white text-xl font-semibold italic mb-4">
               "Shaping the African narrative is taking control of our story and showcasing it to the world."
             </p>
-            <p className="text-white text-lg font-bold">— Phil Agbeko (CEO at Hilltop Global Group)</p>
+            <p className="text-white text-lg font-bold">Phil Agbeko, Founder and CEO, Hilltop Global Group</p>
           </div>
         </div>
       </div>

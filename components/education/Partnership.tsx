@@ -1,96 +1,79 @@
 'use client';
 
-import { Building2, Globe2, Users2, Lightbulb } from 'lucide-react';
 import { motion } from 'framer-motion';
 import FadeIn from '../FadeIn';
 
+const highlights = [
+  'Itineraries aligned to your curriculum and learning objectives',
+  'Full in-country logistics from arrival to departure',
+  'Curated business and cultural visits with local partners',
+  'Student consulting project sourcing and coordination',
+];
+
 export default function Partnership() {
-  const cards = [
-    { icon: Building2, title: 'Accommodation', description: 'Comfortable and secure housing for all participants', color: '#F4A261' },
-    { icon: Globe2, title: 'In-Country Logistics', description: 'Comprehensive support and coordination', color: '#1D3160' },
-    { icon: Users2, title: 'Business Visits', description: 'Curated tours and corporate engagements', color: '#F4A261' },
-    { icon: Lightbulb, title: 'Project Design', description: 'Student consulting project sourcing', color: '#1D3160' },
-  ];
-
   return (
-    <section className="relative overflow-hidden py-20 bg-white">
+    <section className="py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-14 items-center">
 
-      {/* Decorative: quarter-arc — top left */}
-      <motion.div aria-hidden className="pointer-events-none absolute -top-20 -left-20" initial={{ opacity: 0, scale: 0.85 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.6, ease: [0.25, 0.1, 0.25, 1] }}>
-        <svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="0" cy="0" r="350" stroke="#1D3160" strokeWidth="2" fill="none" opacity="0.06" />
-          <circle cx="0" cy="0" r="270" stroke="#1D3160" strokeWidth="1.5" fill="none" opacity="0.04" />
-          <circle cx="0" cy="0" r="190" stroke="#1D3160" strokeWidth="1" fill="none" opacity="0.03" />
-        </svg>
-      </motion.div>
+          {/* Photo side */}
+          <motion.div
+            className="relative rounded-2xl overflow-hidden shadow-xl order-2 lg:order-1"
+            style={{ minHeight: 460 }}
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+          >
+            <div
+              className="absolute inset-0 bg-cover bg-center"
+              style={{ backgroundImage: `url('http://hilltopglobalgroup.com/wp-content/uploads/2023/09/Copy-of-20230521_170109-scaled-e1759311926763.jpg')` }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-br from-[#1D3160]/60 via-transparent to-transparent" />
 
-      {/* Decorative: dot grid — bottom right */}
-      <motion.div aria-hidden className="pointer-events-none absolute bottom-8 right-8" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.4, delay: 0.25, ease: [0.25, 0.1, 0.25, 1] }}>
-        <svg width="140" height="140" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-          {[0,1,2,3,4].map(row => [0,1,2,3,4].map(col => (
-            <circle key={`${row}-${col}`} cx={14 + col * 28} cy={14 + row * 28} r="2.5" fill="#1D3160" opacity="0.08" />
-          )))}
-        </svg>
-      </motion.div>
+            {/* Floating label */}
+            <div className="absolute top-6 left-6">
+              <div className="px-4 py-2 rounded-full backdrop-blur-md bg-white/15 border border-white/25">
+                <p className="text-white text-sm font-semibold">University Partnership Programs</p>
+              </div>
+            </div>
+          </motion.div>
 
-      {/* Decorative: diagonal lines — top right */}
-      <motion.div aria-hidden className="pointer-events-none absolute -top-6 -right-6" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.4, delay: 0.35, ease: [0.25, 0.1, 0.25, 1] }}>
-        <svg width="220" height="220" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <line x1="220" y1="75"  x2="145" y2="0"   stroke="#1D3160" strokeWidth="1.5" opacity="0.07" />
-          <line x1="220" y1="130" x2="90"  y2="0"   stroke="#1D3160" strokeWidth="1" opacity="0.05" />
-          <line x1="220" y1="185" x2="35"  y2="0"   stroke="#1D3160" strokeWidth="1" opacity="0.04" />
-        </svg>
-      </motion.div>
-
-      {/* Decorative: soft blob — bottom left */}
-      <motion.div aria-hidden className="pointer-events-none absolute -bottom-10 left-1/4" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 2, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
-        style={{ width: 380, height: 200, borderRadius: '50%', backgroundColor: '#1D3160', opacity: 0.025, filter: 'blur(70px)' }}
-      />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-          <FadeIn>
-            <div>
+          {/* Text side */}
+          <div className="order-1 lg:order-2">
+            <FadeIn>
               <h2 className="font-serif font-bold text-4xl sm:text-5xl mb-6" style={{ color: '#1D3160' }}>
                 University Partnerships
               </h2>
-              <div className="space-y-4 text-lg text-gray-700 leading-relaxed">
-                <p>
-                  Hilltop partners with Universities to expand their international program footprint in Africa by facilitating unique and transformational turnkey experiences for their travel abroad programs.
-                </p>
-                <p>
-                  Services include accommodation, comprehensive in-country logistics, curated tours, business visits, student consulting project sourcing and design and more.
-                </p>
-                <p>
-                  Hilltop has validated that in a very organic way, these experiences in Africa enrich the business school experience for the students. In addition to the cultural and other experiences, they gain practical knowledge working on cross-industry projects that have a significant local impact.
-                </p>
-              </div>
-            </div>
-          </FadeIn>
+              <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                Hilltop partners with universities to design and deliver turnkey study abroad experiences across Africa. We handle everything from accommodation and logistics to curated business visits and student consulting projects, so your faculty can focus on teaching.
+              </p>
+              <p className="text-lg text-gray-700 leading-relaxed mb-8">
+                Students who engage directly with African businesses and communities return with practical skills, sharpened cross-cultural awareness, and a fundamentally changed understanding of the continent.
+              </p>
+            </FadeIn>
 
-          <div className="grid grid-cols-2 gap-6">
-            {cards.map((card, index) => {
-              const Icon = card.icon;
-              return (
-                <FadeIn key={index} delay={index * 0.1}>
-                  <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                    <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-4" style={{ backgroundColor: card.color }}>
-                      <Icon size={28} className="text-white" strokeWidth={2} />
+            <FadeIn delay={0.2}>
+              <div className="space-y-3">
+                {highlights.map((item, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <div
+                      className="flex-shrink-0 w-5 h-5 rounded-full mt-0.5 flex items-center justify-center"
+                      style={{ backgroundColor: '#F4A261' }}
+                    >
+                      <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
+                        <path d="M1 4L3.5 6.5L9 1" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
                     </div>
-                    <h3 className="font-serif font-bold text-lg mb-2" style={{ color: '#1D3160' }}>
-                      {card.title}
-                    </h3>
-                    <p className="text-gray-600 text-sm">
-                      {card.description}
-                    </p>
+                    <p className="text-gray-700">{item}</p>
                   </div>
-                </FadeIn>
-              );
-            })}
+                ))}
+              </div>
+            </FadeIn>
           </div>
+
         </div>
       </div>
     </section>
   );
 }
-

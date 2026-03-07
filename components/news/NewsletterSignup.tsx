@@ -58,11 +58,11 @@ export default function NewsletterSignup() {
           </div>
 
           <h2 className="font-serif font-bold text-4xl text-white mb-4">
-            Stay in the Loop
+            Dispatches from the Continent
           </h2>
           
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Get the latest program updates, success stories, and career tips delivered to your inbox monthly
+            Program updates, partner spotlights, and stories from the ground. Delivered to your inbox twice a month.
           </p>
 
           {subscribed ? (

@@ -53,11 +53,11 @@ export default function InternshipCTA() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-12">
           <h2 className="font-serif font-bold text-4xl sm:text-5xl lg:text-6xl text-white mb-6">
-            Apply Today, Transform Tomorrow
+            Ready to Apply?
           </h2>
           
           <p className="text-xl sm:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-            Ready to launch your internship journey? Spaces are limited, so don't wait—reach out today and let us guide you through the application process.
+            Spaces in each cohort are limited. Reach out to learn what is currently available and start your application.
           </p>
         </div>
 
@@ -110,10 +110,6 @@ export default function InternshipCTA() {
             Start Your Application
             <ArrowRight size={22} className="transition-transform duration-300 group-hover:translate-x-1" />
           </button>
-
-          <p className="text-white/60 text-sm mt-6 max-w-2xl mx-auto">
-            Application deadline: <span className="font-bold" style={{ color: '#F4A261' }}>March 14, 2026</span>
-          </p>
         </div>
 
         {/* Trust Indicators */}

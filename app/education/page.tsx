@@ -6,8 +6,8 @@ import ProgramBenefits from '@/components/education/ProgramBenefits';
 import EducationCTA from '@/components/education/EducationCTA';
 
 export const metadata = {
-  title: 'Education Programs - Hilltop Global Group',
-  description: 'Transformational turnkey study abroad experiences in Africa',
+  title: 'Study Abroad Programs in Africa for Universities | Hilltop Global Group',
+  description: 'Turnkey study abroad programs in Ghana, Rwanda, and Kenya for U.S. universities. Business projects, cultural immersion, and full logistics managed by Hilltop\'s on-ground team.',
 };
 
 export default function EducationPage() {

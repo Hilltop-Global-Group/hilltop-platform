@@ -1,13 +1,14 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import FadeIn from '../FadeIn';
 
 export default function NewsHero() {
   return (
-    <section className="relative pt-24 pb-16 overflow-hidden" style={{ backgroundColor: '#1D3160' }}>
+    <section className="relative pt-32 pb-20 overflow-hidden" style={{ backgroundColor: '#1D3160' }}>
       <div className="absolute inset-0">
         <div 
-          className="absolute inset-0 bg-cover bg-center opacity-30"
+          className="absolute inset-0 bg-cover bg-center opacity-45"
           style={{ 
             backgroundImage: `url('http://hilltopglobalgroup.com/wp-content/uploads/2023/09/Copy-of-20230521_170109-scaled-e1759311926763.jpg')` 
           }}
@@ -15,51 +16,68 @@ export default function NewsHero() {
         <div className="absolute inset-0 bg-gradient-to-br from-primary-navy via-[#27427a] to-primary-navy opacity-60" />
       </div>
 
-      {/* Decorative: white concentric rings — top right */}
-      <motion.div className="pointer-events-none absolute -top-20 -right-20 z-[1]" aria-hidden initial={{ opacity: 0, scale: 0.85 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.8, ease: [0.25, 0.1, 0.25, 1] }}>
-        <svg width="420" height="420" viewBox="0 0 420 420" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="420" cy="0" r="360" stroke="#FFFFFF" strokeWidth="1.5" fill="none" opacity="0.12" />
-          <circle cx="420" cy="0" r="280" stroke="#FFFFFF" strokeWidth="1" fill="none" opacity="0.08" />
-          <circle cx="420" cy="0" r="200" stroke="#FFFFFF" strokeWidth="1" fill="none" opacity="0.06" />
+      {/* Decorative: white concentric rings — bottom right */}
+      <motion.div aria-hidden className="pointer-events-none absolute -bottom-20 -right-20 z-[1]" initial={{ opacity: 0, scale: 0.85 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.8, ease: [0.25, 0.1, 0.25, 1] }}>
+        <svg width="440" height="440" viewBox="0 0 440 440" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="440" cy="440" r="380" stroke="#FFFFFF" strokeWidth="1.5" fill="none" opacity="0.05" />
+          <circle cx="440" cy="440" r="290" stroke="#FFFFFF" strokeWidth="1" fill="none" opacity="0.04" />
+          <circle cx="440" cy="440" r="200" stroke="#FFFFFF" strokeWidth="1" fill="none" opacity="0.03" />
         </svg>
       </motion.div>
 
-      {/* Decorative: white dot grid — bottom left */}
-      <motion.div className="pointer-events-none absolute bottom-8 left-8 z-[1]" aria-hidden initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.4, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}>
-        <svg width="110" height="110" viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+      {/* Decorative: white dot grid — top left */}
+      <motion.div aria-hidden className="pointer-events-none absolute top-14 left-10 z-[1]" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.4, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}>
+        <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
           {[0,1,2,3,4].map(row => [0,1,2,3,4].map(col => (
-            <circle key={`${row}-${col}`} cx={11 + col * 22} cy={11 + row * 22} r="2.5" fill="#FFFFFF" opacity="0.15" />
+            <circle key={`${row}-${col}`} cx={12 + col * 24} cy={12 + row * 24} r="2.5" fill="#FFFFFF" opacity="0.08" />
           )))}
         </svg>
       </motion.div>
 
-      {/* Decorative: white diagonal lines — bottom right */}
-      <motion.div className="pointer-events-none absolute -bottom-4 -right-4 z-[1]" aria-hidden initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.4, delay: 0.35, ease: [0.25, 0.1, 0.25, 1] }}>
-        <svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <line x1="0" y1="60"  x2="60"  y2="0" stroke="#FFFFFF" strokeWidth="1.5" opacity="0.14"/>
-          <line x1="0" y1="110" x2="110" y2="0" stroke="#FFFFFF" strokeWidth="1" opacity="0.10"/>
-          <line x1="0" y1="160" x2="160" y2="0" stroke="#FFFFFF" strokeWidth="1" opacity="0.07"/>
+      {/* Decorative: white cross — top right */}
+      <motion.div aria-hidden className="pointer-events-none absolute top-16 right-16 z-[1]" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.2, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}>
+        <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="25" y1="0" x2="25" y2="50" stroke="#FFFFFF" strokeWidth="1" opacity="0.18"/>
+          <line x1="0" y1="25" x2="50" y2="25" stroke="#FFFFFF" strokeWidth="1" opacity="0.18"/>
+          <circle cx="25" cy="25" r="4" fill="#FFFFFF" opacity="0.12"/>
+        </svg>
+      </motion.div>
+
+      {/* Decorative: white diagonal lines — bottom left */}
+      <motion.div aria-hidden className="pointer-events-none absolute -bottom-4 -left-4 z-[1]" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.4, delay: 0.5, ease: [0.25, 0.1, 0.25, 1] }}>
+        <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="0" y1="60"  x2="60"  y2="0"   stroke="#FFFFFF" strokeWidth="1.5" opacity="0.07" />
+          <line x1="0" y1="110" x2="110" y2="0"   stroke="#FFFFFF" strokeWidth="1" opacity="0.05" />
+          <line x1="0" y1="160" x2="160" y2="0"   stroke="#FFFFFF" strokeWidth="1" opacity="0.04" />
         </svg>
       </motion.div>
       
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center">
-          <div className="mb-4">
-            <span className="inline-flex items-center gap-2 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-white bg-white/10 border border-white/20 rounded-full backdrop-blur-md">
-              Latest Updates
+          <motion.div
+            className="mb-5"
+            initial={{ opacity: 0, y: -16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <span className="inline-flex items-center gap-2 px-4 py-2 text-xs font-bold uppercase tracking-wider text-white bg-white/10 border border-white/20 rounded-full backdrop-blur-md">
+              News and Insights
             </span>
-          </div>
-          
-          <h1 className="font-serif font-bold text-4xl sm:text-5xl text-white mb-4">
-            News & Stories
-          </h1>
-          
-          <p className="text-base sm:text-lg text-white/85 max-w-2xl mx-auto">
-            Stay informed with the latest news and program updates.
-          </p>
+          </motion.div>
+
+          <FadeIn delay={0.2}>
+            <h1 className="font-serif font-bold text-5xl sm:text-6xl text-white mb-6">
+              News and Stories
+            </h1>
+          </FadeIn>
+
+          <FadeIn delay={0.35}>
+            <p className="text-lg text-white/85 max-w-2xl mx-auto">
+              Program announcements, partner spotlights, and dispatches from across the continent.
+            </p>
+          </FadeIn>
         </div>
       </div>
     </section>
   );
 }
-

@@ -9,17 +9,20 @@ const cards = [
   {
     title: 'Cultural Immersion',
     image: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/Copy-of-20230518_122404-scaled-e1695315573707.jpg',
-    description: 'Experience authentic African culture firsthand'
+    imageAlt: 'Hilltop participants engaging with local traditions and ceremonies in Ghana',
+    description: 'Engage with local traditions, ceremonies, and creative communities on their terms.'
   },
   {
-    title: 'Community Bonding',
+    title: 'Peer and Community Connection',
     image: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/Copy-of-20230521_170109-scaled-e1759311926763.jpg',
-    description: 'Build lasting connections with peers and locals'
+    imageAlt: 'Hilltop cohort participants building lasting professional and personal bonds during the residency',
+    description: 'Form professional and personal bonds that outlast the program itself.'
   },
   {
-    title: 'Global Network',
+    title: 'Continental Reach',
     image: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/2.jpg',
-    description: 'Expand your professional network across continents'
+    imageAlt: 'Professionals and entrepreneurs from seven African countries connected through Hilltop programs',
+    description: 'Connect with professionals, entrepreneurs, and institutions spanning seven African countries.'
   }
 ];
 
@@ -70,13 +73,13 @@ export default function AfricanResidency() {
         <FadeIn>
           <div className="text-center mb-16">
             <p className="text-orange-400 uppercase tracking-[0.3em] text-sm font-bold mb-4 font-body">
-              The Residency Experience
+              The Hilltop Residency
             </p>
             <h2 className="font-serif font-bold text-4xl md:text-5xl text-white mb-6">
-              Beyond the Classroom
+              Learning That Lives Outside Lecture Halls
             </h2>
             <p className="text-gray-300 text-lg max-w-2xl mx-auto leading-relaxed">
-              Experience executive education through immersive residencies that blend cultural exploration with professional development. Our programs place leaders in Africa's most dynamic business ecosystems.
+              Our residency programs bring executives, faculty, and senior professionals into direct contact with Africa's business and cultural landscape. Think boardroom sessions in Accra, site visits in Kigali, and conversations with founders building the continent's next chapter.
             </p>
           </div>
         </FadeIn>
@@ -94,7 +97,7 @@ export default function AfricanResidency() {
                 <div className="absolute inset-0">
                   <img
                     src={card.image}
-                    alt={card.title}
+                    alt={card.imageAlt}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                 </div>
@@ -133,7 +136,7 @@ export default function AfricanResidency() {
                 className="inline-flex items-center gap-3 px-10 py-5 rounded-xl font-serif font-bold text-lg tracking-wide border-2 border-white transition-all duration-300 hover:bg-white hover:text-[#0a192f] shadow-lg"
                 style={{ backgroundColor: 'transparent', color: '#FFFFFF' }}
               >
-                Discover the Experience
+                See the Residency in Action
                 <ArrowRight size={22} className="transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
             </motion.div>

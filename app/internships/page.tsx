@@ -10,8 +10,8 @@ import InternshipFAQ from '@/components/internships/InternshipFAQ';
 import InternshipCTA from '@/components/internships/InternshipCTA';
 
 export const metadata = {
-  title: 'Internships - Hilltop Global Group',
-  description: 'Connect classroom learning with real-world experience in Africa\'s most dynamic markets',
+  title: 'Africa Internship Programs | Ghana & Rwanda | Hilltop Global Group',
+  description: 'Professional internships in Accra and Kigali for university students. Placements in fintech, agritech, healthtech, and creative industries. Applications open now.',
 };
 
 export default function InternshipsPage() {

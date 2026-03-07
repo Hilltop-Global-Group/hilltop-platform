@@ -1,7 +1,7 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import FadeIn from '../FadeIn';
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
 
 const values = [
   {
@@ -9,7 +9,10 @@ const values = [
     number: '01',
     title: 'Excellence',
     tagline: 'Uncompromising Standards',
-    description: 'We maintain the highest standards in everything we do. From program design to student support, excellence is not just a goal—it\'s our baseline. Every experience is crafted to be transformative and impactful.',
+    description: 'We maintain the highest standards in everything we do. From program design to student support, excellence is not just a goal, it is our baseline.',
+    image: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/Copy-of-20230521_170109-scaled-e1759311926763.jpg',
+    imageAlt: 'Hilltop students engaged in a business session in Accra, Ghana',
+    accent: '#F4A261',
   },
   {
     id: 'integrity',
@@ -17,56 +20,190 @@ const values = [
     title: 'Integrity',
     tagline: 'Trust Through Transparency',
     description: 'We operate with complete transparency and honesty. Our relationships with students, partners, and institutions are built on trust, accountability, and unwavering ethical standards.',
+    image: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/Copy-of-20230521_172314-scaled-e1759312776245.jpg',
+    imageAlt: 'Hilltop team members collaborating with African university partners',
+    accent: '#1D3160',
   },
   {
     id: 'innovation',
     number: '03',
     title: 'Innovation',
     tagline: 'Forward-Thinking Solutions',
-    description: 'We continuously innovate to break down barriers in education. Our forward-thinking approach creates unique pathways for students to gain global experience and cultural understanding.',
+    description: 'We look for better ways to connect students to Africa\'s growth story. That means new program formats, new partnerships, and new destinations.',
+    image: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/2.jpg',
+    imageAlt: 'Hilltop interns working with an innovative African startup in Kigali, Rwanda',
+    accent: '#F4A261',
   },
   {
     id: 'impact',
     number: '04',
     title: 'Impact',
     tagline: 'Transforming Lives',
-    description: 'Every program, every partnership, every decision is measured by its impact on students\' lives. We don\'t just facilitate placements—we create opportunities that change futures.',
+    description: 'Every program, every partnership, every decision is measured by its impact on students\' lives. We do not just facilitate placements. We create opportunities that change futures.',
+    image: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/6.jpg',
+    imageAlt: 'Hilltop study abroad participants experiencing cultural immersion in Africa',
+    accent: '#1D3160',
   },
 ];
 
-export default function MinimalValues() {
-  const [hoveredValue, setHoveredValue] = useState<string | null>(null);
-  const [isTouchDevice, setIsTouchDevice] = useState(false);
+function ValueRow({ value, index }: { value: typeof values[0]; index: number }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: '-80px' });
+  const isEven = index % 2 === 0;
 
-  // Detect if it's a touch device
-  useEffect(() => {
-    setIsTouchDevice('ontouchstart' in window || navigator.maxTouchPoints > 0);
-  }, []);
-
-  const handleCardClick = (id: string) => {
-    // Toggle card state
-    setHoveredValue(hoveredValue === id ? null : id);
+  const textVariants = {
+    hidden: { opacity: 0, x: isEven ? -60 : 60 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.75, ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number] } },
   };
 
-  const handleMouseEnter = (id: string) => {
-    // Only activate hover on non-touch devices
-    if (!isTouchDevice) {
-      setHoveredValue(id);
-    }
+  const imageVariants = {
+    hidden: { opacity: 0, x: isEven ? 60 : -60 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.75, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number] } },
   };
 
-  const handleMouseLeave = () => {
-    // Only deactivate hover on non-touch devices
-    if (!isTouchDevice) {
-      setHoveredValue(null);
-    }
+  const lineVariants = {
+    hidden: { scaleX: 0 },
+    visible: { scaleX: 1, transition: { duration: 0.6, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number] } },
   };
 
   return (
+    <div ref={ref} className="relative">
+      {/* Connector line between rows */}
+      {index < values.length - 1 && (
+        <div
+          className="absolute left-1/2 -translate-x-1/2 w-px bg-gradient-to-b from-gray-200 to-transparent"
+          style={{ top: '100%', height: 48, zIndex: 1 }}
+        />
+      )}
+
+      <div
+        className={`grid md:grid-cols-2 gap-0 overflow-hidden rounded-2xl shadow-xl border border-gray-100 ${
+          isEven ? '' : ''
+        }`}
+      >
+        {/* Text Side */}
+        <motion.div
+          className={`flex flex-col justify-center px-12 py-16 bg-white relative overflow-hidden ${
+            isEven ? 'md:order-1' : 'md:order-2'
+          }`}
+          variants={textVariants}
+          initial="hidden"
+          animate={isInView ? 'visible' : 'hidden'}
+        >
+          {/* Large ghost number */}
+          <span
+            className="absolute top-4 left-4 font-serif font-bold select-none pointer-events-none"
+            style={{ fontSize: 120, color: '#F4F6FB', lineHeight: 1, zIndex: 0 }}
+          >
+            {value.number}
+          </span>
+
+          <div className="relative z-10 pr-4">
+            {/* Tagline */}
+            <p
+              className="text-xs font-bold uppercase tracking-[0.25em] mb-3"
+              style={{ color: value.accent }}
+            >
+              {value.tagline}
+            </p>
+
+            {/* Title */}
+            <h3 className="font-serif font-bold text-4xl mb-5" style={{ color: '#1D3160' }}>
+              {value.title}
+            </h3>
+
+            {/* Animated accent line */}
+            <motion.div
+              className="h-1 rounded-full mb-6 origin-left"
+              style={{ backgroundColor: value.accent, width: 64 }}
+              variants={lineVariants}
+              initial="hidden"
+              animate={isInView ? 'visible' : 'hidden'}
+            />
+
+            {/* Description */}
+            <p className="text-gray-600 text-lg leading-relaxed">
+              {value.description}
+            </p>
+
+            {/* Number badge */}
+            <div
+              className="inline-flex items-center gap-2 mt-8 px-4 py-2 rounded-full border-2 font-serif font-bold text-sm"
+              style={{ borderColor: value.accent, color: value.accent }}
+            >
+              <span>{value.number}</span>
+              <span className="text-gray-400 font-normal">/ 04</span>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Image Side */}
+        <motion.div
+          className={`relative overflow-hidden ${
+            isEven ? 'md:order-2' : 'md:order-1'
+          }`}
+          style={{ minHeight: 420 }}
+          variants={imageVariants}
+          initial="hidden"
+          animate={isInView ? 'visible' : 'hidden'}
+        >
+          {/* Background image with zoom on hover */}
+          <motion.div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: `url('${value.image}')` }}
+            whileHover={{ scale: 1.06 }}
+            transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+          />
+
+          {/* Gradient overlay */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background: isEven
+                ? 'linear-gradient(135deg, rgba(29,49,96,0.55) 0%, rgba(29,49,96,0.15) 60%, transparent 100%)'
+                : 'linear-gradient(225deg, rgba(29,49,96,0.55) 0%, rgba(29,49,96,0.15) 60%, transparent 100%)',
+            }}
+          />
+
+          {/* Decorative corner accent */}
+          <div
+            className={`absolute top-0 ${isEven ? 'left-0' : 'right-0'} w-20 h-20`}
+            style={{
+              borderTop: `5px solid ${value.accent}`,
+              borderLeft: isEven ? `5px solid ${value.accent}` : 'none',
+              borderRight: isEven ? 'none' : `5px solid ${value.accent}`,
+              borderTopLeftRadius: isEven ? 16 : 0,
+              borderTopRightRadius: isEven ? 0 : 16,
+            }}
+          />
+
+          {/* Value label overlay — bottom of image */}
+          <div className={`absolute bottom-6 ${isEven ? 'left-6' : 'right-6'} `}>
+            <motion.div
+              className="px-5 py-3 rounded-xl backdrop-blur-md"
+              style={{ backgroundColor: 'rgba(29,49,96,0.75)', border: `1.5px solid ${value.accent}40` }}
+              initial={{ opacity: 0, y: 16 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
+              transition={{ duration: 0.5, delay: 0.55 }}
+            >
+              <p className="text-white font-serif font-bold text-lg">{value.title}</p>
+              <p className="text-xs uppercase tracking-widest mt-0.5" style={{ color: value.accent }}>
+                {value.tagline}
+              </p>
+            </motion.div>
+          </div>
+        </motion.div>
+      </div>
+    </div>
+  );
+}
+
+export default function MinimalValues() {
+  return (
     <section className="py-24 bg-white relative overflow-hidden">
       {/* Decorative: ambient blobs */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-gold-400/20 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-navy-900/10 rounded-full blur-3xl" />
+      <div className="absolute top-20 left-10 w-72 h-72 bg-gold-400/20 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-navy-900/10 rounded-full blur-3xl pointer-events-none" />
 
       {/* Decorative: quarter-arc — top right */}
       <div className="pointer-events-none absolute -top-20 -right-20" aria-hidden>
@@ -94,104 +231,38 @@ export default function MinimalValues() {
           <line x1="0" y1="180" x2="180" y2="0"   stroke="#1D3160" strokeWidth="1" opacity="0.04" />
         </svg>
       </div>
-      
+
       {/* Top and bottom borders */}
       <div className="absolute top-0 left-0 right-0 h-2 bg-navy-900" />
       <div className="absolute bottom-0 left-0 right-0 h-2 bg-gold-400" />
-      
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <FadeIn>
-          <div className="text-center mb-20">
-            <span className="inline-block text-sm font-bold text-black uppercase tracking-wider mb-4 border-2 border-gold-400 px-6 py-2 rounded-full bg-gold-400">
-              Our Values
-            </span>
-            <h2 className="font-serif font-bold text-4xl sm:text-5xl mb-4" style={{ color: '#1D3160' }}>
-              What Defines Us
-            </h2>
-            <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-              The principles that guide every decision, every program, every partnership
-            </p>
-          </div>
-        </FadeIn>
+        {/* Section Header */}
+        <motion.div
+          className="text-center mb-20"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.65, ease: [0.25, 0.1, 0.25, 1] }}
+        >
+          <span className="inline-block text-sm font-bold text-black uppercase tracking-wider mb-4 border-2 border-gold-400 px-6 py-2 rounded-full bg-gold-400">
+            Our Values
+          </span>
+          <h2 className="font-serif font-bold text-4xl sm:text-5xl mb-4" style={{ color: '#1D3160' }}>
+            What We Stand On
+          </h2>
+          <p className="text-lg text-gray-700 max-w-2xl mx-auto">
+            The principles that guide every decision, every program, every partnership
+          </p>
+        </motion.div>
 
-        <div className="space-y-6">
+        {/* Values Rows */}
+        <div className="space-y-12 px-2 sm:px-4">
           {values.map((value, index) => (
-            <FadeIn
-              key={value.id}
-              delay={index * 0.1}
-            >
-              <div
-                onClick={() => handleCardClick(value.id)}
-                className="relative rounded-lg overflow-hidden transition-all duration-500 cursor-pointer group border-4 border-navy-900 bg-white shadow-lg hover:shadow-xl"
-              >
-                {/* Left accent bar */}
-                <div className="absolute left-0 top-0 bottom-0 w-2 bg-navy-900" />
-
-                <div className="p-8 md:p-12">
-                  <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-12">
-                    {/* Number */}
-                    <div className="flex-shrink-0 relative">
-                      <span className="relative font-serif font-bold text-7xl text-gray-200">
-                        {value.number}
-                      </span>
-                    </div>
-
-                    {/* Content */}
-                    <div className="flex-1">
-                      <div className="mb-3">
-                        <h3 className="font-serif font-bold text-3xl mb-1" style={{ color: '#1D3160' }}>
-                          {value.title}
-                        </h3>
-                        <p className="text-sm font-semibold uppercase tracking-wide" style={{ color: '#F4A261' }}>
-                          {value.tagline}
-                        </p>
-                      </div>
-                      
-                      <div
-                        className={`overflow-hidden transition-all duration-500 ${
-                          hoveredValue === value.id
-                            ? 'max-h-40 opacity-100'
-                            : 'max-h-0 md:max-h-40 opacity-0 md:opacity-100'
-                        }`}
-                      >
-                        <p className="leading-relaxed text-gray-700">
-                          {value.description}
-                        </p>
-                      </div>
-                    </div>
-
-                    {/* Arrow indicator - only show on mobile */}
-                    <div className="flex-shrink-0 md:hidden">
-                      <div
-                        className={`w-12 h-12 rounded-full border-2 border-navy-900 flex items-center justify-center transition-transform duration-500 ${
-                          hoveredValue === value.id ? 'rotate-90' : ''
-                        }`}
-                        style={{ backgroundColor: '#1D3160' }}
-                      >
-                        <svg
-                          className="w-6 h-6 text-white"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M19 9l-7 7-7-7"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </FadeIn>
+            <ValueRow key={value.id} value={value} index={index} />
           ))}
         </div>
       </div>
     </section>
   );
 }
-

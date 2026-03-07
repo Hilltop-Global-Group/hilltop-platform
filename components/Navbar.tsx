@@ -62,7 +62,7 @@ export default function Navbar() {
               className="inline-block px-6 py-2.5 text-white font-serif font-bold text-sm tracking-wide rounded hover:bg-opacity-90 transition-all"
               style={{ backgroundColor: '#1D3160' }}
             >
-              START YOUR JOURNEY
+              Partner With Us
             </Link>
           </div>
 
@@ -96,7 +96,7 @@ export default function Navbar() {
                 className="inline-block px-6 py-2.5 text-white font-serif font-bold text-sm tracking-wide rounded text-center"
                 style={{ backgroundColor: '#1D3160' }}
               >
-                START YOUR JOURNEY
+                Partner With Us
               </Link>
             </div>
           </div>

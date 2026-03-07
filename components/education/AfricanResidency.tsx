@@ -1,34 +1,31 @@
 'use client';
 
-import { Target, Globe, TrendingUp, Users, Brain, Handshake, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import FadeIn from '../FadeIn';
 
-const objectives = [
+const pillars = [
   {
-    icon: Target,
-    text: 'Gain hands-on experience at real African businesses and organizations',
+    number: '01',
+    title: 'Real Work Experience',
+    description: 'Students are embedded in African businesses, NGOs, and startups, contributing to live projects from day one.',
+    image: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/Copy-of-20230521_172314-scaled-e1759312776245.jpg',
+    accent: '#F4A261',
   },
   {
-    icon: Brain,
-    text: 'Develop professional skills in an immersive international environment',
+    number: '02',
+    title: 'Professional Network',
+    description: 'Direct exposure to local founders, executives, and industry professionals builds a lasting global network.',
+    image: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/2.jpg',
+    accent: '#1D3160',
   },
   {
-    icon: TrendingUp,
-    text: 'Build an understanding of Africa\'s fast-growing industries and markets',
-  },
-  {
-    icon: Users,
-    text: 'Connect with local professionals and build a global network',
-  },
-  {
-    icon: Globe,
-    text: 'Apply classroom knowledge to real-world challenges across diverse sectors',
-  },
-  {
-    icon: Handshake,
-    text: 'Foster cross-cultural communication and collaboration skills',
+    number: '03',
+    title: 'Cross-Cultural Fluency',
+    description: 'Immersion in African work culture sharpens communication, adaptability, and global business instincts.',
+    image: 'http://hilltopglobalgroup.com/wp-content/uploads/2025/09/performance-e1759310784853.jpg',
+    accent: '#F4A261',
   },
 ];
 
@@ -54,85 +51,82 @@ export default function AfricanResidency() {
         </svg>
       </motion.div>
 
-      {/* Decorative: horizontal wave — top */}
-      <motion.div aria-hidden className="pointer-events-none absolute top-0 left-0 right-0" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.4, ease: [0.25, 0.1, 0.25, 1] }}>
-        <svg width="100%" height="50" viewBox="0 0 1440 50" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0 28 C240 5, 480 50, 720 26 S1200 3, 1440 28" stroke="#1D3160" strokeWidth="1.5" fill="none" opacity="0.06"/>
-        </svg>
-      </motion.div>
-
-      {/* Decorative: soft blob — center right */}
-      <motion.div aria-hidden className="pointer-events-none absolute top-1/3 -right-10 hidden md:block" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 2, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
-        style={{ width: 300, height: 300, borderRadius: '50%', backgroundColor: '#1D3160', opacity: 0.03, filter: 'blur(70px)' }}
-      />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+        {/* Header */}
         <FadeIn>
           <div className="text-center mb-16">
-            <h2 className="font-serif font-bold text-4xl sm:text-5xl mb-6" style={{ color: '#1D3160' }}>
+            <h2 className="font-serif font-bold text-4xl sm:text-5xl mb-4" style={{ color: '#1D3160' }}>
               Internship Programs in Africa
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Hands-on internship placements that give students real-world professional experience across Africa's most dynamic industries
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Hands-on placements in Ghana and Rwanda that give students real professional experience in Africa's most dynamic industries.
             </p>
           </div>
         </FadeIn>
 
-        <div className="mb-12">
-          <FadeIn delay={0.2}>
-            <h3 className="font-serif font-bold text-3xl mb-8 text-center" style={{ color: '#1D3160' }}>
-              Program Objectives
-            </h3>
-          </FadeIn>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {objectives.map((objective, index) => {
-              const Icon = objective.icon;
-              return (
-                <FadeIn key={index} delay={0.1 * index}>
-                  <div className="group bg-transparent border-2 border-gray-200 p-6 rounded-xl hover:border-gray-300 hover:bg-white hover:shadow-md transition-all duration-300">
-                    <div className="flex items-start gap-4">
-                      <div 
-                        className="flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
-                        style={{ backgroundColor: index % 2 === 0 ? '#1D3160' : '#F4A261' }}
-                      >
-                        <Icon size={24} className="text-white" strokeWidth={2} />
-                      </div>
-                      <p className="text-gray-700 leading-relaxed pt-1">
-                        {objective.text}
-                      </p>
-                    </div>
-                  </div>
-                </FadeIn>
-              );
-            })}
-          </div>
+        {/* Three pillars */}
+        <div className="grid md:grid-cols-3 gap-8 mb-16">
+          {pillars.map((pillar, index) => (
+            <FadeIn key={index} delay={0.1 * index}>
+              <div className="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 h-full flex flex-col">
+
+                {/* Photo */}
+                <div className="relative h-44 overflow-hidden flex-shrink-0">
+                  <motion.div
+                    className="absolute inset-0 bg-cover bg-center"
+                    style={{ backgroundImage: `url('${pillar.image}')` }}
+                    whileHover={{ scale: 1.06 }}
+                    transition={{ duration: 0.6 }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                  <span
+                    className="absolute top-4 right-4 font-serif font-bold text-3xl text-white/60 select-none"
+                  >
+                    {pillar.number}
+                  </span>
+                </div>
+
+                {/* Text */}
+                <div className="p-7 flex-1 flex flex-col">
+                  <h3 className="font-serif font-bold text-xl mb-3" style={{ color: '#1D3160' }}>
+                    {pillar.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed flex-1">
+                    {pillar.description}
+                  </p>
+                  <div className="mt-5 h-1 rounded-full w-10" style={{ backgroundColor: pillar.accent }} />
+                </div>
+
+              </div>
+            </FadeIn>
+          ))}
         </div>
 
         {/* Parallax Banner */}
-        <FadeIn delay={0.4}>
-          <div className="relative h-80 rounded-xl overflow-hidden shadow-lg">
+        <FadeIn delay={0.3}>
+          <div className="relative h-72 rounded-2xl overflow-hidden shadow-lg">
             <div
               className="absolute inset-0 bg-cover bg-center bg-fixed"
               style={{
                 backgroundImage: `url('http://hilltopglobalgroup.com/wp-content/uploads/2023/09/Copy-of-20230518_122404-scaled-e1695315573707.jpg')`
               }}
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/50 flex items-center justify-center">
+            <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/55 to-black/40 flex items-center justify-center">
               <div className="text-center text-white px-6">
-                <h3 className="font-serif font-bold text-3xl sm:text-4xl mb-4">
+                <h3 className="font-serif font-bold text-3xl sm:text-4xl mb-3">
                   Launch Your Career on the Global Stage
                 </h3>
-                <p className="text-xl text-white/95 max-w-2xl mx-auto font-medium">
-                  Intern across Africa's most exciting industries and return with experience that sets you apart
+                <p className="text-lg text-white/90 max-w-xl mx-auto">
+                  Return with experience that sets you apart.
                 </p>
               </div>
             </div>
           </div>
         </FadeIn>
 
-        <FadeIn delay={0.5}>
-          <div className="text-center mt-12">
+        <FadeIn delay={0.4}>
+          <div className="text-center mt-10">
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -157,4 +151,3 @@ export default function AfricanResidency() {
     </section>
   );
 }
-

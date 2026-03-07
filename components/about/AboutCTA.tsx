@@ -46,11 +46,11 @@ export default function AboutCTA() {
       <FadeIn>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <h2 className="font-serif font-bold text-5xl sm:text-6xl mb-8" style={{ color: '#FFFFFF' }}>
-            Take the Next Step with Us
+            See What We Can Build Together
           </h2>
           
           <p className="text-xl mb-12 max-w-3xl mx-auto leading-relaxed font-medium" style={{ color: '#FFFFFF' }}>
-            Join us in shaping your future today. Explore our education services, internship opportunities, and study abroad programs designed to enhance your experience and career prospects.
+            Whether you are a university exploring Africa for the first time or a student ready to step off campus and onto the continent, we are ready when you are.
           </p>
 
           <div className="flex flex-wrap gap-6 justify-center">

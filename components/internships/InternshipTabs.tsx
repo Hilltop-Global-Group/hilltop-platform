@@ -169,7 +169,7 @@ function InternshipCard({ internship, index, isPast = false }: { internship: any
               className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3 font-serif font-bold text-white rounded-xl transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg"
               style={{ backgroundColor: cardColor }}
             >
-              Learn more
+              View Program Details
               <ArrowRight size={18} />
             </div>
           )}

@@ -7,9 +7,7 @@ import FadeIn from '../FadeIn';
 const benefits = [
   'Real-world business consulting experience',
   'Cross-cultural competency development',
-  'Enhanced critical thinking skills',
   'Professional network expansion in Africa',
-  'Unique perspective on global business',
   'Practical problem-solving in international settings',
   'Cultural immersion and language exposure',
   'Resume-building international experience',
@@ -51,10 +49,10 @@ export default function ProgramBenefits() {
           <div>
             <FadeIn>
               <h2 className="font-serif font-bold text-4xl sm:text-5xl mb-6" style={{ color: '#1D3160' }}>
-                Why Choose Our Programs?
+                What Students Take Home
               </h2>
               <p className="text-xl text-gray-600 mb-8">
-                Our study abroad programs provide students with tangible skills and experiences that set them apart in today's global marketplace.
+                What participants consistently report gaining from their time with Hilltop.
               </p>
             </FadeIn>
 

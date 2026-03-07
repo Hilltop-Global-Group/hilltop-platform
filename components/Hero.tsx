@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import FadeIn from './FadeIn';
 
 const heroImages = [
@@ -16,8 +16,20 @@ const heroImages = [
   'http://hilltopglobalgroup.com/wp-content/uploads/2021/12/2-5.png',
 ];
 
+const heroImageAlts = [
+  'Students participating in Hilltop study abroad program in Accra, Ghana',
+  'Hilltop Global Group participants during cultural immersion in Africa',
+  'Hilltop students engaging with local communities in Rwanda',
+  'Faculty development program participants in an African business setting',
+  'Group of international interns at a partner organization in Ghana',
+  'Hilltop program cohort at a cultural heritage site in Africa',
+  'Performance and presentation by Hilltop study abroad participants',
+  'Hilltop Global Group internship experience in Africa',
+];
+
 export default function Hero() {
   const [currentImage, setCurrentImage] = useState(0);
+  const shouldReduce = useReducedMotion();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -43,6 +55,8 @@ export default function Hero() {
               backgroundPosition: 'center',
               backgroundRepeat: 'no-repeat',
             }}
+            role="img"
+            aria-label={heroImageAlts[index]}
           />
         ))}
       </div>
@@ -106,9 +120,9 @@ export default function Hero() {
 
         {/* Main Heading */}
         <FadeIn delay={0.2}>
-          <h1 
+          <h1
             className="font-serif font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white mb-5 leading-tight"
-            style={{ 
+            style={{
               textShadow: '0 12px 32px rgba(0,0,0,0.35)',
               letterSpacing: '-0.015em'
             }}
@@ -119,9 +133,9 @@ export default function Hero() {
 
         {/* Subtitle */}
         <FadeIn delay={0.35}>
-          <p 
+          <p
             className="text-lg sm:text-xl md:text-2xl font-semibold text-white max-w-3xl mx-auto mb-8"
-            style={{ 
+            style={{
               textShadow: '0 10px 28px rgba(0,0,0,0.35)'
             }}
           >
@@ -132,15 +146,17 @@ export default function Hero() {
         {/* CTA Button */}
         <FadeIn delay={0.5}>
           <motion.div
-            whileHover={{ scale: 1.05 }}
+            initial={shouldReduce ? false : { scale: 0.95, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+            whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
-            transition={{ duration: 0.2 }}
           >
             <Link
               href="/about"
               className="group inline-flex items-center gap-2 px-8 py-4 font-serif font-bold text-base tracking-wide text-primary-navy bg-white border-2 border-white rounded shadow-[0_8px_24px_rgba(255,255,255,0.18)] transition-all duration-300 hover:bg-primary-navy hover:text-white hover:border-primary-navy hover:shadow-[0_15px_35px_rgba(29,49,96,0.4)]"
             >
-              Learn more
+              Explore Our Programs
               <svg 
                 className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" 
                 fill="none" 
@@ -177,5 +193,3 @@ export default function Hero() {
     </section>
   );
 }
-
-

@@ -9,8 +9,8 @@ import TestimonialSubmission from '@/components/testimonials/TestimonialSubmissi
 import TestimonialsCTA from '@/components/testimonials/TestimonialsCTA';
 
 export const metadata = {
-  title: 'Testimonials - Hilltop Global Group',
-  description: 'Hear from students, partners, and universities about their transformative experiences with Hilltop',
+  title: 'Student Testimonials | Study Abroad & Internships in Africa | Hilltop Global Group',
+  description: 'Read what students from Georgetown, Howard, Spelman, and Duke say about their Hilltop internship and study abroad experience in Ghana and Rwanda.',
 };
 
 export default function TestimonialsPage() {

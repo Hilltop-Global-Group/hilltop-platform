@@ -7,8 +7,8 @@ const metrics = [
   {
     value: 10,
     suffix: '+',
-    label: 'Years of Excellence',
-    description: 'Transforming education since 2014',
+    label: 'Years Building in Africa',
+    description: 'Designing programs since 2014',
   },
   {
     value: 1000,
@@ -25,7 +25,7 @@ const metrics = [
   {
     value: 50,
     suffix: '+',
-    label: 'Total Projects',
+    label: 'Programs Delivered',
     description: 'Diverse programs tailored to student needs',
   },
 ];

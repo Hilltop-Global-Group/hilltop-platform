@@ -12,7 +12,7 @@ const videos = [
   },
   {
     title: 'Hilltop Internships: Global Connections Across Africa',
-    description: 'A collective look at our programs—where learning meets culture and innovation.',
+    description: 'A collective look at our programs, where learning meets culture and innovation.',
     thumbnail: 'http://hilltopglobalgroup.com/wp-content/uploads/2025/10/all.jpg',
     videoUrl: 'https://vimeo.com/1132264308',
   },

@@ -9,8 +9,8 @@ import Testimonials from '@/components/about/Testimonials';
 import AboutCTA from '@/components/about/AboutCTA';
 
 export const metadata = {
-  title: 'About Us - Hilltop Global Group',
-  description: 'Our Journey: Innovating Education and Opportunities',
+  title: 'About Hilltop Global Group | Diaspora-Led Education Consulting for Africa',
+  description: 'Founded by Georgetown EMBA alumni with roots across Africa. Hilltop designs study abroad programs, internships, and faculty development from Washington DC, Accra, and Nairobi.',
 };
 
 export default function AboutPage() {

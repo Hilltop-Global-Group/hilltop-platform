@@ -45,8 +45,8 @@ function Counter({ end, suffix = '' }: CounterProps) {
 
 export default function StatsBar() {
   const stats = [
-    { label: 'Total Projects', value: 50, suffix: '+' },
-    { label: 'Years Served', value: 10, suffix: '+' },
+    { label: 'Programs Delivered', value: 50, suffix: '+' },
+    { label: 'Years Shaping the Narrative', value: 10, suffix: '+' },
     { label: 'African Countries', value: 7, suffix: '+' },
   ];
 

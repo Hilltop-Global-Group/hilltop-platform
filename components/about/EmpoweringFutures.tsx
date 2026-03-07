@@ -7,17 +7,17 @@ const features = [
   {
     number: '01',
     title: 'Global Connections',
-    description: 'Establish partnerships with organizations and institutions around the world to enhance your educational journey.',
+    description: 'Access to Hilltop\'s network of host organizations, universities, and industry partners across seven African countries.',
   },
   {
     number: '02',
-    title: 'Diverse Opportunities',
-    description: 'Explore various internship and study abroad programs tailored to your academic and career goals.',
+    title: 'Structured Pathways',
+    description: 'Internship and study abroad programs matched to your academic focus, from fintech to public health to agribusiness.',
   },
   {
     number: '03',
-    title: 'Supportive Community',
-    description: 'Join a network of like-minded individuals and mentors committed to your success and personal development.',
+    title: 'On-Ground Support',
+    description: 'Dedicated coordinators in each destination, cohort-based learning, and mentorship from industry professionals.',
   },
 ];
 
@@ -66,7 +66,7 @@ export default function EmpoweringFutures() {
               What We Offer
             </span>
             <h2 className="font-serif font-bold text-4xl sm:text-5xl mb-4" style={{ color: '#1D3160' }}>
-              Empowering Global Futures
+              What Working With Us Looks Like
             </h2>
           </div>
         </ScrollReveal>

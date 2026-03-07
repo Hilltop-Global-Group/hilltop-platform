@@ -16,195 +16,65 @@ This audit identifies 25+ opportunities across four pillars: SEO optimization, h
 
 ## Cursor Implementation Guide
 
-This section contains ready-to-paste prompts for implementing the audit recommendations in Cursor. Work through them in order. Reference this file in each prompt using `@Hilltop_Global_Group_Site_Audit.md`.
-
-**Tip:** Use Sonnet for Rounds 1 through 5 (copy swaps). Switch to a more capable model for Round 6 (animation logic).
+Drop this file into your project (e.g., `/docs/Hilltop_Global_Group_Site_Audit.md`). Then paste the prompt below into Cursor with Opus 4.6 agent mode. It will read the full audit and implement everything in one pass.
 
 ---
 
-### Round 1: Hero Section Copy
+### Single Prompt: Full Implementation
 
 ```
 @Hilltop_Global_Group_Site_Audit.md
 
-Implement the changes from Part 2, Section 2.1 (Hero Section) only.
+Read this entire site audit file. It contains a complete set of copy changes, CTA replacements, SEO meta updates, and motion design specs for the Hilltop Global Group homepage.
 
-- Change the eyebrow text from "Focused In Africa" to "Rooted in Africa. Built for the World."
-- Change the H1 from "Experiential Learning" to "Where Africa Becomes Your Classroom"
-- Change the subheading from "Transformative internships and cultural immersion in Africa." to "Study abroad programs, internships, and faculty development across Ghana, Rwanda, Kenya, and seven countries on the continent."
-- Change the hero CTA from "Learn more" to "Explore Our Programs"
+Implement ALL changes from Parts 1 through 4 across the codebase. Here is a summary of what needs to happen:
 
-Do not modify any other sections. Do not change styling or layout.
+COPY CHANGES (Part 2):
+- Hero section: new eyebrow, H1, subheading, and CTA text (Section 2.1)
+- Stats bar: updated label text only, do not touch count-up logic or target numbers (Section 2.2)
+- Services section: new header, subtext, and all four card descriptions + CTAs (Section 2.3)
+- "Why Hilltop" section: new header, body paragraph, mission statement, and bullet list items (Section 2.5)
+- Residency section: new eyebrow, H2, body text, all three feature card titles/subtitles, and section CTA (Section 2.6)
+- Newsletter section: new H2, body text, and button text (Section 2.7)
+- Contact/footer section: new H2 and body text (Section 2.8)
+- Navigation CTA: "START YOUR JOURNEY" becomes "Partner With Us" (Part 3)
+
+SEO META (Part 1):
+- Update page meta title and meta description as specified in Section 1.2
+- Add descriptive, keyword-relevant alt text to all images
+- Ensure all service card CTAs link to real routes (/education, /internships, etc.) instead of #learn-more anchors
+
+MOTION DESIGN (Part 4):
+- Implement scroll-triggered animations for every section using Framer Motion (or the project's existing animation library)
+- Follow the exact timing, easing, and stagger values in the Section 4.2 table
+- Hero H1 gets a letter-stagger animation
+- Stats numbers keep their existing count-up behavior
+- University logos get an infinite horizontal marquee
+- Respect prefers-reduced-motion by falling back to instant visibility
+- No bounce effects, no parallax on text, no auto-playing video
+
+STRUCTURAL SEO (Part 1, Section 1.3):
+- Add JSON-LD structured data for EducationalOrganization schema (name, url, logo, description, address, contactPoint, sameAs)
+- Generate a sitemap.xml if one does not already exist
+
+Work through the codebase file by file. Do not skip any section. Refer back to the audit file for exact wording on every text change.
 ```
 
 ---
 
-### Round 2: Stats Bar Labels
+### Alternative: Section-by-Section Approach
 
-```
-@Hilltop_Global_Group_Site_Audit.md
+If you prefer tighter control or want to review changes between rounds, you can break the work into focused prompts. Prefix each with `@Hilltop_Global_Group_Site_Audit.md` and specify the section:
 
-Implement the changes from Part 2, Section 2.2 (Stats Bar) only.
-
-- Change the label "Total Projects" to "Programs Delivered"
-- Change the label "Years Served" to "Years Shaping the Narrative"
-- Keep "African Countries" as is.
-
-Do not touch the count-up animation logic or the target numbers. Only change the label text.
-```
-
----
-
-### Round 3: Services Section
-
-```
-@Hilltop_Global_Group_Site_Audit.md
-
-Implement the changes from Part 2, Section 2.3 (Services Section) only.
-
-- Change the section header from "Explore Our Key Services" to "What We Build With Our Partners"
-- Change the section subtext to: "Every program we design starts with a question: what does your institution need from Africa, and what can Africa gain from your students? From there, we build."
-
-For each service card, update the description text and CTA as follows:
-
-Card 1 (Turnkey):
-- Title: "Turnkey Study Abroad and Experiential Programs"
-- Description: "Fully managed study abroad, internship, and co-curricular programs designed around your institution's academic goals. We handle logistics, housing, and on-ground coordination across Ghana, Rwanda, and beyond."
-- CTA: "See How It Works"
-
-Card 2 (Faculty Development):
-- Description: "Short-term immersions for faculty and academic leaders to engage directly with African institutions, industry, and culture. Designed to inform curriculum and strengthen your institution's Africa strategy."
-- CTA: "Design a Faculty Program"
-
-Card 3 (Consulting):
-- Description: "We source and design consulting projects in Africa's fastest-moving sectors: fintech, agribusiness, healthcare, and clean energy. Students work on real problems with real organizations."
-- CTA: "View Project Examples"
-
-Card 4 (Cultural):
-- Description: "Cultural programming and community engagement built alongside local partners, not around them. From heritage site visits to collaborative service projects, every experience is designed with the host community's voice at the center."
-- CTA: "Explore Cultural Programs"
-
-Do not modify any other sections.
-```
-
----
-
-### Round 4: Why Hilltop, Residency, and Newsletter Sections
-
-```
-@Hilltop_Global_Group_Site_Audit.md
-
-Implement the changes from Part 2, Sections 2.5, 2.6, and 2.7.
-
-WHY HILLTOP SECTION:
-- Change header from "Why You Should Choose Hilltop Global Group" to "Why Universities Choose Hilltop"
-- Replace the body paragraph with: "Founded by Georgetown EMBA alumni with roots across the African continent, we bring firsthand cultural knowledge to every program we design. Our team lives and works in the communities where your students will learn. That is not a selling point. It is our foundation."
-- Replace the mission statement with: "Our mission is to shape the African narrative through meaningful educational initiatives. We believe the story of this continent should be told by the people who know it best, and experienced by those willing to listen."
-- Replace the bullet list items:
-  - "Cultural Immersion" becomes "Community-Led Cultural Programming"
-  - "Corporate Placement" becomes "Project-Based Industry Placements"
-  - "Global Networking" becomes "Cross-Continental Professional Networks"
-
-RESIDENCY SECTION:
-- Change eyebrow from "The Residency Experience" to "The Hilltop Residency"
-- Change H2 from "Beyond the Classroom" to "Learning That Lives Outside Lecture Halls"
-- Replace body text with: "Our residency programs bring executives, faculty, and senior professionals into direct contact with Africa's business and cultural landscape. Think boardroom sessions in Accra, site visits in Kigali, and conversations with founders building the continent's next chapter."
-- Update feature card subtitles:
-  - Cultural Immersion: "Engage with local traditions, ceremonies, and creative communities on their terms."
-  - Community Bonding title becomes "Peer and Community Connection", subtitle: "Form professional and personal bonds that outlast the program itself."
-  - Global Network title becomes "Continental Reach", subtitle: "Connect with professionals, entrepreneurs, and institutions spanning seven African countries."
-- Change section CTA from "Discover the Experience" to "See the Residency in Action"
-
-NEWSLETTER SECTION:
-- Change H2 from "Stay Updated with Us" to "Dispatches from the Continent"
-- Replace body with: "Program updates, partner spotlights, and stories from the ground. Delivered to your inbox twice a month."
-- Change CTA button text from "SUBSCRIBE" to "Join the List"
-
-Do not modify any other sections.
-```
-
----
-
-### Round 5: Navigation, Contact, and SEO Meta
-
-```
-@Hilltop_Global_Group_Site_Audit.md
-
-Implement the changes from Part 2, Section 2.8 and Part 1, Sections 1.2 and 1.3.
-
-NAVIGATION:
-- Change the nav CTA from "START YOUR JOURNEY" to "Partner With Us"
-
-CONTACT/FOOTER:
-- Change H2 from "Get in Touch" to "Start a Conversation"
-- Replace body text with: "Whether you are exploring a first partnership or expanding an existing program, our team in Washington, Accra, and Nairobi is ready to talk."
-
-SEO META:
-- Update the page meta title to: "Hilltop Global Group | Study Abroad & Internships in Africa | Education Consulting"
-- Update the meta description to: "Diaspora-led education consulting firm delivering study abroad programs, internships, and faculty development across Ghana, Rwanda, Kenya, and beyond. Partnering with top U.S. universities since 2017."
-- Add descriptive alt text to all hero and section images. Use keyword-relevant descriptions like "Students participating in Hilltop study abroad program in Accra, Ghana" or "Faculty development residency in Kigali, Rwanda."
-
-Do not modify any other sections.
-```
-
----
-
-### Round 6: Motion Design and Animations
-
-```
-@Hilltop_Global_Group_Site_Audit.md
-
-Implement the motion design recommendations from Part 4.
-
-Use Framer Motion (or your existing animation library). All animations must be scroll-triggered using IntersectionObserver or Framer Motion's whileInView. Respect the prefers-reduced-motion media query by falling back to instant visibility.
-
-Follow these specs exactly:
-
-HERO:
-- Eyebrow: fade-in, opacity 0 to 1, 0.3s, delay 0.1s after load
-- H1: letter-stagger animation, each character fades in left to right, 0.8s total (staggerChildren: 0.03)
-- Subheading: slide-up from translateY(20px) to 0, 0.4s ease-out, delay 0.2s after H1
-- CTA button: fade-in with scale 0.95 to 1.0, 0.5s ease-out. Hover state: translateY(-2px) with soft box-shadow.
-
-STATS:
-- Numbers: count-up animation from 0 to target, 1.5s, triggered on scroll into viewport.
-
-SERVICES:
-- Section header: fade-in, 0.4s, scroll-triggered
-- Cards: slide-up from translateY(30px), 0.4s per card, stagger 0.1s between cards
-
-TRUST BAR:
-- University logos: infinite horizontal marquee scroll, 30s per loop. Pause on hover.
-
-WHY HILLTOP:
-- Body paragraph: slide-up from translateY(20px), 0.4s ease-out, scroll-triggered
-- Bullet items: slide-in from translateX(-20px), 0.3s per item, stagger 0.15s
-
-RESIDENCY:
-- Feature cards: fade-in with translateY(10px), 0.4s per card, stagger 0.15s
-
-NEWSLETTER:
-- CTA button: single pulse animation (scale 1.0 to 1.03 and back), 0.6s, trigger once on first viewport entry. Do not loop.
-
-CONTACT:
-- Section: fade-in, 0.4s, scroll-triggered
-
-Global rules: all durations between 0.3s and 0.8s. Use ease-out for entrances. No bounce effects, no parallax on text, no auto-playing video.
-```
-
----
-
-### Round 7 (Optional): Structural SEO Additions
-
-```
-@Hilltop_Global_Group_Site_Audit.md
-
-Based on Part 1, Section 1.3 (Structural SEO Notes):
-
-1. Add JSON-LD structured data markup to the homepage for EducationalOrganization schema. Include: name, url, logo, description, address (Washington DC), contactPoint, and sameAs (social media links).
-2. Ensure all internal "Learn more" links now route to their respective dedicated pages (/education, /internships, etc.) instead of #learn-more anchors.
-3. If the site has a sitemap.xml, ensure it includes all current routes. If not, generate one.
-```
+| Round | Prompt | What It Covers |
+|-------|--------|----------------|
+| 1 | "Implement Part 2, Section 2.1 (Hero Section) only." | Eyebrow, H1, subheading, hero CTA |
+| 2 | "Implement Part 2, Section 2.2 (Stats Bar) only. Change labels only, do not touch count-up logic." | Stat label text |
+| 3 | "Implement Part 2, Section 2.3 (Services Section) only." | Section header, subtext, all 4 cards |
+| 4 | "Implement Part 2, Sections 2.5, 2.6, and 2.7." | Why Hilltop, Residency, Newsletter |
+| 5 | "Implement Part 2 Section 2.8, Part 3, and Part 1 Sections 1.2 and 1.3." | Nav CTA, contact, SEO meta, alt text |
+| 6 | "Implement Part 4 motion design. Use Framer Motion. Follow timing specs exactly." | All animations |
+| 7 | "Implement Part 1 Section 1.3 structural SEO: JSON-LD schema and sitemap." | Schema markup, sitemap |
 
 ---
 

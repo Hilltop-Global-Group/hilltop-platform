@@ -41,10 +41,10 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="font-serif font-bold text-4xl text-white mb-4">
-              Get in Touch
+              Start a Conversation
             </h2>
             <p className="font-body text-white/80 text-lg">
-              We're here to help you with any inquiries or support you may need. Reach out to us anytime.
+              Whether you are exploring a first partnership or expanding an existing program, our team in Washington, Accra, and Nairobi is ready to talk.
             </p>
           </div>
 

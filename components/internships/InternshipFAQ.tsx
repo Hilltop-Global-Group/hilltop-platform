@@ -35,7 +35,7 @@ const faqs = [
   },
   {
     question: 'Is there a remote option?',
-    answer: 'The 2026 programs are in-country only.',
+    answer: 'Our programs are primarily in-country based. Contact us to ask about current format availability.',
   },
   {
     question: 'What are the payment terms?',

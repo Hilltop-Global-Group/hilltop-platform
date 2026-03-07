@@ -11,7 +11,7 @@ const featuredStories = [
     university: "Howard University",
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Replace with actual video ID
     quote: "The internship placement was seamless. I gained real-world skills that I use daily. Working with a fintech startup in Accra opened my eyes to the innovation happening across Africa. This experience fundamentally changed my career trajectory.",
-    fullStory: "Coming from Howard University, I thought I knew what to expect from an international internship. But Hilltop exceeded all expectations. The support, the placement, the cultural immersion – everything was exceptional.",
+    fullStory: "Coming from Howard University, I thought I knew what to expect from an international internship. But Hilltop exceeded all expectations. The support, the placement, the cultural immersion: everything was exceptional.",
   },
   {
     name: "David Osei",
@@ -28,7 +28,7 @@ const featuredStories = [
     location: "Accra, Ghana",
     university: "KNUST",
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Replace with actual video ID
-    quote: "An unforgettable experience that changed my career trajectory forever. I learned more in 4 weeks than I did in an entire semester. The mentorship, the projects, the cultural exposure – all world-class.",
+    quote: "An unforgettable experience that changed my career trajectory forever. I learned more in 4 weeks than I did in an entire semester. The mentorship, the projects, the cultural exposure: all world-class.",
     fullStory: "Working with a social enterprise focused on agricultural supply chains taught me about business, sustainability, and community impact. The Friday leadership sessions were incredible, and the cultural excursions helped me understand the broader context of development work in Ghana.",
   },
 ];

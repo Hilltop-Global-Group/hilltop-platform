@@ -7,31 +7,43 @@ import FadeIn from './FadeIn';
 
 const services = [
   {
-    title: 'Turnkey Experiential Education Programs',
-    description: 'Customizable study abroad, internship, and co-curricular experiences that connect participants to Africa\'s vibrant cultural, academic, and entrepreneurial ecosystems.',
+    title: 'Turnkey Study Abroad and Experiential Programs',
+    description: 'Fully managed study abroad, internship, and co-curricular programs designed around your institution\'s academic goals. We handle logistics, housing, and on-ground coordination across Ghana, Rwanda, and beyond.',
+    cta: 'See How It Works',
+    href: '/education',
     icon: GraduationCap,
     image: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/Copy-of-20230518_122404-scaled-e1695315573707.jpg',
+    imageAlt: 'Students participating in a Hilltop study abroad program in Accra, Ghana',
     color: '#1D3160',
   },
   {
     title: 'Faculty Development and Training Initiatives',
-    description: 'Tailored programs for educators to experience Africa firsthand, fostering curriculum internationalization and deeper institutional partnerships.',
+    description: 'Short-term immersions for faculty and academic leaders to engage directly with African institutions, industry, and culture. Designed to inform curriculum and strengthen your institution\'s Africa strategy.',
+    cta: 'Design a Faculty Program',
+    href: '/education',
     icon: Users,
     image: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/Copy-of-20230521_170109-scaled-e1759311926763.jpg',
+    imageAlt: 'Faculty development program participants meeting with African academic leaders',
     color: '#F4A261',
   },
   {
     title: 'Consulting Project Sourcing & Design',
-    description: 'Cross-industry collaborations in key growth sectors, including business, technology, healthcare, and sustainability, designed to provide real-world learning and development opportunities.',
+    description: 'We source and design consulting projects in Africa\'s fastest-moving sectors: fintech, agribusiness, healthcare, and clean energy. Students work on real problems with real organizations.',
+    cta: 'View Project Examples',
+    href: '/internships',
     icon: Briefcase,
     image: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/Copy-of-20230521_172314-scaled-e1759312776245.jpg',
+    imageAlt: 'Interns working on a consulting project with an African fintech company',
     color: '#1D3160',
   },
   {
     title: 'Cultural & Humanitarian Experiences',
-    description: 'Immersive cultural activities and impactful service projects that leave a lasting impact on participants and host communities.',
+    description: 'Cultural programming and community engagement built alongside local partners, not around them. From heritage site visits to collaborative service projects, every experience is designed with the host community\'s voice at the center.',
+    cta: 'Explore Cultural Programs',
+    href: '/education',
     icon: Heart,
     image: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/2.jpg',
+    imageAlt: 'Hilltop program participants engaging with a local community in Ghana',
     color: '#F4A261',
   },
 ];
@@ -74,10 +86,10 @@ export default function Services() {
         <FadeIn>
           <div className="text-center mb-16">
             <h2 className="font-serif font-bold text-4xl sm:text-5xl mb-4" style={{ color: '#1D3160' }}>
-              Explore Our Key Services
+              What We Build With Our Partners
             </h2>
             <p className="font-body text-gray-600 text-lg max-w-3xl mx-auto">
-              We offer tailored programs to help students gain invaluable experience abroad. Our services include international internships, study-abroad placements, and comprehensive support to make each global journey seamless.
+              Every program we design starts with a question: what does your institution need from Africa, and what can Africa gain from your students? From there, we build.
             </p>
           </div>
         </FadeIn>
@@ -96,6 +108,8 @@ export default function Services() {
                     <div
                       className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110 rounded-t-xl"
                       style={{ backgroundImage: `url('${service.image}')` }}
+                      role="img"
+                      aria-label={service.imageAlt}
                     />
                     <div 
                       className="absolute inset-0 opacity-60 group-hover:opacity-40 transition-opacity duration-500"
@@ -123,11 +137,11 @@ export default function Services() {
                     </p>
                     
                     <Link
-                      href="#learn-more"
+                      href={service.href}
                       className="inline-flex items-center gap-2 font-serif font-semibold text-sm transition-all duration-300 group-hover:gap-4"
                       style={{ color: service.color }}
                     >
-                      Learn more
+                      {service.cta}
                       <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
                     </Link>
                   </div>

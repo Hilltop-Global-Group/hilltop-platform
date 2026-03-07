@@ -1,11 +1,14 @@
 'use client';
 
 import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
 import FadeIn from './FadeIn';
 
 export default function Newsletter() {
   const [email, setEmail] = useState('');
+  const btnRef = useRef<HTMLButtonElement>(null);
+  const isInView = useInView(btnRef, { once: true });
 
   return (
     <section className="relative overflow-hidden py-20 bg-gray-50">
@@ -39,10 +42,10 @@ export default function Newsletter() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <FadeIn>
           <h2 className="font-serif font-bold text-4xl mb-4" style={{ color: '#1D3160' }}>
-            Stay Updated with Us
+            Dispatches from the Continent
           </h2>
           <p className="font-body text-gray-600 text-lg mb-8">
-            Subscribe to our newsletter for the latest news and opportunities. Get insights on internships, study abroad programs, and upcoming events tailored just for you.
+            Program updates, partner spotlights, and stories from the ground. Delivered to your inbox twice a month.
           </p>
         </FadeIn>
 
@@ -59,13 +62,16 @@ export default function Newsletter() {
                 transition={{ duration: 0.2 }}
               />
               <motion.button
+                ref={btnRef}
                 type="submit"
                 className="px-8 py-3 rounded font-serif font-bold text-sm tracking-wide text-white hover:bg-opacity-90 transition-all"
                 style={{ backgroundColor: '#1D3160' }}
+                animate={isInView ? { scale: [1, 1.03, 1] } : {}}
+                transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                SUBSCRIBE
+                Join the List
               </motion.button>
             </div>
             <p className="text-sm text-gray-500 mt-4">

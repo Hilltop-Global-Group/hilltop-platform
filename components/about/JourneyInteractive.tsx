@@ -10,7 +10,7 @@ const journeySteps = [
     id: 'foundation',
     year: '2014',
     title: 'The Foundation',
-    description: 'It started by accident at Georgetown University. When our founders looked for MBA study-abroad options, they found programs in Europe, Asia, and Latin America—but nothing for Africa. Hilltop was born to fill that void, launching with a single mission: to prove that Africa is not a "non-traditional" destination, but a vital classroom for the future.',
+    description: 'It started by accident at Georgetown University. When our founders looked for MBA study-abroad options, they found programs in Europe, Asia, and Latin America, but nothing for Africa. Hilltop was born to fill that void, launching with a single mission: to prove that Africa is not a "non-traditional" destination, but a vital classroom for the future.',
     image: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/Copy-of-20230518_122404-scaled-e1695315573707.jpg',
     stats: [
       { label: 'Students', value: '50+' },
@@ -21,7 +21,7 @@ const journeySteps = [
     id: 'expansion',
     year: '2016-2018',
     title: 'Beyond Tourism',
-    description: 'We moved beyond simple tours to deep academic integration. Recognizing that "visits" weren\'t enough to change narratives, we began co-creating curriculum with US faculty and launching our first Faculty Development workshops—pairing Western educators with African peers to build long-term institutional bridges.',
+    description: 'We moved beyond simple tours to deep academic integration. Recognizing that "visits" weren\'t enough to change narratives, we began co-creating curriculum with US faculty and launching our first Faculty Development workshops, pairing Western educators with African peers to build long-term institutional bridges.',
     image: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/Copy-of-20230518_122404-scaled-e1695315573707.jpg',
     stats: [
       { label: 'Students', value: '500+' },
@@ -104,7 +104,7 @@ export default function JourneyInteractive() {
               A Decade of Transformation
             </h2>
             <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-              Click through the chapters of our story to see how we've grown and evolved
+              The chapters of how we got here.
             </p>
           </div>
         </ScrollReveal>
