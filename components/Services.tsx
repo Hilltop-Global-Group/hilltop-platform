@@ -66,7 +66,7 @@ export default function Services() {
       </motion.div>
 
       {/* Decorative: soft navy blob — center right */}
-      <motion.div aria-hidden className="pointer-events-none absolute top-1/2 -right-20 -translate-y-1/2" initial={{ opacity: 0, scale: 0.7 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 2, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+      <motion.div aria-hidden className="pointer-events-none absolute top-1/2 -right-20 -translate-y-1/2 hidden md:block" initial={{ opacity: 0, scale: 0.7 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 2, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
         style={{ width: 340, height: 340, borderRadius: '50%', backgroundColor: '#1D3160', opacity: 0.03, filter: 'blur(80px)' }}
       />
 

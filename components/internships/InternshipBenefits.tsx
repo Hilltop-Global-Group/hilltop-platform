@@ -98,7 +98,7 @@ export default function InternshipBenefits() {
       {/* Decorative: soft navy blob — center left (navy on gray) */}
       <motion.div
         aria-hidden
-        className="pointer-events-none absolute top-1/3 -left-24"
+        className="pointer-events-none absolute top-1/3 -left-24 hidden md:block"
         initial={{ opacity: 0, scale: 0.7 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 2, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}

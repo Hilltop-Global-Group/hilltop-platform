@@ -1,3 +1,6 @@
+'use client';
+
+import { motion } from 'framer-motion';
 import { Quote, MapPin } from 'lucide-react';
 
 const featuredStories = [
@@ -32,8 +35,41 @@ const featuredStories = [
 
 export default function FeaturedStories() {
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative overflow-hidden py-20 bg-white">
+
+      {/* Decorative: concentric arcs — top right */}
+      <motion.div className="pointer-events-none absolute -top-16 -right-16" aria-hidden initial={{ opacity: 0, scale: 0.85 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.6, ease: [0.25, 0.1, 0.25, 1] }}>
+        <svg width="380" height="380" viewBox="0 0 380 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="380" cy="0" r="320" stroke="#1D3160" strokeWidth="2" fill="none" opacity="0.10" />
+          <circle cx="380" cy="0" r="240" stroke="#1D3160" strokeWidth="1.5" fill="none" opacity="0.07" />
+          <circle cx="380" cy="0" r="160" stroke="#1D3160" strokeWidth="1" fill="none" opacity="0.05" />
+        </svg>
+      </motion.div>
+
+      {/* Decorative: dot grid — bottom left */}
+      <motion.div className="pointer-events-none absolute bottom-8 left-8" aria-hidden initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.4, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}>
+        <svg width="150" height="150" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+          {[0,1,2,3,4].map(row => [0,1,2,3,4].map(col => (
+            <circle key={`${row}-${col}`} cx={15 + col * 30} cy={15 + row * 30} r="3" fill="#1D3160" opacity="0.13" />
+          )))}
+        </svg>
+      </motion.div>
+
+      {/* Decorative: diagonal lines — top left */}
+      <motion.div className="pointer-events-none absolute -top-6 -left-6" aria-hidden initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.4, delay: 0.35, ease: [0.25, 0.1, 0.25, 1] }}>
+        <svg width="220" height="220" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="0" y1="75"  x2="75"  y2="0"   stroke="#1D3160" strokeWidth="1.5" opacity="0.12"/>
+          <line x1="0" y1="130" x2="130" y2="0"   stroke="#1D3160" strokeWidth="1"   opacity="0.08"/>
+          <line x1="0" y1="185" x2="185" y2="0"   stroke="#1D3160" strokeWidth="1"   opacity="0.06"/>
+        </svg>
+      </motion.div>
+
+      {/* Decorative: soft blob — center right */}
+      <div className="pointer-events-none absolute top-1/2 -right-16 -translate-y-1/2 hidden md:block" aria-hidden
+        style={{ width: 320, height: 320, borderRadius: '50%', backgroundColor: '#1D3160', opacity: 0.025, filter: 'blur(80px)' }}
+      />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           <h2 className="font-serif font-bold text-4xl sm:text-5xl mb-6" style={{ color: '#1D3160' }}>
             Featured Stories

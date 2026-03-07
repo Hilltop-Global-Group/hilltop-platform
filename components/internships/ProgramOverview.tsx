@@ -21,10 +21,10 @@ export default function ProgramOverview() {
         </svg>
       </motion.div>
 
-      {/* Decorative: dot grid — bottom left */}
+      {/* Decorative: dot grid — bottom left (desktop only) */}
       <motion.div
         aria-hidden
-        className="pointer-events-none absolute bottom-6 left-6"
+        className="pointer-events-none absolute bottom-6 left-6 hidden md:block"
         initial={{ opacity: 0, scale: 0.85 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.4, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
@@ -38,7 +38,7 @@ export default function ProgramOverview() {
                 cy={14 + row * 28}
                 r="3"
                 fill="#1D3160"
-                opacity="0.12"
+                opacity="0.08"
               />
             ))
           )}
@@ -61,8 +61,8 @@ export default function ProgramOverview() {
         </svg>
       </motion.div>
 
-      {/* Decorative: soft navy blob — center */}
-      <motion.div aria-hidden className="pointer-events-none absolute top-1/2 -left-16 -translate-y-1/2" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 2, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+      {/* Decorative: soft navy blob — center (desktop only, never behind text) */}
+      <motion.div aria-hidden className="pointer-events-none absolute top-1/2 -left-16 -translate-y-1/2 hidden md:block" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 2, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
         style={{ width: 280, height: 280, borderRadius: '50%', backgroundColor: '#1D3160', opacity: 0.025, filter: 'blur(70px)' }}
       />
 

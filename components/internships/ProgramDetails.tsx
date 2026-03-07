@@ -44,7 +44,7 @@ export default function ProgramDetails() {
       {/* Decorative: small dot cluster — mid right */}
       <motion.div
         aria-hidden
-        className="pointer-events-none absolute top-1/2 -right-2 -translate-y-1/2"
+        className="pointer-events-none absolute top-1/2 -right-2 -translate-y-1/2 hidden md:block"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.2, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}

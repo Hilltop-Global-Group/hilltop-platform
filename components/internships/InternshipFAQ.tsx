@@ -135,7 +135,7 @@ export default function InternshipFAQ() {
       </motion.div>
 
       {/* Decorative: soft blob — center left */}
-      <motion.div aria-hidden className="pointer-events-none absolute top-1/2 -left-20 -translate-y-1/2" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 2, delay: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+      <motion.div aria-hidden className="pointer-events-none absolute top-1/2 -left-20 -translate-y-1/2 hidden md:block" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 2, delay: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
         style={{ width: 300, height: 300, borderRadius: '50%', backgroundColor: '#1D3160', opacity: 0.025, filter: 'blur(70px)' }}
       />
 

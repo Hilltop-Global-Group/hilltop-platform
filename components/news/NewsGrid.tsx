@@ -1,5 +1,6 @@
 'use client';
 
+import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { Calendar, User, ArrowRight, Clock } from 'lucide-react';
 import Link from 'next/link';
@@ -60,8 +61,41 @@ export default function NewsGrid({ posts, categories }: NewsGridProps) {
   };
 
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative overflow-hidden py-20 bg-white">
+
+      {/* Decorative: concentric arcs — top left */}
+      <motion.div className="pointer-events-none absolute -top-16 -left-16" aria-hidden initial={{ opacity: 0, scale: 0.85 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.6, ease: [0.25, 0.1, 0.25, 1] }}>
+        <svg width="360" height="360" viewBox="0 0 360 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="0" cy="0" r="300" stroke="#1D3160" strokeWidth="2" fill="none" opacity="0.10" />
+          <circle cx="0" cy="0" r="220" stroke="#1D3160" strokeWidth="1.5" fill="none" opacity="0.07" />
+          <circle cx="0" cy="0" r="140" stroke="#1D3160" strokeWidth="1" fill="none" opacity="0.05" />
+        </svg>
+      </motion.div>
+
+      {/* Decorative: dot grid — bottom right */}
+      <motion.div className="pointer-events-none absolute bottom-10 right-10" aria-hidden initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.4, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}>
+        <svg width="150" height="150" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+          {[0,1,2,3,4].map(row => [0,1,2,3,4].map(col => (
+            <circle key={`${row}-${col}`} cx={15 + col * 30} cy={15 + row * 30} r="3" fill="#1D3160" opacity="0.13" />
+          )))}
+        </svg>
+      </motion.div>
+
+      {/* Decorative: diagonal lines — top right */}
+      <motion.div className="pointer-events-none absolute -top-4 -right-4" aria-hidden initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.4, delay: 0.35, ease: [0.25, 0.1, 0.25, 1] }}>
+        <svg width="220" height="220" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="220" y1="75"  x2="145" y2="0" stroke="#1D3160" strokeWidth="1.5" opacity="0.12"/>
+          <line x1="220" y1="130" x2="90"  y2="0" stroke="#1D3160" strokeWidth="1" opacity="0.09"/>
+          <line x1="220" y1="185" x2="35"  y2="0" stroke="#1D3160" strokeWidth="1" opacity="0.06"/>
+        </svg>
+      </motion.div>
+
+      {/* Decorative: soft blob — bottom left */}
+      <div className="pointer-events-none absolute -bottom-10 left-1/4" aria-hidden
+        style={{ width: 380, height: 200, borderRadius: '50%', backgroundColor: '#1D3160', opacity: 0.025, filter: 'blur(70px)' }}
+      />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Category Filter */}
         <div className="mb-12 pb-12 border-b border-gray-200">
           <div className="flex flex-wrap gap-3 justify-center">

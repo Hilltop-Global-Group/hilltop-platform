@@ -27,7 +27,7 @@ export default function WhyChoose() {
       </motion.div>
 
       {/* Decorative: large circle ring — center left */}
-      <motion.div aria-hidden className="pointer-events-none absolute -left-20 top-1/2 -translate-y-1/2" initial={{ opacity: 0, scale: 0.85 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.8, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}>
+      <motion.div aria-hidden className="pointer-events-none absolute -left-20 top-1/2 -translate-y-1/2 hidden md:block" initial={{ opacity: 0, scale: 0.85 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.8, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}>
         <svg width="360" height="360" viewBox="0 0 360 360" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="180" cy="180" r="160" stroke="#1D3160" strokeWidth="1.5" fill="none" opacity="0.04" />
           <circle cx="180" cy="180" r="110" stroke="#1D3160" strokeWidth="1" fill="none" opacity="0.03" />

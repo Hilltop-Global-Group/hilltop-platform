@@ -190,8 +190,35 @@ export default function StudentTestimonials() {
   }, []);
 
   return (
-    <section className="py-20 bg-gray-50 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+    <section className="relative py-20 bg-gray-50 overflow-hidden">
+
+      {/* Decorative: concentric arcs — top right */}
+      <div className="pointer-events-none absolute -top-16 -right-16 z-[1]" aria-hidden>
+        <svg width="360" height="360" viewBox="0 0 360 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="360" cy="0" r="300" stroke="#1D3160" strokeWidth="2" fill="none" opacity="0.07" />
+          <circle cx="360" cy="0" r="220" stroke="#1D3160" strokeWidth="1.5" fill="none" opacity="0.05" />
+          <circle cx="360" cy="0" r="140" stroke="#1D3160" strokeWidth="1" fill="none" opacity="0.03" />
+        </svg>
+      </div>
+
+      {/* Decorative: wavy top edge */}
+      <div className="pointer-events-none absolute top-0 left-0 right-0 z-[1]" aria-hidden>
+        <svg width="100%" height="50" viewBox="0 0 1440 50" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 28 C240 5, 480 50, 720 25 S1200 3, 1440 28" stroke="#1D3160" strokeWidth="1.5" fill="none" opacity="0.07"/>
+          <path d="M0 28 C240 5, 480 50, 720 25 S1200 3, 1440 28 L1440 0 L0 0 Z" fill="#1D3160" opacity="0.03"/>
+        </svg>
+      </div>
+
+      {/* Decorative: dot grid — bottom left */}
+      <div className="pointer-events-none absolute bottom-10 left-10 z-[1]" aria-hidden>
+        <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          {[0,1,2,3,4].map(row => [0,1,2,3,4].map(col => (
+            <circle key={`${row}-${col}`} cx={12 + col * 24} cy={12 + row * 24} r="2.5" fill="#1D3160" opacity="0.1" />
+          )))}
+        </svg>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-[2]">
         <div className="text-center">
           <h2 className="font-serif font-bold text-4xl sm:text-5xl mb-6" style={{ color: '#1D3160' }}>
             What Students Say
