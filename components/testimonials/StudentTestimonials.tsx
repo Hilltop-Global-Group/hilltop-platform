@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import { Quote, Star } from 'lucide-react';
-import { KenteDivider } from '../shared/HilltopBrand';
+import { KenteDivider, SectionBrushstroke } from '../shared/HilltopBrand';
 
 const testimonialsColumn1 = [
   {
@@ -192,6 +192,8 @@ export default function StudentTestimonials() {
 
   return (
     <section className="relative py-24 sm:py-32 bg-white overflow-hidden border-t border-gray-100">
+      {/* GlobalGlimpse-style section background brushstroke */}
+      <SectionBrushstroke color="#F4A261" opacity={0.04} className="w-[500px] -top-10 -left-20" />
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 mb-14">
         <div className="mb-4">
           <KenteDivider count={5} color="#F4A261" />

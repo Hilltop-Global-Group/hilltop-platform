@@ -2,7 +2,7 @@
 
 import { Play } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { KenteDivider } from '../shared/HilltopBrand';
+import { KenteDivider, ArrowCTA } from '../shared/HilltopBrand';
 
 const videos = [
   {
@@ -90,9 +90,7 @@ export default function VideoTestimonials() {
                   style={{ color: '#F4A261' }}
                 >
                   Watch
-                  <svg width="12" height="12" viewBox="0 0 14 14" fill="none">
-                    <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
+                  <ArrowCTA color="#F4A261" />
                 </span>
               </div>
             </motion.a>

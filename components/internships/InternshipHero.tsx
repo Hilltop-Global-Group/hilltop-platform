@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { AfricaWatermark } from '../shared/HilltopBrand';
+import { AfricaWatermark, DecorativeUnderline, ArrowCTA } from '../shared/HilltopBrand';
 
 export default function InternshipHero() {
   return (
@@ -46,7 +46,11 @@ export default function InternshipHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
         >
-          Internships in Africa
+          Internships in{' '}
+          <span className="relative inline-block whitespace-nowrap">
+            Africa
+            <DecorativeUnderline />
+          </span>
         </motion.h1>
 
         <motion.div
@@ -59,9 +63,7 @@ export default function InternshipHero() {
             className="group inline-flex items-center gap-3 font-sans font-semibold text-sm uppercase tracking-[0.15em] text-white border-b border-white/40 pb-1 hover:border-white transition-colors duration-200"
           >
             View Open Internships
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="transition-transform duration-300 group-hover:translate-x-1">
-              <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
+            <ArrowCTA />
           </Link>
         </motion.div>
       </div>

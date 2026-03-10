@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { DecorativeUnderline } from './shared/HilltopBrand';
 
 const differentiators = [
   'Community-Led Cultural Programming',
@@ -31,7 +32,11 @@ export default function WhyChoose() {
               className="font-serif font-extrabold text-black leading-none mb-8"
               style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)' }}
             >
-              Our Mission Is to Shape the African Narrative
+              Our Mission Is to Shape the{' '}
+              <span className="relative inline-block whitespace-nowrap">
+                African Narrative
+                <DecorativeUnderline />
+              </span>
             </h2>
 
             <div className="border-l-2 pl-6 mb-8" style={{ borderColor: '#F4A261' }}>

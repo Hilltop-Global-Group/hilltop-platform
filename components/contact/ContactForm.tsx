@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { KenteDivider } from '../shared/HilltopBrand';
+import { KenteDivider, ArrowCTA } from '../shared/HilltopBrand';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -100,9 +100,7 @@ export default function ContactForm() {
                   style={{ backgroundColor: '#1D3160' }}
                 >
                   Send Message
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="transition-transform duration-300 group-hover:translate-x-1">
-                    <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
+                  <ArrowCTA />
                 </button>
               </div>
             </form>

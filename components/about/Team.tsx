@@ -1,30 +1,10 @@
 'use client';
 
+import Link from 'next/link';
 import { Linkedin } from 'lucide-react';
-import { motion } from 'framer-motion';
 import FadeIn from '../FadeIn';
-import { KenteDivider } from '../shared/HilltopBrand';
-
-const teamMembers = [
-  {
-    name: 'Phil Agbeko',
-    role: 'Founder & CEO',
-    image: 'https://via.placeholder.com/400x400/1D3160/FFFFFF?text=PA',
-    linkedin: 'https://www.linkedin.com/in/philagbeko/',
-  },
-  {
-    name: 'Nanya Osamor',
-    role: 'Project Consultant',
-    image: 'https://via.placeholder.com/400x400/1D3160/FFFFFF?text=NO',
-    linkedin: 'https://www.linkedin.com/in/nanyaosamor/',
-  },
-  {
-    name: 'Faata Faleera Adam',
-    role: 'Africa Operations Manager',
-    image: 'https://via.placeholder.com/400x400/1D3160/FFFFFF?text=FA',
-    linkedin: 'https://www.linkedin.com/in/faata-faleera-a-170683a1/',
-  },
-];
+import { KenteDivider, ArrowCTA, DecorativeUnderline } from '../shared/HilltopBrand';
+import { teamMembers } from '@/lib/team';
 
 export default function Team() {
   return (
@@ -43,7 +23,11 @@ export default function Team() {
                 className="font-serif font-extrabold text-black leading-none"
                 style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)' }}
               >
-                Meet the People<br className="hidden md:block" /> Behind Hilltop
+                Meet the People<br className="hidden md:block" /> Behind{' '}
+              <span className="relative inline-block whitespace-nowrap">
+                Hilltop
+                <DecorativeUnderline />
+              </span>
               </h2>
             </div>
             <p className="font-sans text-gray-500 text-base max-w-xs leading-relaxed">
@@ -55,10 +39,7 @@ export default function Team() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {teamMembers.map((member, index) => (
-            <FadeIn
-              key={index}
-              delay={index * 0.15}
-            >
+            <FadeIn key={index} delay={index * 0.15}>
               <div className="group relative bg-white overflow-hidden hover:shadow-xl transition-all duration-500 hover:-translate-y-1 border border-gray-100">
                 <div className="relative h-[500px] overflow-hidden">
                   <div
@@ -66,7 +47,7 @@ export default function Team() {
                     style={{ backgroundImage: `url('${member.image}')` }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
-                  
+
                   <div className="absolute bottom-0 left-0 right-0 p-8">
                     <p className="text-sm font-bold mb-2 uppercase tracking-wide" style={{ color: '#F4A261' }}>
                       {member.role}
@@ -74,7 +55,7 @@ export default function Team() {
                     <h3 className="font-serif font-bold text-3xl mb-6" style={{ color: '#FFFFFF' }}>
                       {member.name}
                     </h3>
-                    
+
                     <div className="flex gap-3">
                       <a
                         href={member.linkedin}
@@ -93,9 +74,21 @@ export default function Team() {
             </FadeIn>
           ))}
         </div>
+
+        {/* Link to full team page */}
+        <FadeIn delay={0.3}>
+          <div className="mt-14 pt-10 border-t border-gray-200">
+            <Link
+              href="/team"
+              className="group inline-flex items-center gap-3 font-sans font-semibold text-sm uppercase tracking-[0.15em] border-b pb-1 transition-colors duration-200"
+              style={{ color: '#080f1c', borderColor: '#080f1c' }}
+            >
+              View Full Team Page
+              <ArrowCTA />
+            </Link>
+          </div>
+        </FadeIn>
       </div>
     </section>
   );
 }
-
-

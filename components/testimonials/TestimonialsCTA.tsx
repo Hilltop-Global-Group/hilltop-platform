@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { AfricaWatermark, KenteDivider } from '../shared/HilltopBrand';
+import { AfricaWatermark, KenteDivider, ArrowCTA } from '../shared/HilltopBrand';
 
 export default function TestimonialsCTA() {
   return (
@@ -66,9 +66,7 @@ export default function TestimonialsCTA() {
               className="group inline-flex items-center gap-3 font-sans font-semibold text-sm uppercase tracking-[0.15em] text-white border-b border-white/40 pb-1 hover:border-white transition-colors duration-200"
             >
               View Programs
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="transition-transform duration-300 group-hover:translate-x-1">
-                <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
+              <ArrowCTA />
             </Link>
             <Link
               href="/contact"
@@ -76,9 +74,7 @@ export default function TestimonialsCTA() {
               style={{ color: '#F4A261', borderBottom: '1px solid #F4A26160' }}
             >
               Contact Us
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="transition-transform duration-300 group-hover:translate-x-1">
-                <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
+              <ArrowCTA />
             </Link>
           </motion.div>
         </div>

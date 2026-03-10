@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { ArrowCTA } from './shared/HilltopBrand';
 
 const cards = [
   {
@@ -89,9 +90,7 @@ export default function AfricanResidency() {
             className="group inline-flex items-center gap-3 font-sans font-semibold text-sm uppercase tracking-[0.15em] text-white border-b border-white/30 pb-1 hover:border-white transition-colors duration-200"
           >
             See the Residency in Action
-            <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
+            <ArrowCTA />
           </Link>
         </div>
 

@@ -3,7 +3,7 @@
 import { useEffect, useRef } from 'react';
 import { Quote } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
-import { KenteDivider } from '../shared/HilltopBrand';
+import { KenteDivider, SectionBrushstroke } from '../shared/HilltopBrand';
 
 const testimonials = [
   {
@@ -80,7 +80,9 @@ export default function Testimonials() {
   }, []);
 
   return (
-    <section className="py-24 sm:py-32 bg-white border-t border-gray-100 overflow-hidden">
+    <section className="relative py-24 sm:py-32 bg-white border-t border-gray-100 overflow-hidden">
+      {/* GlobalGlimpse-style section background brushstroke */}
+      <SectionBrushstroke color="#1D3160" opacity={0.025} className="w-[550px] top-0 -right-20" />
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 mb-14">
         <ScrollReveal animation="fade-down">
           <div className="mb-4">

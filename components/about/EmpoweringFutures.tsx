@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { KenteDivider } from '../shared/HilltopBrand';
+import { KenteDivider, SectionBrushstroke } from '../shared/HilltopBrand';
 
 const features = [
   {
@@ -23,7 +23,9 @@ const features = [
 
 export default function EmpoweringFutures() {
   return (
-    <section className="py-24 sm:py-32 bg-white">
+    <section className="relative py-24 sm:py-32 bg-white overflow-hidden">
+      {/* GlobalGlimpse-style section background brushstroke */}
+      <SectionBrushstroke color="#F4A261" opacity={0.04} className="w-[500px] -bottom-16 -left-24" flip />
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         {/* Section header */}
         <div className="mb-4">

@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { DecorativeUnderline } from './shared/HilltopBrand';
 
 const services = [
   {
@@ -54,7 +55,12 @@ export default function Services() {
               className="font-serif font-extrabold text-black leading-none"
               style={{ fontSize: 'clamp(2.4rem, 5vw, 4rem)' }}
             >
-              Programs That Move<br className="hidden md:block" /> People Forward
+              Programs That{' '}
+              <span className="relative inline-block whitespace-nowrap">
+                Move
+                <DecorativeUnderline />
+              </span>
+              <br className="hidden md:block" /> People Forward
             </h2>
             <p className="font-sans text-gray-500 text-base max-w-sm md:text-right leading-relaxed">
               Every program starts with a question: what does your institution need from Africa, and what can Africa gain from your students?

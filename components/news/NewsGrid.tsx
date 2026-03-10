@@ -2,10 +2,10 @@
 
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { Calendar, User, ArrowRight } from 'lucide-react';
+import { Calendar, User } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { KenteDivider } from '../shared/HilltopBrand';
+import { KenteDivider, SectionBrushstroke, ArrowCTA } from '../shared/HilltopBrand';
 
 interface WordPressPost {
   id: number;
@@ -62,7 +62,9 @@ export default function NewsGrid({ posts, categories }: NewsGridProps) {
   };
 
   return (
-    <section className="py-24 sm:py-32 bg-white border-t border-gray-100">
+    <section className="relative py-24 sm:py-32 bg-white border-t border-gray-100 overflow-hidden">
+      {/* GlobalGlimpse-style section background brushstroke */}
+      <SectionBrushstroke color="#1D3160" opacity={0.025} className="w-[600px] -top-20 -right-32" />
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 
         {/* Header */}
@@ -186,9 +188,7 @@ export default function NewsGrid({ posts, categories }: NewsGridProps) {
                       style={{ color: '#1D3160' }}
                     >
                       Read Article
-                      <svg width="12" height="12" viewBox="0 0 14 14" fill="none" className="transition-transform duration-300 group-hover/link:translate-x-1">
-                        <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
+                      <ArrowCTA />
                     </Link>
                   </div>
                 </motion.article>

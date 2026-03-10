@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import FadeIn from '../FadeIn';
-import { KenteDivider } from '../shared/HilltopBrand';
+import { KenteDivider, ArrowCTA } from '../shared/HilltopBrand';
 
 const pillars = [
   {
@@ -111,9 +111,7 @@ export default function AfricanResidency() {
               style={{ color: '#080f1c', borderColor: '#080f1c' }}
             >
               View Internship Programs
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="transition-transform duration-300 group-hover:translate-x-1">
-                <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
+              <ArrowCTA />
             </Link>
           </div>
         </FadeIn>

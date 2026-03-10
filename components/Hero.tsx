@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
+import { DecorativeUnderline, ArrowCTA } from './shared/HilltopBrand';
 
 const slides = [
   {
@@ -82,12 +83,28 @@ export default function Hero() {
               {slide.eyebrow}
             </p>
 
-            {/* Headline — huge Barlow Condensed */}
+            {/* Headline — huge Barlow Condensed with decorative underline on last word */}
             <h1
               className="font-serif font-extrabold text-white leading-none mb-6"
-              style={{ fontSize: 'clamp(3rem, 8vw, 7rem)', letterSpacing: '-0.01em', whiteSpace: 'pre-line' }}
+              style={{ fontSize: 'clamp(3rem, 8vw, 7rem)', letterSpacing: '-0.01em' }}
             >
-              {slide.headline}
+              {slide.headline.split('\n').map((line, i, arr) => {
+                const isLast = i === arr.length - 1;
+                const words = line.split(' ');
+                const lastWord = words[words.length - 1];
+                const rest = words.slice(0, -1).join(' ');
+                return (
+                  <span key={i} className="block">
+                    {rest && <>{rest} </>}
+                    {isLast ? (
+                      <span className="relative inline-block whitespace-nowrap">
+                        {lastWord}
+                        <DecorativeUnderline />
+                      </span>
+                    ) : lastWord}
+                  </span>
+                );
+              })}
             </h1>
 
             {/* Sub */}
@@ -101,9 +118,7 @@ export default function Hero() {
               className="group inline-flex items-center gap-3 font-sans font-semibold text-sm uppercase tracking-[0.15em] text-white border-b border-white/40 pb-1 hover:border-white transition-colors duration-200"
             >
               Explore Our Programs
-              <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
+              <ArrowCTA />
             </Link>
           </motion.div>
         </AnimatePresence>

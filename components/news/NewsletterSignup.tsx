@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { KenteDivider } from '../shared/HilltopBrand';
+import { KenteDivider, ArrowCTA } from '../shared/HilltopBrand';
 
 export default function NewsletterSignup() {
   const [email, setEmail] = useState('');
@@ -75,9 +75,7 @@ export default function NewsletterSignup() {
                     className="group inline-flex items-center gap-3 font-sans font-semibold text-sm uppercase tracking-[0.15em] text-black border-b-2 border-black pb-1 hover:opacity-60 transition-opacity duration-200"
                   >
                     Subscribe
-                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="transition-transform duration-300 group-hover:translate-x-1">
-                      <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
+                    <ArrowCTA />
                   </button>
                 </div>
               </form>

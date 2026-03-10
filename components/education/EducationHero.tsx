@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { AfricaWatermark } from '../shared/HilltopBrand';
+import { AfricaWatermark, DecorativeUnderline } from '../shared/HilltopBrand';
 
 export default function EducationHero() {
   return (
@@ -45,7 +45,11 @@ export default function EducationHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
         >
-          Study Abroad Programs in Africa
+          Study Abroad Programs in{' '}
+          <span className="relative inline-block whitespace-nowrap">
+            Africa
+            <DecorativeUnderline />
+          </span>
         </motion.h1>
       </div>
     </section>

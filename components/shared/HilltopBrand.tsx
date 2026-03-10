@@ -115,3 +115,142 @@ export function Eyebrow({ children, color = '#F4A261', className = '' }: { child
     </p>
   );
 }
+
+/**
+ * DecorativeUnderline — a GlobalGlimpse-style SVG brushstroke underline.
+ * Wrap a key word in a `relative inline-block` span and place this just after the text.
+ * Example:
+ *   <span className="relative inline-block whitespace-nowrap">
+ *     Learning<DecorativeUnderline />
+ *   </span>
+ */
+export function DecorativeUnderline({
+  color = '#F4A261',
+  className = '',
+}: {
+  color?: string;
+  className?: string;
+}) {
+  return (
+    <svg
+      viewBox="0 0 200 12"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      preserveAspectRatio="none"
+      aria-hidden
+      className={`absolute left-0 bottom-[-6px] w-full pointer-events-none ${className}`}
+    >
+      {/* Two staggered wavy strokes — the top one slightly thinner for a brushstroke feel */}
+      <path
+        d="M 2 8 C 30 3, 60 11, 100 7 C 140 3, 170 10, 198 6"
+        stroke={color}
+        strokeWidth="3.5"
+        strokeLinecap="round"
+        fill="none"
+        opacity="0.9"
+      />
+      <path
+        d="M 4 10 C 40 6, 80 12, 120 9 C 155 6, 180 11, 197 8"
+        stroke={color}
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        fill="none"
+        opacity="0.35"
+      />
+    </svg>
+  );
+}
+
+/**
+ * SectionBrushstroke — a large abstract flowing arc used as a background
+ * decorative element in content sections (inspired by GlobalGlimpse's
+ * "We Have Stories That Inspire" section treatment).
+ * Place it as an absolutely-positioned child inside a relative section.
+ */
+export function SectionBrushstroke({
+  color = '#F4A261',
+  opacity = 0.05,
+  className = '',
+  flip = false,
+}: {
+  color?: string;
+  opacity?: number;
+  className?: string;
+  flip?: boolean;
+}) {
+  return (
+    <svg
+      viewBox="0 0 800 400"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden
+      style={{ transform: flip ? 'scaleX(-1)' : undefined }}
+      className={`absolute pointer-events-none ${className}`}
+    >
+      {/* Large sweeping arc — primary stroke */}
+      <path
+        d="M -60 350 C 80 200, 280 50, 500 120 C 680 180, 750 320, 860 280"
+        stroke={color}
+        strokeWidth="120"
+        strokeLinecap="round"
+        fill="none"
+        opacity={opacity}
+      />
+      {/* Secondary thinner arc for depth */}
+      <path
+        d="M -40 380 C 100 220, 300 80, 520 150 C 700 210, 770 360, 880 310"
+        stroke={color}
+        strokeWidth="40"
+        strokeLinecap="round"
+        fill="none"
+        opacity={opacity * 0.5}
+      />
+    </svg>
+  );
+}
+
+/**
+ * ArrowCTA — GlobalGlimpse-style animated arrow for CTA links.
+ * The line extends 8px right on group-hover. Wrap parent `<a>` or `<button>` with `group`.
+ * Example:
+ *   <Link href="..." className="group inline-flex items-center gap-3 ...">
+ *     Explore Our Programs <ArrowCTA />
+ *   </Link>
+ */
+export function ArrowCTA({
+  color = 'currentColor',
+  className = '',
+}: {
+  color?: string;
+  className?: string;
+}) {
+  return (
+    <span
+      className={`inline-flex items-center overflow-hidden ${className}`}
+      aria-hidden
+    >
+      {/* Extending line */}
+      <span
+        className="inline-block h-px bg-current transition-all duration-300 group-hover:w-7 w-4"
+        style={{ backgroundColor: color === 'currentColor' ? undefined : color }}
+      />
+      {/* Arrowhead */}
+      <svg
+        width="10"
+        height="10"
+        viewBox="0 0 10 10"
+        fill="none"
+        className="flex-shrink-0 transition-transform duration-300 group-hover:translate-x-1 -ml-px"
+        style={{ color }}
+      >
+        <path
+          d="M1 5h8M5.5 1.5L9 5l-3.5 3.5"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </span>
+  );
+}
