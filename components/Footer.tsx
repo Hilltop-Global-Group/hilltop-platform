@@ -80,21 +80,6 @@ export default function Footer() {
               </span>
             </div>
 
-            {/* Social links */}
-            <div className="flex items-center gap-4 pt-4">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white/40 hover:text-white transition-colors duration-200"
-                  aria-label={social.label}
-                >
-                  <social.icon size={18} />
-                </a>
-              ))}
-            </div>
           </div>
         </div>
 
@@ -119,9 +104,9 @@ export default function Footer() {
         {/* Divider */}
         <div className="border-t border-white/10" />
 
-        {/* Bottom: nav + copyright */}
-        <div className="py-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-          <div className="flex flex-wrap gap-x-6 gap-y-2">
+        {/* Bottom: nav + copyright + social icons far right */}
+        <div className="py-10 flex flex-col md:flex-row md:items-center gap-6">
+          <div className="flex flex-wrap gap-x-6 gap-y-2 flex-1">
             {quickLinks.map((link) => (
               <Link
                 key={link.label}
@@ -135,6 +120,21 @@ export default function Footer() {
           <p className="font-sans text-xs text-white/30 flex-shrink-0">
             © {new Date().getFullYear()} Hilltop Global Group
           </p>
+          {/* Social icons — far right */}
+          <div className="flex items-center gap-4 flex-shrink-0">
+            {socialLinks.map((social) => (
+              <a
+                key={social.label}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/40 hover:text-white transition-colors duration-200"
+                aria-label={social.label}
+              >
+                <social.icon size={16} />
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </footer>

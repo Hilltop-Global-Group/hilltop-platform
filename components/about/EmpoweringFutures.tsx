@@ -31,8 +31,8 @@ export default function EmpoweringFutures() {
         <div className="mb-4">
           <KenteDivider count={5} color="#F4A261" />
         </div>
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
-          <div>
+        <div className="flex flex-col md:flex-row md:items-start gap-6 md:gap-10 mb-16">
+          <div className="flex-1">
             <p className="font-sans text-xs font-semibold uppercase tracking-[0.25em] mb-5" style={{ color: '#F4A261' }}>
               What We Offer
             </p>
@@ -43,7 +43,9 @@ export default function EmpoweringFutures() {
               What Working With Us<br className="hidden md:block" /> Looks Like
             </h2>
           </div>
-          <p className="font-sans text-gray-500 text-base max-w-sm leading-relaxed">
+          {/* Vertical divider — desktop only */}
+          <div className="hidden md:block w-px bg-gray-200 self-stretch flex-shrink-0" />
+          <p className="font-sans text-gray-500 text-base max-w-sm leading-relaxed md:pt-1 flex-shrink-0">
             Every program is shaped by our experience on the ground and the trust of leading universities worldwide.
           </p>
         </div>

@@ -12,6 +12,7 @@ const slides = [
     eyebrow: 'Focused In Africa',
     headline: 'Experiential\nLearning',
     sub: 'Transformative internships and cultural immersion in Africa.',
+    accentColor: '#F4A261',
   },
   {
     image: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/Copy-of-20230521_170109-scaled-e1759311926763.jpg',
@@ -19,6 +20,7 @@ const slides = [
     eyebrow: 'University Partnerships',
     headline: 'Study Abroad\nin Africa',
     sub: 'Fully managed programs for U.S. university partners.',
+    accentColor: '#ffffff',
   },
   {
     image: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/2.jpg',
@@ -26,6 +28,7 @@ const slides = [
     eyebrow: 'Professional Development',
     headline: 'Internships\nin Africa',
     sub: 'Real placements with startups, NGOs, and enterprises in Ghana and Rwanda.',
+    accentColor: '#F4A261',
   },
 ];
 
@@ -33,7 +36,7 @@ export default function Hero() {
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
-    const t = setInterval(() => setCurrent(p => (p + 1) % slides.length), 6000);
+    const t = setInterval(() => setCurrent(p => (p + 1) % slides.length), 6500);
     return () => clearInterval(t);
   }, []);
 
@@ -42,8 +45,8 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen overflow-hidden flex items-end" style={{ backgroundColor: '#080f1c' }}>
 
-      {/* Background image */}
-      <AnimatePresence mode="wait">
+      {/* Background images — cross-dissolve with cinematic blur */}
+      <AnimatePresence mode="sync">
         <motion.div
           key={current}
           className="absolute inset-0"
@@ -52,10 +55,10 @@ export default function Hero() {
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
-          initial={{ opacity: 0, scale: 1.04 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 1.2, ease: [0.25, 0.1, 0.25, 1] }}
+          initial={{ opacity: 0, scale: 1.06, filter: 'blur(8px)' }}
+          animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+          exit={{ opacity: 0, scale: 1.02, filter: 'blur(4px)' }}
+          transition={{ duration: 1.8, ease: [0.25, 0.1, 0.25, 1] }}
         />
       </AnimatePresence>
 
@@ -73,17 +76,17 @@ export default function Hero() {
         <AnimatePresence mode="wait">
           <motion.div
             key={current}
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 32 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+            exit={{ opacity: 0, y: -16 }}
+            transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
           >
             {/* Eyebrow */}
             <p className="text-xs sm:text-sm font-sans font-semibold uppercase tracking-[0.25em] text-white/60 mb-4">
               {slide.eyebrow}
             </p>
 
-            {/* Headline — huge Barlow Condensed with decorative underline on last word */}
+            {/* Headline — huge condensed serif with per-slide accent underline */}
             <h1
               className="font-serif font-extrabold text-white leading-none mb-6"
               style={{ fontSize: 'clamp(3rem, 8vw, 7rem)', letterSpacing: '-0.01em' }}
@@ -99,7 +102,7 @@ export default function Hero() {
                     {isLast ? (
                       <span className="relative inline-block whitespace-nowrap">
                         {lastWord}
-                        <DecorativeUnderline />
+                        <DecorativeUnderline color={slide.accentColor} />
                       </span>
                     ) : lastWord}
                   </span>
@@ -129,7 +132,7 @@ export default function Hero() {
             <button
               key={i}
               onClick={() => setCurrent(i)}
-              className={`h-[3px] rounded-full transition-all duration-400 ${i === current ? 'w-10 bg-white' : 'w-4 bg-white/35 hover:bg-white/60'}`}
+              className={`h-[3px] rounded-full transition-all duration-500 ${i === current ? 'w-10 bg-white' : 'w-4 bg-white/35 hover:bg-white/60'}`}
               aria-label={`Go to slide ${i + 1}`}
             />
           ))}

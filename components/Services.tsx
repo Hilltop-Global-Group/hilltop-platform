@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { DecorativeUnderline } from './shared/HilltopBrand';
+import { DecorativeUnderline, DottedAfricaMap, HighlightWord } from './shared/HilltopBrand';
 
 const services = [
   {
@@ -42,7 +42,8 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="py-24 sm:py-32 bg-white">
+    <section className="relative py-24 sm:py-32 bg-white overflow-hidden">
+      <DottedAfricaMap color="#1D3160" opacity={0.04} className="absolute -right-10 bottom-0" />
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 
         {/* Section header */}
@@ -50,9 +51,9 @@ export default function Services() {
           <p className="font-sans text-xs font-semibold uppercase tracking-[0.25em] mb-5" style={{ color: '#F4A261' }}>
             What We Build With Partners
           </p>
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+          <div className="flex flex-col md:flex-row md:items-start gap-6 md:gap-10">
             <h2
-              className="font-serif font-extrabold text-black leading-none"
+              className="font-serif font-extrabold text-black leading-none flex-1"
               style={{ fontSize: 'clamp(2.4rem, 5vw, 4rem)' }}
             >
               Programs That{' '}
@@ -60,9 +61,12 @@ export default function Services() {
                 Move
                 <DecorativeUnderline />
               </span>
-              <br className="hidden md:block" /> People Forward
+              <br className="hidden md:block" /> People{' '}
+              <HighlightWord>Forward</HighlightWord>
             </h2>
-            <p className="font-sans text-gray-500 text-base max-w-sm md:text-right leading-relaxed">
+            {/* Vertical divider — desktop only */}
+            <div className="hidden md:block w-px bg-gray-200 self-stretch flex-shrink-0" />
+            <p className="font-sans text-gray-500 text-base max-w-sm leading-relaxed md:pt-1 flex-shrink-0">
               Every program starts with a question: what does your institution need from Africa, and what can Africa gain from your students?
             </p>
           </div>

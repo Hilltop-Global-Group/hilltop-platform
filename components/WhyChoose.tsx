@@ -81,11 +81,14 @@ export default function WhyChoose() {
             />
             <div className="absolute inset-0 bg-gradient-to-br from-[#1D3160]/50 via-transparent to-transparent" />
 
-            {/* Bottom caption */}
-            <div className="absolute bottom-0 left-0 right-0 p-7">
-              <div className="border-t border-white/20 pt-4">
+            {/* Bottom caption — localised dark overlay only on the text block */}
+            <div className="absolute bottom-0 left-0 right-0 p-5">
+              <div
+                className="rounded-sm px-5 py-4"
+                style={{ backgroundColor: 'rgba(8,15,28,0.72)', backdropFilter: 'blur(6px)' }}
+              >
                 <p className="font-sans text-white/60 text-xs uppercase tracking-widest mb-1">Our approach</p>
-                <p className="font-serif font-bold text-white text-xl leading-snug">
+                <p className="font-serif font-bold text-white text-lg leading-snug">
                   We believe the story of this continent should be told by the people who know it best.
                 </p>
               </div>

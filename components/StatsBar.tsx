@@ -9,7 +9,7 @@ function Counter({ end, suffix = '' }: CounterProps) {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-50px' });
   const [animated, setAnimated] = useState(false);
-  const spring = useSpring(0, { duration: 2200, bounce: 0 });
+  const spring = useSpring(0, { duration: 2400, bounce: 0 });
   const display = useTransform(spring, v => Math.floor(v).toString());
 
   useEffect(() => {
@@ -17,16 +17,16 @@ function Counter({ end, suffix = '' }: CounterProps) {
   }, [isInView, animated, end, spring]);
 
   return (
-    <motion.span ref={ref} initial={{ opacity: 0 }} animate={isInView ? { opacity: 1 } : {}} transition={{ duration: 0.4 }}>
+    <motion.span ref={ref} initial={{ opacity: 0 }} animate={isInView ? { opacity: 1 } : {}} transition={{ duration: 0.5 }}>
       <motion.span>{display}</motion.span>{suffix}
     </motion.span>
   );
 }
 
 const stats = [
-  { value: 50, suffix: '+', label: 'PROGRAMS DELIVERED' },
-  { value: 10, suffix: '+', label: 'YEARS IN AFRICA' },
-  { value: 7,  suffix: '+', label: 'AFRICAN COUNTRIES' },
+  { value: 50, suffix: '+', label: 'Programs Delivered' },
+  { value: 10, suffix: '+', label: 'Years in Africa' },
+  { value: 7,  suffix: '+', label: 'African Countries' },
 ];
 
 export default function StatsBar() {
@@ -37,15 +37,15 @@ export default function StatsBar() {
         {/* Thin top rule */}
         <div className="border-t border-white/15 mb-14" />
 
-        <div className="grid grid-cols-3 gap-4 sm:gap-8">
+        <div className="grid grid-cols-3 divide-x divide-white/15">
           {stats.map((s, i) => (
             <motion.div
               key={s.label}
-              className="text-center sm:text-left"
+              className="text-center px-4 sm:px-8"
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.12, duration: 0.55 }}
+              transition={{ delay: i * 0.14, duration: 0.6 }}
             >
               {/* Big number */}
               <p

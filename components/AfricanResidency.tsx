@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowCTA } from './shared/HilltopBrand';
+import { ArrowCTA, HighlightWord } from './shared/HilltopBrand';
 
 const cards = [
   {
@@ -36,14 +36,16 @@ export default function AfricanResidency() {
         </p>
 
         {/* Section header */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-14">
+        <div className="flex flex-col md:flex-row md:items-start gap-8 md:gap-12 mb-14">
           <h2
-            className="font-serif font-extrabold text-white leading-none"
+            className="font-serif font-extrabold text-white leading-none flex-1"
             style={{ fontSize: 'clamp(2.4rem, 5vw, 4rem)' }}
           >
-            Learning That Lives<br className="hidden md:block" /> Outside Lecture Halls
+            Learning That <HighlightWord>Lives</HighlightWord><br className="hidden md:block" /> Outside Lecture Halls
           </h2>
-          <p className="font-sans text-white/50 text-base max-w-sm md:text-right leading-relaxed">
+          {/* Vertical divider — desktop only */}
+          <div className="hidden md:block w-px bg-white/15 self-stretch flex-shrink-0" />
+          <p className="font-sans text-white/50 text-base max-w-sm leading-relaxed md:pt-1 flex-shrink-0">
             Our residency programs bring students, executives, and faculty into direct contact with Africa's business and cultural landscape.
           </p>
         </div>

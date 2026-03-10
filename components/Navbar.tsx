@@ -23,12 +23,25 @@ const navItems: NavItem[] = [
     children: [
       { name: 'Our Story', href: '/about', description: 'How Hilltop was founded and what drives us' },
       { name: 'Meet Our Team', href: '/team', description: 'The people building bridges across Africa' },
-      { name: 'Mission & Values', href: '/about#values', description: 'The principles that guide every program' },
+      { name: 'Mission & Values', href: '/values', description: 'The principles that guide every program' },
     ],
   },
   { name: 'Education', href: '/education' },
-  { name: 'Internships', href: '/internships' },
-  { name: 'Testimonials', href: '/testimonials' },
+  {
+    name: 'Internships',
+    children: [
+      { name: 'About Our Internships', href: '/internships/about', description: 'How our programs work, industries, and FAQs' },
+      { name: 'Current Internships', href: '/internships/current', description: 'Open programs in Ghana and Rwanda' },
+      { name: 'Past Internships', href: '/internships/past', description: 'Completed placements and alumni programs' },
+    ],
+  },
+  {
+    name: 'Testimonials',
+    children: [
+      { name: 'Student Stories', href: '/testimonials', description: 'What students say about their Hilltop experience' },
+      { name: 'Partners & Universities', href: '/testimonials/partners', description: 'What our university and organizational partners say' },
+    ],
+  },
   {
     name: 'Blogs & News',
     children: [

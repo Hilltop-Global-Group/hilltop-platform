@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import { AfricaWatermark, KenteDivider } from '../shared/HilltopBrand';
+import { AfricaWatermark, KenteDivider, DottedAfricaMap } from '../shared/HilltopBrand';
 
 const metrics = [
   { value: 10, suffix: '+', label: 'Years Building in Africa', note: 'Since 2014' },
@@ -47,6 +47,8 @@ export default function ImpactMetrics() {
       <div className="pointer-events-none absolute right-0 top-0 bottom-0 flex items-center" aria-hidden>
         <AfricaWatermark className="w-72 md:w-96 h-auto" opacity={0.07} />
       </div>
+      {/* Dotted Africa map — subtle left accent */}
+      <DottedAfricaMap color="#ffffff" opacity={0.06} className="absolute left-0 top-1/2 -translate-y-1/2" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="border-t border-white/15 mb-14" />

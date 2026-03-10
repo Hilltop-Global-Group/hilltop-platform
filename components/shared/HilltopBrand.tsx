@@ -254,3 +254,76 @@ export function ArrowCTA({
     </span>
   );
 }
+
+/**
+ * DottedAfricaMap — Africa continent silhouette rendered as a dot-grid pattern.
+ * Inspired by GlobalGlimpse's "Explore Our Destinations" decorative map.
+ * Use as an absolute background element inside a relative section.
+ */
+export function DottedAfricaMap({
+  color = '#1D3160',
+  opacity = 0.08,
+  className = '',
+}: {
+  color?: string;
+  opacity?: number;
+  className?: string;
+}) {
+  // A grid of dots clipped to an approximate Africa bounding shape
+  const dots: { cx: number; cy: number }[] = [];
+  const rows = 22;
+  const cols = 16;
+  const spacing = 14;
+
+  // Rough Africa shape: defined by which (row, col) cells fall inside
+  for (let r = 0; r < rows; r++) {
+    for (let c = 0; c < cols; c++) {
+      const inShape =
+        (r <= 3 && c >= 5 && c <= 10) ||
+        (r === 4 && c >= 4 && c <= 11) ||
+        (r === 5 && c >= 3 && c <= 12) ||
+        (r >= 6 && r <= 9 && c >= 2 && c <= 13) ||
+        (r >= 10 && r <= 13 && c >= 2 && c <= 14) ||
+        (r >= 14 && r <= 16 && c >= 3 && c <= 13) ||
+        (r >= 17 && r <= 19 && c >= 4 && c <= 11) ||
+        (r >= 20 && r <= 21 && c >= 5 && c <= 9);
+      if (inShape) {
+        dots.push({ cx: c * spacing + spacing / 2, cy: r * spacing + spacing / 2 });
+      }
+    }
+  }
+
+  const width = cols * spacing;
+  const height = rows * spacing;
+
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox={`0 0 ${width} ${height}`}
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden
+      className={`pointer-events-none ${className}`}
+      style={{ opacity }}
+    >
+      {dots.map((d, i) => (
+        <circle key={i} cx={d.cx} cy={d.cy} r="2.8" fill={color} />
+      ))}
+    </svg>
+  );
+}
+
+/**
+ * HighlightWord — wraps a word/phrase in the GlobalGlimpse-style accent color.
+ * Use inside headings: "We Have <HighlightWord>Stories</HighlightWord> That Inspire"
+ */
+export function HighlightWord({
+  children,
+  color = '#F4A261',
+}: {
+  children: React.ReactNode;
+  color?: string;
+}) {
+  return <span style={{ color }}>{children}</span>;
+}
