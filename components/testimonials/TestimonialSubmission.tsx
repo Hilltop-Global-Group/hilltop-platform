@@ -1,8 +1,8 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { Send } from 'lucide-react';
+import { KenteDivider } from '../shared/HilltopBrand';
 
 export default function TestimonialSubmission() {
   const [formData, setFormData] = useState({
@@ -44,46 +44,29 @@ export default function TestimonialSubmission() {
   };
 
   return (
-    <section className="relative overflow-hidden py-20 bg-gray-50">
-
-      {/* Decorative: concentric arcs — top left */}
-      <motion.div className="pointer-events-none absolute -top-16 -left-16" aria-hidden initial={{ opacity: 0, scale: 0.85 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.6, ease: [0.25, 0.1, 0.25, 1] }}>
-        <svg width="360" height="360" viewBox="0 0 360 360" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="0" cy="0" r="300" stroke="#1D3160" strokeWidth="2" fill="none" opacity="0.10" />
-          <circle cx="0" cy="0" r="220" stroke="#1D3160" strokeWidth="1.5" fill="none" opacity="0.07" />
-          <circle cx="0" cy="0" r="140" stroke="#1D3160" strokeWidth="1" fill="none" opacity="0.05" />
-        </svg>
-      </motion.div>
-
-      {/* Decorative: dot grid — bottom right */}
-      <motion.div className="pointer-events-none absolute bottom-8 right-8" aria-hidden initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.4, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}>
-        <svg width="130" height="130" viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
-          {[0,1,2,3,4].map(row => [0,1,2,3,4].map(col => (
-            <circle key={`${row}-${col}`} cx={13 + col * 26} cy={13 + row * 26} r="2.5" fill="#1D3160" opacity="0.13" />
-          )))}
-        </svg>
-      </motion.div>
-
-      {/* Decorative: diagonal lines — top right */}
-      <motion.div className="pointer-events-none absolute -top-4 -right-4" aria-hidden initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.4, delay: 0.35, ease: [0.25, 0.1, 0.25, 1] }}>
-        <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <line x1="200" y1="70"  x2="130" y2="0" stroke="#1D3160" strokeWidth="1.5" opacity="0.12"/>
-          <line x1="200" y1="120" x2="80"  y2="0" stroke="#1D3160" strokeWidth="1" opacity="0.09"/>
-          <line x1="200" y1="170" x2="30"  y2="0" stroke="#1D3160" strokeWidth="1" opacity="0.06"/>
-        </svg>
-      </motion.div>
-
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-12">
-          <h2 className="font-serif font-bold text-4xl sm:text-5xl mb-6" style={{ color: '#1D3160' }}>
-            Share Your Story
+    <section className="py-24 sm:py-32 bg-white border-t border-gray-100">
+      <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="mb-4">
+          <KenteDivider count={5} color="#F4A261" />
+        </div>
+        <div className="mb-12">
+          <p className="font-sans text-xs font-semibold uppercase tracking-[0.25em] mb-5" style={{ color: '#F4A261' }}>
+            Tell Us Your Story
+          </p>
+          <h2
+            className="font-serif font-extrabold text-black leading-none mb-4"
+            style={{ fontSize: 'clamp(2rem, 4vw, 3.2rem)' }}
+          >
+            Share Your Experience
           </h2>
-          <p className="text-xl text-gray-600">
-            Been part of a Hilltop program? We'd love to hear about your experience
+          <p className="font-sans text-gray-500 text-base leading-relaxed">
+            Been part of a Hilltop program? We&apos;d love to hear about your experience.
           </p>
         </div>
 
-        <div className="bg-white p-8 md:p-12 rounded-lg shadow-md">
+        <div className="border-t border-gray-200 mb-12" />
+
+        <div>
           {submitted ? (
             <div className="text-center py-12">
               <div 
@@ -103,7 +86,7 @@ export default function TestimonialSubmission() {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-semibold mb-2" style={{ color: '#1D3160' }}>
+                  <label htmlFor="name" className="block font-sans text-xs font-semibold uppercase tracking-[0.15em] mb-2 text-gray-400" style={{ color: '#1D3160' }}>
                     Full Name *
                   </label>
                   <input
@@ -113,13 +96,13 @@ export default function TestimonialSubmission() {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-primary-navy focus:ring-2 focus:ring-primary-navy/20 outline-none transition-all"
+                    className="w-full px-0 py-3 border-0 border-b border-gray-200 focus:outline-none focus:border-black transition-colors duration-200 bg-transparent font-sans text-base"
                     placeholder="John Doe"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="role" className="block text-sm font-semibold mb-2" style={{ color: '#1D3160' }}>
+                  <label htmlFor="role" className="block font-sans text-xs font-semibold uppercase tracking-[0.15em] mb-2 text-gray-400" style={{ color: '#1D3160' }}>
                     Role *
                   </label>
                   <input
@@ -129,7 +112,7 @@ export default function TestimonialSubmission() {
                     required
                     value={formData.role}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-primary-navy focus:ring-2 focus:ring-primary-navy/20 outline-none transition-all"
+                    className="w-full px-0 py-3 border-0 border-b border-gray-200 focus:outline-none focus:border-black transition-colors duration-200 bg-transparent font-sans text-base"
                     placeholder="Student / Intern / Partner"
                   />
                 </div>
@@ -137,7 +120,7 @@ export default function TestimonialSubmission() {
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="organization" className="block text-sm font-semibold mb-2" style={{ color: '#1D3160' }}>
+                  <label htmlFor="organization" className="block font-sans text-xs font-semibold uppercase tracking-[0.15em] mb-2 text-gray-400" style={{ color: '#1D3160' }}>
                     University / Organization *
                   </label>
                   <input
@@ -147,13 +130,13 @@ export default function TestimonialSubmission() {
                     required
                     value={formData.organization}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-primary-navy focus:ring-2 focus:ring-primary-navy/20 outline-none transition-all"
+                    className="w-full px-0 py-3 border-0 border-b border-gray-200 focus:outline-none focus:border-black transition-colors duration-200 bg-transparent font-sans text-base"
                     placeholder="Howard University"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="program" className="block text-sm font-semibold mb-2" style={{ color: '#1D3160' }}>
+                  <label htmlFor="program" className="block font-sans text-xs font-semibold uppercase tracking-[0.15em] mb-2 text-gray-400" style={{ color: '#1D3160' }}>
                     Program *
                   </label>
                   <select
@@ -162,7 +145,7 @@ export default function TestimonialSubmission() {
                     required
                     value={formData.program}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-primary-navy focus:ring-2 focus:ring-primary-navy/20 outline-none transition-all"
+                    className="w-full px-0 py-3 border-0 border-b border-gray-200 focus:outline-none focus:border-black transition-colors duration-200 bg-transparent font-sans text-base"
                   >
                     <option value="">Select Program</option>
                     <option value="ghana">Ghana Internship</option>
@@ -175,7 +158,7 @@ export default function TestimonialSubmission() {
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="year" className="block text-sm font-semibold mb-2" style={{ color: '#1D3160' }}>
+                  <label htmlFor="year" className="block font-sans text-xs font-semibold uppercase tracking-[0.15em] mb-2 text-gray-400" style={{ color: '#1D3160' }}>
                     Year Participated *
                   </label>
                   <input
@@ -185,13 +168,13 @@ export default function TestimonialSubmission() {
                     required
                     value={formData.year}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-primary-navy focus:ring-2 focus:ring-primary-navy/20 outline-none transition-all"
+                    className="w-full px-0 py-3 border-0 border-b border-gray-200 focus:outline-none focus:border-black transition-colors duration-200 bg-transparent font-sans text-base"
                     placeholder="2024"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="rating" className="block text-sm font-semibold mb-2" style={{ color: '#1D3160' }}>
+                  <label htmlFor="rating" className="block font-sans text-xs font-semibold uppercase tracking-[0.15em] mb-2 text-gray-400" style={{ color: '#1D3160' }}>
                     Rating *
                   </label>
                   <select
@@ -200,7 +183,7 @@ export default function TestimonialSubmission() {
                     required
                     value={formData.rating}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-primary-navy focus:ring-2 focus:ring-primary-navy/20 outline-none transition-all"
+                    className="w-full px-0 py-3 border-0 border-b border-gray-200 focus:outline-none focus:border-black transition-colors duration-200 bg-transparent font-sans text-base"
                   >
                     <option value="5">⭐⭐⭐⭐⭐ (5 stars)</option>
                     <option value="4">⭐⭐⭐⭐ (4 stars)</option>
@@ -212,7 +195,7 @@ export default function TestimonialSubmission() {
               </div>
 
               <div>
-                <label htmlFor="testimonial" className="block text-sm font-semibold mb-2" style={{ color: '#1D3160' }}>
+                <label htmlFor="testimonial" className="block font-sans text-xs font-semibold uppercase tracking-[0.15em] mb-2 text-gray-400" style={{ color: '#1D3160' }}>
                   Your Testimonial *
                 </label>
                 <textarea
@@ -222,7 +205,7 @@ export default function TestimonialSubmission() {
                   value={formData.testimonial}
                   onChange={handleChange}
                   rows={6}
-                  className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-primary-navy focus:ring-2 focus:ring-primary-navy/20 outline-none transition-all resize-none"
+                  className="w-full px-0 py-3 border-0 border-b border-gray-200 focus:outline-none focus:border-black transition-colors duration-200 bg-transparent font-sans text-base resize-none"
                   placeholder="Share your experience with Hilltop Global Group..."
                 />
               </div>

@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Quote, MapPin } from 'lucide-react';
+import { KenteDivider } from '../shared/HilltopBrand';
 
 const featuredStories = [
   {
@@ -35,63 +36,41 @@ const featuredStories = [
 
 export default function FeaturedStories() {
   return (
-    <section className="relative overflow-hidden py-20 bg-white">
-
-      {/* Decorative: concentric arcs — top right */}
-      <motion.div className="pointer-events-none absolute -top-16 -right-16" aria-hidden initial={{ opacity: 0, scale: 0.85 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.6, ease: [0.25, 0.1, 0.25, 1] }}>
-        <svg width="380" height="380" viewBox="0 0 380 380" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="380" cy="0" r="320" stroke="#1D3160" strokeWidth="2" fill="none" opacity="0.10" />
-          <circle cx="380" cy="0" r="240" stroke="#1D3160" strokeWidth="1.5" fill="none" opacity="0.07" />
-          <circle cx="380" cy="0" r="160" stroke="#1D3160" strokeWidth="1" fill="none" opacity="0.05" />
-        </svg>
-      </motion.div>
-
-      {/* Decorative: dot grid — bottom left */}
-      <motion.div className="pointer-events-none absolute bottom-8 left-8" aria-hidden initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.4, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}>
-        <svg width="150" height="150" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-          {[0,1,2,3,4].map(row => [0,1,2,3,4].map(col => (
-            <circle key={`${row}-${col}`} cx={15 + col * 30} cy={15 + row * 30} r="3" fill="#1D3160" opacity="0.13" />
-          )))}
-        </svg>
-      </motion.div>
-
-      {/* Decorative: diagonal lines — top left */}
-      <motion.div className="pointer-events-none absolute -top-6 -left-6" aria-hidden initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.4, delay: 0.35, ease: [0.25, 0.1, 0.25, 1] }}>
-        <svg width="220" height="220" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <line x1="0" y1="75"  x2="75"  y2="0"   stroke="#1D3160" strokeWidth="1.5" opacity="0.12"/>
-          <line x1="0" y1="130" x2="130" y2="0"   stroke="#1D3160" strokeWidth="1"   opacity="0.08"/>
-          <line x1="0" y1="185" x2="185" y2="0"   stroke="#1D3160" strokeWidth="1"   opacity="0.06"/>
-        </svg>
-      </motion.div>
-
-      {/* Decorative: soft blob — center right */}
-      <div className="pointer-events-none absolute top-1/2 -right-16 -translate-y-1/2 hidden md:block" aria-hidden
-        style={{ width: 320, height: 320, borderRadius: '50%', backgroundColor: '#1D3160', opacity: 0.025, filter: 'blur(80px)' }}
-      />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="font-serif font-bold text-4xl sm:text-5xl mb-6" style={{ color: '#1D3160' }}>
+    <section className="py-24 sm:py-32 bg-white border-t border-gray-100">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="mb-4">
+          <KenteDivider count={5} color="#F4A261" />
+        </div>
+        <div className="mb-14">
+          <p className="font-sans text-xs font-semibold uppercase tracking-[0.25em] mb-5" style={{ color: '#F4A261' }}>
+            Student Stories
+          </p>
+          <h2
+            className="font-serif font-extrabold text-black leading-none"
+            style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)' }}
+          >
             Featured Stories
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Real experiences from students who transformed their careers through Hilltop programs
-          </p>
         </div>
+        <div className="border-t border-gray-200 mb-14" />
 
-        <div className="space-y-12">
+        <div className="space-y-14">
           {featuredStories.map((story, index) => (
-            <div
+            <motion.div
               key={index}
               className={`flex flex-col ${
                 index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
-              } gap-8 items-center bg-gray-50 rounded-lg overflow-hidden shadow-lg hover:shadow-lg transition-all duration-500`}
+              } gap-12 items-start`}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
             >
               {/* YouTube Video Section */}
-              <div className="lg:w-1/2 w-full p-6 lg:p-8">
+              <div className="lg:w-1/2 w-full">
                 <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
                   <iframe
-                    className="absolute top-0 left-0 w-full h-full rounded-lg shadow-lg"
+                    className="absolute top-0 left-0 w-full h-full"
                     src={story.videoUrl}
                     title={`${story.name} Testimonial Video`}
                     frameBorder="0"
@@ -109,25 +88,27 @@ export default function FeaturedStories() {
               </div>
 
               {/* Text Content Section */}
-              <div className="lg:w-1/2 p-8 lg:p-12">
-                <Quote size={48} style={{ color: '#F4A261' }} className="mb-4" />
-                
-                <blockquote className="text-2xl font-serif font-semibold mb-6" style={{ color: '#1D3160' }}>
-                  "{story.quote}"
+              <div className="lg:w-1/2">
+                <Quote size={28} style={{ color: '#F4A261' }} className="mb-5" />
+                <blockquote
+                  className="font-serif font-bold leading-snug mb-6"
+                  style={{ fontSize: 'clamp(1.2rem, 2vw, 1.5rem)', color: '#1D3160' }}
+                >
+                  &ldquo;{story.quote}&rdquo;
                 </blockquote>
-
-                <p className="text-gray-700 leading-relaxed mb-6">
+                <p className="font-sans text-gray-600 text-sm leading-relaxed mb-8">
                   {story.fullStory}
                 </p>
-
-                <div className="border-t pt-6" style={{ borderColor: '#F4A261' }}>
-                  <p className="font-serif font-bold text-xl" style={{ color: '#1D3160' }}>
+                <div className="border-t border-gray-200 pt-5">
+                  <p className="font-serif font-bold text-base" style={{ color: '#1D3160' }}>
                     {story.name}
                   </p>
-                  <p className="text-gray-600">{story.role}</p>
+                  <p className="font-sans text-gray-400 text-xs uppercase tracking-wider mt-0.5">
+                    {story.role} &middot; {story.university}
+                  </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

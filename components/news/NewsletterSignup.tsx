@@ -1,8 +1,7 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { Mail, Send } from 'lucide-react';
+import { KenteDivider } from '../shared/HilltopBrand';
 
 export default function NewsletterSignup() {
   const [email, setEmail] = useState('');
@@ -10,7 +9,6 @@ export default function NewsletterSignup() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle newsletter subscription
     console.log('Newsletter subscription:', email);
     setSubscribed(true);
     setTimeout(() => {
@@ -20,93 +18,74 @@ export default function NewsletterSignup() {
   };
 
   return (
-    <section className="relative overflow-hidden py-20 bg-gray-50">
+    <section className="py-20 sm:py-24 bg-white border-t border-gray-100">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
 
-      {/* Decorative: concentric arcs — top right */}
-      <motion.div className="pointer-events-none absolute -top-16 -right-16" aria-hidden initial={{ opacity: 0, scale: 0.85 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.6, ease: [0.25, 0.1, 0.25, 1] }}>
-        <svg width="340" height="340" viewBox="0 0 340 340" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="340" cy="0" r="280" stroke="#1D3160" strokeWidth="2" fill="none" opacity="0.11" />
-          <circle cx="340" cy="0" r="200" stroke="#1D3160" strokeWidth="1.5" fill="none" opacity="0.08" />
-          <circle cx="340" cy="0" r="120" stroke="#1D3160" strokeWidth="1" fill="none" opacity="0.05" />
-        </svg>
-      </motion.div>
-
-      {/* Decorative: dot grid — bottom left */}
-      <motion.div className="pointer-events-none absolute bottom-8 left-8" aria-hidden initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.4, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}>
-        <svg width="130" height="130" viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
-          {[0,1,2,3,4].map(row => [0,1,2,3,4].map(col => (
-            <circle key={`${row}-${col}`} cx={13 + col * 26} cy={13 + row * 26} r="2.5" fill="#1D3160" opacity="0.13" />
-          )))}
-        </svg>
-      </motion.div>
-
-      {/* Decorative: wavy top edge */}
-      <motion.div className="pointer-events-none absolute top-0 left-0 right-0" aria-hidden initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.4, ease: [0.25, 0.1, 0.25, 1] }}>
-        <svg width="100%" height="50" viewBox="0 0 1440 50" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0 28 C240 5, 480 50, 720 25 S1200 3, 1440 28" stroke="#1D3160" strokeWidth="1.5" fill="none" opacity="0.12"/>
-          <path d="M0 28 C240 5, 480 50, 720 25 S1200 3, 1440 28 L1440 0 L0 0 Z" fill="#1D3160" opacity="0.04"/>
-        </svg>
-      </motion.div>
-
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="bg-gradient-to-br from-primary-navy to-[#27427a] rounded-lg p-12 text-center shadow-lg">
-          <div 
-            className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6"
-            style={{ backgroundColor: '#F4A261' }}
-          >
-            <Mail size={40} className="text-white" />
+          {/* Left: heading */}
+          <div>
+            <div className="mb-6">
+              <KenteDivider count={5} color="#F4A261" />
+            </div>
+            <p className="font-sans text-xs font-semibold uppercase tracking-[0.25em] mb-5" style={{ color: '#F4A261' }}>
+              Stay Connected
+            </p>
+            <h2
+              className="font-serif font-extrabold text-black leading-none mb-5"
+              style={{ fontSize: 'clamp(2rem, 4vw, 3.2rem)' }}
+            >
+              Dispatches from<br className="hidden sm:block" /> the Continent
+            </h2>
+            <p className="font-sans text-gray-500 text-base leading-relaxed max-w-sm">
+              Program updates, partner spotlights, and stories from the ground.
+              Delivered to your inbox twice a month.
+            </p>
           </div>
 
-          <h2 className="font-serif font-bold text-4xl text-white mb-4">
-            Dispatches from the Continent
-          </h2>
-          
-          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Program updates, partner spotlights, and stories from the ground. Delivered to your inbox twice a month.
-          </p>
-
-          {subscribed ? (
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-8">
-              <div 
-                className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
-                style={{ backgroundColor: '#F4A261' }}
-              >
-                <Send size={32} className="text-white" />
+          {/* Right: form */}
+          <div>
+            {subscribed ? (
+              <div className="border border-gray-200 rounded-none p-8">
+                <p className="font-sans text-xs font-semibold uppercase tracking-[0.25em] mb-4" style={{ color: '#F4A261' }}>
+                  Subscribed
+                </p>
+                <p
+                  className="font-serif font-extrabold text-black leading-none"
+                  style={{ fontSize: 'clamp(1.8rem, 3vw, 2.4rem)' }}
+                >
+                  Thank you — you&apos;re in.
+                </p>
               </div>
-              <h3 className="font-serif font-bold text-2xl text-white mb-2">
-                Thank You!
-              </h3>
-              <p className="text-white/80">
-                You've been subscribed to our newsletter.
-              </p>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
-              <input
-                type="email"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter your email address"
-                className="flex-1 px-6 py-4 rounded-xl text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-4 focus:ring-white/20"
-              />
-              <button
-                type="submit"
-                className="px-8 py-4 font-serif font-bold rounded-xl text-primary-navy transition-all duration-300 hover:scale-105 shadow-lg whitespace-nowrap"
-                style={{ backgroundColor: '#F4A261' }}
-              >
-                Subscribe
-              </button>
-            </form>
-          )}
+            ) : (
+              <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+                <input
+                  type="email"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Your email address"
+                  className="w-full px-0 py-4 font-sans text-base text-gray-900 placeholder-gray-400 border-0 border-b-2 border-gray-200 focus:outline-none focus:border-black transition-colors duration-200 bg-transparent"
+                />
+                <div className="flex items-center justify-between pt-2">
+                  <p className="font-sans text-gray-400 text-xs">
+                    Unsubscribe at any time.
+                  </p>
+                  <button
+                    type="submit"
+                    className="group inline-flex items-center gap-3 font-sans font-semibold text-sm uppercase tracking-[0.15em] text-black border-b-2 border-black pb-1 hover:opacity-60 transition-opacity duration-200"
+                  >
+                    Subscribe
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="transition-transform duration-300 group-hover:translate-x-1">
+                      <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </button>
+                </div>
+              </form>
+            )}
+          </div>
 
-          <p className="text-white/60 text-sm mt-6">
-            We respect your privacy. Unsubscribe at any time.
-          </p>
         </div>
       </div>
     </section>
   );
 }
-
-

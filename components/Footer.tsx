@@ -3,174 +3,140 @@
 import Link from 'next/link';
 import { Mail, Phone, MapPin, Linkedin, Instagram, Facebook } from 'lucide-react';
 import { FaTiktok, FaXTwitter } from 'react-icons/fa6';
+import { AfricaWatermark, KenteDivider } from './shared/HilltopBrand';
+
+const socialLinks = [
+  { icon: Linkedin, href: 'https://www.linkedin.com/company/hilltopglobally', label: 'LinkedIn' },
+  { icon: Facebook, href: 'https://www.facebook.com/hilltopglobally', label: 'Facebook' },
+  { icon: Instagram, href: 'https://www.instagram.com/hilltopglobally', label: 'Instagram' },
+  { icon: FaTiktok, href: 'https://www.tiktok.com/@hilltopglobally', label: 'TikTok' },
+  { icon: FaXTwitter, href: 'https://x.com/hilltopglobally', label: 'X (Twitter)' },
+];
+
+const quickLinks = [
+  { label: 'Home', href: '/' },
+  { label: 'About', href: '/about' },
+  { label: 'Education', href: '/education' },
+  { label: 'Internships', href: '/internships' },
+  { label: 'Testimonials', href: '/testimonials' },
+  { label: 'News', href: '/news' },
+  { label: 'Contact', href: '/contact' },
+];
 
 export default function Footer() {
-  const socialLinks = [
-    { 
-      icon: Linkedin, 
-      href: 'https://www.linkedin.com/company/hilltopglobally',
-      label: 'LinkedIn'
-    },
-    { 
-      icon: Facebook, 
-      href: 'https://www.facebook.com/hilltopglobally',
-      label: 'Facebook'
-    },
-    { 
-      icon: Instagram, 
-      href: 'https://www.instagram.com/hilltopglobally',
-      label: 'Instagram'
-    },
-    { 
-      icon: FaTiktok, 
-      href: 'https://www.tiktok.com/@hilltopglobally',
-      label: 'TikTok',
-      isReactIcon: true
-    },
-    { 
-      icon: FaXTwitter, 
-      href: 'https://x.com/hilltopglobally',
-      label: 'X (Twitter)',
-      isReactIcon: true
-    },
-  ];
-
   return (
-    <footer style={{ backgroundColor: '#1D3160' }}>
-      <div className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="font-serif font-bold text-4xl text-white mb-4">
+    <footer style={{ backgroundColor: '#080f1c' }} className="relative overflow-hidden">
+      {/* Orange kente accent at top */}
+      <div className="border-t-2" style={{ borderColor: '#F4A261' }} />
+
+      {/* Africa continent watermark — right side */}
+      <div className="pointer-events-none absolute -right-16 top-0 bottom-0 flex items-center opacity-100" aria-hidden>
+        <AfricaWatermark className="w-72 h-auto" opacity={0.04} />
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+
+        {/* Top: CTA + contact */}
+        <div className="pt-16 pb-14 grid lg:grid-cols-2 gap-12 items-start">
+          <div>
+            <p className="font-sans text-xs font-semibold uppercase tracking-[0.25em] text-white/40 mb-5">
+              Get In Touch
+            </p>
+            <h2
+              className="font-serif font-extrabold text-white leading-none mb-6"
+              style={{ fontSize: 'clamp(2rem, 4vw, 3.2rem)' }}
+            >
               Start a Conversation
             </h2>
-            <p className="font-body text-white/80 text-lg">
-              Whether you are exploring a first partnership or expanding an existing program, our team in Washington, Accra, and Nairobi is ready to talk.
+            <p className="font-sans text-white/55 text-base leading-relaxed max-w-md">
+              Whether you are exploring a first partnership or expanding an existing program, our team in Washington, Accra, and Kigali is ready to talk.
             </p>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center text-white">
-            <div className="flex flex-col items-center gap-3">
-              <Phone size={24} style={{ color: '#F4A261' }} />
-              <a href="tel:+12024992284" className="hover:opacity-80 transition-opacity">
-                +1 202-499-2284
-              </a>
-            </div>
-            <div className="flex flex-col items-center gap-3">
-              <Mail size={24} style={{ color: '#F4A261' }} />
-              <a href="mailto:support@hilltopglobalgroup.com" className="hover:opacity-80 transition-opacity">
-                support@hilltopglobalgroup.com
-              </a>
-            </div>
-            <div className="flex flex-col items-center gap-3">
-              <MapPin size={24} style={{ color: '#F4A261' }} />
-              <p>700 12th Street NW, Suite 700.<br />Washington, DC 20005</p>
+            {/* Kente divider */}
+            <div className="mt-8">
+              <KenteDivider count={6} color="#F4A261" />
             </div>
           </div>
 
-          <div className="flex justify-center gap-6 mt-12">
-            {socialLinks.map((social, index) => (
-              <a
-                key={index}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
-                aria-label={social.label}
+          <div className="space-y-5">
+            <a
+              href="tel:+12024992284"
+              className="group flex items-center gap-4 text-white/60 hover:text-white transition-colors duration-200"
+            >
+              <Phone size={16} style={{ color: '#F4A261' }} className="flex-shrink-0" />
+              <span className="font-sans text-sm">+1 202-499-2284</span>
+            </a>
+            <a
+              href="mailto:support@hilltopglobalgroup.com"
+              className="group flex items-center gap-4 text-white/60 hover:text-white transition-colors duration-200"
+            >
+              <Mail size={16} style={{ color: '#F4A261' }} className="flex-shrink-0" />
+              <span className="font-sans text-sm">support@hilltopglobalgroup.com</span>
+            </a>
+            <div className="flex items-start gap-4 text-white/60">
+              <MapPin size={16} style={{ color: '#F4A261' }} className="flex-shrink-0 mt-0.5" />
+              <span className="font-sans text-sm leading-relaxed">
+                700 12th Street NW, Suite 700<br />Washington, DC 20005
+              </span>
+            </div>
+
+            {/* Social links */}
+            <div className="flex items-center gap-4 pt-4">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/40 hover:text-white transition-colors duration-200"
+                  aria-label={social.label}
+                >
+                  <social.icon size={18} />
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Divider */}
+        <div className="border-t border-white/10" />
+
+        {/* Middle: Map */}
+        <div className="py-12">
+          <div className="overflow-hidden border border-white/10">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3105.102731919874!2d-77.027459!3d38.898766!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7b795ab298343%3A0x7fca3fbfe9beb021!2sMetro%20Offices!5e0!3m2!1sen!2suk!4v1769112077900!5m2!1sen!2suk"
+              width="100%"
+              height="320"
+              style={{ border: 0, filter: 'grayscale(0.3) invert(0.1)' }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
+        </div>
+
+        {/* Divider */}
+        <div className="border-t border-white/10" />
+
+        {/* Bottom: nav + copyright */}
+        <div className="py-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+          <div className="flex flex-wrap gap-x-6 gap-y-2">
+            {quickLinks.map((link) => (
+              <Link
+                key={link.label}
+                href={link.href}
+                className="font-sans text-xs text-white/40 hover:text-white/80 transition-colors duration-200 uppercase tracking-wider"
               >
-                {social.isReactIcon ? (
-                  <social.icon size={20} className="text-white" />
-                ) : (
-                  <social.icon size={20} className="text-white" />
-                )}
-              </a>
+                {link.label}
+              </Link>
             ))}
           </div>
-
-          {/* Google Maps Embed */}
-          <div className="mt-12 max-w-5xl mx-auto">
-            <div className="rounded-lg overflow-hidden shadow-lg border-4 border-white/20">
-              <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3105.102731919874!2d-77.027459!3d38.898766!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7b795ab298343%3A0x7fca3fbfe9beb021!2sMetro%20Offices!5e0!3m2!1sen!2suk!4v1769112077900!5m2!1sen!2suk" 
-                width="100%" 
-                height="450" 
-                style={{ border: 0 }} 
-                allowFullScreen 
-                loading="lazy" 
-                referrerPolicy="no-referrer-when-downgrade"
-                className="w-full"
-              />
-            </div>
-          </div>
-
-          {/* Navigation Links */}
-          <div className="mt-16 pt-12 border-t border-white/20">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
-              <div>
-                <h4 className="font-serif font-bold text-lg mb-4 text-white">
-                  Quick Links
-                </h4>
-                <ul className="space-y-2">
-                  {['Home', 'About', 'Education', 'Internships'].map((link) => (
-                    <li key={link}>
-                      <Link href={link === 'Home' ? '/' : `/${link.toLowerCase()}`} className="text-white/70 hover:text-white transition-colors">
-                        {link}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              
-              <div>
-                <h4 className="font-serif font-bold text-lg mb-4 text-white">
-                  Resources
-                </h4>
-                <ul className="space-y-2">
-                  {['Testimonials', 'News', 'Contact'].map((link) => (
-                    <li key={link}>
-                      <Link href={`/${link.toLowerCase()}`} className="text-white/70 hover:text-white transition-colors">
-                        {link}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="col-span-2">
-                <h4 className="font-serif font-bold text-lg mb-4 text-white">
-                  Stay Connected
-                </h4>
-                <p className="text-white/70 text-sm mb-4">
-                  Subscribe to our newsletter for updates on programs and opportunities.
-                </p>
-                <form className="flex gap-2">
-                  <input
-                    type="email"
-                    placeholder="Your email"
-                    className="flex-1 px-4 py-2 rounded bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-white/40"
-                  />
-                  <button
-                    type="submit"
-                    className="px-6 py-2 rounded font-serif font-bold text-sm hover:bg-opacity-90 transition-all"
-                    style={{ backgroundColor: '#F4A261', color: '#1D3160' }}
-                  >
-                    Subscribe
-                  </button>
-                </form>
-              </div>
-            </div>
-          </div>
-
-          {/* Copyright */}
-          <div className="mt-8 pt-8 border-t border-white/20 text-center">
-            <p className="text-white/60 text-sm">
-              © {new Date().getFullYear()} Hilltop Global Group. All rights reserved.
-            </p>
-          </div>
+          <p className="font-sans text-xs text-white/30 flex-shrink-0">
+            © {new Date().getFullYear()} Hilltop Global Group
+          </p>
         </div>
       </div>
     </footer>
   );
 }
-
-
-

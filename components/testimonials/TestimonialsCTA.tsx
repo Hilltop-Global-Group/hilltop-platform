@@ -1,86 +1,88 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { ArrowRight, Mail } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { AfricaWatermark, KenteDivider } from '../shared/HilltopBrand';
 
 export default function TestimonialsCTA() {
   return (
-    <section className="relative py-24 overflow-hidden" style={{ backgroundColor: '#1D3160' }}>
-      <div className="absolute inset-0">
-        <div 
-          className="absolute inset-0 bg-cover bg-center opacity-10"
-          style={{ 
-            backgroundImage: `url('http://hilltopglobalgroup.com/wp-content/uploads/2023/09/Copy-of-20230518_122404-scaled-e1695315573707.jpg')` 
-          }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-navy via-[#27427a] to-primary-navy opacity-90" />
+    <section className="relative py-24 sm:py-32 overflow-hidden" style={{ backgroundColor: '#080f1c' }}>
+      {/* Orange kente top accent */}
+      <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ backgroundColor: '#F4A261' }} />
+
+      {/* Africa continent watermark — right side */}
+      <div className="pointer-events-none absolute right-0 top-0 bottom-0 flex items-center pr-4 md:pr-8" aria-hidden>
+        <AfricaWatermark className="w-72 md:w-96 h-auto" opacity={0.06} />
       </div>
 
-      {/* Decorative: white concentric rings — top left */}
-      <motion.div className="pointer-events-none absolute -top-24 -left-24 z-[1]" aria-hidden initial={{ opacity: 0, scale: 0.85 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.8, ease: [0.25, 0.1, 0.25, 1] }}>
-        <svg width="460" height="460" viewBox="0 0 460 460" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="0" cy="0" r="400" stroke="#FFFFFF" strokeWidth="1.5" fill="none" opacity="0.12" />
-          <circle cx="0" cy="0" r="310" stroke="#FFFFFF" strokeWidth="1" fill="none" opacity="0.08" />
-          <circle cx="0" cy="0" r="220" stroke="#FFFFFF" strokeWidth="1" fill="none" opacity="0.06" />
-        </svg>
-      </motion.div>
+      <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="max-w-3xl">
+          <div className="mb-8">
+            <KenteDivider count={6} color="#F4A261" />
+          </div>
 
-      {/* Decorative: white dot grid — bottom right */}
-      <motion.div className="pointer-events-none absolute bottom-10 right-10 z-[1]" aria-hidden initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.4, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}>
-        <svg width="130" height="130" viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
-          {[0,1,2,3,4].map(row => [0,1,2,3,4].map(col => (
-            <circle key={`${row}-${col}`} cx={13 + col * 26} cy={13 + row * 26} r="2.5" fill="#FFFFFF" opacity="0.15" />
-          )))}
-        </svg>
-      </motion.div>
-
-      {/* Decorative: white diagonal lines — top right */}
-      <motion.div className="pointer-events-none absolute -top-6 -right-6 z-[1]" aria-hidden initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.4, delay: 0.35, ease: [0.25, 0.1, 0.25, 1] }}>
-        <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <line x1="200" y1="70"  x2="130" y2="0" stroke="#FFFFFF" strokeWidth="1.5" opacity="0.14"/>
-          <line x1="200" y1="125" x2="75"  y2="0" stroke="#FFFFFF" strokeWidth="1" opacity="0.10"/>
-          <line x1="200" y1="180" x2="20"  y2="0" stroke="#FFFFFF" strokeWidth="1" opacity="0.07"/>
-        </svg>
-      </motion.div>
-      
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-        <h2 className="font-serif font-bold text-4xl sm:text-5xl lg:text-6xl text-white mb-6">
-          Ready to Write Your Own Success Story?
-        </h2>
-        
-        <p className="text-xl sm:text-2xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed">
-          Join hundreds of students who have transformed their careers through Hilltop's programs in Ghana and Rwanda
-        </p>
-
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-          <Link
-            href="/internships"
-            className="group inline-flex items-center justify-center gap-3 px-10 py-5 font-serif font-bold text-lg tracking-wide text-primary-navy bg-white border-2 border-white rounded-full shadow-md transition-all duration-300 hover:bg-primary-navy hover:text-white hover:scale-105"
+          <motion.p
+            className="font-sans text-xs font-semibold uppercase tracking-[0.25em] mb-6"
+            style={{ color: '#F4A261' }}
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
           >
-            View Programs
-            <ArrowRight size={22} className="transition-transform duration-300 group-hover:translate-x-1" />
-          </Link>
-          
-          <a
-            href="mailto:support@hilltopglobalgroup.com"
-            className="group inline-flex items-center justify-center gap-3 px-10 py-5 font-serif font-bold text-lg tracking-wide text-white bg-white/10 border-2 border-white rounded-full backdrop-blur-sm transition-all duration-300 hover:bg-white/20 hover:scale-105"
-          >
-            <Mail size={22} />
-            Contact Us
-          </a>
-        </div>
+            Your Turn
+          </motion.p>
 
-        <div className="pt-12 border-t border-white/20">
-          <p className="text-white/70 text-sm mb-4">
-            Questions about our programs?
-          </p>
-          <p className="text-white font-semibold">
-            Email: support@hilltopglobalgroup.com | Phone: +1 202-499-2284
-          </p>
+          <motion.h2
+            className="font-serif font-extrabold text-white leading-none mb-8"
+            style={{ fontSize: 'clamp(2.4rem, 5vw, 4.5rem)' }}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.65, delay: 0.1 }}
+          >
+            Write Your Own<br className="hidden sm:block" /> Success Story
+          </motion.h2>
+
+          <motion.p
+            className="font-sans text-white/60 text-base sm:text-lg leading-relaxed mb-12 max-w-xl"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.55, delay: 0.2 }}
+          >
+            Join hundreds of students who have transformed their careers through
+            Hilltop&apos;s programs in Ghana and Rwanda.
+          </motion.p>
+
+          <motion.div
+            className="flex flex-wrap gap-8"
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
+            <Link
+              href="/internships"
+              className="group inline-flex items-center gap-3 font-sans font-semibold text-sm uppercase tracking-[0.15em] text-white border-b border-white/40 pb-1 hover:border-white transition-colors duration-200"
+            >
+              View Programs
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="transition-transform duration-300 group-hover:translate-x-1">
+                <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </Link>
+            <Link
+              href="/contact"
+              className="group inline-flex items-center gap-3 font-sans font-semibold text-sm uppercase tracking-[0.15em] pb-1 hover:opacity-70 transition-opacity duration-200"
+              style={{ color: '#F4A261', borderBottom: '1px solid #F4A26160' }}
+            >
+              Contact Us
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="transition-transform duration-300 group-hover:translate-x-1">
+                <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </Link>
+          </motion.div>
         </div>
       </div>
     </section>
   );
 }
-

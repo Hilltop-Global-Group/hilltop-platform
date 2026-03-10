@@ -1,9 +1,9 @@
 'use client';
 
-import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import FadeIn from '../FadeIn';
+import { KenteDivider } from '../shared/HilltopBrand';
 
 const pillars = [
   {
@@ -11,93 +11,71 @@ const pillars = [
     title: 'Real Work Experience',
     description: 'Students are embedded in African businesses, NGOs, and startups, contributing to live projects from day one.',
     image: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/Copy-of-20230521_172314-scaled-e1759312776245.jpg',
-    accent: '#F4A261',
   },
   {
     number: '02',
     title: 'Professional Network',
     description: 'Direct exposure to local founders, executives, and industry professionals builds a lasting global network.',
     image: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/2.jpg',
-    accent: '#1D3160',
   },
   {
     number: '03',
     title: 'Cross-Cultural Fluency',
     description: 'Immersion in African work culture sharpens communication, adaptability, and global business instincts.',
     image: 'http://hilltopglobalgroup.com/wp-content/uploads/2025/09/performance-e1759310784853.jpg',
-    accent: '#F4A261',
   },
 ];
 
 export default function AfricanResidency() {
   return (
     <section className="relative overflow-hidden py-20 bg-gray-50">
-
-      {/* Decorative: concentric arcs — top right */}
-      <motion.div aria-hidden className="pointer-events-none absolute -top-16 -right-16" initial={{ opacity: 0, scale: 0.85 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.6, ease: [0.25, 0.1, 0.25, 1] }}>
-        <svg width="380" height="380" viewBox="0 0 380 380" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="380" cy="0" r="320" stroke="#1D3160" strokeWidth="2" fill="none" opacity="0.07" />
-          <circle cx="380" cy="0" r="240" stroke="#1D3160" strokeWidth="1.5" fill="none" opacity="0.05" />
-          <circle cx="380" cy="0" r="160" stroke="#1D3160" strokeWidth="1" fill="none" opacity="0.04" />
-        </svg>
-      </motion.div>
-
-      {/* Decorative: dot grid — bottom left */}
-      <motion.div aria-hidden className="pointer-events-none absolute bottom-8 left-8" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.4, delay: 0.25, ease: [0.25, 0.1, 0.25, 1] }}>
-        <svg width="140" height="140" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-          {[0,1,2,3,4].map(row => [0,1,2,3,4].map(col => (
-            <circle key={`${row}-${col}`} cx={14 + col * 28} cy={14 + row * 28} r="3" fill="#1D3160" opacity="0.1" />
-          )))}
-        </svg>
-      </motion.div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
 
         {/* Header */}
         <FadeIn>
-          <div className="text-center mb-16">
-            <h2 className="font-serif font-bold text-4xl sm:text-5xl mb-4" style={{ color: '#1D3160' }}>
+          <div className="mb-4">
+            <p className="font-sans text-xs font-semibold uppercase tracking-[0.25em] mb-4" style={{ color: '#F4A261' }}>
+              The Program
+            </p>
+            <h2 className="font-serif font-extrabold leading-none mb-6" style={{ fontSize: 'clamp(2.2rem, 5vw, 3.8rem)', color: '#080f1c' }}>
               Internship Programs in Africa
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <KenteDivider className="mb-6" />
+            <p className="text-gray-600 max-w-2xl text-base leading-relaxed">
               Hands-on placements in Ghana and Rwanda that give students real professional experience in Africa's most dynamic industries.
             </p>
           </div>
         </FadeIn>
 
         {/* Three pillars */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-3 gap-px bg-gray-200 border border-gray-200 mt-14 mb-14">
           {pillars.map((pillar, index) => (
-            <FadeIn key={index} delay={0.1 * index}>
-              <div className="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 h-full flex flex-col">
-
+            <FadeIn key={index} delay={0.08 * index}>
+              <div className="bg-white group overflow-hidden flex flex-col h-full">
                 {/* Photo */}
-                <div className="relative h-44 overflow-hidden flex-shrink-0">
+                <div className="relative h-52 overflow-hidden flex-shrink-0">
                   <motion.div
                     className="absolute inset-0 bg-cover bg-center"
                     style={{ backgroundImage: `url('${pillar.image}')` }}
-                    whileHover={{ scale: 1.06 }}
+                    whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.6 }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-                  <span
-                    className="absolute top-4 right-4 font-serif font-bold text-3xl text-white/60 select-none"
-                  >
+                  <span className="absolute top-4 right-4 font-serif font-bold text-3xl text-white/50 select-none">
                     {pillar.number}
                   </span>
                 </div>
 
                 {/* Text */}
-                <div className="p-7 flex-1 flex flex-col">
-                  <h3 className="font-serif font-bold text-xl mb-3" style={{ color: '#1D3160' }}>
+                <div className="p-8 flex-1 flex flex-col">
+                  <div className="w-8 h-[3px] mb-5" style={{ backgroundColor: '#F4A261' }} />
+                  <h3 className="font-serif font-bold text-xl mb-3" style={{ color: '#080f1c' }}>
                     {pillar.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed flex-1">
+                  <p className="text-gray-600 leading-relaxed flex-1 text-sm">
                     {pillar.description}
                   </p>
-                  <div className="mt-5 h-1 rounded-full w-10" style={{ backgroundColor: pillar.accent }} />
                 </div>
-
               </div>
             </FadeIn>
           ))}
@@ -105,19 +83,19 @@ export default function AfricanResidency() {
 
         {/* Parallax Banner */}
         <FadeIn delay={0.3}>
-          <div className="relative h-72 rounded-2xl overflow-hidden shadow-lg">
+          <div className="relative h-72 overflow-hidden">
             <div
               className="absolute inset-0 bg-cover bg-center bg-fixed"
               style={{
                 backgroundImage: `url('http://hilltopglobalgroup.com/wp-content/uploads/2023/09/Copy-of-20230518_122404-scaled-e1695315573707.jpg')`
               }}
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/55 to-black/40 flex items-center justify-center">
-              <div className="text-center text-white px-6">
-                <h3 className="font-serif font-bold text-3xl sm:text-4xl mb-3">
+            <div className="absolute inset-0 bg-gradient-to-r from-[#080f1c]/80 via-[#080f1c]/60 to-[#080f1c]/40 flex items-center px-10 md:px-16">
+              <div className="text-white max-w-xl">
+                <h3 className="font-serif font-extrabold mb-3" style={{ fontSize: 'clamp(1.5rem, 3.5vw, 2.4rem)' }}>
                   Launch Your Career on the Global Stage
                 </h3>
-                <p className="text-lg text-white/90 max-w-xl mx-auto">
+                <p className="text-white/80 text-sm leading-relaxed">
                   Return with experience that sets you apart.
                 </p>
               </div>
@@ -126,27 +104,20 @@ export default function AfricanResidency() {
         </FadeIn>
 
         <FadeIn delay={0.4}>
-          <div className="text-center mt-10">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-block"
+          <div className="mt-10">
+            <Link
+              href="/internships"
+              className="group inline-flex items-center gap-3 font-sans font-semibold text-sm uppercase tracking-[0.15em] border-b pb-1 transition-colors duration-200"
+              style={{ color: '#080f1c', borderColor: '#080f1c' }}
             >
-              <Link
-                href="/internships"
-                className="inline-flex items-center gap-3 px-10 py-5 font-serif font-bold text-lg tracking-wide rounded-xl shadow-lg transition-all duration-300"
-                style={{
-                  color: '#000000',
-                  backgroundColor: '#F4A261',
-                  border: '4px solid #F4A261',
-                }}
-              >
-                View Internship Programs
-                <ArrowRight size={24} />
-              </Link>
-            </motion.div>
+              View Internship Programs
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="transition-transform duration-300 group-hover:translate-x-1">
+                <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </Link>
           </div>
         </FadeIn>
+
       </div>
     </section>
   );

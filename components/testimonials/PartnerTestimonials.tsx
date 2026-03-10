@@ -1,4 +1,5 @@
 import { Quote, Building2 } from 'lucide-react';
+import { KenteDivider } from '../shared/HilltopBrand';
 
 const partnerTestimonials = [
   {
@@ -29,77 +30,51 @@ const partnerTestimonials = [
 
 export default function PartnerTestimonials() {
   return (
-    <section className="relative overflow-hidden py-20 bg-white">
-
-      {/* Decorative: concentric arcs — bottom right */}
-      <div className="pointer-events-none absolute -bottom-20 -right-20" aria-hidden>
-        <svg width="420" height="420" viewBox="0 0 420 420" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="420" cy="420" r="360" stroke="#1D3160" strokeWidth="2" fill="none" opacity="0.06" />
-          <circle cx="420" cy="420" r="280" stroke="#1D3160" strokeWidth="1.5" fill="none" opacity="0.04" />
-          <circle cx="420" cy="420" r="200" stroke="#1D3160" strokeWidth="1" fill="none" opacity="0.03" />
-        </svg>
-      </div>
-
-      {/* Decorative: dot grid — top left */}
-      <div className="pointer-events-none absolute top-10 left-10" aria-hidden>
-        <svg width="130" height="130" viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
-          {[0,1,2,3,4].map(row => [0,1,2,3,4].map(col => (
-            <circle key={`${row}-${col}`} cx={13 + col * 26} cy={13 + row * 26} r="2.5" fill="#1D3160" opacity="0.08" />
-          )))}
-        </svg>
-      </div>
-
-      {/* Decorative: diagonal lines — top right */}
-      <div className="pointer-events-none absolute -top-4 -right-4" aria-hidden>
-        <svg width="220" height="220" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <line x1="220" y1="75"  x2="145" y2="0" stroke="#1D3160" strokeWidth="1.5" opacity="0.07"/>
-          <line x1="220" y1="130" x2="90"  y2="0" stroke="#1D3160" strokeWidth="1" opacity="0.05"/>
-          <line x1="220" y1="185" x2="35"  y2="0" stroke="#1D3160" strokeWidth="1" opacity="0.04"/>
-        </svg>
-      </div>
-
-      {/* Decorative: soft blob — center left */}
-      <div className="pointer-events-none absolute top-1/3 -left-10 hidden md:block" aria-hidden
-        style={{ width: 300, height: 300, borderRadius: '50%', backgroundColor: '#1D3160', opacity: 0.025, filter: 'blur(80px)' }}
-      />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="font-serif font-bold text-4xl sm:text-5xl mb-6" style={{ color: '#1D3160' }}>
-            Partner & University Feedback
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Trusted by leading organizations and universities worldwide
+    <section className="py-24 sm:py-32 bg-gray-50 border-t border-gray-100">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="mb-4">
+          <KenteDivider count={5} color="#F4A261" />
+        </div>
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
+          <div>
+            <p className="font-sans text-xs font-semibold uppercase tracking-[0.25em] mb-5" style={{ color: '#F4A261' }}>
+              Partners & Universities
+            </p>
+            <h2
+              className="font-serif font-extrabold text-black leading-none"
+              style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)' }}
+            >
+              What Our Partners Say
+            </h2>
+          </div>
+          <p className="font-sans text-gray-500 text-base max-w-xs leading-relaxed">
+            Trusted by leading organizations and universities worldwide.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="border-t border-gray-200 mb-12" />
+
+        <div className="grid md:grid-cols-2 gap-6">
           {partnerTestimonials.map((testimonial, index) => (
-            <div
-              key={index}
-              className="bg-gray-50 p-8 rounded-lg shadow-lg hover:shadow-md transition-all duration-500"
-            >
-              <div className="flex items-start gap-4 mb-6">
-                <div 
-                  className="w-16 h-16 rounded-lg flex items-center justify-center"
-                  style={{ backgroundColor: index % 2 === 0 ? '#1D3160' : '#F4A261' }}
+            <div key={index} className="bg-white border border-gray-100 p-8">
+              <Quote size={24} style={{ color: '#F4A261' }} className="mb-5" />
+              <p className="font-sans text-gray-700 text-base leading-relaxed mb-6">
+                &ldquo;{testimonial.quote}&rdquo;
+              </p>
+              <div className="border-t border-gray-100 pt-5 flex items-center gap-4">
+                <div
+                  className="w-10 h-10 flex items-center justify-center flex-shrink-0"
+                  style={{ backgroundColor: index % 2 === 0 ? '#1D316015' : '#F4A26115' }}
                 >
-                  <Building2 size={32} className="text-white" strokeWidth={2} />
+                  <Building2 size={18} strokeWidth={2} style={{ color: index % 2 === 0 ? '#1D3160' : '#F4A261' }} />
                 </div>
-                <div className="flex-1">
-                  <p className="font-serif font-bold text-lg" style={{ color: '#1D3160' }}>
+                <div>
+                  <p className="font-serif font-bold text-base" style={{ color: '#1D3160' }}>
                     {testimonial.name}
                   </p>
-                  <p className="text-gray-600 text-sm">{testimonial.role}</p>
-                  <p className="text-gray-500 text-sm">{testimonial.company}</p>
+                  <p className="font-sans text-gray-400 text-xs">{testimonial.role} &middot; {testimonial.company}</p>
                 </div>
               </div>
-
-              <Quote size={32} style={{ color: '#F4A261' }} className="mb-4" />
-              
-              <p className="text-gray-700 text-lg leading-relaxed italic">
-                "{testimonial.quote}"
-              </p>
             </div>
           ))}
         </div>

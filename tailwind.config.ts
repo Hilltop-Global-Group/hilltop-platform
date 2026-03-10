@@ -19,10 +19,11 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ["var(--font-open-sans)", "sans-serif"],
-        serif: ["var(--font-merriweather)", "serif"],
-        heading: ["var(--font-merriweather)", "serif"],
-        body: ["var(--font-open-sans)", "sans-serif"],
+        sans:    ["var(--font-inter)", "sans-serif"],
+        serif:   ["var(--font-barlow-condensed)", "sans-serif"],
+        heading: ["var(--font-barlow-condensed)", "sans-serif"],
+        display: ["var(--font-barlow-condensed)", "sans-serif"],
+        body:    ["var(--font-inter)", "sans-serif"],
       },
     },
   },
@@ -30,6 +31,3 @@ const config: Config = {
 };
 
 export default config;
-
-
-

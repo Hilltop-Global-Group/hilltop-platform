@@ -1,96 +1,69 @@
 'use client';
 
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
-import FadeIn from '../FadeIn';
+import { AfricaWatermark } from '../shared/HilltopBrand';
 
 export default function InternshipHero() {
   return (
-    <section className="relative min-h-[60vh] flex items-center overflow-hidden" style={{ backgroundColor: '#1D3160' }}>
-      {/* Background Image */}
+    <section className="relative pt-32 pb-20 overflow-hidden" style={{ backgroundColor: '#080f1c' }}>
+      {/* Background photo */}
       <div className="absolute inset-0">
-        <div 
-          className="absolute inset-0 bg-cover bg-center object-cover opacity-50"
-          style={{ 
-            backgroundImage: `url('http://hilltopglobalgroup.com/wp-content/uploads/2023/09/6.jpg')` 
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-45"
+          style={{
+            backgroundImage: `url('http://hilltopglobalgroup.com/wp-content/uploads/2023/09/6.jpg')`,
           }}
         />
-        {/* Gradient Overlay for better text legibility */}
-        <div className="absolute inset-0 bg-gradient-to-b from-blue-900/80 via-blue-900/60 to-blue-900/80" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#080f1c]/80 via-[#080f1c]/50 to-[#080f1c]/70" />
       </div>
 
-      {/* Decorative: white concentric rings — bottom right */}
-      <motion.div aria-hidden className="pointer-events-none absolute -bottom-20 -right-20 z-[1]" initial={{ opacity: 0, scale: 0.85 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.8, ease: [0.25, 0.1, 0.25, 1] }}>
-        <svg width="440" height="440" viewBox="0 0 440 440" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="440" cy="440" r="380" stroke="#FFFFFF" strokeWidth="1.5" fill="none" opacity="0.05" />
-          <circle cx="440" cy="440" r="290" stroke="#FFFFFF" strokeWidth="1" fill="none" opacity="0.04" />
-          <circle cx="440" cy="440" r="200" stroke="#FFFFFF" strokeWidth="1" fill="none" opacity="0.03" />
-        </svg>
-      </motion.div>
+      {/* Africa continent watermark */}
+      <div className="pointer-events-none absolute right-0 top-0 bottom-0 flex items-center pr-4 md:pr-12" aria-hidden>
+        <AfricaWatermark className="w-64 md:w-80 h-auto" opacity={0.07} />
+      </div>
 
-      {/* Decorative: white dot grid — top left */}
-      <motion.div aria-hidden className="pointer-events-none absolute top-14 left-10 z-[1]" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.4, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}>
-        <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-          {[0,1,2,3,4].map(row => [0,1,2,3,4].map(col => (
-            <circle key={`${row}-${col}`} cx={12 + col * 24} cy={12 + row * 24} r="2.5" fill="#FFFFFF" opacity="0.08" />
-          )))}
-        </svg>
-      </motion.div>
+      {/* Orange kente accent bar */}
+      <div
+        className="absolute top-0 left-0 right-0 h-[3px]"
+        style={{ backgroundColor: '#F4A261' }}
+      />
 
-      {/* Decorative: white cross — top right */}
-      <motion.div aria-hidden className="pointer-events-none absolute top-16 right-16 z-[1]" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.2, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}>
-        <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <line x1="25" y1="0" x2="25" y2="50" stroke="#FFFFFF" strokeWidth="1" opacity="0.18"/>
-          <line x1="0" y1="25" x2="50" y2="25" stroke="#FFFFFF" strokeWidth="1" opacity="0.18"/>
-          <circle cx="25" cy="25" r="4" fill="#FFFFFF" opacity="0.12"/>
-        </svg>
-      </motion.div>
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+        <motion.p
+          className="font-sans text-xs font-semibold uppercase tracking-[0.25em] mb-5"
+          style={{ color: '#F4A261' }}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          Professional Development Programs
+        </motion.p>
+        <motion.h1
+          className="font-serif font-extrabold text-white leading-none mb-10"
+          style={{ fontSize: 'clamp(3rem, 7vw, 6rem)' }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+        >
+          Internships in Africa
+        </motion.h1>
 
-      {/* Decorative: white diagonal lines — bottom left */}
-      <motion.div aria-hidden className="pointer-events-none absolute -bottom-4 -left-4 z-[1]" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.4, delay: 0.5, ease: [0.25, 0.1, 0.25, 1] }}>
-        <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <line x1="0" y1="60"  x2="60"  y2="0"   stroke="#FFFFFF" strokeWidth="1.5" opacity="0.07" />
-          <line x1="0" y1="110" x2="110" y2="0"   stroke="#FFFFFF" strokeWidth="1" opacity="0.05" />
-          <line x1="0" y1="160" x2="160" y2="0"   stroke="#FFFFFF" strokeWidth="1" opacity="0.04" />
-        </svg>
-      </motion.div>
-      
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-24">
-        <FadeIn>
-          <div className="text-center">
-            {/* Pill Badge */}
-            <div className="mb-6">
-              <span className="inline-flex items-center gap-2 px-4 py-2 text-xs font-bold uppercase tracking-wider text-white bg-white/10 border border-white/20 rounded-full backdrop-blur-md">
-                Professional Development Programs
-              </span>
-            </div>
-            
-            {/* Main Title */}
-            <h1 className="font-serif font-bold text-5xl md:text-6xl text-white mb-6">
-              Internships in Africa
-            </h1>
-            
-            {/* Subtitle */}
-            <p className="text-lg sm:text-xl text-white/90 max-w-2xl mx-auto mb-8 leading-relaxed">
-              Professional placements in Ghana and Rwanda. Work on real projects with startups, NGOs, and enterprises across the continent's fastest-growing sectors.
-            </p>
-
-            {/* CTA Button */}
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Link
-                href="#internship-programs"
-                className="inline-flex items-center gap-3 px-10 py-5 rounded-xl font-serif font-bold text-lg tracking-wide bg-white text-blue-900 hover:bg-blue-50 transition-all duration-300 shadow-lg"
-              >
-                View Open Internships
-                <ArrowRight size={22} />
-              </Link>
-            </motion.div>
-          </div>
-        </FadeIn>
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
+          <Link
+            href="#internship-programs"
+            className="group inline-flex items-center gap-3 font-sans font-semibold text-sm uppercase tracking-[0.15em] text-white border-b border-white/40 pb-1 hover:border-white transition-colors duration-200"
+          >
+            View Open Internships
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="transition-transform duration-300 group-hover:translate-x-1">
+              <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </Link>
+        </motion.div>
       </div>
     </section>
   );

@@ -1,20 +1,20 @@
 import type { Metadata } from "next";
-import { Merriweather, Open_Sans } from "next/font/google";
+import { Barlow_Condensed, Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
-const merriweather = Merriweather({
-  variable: "--font-merriweather",
+const barlowCondensed = Barlow_Condensed({
+  variable: "--font-barlow-condensed",
   subsets: ["latin"],
-  weight: ["300", "400", "700", "900"],
+  weight: ["400", "500", "600", "700", "800"],
   display: "swap",
 });
 
-const openSans = Open_Sans({
-  variable: "--font-open-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   display: "swap",
@@ -75,7 +75,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${merriweather.variable} ${openSans.variable} font-sans antialiased`}
+        className={`${barlowCondensed.variable} ${inter.variable} font-sans antialiased`}
       >
         <Navbar />
         {children}

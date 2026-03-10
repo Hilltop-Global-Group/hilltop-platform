@@ -2,9 +2,10 @@
 
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { Calendar, User, ArrowRight, Clock } from 'lucide-react';
+import { Calendar, User, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { KenteDivider } from '../shared/HilltopBrand';
 
 interface WordPressPost {
   id: number;
@@ -61,56 +62,37 @@ export default function NewsGrid({ posts, categories }: NewsGridProps) {
   };
 
   return (
-    <section className="relative overflow-hidden py-20 bg-white">
+    <section className="py-24 sm:py-32 bg-white border-t border-gray-100">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 
-      {/* Decorative: concentric arcs — top left */}
-      <motion.div className="pointer-events-none absolute -top-16 -left-16" aria-hidden initial={{ opacity: 0, scale: 0.85 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.6, ease: [0.25, 0.1, 0.25, 1] }}>
-        <svg width="360" height="360" viewBox="0 0 360 360" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="0" cy="0" r="300" stroke="#1D3160" strokeWidth="2" fill="none" opacity="0.10" />
-          <circle cx="0" cy="0" r="220" stroke="#1D3160" strokeWidth="1.5" fill="none" opacity="0.07" />
-          <circle cx="0" cy="0" r="140" stroke="#1D3160" strokeWidth="1" fill="none" opacity="0.05" />
-        </svg>
-      </motion.div>
+        {/* Header */}
+        <div className="mb-4">
+          <KenteDivider count={5} color="#F4A261" />
+        </div>
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
+          <div>
+            <p className="font-sans text-xs font-semibold uppercase tracking-[0.25em] mb-5" style={{ color: '#F4A261' }}>
+              From the Field
+            </p>
+            <h2
+              className="font-serif font-extrabold text-black leading-none"
+              style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)' }}
+            >
+              Latest News
+            </h2>
+          </div>
 
-      {/* Decorative: dot grid — bottom right */}
-      <motion.div className="pointer-events-none absolute bottom-10 right-10" aria-hidden initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.4, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}>
-        <svg width="150" height="150" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-          {[0,1,2,3,4].map(row => [0,1,2,3,4].map(col => (
-            <circle key={`${row}-${col}`} cx={15 + col * 30} cy={15 + row * 30} r="3" fill="#1D3160" opacity="0.13" />
-          )))}
-        </svg>
-      </motion.div>
-
-      {/* Decorative: diagonal lines — top right */}
-      <motion.div className="pointer-events-none absolute -top-4 -right-4" aria-hidden initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.4, delay: 0.35, ease: [0.25, 0.1, 0.25, 1] }}>
-        <svg width="220" height="220" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <line x1="220" y1="75"  x2="145" y2="0" stroke="#1D3160" strokeWidth="1.5" opacity="0.12"/>
-          <line x1="220" y1="130" x2="90"  y2="0" stroke="#1D3160" strokeWidth="1" opacity="0.09"/>
-          <line x1="220" y1="185" x2="35"  y2="0" stroke="#1D3160" strokeWidth="1" opacity="0.06"/>
-        </svg>
-      </motion.div>
-
-      {/* Decorative: soft blob — bottom left */}
-      <div className="pointer-events-none absolute -bottom-10 left-1/4" aria-hidden
-        style={{ width: 380, height: 200, borderRadius: '50%', backgroundColor: '#1D3160', opacity: 0.025, filter: 'blur(70px)' }}
-      />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Category Filter */}
-        <div className="mb-12 pb-12 border-b border-gray-200">
-          <div className="flex flex-wrap gap-3 justify-center">
+          {/* Category Filter — minimal text tabs */}
+          <div className="flex flex-wrap gap-x-6 gap-y-2">
             <button
               onClick={() => setActiveCategory(null)}
-              className={`px-6 py-3 font-serif font-semibold text-sm rounded-full transition-all duration-300 ${
-                activeCategory === null
-                  ? 'text-white shadow-lg'
-                  : 'text-gray-700 bg-gray-100 hover:bg-gray-200'
-              }`}
+              className="font-sans text-sm font-medium pb-1 transition-colors duration-200"
               style={{
-                backgroundColor: activeCategory === null ? '#1D3160' : undefined,
+                color: activeCategory === null ? '#1D3160' : '#9CA3AF',
+                borderBottom: activeCategory === null ? '2px solid #F4A261' : '2px solid transparent',
               }}
             >
-              All Posts
+              All
             </button>
             {categories
               .filter(cat => cat.count > 0 && cat.name !== 'Uncategorized')
@@ -118,100 +100,98 @@ export default function NewsGrid({ posts, categories }: NewsGridProps) {
                 <button
                   key={category.id}
                   onClick={() => setActiveCategory(category.id)}
-                  className={`px-6 py-3 font-serif font-semibold text-sm rounded-full transition-all duration-300 ${
-                    activeCategory === category.id
-                      ? 'text-white shadow-lg'
-                      : 'text-gray-700 bg-gray-100 hover:bg-gray-200'
-                  }`}
+                  className="font-sans text-sm font-medium pb-1 transition-colors duration-200"
                   style={{
-                    backgroundColor: activeCategory === category.id ? '#1D3160' : undefined,
+                    color: activeCategory === category.id ? '#1D3160' : '#9CA3AF',
+                    borderBottom: activeCategory === category.id ? '2px solid #F4A261' : '2px solid transparent',
                   }}
                 >
-                  {category.name} ({category.count})
+                  {category.name}
                 </button>
               ))}
           </div>
         </div>
 
+        <div className="border-t border-gray-200 mb-12" />
+
         {/* Posts Grid */}
         {filteredPosts.length === 0 ? (
-          <div className="text-center py-20">
-            <p className="text-xl text-gray-500">No posts found. Check back soon!</p>
+          <div className="py-20">
+            <p className="font-sans text-gray-400 text-sm">No posts found. Check back soon.</p>
           </div>
         ) : (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredPosts.map((post) => {
+            {filteredPosts.map((post, idx) => {
               const featuredImage = post._embedded?.['wp:featuredmedia']?.[0]?.source_url;
               const authorName = post._embedded?.author?.[0]?.name || 'Hilltop Team';
               const categoryName = post._embedded?.['wp:term']?.[0]?.[0]?.name || 'News';
 
               return (
-                <article
+                <motion.article
                   key={post.id}
-                  className="group bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-lg transition-all duration-500 hover:-translate-y-2"
+                  className="group flex flex-col"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.07, duration: 0.5 }}
                 >
-                  <div className="relative h-56 overflow-hidden bg-gray-200">
+                  {/* Image */}
+                  <div className="relative h-52 overflow-hidden bg-gray-100 mb-5 flex-shrink-0">
                     {featuredImage ? (
                       <Image
                         src={featuredImage}
                         alt={post.title.rendered}
                         fill
-                        className="object-cover transition-transform duration-700 group-hover:scale-110"
+                        className="object-cover transition-transform duration-700 group-hover:scale-105"
                       />
                     ) : (
                       <div
-                        className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                        className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
                         style={{
                           backgroundImage: `url('http://hilltopglobalgroup.com/wp-content/uploads/2023/09/Copy-of-20230518_122404-scaled-e1695315573707.jpg')`,
                         }}
                       />
                     )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                    
-                    <div className="absolute top-4 left-4">
-                      <span 
-                        className="px-3 py-1 rounded-full text-xs font-bold text-white"
-                        style={{ backgroundColor: '#F4A261' }}
-                      >
-                        {categoryName}
-                      </span>
-                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                   </div>
 
-                  <div className="p-6">
-                    <div className="flex items-center gap-4 mb-3 text-xs text-gray-500">
-                      <div className="flex items-center gap-1">
-                        <Calendar size={14} />
-                        <span>{formatDate(post.date)}</span>
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <User size={14} />
-                        <span>{authorName}</span>
-                      </div>
-                    </div>
+                  {/* Meta */}
+                  <div className="flex items-center gap-4 mb-3">
+                    <span
+                      className="font-sans text-xs font-bold uppercase tracking-[0.15em]"
+                      style={{ color: '#F4A261' }}
+                    >
+                      {categoryName}
+                    </span>
+                    <span className="font-sans text-xs text-gray-400">{formatDate(post.date)}</span>
+                  </div>
 
-                    <h3 
-                      className="font-serif font-bold text-xl mb-3 line-clamp-2" 
+                  {/* Title */}
+                  <h3
+                    className="font-serif font-bold text-xl mb-3 line-clamp-2 leading-snug flex-1"
+                    style={{ color: '#1D3160' }}
+                    dangerouslySetInnerHTML={{ __html: post.title.rendered }}
+                  />
+
+                  {/* Excerpt */}
+                  <p className="font-sans text-gray-500 text-sm leading-relaxed mb-4 line-clamp-3">
+                    {getExcerpt(post.excerpt.rendered)}
+                  </p>
+
+                  {/* CTA */}
+                  <div className="pt-4 border-t border-gray-100">
+                    <Link
+                      href={`/news/${post.slug}`}
+                      className="group/link inline-flex items-center gap-2 font-sans text-xs font-semibold uppercase tracking-[0.15em] transition-opacity duration-200 hover:opacity-60"
                       style={{ color: '#1D3160' }}
-                      dangerouslySetInnerHTML={{ __html: post.title.rendered }}
-                    />
-
-                    <p className="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-3">
-                      {getExcerpt(post.excerpt.rendered)}
-                    </p>
-
-                    <div className="flex items-center justify-between pt-4 border-t border-gray-200">
-                      <Link
-                        href={`/news/${post.slug}`}
-                        className="inline-flex items-center gap-1 text-sm font-semibold transition-all duration-300 group-hover:gap-2"
-                        style={{ color: '#1D3160' }}
-                      >
-                        Read More
-                        <ArrowRight size={16} />
-                      </Link>
-                    </div>
+                    >
+                      Read Article
+                      <svg width="12" height="12" viewBox="0 0 14 14" fill="none" className="transition-transform duration-300 group-hover/link:translate-x-1">
+                        <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </Link>
                   </div>
-                </article>
+                </motion.article>
               );
             })}
           </div>

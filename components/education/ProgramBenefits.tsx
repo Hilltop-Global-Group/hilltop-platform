@@ -3,6 +3,7 @@
 import { CheckCircle2 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import FadeIn from '../FadeIn';
+import { KenteDivider } from '../shared/HilltopBrand';
 
 const benefits = [
   'Real-world business consulting experience',
@@ -15,43 +16,24 @@ const benefits = [
 
 export default function ProgramBenefits() {
   return (
-    <section className="relative overflow-hidden py-20 bg-gradient-to-br from-gray-50 to-white">
-
-      {/* Decorative: concentric arcs — top left */}
-      <motion.div aria-hidden className="pointer-events-none absolute -top-20 -left-20" initial={{ opacity: 0, scale: 0.85 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.6, ease: [0.25, 0.1, 0.25, 1] }}>
-        <svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="0" cy="0" r="350" stroke="#1D3160" strokeWidth="2" fill="none" opacity="0.06" />
-          <circle cx="0" cy="0" r="270" stroke="#1D3160" strokeWidth="1.5" fill="none" opacity="0.04" />
-          <circle cx="0" cy="0" r="190" stroke="#1D3160" strokeWidth="1" fill="none" opacity="0.03" />
-        </svg>
-      </motion.div>
-
-      {/* Decorative: dot grid — bottom right */}
-      <motion.div aria-hidden className="pointer-events-none absolute bottom-8 right-8" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.4, delay: 0.25, ease: [0.25, 0.1, 0.25, 1] }}>
-        <svg width="140" height="140" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-          {[0,1,2,3,4].map(row => [0,1,2,3,4].map(col => (
-            <circle key={`${row}-${col}`} cx={14 + col * 28} cy={14 + row * 28} r="2.5" fill="#1D3160" opacity="0.08" />
-          )))}
-        </svg>
-      </motion.div>
-
-      {/* Decorative: diagonal lines — top right */}
-      <motion.div aria-hidden className="pointer-events-none absolute -top-4 -right-4" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.4, delay: 0.35, ease: [0.25, 0.1, 0.25, 1] }}>
-        <svg width="220" height="220" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <line x1="220" y1="75"  x2="145" y2="0"   stroke="#1D3160" strokeWidth="1.5" opacity="0.07" />
-          <line x1="220" y1="130" x2="90"  y2="0"   stroke="#1D3160" strokeWidth="1" opacity="0.05" />
-          <line x1="220" y1="185" x2="35"  y2="0"   stroke="#1D3160" strokeWidth="1" opacity="0.04" />
-        </svg>
-      </motion.div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+    <section className="py-24 sm:py-32 bg-gray-50 border-t border-gray-100">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
             <FadeIn>
-              <h2 className="font-serif font-bold text-4xl sm:text-5xl mb-6" style={{ color: '#1D3160' }}>
+              <div className="mb-4">
+                <KenteDivider count={5} color="#F4A261" />
+              </div>
+              <p className="font-sans text-xs font-semibold uppercase tracking-[0.25em] mb-5" style={{ color: '#F4A261' }}>
+                Program Outcomes
+              </p>
+              <h2
+                className="font-serif font-extrabold text-black leading-none mb-6"
+                style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)' }}
+              >
                 What Students Take Home
               </h2>
-              <p className="text-xl text-gray-600 mb-8">
+              <p className="font-sans text-gray-500 text-base leading-relaxed mb-10">
                 What participants consistently report gaining from their time with Hilltop.
               </p>
             </FadeIn>
@@ -84,9 +66,9 @@ export default function ProgramBenefits() {
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4">
                 <FadeIn delay={0.2}>
-                  <div className="h-48 rounded-xl overflow-hidden shadow-lg">
+                  <div className="h-48 overflow-hidden">
                     <div
-                      className="w-full h-full bg-cover bg-center transform transition-transform duration-700 hover:scale-110"
+                      className="w-full h-full bg-cover bg-center transform transition-transform duration-700 hover:scale-105"
                       style={{
                         backgroundImage: `url('http://hilltopglobalgroup.com/wp-content/uploads/2023/09/Copy-of-20230521_172314-scaled-e1759312776245.jpg')`
                       }}
@@ -94,9 +76,9 @@ export default function ProgramBenefits() {
                   </div>
                 </FadeIn>
                 <FadeIn delay={0.3}>
-                  <div className="h-64 rounded-xl overflow-hidden shadow-lg">
+                  <div className="h-64 overflow-hidden">
                     <div
-                      className="w-full h-full bg-cover bg-center transform transition-transform duration-700 hover:scale-110"
+                      className="w-full h-full bg-cover bg-center transform transition-transform duration-700 hover:scale-105"
                       style={{
                         backgroundImage: `url('http://hilltopglobalgroup.com/wp-content/uploads/2023/09/2.jpg')`
                       }}
@@ -106,9 +88,9 @@ export default function ProgramBenefits() {
               </div>
               <div className="space-y-4 mt-8">
                 <FadeIn delay={0.35}>
-                  <div className="h-64 rounded-xl overflow-hidden shadow-lg">
+                  <div className="h-64 overflow-hidden">
                     <div
-                      className="w-full h-full bg-cover bg-center transform transition-transform duration-700 hover:scale-110"
+                      className="w-full h-full bg-cover bg-center transform transition-transform duration-700 hover:scale-105"
                       style={{
                         backgroundImage: `url('http://hilltopglobalgroup.com/wp-content/uploads/2023/09/6.jpg')`
                       }}
@@ -116,9 +98,9 @@ export default function ProgramBenefits() {
                   </div>
                 </FadeIn>
                 <FadeIn delay={0.4}>
-                  <div className="h-48 rounded-xl overflow-hidden shadow-lg">
+                  <div className="h-48 overflow-hidden">
                     <div
-                      className="w-full h-full bg-cover bg-center transform transition-transform duration-700 hover:scale-110"
+                      className="w-full h-full bg-cover bg-center transform transition-transform duration-700 hover:scale-105"
                       style={{
                         backgroundImage: `url('http://hilltopglobalgroup.com/wp-content/uploads/2023/09/7A0B6637-94DF-4B8B-A888-04AE2A2917CD.jpg')`
                       }}
@@ -133,4 +115,3 @@ export default function ProgramBenefits() {
     </section>
   );
 }
-

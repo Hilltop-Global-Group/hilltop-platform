@@ -2,268 +2,198 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import ScrollReveal from './ScrollReveal';
 import { motion, AnimatePresence } from 'framer-motion';
+import { KenteDivider } from '../shared/HilltopBrand';
 
 const journeySteps = [
   {
     id: 'foundation',
     year: '2014',
     title: 'The Foundation',
-    description: 'It started by accident at Georgetown University. When our founders looked for MBA study-abroad options, they found programs in Europe, Asia, and Latin America, but nothing for Africa. Hilltop was born to fill that void, launching with a single mission: to prove that Africa is not a "non-traditional" destination, but a vital classroom for the future.',
+    description: "It started by accident at Georgetown University. When our founders looked for MBA study-abroad options, they found programs in Europe, Asia, and Latin America — but nothing for Africa. Hilltop was born to fill that void, launching with a single mission: to prove that Africa is not a non-traditional destination, but a vital classroom for the future.",
     image: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/Copy-of-20230518_122404-scaled-e1695315573707.jpg',
     stats: [
       { label: 'Students', value: '50+' },
       { label: 'Partners', value: '3' },
-    ]
+    ],
   },
   {
     id: 'expansion',
-    year: '2016-2018',
+    year: '2016–18',
     title: 'Beyond Tourism',
-    description: 'We moved beyond simple tours to deep academic integration. Recognizing that "visits" weren\'t enough to change narratives, we began co-creating curriculum with US faculty and launching our first Faculty Development workshops, pairing Western educators with African peers to build long-term institutional bridges.',
+    description: "We moved beyond simple tours to deep academic integration. Recognizing that visits weren't enough to change narratives, we began co-creating curriculum with US faculty and launching our first Faculty Development workshops, pairing Western educators with African peers to build long-term institutional bridges.",
     image: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/Copy-of-20230518_122404-scaled-e1695315573707.jpg',
     stats: [
       { label: 'Students', value: '500+' },
       { label: 'Countries', value: '5' },
-    ]
+    ],
   },
   {
     id: 'innovation',
-    year: '2019-2021',
+    year: '2019–21',
     title: 'The Workforce Pivot',
-    description: 'As the world shifted to remote work, we saw a new opportunity: Africa as the source of the next global workforce. We launched our Internship Division, moving from short-term study trips to month-long professional placements, proving that African talent and infrastructure could support global business needs.',
+    description: "As the world shifted to remote work, we saw a new opportunity: Africa as the source of the next global workforce. We launched our Internship Division, moving from short-term study trips to month-long professional placements, proving that African talent and infrastructure could support global business needs.",
     image: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/Copy-of-20230518_122404-scaled-e1695315573707.jpg',
     stats: [
       { label: 'Programs', value: '15+' },
       { label: 'Universities', value: '20+' },
-    ]
+    ],
   },
   {
     id: 'leadership',
-    year: '2022-Present',
+    year: '2022–Now',
     title: 'Global Validation',
-    description: 'From a small initiative to a Pan-African force now operating in 6 countries. Our approach was validated when our founder was named a U.S. State Department Fulbright Specialist in Global Education. Today, we aren\'t just facilitating travel; we are shaping the African narrative through high-level institutional partnerships and government-backed expertise.',
+    description: "From a small initiative to a Pan-African force operating in six countries. Our approach was validated when our founder was named a U.S. State Department Fulbright Specialist in Global Education. Today, we aren't just facilitating travel — we are shaping the African narrative through high-level institutional partnerships and government-backed expertise.",
     image: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/Copy-of-20230518_122404-scaled-e1695315573707.jpg',
     stats: [
       { label: 'Students', value: '1000+' },
       { label: 'Projects', value: '15+' },
-    ]
+    ],
   },
 ];
 
 export default function JourneyInteractive() {
   const [activeStep, setActiveStep] = useState(0);
+  const step = journeySteps[activeStep];
 
   return (
-    <section className="py-24 bg-gray-50 relative overflow-hidden">
-      {/* Background dot pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: 'radial-gradient(circle at 2px 2px, #1D3160 1px, transparent 0)',
-          backgroundSize: '48px 48px',
-        }} />
-      </div>
-
-      {/* Decorative: concentric arcs — top right */}
-      <motion.div aria-hidden className="pointer-events-none absolute -top-20 -right-20" initial={{ opacity: 0, scale: 0.85 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.6, ease: [0.25, 0.1, 0.25, 1] }}>
-        <svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="400" cy="0" r="340" stroke="#1D3160" strokeWidth="2" fill="none" opacity="0.07" />
-          <circle cx="400" cy="0" r="260" stroke="#1D3160" strokeWidth="1.5" fill="none" opacity="0.05" />
-          <circle cx="400" cy="0" r="180" stroke="#1D3160" strokeWidth="1" fill="none" opacity="0.04" />
-        </svg>
-      </motion.div>
-
-      {/* Decorative: wavy top edge */}
-      <motion.div aria-hidden className="pointer-events-none absolute top-0 left-0 right-0" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.4, ease: [0.25, 0.1, 0.25, 1] }}>
-        <svg width="100%" height="55" viewBox="0 0 1440 55" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0 30 C180 5, 360 55, 540 28 S900 5, 1080 30 S1350 55, 1440 28" stroke="#1D3160" strokeWidth="1.5" fill="none" opacity="0.08"/>
-        </svg>
-      </motion.div>
-
-      {/* Decorative: dot cluster — bottom left */}
-      <motion.div aria-hidden className="pointer-events-none absolute bottom-10 left-10" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.4, delay: 0.25, ease: [0.25, 0.1, 0.25, 1] }}>
-        <svg width="130" height="130" viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
-          {[0,1,2,3,4].map(row => [0,1,2,3,4].map(col => (
-            <circle key={`${row}-${col}`} cx={13 + col * 26} cy={13 + row * 26} r="2.5" fill="#1D3160" opacity="0.1" />
-          )))}
-        </svg>
-      </motion.div>
-
-      {/* Accent shapes */}
-      <div className="absolute top-20 right-20 w-64 h-64 bg-gold-400/20 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 left-20 w-96 h-96 bg-navy-900/10 rounded-full blur-3xl" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <ScrollReveal animation="fade-down">
-          <div className="text-center mb-16">
-            <span className="inline-block text-sm font-bold text-black uppercase tracking-wider mb-4 border-2 border-gold-400 px-6 py-2 rounded-full bg-gold-400">
+    <section className="py-24 sm:py-32 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        {/* Header */}
+        <div className="mb-4">
+          <KenteDivider count={5} color="#F4A261" />
+        </div>
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
+          <div>
+            <p className="font-sans text-xs font-semibold uppercase tracking-[0.25em] mb-5" style={{ color: '#F4A261' }}>
               Our Journey
-            </span>
-            <h2 className="font-serif font-bold text-4xl sm:text-5xl mb-4" style={{ color: '#1D3160' }}>
-              A Decade of Transformation
-            </h2>
-            <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-              The chapters of how we got here.
             </p>
+            <h2
+              className="font-serif font-extrabold text-black leading-none"
+              style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)' }}
+            >
+              A Decade of<br className="hidden md:block" /> Transformation
+            </h2>
           </div>
-        </ScrollReveal>
+          <p className="font-sans text-gray-500 text-base max-w-sm leading-relaxed">
+            The chapters of how we got here — from a single idea to a pan-African presence.
+          </p>
+        </div>
 
-        {/* Timeline Navigation */}
-        <ScrollReveal animation="fade-up" delay={100}>
-          <div className="flex flex-wrap justify-center gap-4 mb-16" suppressHydrationWarning>
-            {journeySteps.map((step, index) => (
-              <button
-                key={step.id}
-                onClick={() => setActiveStep(index)}
-                suppressHydrationWarning
-                style={activeStep === index ? {} : { backgroundColor: '#FFFFFF', color: '#1D3160', borderColor: '#1D3160' }}
-                className={`relative px-8 py-4 rounded-xl font-bold transition-all duration-500 border-2 hover:opacity-90 ${
-                  activeStep === index
-                    ? 'bg-gold-400 border-gold-400 text-black shadow-lg shadow-gold-400/50 scale-110'
-                    : ''
-                }`}
-              >
-                <span className="relative z-10 text-sm">{step.year}</span>
-                {activeStep === index && (
-                  <div className="absolute inset-0 bg-gold-400 rounded-xl blur-xl opacity-50 animate-pulse" />
-                )}
-              </button>
-            ))}
-          </div>
-        </ScrollReveal>
+        {/* Year tabs */}
+        <div className="flex border-b border-gray-200 mb-12 overflow-x-auto">
+          {journeySteps.map((s, i) => (
+            <button
+              key={s.id}
+              onClick={() => setActiveStep(i)}
+              className={`relative flex-shrink-0 px-6 pb-4 pt-2 font-sans font-semibold text-sm transition-colors duration-200 ${
+                i === activeStep ? 'text-black' : 'text-gray-400 hover:text-gray-700'
+              }`}
+            >
+              {s.year}
+              {i === activeStep && (
+                <span
+                  className="absolute bottom-0 left-0 right-0 h-[2px] rounded-full"
+                  style={{ backgroundColor: '#F4A261' }}
+                />
+              )}
+            </button>
+          ))}
+        </div>
 
-        {/* Content Area */}
+        {/* Active step content */}
         <AnimatePresence mode="wait">
           <motion.div
             key={activeStep}
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -20 }}
-            transition={{ duration: 0.5 }}
-            className="relative"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.45, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            <div className="bg-white rounded-lg p-8 md:p-12 shadow-lg border-4 border-gold-400">
-              <div className="grid md:grid-cols-2 gap-12 items-center">
-                {/* Image Side */}
-                <div className="relative group">
-                  <div className="relative h-[500px] rounded-lg overflow-hidden shadow-lg border-4 border-navy-900">
-                    <Image
-                      src={journeySteps[activeStep].image}
-                      alt={journeySteps[activeStep].title}
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
-                    {/* Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-                    
-                    {/* Floating year badge */}
-                    <div className="absolute top-6 left-6 bg-gold-400 px-6 py-3 rounded-xl shadow-lg border-2 border-white">
-                      <span className="font-serif font-bold text-2xl text-white">
-                        {journeySteps[activeStep].year}
-                      </span>
-                    </div>
-
-                    {/* Stats overlay */}
-                    <div className="absolute bottom-6 left-6 right-6 flex gap-4">
-                      {journeySteps[activeStep].stats.map((stat) => (
-                        <div
-                          key={stat.label}
-                          className="flex-1 bg-white rounded-xl p-4 text-center border-2 border-gold-400"
-                        >
-                          <div className="font-serif font-bold text-3xl text-navy-900 mb-1">
-                            {stat.value}
-                          </div>
-                          <div className="text-xs text-black font-semibold uppercase tracking-wide">
-                            {stat.label}
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Decorative border */}
-                  <div className="absolute -inset-4 border-4 border-gold-400/30 rounded-lg -z-10" />
+            <div className="grid lg:grid-cols-2 gap-12 items-start">
+              {/* Photo */}
+              <div className="relative h-[400px] sm:h-[480px] overflow-hidden">
+                <Image
+                  src={step.image}
+                  alt={step.title}
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                {/* Year label */}
+                <div className="absolute top-6 left-6">
+                  <span
+                    className="px-4 py-2 font-serif font-extrabold text-white text-lg"
+                    style={{ backgroundColor: '#F4A261', color: '#1D3160' }}
+                  >
+                    {step.year}
+                  </span>
                 </div>
-
-                {/* Content Side */}
-                <div className="space-y-6">
-                  <div>
-                    <div className="inline-block mb-4">
-                      <span className="text-8xl font-serif font-bold text-gold-400/20">
-                        0{activeStep + 1}
-                      </span>
+                {/* Stats */}
+                <div className="absolute bottom-6 left-6 right-6 flex gap-4">
+                  {step.stats.map((stat) => (
+                    <div
+                      key={stat.label}
+                      className="flex-1 bg-white/10 backdrop-blur-sm border border-white/20 p-4"
+                    >
+                      <p className="font-serif font-extrabold text-white text-2xl leading-none mb-1">
+                        {stat.value}
+                      </p>
+                      <p className="font-sans text-white/70 text-xs uppercase tracking-wider">
+                        {stat.label}
+                      </p>
                     </div>
-                    <h3 className="font-serif font-bold text-4xl text-navy-900 mb-6">
-                      {journeySteps[activeStep].title}
-                    </h3>
-                    <p className="text-lg text-black leading-relaxed">
-                      {journeySteps[activeStep].description}
-                    </p>
-                  </div>
+                  ))}
+                </div>
+              </div>
 
-                  {/* Progress indicator */}
-                  <div className="pt-8">
-                    <div className="flex gap-3">
-                      {journeySteps.map((_, idx) => (
-                        <button
-                          key={idx}
-                          onClick={() => setActiveStep(idx)}
-                          className={`h-2 rounded-full transition-all duration-500 ${
-                            idx === activeStep
-                              ? 'w-20 bg-gold-400 shadow-lg shadow-gold-400/50'
-                              : 'w-10 bg-gray-300 hover:bg-navy-900'
-                          }`}
-                        />
-                      ))}
-                    </div>
-                  </div>
+              {/* Text */}
+              <div className="pt-2">
+                <p
+                  className="font-serif font-extrabold leading-none mb-6 select-none"
+                  style={{ fontSize: 'clamp(4rem, 8vw, 7rem)', color: '#1D316008' }}
+                >
+                  0{activeStep + 1}
+                </p>
+                <h3
+                  className="font-serif font-bold text-2xl sm:text-3xl mb-6 leading-snug"
+                  style={{ color: '#1D3160' }}
+                >
+                  {step.title}
+                </h3>
+                <p className="font-sans text-gray-600 text-base leading-relaxed mb-8">
+                  {step.description}
+                </p>
 
-                  {/* Navigation arrows */}
-                  <div className="flex gap-4 pt-4">
-                    <motion.button
+                {/* Progress dots + nav */}
+                <div className="flex items-center gap-4 flex-wrap">
+                  <div className="flex gap-2">
+                    {journeySteps.map((_, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => setActiveStep(idx)}
+                        className={`h-[3px] rounded-full transition-all duration-400 ${
+                          idx === activeStep ? 'w-10 bg-black' : 'w-4 bg-gray-300'
+                        }`}
+                        aria-label={`Go to chapter ${idx + 1}`}
+                      />
+                    ))}
+                  </div>
+                  <div className="flex items-center gap-6 ml-2">
+                    <button
                       onClick={() => setActiveStep(Math.max(0, activeStep - 1))}
                       disabled={activeStep === 0}
-                      className="group px-8 py-4 rounded-xl font-bold border-2 border-navy-900 text-navy-900 disabled:opacity-20 disabled:cursor-not-allowed transition-all duration-300"
-                      style={{
-                        backgroundColor: 'transparent'
-                      }}
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      onMouseEnter={(e) => {
-                        if (activeStep !== 0) {
-                          e.currentTarget.style.backgroundColor = '#1D3160';
-                          e.currentTarget.style.color = 'white';
-                        }
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.backgroundColor = 'transparent';
-                        e.currentTarget.style.color = '#1D3160';
-                      }}
+                      className="font-sans text-sm font-semibold uppercase tracking-[0.15em] text-gray-400 hover:text-black disabled:opacity-30 disabled:cursor-not-allowed transition-colors duration-200"
                     >
-                      Previous
-                    </motion.button>
-                    <motion.button
+                      ← Prev
+                    </button>
+                    <button
                       onClick={() => setActiveStep(Math.min(journeySteps.length - 1, activeStep + 1))}
                       disabled={activeStep === journeySteps.length - 1}
-                      className="group px-8 py-4 rounded-xl font-bold bg-gold-400 text-black border-2 border-gold-400 disabled:opacity-20 disabled:cursor-not-allowed transition-all duration-300 shadow-md shadow-gold-400/50"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      onMouseEnter={(e) => {
-                        if (activeStep !== journeySteps.length - 1) {
-                          e.currentTarget.style.backgroundColor = 'black';
-                          e.currentTarget.style.color = '#F4A261';
-                          e.currentTarget.style.borderColor = 'black';
-                        }
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.backgroundColor = '#F4A261';
-                        e.currentTarget.style.color = 'black';
-                        e.currentTarget.style.borderColor = '#F4A261';
-                      }}
+                      className="font-sans text-sm font-semibold uppercase tracking-[0.15em] text-black hover:opacity-70 disabled:opacity-30 disabled:cursor-not-allowed transition-colors duration-200"
                     >
-                      Next Chapter
-                    </motion.button>
+                      Next →
+                    </button>
                   </div>
                 </div>
               </div>
@@ -274,4 +204,3 @@ export default function JourneyInteractive() {
     </section>
   );
 }
-
