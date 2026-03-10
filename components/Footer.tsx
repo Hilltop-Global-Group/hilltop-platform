@@ -15,11 +15,11 @@ const socialLinks = [
 
 const quickLinks = [
   { label: 'Home', href: '/' },
-  { label: 'About', href: '/about' },
+  { label: 'Who We Are', href: '/about' },
   { label: 'Education', href: '/education' },
-  { label: 'Internships', href: '/internships' },
+  { label: 'Internships', href: '/internships/about' },
   { label: 'Testimonials', href: '/testimonials' },
-  { label: 'News', href: '/news' },
+  { label: 'Blogs & News', href: '/news' },
   { label: 'Contact', href: '/contact' },
 ];
 
@@ -36,8 +36,8 @@ export default function Footer() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 
-        {/* Top: CTA + contact */}
-        <div className="pt-16 pb-14 grid lg:grid-cols-2 gap-12 items-start">
+        {/* Top: CTA left, contact + social far right on desktop */}
+        <div className="pt-16 pb-14 flex flex-col lg:flex-row lg:items-start lg:justify-between gap-12">
           <div>
             <p className="font-sans text-xs font-semibold uppercase tracking-[0.25em] text-white/40 mb-5">
               Get In Touch
@@ -58,28 +58,43 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="space-y-5">
+          {/* Contact + social — far right on desktop */}
+          <div className="lg:ml-auto lg:text-right space-y-5">
             <a
               href="tel:+12024992284"
-              className="group flex items-center gap-4 text-white/60 hover:text-white transition-colors duration-200"
+              className="group flex items-center gap-4 text-white/60 hover:text-white transition-colors duration-200 lg:justify-end"
             >
               <Phone size={16} style={{ color: '#F4A261' }} className="flex-shrink-0" />
               <span className="font-sans text-sm">+1 202-499-2284</span>
             </a>
             <a
               href="mailto:support@hilltopglobalgroup.com"
-              className="group flex items-center gap-4 text-white/60 hover:text-white transition-colors duration-200"
+              className="group flex items-center gap-4 text-white/60 hover:text-white transition-colors duration-200 lg:justify-end"
             >
               <Mail size={16} style={{ color: '#F4A261' }} className="flex-shrink-0" />
               <span className="font-sans text-sm">support@hilltopglobalgroup.com</span>
             </a>
-            <div className="flex items-start gap-4 text-white/60">
+            <div className="flex items-start gap-4 text-white/60 lg:justify-end">
               <MapPin size={16} style={{ color: '#F4A261' }} className="flex-shrink-0 mt-0.5" />
               <span className="font-sans text-sm leading-relaxed">
                 700 12th Street NW, Suite 700<br />Washington, DC 20005
               </span>
             </div>
-
+            {/* Social icons — beneath contact, same block */}
+            <div className="flex items-center gap-4 pt-4 lg:justify-end">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/40 hover:text-white transition-colors duration-200"
+                  aria-label={social.label}
+                >
+                  <social.icon size={18} />
+                </a>
+              ))}
+            </div>
           </div>
         </div>
 
@@ -104,7 +119,7 @@ export default function Footer() {
         {/* Divider */}
         <div className="border-t border-white/10" />
 
-        {/* Bottom: nav + copyright + social icons far right */}
+        {/* Bottom: nav + copyright */}
         <div className="py-10 flex flex-col md:flex-row md:items-center gap-6">
           <div className="flex flex-wrap gap-x-6 gap-y-2 flex-1">
             {quickLinks.map((link) => (
@@ -120,21 +135,6 @@ export default function Footer() {
           <p className="font-sans text-xs text-white/30 flex-shrink-0">
             © {new Date().getFullYear()} Hilltop Global Group
           </p>
-          {/* Social icons — far right */}
-          <div className="flex items-center gap-4 flex-shrink-0">
-            {socialLinks.map((social) => (
-              <a
-                key={social.label}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white/40 hover:text-white transition-colors duration-200"
-                aria-label={social.label}
-              >
-                <social.icon size={16} />
-              </a>
-            ))}
-          </div>
         </div>
       </div>
     </footer>

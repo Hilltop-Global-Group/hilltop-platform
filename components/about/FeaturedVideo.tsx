@@ -16,8 +16,8 @@ export default function FeaturedVideo() {
         <div className="mb-4">
           <KenteDivider count={5} color="#F4A261" />
         </div>
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
-          <div>
+        <div className="flex flex-col md:flex-row md:items-start gap-6 md:gap-10 mb-14">
+          <div className="flex-1">
             <p className="font-sans text-xs font-semibold uppercase tracking-[0.25em] mb-5" style={{ color: '#F4A261' }}>
               Featured Interview
             </p>
@@ -28,7 +28,9 @@ export default function FeaturedVideo() {
               He&apos;s Changing How the<br className="hidden md:block" /> World Sees Africa
             </h2>
           </div>
-          <p className="font-sans text-gray-500 text-sm max-w-xs leading-relaxed">
+          {/* Vertical divider — desktop only */}
+          <div className="hidden md:block w-px bg-gray-200 self-stretch flex-shrink-0" />
+          <p className="font-sans text-gray-500 text-sm max-w-xs leading-relaxed md:pt-1 flex-shrink-0">
             Watch our CEO share the vision behind Hilltop and how we&apos;re transforming education across Africa.
           </p>
         </div>

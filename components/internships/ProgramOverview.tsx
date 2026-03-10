@@ -6,7 +6,7 @@ import { KenteDivider, DecorativeUnderline } from '../shared/HilltopBrand';
 
 export default function ProgramOverview() {
   return (
-    <section className="bg-white overflow-hidden border-t border-gray-100">
+    <section className="bg-white overflow-hidden border-t border-gray-100 pt-16 sm:pt-24">
       {/* Same GlobalGlimpse "Beyond the Beaten Path" split layout as education Partnership */}
       <div className="flex flex-col lg:flex-row min-h-[560px]">
 

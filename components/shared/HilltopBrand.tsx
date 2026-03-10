@@ -327,3 +327,63 @@ export function HighlightWord({
 }) {
   return <span style={{ color }}>{children}</span>;
 }
+
+/**
+ * GhanaMap — SVG wrapper for Ghana country silhouette (from /logos/gh-03.png).
+ * Use in destination cards for scalable, crisp rendering.
+ */
+export function GhanaMap({
+  width = 56,
+  height = 56,
+  className = '',
+  fillOpacity = 0.6,
+}: {
+  width?: number;
+  height?: number;
+  className?: string;
+  fillOpacity?: number;
+}) {
+  return (
+    <svg width={width} height={height} viewBox="0 0 100 100" fill="none" className={className} aria-hidden>
+      <image
+        href="/logos/gh-03.png"
+        x="0"
+        y="0"
+        width="100"
+        height="100"
+        preserveAspectRatio="xMidYMid meet"
+        style={{ opacity: fillOpacity }}
+      />
+    </svg>
+  );
+}
+
+/**
+ * RwandaMap — SVG wrapper for Rwanda country silhouette (from /logos/rw.png).
+ * Use in destination cards for scalable, crisp rendering.
+ */
+export function RwandaMap({
+  width = 56,
+  height = 56,
+  className = '',
+  fillOpacity = 0.6,
+}: {
+  width?: number;
+  height?: number;
+  className?: string;
+  fillOpacity?: number;
+}) {
+  return (
+    <svg width={width} height={height} viewBox="0 0 100 100" fill="none" className={className} aria-hidden>
+      <image
+        href="/logos/rw.png"
+        x="0"
+        y="0"
+        width="100"
+        height="100"
+        preserveAspectRatio="xMidYMid meet"
+        style={{ opacity: fillOpacity }}
+      />
+    </svg>
+  );
+}

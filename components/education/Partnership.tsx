@@ -14,7 +14,7 @@ const highlights = [
 
 export default function Partnership() {
   return (
-    <section className="bg-white overflow-hidden">
+    <section className="bg-white overflow-hidden pt-16 sm:pt-24">
       {/* GlobalGlimpse "Beyond the Beaten Path" layout:
           Full-width photo left (~55%), text right (~45%).
           Mobile: image first (full width), text below. */}

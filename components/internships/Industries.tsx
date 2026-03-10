@@ -3,16 +3,16 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import FadeIn from '../FadeIn';
-import { KenteDivider, ArrowCTA } from '../shared/HilltopBrand';
+import { KenteDivider, ArrowCTA, GhanaMap, RwandaMap } from '../shared/HilltopBrand';
 
 const destinations = [
   {
     country: 'Ghana',
     city: 'Accra',
-    flag: '🇬🇭',
     href: '/internships/ghana',
     image: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/Copy-of-20230521_172314-scaled-e1759312776245.jpg',
     accent: '#1D3160',
+    MapComponent: GhanaMap,
     description: "Ghana\u2019s capital is a hub for tech startups, financial services, and creative industries \u2014 with a rich cultural heritage and a fast-growing entrepreneurial ecosystem.",
     industries: [
       'Technology & Data',
@@ -21,15 +21,14 @@ const destinations = [
       'Health & Social Impact',
       'Creative & Marketing',
     ],
-    mapPath: 'M 42 10 C 50 8, 68 10, 80 22 C 90 32, 88 50, 82 62 C 76 74, 68 80, 56 84 C 44 88, 30 82, 22 70 C 14 58, 14 42, 22 30 C 30 18, 36 12, 42 10 Z',
   },
   {
     country: 'Rwanda',
     city: 'Kigali',
-    flag: '🇷🇼',
     href: '/internships/rwanda',
     image: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/2.jpg',
     accent: '#F4A261',
+    MapComponent: RwandaMap,
     description: "Kigali is East Africa\u2019s most dynamic innovation city \u2014 known for its fintech ecosystem, agritech startups, and the continent-renowned African Leadership University.",
     industries: [
       'Fintech & Digital Platforms',
@@ -38,7 +37,6 @@ const destinations = [
       'Education & Social Innovation',
       'Creative & Cultural',
     ],
-    mapPath: 'M 50 8 C 62 8, 76 16, 82 30 C 88 44, 84 60, 74 70 C 64 80, 48 84, 36 76 C 24 68, 18 52, 22 38 C 26 24, 36 10, 50 8 Z',
   },
 ];
 
@@ -124,11 +122,9 @@ export default function Industries() {
                       </h3>
                     </div>
 
-                    {/* Country map SVG outline */}
-                    <div className="opacity-60">
-                      <svg width="56" height="56" viewBox="0 0 100 100" fill="none">
-                        <path d={dest.mapPath} fill="white" fillOpacity="0.25" stroke="white" strokeWidth="2" />
-                      </svg>
+                    {/* Country map — from gh-03.png / rw.png */}
+                    <div className="opacity-80 flex-shrink-0">
+                      <dest.MapComponent width={56} height={56} fillOpacity={0.9} />
                     </div>
                   </div>
                 </div>
