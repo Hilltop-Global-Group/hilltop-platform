@@ -13,7 +13,7 @@ const destinations = [
     image: '/images/kente-market.jpg',
     accent: '#1D3160',
     MapComponent: GhanaMap,
-    description: "Ghana\u2019s capital is a hub for tech startups, financial services, and creative industries \u2014 with a rich cultural heritage and a fast-growing entrepreneurial ecosystem.",
+    description: "Accra is West Africa's entrepreneurial heartbeat: a hub for fintech innovation, agribusiness transformation, and creative industries, backed by one of the continent's strongest democratic institutions and a rapidly digitalizing economy.",
     industries: [
       'Technology & Data',
       'Finance & Investment',
@@ -29,7 +29,7 @@ const destinations = [
     image: '/images/nkrumah-memorial.jpg',
     accent: '#F4A261',
     MapComponent: RwandaMap,
-    description: "Kigali is East Africa\u2019s most dynamic innovation city \u2014 known for its fintech ecosystem, agritech startups, and the continent-renowned African Leadership University.",
+    description: "Kigali is a global benchmark for governance innovation and rapid economic transformation. Students are paired with African Leadership University peers and placed across fintech, agritech, healthtech, and social innovation organizations.",
     industries: [
       'Fintech & Digital Platforms',
       'Agritech & Value Chains',
@@ -63,12 +63,12 @@ export default function Industries() {
                 </h2>
                 <div className="hidden md:block w-px bg-gray-200 self-stretch flex-shrink-0" />
                 <p className="font-sans text-gray-500 text-base max-w-sm leading-relaxed md:pt-1 flex-shrink-0">
-                  Interns are matched to host organizations based on academic background and career interests across each country's key growth sectors.
+                  Placements are matched based on academic background, career interests, and the capacity of each host organization to mentor, supervise, and create meaningful work for interns.
                 </p>
               </div>
             </div>
 
-            {/* Dotted Africa map — decorative, desktop only */}
+            {/* Dotted Africa map: decorative, desktop only */}
             <div className="hidden lg:block flex-shrink-0 opacity-10" aria-hidden>
               <svg width="80" height="100" viewBox="0 0 100 120" fill="none">
                 {/* Dotted Africa outline */}
@@ -94,7 +94,7 @@ export default function Industries() {
           <div className="border-t border-gray-200 mt-8 mb-12" />
         </FadeIn>
 
-        {/* Destination cards — GlobalGlimpse "Explore Our Destinations" style */}
+        {/* Destination cards . GlobalGlimpse "Explore Our Destinations" style */}
         <div className="grid md:grid-cols-2 gap-8">
           {destinations.map((dest, idx) => (
             <FadeIn key={idx} delay={idx * 0.12}>
@@ -122,7 +122,7 @@ export default function Industries() {
                       </h3>
                     </div>
 
-                    {/* Country map — from gh-03.png / rw.png */}
+                    {/* Country map . from gh-03.png / rw.png */}
                     <div className="opacity-80 flex-shrink-0">
                       <dest.MapComponent width={56} height={56} fillOpacity={0.9} />
                     </div>

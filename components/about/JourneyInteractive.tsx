@@ -9,8 +9,8 @@ const journeySteps = [
   {
     id: 'foundation',
     year: '2014',
-    title: 'The Foundation',
-    description: "It started by accident at Georgetown University. When our founders looked for MBA study-abroad options, they found programs in Europe, Asia, and Latin America — but nothing for Africa. Hilltop was born to fill that void, launching with a single mission: to prove that Africa is not a non-traditional destination, but a vital classroom for the future.",
+    title: 'The Mission',
+    description: "At Georgetown University, our founders saw a gap that defined the industry: every major MBA program offered immersions in Europe, Asia, and Latin America. Africa was absent. Hilltop was built to close that gap, not as an experiment, but as a conviction that Africa's economies, institutions, and professional networks belong at the center of global education.",
     image: '/images/foundation.JPG',
     stats: [
       { label: 'Students', value: '50+' },
@@ -21,7 +21,7 @@ const journeySteps = [
     id: 'leadership',
     year: '2022–Now',
     title: 'Global Validation',
-    description: "From a small initiative to a Pan-African force operating in six countries. Our approach was validated when our founder was named a U.S. State Department Fulbright Specialist in Global Education. Today, we aren't just facilitating travel — we are shaping the African narrative through high-level institutional partnerships and government-backed expertise.",
+    description: "From a single program to a Pan-African operation spanning six countries with on-the-ground teams in Accra, Kigali, Nairobi, and London. Our CEO was named to The PIE News 50 Voices Americas List as one of international education's most influential leaders and holds an active U.S. State Department Fulbright Specialist appointment. Today, Hilltop partners with institutions including Georgetown, Imperial College London, UConn, and the University of Maryland to deliver programs backed by government MOUs and 100+ cross-industry partners.",
     image: '/images/global_validation.JPG',
     stats: [
       { label: 'Students', value: '1000+' },
@@ -53,10 +53,10 @@ export default function JourneyInteractive() {
               A Decade of<br className="hidden md:block" /> Transformation
             </h2>
           </div>
-          {/* Vertical divider — desktop only */}
+          {/* Vertical divider: desktop only */}
           <div className="hidden md:block w-px bg-gray-200 self-stretch flex-shrink-0" />
           <p className="font-sans text-gray-500 text-base max-w-sm leading-relaxed md:pt-1 flex-shrink-0">
-            The chapters of how we got here — from a single idea to a pan-African presence.
+            The chapters of how we got here: from a single idea to a pan-African presence.
           </p>
         </div>
 

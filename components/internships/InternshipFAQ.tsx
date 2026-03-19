@@ -31,7 +31,7 @@ const faqs = [
   },
   {
     question: 'Can I apply for both Ghana and Rwanda?',
-    answer: 'Yes — you may apply to both programs. Placements are competitive and based on merit, fit, and stated preferences. Early application is recommended as cohort spaces fill on a first-come, first-served basis.',
+    answer: 'Yes . you may apply to both programs. Placements are competitive and based on merit, fit, and stated preferences. Early application is recommended as cohort spaces fill on a first-come, first-served basis.',
   },
   {
     question: 'Is there a remote option?',

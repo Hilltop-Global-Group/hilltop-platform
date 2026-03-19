@@ -9,19 +9,19 @@ const cards = [
     title: 'Cultural Immersion',
     image: '/images/cultural%20immersion.JPG',
     imageAlt: 'Hilltop participants engaging with local traditions and ceremonies in Ghana',
-    description: 'Engage with local traditions, ceremonies, and creative communities on their terms.',
+    description: 'Guided engagement with living traditions, creative economies, and civic institutions in each destination.',
   },
   {
     title: 'Peer and Community Connection',
     image: '/images/community_and_culture.jpg',
     imageAlt: 'Hilltop cohort participants building lasting professional and personal bonds',
-    description: 'Form professional and personal bonds that outlast the program itself.',
+    description: 'Direct mentorship from African founders, executives, and institutional leaders that extends beyond the program.',
   },
   {
     title: 'Continental Reach',
     image: '/images/Continental%20Reach.jpg',
     imageAlt: 'Professionals and entrepreneurs from seven African countries connected through Hilltop',
-    description: 'Connect with professionals and institutions spanning seven African countries.',
+    description: 'Access to 100+ vetted partners and professional networks spanning seven African countries.',
   },
 ];
 
@@ -41,12 +41,12 @@ export default function AfricanResidency() {
             className="font-serif font-extrabold text-white leading-none flex-1"
             style={{ fontSize: 'clamp(2.4rem, 5vw, 4rem)' }}
           >
-            Learning That <HighlightWord>Lives</HighlightWord><br className="hidden md:block" /> Outside Lecture Halls
+            Where Learning Meets the <HighlightWord>Continent</HighlightWord>
           </h2>
-          {/* Vertical divider — desktop only */}
+          {/* Vertical divider . desktop only */}
           <div className="hidden md:block w-px bg-white/15 self-stretch flex-shrink-0" />
           <p className="font-sans text-white/50 text-base max-w-sm leading-relaxed md:pt-1 flex-shrink-0">
-            Our residency programs bring students, executives, and faculty into direct contact with Africa's business and cultural landscape.
+            Our residency programs place students, executives, and faculty inside Africa's economies, institutions, and professional networks. Your faculty brings the pedagogy. Hilltop brings the continent.
           </p>
         </div>
 

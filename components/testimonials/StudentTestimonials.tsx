@@ -135,7 +135,7 @@ export default function StudentTestimonials() {
           </div>
         </div>
 
-        {/* Column 3 — hidden on mobile */}
+        {/* Column 3 . hidden on mobile */}
         <div className="hidden md:block overflow-hidden h-[800px] w-full max-w-[360px]">
           <div ref={column3Ref} className="flex flex-col">
             {[...testimonialsColumn3, ...testimonialsColumn3].map((testimonial, index) => (

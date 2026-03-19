@@ -8,9 +8,9 @@ const values = [
   {
     id: 'excellence',
     number: '01',
-    title: 'Excellence',
-    tagline: 'Uncompromising Standards',
-    description: 'We maintain the highest standards in everything we do. From program design to student support, excellence is not just a goal, it is our baseline.',
+    title: 'Authenticity',
+    tagline: 'Rooted in the Continent',
+    description: 'We are of Africa, not visiting it. Our programs are led by teams with deep roots across the continent and decades of experience bridging African and international institutions. That is not a marketing line. It is our operating model.',
     image: '/images/hero-cultural.jpg',
     imageAlt: 'Hilltop students engaged in a business session in Accra, Ghana',
     accent: '#F4A261',
@@ -19,8 +19,8 @@ const values = [
     id: 'integrity',
     number: '02',
     title: 'Integrity',
-    tagline: 'Trust Through Transparency',
-    description: 'We operate with complete transparency and honesty. Our relationships with students, partners, and institutions are built on trust, accountability, and unwavering ethical standards.',
+    tagline: 'Built on Agreements, Not Promises',
+    description: 'Our partnerships are formalized through signed MOUs and institutional agreements, not handshake deals. We align every program to the Standards of Good Practice for Education Abroad and maintain full transparency with university partners on costs, risks, and outcomes.',
     image: '/images/kente-market.jpg',
     imageAlt: 'Hilltop team members collaborating with African university partners',
     accent: '#1D3160',
@@ -29,8 +29,8 @@ const values = [
     id: 'innovation',
     number: '03',
     title: 'Innovation',
-    tagline: 'Forward-Thinking Solutions',
-    description: 'We look for better ways to connect students to Africa\'s growth story. That means new program formats, new partnerships, and new destinations.',
+    tagline: 'New Models for a New Continent',
+    description: 'From deliverable-based internship placements to a train-the-trainer TVET partnership with Ghana\'s national technical education authority, we build program models that did not exist before us. Seven countries. Government-level access. Curriculum co-designed with faculty, not handed to them.',
     image: '/images/nkrumah-memorial.jpg',
     imageAlt: 'Hilltop interns working with an innovative African startup in Kigali, Rwanda',
     accent: '#F4A261',
@@ -38,11 +38,11 @@ const values = [
   {
     id: 'impact',
     number: '04',
-    title: 'Impact',
-    tagline: 'Transforming Lives',
-    description: 'Every program, every partnership, every decision is measured by its impact on students\' lives. We do not just facilitate placements. We create opportunities that change futures.',
+    title: 'Community',
+    tagline: 'Partners, Not Beneficiaries',
+    description: 'Our local partners are collaborators, not host sites. Community-engaged projects are co-designed so that host organizations receive usable outcomes and students gain perspectives shaped by genuine exchange. We work with communities as equals because the best learning is reciprocal.',
     image: '/images/innovation-center.jpg',
-    imageAlt: 'Hilltop study abroad participants experiencing cultural immersion in Africa',
+    imageAlt: 'Hilltop education abroad participants experiencing cultural immersion in Africa',
     accent: '#1D3160',
   },
 ];
@@ -178,7 +178,7 @@ function ValueRow({ value, index }: { value: typeof values[0]; index: number }) 
             }}
           />
 
-          {/* Value label overlay — bottom of image */}
+          {/* Value label overlay: bottom of image */}
           <div className={`absolute bottom-6 ${isEven ? 'left-6' : 'right-6'} `}>
             <motion.div
               className="px-5 py-3 rounded-xl backdrop-blur-md"

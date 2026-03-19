@@ -8,21 +8,21 @@ import { DecorativeUnderline, DottedAfricaMap, HighlightWord } from './shared/Hi
 
 const services = [
   {
-    title: 'Turnkey Study Abroad Programs',
-    description: "Fully managed programs built around your institution's academic goals. Logistics, housing, and on-ground coordination across Ghana, Rwanda, and beyond.",
-    cta: 'See How It Works',
+    title: 'Design and Academics',
+    description: "Custom faculty-led programs with contact hours and credit alignment built through faculty co-creation. Pre-departure orientation covering culture, logistics, and learning objectives.",
+    cta: 'Learn More',
     href: '/education',
     images: [
       '/images/Turnkey-study-abroad3.jpg',
       '/images/Turnkey-study-abroad2.jpg',
       '/images/Turnkey-study-abroad1.JPG',
     ],
-    imageAlt: 'Students participating in a Hilltop turnkey study abroad program in Africa',
+    imageAlt: 'Students participating in a Hilltop turnkey education abroad program in Africa',
   },
   {
-    title: 'Faculty Development Initiatives',
-    description: 'Short-term immersions for faculty and academic leaders to engage directly with African institutions, industry, and culture.',
-    cta: 'Design a Faculty Program',
+    title: 'Projects and Partnerships',
+    description: 'Live consulting and research sprints with cross-industry organizations. Curated corporate, startup, and innovation hub visits. Public and private sector briefings.',
+    cta: 'Learn More',
     href: '/education',
     images: [
       '/images/hero-study-abroad.jpg',
@@ -32,9 +32,9 @@ const services = [
     imageAlt: 'Faculty development program participants meeting with African academic leaders',
   },
   {
-    title: 'Consulting Project Sourcing',
-    description: "Projects sourced in Africa's fastest-growing sectors: fintech, agribusiness, healthcare, and clean energy. Students work on real problems.",
-    cta: 'View Project Examples',
+    title: 'Operations and Logistics',
+    description: "Accommodation and ground transport with on-site coordinators. End-to-end event and schedule management. Risk management and duty-of-care protocols.",
+    cta: 'Learn More',
     href: '/internships',
     images: [
       '/images/consult1.jpg',
@@ -44,9 +44,9 @@ const services = [
     imageAlt: 'Interns working on a consulting project with an African fintech company',
   },
   {
-    title: 'Cultural and Humanitarian Experiences',
-    description: "Cultural programming and community engagement built alongside local partners, designed with the host community's voice at the center.",
-    cta: 'Explore Cultural Programs',
+    title: 'Culture, Impact, and Outcomes',
+    description: "Curated cultural immersions and guided reflection sessions. Community-engaged projects co-created with local partners. Post-program impact reporting with measurable metrics.",
+    cta: 'Learn More',
     href: '/education',
     images: [
       '/images/hero-cultural.jpg',
@@ -61,7 +61,7 @@ const SLIDE_INTERVAL = 3200;
 const TOTAL_SLIDES = 3;
 
 export default function Services() {
-  // Single shared index — all cards advance together
+  // Single shared index . all cards advance together
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
@@ -79,25 +79,25 @@ export default function Services() {
         {/* Section header */}
         <div className="mb-16">
           <p className="font-sans text-xs font-semibold uppercase tracking-[0.25em] mb-5" style={{ color: '#F4A261' }}>
-            What We Build With Partners
+            What We Deliver
           </p>
           <div className="flex flex-col md:flex-row md:items-start gap-6 md:gap-10">
             <h2
               className="font-serif font-extrabold text-black leading-none flex-1"
               style={{ fontSize: 'clamp(2.4rem, 5vw, 4rem)' }}
             >
-              Programs That{' '}
+              End-to-End Program{' '}
               <span className="relative inline-block whitespace-nowrap">
-                Move
+                Management
                 <DecorativeUnderline />
               </span>
-              <br className="hidden md:block" /> People{' '}
-              <HighlightWord>Forward</HighlightWord>
+              <br className="hidden md:block" /> Across{' '}
+              <HighlightWord>Africa</HighlightWord>
             </h2>
-            {/* Vertical divider — desktop only */}
+            {/* Vertical divider . desktop only */}
             <div className="hidden md:block w-px bg-gray-200 self-stretch flex-shrink-0" />
             <p className="font-sans text-gray-500 text-base max-w-sm leading-relaxed md:pt-1 flex-shrink-0">
-              Every program starts with a question: what does your institution need from Africa, and what can Africa gain from your students?
+              We architect learning experiences that place participants inside Africa's professional ecosystems, economic networks, and institutional frameworks.
             </p>
           </div>
         </div>
@@ -105,7 +105,7 @@ export default function Services() {
         {/* Thin divider */}
         <div className="border-t border-gray-200 mb-12" />
 
-        {/* Service cards — all share the same slide index */}
+        {/* Service cards . all share the same slide index */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-l border-gray-200">
           {services.map((s, i) => (
             <motion.div

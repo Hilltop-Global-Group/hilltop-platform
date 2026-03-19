@@ -60,7 +60,7 @@ export default function GhanaProgramHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          Gain professional experience in Accra across fintech, agritech, creative industries and more. Cultural immersion, leadership development and mentorship included.
+          Structured, deliverable-based placements in Accra across fintech, agribusiness, creative industries, and social enterprise. Includes mentorship from local professionals, leadership development, and guided cultural engagement.
         </motion.p>
 
         <motion.div

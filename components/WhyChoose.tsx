@@ -4,9 +4,9 @@ import { motion } from 'framer-motion';
 import { DecorativeUnderline } from './shared/HilltopBrand';
 
 const differentiators = [
-  'Community-Led Cultural Programming',
-  'Project-Based Industry Placements',
-  'Cross-Continental Professional Networks',
+  'Deliverable-Based Placements',
+  '100+ Vetted Cross-Industry Partners',
+  'Forum-Aligned Program Standards',
 ];
 
 export default function WhyChoose() {
@@ -21,7 +21,7 @@ export default function WhyChoose() {
 
         <div className="grid lg:grid-cols-2 gap-16 items-start">
 
-          {/* Left — mission text */}
+          {/* Left . mission text */}
           <motion.div
             initial={{ opacity: 0, y: 28 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -32,16 +32,16 @@ export default function WhyChoose() {
               className="font-serif font-extrabold text-black leading-none mb-8"
               style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)' }}
             >
-              Our Mission Is to Shape the{' '}
+              We Are of Africa. Not{' '}
               <span className="relative inline-block whitespace-nowrap">
-                African Narrative
+                Visiting It.
                 <DecorativeUnderline />
               </span>
             </h2>
 
             <div className="border-l-2 pl-6 mb-8" style={{ borderColor: '#F4A261' }}>
               <p className="font-sans text-gray-700 text-base sm:text-lg leading-relaxed">
-                Founded by Georgetown EMBA alumni with roots across the African continent, we bring firsthand cultural knowledge to every program we design. Our team lives and works in the communities where your students will learn.
+                Founded by Georgetown Executive MBA alumni with 25+ years spanning the World Bank Group, Fortune 500 leadership, and international development, Hilltop combines deep diaspora insight with institutional credibility few firms can match. Our teams in Accra, Kigali, Nairobi, and London do not facilitate visits. We architect learning experiences grounded in Africa's professional ecosystems and institutional frameworks.
               </p>
             </div>
 
@@ -66,7 +66,7 @@ export default function WhyChoose() {
             </div>
           </motion.div>
 
-          {/* Right — photo */}
+          {/* Right . photo */}
           <motion.div
             className="relative overflow-hidden"
             style={{ minHeight: 420 }}
@@ -81,7 +81,7 @@ export default function WhyChoose() {
             />
             <div className="absolute inset-0 bg-gradient-to-br from-[#1D3160]/50 via-transparent to-transparent" />
 
-            {/* Bottom caption — localised dark overlay only on the text block */}
+            {/* Bottom caption . localised dark overlay only on the text block */}
             <div className="absolute bottom-0 left-0 right-0 p-5">
               <div
                 className="rounded-sm px-5 py-4"
@@ -89,7 +89,7 @@ export default function WhyChoose() {
               >
                 <p className="font-sans text-white/60 text-xs uppercase tracking-widest mb-1">Our approach</p>
                 <p className="font-serif font-bold text-white text-lg leading-snug">
-                  We believe the story of this continent should be told by the people who know it best.
+                  Diaspora insight means cultural fluency and authentic access few firms can match. 1,000+ students served. Six countries. The access others cannot replicate.
                 </p>
               </div>
             </div>

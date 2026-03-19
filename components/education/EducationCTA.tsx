@@ -6,7 +6,7 @@ import { AfricaWatermark, KenteDivider, ArrowCTA } from '../shared/HilltopBrand'
 
 const highlights = [
   { label: 'Customized Programs', detail: 'Itineraries built around your curriculum and budget.' },
-  { label: 'Full-Service Management', detail: 'Pre-departure to post-program — all handled.' },
+  { label: 'Full-Service Management', detail: 'Pre-departure to post-program. All handled.' },
   { label: 'Proven Track Record', detail: 'Trusted by Georgetown, Howard, Morehouse, and more.' },
 ];
 
@@ -16,7 +16,7 @@ export default function EducationCTA() {
       {/* Orange kente top accent */}
       <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ backgroundColor: '#F4A261' }} />
 
-      {/* Africa continent watermark — right side */}
+      {/* Africa continent watermark: right side */}
       <div className="pointer-events-none absolute right-0 top-0 bottom-0 flex items-center pr-4 md:pr-8" aria-hidden>
         <AfricaWatermark className="w-72 md:w-96 h-auto" opacity={0.06} />
       </div>
@@ -57,7 +57,7 @@ export default function EducationCTA() {
             viewport={{ once: true }}
             transition={{ duration: 0.55, delay: 0.2 }}
           >
-            Partner with Hilltop to create transformational study abroad experiences
+            Partner with Hilltop to create transformational education abroad experiences
             across Africa for your students.
           </motion.p>
 

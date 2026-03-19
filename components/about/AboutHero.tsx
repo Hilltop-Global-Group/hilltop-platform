@@ -17,12 +17,12 @@ export default function AboutHero() {
         <div className="absolute inset-0 bg-gradient-to-br from-[#080f1c]/80 via-[#080f1c]/50 to-[#080f1c]/70" />
       </div>
 
-      {/* Africa continent watermark — right */}
+      {/* Africa continent watermark . right */}
       <div className="pointer-events-none absolute right-0 top-0 bottom-0 flex items-center pr-4 md:pr-12" aria-hidden>
         <AfricaWatermark className="w-64 md:w-80 h-auto" opacity={0.07} />
       </div>
 
-      {/* Orange kente accent bar — top */}
+      {/* Orange kente accent bar . top */}
       <div
         className="absolute top-0 left-0 right-0 h-[3px]"
         style={{ backgroundColor: '#F4A261' }}

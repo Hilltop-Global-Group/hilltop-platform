@@ -10,7 +10,7 @@ export default function Newsletter() {
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
 
-          {/* Left — heading */}
+          {/* Left . heading */}
           <div>
             <p className="font-sans text-xs font-semibold uppercase tracking-[0.25em] mb-5 text-gray-400">
               Dispatches from the Continent
@@ -26,7 +26,7 @@ export default function Newsletter() {
             </p>
           </div>
 
-          {/* Right — form */}
+          {/* Right . form */}
           <div>
             <form className="space-y-4">
               <input

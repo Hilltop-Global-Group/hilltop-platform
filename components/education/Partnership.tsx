@@ -6,10 +6,10 @@ import { KenteDivider, DecorativeUnderline, ArrowCTA } from '../shared/HilltopBr
 import Link from 'next/link';
 
 const highlights = [
-  'Itineraries aligned to your curriculum and learning objectives',
-  'Full in-country logistics from arrival to departure',
-  'Curated business and cultural visits with local partners',
-  'Student consulting project sourcing and coordination',
+  'Contact hours and credit alignment co-designed with your faculty',
+  'End-to-end logistics with dedicated on-site coordinators',
+  'Curated industry visits, institutional briefings, and cultural immersions',
+  'Deliverable-based projects with 100+ vetted host organizations',
 ];
 
 export default function Partnership() {
@@ -18,7 +18,7 @@ export default function Partnership() {
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
-          {/* Photo — framed with margin, shadow, accent corner, animation */}
+          {/* Photo: framed with margin, shadow, accent corner, animation */}
           <motion.div
             className="relative order-1"
             initial={{ opacity: 0, x: -40, scale: 0.96 }}
@@ -37,7 +37,7 @@ export default function Partnership() {
                   <p className="text-white font-serif font-bold text-base leading-snug">
                     University Partnership Programs
                   </p>
-                  <p className="text-white/60 text-sm mt-1">Fully managed study abroad in Africa</p>
+                  <p className="text-white/60 text-sm mt-1">Fully managed education abroad in Africa</p>
                 </div>
               </div>
             </div>
@@ -45,7 +45,7 @@ export default function Partnership() {
             <div className="absolute -bottom-2 -left-2 w-16 h-16 border-l-[3px] border-b-[3px]" style={{ borderColor: '#F4A261' }} />
           </motion.div>
 
-          {/* Text — right column */}
+          {/* Text: right column */}
           <div className="order-2">
             <FadeIn>
               <KenteDivider className="mb-8" />
@@ -63,10 +63,10 @@ export default function Partnership() {
                 </span>
               </h2>
               <p className="font-sans text-gray-600 text-base leading-relaxed mb-4">
-                Hilltop partners with universities to design and deliver turnkey study abroad experiences across Africa. We handle everything from accommodation and logistics to curated business visits and student consulting projects, so your faculty can focus on teaching.
+                Hilltop does not hand your faculty a pre-packaged itinerary. We co-create programs from the ground up: aligning contact hours to your curriculum, sourcing industry partners matched to your learning objectives, and embedding your students inside Africa's professional ecosystems.
               </p>
               <p className="font-sans text-gray-600 text-base leading-relaxed mb-8">
-                Students who engage directly with African businesses and communities return with practical skills, sharpened cross-cultural awareness, and a fundamentally changed understanding of the continent.
+                Your institution provides the academic framework. Hilltop provides the continent, the access, and the infrastructure to make it rigorous, safe, and academically meaningful. Students return with deliverables, professional networks, and cross-cultural competencies that show up on resumes, not just in journals.
               </p>
             </FadeIn>
 

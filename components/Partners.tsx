@@ -21,7 +21,7 @@ const rightCol = universities.slice(4);
 export default function Partners() {
   return (
     <section className="relative py-16 bg-white border-y border-gray-100 overflow-hidden">
-      {/* Dotted Africa map — far right, decorative */}
+      {/* Dotted Africa map . far right, decorative */}
       <DottedAfricaMap color="#1D3160" opacity={0.05} className="absolute -right-8 top-1/2 -translate-y-1/2" />
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 
@@ -29,7 +29,7 @@ export default function Partners() {
           Trusted by Students from Leading Universities
         </p>
 
-        {/* University names — two equal columns */}
+        {/* University names . two equal columns */}
         <div className="grid grid-cols-2 gap-x-12 gap-y-3 mb-12 max-w-2xl">
           {leftCol.map((name, i) => (
             <motion.span

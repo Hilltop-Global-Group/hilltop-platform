@@ -6,12 +6,12 @@ import FadeIn from '../FadeIn';
 import { KenteDivider } from '../shared/HilltopBrand';
 
 const benefits = [
-  'Real-world business consulting experience',
-  'Cross-cultural competency development',
-  'Professional network expansion in Africa',
-  'Practical problem-solving in international settings',
-  'Cultural immersion and language exposure',
-  'Resume-building international experience',
+  'Deliverable-based consulting experience with cross-industry organizations',
+  'Cross-cultural professional fluency developed through guided immersion and reflection',
+  'Direct access to Africa\'s professional networks: founders, executives, and institutional leaders',
+  'Applied problem-solving in emerging-market contexts across fintech, agribusiness, and healthcare',
+  'Cultural engagement co-designed with host communities, not performed for visitors',
+  'Portfolio-ready work products and documented learning outcomes',
 ];
 
 export default function ProgramBenefits() {
@@ -34,7 +34,7 @@ export default function ProgramBenefits() {
                 What Students Take Home
               </h2>
               <p className="font-sans text-gray-500 text-base leading-relaxed mb-10">
-                What participants consistently report gaining from their time with Hilltop.
+                What participants gain from a Hilltop program, measured through post-program evaluations and partner feedback.
               </p>
             </FadeIn>
 

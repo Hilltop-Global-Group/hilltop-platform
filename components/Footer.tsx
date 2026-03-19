@@ -29,7 +29,7 @@ export default function Footer() {
       {/* Orange kente accent at top */}
       <div className="border-t-2" style={{ borderColor: '#F4A261' }} />
 
-      {/* Africa continent watermark — right side */}
+      {/* Africa continent watermark . right side */}
       <div className="pointer-events-none absolute -right-16 top-0 bottom-0 flex items-center opacity-100" aria-hidden>
         <AfricaWatermark className="w-72 h-auto" opacity={0.04} />
       </div>
@@ -58,7 +58,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Contact + social — far right on desktop */}
+          {/* Contact + social . far right on desktop */}
           <div className="lg:ml-auto lg:text-right space-y-5">
             <a
               href="tel:+12024992284"
@@ -80,7 +80,7 @@ export default function Footer() {
                 700 12th Street NW, Suite 700<br />Washington, DC 20005
               </span>
             </div>
-            {/* Social icons — beneath contact, same block */}
+            {/* Social icons . beneath contact, same block */}
             <div className="flex items-center gap-4 pt-4 lg:justify-end">
               {socialLinks.map((social) => (
                 <a

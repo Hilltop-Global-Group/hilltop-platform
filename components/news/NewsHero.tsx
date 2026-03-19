@@ -47,7 +47,7 @@ export default function NewsHero() {
         >
           News and{' '}
           <span className="relative inline-block whitespace-nowrap">
-            Stories
+            Insights
             <DecorativeUnderline />
           </span>
         </motion.h1>

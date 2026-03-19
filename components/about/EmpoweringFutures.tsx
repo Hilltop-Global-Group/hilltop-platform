@@ -12,7 +12,7 @@ const features = [
   {
     number: '02',
     title: 'Structured Pathways',
-    description: 'Internship and study abroad programs matched to your academic focus, from fintech to public health to agribusiness.',
+    description: 'Internship and education abroad programs matched to your academic focus, from fintech to public health to agribusiness.',
   },
   {
     number: '03',
@@ -43,7 +43,7 @@ export default function EmpoweringFutures() {
               What Working With Us<br className="hidden md:block" /> Looks Like
             </h2>
           </div>
-          {/* Vertical divider — desktop only */}
+          {/* Vertical divider: desktop only */}
           <div className="hidden md:block w-px bg-gray-200 self-stretch flex-shrink-0" />
           <p className="font-sans text-gray-500 text-base max-w-sm leading-relaxed md:pt-1 flex-shrink-0">
             Every program is shaped by our experience on the ground and the trust of leading universities worldwide.

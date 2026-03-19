@@ -12,7 +12,7 @@ const testimonials = [
     title: "Intern, Ghana"
   },
   {
-    quote: "Hilltop Global provided exceptional support throughout my study abroad journey.",
+    quote: "Hilltop Global provided exceptional support throughout my education abroad journey.",
     name: "David Osei",
     title: "Student, KNUST"
   },

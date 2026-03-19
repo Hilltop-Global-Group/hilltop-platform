@@ -10,7 +10,7 @@ export default function ProgramOverview() {
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
-          {/* Photo — framed with spacing, shadow, and reveal animation */}
+          {/* Photo . framed with spacing, shadow, and reveal animation */}
           <motion.div
             className="relative overflow-hidden order-1"
             initial={{ opacity: 0, x: -40, scale: 0.96 }}
@@ -30,7 +30,7 @@ export default function ProgramOverview() {
                   style={{ backgroundColor: 'rgba(8,15,28,0.72)', backdropFilter: 'blur(6px)' }}
                 >
                   <p className="text-white font-serif font-bold text-base leading-snug">
-                    Embedded with real organizations, working on real projects.
+                    Structured placements. Real deliverables. Measurable outcomes.
                   </p>
                   <p className="text-white/60 text-sm mt-1">Accra, Ghana &amp; Kigali, Rwanda</p>
                 </div>
@@ -40,7 +40,7 @@ export default function ProgramOverview() {
             <div className="absolute -bottom-2 -left-2 w-16 h-16 border-l-[3px] border-b-[3px]" style={{ borderColor: '#F4A261' }} />
           </motion.div>
 
-          {/* Text — right column */}
+          {/* Text . right column */}
           <div className="order-2">
             <FadeIn>
               <KenteDivider className="mb-8" />
@@ -59,10 +59,10 @@ export default function ProgramOverview() {
               </h2>
               <div className="space-y-4 mb-8">
                 <p className="font-sans text-gray-600 text-base leading-relaxed">
-                  Students spend four weeks embedded in organizations across Accra or Kigali, working on project-based assignments with real deliverables. It enables emerging professionals to explore career interests, build networks, and develop globally relevant skills.
+                  Participants spend four weeks embedded in organizations across Accra or Kigali, contributing to structured, deliverable-based assignments alongside local teams. Each placement is designed to strengthen professional competencies, expand global networks, and deepen cross-cultural understanding through direct participation in Africa's professional ecosystems.
                 </p>
                 <p className="font-sans text-gray-600 text-base leading-relaxed">
-                  Hilltop collaborates with leading partners such as <span className="font-semibold" style={{ color: '#1D3160' }}>African Leadership University (Rwanda)</span> and industry hosts across Africa to deliver high-impact placements combining professional work, mentorship, and cross-cultural learning.
+                  Hilltop's 100+ vetted host organizations span fintech, agribusiness, healthcare, creative industries, and social enterprise. In Rwanda, students are paired with African Leadership University peers for collaborative learning. Every program includes pre-departure orientation, on-site mentorship, guided reflection sessions, and post-program impact documentation.
                 </p>
               </div>
             </FadeIn>

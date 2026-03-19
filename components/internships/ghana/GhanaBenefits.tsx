@@ -3,18 +3,18 @@ import { Globe, TrendingUp, Users } from 'lucide-react';
 const benefits = [
   {
     icon: Globe,
-    title: 'Gain global work experience',
-    description: 'Placements with innovators across finance, tech and creative sectors.',
+    title: 'Build a global professional portfolio',
+    description: 'Deliverable-based placements with innovators across finance, technology, agribusiness, and creative sectors.',
   },
   {
     icon: TrendingUp,
-    title: 'Cross-cultural leadership',
-    description: 'Hands-on leadership modules and community engagement.',
+    title: 'Develop cross-cultural leadership',
+    description: 'Structured leadership modules and community-engaged projects co-designed with local partners.',
   },
   {
     icon: Users,
-    title: 'Network & mentorship',
-    description: 'Connections with founders, investors and domestic accelerators.',
+    title: 'Access mentorship and professional networks',
+    description: 'Direct connections with founders, investors, accelerator leaders, and Hilltop\'s 100+ vetted industry partners.',
   },
 ];
 

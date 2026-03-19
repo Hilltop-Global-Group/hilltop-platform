@@ -53,7 +53,7 @@ export default function NewsletterSignup() {
                   className="font-serif font-extrabold text-black leading-none"
                   style={{ fontSize: 'clamp(1.8rem, 3vw, 2.4rem)' }}
                 >
-                  Thank you — you&apos;re in.
+                  Thank you . you&apos;re in.
                 </p>
               </div>
             ) : (

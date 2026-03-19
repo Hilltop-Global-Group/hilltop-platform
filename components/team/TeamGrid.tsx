@@ -45,7 +45,7 @@ export default function TeamGrid() {
               </h2>
             </div>
 
-            {/* Filter tabs — GlobalGlimpse style */}
+            {/* Filter tabs . GlobalGlimpse style */}
             <div className="flex items-center gap-1 bg-gray-50 border border-gray-200 p-1 self-start md:self-auto">
               {filters.map((f) => (
                 <button

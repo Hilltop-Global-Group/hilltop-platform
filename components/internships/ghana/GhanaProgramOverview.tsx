@@ -57,10 +57,7 @@ export default function GhanaProgramOverview() {
             </h2>
             <KenteDivider className="mb-8" />
             <p className="font-sans text-gray-700 text-lg leading-relaxed">
-              The program blends professional growth and cultural exploration in
-              Accra. Interns work across technology, finance, agribusiness, health,
-              and creative sectors. Fridays feature leadership, community
-              engagement, and cultural excursions.
+              The Ghana program places participants inside Accra's professional ecosystems four days a week, with Fridays dedicated to leadership development, community-engaged learning, and cultural immersion. Placements span technology, finance, agribusiness, health, and creative sectors, with each intern contributing real deliverables to their host organization.
             </p>
           </div>
         </FadeIn>

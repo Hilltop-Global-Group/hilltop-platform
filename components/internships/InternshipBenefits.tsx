@@ -8,32 +8,32 @@ import FadeIn from '../FadeIn';
 const benefits = [
   {
     icon: Users,
-    title: 'Build cross-cultural skills and adaptability',
-    description: 'Work across cultures, adapt quickly, and develop communication strategies that make you an effective global team member.',
+    title: 'Develop cross-cultural professional fluency',
+    description: 'Navigate workplace norms across cultures, communicate effectively in international teams, and build the adaptability that global employers actively recruit for.',
     image: '/images/kente-market.jpg',
   },
   {
     icon: Briefcase,
-    title: 'Contribute to meaningful, project-based work',
-    description: 'Own real deliverables and see the tangible impact of your work with partner organisations and startups.',
+    title: 'Deliver real work products to real organizations',
+    description: 'Every placement is structured around deliverables. You leave with portfolio-ready output that your host organization actually uses, not an observation report.',
     image: '/images/nkrumah-memorial.jpg',
   },
   {
     icon: Globe,
-    title: 'Work alongside African innovators',
-    description: 'Engage in project-driven placements across fintech, agritech, healthtech and creative industries.',
+    title: 'Work inside Africa\'s fastest-growing sectors',
+    description: 'Placements span fintech, agritech, healthtech, creative industries, and social enterprise across organizations vetted by Hilltop\'s on-ground teams.',
     image: '/images/innovation-center.jpg',
   },
   {
     icon: TrendingUp,
-    title: 'Develop leadership through mentorship',
-    description: 'Leadership workshops and mentoring help convert international experience into capabilities employers seek.',
+    title: 'Build professional networks that last beyond the program',
+    description: 'Direct mentorship from African founders, executives, and industry professionals. Leadership workshops designed to convert international experience into career-ready competencies.',
     image: '/images/cocoa-farm.jpg',
   },
   {
     icon: Heart,
-    title: 'Experience cultural immersion',
-    description: 'Curated excursions connect your learning to local history, art, and community perspectives.',
+    title: 'Engage with communities as a participant, not a spectator',
+    description: 'Guided cultural immersions and reflection sessions connect your professional experience to the history, creative economies, and civic life of your host city.',
     image: '/images/closing-dinner.jpg',
   },
 ];
@@ -46,13 +46,13 @@ export default function InternshipBenefits() {
         <FadeIn>
           <KenteDivider className="mb-6" />
           <p className="font-sans text-xs font-semibold uppercase tracking-[0.25em] mb-4" style={{ color: '#F4A261' }}>
-            Why Intern With Us
+            Why Intern With Hilltop
           </p>
           <h2
             className="font-serif font-extrabold text-black leading-none mb-14"
             style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)' }}
           >
-            Benefits of Interning <HighlightWord>Abroad</HighlightWord>
+            What You Gain From a Hilltop <HighlightWord>Placement</HighlightWord>
           </h2>
         </FadeIn>
 

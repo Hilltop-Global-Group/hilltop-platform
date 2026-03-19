@@ -10,7 +10,7 @@ export default function InternshipCTA() {
       {/* Orange kente top accent */}
       <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ backgroundColor: '#F4A261' }} />
 
-      {/* Africa continent watermark — right side */}
+      {/* Africa continent watermark: right side */}
       <div className="pointer-events-none absolute right-0 top-0 bottom-0 flex items-center pr-4 md:pr-8" aria-hidden>
         <AfricaWatermark className="w-72 md:w-96 h-auto" opacity={0.06} />
       </div>

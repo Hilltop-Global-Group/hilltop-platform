@@ -84,7 +84,7 @@ export default function NewsGrid({ posts, categories }: NewsGridProps) {
             </h2>
           </div>
 
-          {/* Category Filter — minimal text tabs */}
+          {/* Category Filter . minimal text tabs */}
           <div className="flex flex-wrap gap-x-6 gap-y-2">
             <button
               onClick={() => setActiveCategory(null)}

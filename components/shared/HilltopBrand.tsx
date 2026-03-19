@@ -3,7 +3,7 @@
  * Reusable Africa-specific decorative elements for the Hilltop design system.
  */
 
-/** Africa continent silhouette — used as a background watermark on dark sections */
+/** Africa continent silhouette . used as a background watermark on dark sections */
 export function AfricaWatermark({ className = '', opacity = 0.06 }: { className?: string; opacity?: number }) {
   return (
     <svg
@@ -43,7 +43,7 @@ export function AfricaWatermark({ className = '', opacity = 0.06 }: { className?
   );
 }
 
-/** Kente-inspired diamond divider — a row of orange diamonds as a decorative section border */
+/** Kente-inspired diamond divider . a row of orange diamonds as a decorative section border */
 export function KenteDivider({ color = '#F4A261', count = 8, className = '' }: { color?: string; count?: number; className?: string }) {
   const size = 8;
   const gap = 18;
@@ -74,7 +74,7 @@ export function KenteDivider({ color = '#F4A261', count = 8, className = '' }: {
   );
 }
 
-/** Orange vertical accent bar — used on left side of featured quotes or callout blocks */
+/** Orange vertical accent bar . used on left side of featured quotes or callout blocks */
 export function AccentBar({ className = '' }: { className?: string }) {
   return (
     <div
@@ -104,7 +104,7 @@ export function LocationBadge({ country, city }: { country: 'GH' | 'RW'; city: s
   );
 }
 
-/** Section eyebrow label — small ALL-CAPS label with wide tracking */
+/** Section eyebrow label . small ALL-CAPS label with wide tracking */
 export function Eyebrow({ children, color = '#F4A261', className = '' }: { children: React.ReactNode; color?: string; className?: string }) {
   return (
     <p
@@ -117,7 +117,7 @@ export function Eyebrow({ children, color = '#F4A261', className = '' }: { child
 }
 
 /**
- * DecorativeUnderline — a GlobalGlimpse-style SVG brushstroke underline.
+ * DecorativeUnderline . a GlobalGlimpse-style SVG brushstroke underline.
  * Wrap a key word in a `relative inline-block` span and place this just after the text.
  * Example:
  *   <span className="relative inline-block whitespace-nowrap">
@@ -140,7 +140,7 @@ export function DecorativeUnderline({
       aria-hidden
       className={`absolute left-0 bottom-[-6px] w-full pointer-events-none ${className}`}
     >
-      {/* Two staggered wavy strokes — the top one slightly thinner for a brushstroke feel */}
+      {/* Two staggered wavy strokes . the top one slightly thinner for a brushstroke feel */}
       <path
         d="M 2 8 C 30 3, 60 11, 100 7 C 140 3, 170 10, 198 6"
         stroke={color}
@@ -162,7 +162,7 @@ export function DecorativeUnderline({
 }
 
 /**
- * SectionBrushstroke — a large abstract flowing arc used as a background
+ * SectionBrushstroke . a large abstract flowing arc used as a background
  * decorative element in content sections (inspired by GlobalGlimpse's
  * "We Have Stories That Inspire" section treatment).
  * Place it as an absolutely-positioned child inside a relative section.
@@ -187,7 +187,7 @@ export function SectionBrushstroke({
       style={{ transform: flip ? 'scaleX(-1)' : undefined }}
       className={`absolute pointer-events-none ${className}`}
     >
-      {/* Large sweeping arc — primary stroke */}
+      {/* Large sweeping arc . primary stroke */}
       <path
         d="M -60 350 C 80 200, 280 50, 500 120 C 680 180, 750 320, 860 280"
         stroke={color}
@@ -210,7 +210,7 @@ export function SectionBrushstroke({
 }
 
 /**
- * ArrowCTA — GlobalGlimpse-style animated arrow for CTA links.
+ * ArrowCTA . GlobalGlimpse-style animated arrow for CTA links.
  * The line extends 8px right on group-hover. Wrap parent `<a>` or `<button>` with `group`.
  * Example:
  *   <Link href="..." className="group inline-flex items-center gap-3 ...">
@@ -256,7 +256,7 @@ export function ArrowCTA({
 }
 
 /**
- * DottedAfricaMap — Africa continent silhouette rendered as a dot-grid pattern.
+ * DottedAfricaMap . Africa continent silhouette rendered as a dot-grid pattern.
  * Inspired by GlobalGlimpse's "Explore Our Destinations" decorative map.
  * Use as an absolute background element inside a relative section.
  */
@@ -315,7 +315,7 @@ export function DottedAfricaMap({
 }
 
 /**
- * HighlightWord — wraps a word/phrase in the GlobalGlimpse-style accent color.
+ * HighlightWord . wraps a word/phrase in the GlobalGlimpse-style accent color.
  * Use inside headings: "We Have <HighlightWord>Stories</HighlightWord> That Inspire"
  */
 export function HighlightWord({
@@ -329,7 +329,7 @@ export function HighlightWord({
 }
 
 /**
- * GhanaMap — SVG wrapper for Ghana country silhouette (from /logos/gh-03.png).
+ * GhanaMap . SVG wrapper for Ghana country silhouette (from /logos/gh-03.png).
  * Use in destination cards for scalable, crisp rendering.
  */
 export function GhanaMap({
@@ -359,7 +359,7 @@ export function GhanaMap({
 }
 
 /**
- * RwandaMap — SVG wrapper for Rwanda country silhouette (from /logos/rw.png).
+ * RwandaMap . SVG wrapper for Rwanda country silhouette (from /logos/rw.png).
  * Use in destination cards for scalable, crisp rendering.
  */
 export function RwandaMap({

@@ -5,7 +5,7 @@ import ContactMap from '@/components/contact/ContactMap';
 
 export const metadata = {
   title: 'Contact Us - Hilltop Global Group',
-  description: 'Get in touch with us to learn more about our internship programs and study abroad opportunities.',
+  description: 'Get in touch with us to learn more about our internship programs and education abroad opportunities.',
 };
 
 export default function ContactPage() {

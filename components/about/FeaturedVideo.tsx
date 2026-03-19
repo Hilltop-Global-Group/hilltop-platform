@@ -25,13 +25,13 @@ export default function FeaturedVideo() {
               className="font-serif font-extrabold text-black leading-none"
               style={{ fontSize: 'clamp(2rem, 4vw, 3.2rem)' }}
             >
-              He&apos;s Changing How the<br className="hidden md:block" /> World Sees Africa
+              The Vision Behind<br className="hidden md:block" /> Hilltop
             </h2>
           </div>
-          {/* Vertical divider — desktop only */}
+          {/* Vertical divider: desktop only */}
           <div className="hidden md:block w-px bg-gray-200 self-stretch flex-shrink-0" />
           <p className="font-sans text-gray-500 text-sm max-w-xs leading-relaxed md:pt-1 flex-shrink-0">
-            Watch our CEO share the vision behind Hilltop and how we&apos;re transforming education across Africa.
+            Hear directly from our CEO and Fulbright Specialist on why Africa belongs at the center of global education and how Hilltop is making that case.
           </p>
         </div>
         <div className="border-t border-gray-200 mb-12" />
@@ -123,7 +123,7 @@ export default function FeaturedVideo() {
             &ldquo;Shaping the African narrative is taking control of our story and showcasing it to the world.&rdquo;
           </p>
           <p className="font-sans text-gray-400 text-xs uppercase tracking-[0.2em]">
-            Phil Agbeko &mdash; Founder and CEO, Hilltop Global Group
+            Phil Agbeko - Founder and CEO, Hilltop Global Group
           </p>
         </div>
       </div>

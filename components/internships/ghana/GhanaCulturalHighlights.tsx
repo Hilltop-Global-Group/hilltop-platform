@@ -59,9 +59,7 @@ export default function GhanaCulturalHighlights() {
             </h2>
             <KenteDivider className="mx-auto mt-6 mb-6" />
             <p className="font-sans text-gray-600 text-lg max-w-2xl mx-auto">
-              These excursions connect your internship to Ghana&apos;s history,
-              communities, and creative economies, deepening context and leadership
-              learning.
+              Cultural programming is not an add-on. It is integral to the learning experience. These immersions connect your professional placement to Ghana's history, civic institutions, and creative economies.
             </p>
           </div>
         </FadeIn>

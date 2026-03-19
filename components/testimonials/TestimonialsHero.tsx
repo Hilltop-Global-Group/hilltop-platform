@@ -36,7 +36,7 @@ export default function TestimonialsHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          From Our Alumni
+          From Our Participants
         </motion.p>
         <motion.h1
           className="font-serif font-extrabold text-white leading-none"
@@ -45,7 +45,7 @@ export default function TestimonialsHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
         >
-          What They Took Home
+          In Their Own Words
         </motion.h1>
       </div>
     </section>

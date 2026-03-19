@@ -45,7 +45,7 @@ export default function EducationHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
         >
-          Study Abroad Programs in{' '}
+          Education Abroad Across{' '}
           <span className="relative inline-block whitespace-nowrap">
             Africa
             <DecorativeUnderline />

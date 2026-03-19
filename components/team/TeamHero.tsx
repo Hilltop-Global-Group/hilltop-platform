@@ -54,7 +54,7 @@ export default function TeamHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.25 }}
         >
-          Passionate professionals building bridges between students and Africa's most dynamic opportunities.
+          A global team with roots across the African continent and decades of experience in international education, institutional partnerships, and on-the-ground program delivery.
         </motion.p>
       </div>
     </section>

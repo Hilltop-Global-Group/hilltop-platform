@@ -3,8 +3,8 @@ import NewsGrid from '@/components/news/NewsGrid';
 import NewsletterSignup from '@/components/news/NewsletterSignup';
 
 export const metadata = {
-  title: 'News and Stories | Hilltop Global Group | Study Abroad in Africa',
-  description: 'Program announcements, student stories, and insights from Hilltop\'s study abroad and internship programs across Ghana, Rwanda, and Kenya.',
+  title: 'News and Stories | Hilltop Global Group | Education Abroad in Africa',
+  description: 'Program announcements, student stories, and insights from Hilltop\'s education abroad and internship programs across Ghana, Rwanda, and Kenya.',
 };
 
 async function getPosts() {

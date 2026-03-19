@@ -37,7 +37,7 @@ export default function InternshipHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          Professional Development Programs
+          Career-Integrated Global Learning
         </motion.p>
         <motion.h1
           className="font-serif font-extrabold text-white leading-none mb-10"
@@ -46,7 +46,7 @@ export default function InternshipHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
         >
-          Internships in{' '}
+          Internships Across{' '}
           <span className="relative inline-block whitespace-nowrap">
             Africa
             <DecorativeUnderline />
@@ -63,7 +63,7 @@ export default function InternshipHero() {
             href="/internships/current"
             className="group inline-flex items-center gap-3 font-sans font-semibold text-sm uppercase tracking-[0.15em] text-white border-b border-white/40 pb-1 hover:border-white transition-colors duration-200"
           >
-            View Open Internships
+            Explore Current Programs
             <ArrowCTA />
           </Link>
         </motion.div>

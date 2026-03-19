@@ -21,7 +21,7 @@ export default function Accommodation() {
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-16">
 
-          {/* Photo — framed like ProgramOverview */}
+          {/* Photo: framed like ProgramOverview */}
           <motion.div
             className="relative"
             initial={{ opacity: 0, x: -40, scale: 0.96 }}

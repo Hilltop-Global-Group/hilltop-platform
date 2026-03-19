@@ -21,9 +21,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Hilltop Global Group | Study Abroad & Internships in Africa | Education Consulting",
-  description: "Diaspora-led education consulting firm delivering study abroad programs, internships, and faculty development across Ghana, Rwanda, Kenya, and beyond. Partnering with top U.S. universities since 2017.",
-  keywords: ["study abroad in Africa", "Africa internship programs for students", "experiential learning Africa", "education consulting Africa", "faculty development programs Africa", "study abroad Ghana", "study abroad Rwanda", "international internships Africa"],
+  title: "Hilltop Global Group | Education Abroad & Internships in Africa | Education Consulting",
+  description: "Diaspora-led education consulting firm delivering education abroad programs, internships, and faculty development across Ghana, Rwanda, Kenya, and beyond. Partnering with top U.S. universities since 2017.",
+  keywords: ["education abroad in Africa", "Africa internship programs for students", "experiential learning Africa", "education consulting Africa", "faculty development programs Africa", "education abroad Ghana", "education abroad Rwanda", "international internships Africa"],
   icons: {
     icon: "/logos/fav.ico",
     shortcut: "/logos/fav.ico",
@@ -42,7 +42,7 @@ export default function RootLayout({
     "name": "Hilltop Global Group",
     "url": "https://hilltop-platform.vercel.app",
     "logo": "https://hilltop-platform.vercel.app/logos/logo.png",
-    "description": "Diaspora-led education consulting firm delivering study abroad programs, internships, and faculty development across Ghana, Rwanda, Kenya, and beyond.",
+    "description": "Diaspora-led education consulting firm delivering education abroad programs, internships, and faculty development across Ghana, Rwanda, Kenya, and beyond.",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "700 12th Street NW, Suite 700",

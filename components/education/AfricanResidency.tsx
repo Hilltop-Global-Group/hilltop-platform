@@ -9,19 +9,19 @@ const pillars = [
   {
     number: '01',
     title: 'Real Work Experience',
-    description: 'Students are embedded in African businesses, NGOs, and startups, contributing to live projects from day one.',
+    description: 'Participants are embedded in vetted organizations across fintech, agribusiness, healthcare, and creative sectors, contributing to deliverables from day one.',
     image: '/images/kente-market.jpg',
   },
   {
     number: '02',
     title: 'Professional Network',
-    description: 'Direct exposure to local founders, executives, and industry professionals builds a lasting global network.',
+    description: 'Direct mentorship from African founders, executives, and institutional leaders builds professional connections that last beyond the program.',
     image: '/images/nkrumah-memorial.jpg',
   },
   {
     number: '03',
     title: 'Cross-Cultural Fluency',
-    description: 'Immersion in African work culture sharpens communication, adaptability, and global business instincts.',
+    description: 'Guided immersion in African professional culture develops the communication, adaptability, and cross-cultural competencies that global employers actively recruit for.',
     image: '/images/closing-dinner.jpg',
   },
 ];
@@ -38,11 +38,11 @@ export default function AfricanResidency() {
               The Program
             </p>
             <h2 className="font-serif font-extrabold leading-none mb-6" style={{ fontSize: 'clamp(2.2rem, 5vw, 3.8rem)', color: '#080f1c' }}>
-              Internship Programs in Africa
+              Internship Programs Across Africa
             </h2>
             <KenteDivider className="mb-6" />
             <p className="text-gray-600 max-w-2xl text-base leading-relaxed">
-              Hands-on placements in Ghana and Rwanda that give students real professional experience in Africa's most dynamic industries.
+              Structured, deliverable-based placements in Ghana and Rwanda that place participants inside Africa's most dynamic professional ecosystems.
             </p>
           </div>
         </FadeIn>
@@ -93,10 +93,10 @@ export default function AfricanResidency() {
             <div className="absolute inset-0 bg-gradient-to-r from-[#080f1c]/80 via-[#080f1c]/60 to-[#080f1c]/40 flex items-center px-10 md:px-16">
               <div className="text-white max-w-xl">
                 <h3 className="font-serif font-extrabold mb-3" style={{ fontSize: 'clamp(1.5rem, 3.5vw, 2.4rem)' }}>
-                  Launch Your Career on the Global Stage
+                  Build Your Global Portfolio in Africa
                 </h3>
                 <p className="text-white/80 text-sm leading-relaxed">
-                  Return with experience that sets you apart.
+                  Return with work products, professional networks, and cross-cultural fluency that set you apart.
                 </p>
               </div>
             </div>

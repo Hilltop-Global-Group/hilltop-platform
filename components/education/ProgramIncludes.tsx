@@ -5,26 +5,26 @@ import FadeIn from '../FadeIn';
 
 const includes = [
   {
-    title: 'Business Projects and Operations',
-    description: 'Students work on real consulting engagements with local firms across sectors like fintech, agribusiness, and healthcare.',
+    title: 'Professional Engagement and Deliverables',
+    description: 'Participants contribute to live consulting projects, research sprints, and organizational deliverables with vetted industry partners across fintech, agribusiness, healthcare, and creative sectors.',
     image: '/images/kente-market.jpg',
     accent: '#1D3160',
   },
   {
-    title: 'African History and Culture',
-    description: 'Guided engagement with historical sites, living traditions, and the contemporary creative scene in each destination.',
+    title: 'History, Heritage, and Contemporary Culture',
+    description: 'Guided engagement with historical landmarks, living traditions, and the creative economies shaping each destination today.',
     image: '/images/closing-dinner.jpg',
     accent: '#F4A261',
   },
   {
-    title: 'Community Engagement',
-    description: 'Service projects designed in partnership with local organizations, focused on outcomes that matter to the host community.',
+    title: 'Community-Engaged Learning',
+    description: 'Projects co-created with local organizations, designed so that host communities receive usable outcomes and students gain perspectives shaped by genuine reciprocal exchange.',
     image: '/images/nkrumah-memorial.jpg',
     accent: '#1D3160',
   },
   {
-    title: 'Exploration and Leisure',
-    description: 'Weekends to explore national parks, heritage sites, markets, and the everyday life of your host city.',
+    title: 'Independent Exploration',
+    description: 'Weekends to engage with national parks, heritage sites, local markets, and the everyday rhythms of your host city on your own terms.',
     image: '/images/hero-study-abroad.jpg',
     accent: '#F4A261',
   },
@@ -37,10 +37,10 @@ export default function ProgramIncludes() {
         <FadeIn>
           <div className="text-center mb-14">
             <h2 className="font-serif font-bold text-4xl sm:text-5xl mb-4" style={{ color: '#1D3160' }}>
-              Each Study Abroad Program Includes
+              Each Education Abroad Program Includes
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              A comprehensive experience combining education, culture, service, and adventure.
+              A structured experience combining academic rigor, professional engagement, cultural immersion, and guided reflection.
             </p>
           </div>
         </FadeIn>

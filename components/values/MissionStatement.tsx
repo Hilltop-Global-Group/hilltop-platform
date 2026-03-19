@@ -27,14 +27,14 @@ export default function MissionStatement() {
             </h2>
             <div className="space-y-5 pt-2">
               <p className="font-sans text-gray-600 text-base leading-relaxed">
-                Hilltop Global Group was founded on the belief that Africa's story is best told by those who live and work on the continent. We partner with U.S. universities and professionals to design immersive programs that create genuine exchange — not tourism.
+                Hilltop Global Group was founded on the belief that Africa belongs at the center of global education, not at its periphery. We partner with U.S. universities and professionals to co-create programs that place participants inside Africa's professional ecosystems, generating genuine exchange and measurable outcomes for students and host communities alike.
               </p>
               <p className="font-sans text-gray-600 text-base leading-relaxed">
                 Every program we run is rooted in relationships: with host organizations, local communities, and the students who return home transformed. Our mission is to make those connections possible at scale, with the rigor and care they deserve.
               </p>
               <div className="border-l-4 pl-5 pt-1" style={{ borderColor: '#F4A261' }}>
                 <p className="font-serif font-bold text-gray-800 text-lg leading-snug">
-                  "The continent's narrative belongs to those who know it best — and we are committed to making sure the world hears it."
+                  "Africa is not the periphery of global education. It is the future. Hilltop was built to make that case."
                 </p>
                 <p className="font-sans text-sm text-gray-400 mt-2">Phil Agbeko, Founder & CEO</p>
               </div>

@@ -6,12 +6,12 @@ import FadeIn from '../FadeIn';
 import { KenteDivider, DecorativeUnderline } from '../shared/HilltopBrand';
 
 const included = [
-  'Pre-vetted accommodation (twin-share)',
-  'Professional placement matching',
+  'Pre-vetted accommodation with on-site coordination',
+  'Deliverable-based placement matching',
   'Leadership workshops and mentorship',
-  'Cultural excursions and activities',
+  'Guided cultural immersions and reflection sessions',
   'On-ground coordinator support',
-  'Pre-departure orientation (virtual)',
+  'Comprehensive pre-departure orientation',
   'Airport pickup and group transport',
   'Credit documentation support',
 ];
@@ -29,7 +29,7 @@ export default function ProgramDetails() {
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
-          {/* Left: photo — framed consistently */}
+          {/* Left: photo . framed consistently */}
           <motion.div
             className="relative"
             initial={{ opacity: 0, x: -40, scale: 0.96 }}
@@ -51,7 +51,7 @@ export default function ProgramDetails() {
               <div className="absolute bottom-6 left-6 right-6">
                 <div className="px-5 py-4" style={{ backgroundColor: 'rgba(8,15,28,0.72)', backdropFilter: 'blur(6px)' }}>
                   <p className="text-white/60 text-xs uppercase tracking-widest mb-1">All placements</p>
-                  <p className="text-white font-serif font-bold text-lg">Cohort-based. Structured. Supported.</p>
+                  <p className="text-white font-serif font-bold text-lg">Cohort-based. Deliverable-driven. Fully supported.</p>
                 </div>
               </div>
             </div>

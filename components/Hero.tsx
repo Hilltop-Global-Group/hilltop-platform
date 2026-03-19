@@ -8,26 +8,26 @@ import { DecorativeUnderline, ArrowCTA } from './shared/HilltopBrand';
 const slides = [
   {
     image: '/images/hero-study-abroad.jpg',
-    alt: 'Students participating in Hilltop study abroad program in Accra, Ghana',
-    eyebrow: 'Focused In Africa',
-    headline: 'Experiential\nLearning',
-    sub: 'Transformative internships and cultural immersion in Africa.',
+    alt: 'Students participating in Hilltop education abroad program in Accra, Ghana',
+    eyebrow: 'Education Abroad Across Africa',
+    headline: 'Africa Is Not the Periphery. It Is the Future.',
+    sub: 'Faculty-led programs, executive education, and experiential learning that create measurable academic and professional impact across the continent.',
     accentColor: '#F4A261',
   },
   {
     image: '/images/hero-cultural.jpg',
     alt: 'Hilltop Global Group participants during cultural immersion in Africa',
-    eyebrow: 'University Partnerships',
-    headline: 'Study Abroad\nin Africa',
-    sub: 'Fully managed programs for U.S. university partners.',
+    eyebrow: 'For Universities and Institutions',
+    headline: 'Your Faculty Brings the Pedagogy. Hilltop Brings the Continent.',
+    sub: 'Custom-designed programs with credit alignment, contact hours, and faculty co-creation built into every engagement.',
     accentColor: '#ffffff',
   },
   {
     image: '/images/nkrumah-memorial.jpg',
     alt: 'Hilltop program cohort at a cultural heritage site in Africa',
-    eyebrow: 'Professional Development',
-    headline: 'Internships\nin Africa',
-    sub: 'Real placements with startups, NGOs, and enterprises in Ghana and Rwanda.',
+    eyebrow: 'Deliverable-Based Programs',
+    headline: 'Real Work Products. Real African Partners. Real Impact.',
+    sub: 'Structured placements across Ghana and Rwanda where students leave with work products their host organizations actually use.',
     accentColor: '#F4A261',
   },
 ];
@@ -45,7 +45,7 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen overflow-hidden flex items-end" style={{ backgroundColor: '#080f1c' }}>
 
-      {/* Background images — cross-dissolve with cinematic blur */}
+      {/* Background images: cross-dissolve with cinematic blur */}
       <AnimatePresence mode="sync">
         <motion.div
           key={current}
@@ -62,7 +62,7 @@ export default function Hero() {
         />
       </AnimatePresence>
 
-      {/* Gradient overlay — strong bottom, light top */}
+      {/* Gradient overlay: strong bottom, light top */}
       <div
         className="absolute inset-0 z-[1]"
         style={{
@@ -70,7 +70,7 @@ export default function Hero() {
         }}
       />
 
-      {/* Content — bottom-left aligned like Dalberg */}
+      {/* Content: bottom-left aligned like Dalberg */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pb-24 pt-40">
 
         <AnimatePresence mode="wait">
@@ -86,10 +86,10 @@ export default function Hero() {
               {slide.eyebrow}
             </p>
 
-            {/* Headline — huge condensed serif with per-slide accent underline */}
+            {/* Headline: huge condensed serif with per-slide accent underline */}
             <h1
               className="font-serif font-extrabold text-white leading-none mb-6"
-              style={{ fontSize: 'clamp(3rem, 8vw, 7rem)', letterSpacing: '-0.01em' }}
+              style={{ fontSize: 'clamp(2.4rem, 6vw, 5.5rem)', letterSpacing: '-0.01em' }}
             >
               {slide.headline.split('\n').map((line, i, arr) => {
                 const isLast = i === arr.length - 1;
@@ -115,7 +115,7 @@ export default function Hero() {
               {slide.sub}
             </p>
 
-            {/* CTA — Dalberg-style text link */}
+            {/* CTA: Dalberg-style text link */}
             <Link
               href="/about"
               className="group inline-flex items-center gap-3 font-sans font-semibold text-sm uppercase tracking-[0.15em] text-white border-b border-white/40 pb-1 hover:border-white transition-colors duration-200"
@@ -126,7 +126,7 @@ export default function Hero() {
           </motion.div>
         </AnimatePresence>
 
-        {/* Slide indicators — bottom right */}
+        {/* Slide indicators: bottom right */}
         <div className="absolute bottom-8 right-6 sm:right-8 lg:right-12 flex gap-2">
           {slides.map((_, i) => (
             <button

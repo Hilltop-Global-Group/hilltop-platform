@@ -20,7 +20,7 @@ const featuredStories = [
     location: "Kigali, Rwanda",
     university: "Georgetown University",
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Replace with actual video ID
-    quote: "Hilltop Global provided exceptional support throughout my study abroad journey. The ALU collaboration gave me access to incredible resources and a network I'll leverage for years to come.",
+    quote: "Hilltop Global provided exceptional support throughout my education abroad journey. The ALU collaboration gave me access to incredible resources and a network I'll leverage for years to come.",
     fullStory: "As a computer science major, I wanted hands-on experience with African tech innovation. The placement with a healthtech startup in Kigali was perfect. I learned agile development, worked with real clients, and contributed to a product that's now serving thousands.",
   },
   {
