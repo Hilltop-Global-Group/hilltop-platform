@@ -42,3 +42,15 @@ next-env.d.ts
 
 # drive download zips
 drive-download-*.zip
+
+# documents and PDFs
+*.pdf
+*.docx
+*.doc
+*.xlsx
+*.xls
+*.pptx
+*.ppt
+Outputs/
+hilltop_pdfs/
+other_pdfs/
