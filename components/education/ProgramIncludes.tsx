@@ -7,25 +7,25 @@ const includes = [
   {
     title: 'Business Projects and Operations',
     description: 'Students work on real consulting engagements with local firms across sectors like fintech, agribusiness, and healthcare.',
-    image: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/Copy-of-20230521_172314-scaled-e1759312776245.jpg',
+    image: '/images/kente-market.jpg',
     accent: '#1D3160',
   },
   {
     title: 'African History and Culture',
     description: 'Guided engagement with historical sites, living traditions, and the contemporary creative scene in each destination.',
-    image: 'http://hilltopglobalgroup.com/wp-content/uploads/2025/09/performance-e1759310784853.jpg',
+    image: '/images/closing-dinner.jpg',
     accent: '#F4A261',
   },
   {
     title: 'Community Engagement',
     description: 'Service projects designed in partnership with local organizations, focused on outcomes that matter to the host community.',
-    image: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/2.jpg',
+    image: '/images/nkrumah-memorial.jpg',
     accent: '#1D3160',
   },
   {
     title: 'Exploration and Leisure',
     description: 'Weekends to explore national parks, heritage sites, markets, and the everyday life of your host city.',
-    image: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/Copy-of-20230518_122404-scaled-e1695315573707.jpg',
+    image: '/images/hero-study-abroad.jpg',
     accent: '#F4A261',
   },
 ];

@@ -150,7 +150,7 @@ export default function NewsGrid({ posts, categories }: NewsGridProps) {
                       <div
                         className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
                         style={{
-                          backgroundImage: `url('http://hilltopglobalgroup.com/wp-content/uploads/2023/09/Copy-of-20230518_122404-scaled-e1695315573707.jpg')`,
+                          backgroundImage: `url('/images/hero-study-abroad.jpg')`,
                         }}
                       />
                     )}

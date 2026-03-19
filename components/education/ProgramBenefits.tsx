@@ -70,7 +70,7 @@ export default function ProgramBenefits() {
                     <div
                       className="w-full h-full bg-cover bg-center transform transition-transform duration-700 hover:scale-105"
                       style={{
-                        backgroundImage: `url('http://hilltopglobalgroup.com/wp-content/uploads/2023/09/Copy-of-20230521_172314-scaled-e1759312776245.jpg')`
+                        backgroundImage: `url('/images/kente-market.jpg')`
                       }}
                     />
                   </div>
@@ -80,7 +80,7 @@ export default function ProgramBenefits() {
                     <div
                       className="w-full h-full bg-cover bg-center transform transition-transform duration-700 hover:scale-105"
                       style={{
-                        backgroundImage: `url('http://hilltopglobalgroup.com/wp-content/uploads/2023/09/2.jpg')`
+                        backgroundImage: `url('/images/nkrumah-memorial.jpg')`
                       }}
                     />
                   </div>
@@ -92,7 +92,7 @@ export default function ProgramBenefits() {
                     <div
                       className="w-full h-full bg-cover bg-center transform transition-transform duration-700 hover:scale-105"
                       style={{
-                        backgroundImage: `url('http://hilltopglobalgroup.com/wp-content/uploads/2023/09/6.jpg')`
+                        backgroundImage: `url('/images/innovation-center.jpg')`
                       }}
                     />
                   </div>
@@ -102,7 +102,7 @@ export default function ProgramBenefits() {
                     <div
                       className="w-full h-full bg-cover bg-center transform transition-transform duration-700 hover:scale-105"
                       style={{
-                        backgroundImage: `url('http://hilltopglobalgroup.com/wp-content/uploads/2023/09/7A0B6637-94DF-4B8B-A888-04AE2A2917CD.jpg')`
+                        backgroundImage: `url('/images/cocoa-farm.jpg')`
                       }}
                     />
                   </div>

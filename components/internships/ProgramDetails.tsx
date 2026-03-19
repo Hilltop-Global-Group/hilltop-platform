@@ -40,7 +40,7 @@ export default function ProgramDetails() {
             <div className="relative overflow-hidden shadow-xl" style={{ minHeight: 440 }}>
               <div
                 className="absolute inset-0 bg-cover bg-center transition-transform duration-700 hover:scale-105"
-                style={{ backgroundImage: `url('http://hilltopglobalgroup.com/wp-content/uploads/2023/09/6.jpg')` }}
+                style={{ backgroundImage: `url('/images/innovation-center.jpg')` }}
               />
               <div className="absolute inset-0 bg-gradient-to-br from-[#1D3160]/60 via-transparent to-transparent" />
               <div className="absolute top-6 left-6">

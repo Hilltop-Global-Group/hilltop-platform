@@ -5,7 +5,7 @@ export default function InternshipsHero() {
         <div 
           className="absolute inset-0 bg-cover bg-center opacity-50"
           style={{ 
-            backgroundImage: `url('http://hilltopglobalgroup.com/wp-content/uploads/2023/09/6.jpg')` 
+            backgroundImage: `url('/images/innovation-center.jpg')` 
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-br from-primary-navy via-[#27427a] to-primary-navy opacity-50" />

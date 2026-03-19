@@ -11,7 +11,7 @@ export default function ValuesHero() {
         <div
           className="absolute inset-0 bg-cover bg-center opacity-35"
           style={{
-            backgroundImage: `url('http://hilltopglobalgroup.com/wp-content/uploads/2025/09/performance-e1759310784853.jpg')`,
+            backgroundImage: `url('/images/closing-dinner.jpg')`,
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-br from-[#080f1c]/85 via-[#080f1c]/55 to-[#080f1c]/70" />

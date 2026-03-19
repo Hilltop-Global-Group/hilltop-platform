@@ -7,7 +7,7 @@ import { DecorativeUnderline, ArrowCTA } from './shared/HilltopBrand';
 
 const slides = [
   {
-    image: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/Copy-of-20230518_122404-scaled-e1695315573707.jpg',
+    image: '/images/hero-study-abroad.jpg',
     alt: 'Students participating in Hilltop study abroad program in Accra, Ghana',
     eyebrow: 'Focused In Africa',
     headline: 'Experiential\nLearning',
@@ -15,7 +15,7 @@ const slides = [
     accentColor: '#F4A261',
   },
   {
-    image: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/Copy-of-20230521_170109-scaled-e1759311926763.jpg',
+    image: '/images/hero-cultural.jpg',
     alt: 'Hilltop Global Group participants during cultural immersion in Africa',
     eyebrow: 'University Partnerships',
     headline: 'Study Abroad\nin Africa',
@@ -23,7 +23,7 @@ const slides = [
     accentColor: '#ffffff',
   },
   {
-    image: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/2.jpg',
+    image: '/images/nkrumah-memorial.jpg',
     alt: 'Hilltop program cohort at a cultural heritage site in Africa',
     eyebrow: 'Professional Development',
     headline: 'Internships\nin Africa',

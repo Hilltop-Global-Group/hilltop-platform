@@ -10,19 +10,19 @@ const pillars = [
     number: '01',
     title: 'Real Work Experience',
     description: 'Students are embedded in African businesses, NGOs, and startups, contributing to live projects from day one.',
-    image: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/Copy-of-20230521_172314-scaled-e1759312776245.jpg',
+    image: '/images/kente-market.jpg',
   },
   {
     number: '02',
     title: 'Professional Network',
     description: 'Direct exposure to local founders, executives, and industry professionals builds a lasting global network.',
-    image: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/2.jpg',
+    image: '/images/nkrumah-memorial.jpg',
   },
   {
     number: '03',
     title: 'Cross-Cultural Fluency',
     description: 'Immersion in African work culture sharpens communication, adaptability, and global business instincts.',
-    image: 'http://hilltopglobalgroup.com/wp-content/uploads/2025/09/performance-e1759310784853.jpg',
+    image: '/images/closing-dinner.jpg',
   },
 ];
 
@@ -87,7 +87,7 @@ export default function AfricanResidency() {
             <div
               className="absolute inset-0 bg-cover bg-center bg-fixed"
               style={{
-                backgroundImage: `url('http://hilltopglobalgroup.com/wp-content/uploads/2023/09/Copy-of-20230518_122404-scaled-e1695315573707.jpg')`
+                backgroundImage: `url('/images/hero-study-abroad.jpg')`
               }}
             />
             <div className="absolute inset-0 bg-gradient-to-r from-[#080f1c]/80 via-[#080f1c]/60 to-[#080f1c]/40 flex items-center px-10 md:px-16">

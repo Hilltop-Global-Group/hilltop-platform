@@ -6,19 +6,19 @@ const videos = [
     title: 'Ghana 2024: Student Perspectives',
     description: 'Students share their transformative journey in Accra, from startup internships to cultural exploration.',
     duration: '3:45',
-    thumbnail: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/6.jpg',
+    thumbnail: '/images/innovation-center.jpg',
   },
   {
     title: 'Rwanda Innovation Hub Experience',
     description: 'Tech interns discuss working with Kigali\'s top startups and the ALU collaboration.',
     duration: '4:20',
-    thumbnail: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/7A0B6637-94DF-4B8B-A888-04AE2A2917CD.jpg',
+    thumbnail: '/images/cocoa-farm.jpg',
   },
   {
     title: 'Cultural Immersion Highlights',
     description: 'Experience the weekend excursions, community engagement, and leadership development sessions.',
     duration: '5:10',
-    thumbnail: 'http://hilltopglobalgroup.com/wp-content/uploads/2025/09/performance-e1759310784853.jpg',
+    thumbnail: '/images/closing-dinner.jpg',
   },
 ];
 

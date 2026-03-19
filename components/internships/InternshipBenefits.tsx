@@ -10,31 +10,31 @@ const benefits = [
     icon: Users,
     title: 'Build cross-cultural skills and adaptability',
     description: 'Work across cultures, adapt quickly, and develop communication strategies that make you an effective global team member.',
-    image: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/Copy-of-20230521_172314-scaled-e1759312776245.jpg',
+    image: '/images/kente-market.jpg',
   },
   {
     icon: Briefcase,
     title: 'Contribute to meaningful, project-based work',
     description: 'Own real deliverables and see the tangible impact of your work with partner organisations and startups.',
-    image: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/2.jpg',
+    image: '/images/nkrumah-memorial.jpg',
   },
   {
     icon: Globe,
     title: 'Work alongside African innovators',
     description: 'Engage in project-driven placements across fintech, agritech, healthtech and creative industries.',
-    image: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/6.jpg',
+    image: '/images/innovation-center.jpg',
   },
   {
     icon: TrendingUp,
     title: 'Develop leadership through mentorship',
     description: 'Leadership workshops and mentoring help convert international experience into capabilities employers seek.',
-    image: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/7A0B6637-94DF-4B8B-A888-04AE2A2917CD.jpg',
+    image: '/images/cocoa-farm.jpg',
   },
   {
     icon: Heart,
     title: 'Experience cultural immersion',
     description: 'Curated excursions connect your learning to local history, art, and community perspectives.',
-    image: 'http://hilltopglobalgroup.com/wp-content/uploads/2025/09/performance-e1759310784853.jpg',
+    image: '/images/closing-dinner.jpg',
   },
 ];
 

@@ -68,7 +68,7 @@ export default function WhyChoose() {
 
           {/* Right — photo */}
           <motion.div
-            className="relative overflow-hidden rounded-xl"
+            className="relative overflow-hidden"
             style={{ minHeight: 420 }}
             initial={{ opacity: 0, x: 32 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -77,7 +77,7 @@ export default function WhyChoose() {
           >
             <div
               className="absolute inset-0 bg-cover bg-center"
-              style={{ backgroundImage: `url('http://hilltopglobalgroup.com/wp-content/uploads/2023/09/Copy-of-20230521_172314-scaled-e1759312776245.jpg')` }}
+              style={{ backgroundImage: `url('/images/we-believe.JPG')` }}
             />
             <div className="absolute inset-0 bg-gradient-to-br from-[#1D3160]/50 via-transparent to-transparent" />
 

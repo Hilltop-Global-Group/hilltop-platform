@@ -7,19 +7,19 @@ import { ArrowCTA, HighlightWord } from './shared/HilltopBrand';
 const cards = [
   {
     title: 'Cultural Immersion',
-    image: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/Copy-of-20230518_122404-scaled-e1695315573707.jpg',
+    image: '/images/cultural%20immersion.JPG',
     imageAlt: 'Hilltop participants engaging with local traditions and ceremonies in Ghana',
     description: 'Engage with local traditions, ceremonies, and creative communities on their terms.',
   },
   {
     title: 'Peer and Community Connection',
-    image: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/Copy-of-20230521_170109-scaled-e1759311926763.jpg',
+    image: '/images/community_and_culture.jpg',
     imageAlt: 'Hilltop cohort participants building lasting professional and personal bonds',
     description: 'Form professional and personal bonds that outlast the program itself.',
   },
   {
     title: 'Continental Reach',
-    image: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/2.jpg',
+    image: '/images/Continental%20Reach.jpg',
     imageAlt: 'Professionals and entrepreneurs from seven African countries connected through Hilltop',
     description: 'Connect with professionals and institutions spanning seven African countries.',
   },

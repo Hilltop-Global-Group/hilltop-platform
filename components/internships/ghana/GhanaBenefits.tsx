@@ -58,7 +58,7 @@ export default function GhanaBenefits() {
           <div className="relative h-64 rounded-lg overflow-hidden shadow-lg group">
             <div
               className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-              style={{ backgroundImage: `url('http://hilltopglobalgroup.com/wp-content/uploads/2023/09/Copy-of-20230518_122404-scaled-e1695315573707.jpg')` }}
+              style={{ backgroundImage: `url('/images/hero-study-abroad.jpg')` }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
               <p className="text-white font-serif font-bold text-lg">Accra skyline & business districts</p>
@@ -68,7 +68,7 @@ export default function GhanaBenefits() {
           <div className="relative h-64 rounded-lg overflow-hidden shadow-lg group">
             <div
               className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-              style={{ backgroundImage: `url('http://hilltopglobalgroup.com/wp-content/uploads/2023/09/Copy-of-20230521_170109-scaled-e1759311926763.jpg')` }}
+              style={{ backgroundImage: `url('/images/hero-cultural.jpg')` }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
               <p className="text-white font-serif font-bold text-lg">Historical sites</p>
@@ -78,7 +78,7 @@ export default function GhanaBenefits() {
           <div className="relative h-64 rounded-lg overflow-hidden shadow-lg group">
             <div
               className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-              style={{ backgroundImage: `url('http://hilltopglobalgroup.com/wp-content/uploads/2023/09/2.jpg')` }}
+              style={{ backgroundImage: `url('/images/nkrumah-memorial.jpg')` }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
               <p className="text-white font-serif font-bold text-lg">Markets & creative streets</p>

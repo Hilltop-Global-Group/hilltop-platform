@@ -11,7 +11,7 @@ export default function GhanaProgramOverview() {
           <div className="grid lg:grid-cols-3 gap-8 mb-16">
             <div className="lg:col-span-1">
               <img
-                src="http://hilltopglobalgroup.com/wp-content/uploads/2023/09/6.jpg"
+                src="/images/innovation-center.jpg"
                 alt="Accra skyline & business districts"
                 className="w-full h-64 object-cover border border-gray-100"
               />
@@ -21,7 +21,7 @@ export default function GhanaProgramOverview() {
             </div>
             <div className="lg:col-span-1">
               <img
-                src="http://hilltopglobalgroup.com/wp-content/uploads/2023/09/Copy-of-20230521_172314-scaled-e1759312776245.jpg"
+                src="/images/kente-market.jpg"
                 alt="Historical sites"
                 className="w-full h-64 object-cover border border-gray-100"
               />
@@ -31,7 +31,7 @@ export default function GhanaProgramOverview() {
             </div>
             <div className="lg:col-span-1">
               <img
-                src="http://hilltopglobalgroup.com/wp-content/uploads/2023/09/Copy-of-20230521_170109-scaled-e1759311926763.jpg"
+                src="/images/hero-cultural.jpg"
                 alt="Markets & creative streets"
                 className="w-full h-64 object-cover border border-gray-100"
               />

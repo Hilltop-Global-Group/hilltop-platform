@@ -29,7 +29,7 @@ export default function Partnership() {
             <div className="relative overflow-hidden shadow-xl" style={{ minHeight: 480 }}>
               <div
                 className="absolute inset-0 bg-cover bg-center transition-transform duration-700 hover:scale-105"
-                style={{ backgroundImage: `url('http://hilltopglobalgroup.com/wp-content/uploads/2023/09/Copy-of-20230521_170109-scaled-e1759311926763.jpg')` }}
+                style={{ backgroundImage: `url('/images/hero-cultural.jpg')` }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#080f1c]/50 via-transparent to-transparent" />
               <div className="absolute bottom-6 left-6 right-6">

@@ -8,35 +8,35 @@ const highlights = [
     title: 'Traditional Music & Dance',
     description: 'Cultural performances & heritage',
     image:
-      'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/Copy-of-20230518_122404-scaled-e1695315573707.jpg',
+      '/images/hero-study-abroad.jpg',
   },
   {
     title: 'Accra Arts Centre',
     description: 'Accra Arts Centre & creative streets',
     image:
-      'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/Copy-of-20230521_170109-scaled-e1759311926763.jpg',
+      '/images/hero-cultural.jpg',
   },
   {
     title: 'Makola Market',
     description: 'Markets and shopping for souvenirs',
     image:
-      'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/Copy-of-20230521_172314-scaled-e1759312776245.jpg',
+      '/images/kente-market.jpg',
   },
   {
     title: 'Cape Coast Castle',
     description: 'Historical landmarks',
-    image: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/2.jpg',
+    image: '/images/nkrumah-memorial.jpg',
   },
   {
     title: 'Kakum National Park',
     description: 'Nature & wildlife',
-    image: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/6.jpg',
+    image: '/images/innovation-center.jpg',
   },
   {
     title: 'Creative Hubs',
     description: 'Art galleries & design spaces',
     image:
-      'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/7A0B6637-94DF-4B8B-A888-04AE2A2917CD.jpg',
+      '/images/cocoa-farm.jpg',
   },
 ];
 

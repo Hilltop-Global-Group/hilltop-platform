@@ -8,13 +8,13 @@ const videos = [
   {
     title: 'Ghana Internship Experience 2024',
     description: 'Students share highlights from their journey of growth, learning, and cultural discovery.',
-    thumbnail: 'http://hilltopglobalgroup.com/wp-content/uploads/2025/10/summer2024.jpg',
+    thumbnail: '/images/independence-day.jpg',
     videoUrl: 'https://player.vimeo.com/video/1009903690?h=a03fa111f9',
   },
   {
     title: 'Hilltop Internships: Global Connections Across Africa',
     description: 'A collective look at our programs, where learning meets culture and innovation.',
-    thumbnail: 'http://hilltopglobalgroup.com/wp-content/uploads/2025/10/all.jpg',
+    thumbnail: '/images/cultural-procession.jpg',
     videoUrl: 'https://vimeo.com/1132264308',
   },
 ];
