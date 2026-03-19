@@ -1,41 +1,76 @@
+'use client';
+
+import { motion } from 'framer-motion';
+import FadeIn from '@/components/FadeIn';
+import { KenteDivider, DecorativeUnderline, HighlightWord } from '@/components/shared/HilltopBrand';
+
+const images = [
+  {
+    src: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/2.jpg',
+    alt: 'Kigali cityscapes & innovation hubs',
+    caption: 'Kigali cityscapes & innovation hubs',
+  },
+  {
+    src: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/Copy-of-20230518_122404-scaled-e1695315573707.jpg',
+    alt: 'Community immersion & cultural visits',
+    caption: 'Community immersion & cultural visits',
+  },
+  {
+    src: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/7A0B6637-94DF-4B8B-A888-04AE2A2917CD.jpg',
+    alt: 'Nature & excursions (Volcanoes)',
+    caption: 'Nature & excursions (Volcanoes)',
+  },
+];
+
 export default function RwandaProgramOverview() {
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-3 gap-8 mb-12">
-          <div className="lg:col-span-1">
-            <img
-              src="http://hilltopglobalgroup.com/wp-content/uploads/2023/09/2.jpg"
-              alt="Kigali cityscapes & innovation hubs"
-              className="w-full h-64 object-cover rounded-lg shadow-lg mb-4"
-            />
-            <p className="text-center text-gray-600 text-sm">Kigali cityscapes & innovation hubs</p>
-          </div>
-          <div className="lg:col-span-1">
-            <img
-              src="http://hilltopglobalgroup.com/wp-content/uploads/2023/09/Copy-of-20230518_122404-scaled-e1695315573707.jpg"
-              alt="Community immersion & cultural visits"
-              className="w-full h-64 object-cover rounded-lg shadow-lg mb-4"
-            />
-            <p className="text-center text-gray-600 text-sm">Community immersion & cultural visits</p>
-          </div>
-          <div className="lg:col-span-1">
-            <img
-              src="http://hilltopglobalgroup.com/wp-content/uploads/2023/09/7A0B6637-94DF-4B8B-A888-04AE2A2917CD.jpg"
-              alt="Nature & excursions (Volcanoes)"
-              className="w-full h-64 object-cover rounded-lg shadow-lg mb-4"
-            />
-            <p className="text-center text-gray-600 text-sm">Nature & excursions (Volcanoes)</p>
-          </div>
+    <section className="py-20 sm:py-28 bg-white border-t border-gray-100">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+
+        <div className="grid lg:grid-cols-3 gap-6 mb-16">
+          {images.map((img, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1, duration: 0.6 }}
+            >
+              <div className="relative overflow-hidden">
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  className="w-full h-64 object-cover transition-transform duration-700 hover:scale-105"
+                />
+              </div>
+              <p className="text-center font-sans text-gray-500 text-sm mt-3">{img.caption}</p>
+            </motion.div>
+          ))}
         </div>
 
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-serif font-bold text-4xl mb-6" style={{ color: '#1D3160' }}>
-            About the Program
-          </h2>
-          <p className="text-gray-700 text-lg leading-relaxed">
-            The program offers professional experience in Kigali's innovation hub, across fintech, agritech, healthtech, and creative industries. Fridays are reserved for leadership and cultural immersion. Delivered in collaboration with ALU.
-          </p>
+          <FadeIn>
+            <KenteDivider className="mb-6" />
+            <p className="font-sans text-xs font-semibold uppercase tracking-[0.25em] mb-4" style={{ color: '#F4A261' }}>
+              Program Overview
+            </p>
+            <h2
+              className="font-serif font-extrabold text-black leading-tight mb-8"
+              style={{ fontSize: 'clamp(2rem, 4vw, 3.2rem)' }}
+            >
+              About the{' '}
+              <span className="relative inline-block whitespace-nowrap" style={{ color: '#F4A261' }}>
+                Program
+                <DecorativeUnderline />
+              </span>
+            </h2>
+          </FadeIn>
+
+          <FadeIn delay={0.1}>
+            <p className="font-sans text-gray-600 text-lg leading-relaxed">
+              The program offers professional experience in Kigali&apos;s innovation hub, across fintech, agritech, healthtech, and creative industries. Fridays are reserved for leadership and cultural immersion. Delivered in collaboration with ALU.
+            </p>
+          </FadeIn>
         </div>
       </div>
     </section>

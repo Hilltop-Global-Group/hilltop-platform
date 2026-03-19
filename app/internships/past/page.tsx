@@ -1,5 +1,5 @@
 import InternshipHero from '@/components/internships/InternshipHero';
-import Programs2026 from '@/components/internships/Programs2026';
+import PastInternshipsOnly from '@/components/internships/PastInternshipsOnly';
 import InternshipCTA from '@/components/internships/InternshipCTA';
 
 export const metadata = {
@@ -11,7 +11,7 @@ export default function PastInternshipsPage() {
   return (
     <main>
       <InternshipHero />
-      <Programs2026 />
+      <PastInternshipsOnly />
       <InternshipCTA />
     </main>
   );

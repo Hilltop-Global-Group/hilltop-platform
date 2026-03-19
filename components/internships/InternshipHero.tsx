@@ -54,12 +54,13 @@ export default function InternshipHero() {
         </motion.h1>
 
         <motion.div
+          className="flex flex-wrap gap-6"
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
           <Link
-            href="#internship-programs"
+            href="/internships/current"
             className="group inline-flex items-center gap-3 font-sans font-semibold text-sm uppercase tracking-[0.15em] text-white border-b border-white/40 pb-1 hover:border-white transition-colors duration-200"
           >
             View Open Internships
