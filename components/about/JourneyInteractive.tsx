@@ -11,32 +11,10 @@ const journeySteps = [
     year: '2014',
     title: 'The Foundation',
     description: "It started by accident at Georgetown University. When our founders looked for MBA study-abroad options, they found programs in Europe, Asia, and Latin America — but nothing for Africa. Hilltop was born to fill that void, launching with a single mission: to prove that Africa is not a non-traditional destination, but a vital classroom for the future.",
-    image: '/images/hero-study-abroad.jpg',
+    image: '/images/foundation.JPG',
     stats: [
       { label: 'Students', value: '50+' },
       { label: 'Partners', value: '3' },
-    ],
-  },
-  {
-    id: 'expansion',
-    year: '2016–18',
-    title: 'Beyond Tourism',
-    description: "We moved beyond simple tours to deep academic integration. Recognizing that visits weren't enough to change narratives, we began co-creating curriculum with US faculty and launching our first Faculty Development workshops, pairing Western educators with African peers to build long-term institutional bridges.",
-    image: '/images/hero-study-abroad.jpg',
-    stats: [
-      { label: 'Students', value: '500+' },
-      { label: 'Countries', value: '5' },
-    ],
-  },
-  {
-    id: 'innovation',
-    year: '2019–21',
-    title: 'The Workforce Pivot',
-    description: "As the world shifted to remote work, we saw a new opportunity: Africa as the source of the next global workforce. We launched our Internship Division, moving from short-term study trips to month-long professional placements, proving that African talent and infrastructure could support global business needs.",
-    image: '/images/hero-study-abroad.jpg',
-    stats: [
-      { label: 'Programs', value: '15+' },
-      { label: 'Universities', value: '20+' },
     ],
   },
   {
@@ -44,7 +22,7 @@ const journeySteps = [
     year: '2022–Now',
     title: 'Global Validation',
     description: "From a small initiative to a Pan-African force operating in six countries. Our approach was validated when our founder was named a U.S. State Department Fulbright Specialist in Global Education. Today, we aren't just facilitating travel — we are shaping the African narrative through high-level institutional partnerships and government-backed expertise.",
-    image: '/images/hero-study-abroad.jpg',
+    image: '/images/global_validation.JPG',
     stats: [
       { label: 'Students', value: '1000+' },
       { label: 'Projects', value: '15+' },
