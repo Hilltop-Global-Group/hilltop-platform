@@ -26,7 +26,7 @@ const signals = [
   {
     title: 'Priority Growth Sectors',
     description:
-      'Renewable energy, construction technology, digital systems, agro-processing, and advanced manufacturing — aligned to national economic priorities.',
+      'Renewable energy, construction technology, digital systems, agro-processing, and advanced manufacturing, aligned to national economic priorities.',
   },
   {
     title: 'Scalable Impact Model',
@@ -127,7 +127,7 @@ export default function TVETSection() {
             </FadeIn>
             <FadeIn delay={0.1}>
               <p className="font-sans text-gray-600 text-base leading-relaxed">
-                Our approach centers on training instructors — not just students — creating a multiplier effect that
+                Our approach centers on training instructors, not just students, creating a multiplier effect that
                 reaches thousands of learners through strengthened institutional capacity. Every trained instructor
                 becomes a permanent asset within the national TVET system.
               </p>
