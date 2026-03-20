@@ -319,7 +319,7 @@ export default async function InternshipPage({ params }: { params: Promise<{ slu
       </section>
 
       {/* ── Apply ── */}
-      <section className="py-20 sm:py-28 border-t border-gray-100" style={{ backgroundColor: '#080f1c' }}>
+      <section className="relative overflow-hidden py-20 sm:py-28 border-t border-gray-100" style={{ backgroundColor: '#080f1c' }}>
         <div className="max-w-3xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
           <AfricaWatermark className="absolute right-0 top-0 w-64 h-auto opacity-5" />
           <span

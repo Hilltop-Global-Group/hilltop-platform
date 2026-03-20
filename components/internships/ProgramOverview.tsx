@@ -72,10 +72,10 @@ export default function ProgramOverview() {
               <div className="grid grid-cols-3 divide-x divide-gray-200 border border-gray-100">
                 {[
                   { value: '4', unit: 'weeks', label: 'in-country' },
-                  { value: '2', unit: 'cities', label: 'Accra & Kigali' },
+                  { value: '2', unit: 'cities', label: 'GH & RW' },
                   { value: '50+', unit: 'hosts', label: 'partner orgs' },
                 ].map((stat, i) => (
-                  <div key={i} className="text-center py-5 px-3">
+                  <div key={i} className="text-center py-5 px-2 sm:px-3">
                     <p className="font-serif font-bold text-2xl" style={{ color: '#1D3160' }}>
                       {stat.value} <span className="text-sm font-normal text-gray-400">{stat.unit}</span>
                     </p>

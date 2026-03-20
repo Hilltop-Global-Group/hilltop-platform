@@ -134,15 +134,19 @@ export default function Services() {
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500 z-10" />
 
                 {/* Shared dot indicators */}
-                <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-1.5 z-20">
+                <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-1 z-20">
                   {Array.from({ length: TOTAL_SLIDES }).map((_, idx) => (
                     <button
                       key={idx}
                       onClick={() => setCurrent(idx)}
-                      className="w-1.5 h-1.5 transition-all duration-300"
-                      style={{ backgroundColor: idx === current ? '#F4A261' : 'rgba(255,255,255,0.45)' }}
+                      className="p-2.5 -m-2.5 flex items-center justify-center"
                       aria-label={`Slide ${idx + 1}`}
-                    />
+                    >
+                      <span
+                        className="block w-1.5 h-1.5 transition-all duration-300"
+                        style={{ backgroundColor: idx === current ? '#F4A261' : 'rgba(255,255,255,0.45)' }}
+                      />
+                    </button>
                   ))}
                 </div>
               </div>

@@ -85,7 +85,7 @@ export default function AfricanResidency() {
         <FadeIn delay={0.3}>
           <div className="relative h-72 overflow-hidden">
             <div
-              className="absolute inset-0 bg-cover bg-center bg-fixed"
+              className="absolute inset-0 bg-cover bg-center"
               style={{
                 backgroundImage: `url('/images/hero-study-abroad.jpg')`
               }}

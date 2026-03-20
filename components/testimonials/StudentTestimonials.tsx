@@ -31,7 +31,7 @@ const testimonialsColumn3 = [
 
 function TestimonialCard({ testimonial }: { testimonial: typeof testimonialsColumn1[0] }) {
   return (
-    <div className="flex-shrink-0 w-[300px] sm:w-[360px] bg-white border border-gray-100 p-6 sm:p-7 hover:shadow-md transition-shadow duration-300 mb-4 sm:mb-5">
+    <div className="flex-shrink-0 w-full sm:w-[360px] bg-white border border-gray-100 p-6 sm:p-7 hover:shadow-md transition-shadow duration-300 mb-4 sm:mb-5">
       <div className="flex items-center gap-1 mb-3">
         {[...Array(testimonial.rating)].map((_, i) => (
           <Star key={i} size={14} fill="#F4A261" style={{ color: '#F4A261' }} />
@@ -116,9 +116,9 @@ export default function StudentTestimonials() {
         </FadeIn>
       </div>
 
-      <div className="flex gap-4 sm:gap-5 justify-center max-w-7xl mx-auto px-2 sm:px-4">
-        {/* Column 1 */}
-        <div className="overflow-hidden h-[600px] sm:h-[800px] w-full max-w-[300px] sm:max-w-[360px]">
+    <div className="flex gap-4 sm:gap-5 justify-center max-w-7xl mx-auto px-2 sm:px-4">
+        {/* Column 1 — always visible */}
+        <div className="overflow-hidden h-[600px] sm:h-[800px] w-full max-w-[340px] sm:max-w-[360px]">
           <div ref={column1Ref} className="flex flex-col">
             {[...testimonialsColumn1, ...testimonialsColumn1].map((testimonial, index) => (
               <TestimonialCard key={`col1-${index}`} testimonial={testimonial} />
@@ -126,8 +126,8 @@ export default function StudentTestimonials() {
           </div>
         </div>
 
-        {/* Column 2 */}
-        <div className="overflow-hidden h-[600px] sm:h-[800px] w-full max-w-[300px] sm:max-w-[360px]">
+        {/* Column 2 — hidden on mobile, visible sm+ */}
+        <div className="hidden sm:block overflow-hidden h-[600px] sm:h-[800px] w-full max-w-[300px] sm:max-w-[360px]">
           <div ref={column2Ref} className="flex flex-col">
             {[...testimonialsColumn2, ...testimonialsColumn2].map((testimonial, index) => (
               <TestimonialCard key={`col2-${index}`} testimonial={testimonial} />
@@ -135,7 +135,7 @@ export default function StudentTestimonials() {
           </div>
         </div>
 
-        {/* Column 3 . hidden on mobile */}
+        {/* Column 3 — hidden until md */}
         <div className="hidden md:block overflow-hidden h-[800px] w-full max-w-[360px]">
           <div ref={column3Ref} className="flex flex-col">
             {[...testimonialsColumn3, ...testimonialsColumn3].map((testimonial, index) => (

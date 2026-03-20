@@ -37,11 +37,11 @@ export default function StatsBar() {
         {/* Thin top rule */}
         <div className="border-t border-white/15 mb-14" />
 
-        <div className="grid grid-cols-3 divide-x divide-white/15">
+        <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-white/15">
           {stats.map((s, i) => (
             <motion.div
               key={s.label}
-              className="text-center px-4 sm:px-8"
+              className="text-center px-4 sm:px-8 py-6 sm:py-0"
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

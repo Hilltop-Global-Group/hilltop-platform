@@ -63,7 +63,7 @@ export default function ProgramBenefits() {
           </div>
 
           <div className="relative">
-            <div className="grid grid-cols-2 gap-4">
+            <div className="hidden sm:grid grid-cols-2 gap-4">
               <div className="space-y-4">
                 <FadeIn delay={0.2}>
                   <div className="h-48 overflow-hidden">

@@ -88,7 +88,7 @@ export default function Footer() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white/40 hover:text-white transition-colors duration-200"
+                  className="p-2 -m-2 text-white/40 hover:text-white transition-colors duration-200"
                   aria-label={social.label}
                 >
                   <social.icon size={18} />

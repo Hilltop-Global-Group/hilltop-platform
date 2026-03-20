@@ -225,7 +225,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-2 -mr-2"
+            className="lg:hidden p-3 -mr-2"
             style={{ color: '#1D3160' }}
             aria-label="Toggle menu"
           >
@@ -264,7 +264,7 @@ export default function Navbar() {
                               key={child.href}
                               href={child.href}
                               onClick={() => setIsMobileMenuOpen(false)}
-                              className={`py-2 font-sans text-sm transition-colors duration-200 ${
+                              className={`py-3 block font-sans text-sm transition-colors duration-200 ${
                                 pathname === child.href ? 'text-black font-semibold' : 'text-gray-500'
                               }`}
                             >

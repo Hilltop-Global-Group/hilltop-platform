@@ -84,7 +84,7 @@ function ValueRow({ value, index }: { value: typeof values[0]; index: number }) 
       >
         {/* Text Side */}
         <motion.div
-          className={`flex flex-col justify-center px-12 py-16 bg-white relative overflow-hidden ${
+          className={`flex flex-col justify-center px-6 py-10 md:px-12 md:py-16 bg-white relative overflow-hidden ${
             isEven ? 'md:order-1' : 'md:order-2'
           }`}
           variants={textVariants}

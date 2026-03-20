@@ -30,7 +30,7 @@ export default function Partners() {
         </p>
 
         {/* University names . two equal columns */}
-        <div className="grid grid-cols-2 gap-x-12 gap-y-3 mb-12 max-w-2xl">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-3 mb-12 max-w-2xl">
           {leftCol.map((name, i) => (
             <motion.span
               key={name}
@@ -57,13 +57,13 @@ export default function Partners() {
 
         {/* Thin divider */}
         <div className="border-t border-gray-100 pt-10">
-          <div className="grid grid-cols-3 divide-x divide-gray-200 text-center">
+          <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-gray-200 text-center">
             {[
-              { value: '7+',            label: 'African Countries' },
-              { value: 'Ghana & Rwanda', label: 'Active Internship Destinations' },
-              { value: '50+',           label: 'Host Organizations' },
+              { value: '7+',         label: 'African Countries' },
+              { value: 'GH & RW',    label: 'Active Internship Destinations' },
+              { value: '50+',        label: 'Host Organizations' },
             ].map((s, i) => (
-              <div key={i} className="px-4 sm:px-8">
+              <div key={i} className="px-4 sm:px-8 py-4 sm:py-0">
                 <p className="font-serif font-extrabold text-2xl sm:text-3xl mb-1" style={{ color: '#1D3160' }}>
                   {s.value}
                 </p>

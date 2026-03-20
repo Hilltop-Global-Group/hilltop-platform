@@ -122,7 +122,7 @@ function InternshipCard({ internship, index }: { internship: any; index: number 
             </div>
           )}
 
-          <div className="flex items-center justify-between">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
             <span
               className="group/link inline-flex items-center gap-3 font-sans font-semibold text-sm uppercase tracking-[0.15em]"
               style={{ color: accent }}

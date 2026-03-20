@@ -132,9 +132,11 @@ export default function Hero() {
             <button
               key={i}
               onClick={() => setCurrent(i)}
-              className={`h-[3px] rounded-full transition-all duration-500 ${i === current ? 'w-10 bg-white' : 'w-4 bg-white/35 hover:bg-white/60'}`}
+              className="p-3 -m-3 flex items-center justify-center"
               aria-label={`Go to slide ${i + 1}`}
-            />
+            >
+              <span className={`block h-[3px] rounded-full transition-all duration-500 ${i === current ? 'w-10 bg-white' : 'w-4 bg-white/35 hover:bg-white/60'}`} />
+            </button>
           ))}
         </div>
       </div>

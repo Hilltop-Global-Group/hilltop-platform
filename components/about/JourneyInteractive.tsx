@@ -163,14 +163,14 @@ export default function JourneyInteractive() {
                     <button
                       onClick={() => setActiveStep(Math.max(0, activeStep - 1))}
                       disabled={activeStep === 0}
-                      className="font-sans text-sm font-semibold uppercase tracking-[0.15em] text-gray-400 hover:text-black disabled:opacity-30 disabled:cursor-not-allowed transition-colors duration-200"
+                      className="py-2 px-3 font-sans text-sm font-semibold uppercase tracking-[0.15em] text-gray-400 hover:text-black disabled:opacity-30 disabled:cursor-not-allowed transition-colors duration-200"
                     >
                       ← Prev
                     </button>
                     <button
                       onClick={() => setActiveStep(Math.min(journeySteps.length - 1, activeStep + 1))}
                       disabled={activeStep === journeySteps.length - 1}
-                      className="font-sans text-sm font-semibold uppercase tracking-[0.15em] text-black hover:opacity-70 disabled:opacity-30 disabled:cursor-not-allowed transition-colors duration-200"
+                      className="py-2 px-3 font-sans text-sm font-semibold uppercase tracking-[0.15em] text-black hover:opacity-70 disabled:opacity-30 disabled:cursor-not-allowed transition-colors duration-200"
                     >
                       Next →
                     </button>
