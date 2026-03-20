@@ -193,7 +193,95 @@ export default function TVETSection() {
         </div>
       </section>
 
-      {/* ── CTA ── */}
+      {/* ── Split image + text ── */}
+      <section className="py-20 sm:py-28 bg-white border-t border-gray-100">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+            {/* Framed photo */}
+            <motion.div
+              className="relative order-1"
+              initial={{ opacity: 0, x: -40, scale: 0.97 }}
+              whileInView={{ opacity: 1, x: 0, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1] }}
+            >
+              <div className="relative overflow-hidden shadow-xl" style={{ minHeight: 420 }}>
+                <div
+                  className="absolute inset-0 bg-cover bg-center transition-transform duration-700 hover:scale-105"
+                  style={{ backgroundImage: `url('/images/innovation-center.jpg')` }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#080f1c]/50 via-transparent to-transparent" />
+                <div className="absolute bottom-6 left-6 right-6">
+                  <div className="px-5 py-4" style={{ backgroundColor: 'rgba(8,15,28,0.72)', backdropFilter: 'blur(6px)' }}>
+                    <p className="text-white font-serif font-bold text-base leading-snug">Instructor-Led Capacity Building</p>
+                    <p className="text-white/60 text-sm mt-1">Training the trainers who train thousands</p>
+                  </div>
+                </div>
+              </div>
+              <div className="absolute -bottom-2 -left-2 w-16 h-16 border-l-[3px] border-b-[3px]" style={{ borderColor: '#F4A261' }} />
+            </motion.div>
+
+            {/* Text */}
+            <div className="order-2">
+              <FadeIn>
+                <KenteDivider className="mb-6" />
+                <p className="font-sans text-xs font-semibold uppercase tracking-[0.25em] mb-5" style={{ color: '#F4A261' }}>
+                  The Multiplier Effect
+                </p>
+                <h2
+                  className="font-serif font-extrabold text-black leading-tight mb-6"
+                  style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)' }}
+                >
+                  One Trained Instructor.<br />
+                  <HighlightWord>Thousands</HighlightWord> of Students.
+                </h2>
+                <p className="font-sans text-gray-600 text-base leading-relaxed mb-4">
+                  Rather than running one-off student workshops, Hilltop embeds change at the institutional level. U.S. technical college faculty work directly alongside African TVET instructors to co-develop and modernize curricula in high-demand fields.
+                </p>
+                <p className="font-sans text-gray-600 text-base leading-relaxed">
+                  The result is a lasting upgrade to what gets taught inside TVET classrooms long after the initial exchange, delivering sustainable impact that compounds with every new cohort of students.
+                </p>
+              </FadeIn>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ── Photo strip ── */}
+      <section className="bg-white border-t border-gray-100">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-16 sm:py-20">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            {[
+              { src: '/images/international-programmes.jpg', caption: 'International Partnerships' },
+              { src: '/images/consult1.jpg', caption: 'Curriculum Co-Design' },
+              { src: '/images/seminar-session.jpg', caption: 'Faculty Exchange Sessions' },
+            ].map((img, i) => (
+              <motion.div
+                key={img.src}
+                className="group relative overflow-hidden border border-gray-100"
+                style={{ height: 240 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.55, delay: i * 0.1 }}
+              >
+                <div
+                  className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                  style={{ backgroundImage: `url('${img.src}')` }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#080f1c]/70 via-transparent to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-4">
+                  <p className="font-sans text-white text-xs font-semibold uppercase tracking-wider">{img.caption}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
       <section className="py-20 sm:py-28 border-t border-gray-100" style={{ backgroundColor: '#080f1c' }}>
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative">
           <div className="pointer-events-none absolute right-0 top-0 bottom-0 flex items-end pr-4 md:pr-12 opacity-5" aria-hidden>
