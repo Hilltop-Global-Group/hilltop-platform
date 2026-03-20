@@ -26,7 +26,13 @@ const navItems: NavItem[] = [
       { name: 'Mission & Values', href: '/values', description: 'The principles that guide every program' },
     ],
   },
-  { name: 'Education', href: '/education' },
+  {
+    name: 'Education',
+    children: [
+      { name: 'Education Abroad', href: '/education', description: 'Faculty-led programs and university partnerships across Africa' },
+      { name: 'Technical & Vocational Education', href: '/education/tvet', description: 'Building workforce capacity through TVET partnerships' },
+    ],
+  },
   {
     name: 'Internships',
     children: [
