@@ -94,12 +94,20 @@ export default function EducationCTA() {
               <ArrowCTA />
             </Link>
             <Link
-              href="/internships"
+              href="/internships/current"
               className="group inline-flex items-center gap-3 font-sans font-semibold text-sm uppercase tracking-[0.15em] pb-1 hover:opacity-70 transition-opacity duration-200"
               style={{ color: '#F4A261', borderBottom: '1px solid #F4A26160' }}
             >
-              View Internships
-              <ArrowCTA />
+              View Current Internships
+              <ArrowCTA color="#F4A261" />
+            </Link>
+            <Link
+              href="/education/tvet"
+              className="group inline-flex items-center gap-3 font-sans font-semibold text-sm uppercase tracking-[0.15em] pb-1 hover:opacity-70 transition-opacity duration-200"
+              style={{ color: 'rgba(255,255,255,0.55)', borderBottom: '1px solid rgba(255,255,255,0.2)' }}
+            >
+              Explore TVET Programs
+              <ArrowCTA color="rgba(255,255,255,0.55)" />
             </Link>
           </motion.div>
         </div>

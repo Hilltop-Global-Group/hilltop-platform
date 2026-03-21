@@ -44,23 +44,23 @@ export default function JourneyInteractive() {
         <div className="flex flex-col md:flex-row md:items-start gap-6 md:gap-10 mb-14">
           <div className="flex-1">
             <p className="font-sans text-xs font-semibold uppercase tracking-[0.25em] mb-5" style={{ color: '#F4A261' }}>
-              Our Journey
+              Our Story
             </p>
             <h2
               className="font-serif font-extrabold text-black leading-none"
               style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)' }}
             >
-              A Decade of<br className="hidden md:block" /> Transformation
+              From One Idea<br className="hidden md:block" /> to a Continent
             </h2>
           </div>
           {/* Vertical divider: desktop only */}
           <div className="hidden md:block w-px bg-gray-200 self-stretch flex-shrink-0" />
           <p className="font-sans text-gray-500 text-base max-w-sm leading-relaxed md:pt-1 flex-shrink-0">
-            The chapters of how we got here: from a single idea to a pan-African presence.
+            Two chapters that define how Hilltop grew from a conviction into a pan-African operation.
           </p>
         </div>
 
-        {/* Year tabs */}
+        {/* Chapter tabs */}
         <div className="flex border-b border-gray-200 mb-12 overflow-x-auto">
           {journeySteps.map((s, i) => (
             <button
@@ -70,7 +70,7 @@ export default function JourneyInteractive() {
                 i === activeStep ? 'text-black' : 'text-gray-400 hover:text-gray-700'
               }`}
             >
-              {s.year}
+              {s.title}
               {i === activeStep && (
                 <span
                   className="absolute bottom-0 left-0 right-0 h-[2px] rounded-full"
@@ -100,15 +100,6 @@ export default function JourneyInteractive() {
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-                {/* Year label */}
-                <div className="absolute top-6 left-6">
-                  <span
-                    className="px-4 py-2 font-serif font-extrabold text-white text-lg"
-                    style={{ backgroundColor: '#F4A261', color: '#1D3160' }}
-                  >
-                    {step.year}
-                  </span>
-                </div>
                 {/* Stats */}
                 <div className="absolute bottom-6 left-6 right-6 flex gap-4">
                   {step.stats.map((stat) => (

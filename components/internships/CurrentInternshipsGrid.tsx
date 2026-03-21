@@ -23,32 +23,56 @@ function formatDate(dateString: string) {
   return new Date(dateString).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
 }
 
-function InternshipCard({ internship, index }: { internship: any; index: number }) {
-  const accent = index % 2 === 0 ? '#1D3160' : '#F4A261';
-  const featuredImage = internship._embedded?.['wp:featuredmedia']?.[0]?.source_url;
+function detectCountry(internship: any): 'ghana' | 'rwanda' | 'other' {
+  const title = (internship.title?.rendered || '').toLowerCase();
+  const slug = (internship.slug || '').toLowerCase();
+  if (title.includes('rwanda') || slug.includes('rwanda')) return 'rwanda';
+  if (title.includes('ghana') || slug.includes('ghana')) return 'ghana';
+  return 'other';
+}
 
-  let location = 'Location TBD';
-  if (internship.internship_locations?.length > 0) {
-    location = internship.internship_locations.map((t: any) => t.name).join(', ');
-  }
+function InternshipCard({ internship, index }: { internship: any; index: number }) {
+  const country = detectCountry(internship);
+  const accent = country === 'rwanda' ? '#F4A261' : '#1D3160';
+
+  const featuredImage = internship._embedded?.['wp:featuredmedia']?.[0]?.source_url;
+  const fallbackImage = country === 'rwanda'
+    ? '/images/kcc-scaled.webp'
+    : country === 'ghana'
+    ? '/images/akwaaba-gh.jpeg'
+    : undefined;
+  const cardImage = featuredImage || fallbackImage;
+
+  const locationLabel = country === 'rwanda'
+    ? 'Kigali, Rwanda'
+    : country === 'ghana'
+    ? 'Accra, Ghana'
+    : internship.internship_locations?.map((t: any) => t.name).join(', ') || 'Location TBD';
+
+  const detailHref = country === 'ghana'
+    ? '/internships/ghana'
+    : country === 'rwanda'
+    ? '/internships/rwanda'
+    : `/internships/${internship.slug}`;
 
   return (
     <motion.div
       initial={{ opacity: 0, y: 24 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: index * 0.08 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
     >
       <Link
-        href={`/internships/${internship.slug}`}
+        href={detailHref}
         className="group block bg-white border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-500 hover:-translate-y-1"
+        style={{ WebkitTapHighlightColor: 'transparent' }}
       >
         {/* Image */}
-        <div className="relative h-56 overflow-hidden">
+        <div className="relative h-60 overflow-hidden">
           <div
             className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
             style={{
-              backgroundImage: featuredImage
-                ? `url('${featuredImage}')`
+              backgroundImage: cardImage
+                ? `url('${cardImage}')`
                 : 'linear-gradient(135deg, #1D3160 0%, #F4A261 100%)',
             }}
           />
@@ -72,13 +96,13 @@ function InternshipCard({ internship, index }: { internship: any; index: number 
               <div className="flex items-center gap-3">
                 <Calendar size={16} className="flex-shrink-0" style={{ color: accent }} />
                 <span className="font-sans text-gray-600 text-sm">
-                  {formatDate(internship.meta._internship_start_date)} \u2013 {formatDate(internship.meta._internship_end_date)}
+                  {formatDate(internship.meta._internship_start_date)} to {formatDate(internship.meta._internship_end_date)}
                 </span>
               </div>
             )}
             <div className="flex items-center gap-3">
               <MapPin size={16} className="flex-shrink-0" style={{ color: accent }} />
-              <span className="font-sans text-gray-600 text-sm">{location}</span>
+              <span className="font-sans text-gray-600 text-sm">{locationLabel}</span>
             </div>
             {internship.meta._internship_duration && (
               <div className="flex items-center gap-3">
@@ -92,7 +116,6 @@ function InternshipCard({ internship, index }: { internship: any; index: number 
             <p className="font-sans text-gray-500 text-sm leading-relaxed mb-5">{stripHtml(internship.excerpt.rendered)}</p>
           )}
 
-          {/* Format Options */}
           {(internship.meta._internship_hybrid_available === '1' ||
             internship.meta._internship_incountry_available === '1') && (
             <div className="mb-5 space-y-2">
@@ -124,15 +147,18 @@ function InternshipCard({ internship, index }: { internship: any; index: number 
 
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
             <span
-              className="group/link inline-flex items-center gap-3 font-sans font-semibold text-sm uppercase tracking-[0.15em]"
+              className="inline-flex items-center gap-3 font-sans font-semibold text-sm uppercase tracking-[0.15em]"
               style={{ color: accent }}
             >
-              View Details
+              View Program Details
               <ArrowCTA color={accent} />
             </span>
             {internship.meta._internship_application_deadline && (
               <span className="font-sans text-xs text-gray-400">
-                Deadline: <span className="font-semibold" style={{ color: accent }}>{formatDate(internship.meta._internship_application_deadline)}</span>
+                Deadline:{' '}
+                <span className="font-semibold" style={{ color: accent }}>
+                  {formatDate(internship.meta._internship_application_deadline)}
+                </span>
               </span>
             )}
           </div>
@@ -164,7 +190,7 @@ export default function CurrentInternshipsGrid({ internships }: { internships: a
             </h2>
             <div className="hidden md:block w-px bg-gray-200 self-stretch flex-shrink-0" />
             <p className="font-sans text-gray-500 text-base max-w-sm leading-relaxed md:pt-1 flex-shrink-0">
-              Explore our open internship opportunities across Africa's most dynamic markets.
+              Explore our open internship opportunities across Africa&apos;s most dynamic markets.
             </p>
           </div>
         </FadeIn>
@@ -202,3 +228,4 @@ export default function CurrentInternshipsGrid({ internships }: { internships: a
     </section>
   );
 }
+

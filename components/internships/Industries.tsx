@@ -9,7 +9,7 @@ const destinations = [
   {
     country: 'Ghana',
     city: 'Accra',
-    href: '/internships/ghana',
+    href: '/internships/current',
     image: '/images/kente-market.jpg',
     accent: '#1D3160',
     MapComponent: GhanaMap,
@@ -25,7 +25,7 @@ const destinations = [
   {
     country: 'Rwanda',
     city: 'Kigali',
-    href: '/internships/rwanda',
+    href: '/internships/current',
     image: '/images/kcc-scaled.webp',
     accent: '#F4A261',
     MapComponent: RwandaMap,

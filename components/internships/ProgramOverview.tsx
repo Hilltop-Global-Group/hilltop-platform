@@ -59,7 +59,7 @@ export default function ProgramOverview() {
               </h2>
               <div className="space-y-4 mb-8">
                 <p className="font-sans text-gray-600 text-base leading-relaxed">
-                  Participants spend four weeks embedded in organizations across Accra or Kigali, contributing to structured, deliverable-based assignments alongside local teams. Each placement is designed to strengthen professional competencies, expand global networks, and deepen cross-cultural understanding through direct participation in Africa's professional ecosystems.
+                  Participants spend four weeks embedded in organizations across Accra, Ghana or Kigali, Rwanda, contributing to structured, deliverable-based assignments alongside local teams. Each placement is designed to strengthen professional competencies, expand global networks, and deepen cross-cultural understanding through direct participation in Africa's professional ecosystems.
                 </p>
                 <p className="font-sans text-gray-600 text-base leading-relaxed">
                   Hilltop's 100+ vetted host organizations span fintech, agribusiness, healthcare, creative industries, and social enterprise. In Rwanda, students are paired with African Leadership University peers for collaborative learning. Every program includes pre-departure orientation, on-site mentorship, guided reflection sessions, and post-program impact documentation.
@@ -72,7 +72,7 @@ export default function ProgramOverview() {
               <div className="grid grid-cols-3 divide-x divide-gray-200 border border-gray-100">
                 {[
                   { value: '4', unit: 'weeks', label: 'in-country' },
-                  { value: '2', unit: 'cities', label: 'GH & RW' },
+                  { value: '2', unit: 'cities', label: 'Ghana & Rwanda' },
                   { value: '50+', unit: 'hosts', label: 'partner orgs' },
                 ].map((stat, i) => (
                   <div key={i} className="text-center py-5 px-2 sm:px-3">

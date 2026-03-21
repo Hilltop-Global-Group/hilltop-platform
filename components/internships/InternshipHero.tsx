@@ -4,7 +4,11 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { AfricaWatermark, DecorativeUnderline, ArrowCTA } from '../shared/HilltopBrand';
 
-export default function InternshipHero() {
+interface InternshipHeroProps {
+  showCTA?: boolean;
+}
+
+export default function InternshipHero({ showCTA = true }: InternshipHeroProps) {
   return (
     <section className="relative pt-32 pb-20 overflow-hidden" style={{ backgroundColor: '#080f1c' }}>
       {/* Background photo */}
@@ -53,20 +57,22 @@ export default function InternshipHero() {
           </span>
         </motion.h1>
 
-        <motion.div
-          className="flex flex-wrap gap-6"
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-        >
-          <Link
-            href="/internships/current"
-            className="group inline-flex items-center gap-3 font-sans font-semibold text-sm uppercase tracking-[0.15em] text-white border-b border-white/40 pb-1 hover:border-white transition-colors duration-200"
+        {showCTA && (
+          <motion.div
+            className="flex flex-wrap gap-6"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
           >
-            Explore Current Programs
-            <ArrowCTA />
-          </Link>
-        </motion.div>
+            <Link
+              href="/internships/current"
+              className="group inline-flex items-center gap-3 font-sans font-semibold text-sm uppercase tracking-[0.15em] text-white border-b border-white/40 pb-1 hover:border-white transition-colors duration-200"
+            >
+              Explore Current Programs
+              <ArrowCTA />
+            </Link>
+          </motion.div>
+        )}
       </div>
     </section>
   );

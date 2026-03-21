@@ -5,10 +5,11 @@ import { motion } from 'framer-motion';
 import { AfricaWatermark, KenteDivider, DottedAfricaMap } from '../shared/HilltopBrand';
 
 const metrics = [
-  { value: 10, suffix: '+', label: 'Years Building in Africa', note: 'Since 2014' },
-  { value: 1000, suffix: '+', label: 'Students Placed', note: 'Lives changed' },
-  { value: 7, suffix: '+', label: 'African Countries', note: 'Across the continent' },
-  { value: 50, suffix: '+', label: 'Programs Delivered', note: 'Tailored to institutions' },
+  { value: 50,   suffix: '+', label: 'Programs Delivered',  note: 'Tailored to institutions' },
+  { value: 10,   suffix: '+', label: 'Years in Africa',     note: 'Since 2014' },
+  { value: 7,    suffix: '+', label: 'African Countries',   note: 'Across the continent' },
+  { value: 50,   suffix: '+', label: 'Host Organizations',  note: 'Vetted across sectors' },
+  { value: 1000, suffix: '+', label: 'Students Placed',     note: 'Lives changed' },
 ];
 
 function Counter({ end, suffix, duration = 2000 }: { end: number; suffix: string; duration?: number }) {
@@ -53,10 +54,11 @@ export default function ImpactMetrics() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="border-t border-white/15 mb-14" />
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
+        <div className="grid grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-12">
           {metrics.map((m, i) => (
             <motion.div
               key={m.label}
+              className="last:col-span-2 last:lg:col-span-1 last:text-center lg:last:text-left"
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

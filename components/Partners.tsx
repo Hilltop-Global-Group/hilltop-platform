@@ -59,9 +59,9 @@ export default function Partners() {
         <div className="border-t border-gray-100 pt-10">
           <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-gray-200 text-center">
             {[
-              { value: '7+',         label: 'African Countries' },
-              { value: 'GH & RW',    label: 'Active Internship Destinations' },
-              { value: '50+',        label: 'Host Organizations' },
+              { value: '7+',       label: 'African Countries' },
+              { value: 'Ghana & Rwanda', label: 'Active Internship Destinations' },
+              { value: '50+',      label: 'Host Organizations' },
             ].map((s, i) => (
               <div key={i} className="px-4 sm:px-8 py-4 sm:py-0">
                 <p className="font-serif font-extrabold text-2xl sm:text-3xl mb-1" style={{ color: '#1D3160' }}>

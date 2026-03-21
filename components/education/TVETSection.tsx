@@ -16,7 +16,7 @@ const signals = [
   {
     title: 'Government Partnership',
     description:
-      'Signed MOU with Ghana TVET Service (GTVETS), the national body responsible for all public technical and vocational education delivery.',
+      'Active MOU with Ghana TVET Service (GTVETS), the national body responsible for all public technical and vocational education delivery.',
   },
   {
     title: 'U.S. Faculty Pipeline',
@@ -118,7 +118,7 @@ export default function TVETSection() {
 
           <div className="border-t border-gray-200 mb-12" />
 
-          <div className="grid md:grid-cols-2 gap-x-16 gap-y-6 max-w-4xl">
+          <div className="grid md:grid-cols-2 gap-x-16 gap-y-6">
             <FadeIn>
               <p className="font-sans text-gray-600 text-base leading-relaxed">
                 Through curriculum co-design and faculty exchange, we are working to close the gap between the skills

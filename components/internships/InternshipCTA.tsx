@@ -87,19 +87,19 @@ export default function InternshipCTA() {
             transition={{ duration: 0.5, delay: 0.35 }}
           >
             <Link
-              href="/contact"
+              href="/internships/current"
               className="group inline-flex items-center gap-3 font-sans font-semibold text-sm uppercase tracking-[0.15em] text-white border-b border-white/40 pb-1 hover:border-white transition-colors duration-200"
             >
-              Contact Us
+              View Current Internships
               <ArrowCTA />
             </Link>
             <Link
-              href="/testimonials"
+              href="/contact"
               className="group inline-flex items-center gap-3 font-sans font-semibold text-sm uppercase tracking-[0.15em] pb-1 hover:opacity-70 transition-opacity duration-200"
               style={{ color: '#F4A261', borderBottom: '1px solid #F4A26160' }}
             >
-              Read Student Stories
-              <ArrowCTA />
+              Contact Us
+              <ArrowCTA color="#F4A261" />
             </Link>
           </motion.div>
 

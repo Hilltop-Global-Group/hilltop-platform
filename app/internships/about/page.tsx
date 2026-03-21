@@ -7,6 +7,7 @@ import Accommodation from '@/components/internships/Accommodation';
 import ProgramDetails from '@/components/internships/ProgramDetails';
 import InternshipFAQ from '@/components/internships/InternshipFAQ';
 import InternshipCTA from '@/components/internships/InternshipCTA';
+import InternshipCurrentCTABanner from '@/components/internships/InternshipCurrentCTABanner';
 
 export const metadata = {
   title: 'About Our Internship Programs | Hilltop Global Group',
@@ -17,10 +18,12 @@ export default function InternshipsAboutPage() {
   return (
     <main>
       <InternshipHero />
+      <InternshipCurrentCTABanner variant="top" />
       <ProgramOverview />
       <InternshipVideos />
       <InternshipBenefits />
       <Industries />
+      <InternshipCurrentCTABanner variant="middle" />
       <Accommodation />
       <ProgramDetails />
       <InternshipFAQ />

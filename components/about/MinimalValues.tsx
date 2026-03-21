@@ -31,7 +31,7 @@ const values = [
     title: 'Innovation',
     tagline: 'New Models for a New Continent',
     description: 'From deliverable-based internship placements to a train-the-trainer TVET partnership with Ghana\'s national technical education authority, we build program models that did not exist before us. Seven countries. Government-level access. Curriculum co-designed with faculty, not handed to them.',
-    image: '/images/nkrumah-memorial.jpg',
+    image: '/images/innovation.jpg',
     imageAlt: 'Hilltop interns working with an innovative African startup in Kigali, Rwanda',
     accent: '#F4A261',
   },

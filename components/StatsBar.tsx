@@ -24,9 +24,11 @@ function Counter({ end, suffix = '' }: CounterProps) {
 }
 
 const stats = [
-  { value: 50, suffix: '+', label: 'Programs Delivered' },
-  { value: 10, suffix: '+', label: 'Years in Africa' },
-  { value: 7,  suffix: '+', label: 'African Countries' },
+  { value: 50,   suffix: '+', label: 'Programs Delivered' },
+  { value: 10,   suffix: '+', label: 'Years in Africa' },
+  { value: 7,    suffix: '+', label: 'African Countries' },
+  { value: 50,   suffix: '+', label: 'Host Organizations' },
+  { value: 1000, suffix: '+', label: 'Students Placed' },
 ];
 
 export default function StatsBar() {
@@ -37,20 +39,20 @@ export default function StatsBar() {
         {/* Thin top rule */}
         <div className="border-t border-white/15 mb-14" />
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-white/15">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 divide-y-2 divide-white/10 sm:divide-y-0 sm:divide-x divide-white/15">
           {stats.map((s, i) => (
             <motion.div
               key={s.label}
-              className="text-center px-4 sm:px-8 py-6 sm:py-0"
+              className="text-center px-4 sm:px-6 py-6 sm:py-0 last:col-span-2 last:sm:col-span-1"
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.14, duration: 0.6 }}
+              transition={{ delay: i * 0.12, duration: 0.6 }}
             >
               {/* Big number */}
               <p
                 className="font-serif font-extrabold text-white leading-none mb-3"
-                style={{ fontSize: 'clamp(2.8rem, 6vw, 5.5rem)' }}
+                style={{ fontSize: 'clamp(2.2rem, 4.5vw, 4.5rem)' }}
               >
                 <Counter end={s.value} suffix={s.suffix} />
               </p>

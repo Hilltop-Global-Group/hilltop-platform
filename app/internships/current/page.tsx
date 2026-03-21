@@ -10,7 +10,7 @@ export const metadata = {
 export default function CurrentInternshipsPage() {
   return (
     <main>
-      <InternshipHero />
+      <InternshipHero showCTA={false} />
       <CurrentInternshipsOnly />
       <InternshipCTA />
     </main>

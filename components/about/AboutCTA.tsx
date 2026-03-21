@@ -72,7 +72,7 @@ export default function AboutCTA() {
               className="group inline-flex items-center gap-3 font-sans font-semibold text-sm uppercase tracking-[0.15em] pb-1 hover:opacity-70 transition-opacity duration-200"
               style={{ color: '#F4A261', borderBottom: '1px solid #F4A26160' }}
             >
-              View Study Programs
+              View Education Abroad Programs
               <ArrowCTA color="#F4A261" />
             </Link>
           </motion.div>
