@@ -1,7 +1,6 @@
 'use client';
 
-import { ArrowLeft, ExternalLink } from 'lucide-react';
-import Image from 'next/image';
+import { ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { AfricaWatermark, DecorativeUnderline, ArrowCTA } from '../../shared/HilltopBrand';
@@ -12,7 +11,7 @@ export default function RwandaProgramHero() {
       <div className="absolute inset-0">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-40"
-          style={{ backgroundImage: `url('http://hilltopglobalgroup.com/wp-content/uploads/2023/09/2.jpg')` }}
+          style={{ backgroundImage: `url('/images/kigali-hero.webp')` }}
         />
         <div className="absolute inset-0 bg-gradient-to-br from-[#080f1c]/85 via-[#080f1c]/55 to-[#080f1c]/70" />
       </div>
@@ -32,19 +31,7 @@ export default function RwandaProgramHero() {
           Back to Current Internships
         </Link>
 
-        {/* ALU Collaboration */}
-        <div className="flex items-center gap-4 mb-8">
-          <span className="font-sans text-white/40 text-xs uppercase tracking-wider">In collaboration with</span>
-          <Image src="/logos/alur.png" alt="African Leadership University" width={200} height={50} className="h-8 w-auto" priority />
-          <a
-            href="https://www.alueducation.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 font-sans text-xs text-white/50 hover:text-white transition-colors"
-          >
-            Learn more <ExternalLink size={12} />
-          </a>
-        </div>
+        {/* ALU + Hilltop collaboration banner moved to section below hero */}
 
         <motion.p
           className="font-sans text-xs font-semibold uppercase tracking-[0.25em] mb-5"
@@ -83,13 +70,15 @@ export default function RwandaProgramHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          <Link
-            href="/contact"
+          <a
+            href="https://8xlyl7wsuni.typeform.com/to/ygqGReCF"
+            target="_blank"
+            rel="noopener noreferrer"
             className="group inline-flex items-center gap-3 font-sans font-semibold text-sm uppercase tracking-[0.15em] text-white border-b border-white/40 pb-1 hover:border-white transition-colors duration-200"
           >
             Apply Now
             <ArrowCTA />
-          </Link>
+          </a>
         </motion.div>
       </div>
     </section>

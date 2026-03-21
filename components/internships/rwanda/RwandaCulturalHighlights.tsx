@@ -6,34 +6,44 @@ import { KenteDivider, DecorativeUnderline, HighlightWord } from '@/components/s
 
 const highlights = [
   {
-    title: 'Cultural performances',
-    description: 'Cultural performances & heritage',
-    image: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/Copy-of-20230518_122404-scaled-e1695315573707.jpg',
+    title: 'Cultural Performances',
+    description: 'Traditional dance, music & heritage',
+    image: '/images/performance.jpg',
   },
   {
     title: 'Kigali Genocide Memorial',
-    description: 'Historical sites & memorial',
-    image: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/Copy-of-20230521_170109-scaled-e1759311926763.jpg',
+    description: 'Historical sites & remembrance',
+    image: '/images/genocide.webp',
   },
   {
     title: 'Volcanoes National Park',
-    description: 'Gorilla trekking & nature',
-    image: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/7A0B6637-94DF-4B8B-A888-04AE2A2917CD.jpg',
+    description: 'Gorilla trekking & nature excursions',
+    image: '/images/volcanoes.webp',
   },
   {
     title: "Nyamirambo Women's Center",
-    description: 'Community engagement',
-    image: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/2.jpg',
+    description: 'Community engagement & empowerment',
+    image: '/images/nwc.webp',
   },
   {
     title: 'Kigali Art & Fashion Scene',
-    description: 'Creative industries & design',
-    image: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/6.jpg',
+    description: 'Creative industries & design culture',
+    image: '/images/arts-1.jpg',
   },
   {
-    title: 'Local markets & entrepreneurship',
-    description: 'Business & trading culture',
-    image: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/Copy-of-20230521_172314-scaled-e1759312776245.jpg',
+    title: 'Local Markets & Entrepreneurship',
+    description: 'Business, trading & community commerce',
+    image: '/images/market.webp',
+  },
+  {
+    title: 'Kigali Cityscapes & Innovation Hubs',
+    description: 'Urban development & tech ecosystem',
+    image: '/images/kigali.webp',
+  },
+  {
+    title: 'Community Immersion & Cultural Visits',
+    description: 'Authentic connections & local life',
+    image: '/images/cultural.jpg',
   },
 ];
 

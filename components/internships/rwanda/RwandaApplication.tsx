@@ -1,9 +1,12 @@
 'use client';
 
-import { QrCode, Check } from 'lucide-react';
+import { Check } from 'lucide-react';
 import { motion } from 'framer-motion';
 import FadeIn from '@/components/FadeIn';
 import { KenteDivider, DecorativeUnderline, ArrowCTA, HighlightWord } from '@/components/shared/HilltopBrand';
+
+const APPLICATION_URL = 'https://8xlyl7wsuni.typeform.com/to/ygqGReCF';
+const QR_SRC = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&color=1D3160&bgcolor=FFFFFF&data=${encodeURIComponent(APPLICATION_URL)}`;
 
 const paymentTerms = [
   'A non-refundable deposit is required upon acceptance to secure your place. The remaining balance is due 45 days before departure.',
@@ -36,17 +39,25 @@ export default function RwandaApplication() {
 
         <FadeIn delay={0.1}>
           <div className="bg-gray-50 border border-gray-100 p-12 mb-10">
-            <div className="w-48 h-48 mx-auto bg-white border border-gray-100 flex items-center justify-center mb-6">
-              <QrCode size={120} style={{ color: '#1D3160' }} />
+            {/* Real QR code */}
+            <div className="w-52 h-52 mx-auto bg-white border border-gray-200 flex items-center justify-center mb-6 p-3">
+              <img
+                src={QR_SRC}
+                alt="QR code — scan to apply"
+                width={200}
+                height={200}
+                className="w-full h-full object-contain"
+              />
             </div>
-            <p className="font-sans text-gray-500 font-semibold text-sm uppercase tracking-wider">Scan to apply</p>
+            <p className="font-sans text-gray-500 font-semibold text-sm uppercase tracking-wider mb-2">Scan to apply</p>
+            <p className="font-sans text-gray-400 text-xs">or click the button below</p>
           </div>
         </FadeIn>
 
         <FadeIn delay={0.15}>
           <p className="font-sans text-xl mb-6">
             <span className="text-gray-600">Application deadline:</span>{' '}
-            <span className="font-bold" style={{ color: '#F4A261' }}>March 14, 2026</span>
+            <span className="font-bold" style={{ color: '#F4A261' }}>April 15, 2026</span>
           </p>
           <p className="font-sans text-gray-500 mb-10">
             Spots are limited. Early application is strongly advised.
@@ -55,7 +66,9 @@ export default function RwandaApplication() {
 
         <FadeIn delay={0.2}>
           <a
-            href="#"
+            href={APPLICATION_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="group inline-flex items-center gap-3 px-10 py-4 font-sans font-bold text-sm uppercase tracking-wider text-white transition-all duration-300 hover:opacity-90"
             style={{ backgroundColor: '#1D3160' }}
           >
@@ -67,7 +80,7 @@ export default function RwandaApplication() {
         <FadeIn delay={0.25}>
           <div className="mt-16 border-t border-gray-200 pt-10 text-left">
             <h3 className="font-serif font-bold text-2xl mb-6" style={{ color: '#1D3160' }}>
-              Payment Terms & Plan Options
+              Payment Terms &amp; Plan Options
             </h3>
             <div className="space-y-4">
               {paymentTerms.map((term, i) => (
@@ -85,3 +98,5 @@ export default function RwandaApplication() {
     </section>
   );
 }
+
+

@@ -11,7 +11,7 @@ export default function GhanaProgramOverview() {
           <div className="grid lg:grid-cols-3 gap-8 mb-16">
             <div className="lg:col-span-1">
               <img
-                src="/images/innovation-center.jpg"
+                src="/images/business.webp"
                 alt="Accra skyline & business districts"
                 className="w-full h-64 object-cover border border-gray-100"
               />
@@ -21,7 +21,7 @@ export default function GhanaProgramOverview() {
             </div>
             <div className="lg:col-span-1">
               <img
-                src="/images/kente-market.jpg"
+                src="/images/osu-castle.JPG"
                 alt="Historical sites"
                 className="w-full h-64 object-cover border border-gray-100"
               />
@@ -31,7 +31,7 @@ export default function GhanaProgramOverview() {
             </div>
             <div className="lg:col-span-1">
               <img
-                src="/images/hero-cultural.jpg"
+                src="/images/Accra-Art-Centre-16.webp"
                 alt="Markets & creative streets"
                 className="w-full h-64 object-cover border border-gray-100"
               />

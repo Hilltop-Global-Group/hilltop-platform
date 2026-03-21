@@ -7,36 +7,42 @@ const highlights = [
   {
     title: 'Traditional Music & Dance',
     description: 'Cultural performances & heritage',
-    image:
-      '/images/hero-study-abroad.jpg',
+    image: '/images/cultural-ga.webp',
   },
   {
     title: 'Accra Arts Centre',
-    description: 'Accra Arts Centre & creative streets',
-    image:
-      '/images/hero-cultural.jpg',
+    description: 'Markets & creative streets',
+    image: '/images/Accra-Art-Centre-16.webp',
   },
   {
     title: 'Makola Market',
     description: 'Markets and shopping for souvenirs',
-    image:
-      '/images/kente-market.jpg',
+    image: '/images/makola.webp',
   },
   {
-    title: 'Cape Coast Castle',
-    description: 'Historical landmarks',
-    image: '/images/nkrumah-memorial.jpg',
+    title: 'The Black Star Gate',
+    description: 'Independence Square & national heritage',
+    image: '/images/freedom.jpeg',
   },
   {
     title: 'Kakum National Park',
-    description: 'Nature & wildlife',
-    image: '/images/innovation-center.jpg',
+    description: 'Nature, wildlife & canopy walks',
+    image: '/images/kakum.webp',
   },
   {
     title: 'Creative Hubs',
     description: 'Art galleries & design spaces',
-    image:
-      '/images/cocoa-farm.jpg',
+    image: '/images/impacthub.webp',
+  },
+  {
+    title: 'Accra Skyline & Business Districts',
+    description: 'Urban growth & enterprise',
+    image: '/images/business.webp',
+  },
+  {
+    title: 'Historical Sites',
+    description: 'Colonial landmarks & Ghanaian history',
+    image: '/images/osu-castle.JPG',
   },
 ];
 

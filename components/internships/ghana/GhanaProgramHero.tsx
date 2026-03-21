@@ -11,7 +11,7 @@ export default function GhanaProgramHero() {
       <div className="absolute inset-0">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-40"
-          style={{ backgroundImage: `url('/images/innovation-center.jpg')` }}
+          style={{ backgroundImage: `url('/images/ghana-hero.webp')` }}
         />
         <div className="absolute inset-0 bg-gradient-to-br from-[#080f1c]/85 via-[#080f1c]/55 to-[#080f1c]/70" />
       </div>
@@ -68,13 +68,15 @@ export default function GhanaProgramHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          <Link
-            href="/contact"
+          <a
+            href="https://8xlyl7wsuni.typeform.com/to/ygqGReCF"
+            target="_blank"
+            rel="noopener noreferrer"
             className="group inline-flex items-center gap-3 font-sans font-semibold text-sm uppercase tracking-[0.15em] text-white border-b border-white/40 pb-1 hover:border-white transition-colors duration-200"
           >
             Apply Now
             <ArrowCTA />
-          </Link>
+          </a>
         </motion.div>
       </div>
     </section>

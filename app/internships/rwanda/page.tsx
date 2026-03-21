@@ -1,4 +1,5 @@
 import RwandaProgramHero from '@/components/internships/rwanda/RwandaProgramHero';
+import RwandaCollabBanner from '@/components/internships/rwanda/RwandaCollabBanner';
 import RwandaProgramOverview from '@/components/internships/rwanda/RwandaProgramOverview';
 import RwandaProgramFormat from '@/components/internships/rwanda/RwandaProgramFormat';
 import RwandaKeyDetails from '@/components/internships/rwanda/RwandaKeyDetails';
@@ -17,6 +18,7 @@ export default function RwandaInternshipPage() {
   return (
     <main>
       <RwandaProgramHero />
+      <RwandaCollabBanner />
       <RwandaProgramOverview />
       <RwandaProgramFormat />
       <RwandaKeyDetails />

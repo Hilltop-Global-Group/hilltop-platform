@@ -1,9 +1,11 @@
 'use client';
 
-import { QrCode } from 'lucide-react';
 import FadeIn from '@/components/FadeIn';
 import { KenteDivider, DecorativeUnderline, Eyebrow, ArrowCTA } from '@/components/shared/HilltopBrand';
 import { Check } from 'lucide-react';
+
+const APPLICATION_URL = 'https://8xlyl7wsuni.typeform.com/to/ygqGReCF';
+const QR_SRC = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&color=1D3160&bgcolor=FFFFFF&data=${encodeURIComponent(APPLICATION_URL)}`;
 
 export default function GhanaApplication() {
   return (
@@ -26,10 +28,18 @@ export default function GhanaApplication() {
 
         <FadeIn delay={0.1}>
           <div className="border border-gray-100 bg-gray-50/60 p-12 mb-10">
-            <div className="w-48 h-48 mx-auto border border-gray-200 bg-white flex items-center justify-center mb-6">
-              <QrCode size={120} style={{ color: '#1D3160' }} />
+            {/* Real QR code */}
+            <div className="w-52 h-52 mx-auto border border-gray-200 bg-white flex items-center justify-center mb-6 p-3">
+              <img
+                src={QR_SRC}
+                alt="QR code — scan to apply"
+                width={200}
+                height={200}
+                className="w-full h-full object-contain"
+              />
             </div>
             <p className="font-sans text-gray-500 font-semibold">Scan to apply</p>
+            <p className="font-sans text-gray-400 text-xs mt-1">or click the button below</p>
           </div>
         </FadeIn>
 
@@ -37,7 +47,7 @@ export default function GhanaApplication() {
           <p className="font-sans text-xl mb-8">
             <span className="text-gray-700">Application deadline:</span>{' '}
             <span className="font-bold" style={{ color: '#F4A261' }}>
-              March 14, 2026
+              April 15, 2026
             </span>
           </p>
 
@@ -46,7 +56,9 @@ export default function GhanaApplication() {
           </p>
 
           <a
-            href="#"
+            href={APPLICATION_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="group inline-flex items-center gap-3 px-10 py-4 font-serif font-extrabold text-lg text-white transition-colors duration-300 hover:opacity-90 bg-[#1D3160]"
           >
             Apply Now
@@ -84,3 +96,5 @@ export default function GhanaApplication() {
     </section>
   );
 }
+
+

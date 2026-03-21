@@ -6,17 +6,17 @@ import { KenteDivider, DecorativeUnderline, HighlightWord } from '@/components/s
 
 const images = [
   {
-    src: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/2.jpg',
+    src: '/images/kigali.webp',
     alt: 'Kigali cityscapes & innovation hubs',
     caption: 'Kigali cityscapes & innovation hubs',
   },
   {
-    src: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/Copy-of-20230518_122404-scaled-e1695315573707.jpg',
+    src: '/images/cultural.jpg',
     alt: 'Community immersion & cultural visits',
     caption: 'Community immersion & cultural visits',
   },
   {
-    src: 'http://hilltopglobalgroup.com/wp-content/uploads/2023/09/7A0B6637-94DF-4B8B-A888-04AE2A2917CD.jpg',
+    src: '/images/volcanoes.webp',
     alt: 'Nature & excursions (Volcanoes)',
     caption: 'Nature & excursions (Volcanoes)',
   },
