@@ -43,7 +43,7 @@ const highlights = [
   {
     title: 'Community Immersion & Cultural Visits',
     description: 'Authentic connections & local life',
-    image: '/images/cultural.jpg',
+    image: '/images/culture.webp',
   },
 ];
 

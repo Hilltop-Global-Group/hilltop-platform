@@ -11,7 +11,7 @@ const images = [
     caption: 'Kigali cityscapes & innovation hubs',
   },
   {
-    src: '/images/cultural.jpg',
+    src: '/images/culture.webp',
     alt: 'Community immersion & cultural visits',
     caption: 'Community immersion & cultural visits',
   },
