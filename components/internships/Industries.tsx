@@ -26,7 +26,7 @@ const destinations = [
     country: 'Rwanda',
     city: 'Kigali',
     href: '/internships/rwanda',
-    image: '/images/nkrumah-memorial.jpg',
+    image: '/images/kcc-scaled.webp',
     accent: '#F4A261',
     MapComponent: RwandaMap,
     description: "Kigali is a global benchmark for governance innovation and rapid economic transformation. Students are paired with African Leadership University peers and placed across fintech, agritech, healthtech, and social innovation organizations.",

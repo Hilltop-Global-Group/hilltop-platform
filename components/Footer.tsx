@@ -1,7 +1,8 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
-import { Mail, Phone, MapPin, Linkedin, Instagram, Facebook } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Instagram, Facebook, Send } from 'lucide-react';
 import { FaTiktok, FaXTwitter } from 'react-icons/fa6';
 import { AfricaWatermark, KenteDivider } from './shared/HilltopBrand';
 
@@ -24,6 +25,23 @@ const quickLinks = [
 ];
 
 export default function Footer() {
+  const [form, setForm] = useState({ name: '', email: '', message: '' });
+  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus('sending');
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+      setStatus(res.ok ? 'sent' : 'error');
+    } catch {
+      setStatus('error');
+    }
+  };
   return (
     <footer style={{ backgroundColor: '#080f1c' }} className="relative overflow-hidden">
       {/* Orange kente accent at top */}
@@ -36,24 +54,73 @@ export default function Footer() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 
-        {/* Top: CTA left, contact + social far right on desktop */}
+        {/* Top: CTA + form left, contact + social far right on desktop */}
         <div className="pt-16 pb-14 flex flex-col lg:flex-row lg:items-start lg:justify-between gap-12">
-          <div>
+          <div className="flex-1 max-w-xl">
             <p className="font-sans text-xs font-semibold uppercase tracking-[0.25em] text-white/40 mb-5">
               Get In Touch
             </p>
             <h2
-              className="font-serif font-extrabold text-white leading-none mb-6"
+              className="font-serif font-extrabold text-white leading-none mb-3"
               style={{ fontSize: 'clamp(2rem, 4vw, 3.2rem)' }}
             >
               Start a Conversation
             </h2>
-            <p className="font-sans text-white/55 text-base leading-relaxed max-w-md">
+            <p className="font-sans text-white/55 text-base leading-relaxed mb-8">
               Whether you are exploring a first partnership or expanding an existing program, our team in Washington, Accra, and Kigali is ready to talk.
             </p>
 
+            {/* Contact Form */}
+            {status === 'sent' ? (
+              <div className="border border-white/10 p-6">
+                <p className="font-sans text-white font-semibold mb-1">Message received!</p>
+                <p className="font-sans text-white/50 text-sm">We will be in touch within 1–2 business days.</p>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-3">
+                <div className="grid sm:grid-cols-2 gap-3">
+                  <input
+                    type="text"
+                    placeholder="Your name"
+                    value={form.name}
+                    onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
+                    required
+                    className="w-full bg-white/5 border border-white/10 px-4 py-3 font-sans text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-[#F4A261] transition-colors duration-200"
+                  />
+                  <input
+                    type="email"
+                    placeholder="Your email"
+                    value={form.email}
+                    onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
+                    required
+                    className="w-full bg-white/5 border border-white/10 px-4 py-3 font-sans text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-[#F4A261] transition-colors duration-200"
+                  />
+                </div>
+                <textarea
+                  placeholder="Tell us about your program or partnership interest…"
+                  value={form.message}
+                  onChange={e => setForm(f => ({ ...f, message: e.target.value }))}
+                  required
+                  rows={4}
+                  className="w-full bg-white/5 border border-white/10 px-4 py-3 font-sans text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-[#F4A261] transition-colors duration-200 resize-none"
+                />
+                <button
+                  type="submit"
+                  disabled={status === 'sending'}
+                  className="group inline-flex items-center gap-3 px-7 py-3 font-sans font-semibold text-sm uppercase tracking-[0.15em] border transition-colors duration-200 disabled:opacity-50"
+                  style={{ borderColor: '#F4A261', color: '#F4A261' }}
+                >
+                  {status === 'sending' ? 'Sending…' : 'Send Message'}
+                  <Send size={14} />
+                </button>
+                {status === 'error' && (
+                  <p className="font-sans text-red-400 text-xs mt-1">Something went wrong. Please email us directly.</p>
+                )}
+              </form>
+            )}
+
             {/* Kente divider */}
-            <div className="mt-8">
+            <div className="mt-10">
               <KenteDivider count={6} color="#F4A261" />
             </div>
           </div>

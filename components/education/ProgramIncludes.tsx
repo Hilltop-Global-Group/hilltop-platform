@@ -7,25 +7,25 @@ const includes = [
   {
     title: 'Professional Engagement and Deliverables',
     description: 'Participants contribute to live consulting projects, research sprints, and organizational deliverables with vetted industry partners across fintech, agribusiness, healthcare, and creative sectors.',
-    image: '/images/kente-market.jpg',
+    image: '/images/professional-engagement.jpeg',
     accent: '#1D3160',
   },
   {
     title: 'History, Heritage, and Contemporary Culture',
     description: 'Guided engagement with historical landmarks, living traditions, and the creative economies shaping each destination today.',
-    image: '/images/closing-dinner.jpg',
+    image: '/images/osu-castle.JPG',
     accent: '#F4A261',
   },
   {
     title: 'Community-Engaged Learning',
     description: 'Projects co-created with local organizations, designed so that host communities receive usable outcomes and students gain perspectives shaped by genuine reciprocal exchange.',
-    image: '/images/nkrumah-memorial.jpg',
+    image: '/images/nyu-sa11.jpg',
     accent: '#1D3160',
   },
   {
     title: 'Independent Exploration',
     description: 'Weekends to engage with national parks, heritage sites, local markets, and the everyday rhythms of your host city on your own terms.',
-    image: '/images/hero-study-abroad.jpg',
+    image: '/images/kakum.jpg',
     accent: '#F4A261',
   },
 ];

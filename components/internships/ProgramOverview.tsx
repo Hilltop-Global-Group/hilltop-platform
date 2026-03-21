@@ -21,7 +21,7 @@ export default function ProgramOverview() {
             <div className="relative overflow-hidden shadow-xl" style={{ minHeight: 460 }}>
               <div
                 className="absolute inset-0 bg-cover bg-center transition-transform duration-700 hover:scale-105"
-                style={{ backgroundImage: `url('/images/hero-study-abroad.jpg')` }}
+                style={{ backgroundImage: `url('/images/akwaaba-gh.jpeg')` }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#080f1c]/70 via-transparent to-transparent" />
               <div className="absolute bottom-6 left-6 right-6">

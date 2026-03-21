@@ -10,13 +10,13 @@ const benefits = [
     icon: Users,
     title: 'Develop cross-cultural professional fluency',
     description: 'Navigate workplace norms across cultures, communicate effectively in international teams, and build the adaptability that global employers actively recruit for.',
-    image: '/images/kente-market.jpg',
+    image: '/images/nyu-sa14.jpg',
   },
   {
     icon: Briefcase,
     title: 'Deliver real work products to real organizations',
     description: 'Every placement is structured around deliverables. You leave with portfolio-ready output that your host organization actually uses, not an observation report.',
-    image: '/images/nkrumah-memorial.jpg',
+    image: '/images/real-work.jpg',
   },
   {
     icon: Globe,
@@ -28,13 +28,13 @@ const benefits = [
     icon: TrendingUp,
     title: 'Build professional networks that last beyond the program',
     description: 'Direct mentorship from African founders, executives, and industry professionals. Leadership workshops designed to convert international experience into career-ready competencies.',
-    image: '/images/cocoa-farm.jpg',
+    image: '/images/professional-network.jpeg',
   },
   {
     icon: Heart,
     title: 'Engage with communities as a participant, not a spectator',
     description: 'Guided cultural immersions and reflection sessions connect your professional experience to the history, creative economies, and civic life of your host city.',
-    image: '/images/closing-dinner.jpg',
+    image: '/images/spec1.jpg',
   },
 ];
 

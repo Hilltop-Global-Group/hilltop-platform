@@ -10,19 +10,19 @@ const pillars = [
     number: '01',
     title: 'Real Work Experience',
     description: 'Participants are embedded in vetted organizations across fintech, agribusiness, healthcare, and creative sectors, contributing to deliverables from day one.',
-    image: '/images/kente-market.jpg',
+    image: '/images/real-work.jpg',
   },
   {
     number: '02',
     title: 'Professional Network',
     description: 'Direct mentorship from African founders, executives, and institutional leaders builds professional connections that last beyond the program.',
-    image: '/images/nkrumah-memorial.jpg',
+    image: '/images/professional-network.jpeg',
   },
   {
     number: '03',
     title: 'Cross-Cultural Fluency',
     description: 'Guided immersion in African professional culture develops the communication, adaptability, and cross-cultural competencies that global employers actively recruit for.',
-    image: '/images/closing-dinner.jpg',
+    image: '/images/nyu-sa14.jpg',
   },
 ];
 

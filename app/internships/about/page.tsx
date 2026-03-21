@@ -1,5 +1,6 @@
 import InternshipHero from '@/components/internships/InternshipHero';
 import ProgramOverview from '@/components/internships/ProgramOverview';
+import InternshipVideos from '@/components/internships/InternshipVideos';
 import InternshipBenefits from '@/components/internships/InternshipBenefits';
 import Industries from '@/components/internships/Industries';
 import Accommodation from '@/components/internships/Accommodation';
@@ -17,6 +18,7 @@ export default function InternshipsAboutPage() {
     <main>
       <InternshipHero />
       <ProgramOverview />
+      <InternshipVideos />
       <InternshipBenefits />
       <Industries />
       <Accommodation />

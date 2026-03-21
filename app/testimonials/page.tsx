@@ -1,6 +1,5 @@
 import TestimonialsHero from '@/components/testimonials/TestimonialsHero';
 import StudentTestimonials from '@/components/testimonials/StudentTestimonials';
-import VideoTestimonials from '@/components/testimonials/VideoTestimonials';
 import ImpactStats from '@/components/testimonials/ImpactStats';
 import FeaturedStories from '@/components/testimonials/FeaturedStories';
 import TestimonialSubmission from '@/components/testimonials/TestimonialSubmission';
@@ -16,7 +15,6 @@ export default function TestimonialsPage() {
     <main>
       <TestimonialsHero />
       <StudentTestimonials />
-      <VideoTestimonials />
       <ImpactStats />
       <FeaturedStories />
       <TestimonialSubmission />

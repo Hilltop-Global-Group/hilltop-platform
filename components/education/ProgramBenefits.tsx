@@ -70,7 +70,7 @@ export default function ProgramBenefits() {
                     <div
                       className="w-full h-full bg-cover bg-center transform transition-transform duration-700 hover:scale-105"
                       style={{
-                        backgroundImage: `url('/images/kente-market.jpg')`
+                        backgroundImage: `url('/images/nyu-sa9.jpg')`
                       }}
                     />
                   </div>
@@ -80,7 +80,7 @@ export default function ProgramBenefits() {
                     <div
                       className="w-full h-full bg-cover bg-center transform transition-transform duration-700 hover:scale-105"
                       style={{
-                        backgroundImage: `url('/images/nkrumah-memorial.jpg')`
+                        backgroundImage: `url('/images/nyu-sa8.jpg')`
                       }}
                     />
                   </div>
@@ -92,7 +92,7 @@ export default function ProgramBenefits() {
                     <div
                       className="w-full h-full bg-cover bg-center transform transition-transform duration-700 hover:scale-105"
                       style={{
-                        backgroundImage: `url('/images/innovation-center.jpg')`
+                        backgroundImage: `url('/images/home.jpeg')`
                       }}
                     />
                   </div>
@@ -102,7 +102,7 @@ export default function ProgramBenefits() {
                     <div
                       className="w-full h-full bg-cover bg-center transform transition-transform duration-700 hover:scale-105"
                       style={{
-                        backgroundImage: `url('/images/cocoa-farm.jpg')`
+                        backgroundImage: `url('/images/indi.jpeg')`
                       }}
                     />
                   </div>
