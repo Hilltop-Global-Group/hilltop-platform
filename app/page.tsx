@@ -4,7 +4,7 @@ import Services from '@/components/Services';
 import Partners from '@/components/Partners';
 import WhyChoose from '@/components/WhyChoose';
 import AfricanResidency from '@/components/AfricanResidency';
-import Newsletter from '@/components/Newsletter';
+import NewsletterSignup from '@/components/news/NewsletterSignup';
 
 export default function Home() {
   return (
@@ -15,7 +15,7 @@ export default function Home() {
       <Partners />
       <WhyChoose />
       <AfricanResidency />
-      <Newsletter />
+      <NewsletterSignup />
     </main>
   );
 }

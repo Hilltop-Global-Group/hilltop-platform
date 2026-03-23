@@ -7,6 +7,7 @@ import Accommodation from '@/components/internships/Accommodation';
 import ProgramDetails from '@/components/internships/ProgramDetails';
 import InternshipFAQ from '@/components/internships/InternshipFAQ';
 import InternshipCTA from '@/components/internships/InternshipCTA';
+import NewsletterSignup from '@/components/news/NewsletterSignup';
 import InternshipCurrentCTABanner from '@/components/internships/InternshipCurrentCTABanner';
 
 export const metadata = {
@@ -27,6 +28,7 @@ export default function InternshipsAboutPage() {
       <Accommodation />
       <ProgramDetails />
       <InternshipFAQ />
+      <NewsletterSignup />
       <InternshipCTA />
     </main>
   );

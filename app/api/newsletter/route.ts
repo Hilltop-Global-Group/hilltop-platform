@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 
 export async function POST(request: Request) {
   try {
-    const { email } = await request.json();
+    const { email, firstName, lastName } = await request.json();
 
     if (!email || !email.includes('@')) {
       return NextResponse.json({ error: 'Valid email is required' }, { status: 400 });
@@ -12,7 +12,7 @@ export async function POST(request: Request) {
     const listId = process.env.MAILCHIMP_LIST_ID;
 
     if (!apiKey || !listId) {
-      console.log('Newsletter signup (Mailchimp not configured):', email);
+      console.log('Newsletter signup (Mailchimp not configured):', { email, firstName, lastName });
       return NextResponse.json({ ok: true, message: 'Subscribed (dev mode)' });
     }
 
@@ -27,10 +27,10 @@ export async function POST(request: Request) {
       body: JSON.stringify({
         email_address: email,
         status: 'subscribed',
-        tags: ['Website Signup'],
+        tags: ['Newsletter Subscriber'],
         merge_fields: {
-          FNAME: 'Website',
-          LNAME: 'Subscriber',
+          FNAME: firstName || 'Subscriber',
+          LNAME: lastName || '',
           MMERGE6: 'Website Signup',
           PHONE: 'N/A',
         },

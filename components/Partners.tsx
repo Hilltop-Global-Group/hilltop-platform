@@ -22,13 +22,9 @@ const universities = [
   'UNC Chapel Hill',
 ];
 
-const leftCol = universities.slice(0, 8);
-const rightCol = universities.slice(8);
-
 export default function Partners() {
   return (
     <section className="relative py-16 bg-white border-y border-gray-100 overflow-hidden">
-      {/* Dotted Africa map . far right, decorative */}
       <DottedAfricaMap color="#1D3160" opacity={0.05} className="absolute -right-8 top-1/2 -translate-y-1/2" />
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 
@@ -36,26 +32,14 @@ export default function Partners() {
           Trusted by Students from Leading Universities
         </p>
 
-        {/* University names . two equal columns */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-3 mb-12 max-w-2xl">
-          {leftCol.map((name, i) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-3 mb-12">
+          {universities.map((name, i) => (
             <motion.span
               key={name}
-              className="font-serif font-bold text-gray-800 text-base sm:text-lg cursor-default select-none"
+              className="font-serif font-bold text-gray-800 text-base cursor-default select-none"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.1 + i * 0.06, duration: 0.4 }}
-            >
-              {name}
-            </motion.span>
-          ))}
-          {rightCol.map((name, i) => (
-            <motion.span
-              key={name}
-              className="font-serif font-bold text-gray-800 text-base sm:text-lg cursor-default select-none"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.1 + (i + 4) * 0.06, duration: 0.4 }}
+              transition={{ delay: 0.1 + i * 0.04, duration: 0.4 }}
             >
               {name}
             </motion.span>

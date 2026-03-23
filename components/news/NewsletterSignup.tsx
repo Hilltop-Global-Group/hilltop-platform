@@ -4,6 +4,8 @@ import { useState } from 'react';
 import { KenteDivider, ArrowCTA } from '../shared/HilltopBrand';
 
 export default function NewsletterSignup() {
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
 
@@ -14,10 +16,12 @@ export default function NewsletterSignup() {
       const res = await fetch('/api/newsletter', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, firstName, lastName }),
       });
       if (res.ok) {
         setStatus('sent');
+        setFirstName('');
+        setLastName('');
         setEmail('');
       } else {
         setStatus('error');
@@ -27,12 +31,13 @@ export default function NewsletterSignup() {
     }
   };
 
+  const inputClass = "w-full px-0 py-3 font-sans text-base text-gray-900 placeholder-gray-400 border-0 border-b-2 border-gray-200 focus:outline-none focus:border-black transition-colors duration-200 bg-transparent";
+
   return (
     <section className="py-20 sm:py-24 bg-white border-t border-gray-100">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
 
-          {/* Left: heading */}
           <div>
             <div className="mb-6">
               <KenteDivider count={5} color="#F4A261" />
@@ -48,11 +53,10 @@ export default function NewsletterSignup() {
             </h2>
             <p className="font-sans text-gray-500 text-base leading-relaxed max-w-sm">
               Program updates, partner spotlights, and stories from the ground.
-              Delivered to your inbox twice a month.
+              Delivered to your inbox once a month.
             </p>
           </div>
 
-          {/* Right: form */}
           <div>
             {status === 'sent' ? (
               <div className="border border-gray-200 rounded-none p-8">
@@ -68,13 +72,31 @@ export default function NewsletterSignup() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+                <div className="grid grid-cols-2 gap-4">
+                  <input
+                    type="text"
+                    required
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
+                    placeholder="First name"
+                    className={inputClass}
+                  />
+                  <input
+                    type="text"
+                    required
+                    value={lastName}
+                    onChange={(e) => setLastName(e.target.value)}
+                    placeholder="Last name"
+                    className={inputClass}
+                  />
+                </div>
                 <input
                   type="email"
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Your email address"
-                  className="w-full px-0 py-4 font-sans text-base text-gray-900 placeholder-gray-400 border-0 border-b-2 border-gray-200 focus:outline-none focus:border-black transition-colors duration-200 bg-transparent"
+                  className={inputClass}
                 />
                 <div className="flex items-center justify-between pt-2">
                   <p className="font-sans text-gray-400 text-xs">

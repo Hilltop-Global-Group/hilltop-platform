@@ -4,6 +4,7 @@ import ImpactStats from '@/components/testimonials/ImpactStats';
 import FeaturedStories from '@/components/testimonials/FeaturedStories';
 import TestimonialSubmission from '@/components/testimonials/TestimonialSubmission';
 import TestimonialsCTA from '@/components/testimonials/TestimonialsCTA';
+import NewsletterSignup from '@/components/news/NewsletterSignup';
 
 export const metadata = {
   title: 'Student Stories | Education Abroad & Internships in Africa | Hilltop Global Group',
@@ -18,6 +19,7 @@ export default function TestimonialsPage() {
       <ImpactStats />
       <FeaturedStories />
       <TestimonialSubmission />
+      <NewsletterSignup />
       <TestimonialsCTA />
     </main>
   );
