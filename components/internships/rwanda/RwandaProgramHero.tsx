@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { AfricaWatermark, DecorativeUnderline, ArrowCTA } from '../../shared/HilltopBrand';
 
-export default function RwandaProgramHero() {
+export default function RwandaProgramHero({ applicationUrl }: { applicationUrl?: string }) {
   return (
     <section className="relative pt-32 pb-20 overflow-hidden" style={{ backgroundColor: '#080f1c' }}>
       <div className="absolute inset-0">
@@ -71,7 +71,7 @@ export default function RwandaProgramHero() {
           transition={{ duration: 0.6, delay: 0.3 }}
         >
           <a
-            href="https://8xlyl7wsuni.typeform.com/to/ygqGReCF"
+            href={applicationUrl || 'https://8xlyl7wsuni.typeform.com/to/ygqGReCF'}
             target="_blank"
             rel="noopener noreferrer"
             className="group inline-flex items-center gap-3 font-sans font-semibold text-sm uppercase tracking-[0.15em] text-white border-b border-white/40 pb-1 hover:border-white transition-colors duration-200"

@@ -3,7 +3,7 @@
 import FadeIn from '@/components/FadeIn';
 import { KenteDivider, DecorativeUnderline, Eyebrow } from '@/components/shared/HilltopBrand';
 
-export default function GhanaProgramOverview() {
+export default function GhanaProgramOverview({ overviewText }: { overviewText?: string }) {
   return (
     <section className="py-20 sm:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
@@ -57,7 +57,7 @@ export default function GhanaProgramOverview() {
             </h2>
             <KenteDivider className="mb-8" />
             <p className="font-sans text-gray-700 text-lg leading-relaxed">
-              The Ghana program places participants inside Accra's professional ecosystems four days a week, with Fridays dedicated to leadership development, community-engaged learning, and cultural immersion. Placements span technology, finance, agribusiness, health, and creative sectors, with each intern contributing real deliverables to their host organization.
+              {overviewText || 'The Ghana program places participants inside Accra\u2019s professional ecosystems four days a week, with Fridays dedicated to leadership development, community-engaged learning, and cultural immersion. Placements span technology, finance, agribusiness, health, and creative sectors, with each intern contributing real deliverables to their host organization.'}
             </p>
           </div>
         </FadeIn>

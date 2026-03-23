@@ -5,7 +5,14 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Pause, Play, Quote } from 'lucide-react';
 import { KenteDivider, DecorativeUnderline, AfricaWatermark } from '../shared/HilltopBrand';
 
-const testimonials = [
+interface Testimonial {
+  title: string;
+  quote: string;
+  name: string;
+  affiliation: string;
+}
+
+const fallbackTestimonials: Testimonial[] = [
   {
     title: 'All Hail Hilltop',
     quote: 'On behalf of the University at Buffalo, thank you so much to Hilltop Group for planning, organizing and executing such a phenomenal experience abroad in Ghana! Our team was so impressed during our time there that we decided to make Hilltop our permanent partner for our annual trips where anywhere from 30-50 interdisciplinary students visit the African continent every winter semester. Special shout out to Honorable Osa for his amazing dance moves and Honorable Phil for his continued leadership. Between the two of them, UB students were still able to participate in a Fall 2020 virtual engagement despite flight cancellations caused by Covid. Truly a dream team that we highly recommend. Medase!',
@@ -118,10 +125,47 @@ const testimonials = [
 
 const INTERVAL = 5000;
 
+async function fetchWPTestimonials(): Promise<Testimonial[]> {
+  try {
+    const apiUrl = process.env.NEXT_PUBLIC_WORDPRESS_API_URL;
+    if (!apiUrl) return [];
+    const res = await fetch(`${apiUrl}/testimonials?_embed&per_page=50&status=publish`, {
+      next: { revalidate: 120 },
+    });
+    if (!res.ok) return [];
+    const data = await res.json();
+    return data.map((t: any) => ({
+      title: t.acf?.organization || t.acf?.program || 'Student Testimonial',
+      quote: t.acf?.quote || t.content?.rendered?.replace(/<[^>]*>/g, '') || '',
+      name: t.acf?.student_name || t.title?.rendered?.replace(/<[^>]*>/g, '').replace(' — Testimonial', '') || '',
+      affiliation: t.acf?.organization || t.acf?.program || '',
+    })).filter((t: Testimonial) => t.quote.trim().length > 0);
+  } catch {
+    return [];
+  }
+}
+
 export default function StudentTestimonials() {
+  const [testimonials, setTestimonials] = useState<Testimonial[]>(fallbackTestimonials);
   const [current, setCurrent] = useState(0);
   const [paused, setPaused] = useState(false);
   const [direction, setDirection] = useState(1);
+
+  useEffect(() => {
+    fetchWPTestimonials().then(wpList => {
+      if (wpList.length > 0) {
+        const combined = [...fallbackTestimonials, ...wpList];
+        const seen = new Set<string>();
+        const deduped = combined.filter(t => {
+          const key = t.name + t.quote.slice(0, 50);
+          if (seen.has(key)) return false;
+          seen.add(key);
+          return true;
+        });
+        setTestimonials(deduped);
+      }
+    });
+  }, []);
 
   const goTo = useCallback((index: number, dir: number) => {
     setDirection(dir);
@@ -129,12 +173,14 @@ export default function StudentTestimonials() {
   }, []);
 
   const next = useCallback(() => {
-    goTo((current + 1) % testimonials.length, 1);
-  }, [current, goTo]);
+    setCurrent(c => (c + 1) % testimonials.length);
+    setDirection(1);
+  }, [testimonials.length]);
 
   const prev = useCallback(() => {
-    goTo((current - 1 + testimonials.length) % testimonials.length, -1);
-  }, [current, goTo]);
+    setCurrent(c => (c - 1 + testimonials.length) % testimonials.length);
+    setDirection(-1);
+  }, [testimonials.length]);
 
   useEffect(() => {
     if (paused) return;
@@ -143,6 +189,7 @@ export default function StudentTestimonials() {
   }, [paused, next]);
 
   const t = testimonials[current];
+  if (!t) return null;
 
   const variants = {
     enter: (dir: number) => ({ opacity: 0, x: dir > 0 ? 48 : -48 }),
@@ -156,14 +203,12 @@ export default function StudentTestimonials() {
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      {/* Africa watermark */}
       <div className="pointer-events-none absolute right-0 top-0 bottom-0 flex items-center pr-4 md:pr-12" aria-hidden>
         <AfricaWatermark className="w-72 md:w-96 h-auto" opacity={0.04} />
       </div>
 
       <div className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
 
-        {/* Header */}
         <div className="mb-14">
           <KenteDivider className="mb-6" color="#F4A261" />
           <p className="font-sans text-xs font-semibold uppercase tracking-[0.25em] mb-4" style={{ color: '#F4A261' }}>
@@ -184,7 +229,6 @@ export default function StudentTestimonials() {
           </div>
         </div>
 
-        {/* Testimonial card */}
         <div className="relative">
           <AnimatePresence mode="wait" custom={direction}>
             <motion.div
@@ -197,20 +241,16 @@ export default function StudentTestimonials() {
               transition={{ duration: 0.45, ease: [0.25, 0.1, 0.25, 1] }}
             >
               <div className="border border-gray-200 bg-white p-8 sm:p-10 flex flex-col shadow-sm">
-                {/* Quote icon */}
                 <Quote size={28} className="mb-5 flex-shrink-0" style={{ color: '#F4A261' }} />
 
-                {/* Headline */}
                 <h3 className="font-serif font-bold text-xl sm:text-2xl mb-4 leading-snug" style={{ color: '#1D3160' }}>
                   {t.title}
                 </h3>
 
-                {/* Quote — full text, no clamp */}
                 <p className="font-sans text-gray-600 text-sm sm:text-base leading-relaxed">
                   &ldquo;{t.quote}&rdquo;
                 </p>
 
-                {/* Attribution */}
                 <div className="mt-6 pt-5 border-t border-gray-100 flex items-center gap-3">
                   <div
                     className="w-8 h-8 flex-shrink-0 flex items-center justify-center font-serif font-extrabold text-white text-sm"
@@ -231,10 +271,7 @@ export default function StudentTestimonials() {
           </AnimatePresence>
         </div>
 
-        {/* Controls */}
         <div className="mt-6 flex items-center justify-between gap-4">
-
-          {/* Prev / Pause / Next */}
           <div className="flex items-center gap-2">
             <button
               onClick={prev}
@@ -262,7 +299,6 @@ export default function StudentTestimonials() {
             </button>
           </div>
 
-          {/* Progress dots */}
           <div className="flex items-center gap-1.5 flex-wrap justify-end">
             {testimonials.map((_, i) => (
               <button
@@ -282,10 +318,8 @@ export default function StudentTestimonials() {
               </button>
             ))}
           </div>
-
         </div>
 
-        {/* Progress bar */}
         <div className="mt-4 h-[2px] bg-gray-200 overflow-hidden">
           {!paused && (
             <motion.div

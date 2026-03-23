@@ -8,22 +8,35 @@ import RwandaApplication from '@/components/internships/rwanda/RwandaApplication
 import RwandaSampleWeek from '@/components/internships/rwanda/RwandaSampleWeek';
 import RwandaCulturalHighlights from '@/components/internships/rwanda/RwandaCulturalHighlights';
 import RwandaContact from '@/components/internships/rwanda/RwandaContact';
+import { fetchProgramData } from '@/lib/program-data';
 
 export const metadata = {
   title: '2026 Rwanda Internship Program - Hilltop Global Group',
   description: 'Professional experience in Kigali with ALU collaboration across fintech, agritech, healthtech and more',
 };
 
-export default function RwandaInternshipPage() {
+export default async function RwandaInternshipPage() {
+  const program = await fetchProgramData('rwanda');
+
   return (
     <main>
-      <RwandaProgramHero />
+      <RwandaProgramHero applicationUrl={program.applicationUrl} />
       <RwandaCollabBanner />
       <RwandaProgramOverview />
       <RwandaProgramFormat />
-      <RwandaKeyDetails />
+      <RwandaKeyDetails
+        startDate={program.startDate}
+        endDate={program.endDate}
+        deadline={program.applicationDeadline}
+        costFull={program.costFull}
+        costHybrid={program.costHybrid}
+      />
       <RwandaWhyChoose />
-      <RwandaApplication />
+      <RwandaApplication
+        deadline={program.applicationDeadline}
+        applicationUrl={program.applicationUrl}
+        applicationStatus={program.applicationStatus}
+      />
       <RwandaSampleWeek />
       <RwandaCulturalHighlights />
       <RwandaContact />

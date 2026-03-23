@@ -7,6 +7,7 @@ import { KenteDivider } from '../shared/HilltopBrand';
 export default function TestimonialSubmission() {
   const [formData, setFormData] = useState({
     name: '',
+    email: '',
     role: '',
     organization: '',
     program: '',
@@ -26,15 +27,20 @@ export default function TestimonialSubmission() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           student_name: formData.name,
-          email: '',
+          email: formData.email,
+          role: formData.role,
+          organization: formData.organization,
           program: formData.program,
           year: formData.year,
           quote: formData.testimonial,
+          rating: formData.rating,
+          website: (formData as any).website || '',
+          _t: Date.now(),
         }),
       });
       if (res.ok) {
         setStatus('sent');
-        setFormData({ name: '', role: '', organization: '', program: '', year: '', testimonial: '', rating: '5' });
+        setFormData({ name: '', email: '', role: '', organization: '', program: '', year: '', testimonial: '', rating: '5' });
       } else {
         setStatus('error');
       }
@@ -91,6 +97,10 @@ export default function TestimonialSubmission() {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="absolute opacity-0 -z-10" style={{ position: 'absolute', left: '-9999px' }} aria-hidden="true">
+                <label htmlFor="t_website">Website</label>
+                <input type="text" id="t_website" name="t_website" tabIndex={-1} autoComplete="off" onChange={(e) => setFormData({ ...formData, website: e.target.value } as any)} />
+              </div>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="name" className="block font-sans text-xs font-semibold uppercase tracking-[0.15em] mb-2 text-gray-400" style={{ color: '#1D3160' }}>
@@ -108,6 +118,24 @@ export default function TestimonialSubmission() {
                   />
                 </div>
 
+                <div>
+                  <label htmlFor="email" className="block font-sans text-xs font-semibold uppercase tracking-[0.15em] mb-2 text-gray-400" style={{ color: '#1D3160' }}>
+                    Email *
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="w-full px-0 py-3 border-0 border-b border-gray-200 focus:outline-none focus:border-black transition-colors duration-200 bg-transparent font-sans text-base"
+                    placeholder="you@example.com"
+                  />
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="role" className="block font-sans text-xs font-semibold uppercase tracking-[0.15em] mb-2 text-gray-400" style={{ color: '#1D3160' }}>
                     Role *

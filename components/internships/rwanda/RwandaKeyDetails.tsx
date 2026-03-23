@@ -2,18 +2,30 @@
 
 import { motion } from 'framer-motion';
 import FadeIn from '@/components/FadeIn';
-import { KenteDivider, DecorativeUnderline, HighlightWord } from '@/components/shared/HilltopBrand';
+import { KenteDivider, DecorativeUnderline } from '@/components/shared/HilltopBrand';
 
-const details = [
-  { label: 'Applications Open', value: 'October 31, 2025', color: '#1D3160' },
-  { label: 'Applications Close', value: 'March 14, 2026', color: '#F4A261' },
-  { label: 'Pre-departure Sessions', value: 'June 15 – 17, 2026', color: '#1D3160' },
-  { label: 'Internship Dates', value: 'June 22 – July 17, 2026', color: '#1D3160' },
-  { label: 'Cost (Full In-Country, 4 weeks)', value: '$5,700', color: '#1D3160', large: true },
-  { label: 'Cost (Hybrid, 3 weeks)', value: '$4,900', color: '#F4A261', large: true },
-];
+interface Props {
+  startDate?: string;
+  endDate?: string;
+  deadline?: string;
+  costFull?: string;
+  costHybrid?: string;
+}
 
-export default function RwandaKeyDetails() {
+export default function RwandaKeyDetails({
+  startDate = 'June 22, 2026',
+  endDate = 'July 17, 2026',
+  deadline = 'April 15, 2026',
+  costFull = '$5,700',
+  costHybrid = '$4,900',
+}: Props) {
+  const details = [
+    { label: 'Application Deadline', value: deadline, color: '#F4A261' },
+    { label: 'Internship Dates', value: `${startDate} – ${endDate}`, color: '#1D3160' },
+    { label: 'Cost (Full In-Country, 4 weeks)', value: costFull, color: '#1D3160', large: true },
+    { label: 'Cost (Hybrid, 3 weeks)', value: costHybrid, color: '#F4A261', large: true },
+  ];
+
   return (
     <section className="py-20 sm:py-28 bg-white border-t border-gray-100">
       <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
@@ -39,7 +51,7 @@ export default function RwandaKeyDetails() {
 
         <div className="border-t border-gray-200 mb-12" />
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 gap-6">
           {details.map((item, i) => (
             <motion.div
               key={i}

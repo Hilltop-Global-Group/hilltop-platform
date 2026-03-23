@@ -5,16 +5,26 @@ import { KenteDivider, ArrowCTA } from '../shared/HilltopBrand';
 
 export default function NewsletterSignup() {
   const [email, setEmail] = useState('');
-  const [subscribed, setSubscribed] = useState(false);
+  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Newsletter subscription:', email);
-    setSubscribed(true);
-    setTimeout(() => {
-      setSubscribed(false);
-      setEmail('');
-    }, 3000);
+    setStatus('sending');
+    try {
+      const res = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+      if (res.ok) {
+        setStatus('sent');
+        setEmail('');
+      } else {
+        setStatus('error');
+      }
+    } catch {
+      setStatus('error');
+    }
   };
 
   return (
@@ -44,7 +54,7 @@ export default function NewsletterSignup() {
 
           {/* Right: form */}
           <div>
-            {subscribed ? (
+            {status === 'sent' ? (
               <div className="border border-gray-200 rounded-none p-8">
                 <p className="font-sans text-xs font-semibold uppercase tracking-[0.25em] mb-4" style={{ color: '#F4A261' }}>
                   Subscribed
@@ -53,7 +63,7 @@ export default function NewsletterSignup() {
                   className="font-serif font-extrabold text-black leading-none"
                   style={{ fontSize: 'clamp(1.8rem, 3vw, 2.4rem)' }}
                 >
-                  Thank you . you&apos;re in.
+                  Thank you &mdash; you&apos;re in.
                 </p>
               </div>
             ) : (
@@ -72,12 +82,18 @@ export default function NewsletterSignup() {
                   </p>
                   <button
                     type="submit"
-                    className="group inline-flex items-center gap-3 font-sans font-semibold text-sm uppercase tracking-[0.15em] text-black border-b-2 border-black pb-1 hover:opacity-60 transition-opacity duration-200"
+                    disabled={status === 'sending'}
+                    className="group inline-flex items-center gap-3 font-sans font-semibold text-sm uppercase tracking-[0.15em] text-black border-b-2 border-black pb-1 hover:opacity-60 transition-opacity duration-200 disabled:opacity-40"
                   >
-                    Subscribe
+                    {status === 'sending' ? 'Subscribing...' : 'Subscribe'}
                     <ArrowCTA />
                   </button>
                 </div>
+                {status === 'error' && (
+                  <p className="font-sans text-red-500 text-xs mt-1">
+                    Something went wrong. Please try again.
+                  </p>
+                )}
               </form>
             )}
           </div>

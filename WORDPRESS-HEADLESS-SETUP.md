@@ -421,6 +421,8 @@ Create these fields:
 | Country | `country` | Text | Yes | e.g. "Ghana" or "Rwanda" |
 | City | `city` | Text | Yes | e.g. "Accra" or "Kigali" |
 | Highlights | `highlights` | Textarea | No | Enter one highlight per line (e.g. "Fintech & Technology"). Set "New Lines" to "No formatting". |
+| Cost (Hybrid) | `cost_hybrid` | Text | No | e.g. "$5,250" — hybrid format cost. Leave blank if N/A. |
+| Overview Text | `overview_text` | Textarea | No | Program description shown on the detail page. Leave blank to use the default. |
 
 **Date Picker format settings:**
 
@@ -449,10 +451,13 @@ These fields store the structured data that arrives from the frontend testimonia
 | Field Label | Field Name | Field Type | Required | Instructions |
 |------------|------------|------------|----------|-------------|
 | Student Name | `student_name` | Text | Yes | Full name of the student |
-| Email | `email` | Email | No | Student's email (for follow-up, not displayed on site) |
-| Program | `program` | Text | No | e.g. "Ghana Internship 2024" |
+| Email | `email` | Email | Yes | Student's email (for follow-up, not displayed on site) |
+| Role | `role` | Text | No | e.g. "Student", "Intern", "Partner" |
+| Organization | `organization` | Text | No | e.g. "Howard University" |
+| Program | `program` | Text | No | e.g. "Ghana Internship" |
 | Year | `year` | Text | No | e.g. "2024" |
 | Quote | `quote` | Textarea | Yes | The testimonial text |
+| Rating | `rating` | Number | No | 1–5 star rating. Min: 1, Max: 5, Default: 5 |
 
 **Important:** Set **"Show in REST API"** to **Yes** in the field group Settings.
 
@@ -669,14 +674,17 @@ add_action('rest_api_init', function() {
 function hilltop_handle_testimonial_submission($request) {
     $params = $request->get_json_params();
     
-    $name    = sanitize_text_field($params['student_name'] ?? '');
-    $program = sanitize_text_field($params['program'] ?? '');
-    $year    = sanitize_text_field($params['year'] ?? '');
-    $quote   = sanitize_textarea_field($params['quote'] ?? '');
-    $email   = sanitize_email($params['email'] ?? '');
+    $name         = sanitize_text_field($params['student_name'] ?? '');
+    $email        = sanitize_email($params['email'] ?? '');
+    $role         = sanitize_text_field($params['role'] ?? '');
+    $organization = sanitize_text_field($params['organization'] ?? '');
+    $program      = sanitize_text_field($params['program'] ?? '');
+    $year         = sanitize_text_field($params['year'] ?? '');
+    $quote        = sanitize_textarea_field($params['quote'] ?? '');
+    $rating       = intval($params['rating'] ?? 5);
     
-    if (empty($name) || empty($quote)) {
-        return new WP_REST_Response(array('error' => 'Name and testimonial text are required'), 400);
+    if (empty($name) || empty($email) || empty($quote)) {
+        return new WP_REST_Response(array('error' => 'Name, email, and testimonial text are required'), 400);
     }
     
     // Create as DRAFT — not visible until admin publishes it
@@ -694,9 +702,12 @@ function hilltop_handle_testimonial_submission($request) {
     // Save ACF fields
     update_field('student_name', $name, $post_id);
     update_field('email', $email, $post_id);
+    update_field('role', $role, $post_id);
+    update_field('organization', $organization, $post_id);
     update_field('program', $program, $post_id);
     update_field('year', $year, $post_id);
     update_field('quote', $quote, $post_id);
+    update_field('rating', $rating, $post_id);
     
     // Notify admin by email
     wp_mail(
@@ -705,8 +716,11 @@ function hilltop_handle_testimonial_submission($request) {
         "A new testimonial was submitted and is awaiting your review.\n\n" .
         "Student: $name\n" .
         "Email: $email\n" .
+        "Role: $role\n" .
+        "Organization: $organization\n" .
         "Program: $program\n" .
-        "Year: $year\n\n" .
+        "Year: $year\n" .
+        "Rating: $rating/5\n\n" .
         "Testimonial:\n$quote\n\n" .
         "Review it here: " . admin_url("post.php?post=$post_id&action=edit"),
         array('Reply-To: ' . $name . ' <' . $email . '>')
@@ -807,6 +821,8 @@ NEXT_PUBLIC_HILLTOP_API_URL=https://cms.hilltopglobalgroup.com/wp-json/hilltop/v
 2. Add both variables:
    - `NEXT_PUBLIC_WORDPRESS_API_URL` = `https://cms.hilltopglobalgroup.com/wp-json/wp/v2`
    - `NEXT_PUBLIC_HILLTOP_API_URL` = `https://cms.hilltopglobalgroup.com/wp-json/hilltop/v1`
+   - `MAILCHIMP_API_KEY` = your Mailchimp API key (see Mailchimp section below)
+   - `MAILCHIMP_LIST_ID` = your Mailchimp audience/list ID
 3. Apply to **Production**, **Preview**, and **Development** environments
 4. Click **"Save"**
 

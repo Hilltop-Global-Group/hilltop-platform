@@ -21,8 +21,10 @@ function formatDate(dateString: string) {
 function PastCard({ internship, index }: { internship: any; index: number }) {
   const featuredImage = internship._embedded?.['wp:featuredmedia']?.[0]?.source_url;
 
-  let location = 'Location TBD';
-  if (internship.internship_locations?.length > 0) {
+  const city = internship.acf?.city || '';
+  const country = internship.acf?.country || '';
+  let location = city && country ? `${city}, ${country}` : 'Location TBD';
+  if (location === 'Location TBD' && internship.internship_locations?.length > 0) {
     location = internship.internship_locations.map((t: any) => t.name).join(', ');
   }
 
@@ -57,11 +59,11 @@ function PastCard({ internship, index }: { internship: any; index: number }) {
 
       <div className="p-6">
         <div className="space-y-2 mb-4">
-          {internship.meta._internship_start_date && internship.meta._internship_end_date && (
+          {(internship.acf?.start_date || internship.meta?._internship_start_date) && (internship.acf?.end_date || internship.meta?._internship_end_date) && (
             <div className="flex items-center gap-3">
               <Calendar size={14} className="flex-shrink-0 text-gray-400" />
               <span className="font-sans text-gray-500 text-sm">
-                {formatDate(internship.meta._internship_start_date)} \u2013 {formatDate(internship.meta._internship_end_date)}
+                {formatDate(internship.acf?.start_date || internship.meta._internship_start_date)} \u2013 {formatDate(internship.acf?.end_date || internship.meta._internship_end_date)}
               </span>
             </div>
           )}
@@ -69,10 +71,10 @@ function PastCard({ internship, index }: { internship: any; index: number }) {
             <MapPin size={14} className="flex-shrink-0 text-gray-400" />
             <span className="font-sans text-gray-500 text-sm">{location}</span>
           </div>
-          {internship.meta._internship_duration && (
+          {(internship.acf?.duration || internship.meta?._internship_duration) && (
             <div className="flex items-center gap-3">
               <Clock size={14} className="flex-shrink-0 text-gray-400" />
-              <span className="font-sans text-gray-500 text-sm">{internship.meta._internship_duration}</span>
+              <span className="font-sans text-gray-500 text-sm">{internship.acf?.duration || internship.meta._internship_duration}</span>
             </div>
           )}
         </div>

@@ -21,7 +21,7 @@ export default function ContactForm() {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, _t: Date.now() }),
       });
       if (res.ok) {
         setStatus('sent');
@@ -68,6 +68,11 @@ export default function ContactForm() {
           {/* Right: form */}
           <div className="lg:col-span-3">
             <form onSubmit={handleSubmit} className="space-y-8">
+              {/* Honeypot — invisible to humans, bots fill it in */}
+              <div className="absolute opacity-0 -z-10" style={{ position: 'absolute', left: '-9999px' }} aria-hidden="true">
+                <label htmlFor="website">Website</label>
+                <input type="text" id="website" name="website" tabIndex={-1} autoComplete="off" onChange={(e) => setFormData({ ...formData, website: e.target.value } as any)} />
+              </div>
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
                   <label htmlFor="name" className={labelClass}>Full Name *</label>

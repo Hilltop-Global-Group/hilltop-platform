@@ -4,19 +4,26 @@ import { motion } from 'framer-motion';
 import { DottedAfricaMap } from './shared/HilltopBrand';
 
 const universities = [
-  'Howard University',
   'Georgetown University',
-  'University of Michigan',
+  'Howard University',
+  'New York University',
   'Duke University',
+  'University of Connecticut (UCONN)',
+  'Emerson College',
+  'Imperial College London',
+  'Florida Atlantic University (FAU)',
   'Morehouse College',
   'Spelman College',
+  'Fisk University',
+  'University of Maryland (UMD)',
+  'Wake Forest University',
   'Emory University',
+  'University of Michigan',
   'UNC Chapel Hill',
 ];
 
-// Split into two equal columns: first 4 left, last 4 right
-const leftCol = universities.slice(0, 4);
-const rightCol = universities.slice(4);
+const leftCol = universities.slice(0, 8);
+const rightCol = universities.slice(8);
 
 export default function Partners() {
   return (
@@ -55,7 +62,36 @@ export default function Partners() {
           ))}
         </div>
 
-        {/* Thin divider */}
+        {/* Host Organizations */}
+        <div className="border-t border-gray-100 pt-10 mb-10">
+          <p className="font-sans text-xs font-semibold uppercase tracking-[0.25em] text-gray-400 mb-6">
+            Host Organizations Include
+          </p>
+          <div className="flex flex-wrap gap-x-8 gap-y-2">
+            {['Maverick Research', 'Wear Ghana', 'Kola Markets', 'Farmerline', 'Merson Venture Studio', 'Verifibuy'].map((name, i) => (
+              <motion.span
+                key={name}
+                className="font-serif font-bold text-gray-700 text-base cursor-default select-none"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.3 + i * 0.06, duration: 0.4 }}
+              >
+                {name}
+              </motion.span>
+            ))}
+            <motion.span
+              className="font-serif font-bold text-sm cursor-default select-none"
+              style={{ color: '#F4A261' }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.7, duration: 0.4 }}
+            >
+              and more
+            </motion.span>
+          </div>
+        </div>
+
+        {/* Stats divider */}
         <div className="border-t border-gray-100 pt-10">
           <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-gray-200 text-center">
             {[

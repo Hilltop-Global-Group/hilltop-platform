@@ -7,21 +7,34 @@ import GhanaApplication from '@/components/internships/ghana/GhanaApplication';
 import GhanaSampleWeek from '@/components/internships/ghana/GhanaSampleWeek';
 import GhanaCulturalHighlights from '@/components/internships/ghana/GhanaCulturalHighlights';
 import GhanaContact from '@/components/internships/ghana/GhanaContact';
+import { fetchProgramData } from '@/lib/program-data';
 
 export const metadata = {
   title: '2026 Ghana Internship Program - Hilltop Global Group',
   description: 'Professional experience in Accra across fintech, agritech, creative industries and more',
 };
 
-export default function GhanaInternshipPage() {
+export default async function GhanaInternshipPage() {
+  const program = await fetchProgramData('ghana');
+
   return (
     <main>
-      <GhanaProgramHero />
-      <GhanaProgramOverview />
+      <GhanaProgramHero applicationUrl={program.applicationUrl} />
+      <GhanaProgramOverview overviewText={program.overviewText} />
       <GhanaProgramFormat />
-      <GhanaKeyDetails />
+      <GhanaKeyDetails
+        startDate={program.startDate}
+        endDate={program.endDate}
+        deadline={program.applicationDeadline}
+        costFull={program.costFull}
+        costHybrid={program.costHybrid}
+      />
       <GhanaWhyChoose />
-      <GhanaApplication />
+      <GhanaApplication
+        deadline={program.applicationDeadline}
+        applicationUrl={program.applicationUrl}
+        applicationStatus={program.applicationStatus}
+      />
       <GhanaSampleWeek />
       <GhanaCulturalHighlights />
       <GhanaContact />
