@@ -1,13 +1,13 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { DecorativeUnderline, ArrowCTA } from './shared/HilltopBrand';
 
 const slides = [
   {
-    image: '/images/hero-study-abroad.jpg',
+    image: '/images/why-not -africa.png',
     alt: 'Students participating in Hilltop education abroad program in Accra, Ghana',
     eyebrow: 'Education Abroad Across Africa',
     headline: 'Africa Is Not the Periphery. It Is the Future.',
@@ -67,9 +67,24 @@ const slides = [
 export default function Hero() {
   const [current, setCurrent] = useState(0);
 
+  const currentRef = useRef(current);
+  currentRef.current = current;
+
   useEffect(() => {
-    const t = setInterval(() => setCurrent(p => (p + 1) % slides.length), 6500);
-    return () => clearInterval(t);
+    const tick = () => {
+      const dur = currentRef.current === 0 ? 10000 : 6500;
+      timer.current = window.setTimeout(() => {
+        setCurrent(p => {
+          const next = (p + 1) % slides.length;
+          currentRef.current = next;
+          tick();
+          return next;
+        });
+      }, dur);
+    };
+    const timer = { current: 0 as number };
+    tick();
+    return () => clearTimeout(timer.current);
   }, []);
 
   const slide = slides[current];
