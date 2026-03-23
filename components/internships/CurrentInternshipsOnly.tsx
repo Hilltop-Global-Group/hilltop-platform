@@ -9,7 +9,12 @@ async function fetchCurrentInternships() {
 
     if (!res.ok) return [];
     const all = await res.json();
-    return all.filter((i: any) => i.meta._internship_is_past !== '1');
+    return all.filter((i: any) => {
+      const acfStatus = i.acf?.application_status;
+      const metaStatus = i.meta?._internship_application_status;
+      const status = acfStatus || metaStatus || 'open';
+      return status !== 'closed';
+    });
   } catch {
     return [];
   }

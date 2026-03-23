@@ -12,12 +12,26 @@ export default function ContactForm() {
     program: '',
     message: '',
   });
+  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message! We will get back to you soon.');
-    setFormData({ name: '', email: '', phone: '', subject: '', program: '', message: '' });
+    setStatus('sending');
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      if (res.ok) {
+        setStatus('sent');
+        setFormData({ name: '', email: '', phone: '', subject: '', program: '', message: '' });
+      } else {
+        setStatus('error');
+      }
+    } catch {
+      setStatus('error');
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -94,14 +108,30 @@ export default function ContactForm() {
               </div>
 
               <div className="pt-4 border-t border-gray-100">
-                <button
-                  type="submit"
-                  className="group inline-flex items-center gap-3 font-sans font-semibold text-sm uppercase tracking-[0.15em] text-white px-10 py-4 transition-opacity duration-200 hover:opacity-80"
-                  style={{ backgroundColor: '#1D3160' }}
-                >
-                  Send Message
-                  <ArrowCTA />
-                </button>
+                {status === 'sent' ? (
+                  <div className="py-4">
+                    <p className="font-sans font-semibold text-sm" style={{ color: '#10B981' }}>
+                      Message sent! We&apos;ll respond within one business day.
+                    </p>
+                  </div>
+                ) : (
+                  <>
+                    <button
+                      type="submit"
+                      disabled={status === 'sending'}
+                      className="group inline-flex items-center gap-3 font-sans font-semibold text-sm uppercase tracking-[0.15em] text-white px-10 py-4 transition-opacity duration-200 hover:opacity-80 disabled:opacity-50"
+                      style={{ backgroundColor: '#1D3160' }}
+                    >
+                      {status === 'sending' ? 'Sending...' : 'Send Message'}
+                      <ArrowCTA />
+                    </button>
+                    {status === 'error' && (
+                      <p className="font-sans text-red-500 text-sm mt-3">
+                        Something went wrong. Please email us directly at support@hilltopglobalgroup.com.
+                      </p>
+                    )}
+                  </>
+                )}
               </div>
             </form>
           </div>

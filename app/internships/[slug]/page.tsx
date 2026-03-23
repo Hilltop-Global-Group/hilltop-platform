@@ -24,6 +24,19 @@ interface Internship {
     _internship_incountry_available?: string;
     _internship_incountry_cost?: string;
   };
+  acf?: {
+    start_date?: string;
+    end_date?: string;
+    application_deadline?: string;
+    cost?: string;
+    duration?: string;
+    format?: string;
+    application_status?: string;
+    application_url?: string;
+    country?: string;
+    city?: string;
+    highlights?: string;
+  };
   internship_locations?: Array<{ id: number; name: string }>;
   internship_fields?: Array<{ id: number; name: string }>;
   internship_programs?: Array<{ id: number; name: string }>;
@@ -31,6 +44,35 @@ interface Internship {
     'wp:featuredmedia'?: Array<{ source_url: string; alt_text: string }>;
     'wp:term'?: Array<Array<{ id: number; name: string }>>;
   };
+}
+
+function getField(internship: Internship, field: string): string {
+  const acfMap: Record<string, string> = {
+    start_date: 'start_date',
+    end_date: 'end_date',
+    application_deadline: 'application_deadline',
+    duration: 'duration',
+    application_status: 'application_status',
+    application_url: 'application_url',
+    gallery: '_internship_gallery',
+  };
+  const metaMap: Record<string, string> = {
+    start_date: '_internship_start_date',
+    end_date: '_internship_end_date',
+    application_deadline: '_internship_application_deadline',
+    duration: '_internship_duration',
+    application_status: '_internship_application_status',
+    gallery: '_internship_gallery',
+  };
+  const acfKey = acfMap[field];
+  const metaKey = metaMap[field];
+  if (acfKey && internship.acf?.[acfKey as keyof typeof internship.acf]) {
+    return internship.acf[acfKey as keyof typeof internship.acf] || '';
+  }
+  if (metaKey && internship.meta?.[metaKey as keyof typeof internship.meta]) {
+    return internship.meta[metaKey as keyof typeof internship.meta] || '';
+  }
+  return '';
 }
 
 async function getInternship(slug: string): Promise<Internship | null> {
@@ -96,8 +138,17 @@ export default async function InternshipPage({ params }: { params: Promise<{ slu
   const featuredImage = internship._embedded?.['wp:featuredmedia']?.[0]?.source_url;
   const locationTerms = internship.internship_locations || [];
   const fieldTerms = internship.internship_fields || [];
-  const galleryImages = internship.meta._internship_gallery
-    ? await getGalleryImages(internship.meta._internship_gallery)
+  const galleryData = getField(internship, 'gallery');
+  const galleryImages = galleryData ? await getGalleryImages(galleryData) : [];
+
+  const startDate = getField(internship, 'start_date');
+  const endDate = getField(internship, 'end_date');
+  const deadline = getField(internship, 'application_deadline');
+  const duration = getField(internship, 'duration');
+  const appStatus = getField(internship, 'application_status');
+  const appUrl = internship.acf?.application_url || '';
+  const highlights = internship.acf?.highlights
+    ? internship.acf.highlights.split('\n').filter(Boolean)
     : [];
 
   const formatDate = (dateString: string) => {
@@ -110,7 +161,7 @@ export default async function InternshipPage({ params }: { params: Promise<{ slu
     return new Date(dateString).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
   };
 
-  const isPast = internship.meta._internship_application_status === 'closed';
+  const isPast = appStatus === 'closed';
 
   return (
     <main className="min-h-screen bg-white">
@@ -153,9 +204,9 @@ export default async function InternshipPage({ params }: { params: Promise<{ slu
             dangerouslySetInnerHTML={{ __html: internship.title.rendered }}
           />
 
-          {(internship.meta._internship_start_date && internship.meta._internship_end_date) && (
+          {(startDate && endDate) && (
             <p className="font-sans text-white/60 text-base mb-6">
-              {formatShortDate(internship.meta._internship_start_date)} \u2013 {formatShortDate(internship.meta._internship_end_date)}
+              {formatShortDate(startDate)} \u2013 {formatShortDate(endDate)}
               {locationTerms.length > 0 && <> &middot; {locationTerms.map((l: any) => l.name).join(', ')}</>}
             </p>
           )}
@@ -217,7 +268,7 @@ export default async function InternshipPage({ params }: { params: Promise<{ slu
       </section>
 
       {/* ── Format & Pricing ── */}
-      {(internship.meta._internship_hybrid_available === '1' || internship.meta._internship_incountry_available === '1') && (
+      {(internship.meta?._internship_hybrid_available === '1' || internship.meta?._internship_incountry_available === '1') && (
         <section className="py-20 sm:py-28 bg-gray-50 border-t border-gray-100">
           <div className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-12">
             <KenteDivider className="mb-6" />
@@ -230,7 +281,7 @@ export default async function InternshipPage({ params }: { params: Promise<{ slu
             <div className="border-t border-gray-200 mb-10" />
 
             <div className="grid md:grid-cols-2 gap-6">
-              {internship.meta._internship_incountry_available === '1' && (
+              {internship.meta?._internship_incountry_available === '1' && (
                 <div className="bg-white border border-gray-100 p-7 hover:shadow-md transition-all duration-300">
                   <div className="flex items-center gap-4 mb-5">
                     <div className="w-12 h-12 flex items-center justify-center flex-shrink-0" style={{ backgroundColor: '#F4A261' }}>
@@ -238,7 +289,7 @@ export default async function InternshipPage({ params }: { params: Promise<{ slu
                     </div>
                     <div>
                       <h3 className="font-serif font-bold text-xl" style={{ color: '#1D3160' }}>Full In-Country</h3>
-                      {internship.meta._internship_incountry_cost && (
+                      {internship.meta?._internship_incountry_cost && (
                         <p className="font-serif font-bold text-2xl" style={{ color: '#F4A261' }}>{internship.meta._internship_incountry_cost}</p>
                       )}
                     </div>
@@ -256,7 +307,7 @@ export default async function InternshipPage({ params }: { params: Promise<{ slu
                 </div>
               )}
 
-              {internship.meta._internship_hybrid_available === '1' && (
+              {internship.meta?._internship_hybrid_available === '1' && (
                 <div className="bg-white border border-gray-100 p-7 hover:shadow-md transition-all duration-300">
                   <div className="flex items-center gap-4 mb-5">
                     <div className="w-12 h-12 flex items-center justify-center flex-shrink-0" style={{ backgroundColor: '#1D3160' }}>
@@ -264,7 +315,7 @@ export default async function InternshipPage({ params }: { params: Promise<{ slu
                     </div>
                     <div>
                       <h3 className="font-serif font-bold text-xl" style={{ color: '#1D3160' }}>Hybrid Format</h3>
-                      {internship.meta._internship_hybrid_cost && (
+                      {internship.meta?._internship_hybrid_cost && (
                         <p className="font-serif font-bold text-2xl" style={{ color: '#F4A261' }}>{internship.meta._internship_hybrid_cost}</p>
                       )}
                     </div>
@@ -297,10 +348,9 @@ export default async function InternshipPage({ params }: { params: Promise<{ slu
 
           <div className="grid md:grid-cols-2 gap-8">
             {[
-              internship.meta._internship_application_opens && { icon: Calendar, label: 'Applications Open', value: formatDate(internship.meta._internship_application_opens), accent: '#F4A261' },
-              internship.meta._internship_application_deadline && { icon: Calendar, label: 'Application Deadline', value: formatDate(internship.meta._internship_application_deadline), accent: '#F4A261' },
-              (internship.meta._internship_start_date && internship.meta._internship_end_date) && { icon: Clock, label: 'Program Dates', value: `${formatShortDate(internship.meta._internship_start_date)} \u2013 ${formatShortDate(internship.meta._internship_end_date)}`, accent: '#1D3160' },
-              internship.meta._internship_duration && { icon: Clock, label: 'Duration', value: internship.meta._internship_duration, accent: '#1D3160' },
+              deadline && { icon: Calendar, label: 'Application Deadline', value: formatDate(deadline), accent: '#F4A261' },
+              (startDate && endDate) && { icon: Clock, label: 'Program Dates', value: `${formatShortDate(startDate)} \u2013 ${formatShortDate(endDate)}`, accent: '#1D3160' },
+              duration && { icon: Clock, label: 'Duration', value: duration, accent: '#1D3160' },
               locationTerms.length > 0 && { icon: MapPin, label: 'Location', value: locationTerms.map((l: any) => l.name).join(', '), accent: '#F4A261' },
               fieldTerms.length > 0 && { icon: TrendingUp, label: 'Fields', value: fieldTerms.map((f: any) => f.name).join(', '), accent: '#1D3160' },
             ].filter(Boolean).map((detail: any, i) => (
@@ -331,9 +381,9 @@ export default async function InternshipPage({ params }: { params: Promise<{ slu
           <h2 className="font-serif font-extrabold text-white leading-none mb-4" style={{ fontSize: 'clamp(2rem, 4vw, 3.2rem)' }}>
             Apply to This Program
           </h2>
-          {internship.meta._internship_application_deadline && (
+          {deadline && (
             <p className="font-sans text-white/50 text-sm mb-6">
-              Deadline: <span className="text-white/80 font-semibold">{formatDate(internship.meta._internship_application_deadline)}</span>
+              Deadline: <span className="text-white/80 font-semibold">{formatDate(deadline)}</span>
             </p>
           )}
           <p className="font-sans text-white/50 text-base mb-10">
@@ -343,6 +393,16 @@ export default async function InternshipPage({ params }: { params: Promise<{ slu
             <span className="inline-block px-10 py-4 font-sans font-semibold text-sm uppercase tracking-[0.15em] text-white/40 border border-white/15 cursor-not-allowed">
               Applications Closed
             </span>
+          ) : appUrl ? (
+            <a
+              href={appUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-3 px-10 py-4 font-sans font-semibold text-sm uppercase tracking-[0.15em] text-white border border-white/40 hover:border-white transition-colors duration-200"
+            >
+              Apply Now
+              <ArrowCTA />
+            </a>
           ) : (
             <Link
               href="/contact"

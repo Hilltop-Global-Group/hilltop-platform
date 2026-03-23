@@ -2,19 +2,33 @@ import { NextResponse } from 'next/server';
 
 export async function POST(request: Request) {
   try {
-    const { name, email, message } = await request.json();
+    const body = await request.json();
+    const { name, email, phone, subject, program, message } = body;
 
     if (!name || !email || !message) {
-      return NextResponse.json({ error: 'Missing fields' }, { status: 400 });
+      return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
     }
 
-    // Forward to the business email via a simple mailto log or
-    // integrate with a transactional email provider here.
-    // For now we just acknowledge the submission successfully.
-    console.log('Contact form submission:', { name, email, message });
+    const wpApiUrl = process.env.NEXT_PUBLIC_HILLTOP_API_URL;
+
+    if (wpApiUrl) {
+      const wpRes = await fetch(`${wpApiUrl}/contact`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, phone, subject, program, message }),
+      });
+
+      if (!wpRes.ok) {
+        console.error('WordPress contact API error:', await wpRes.text());
+        return NextResponse.json({ error: 'Failed to send message' }, { status: 500 });
+      }
+    } else {
+      console.log('Contact form submission (no WP API configured):', body);
+    }
 
     return NextResponse.json({ ok: true });
-  } catch {
+  } catch (error) {
+    console.error('Contact route error:', error);
     return NextResponse.json({ error: 'Server error' }, { status: 500 });
   }
 }

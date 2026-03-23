@@ -5,6 +5,12 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
+        hostname: 'cms.hilltopglobalgroup.com',
+        port: '',
+        pathname: '/wp-content/uploads/**',
+      },
+      {
+        protocol: 'https',
         hostname: 'hilltopglobalgroup.com',
         port: '',
         pathname: '/wp-content/uploads/**',

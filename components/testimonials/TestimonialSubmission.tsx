@@ -15,25 +15,32 @@ export default function TestimonialSubmission() {
     rating: '5',
   });
 
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here (e.g., send to API)
-    console.log('Testimonial submitted:', formData);
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({
-        name: '',
-        role: '',
-        organization: '',
-        program: '',
-        year: '',
-        testimonial: '',
-        rating: '5',
+    setStatus('sending');
+    try {
+      const res = await fetch('/api/testimonial', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          student_name: formData.name,
+          email: '',
+          program: formData.program,
+          year: formData.year,
+          quote: formData.testimonial,
+        }),
       });
-    }, 3000);
+      if (res.ok) {
+        setStatus('sent');
+        setFormData({ name: '', role: '', organization: '', program: '', year: '', testimonial: '', rating: '5' });
+      } else {
+        setStatus('error');
+      }
+    } catch {
+      setStatus('error');
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -67,7 +74,7 @@ export default function TestimonialSubmission() {
         <div className="border-t border-gray-200 mb-12" />
 
         <div>
-          {submitted ? (
+          {status === 'sent' ? (
             <div className="text-center py-12">
               <div 
                 className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6"
@@ -212,12 +219,18 @@ export default function TestimonialSubmission() {
 
               <button
                 type="submit"
-                className="w-full inline-flex items-center justify-center gap-3 px-8 py-4 font-serif font-bold text-lg text-white rounded-xl transition-all duration-300 hover:scale-105 shadow-lg"
+                disabled={status === 'sending'}
+                className="w-full inline-flex items-center justify-center gap-3 px-8 py-4 font-sans font-semibold text-sm uppercase tracking-[0.15em] text-white transition-opacity duration-200 hover:opacity-80 disabled:opacity-50"
                 style={{ backgroundColor: '#1D3160' }}
               >
-                Submit Testimonial
-                <Send size={20} />
+                {status === 'sending' ? 'Submitting...' : 'Submit Testimonial'}
+                <Send size={16} />
               </button>
+              {status === 'error' && (
+                <p className="font-sans text-red-500 text-sm mt-3 text-center">
+                  Something went wrong. Please try again or email us directly.
+                </p>
+              )}
             </form>
           )}
         </div>
