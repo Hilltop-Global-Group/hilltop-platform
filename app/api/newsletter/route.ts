@@ -28,6 +28,12 @@ export async function POST(request: Request) {
         email_address: email,
         status: 'subscribed',
         tags: ['Website Signup'],
+        merge_fields: {
+          FNAME: 'Website',
+          LNAME: 'Subscriber',
+          MMERGE6: 'Website Signup',
+          PHONE: 'N/A',
+        },
       }),
     });
 
