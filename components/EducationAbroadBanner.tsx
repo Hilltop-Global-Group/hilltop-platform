@@ -70,13 +70,16 @@ export default function EducationAbroadBanner() {
                   <div className="flex items-center gap-1.5">
                     <Clock size={12} style={{ color: '#F4A261' }} />
                     <span className="font-sans text-[10px] font-bold uppercase tracking-[0.1em] text-white">
-                      Ghana &amp; Rwanda Summer 2026
+                      Ghana &amp; Rwanda Summer 2026 Internship Program
                     </span>
                   </div>
                 </div>
-                {/* Row 2: countdown + CTA */}
+                {/* Row 2: deadline label + countdown + CTA */}
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
+                    <span className="font-sans text-[9px] font-semibold uppercase tracking-[0.1em] whitespace-nowrap" style={{ color: '#F4A261' }}>
+                      Apply by:
+                    </span>
                     {[
                       { label: 'd', value: countdown.days },
                       { label: 'h', value: countdown.hours },
@@ -121,11 +124,15 @@ export default function EducationAbroadBanner() {
                   <div className="flex items-center gap-2 flex-shrink-0">
                     <Clock size={14} style={{ color: '#F4A261' }} />
                     <span className="font-sans text-xs font-bold uppercase tracking-[0.12em] text-white whitespace-nowrap">
-                      Ghana &amp; Rwanda Summer 2026
+                      Ghana &amp; Rwanda Summer 2026 Internship Program
                     </span>
                   </div>
 
                   <div className="w-px h-5 bg-white/20 flex-shrink-0" />
+
+                  <span className="font-sans text-[10px] font-semibold uppercase tracking-[0.1em] flex-shrink-0 whitespace-nowrap" style={{ color: '#F4A261' }}>
+                    Application Deadline:
+                  </span>
 
                   <div className="flex items-center gap-2.5 flex-shrink-0">
                     {[
