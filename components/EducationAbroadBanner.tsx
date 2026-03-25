@@ -52,21 +52,31 @@ export default function EducationAbroadBanner() {
           className="fixed bottom-0 left-0 right-0 z-[60]"
         >
           <div style={{ backgroundColor: '#1D3160' }} className="shadow-[0_-4px_20px_rgba(0,0,0,0.25)]">
-            <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-3 sm:py-3.5">
-              <div className="flex items-center justify-between gap-3 sm:gap-4">
+            {/* Close button: always top-right */}
+            <button
+              onClick={() => setDismissed(true)}
+              className="absolute top-2 right-2 sm:hidden p-1.5 text-white/40 hover:text-white transition-colors duration-200 z-10"
+              aria-label="Dismiss"
+            >
+              <X size={16} />
+            </button>
 
-                {/* Left: label + countdown */}
-                <div className="flex items-center gap-3 sm:gap-5 flex-1 min-w-0 overflow-x-auto">
-                  <div className="flex items-center gap-2 flex-shrink-0">
-                    <Clock size={14} style={{ color: '#F4A261' }} />
-                    <span className="font-sans text-[10px] sm:text-xs font-bold uppercase tracking-[0.12em] text-white whitespace-nowrap">
+            <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-2.5 sm:py-3">
+
+              {/* Mobile: stacked two-row layout */}
+              <div className="flex flex-col gap-2 sm:hidden">
+                {/* Row 1: label + countdown */}
+                <div className="flex items-center justify-between gap-2 pr-6">
+                  <div className="flex items-center gap-1.5">
+                    <Clock size={12} style={{ color: '#F4A261' }} />
+                    <span className="font-sans text-[10px] font-bold uppercase tracking-[0.1em] text-white">
                       Ghana &amp; Rwanda Summer 2026
                     </span>
                   </div>
-
-                  <div className="hidden sm:block w-px h-5 bg-white/20 flex-shrink-0" />
-
-                  <div className="flex items-center gap-1.5 sm:gap-2.5 flex-shrink-0">
+                </div>
+                {/* Row 2: countdown + CTA */}
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
                     {[
                       { label: 'd', value: countdown.days },
                       { label: 'h', value: countdown.hours },
@@ -74,10 +84,61 @@ export default function EducationAbroadBanner() {
                       { label: 's', value: countdown.seconds },
                     ].map((unit) => (
                       <div key={unit.label} className="flex items-baseline gap-px">
-                        <span className="font-mono font-bold text-white text-sm sm:text-base tabular-nums">
+                        <span className="font-mono font-bold text-white text-base tabular-nums">
                           {String(unit.value).padStart(2, '0')}
                         </span>
-                        <span className="font-sans text-white/40 text-[9px] sm:text-[10px] uppercase">
+                        <span className="font-sans text-white/40 text-[9px] uppercase">
+                          {unit.label}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Link
+                      href="/internships/current"
+                      className="inline-flex items-center gap-1 px-3 py-1.5 font-sans font-semibold text-[10px] uppercase tracking-[0.1em] text-white hover:opacity-90"
+                      style={{ backgroundColor: '#F4A261' }}
+                    >
+                      Programs
+                      <ArrowRight size={10} />
+                    </Link>
+                    <a
+                      href="https://8xlyl7wsuni.typeform.com/to/ygqGReCF"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 px-3 py-1.5 font-sans font-semibold text-[10px] uppercase tracking-[0.1em] text-white hover:opacity-90"
+                      style={{ backgroundColor: '#10B981' }}
+                    >
+                      Apply
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* Desktop: single-row layout */}
+              <div className="hidden sm:flex items-center justify-between gap-4">
+                <div className="flex items-center gap-5 flex-1 min-w-0">
+                  <div className="flex items-center gap-2 flex-shrink-0">
+                    <Clock size={14} style={{ color: '#F4A261' }} />
+                    <span className="font-sans text-xs font-bold uppercase tracking-[0.12em] text-white whitespace-nowrap">
+                      Ghana &amp; Rwanda Summer 2026
+                    </span>
+                  </div>
+
+                  <div className="w-px h-5 bg-white/20 flex-shrink-0" />
+
+                  <div className="flex items-center gap-2.5 flex-shrink-0">
+                    {[
+                      { label: 'd', value: countdown.days },
+                      { label: 'h', value: countdown.hours },
+                      { label: 'm', value: countdown.minutes },
+                      { label: 's', value: countdown.seconds },
+                    ].map((unit) => (
+                      <div key={unit.label} className="flex items-baseline gap-px">
+                        <span className="font-mono font-bold text-white text-base tabular-nums">
+                          {String(unit.value).padStart(2, '0')}
+                        </span>
+                        <span className="font-sans text-white/40 text-[10px] uppercase">
                           {unit.label}
                         </span>
                       </div>
@@ -85,21 +146,20 @@ export default function EducationAbroadBanner() {
                   </div>
                 </div>
 
-                {/* Right: CTAs + close */}
-                <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+                <div className="flex items-center gap-3 flex-shrink-0">
                   <Link
                     href="/internships/current"
-                    className="inline-flex items-center gap-1 px-3 sm:px-4 py-1.5 font-sans font-semibold text-[10px] sm:text-xs uppercase tracking-[0.1em] text-white transition-opacity duration-200 hover:opacity-90"
+                    className="inline-flex items-center gap-1 px-4 py-1.5 font-sans font-semibold text-xs uppercase tracking-[0.1em] text-white hover:opacity-90"
                     style={{ backgroundColor: '#F4A261' }}
                   >
-                    Programs
-                    <ArrowRight size={11} />
+                    View Programs
+                    <ArrowRight size={12} />
                   </Link>
                   <a
                     href="https://8xlyl7wsuni.typeform.com/to/ygqGReCF"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hidden sm:inline-flex items-center gap-1 px-4 py-1.5 font-sans font-semibold text-[10px] sm:text-xs uppercase tracking-[0.1em] text-white transition-opacity duration-200 hover:opacity-90"
+                    className="inline-flex items-center gap-1 px-4 py-1.5 font-sans font-semibold text-xs uppercase tracking-[0.1em] text-white hover:opacity-90"
                     style={{ backgroundColor: '#10B981' }}
                   >
                     Apply Now
@@ -113,6 +173,7 @@ export default function EducationAbroadBanner() {
                   </button>
                 </div>
               </div>
+
             </div>
           </div>
         </motion.div>
