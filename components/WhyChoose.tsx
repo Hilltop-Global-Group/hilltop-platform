@@ -89,7 +89,7 @@ export default function WhyChoose() {
               >
                 <p className="font-sans text-white/60 text-xs uppercase tracking-widest mb-1">Our approach</p>
                 <p className="font-serif font-bold text-white text-lg leading-snug">
-                  Diaspora insight means cultural fluency and authentic access few firms can match. 1,000+ students served. Six countries. The access others cannot replicate.
+                  Diaspora insight means cultural fluency and authentic access few firms can match. 1,000+ students served. Seven countries. The access others cannot replicate.
                 </p>
               </div>
             </div>
