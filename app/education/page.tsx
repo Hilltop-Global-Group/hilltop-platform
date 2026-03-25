@@ -5,6 +5,7 @@ import ProgramIncludes from '@/components/education/ProgramIncludes';
 import ProgramBenefits from '@/components/education/ProgramBenefits';
 import EducationCTA from '@/components/education/EducationCTA';
 import NewsletterSignup from '@/components/news/NewsletterSignup';
+import RiskManagementCTA from '@/components/shared/RiskManagementCTA';
 
 export const metadata = {
   title: 'Education Abroad Across Africa for Universities | Hilltop Global Group',
@@ -19,6 +20,7 @@ export default function EducationPage() {
       <AfricanResidency />
       <ProgramIncludes />
       <ProgramBenefits />
+      <RiskManagementCTA />
       <NewsletterSignup />
       <EducationCTA />
     </main>

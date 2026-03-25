@@ -35,7 +35,7 @@ const slides = [
     alt: 'Hilltop students engaged in professional development session in Africa',
     eyebrow: 'Professional Immersion',
     headline: 'Inside Africa\'s Fastest-Growing Sectors.',
-    sub: 'Participants work alongside African founders, executives, and institutional leaders — building portfolios and networks that last beyond the program.',
+    sub: 'Participants work alongside African founders, executives, and institutional leaders, building portfolios and networks that last beyond the program.',
     accentColor: '#ffffff',
   },
   {
@@ -72,7 +72,7 @@ export default function Hero() {
 
   useEffect(() => {
     const tick = () => {
-      const dur = currentRef.current === 0 ? 10000 : 6500;
+      const dur = currentRef.current === 0 ? 12000 : 9000;
       timer.current = window.setTimeout(() => {
         setCurrent(p => {
           const next = (p + 1) % slides.length;

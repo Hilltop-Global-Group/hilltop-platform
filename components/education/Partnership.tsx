@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import FadeIn from '../FadeIn';
 import { KenteDivider, DecorativeUnderline, ArrowCTA } from '../shared/HilltopBrand';
 import Link from 'next/link';
+import { MapPin } from 'lucide-react';
 
 const highlights = [
   'Contact hours and credit alignment co-designed with your faculty',
@@ -82,6 +83,30 @@ export default function Partnership() {
                     <p className="font-sans text-gray-700 text-sm leading-relaxed">{item}</p>
                   </div>
                 ))}
+              </div>
+              <div className="mb-8">
+                <p className="font-sans text-[11px] font-semibold uppercase tracking-[0.2em] text-gray-400 mb-3">
+                  Focal Destinations
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {[
+                    { flag: '\u{1F1EC}\u{1F1ED}', label: 'Ghana' },
+                    { flag: '\u{1F1F7}\u{1F1FC}', label: 'Rwanda' },
+                    { flag: '\u{1F1F3}\u{1F1EC}', label: 'Nigeria' },
+                    { flag: '\u{1F1F0}\u{1F1EA}', label: 'Kenya' },
+                    { flag: '\u{1F1F9}\u{1F1FF}', label: 'Tanzania' },
+                    { flag: '\u{1F1F3}\u{1F1E6}', label: 'Namibia' },
+                    { flag: '\u{1F1FF}\u{1F1E6}', label: 'South Africa' },
+                  ].map((loc) => (
+                    <span
+                      key={loc.label}
+                      className="inline-flex items-center gap-1.5 px-2.5 py-1 border border-gray-200 text-xs font-sans text-gray-600"
+                    >
+                      <span>{loc.flag}</span>
+                      {loc.label}
+                    </span>
+                  ))}
+                </div>
               </div>
               <Link
                 href="/contact"

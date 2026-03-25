@@ -24,7 +24,7 @@ async function getClosedInternships() {
 function decodeHtmlEntities(text: string) {
   const entities: { [key: string]: string } = {
     '&#8211;': '–',
-    '&#8212;': '—',
+    '&#8212;': '-',
     '&amp;': '&',
     '&lt;': '<',
     '&gt;': '>',

@@ -387,7 +387,7 @@ export default async function InternshipPage({ params }: { params: Promise<{ slu
             </p>
           )}
           <p className="font-sans text-white/50 text-base mb-10">
-            Spots are limited — early application is strongly advised.
+            Spots are limited. Early application is strongly advised.
           </p>
           {isPast ? (
             <span className="inline-block px-10 py-4 font-sans font-semibold text-sm uppercase tracking-[0.15em] text-white/40 border border-white/15 cursor-not-allowed">

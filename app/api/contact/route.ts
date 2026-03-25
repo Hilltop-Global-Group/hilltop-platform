@@ -7,17 +7,17 @@ export async function POST(request: Request) {
     const body = await request.json();
     const { name, email, phone, subject, program, message, website, _t } = body;
 
-    // Honeypot check — bots fill the hidden "website" field
+    // Honeypot check - bots fill the hidden "website" field
     if (website) {
       return NextResponse.json({ ok: true });
     }
 
-    // Timing check — form filled in under 2 seconds is likely a bot
+    // Timing check - form filled in under 2 seconds is likely a bot
     if (_t && Date.now() - _t < 2000) {
       return NextResponse.json({ ok: true });
     }
 
-    // Basic rate limiting — max 3 submissions per email per 5 minutes
+    // Basic rate limiting - max 3 submissions per email per 5 minutes
     const now = Date.now();
     const key = (email || '').toLowerCase();
     const lastTime = recentSubmissions.get(key);

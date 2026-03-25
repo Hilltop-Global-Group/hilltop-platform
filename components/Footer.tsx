@@ -22,6 +22,7 @@ const quickLinks = [
   { label: 'Testimonials', href: '/testimonials' },
   { label: 'Blogs & News', href: '/news' },
   { label: 'Contact', href: '/contact' },
+  { label: 'Risk Management', href: '/risk-management' },
 ];
 
 export default function Footer() {

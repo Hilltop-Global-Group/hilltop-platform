@@ -9,6 +9,7 @@ import RwandaSampleWeek from '@/components/internships/rwanda/RwandaSampleWeek';
 import RwandaCulturalHighlights from '@/components/internships/rwanda/RwandaCulturalHighlights';
 import RwandaContact from '@/components/internships/rwanda/RwandaContact';
 import { fetchProgramData } from '@/lib/program-data';
+import RiskManagementCTA from '@/components/shared/RiskManagementCTA';
 
 export const metadata = {
   title: '2026 Rwanda Internship Program - Hilltop Global Group',
@@ -39,6 +40,7 @@ export default async function RwandaInternshipPage() {
       />
       <RwandaSampleWeek />
       <RwandaCulturalHighlights />
+      <RiskManagementCTA />
       <RwandaContact />
     </main>
   );

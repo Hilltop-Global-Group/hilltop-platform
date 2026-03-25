@@ -8,6 +8,7 @@ import GhanaSampleWeek from '@/components/internships/ghana/GhanaSampleWeek';
 import GhanaCulturalHighlights from '@/components/internships/ghana/GhanaCulturalHighlights';
 import GhanaContact from '@/components/internships/ghana/GhanaContact';
 import { fetchProgramData } from '@/lib/program-data';
+import RiskManagementCTA from '@/components/shared/RiskManagementCTA';
 
 export const metadata = {
   title: '2026 Ghana Internship Program - Hilltop Global Group',
@@ -37,6 +38,7 @@ export default async function GhanaInternshipPage() {
       />
       <GhanaSampleWeek />
       <GhanaCulturalHighlights />
+      <RiskManagementCTA />
       <GhanaContact />
     </main>
   );

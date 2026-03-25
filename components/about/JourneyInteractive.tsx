@@ -8,18 +8,17 @@ import { KenteDivider } from '../shared/HilltopBrand';
 const journeySteps = [
   {
     id: 'foundation',
-    year: '2014',
+    year: '',
     title: 'The Mission',
     description: "At Georgetown University, our founders saw a gap that defined the industry: every major MBA program offered immersions in Europe, Asia, and Latin America. Africa was absent. Hilltop was built to close that gap, not as an experiment, but as a conviction that Africa's economies, institutions, and professional networks belong at the center of global education.",
     image: '/images/foundation.JPG',
     stats: [
-      { label: 'Students', value: '50+' },
       { label: 'Partners', value: '3' },
     ],
   },
   {
     id: 'leadership',
-    year: '2022–Now',
+    year: '',
     title: 'Global Validation',
     description: "From a single program to a Pan-African operation spanning six countries with on-the-ground teams in Accra, Kigali, Nairobi, and London. Our CEO was named to The PIE News 50 Voices Americas List as one of international education's most influential leaders and holds an active U.S. State Department Fulbright Specialist appointment. Today, Hilltop partners with institutions including Georgetown, Imperial College London, UConn, and the University of Maryland to deliver programs backed by government MOUs and 100+ cross-industry partners.",
     image: '/images/global_validation.JPG',

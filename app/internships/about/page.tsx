@@ -9,10 +9,11 @@ import InternshipFAQ from '@/components/internships/InternshipFAQ';
 import InternshipCTA from '@/components/internships/InternshipCTA';
 import NewsletterSignup from '@/components/news/NewsletterSignup';
 import InternshipCurrentCTABanner from '@/components/internships/InternshipCurrentCTABanner';
+import RiskManagementCTA from '@/components/shared/RiskManagementCTA';
 
 export const metadata = {
   title: 'About Our Internship Programs | Hilltop Global Group',
-  description: 'Learn how Hilltop\'s Africa internship programs work — from program structure and industries to accommodation, support, and FAQs.',
+  description: 'Learn how Hilltop\'s Africa internship programs work: program structure, industries, accommodation, support, and FAQs.',
 };
 
 export default function InternshipsAboutPage() {
@@ -28,6 +29,7 @@ export default function InternshipsAboutPage() {
       <Accommodation />
       <ProgramDetails />
       <InternshipFAQ />
+      <RiskManagementCTA />
       <NewsletterSignup />
       <InternshipCTA />
     </main>

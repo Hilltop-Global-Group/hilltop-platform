@@ -9,12 +9,10 @@ const universities = [
   { name: 'African Leadership University', location: 'Kigali, Rwanda' },
   { name: 'University of Ghana', location: 'Accra, Ghana' },
   { name: 'KNUST', location: 'Kumasi, Ghana' },
-  { name: 'University of Accra', location: 'Accra, Ghana' },
   { name: 'Spelman College', location: 'Atlanta, GA' },
   { name: 'Morehouse College', location: 'Atlanta, GA' },
   { name: 'Duke University', location: 'Durham, NC' },
   { name: 'UNC Chapel Hill', location: 'Chapel Hill, NC' },
-  { name: 'Emory University', location: 'Atlanta, GA' },
 ];
 
 export default function UniversityPartners() {

@@ -45,7 +45,7 @@ const fallbackTestimonials: Testimonial[] = [
   },
   {
     title: 'Personal and Professional Culmination',
-    quote: 'Emerging market deep-dive, powerful professional skill building, and valuable cultural immersion — thank you Hilltop Global Group for an unforgettable week! My MBA capstone week in Ghana was beyond complete. I had the opportunity of working side-by-side with deeply-invested Ghanaian startup founders and visiting local agriculture, history, manufacturing, and infrastructure landmarks in a distinctly well-organized and stress-free trip. Hilltop Global Group coordinated an engaging and eye-opening week in Ghana that I will never forget.',
+    quote: 'Emerging market deep-dive, powerful professional skill building, and valuable cultural immersion. Thank you Hilltop Global Group for an unforgettable week! My MBA capstone week in Ghana was beyond complete. I had the opportunity of working side-by-side with deeply-invested Ghanaian startup founders and visiting local agriculture, history, manufacturing, and infrastructure landmarks in a distinctly well-organized and stress-free trip. Hilltop Global Group coordinated an engaging and eye-opening week in Ghana that I will never forget.',
     name: 'Audrey V.',
     affiliation: 'Georgetown University',
   },
@@ -93,7 +93,7 @@ const fallbackTestimonials: Testimonial[] = [
   },
   {
     title: 'Thank You Hilltop for the Experience',
-    quote: 'Hilltop provided me with an in-depth experience of business and culture in Ghana. As someone from another west African country — Nigeria, I visited Ghana a few times before but only got a superficial understanding of the Ghanaian culture. With the global business experience, it was a complete immersion into the Ghanaian culture. Thanks to Hilltop, now I understand how and why Ghana leads the pack in the percentage of women that are entrepreneurs. Women in Ghana are more likely to be entrepreneurs than women in any other country in the world. That is a fact!',
+    quote: 'Hilltop provided me with an in-depth experience of business and culture in Ghana. As someone from another west African country, Nigeria, I visited Ghana a few times before but only got a superficial understanding of the Ghanaian culture. With the global business experience, it was a complete immersion into the Ghanaian culture. Thanks to Hilltop, now I understand how and why Ghana leads the pack in the percentage of women that are entrepreneurs. Women in Ghana are more likely to be entrepreneurs than women in any other country in the world. That is a fact!',
     name: 'Olatunji F.',
     affiliation: 'Georgetown University',
   },
@@ -137,7 +137,7 @@ async function fetchWPTestimonials(): Promise<Testimonial[]> {
     return data.map((t: any) => ({
       title: t.acf?.organization || t.acf?.program || 'Student Testimonial',
       quote: t.acf?.quote || t.content?.rendered?.replace(/<[^>]*>/g, '') || '',
-      name: t.acf?.student_name || t.title?.rendered?.replace(/<[^>]*>/g, '').replace(' — Testimonial', '') || '',
+      name: t.acf?.student_name || t.title?.rendered?.replace(/<[^>]*>/g, '').replace(' - Testimonial', '') || '',
       affiliation: t.acf?.organization || t.acf?.program || '',
     })).filter((t: Testimonial) => t.quote.trim().length > 0);
   } catch {

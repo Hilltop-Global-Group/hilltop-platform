@@ -17,7 +17,7 @@ export async function POST(request: Request) {
       return NextResponse.json({ ok: true, message: 'Thank you!' });
     }
 
-    // Rate limiting — 1 testimonial per email per 10 minutes
+    // Rate limiting - 1 testimonial per email per 10 minutes
     const now = Date.now();
     const key = (email || '').toLowerCase();
     const lastTime = recentSubmissions.get(key);

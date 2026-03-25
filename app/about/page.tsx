@@ -4,6 +4,7 @@ import JourneyInteractive from '@/components/about/JourneyInteractive';
 import ImpactMetrics from '@/components/about/ImpactMetrics';
 import AboutCTA from '@/components/about/AboutCTA';
 import NewsletterSignup from '@/components/news/NewsletterSignup';
+import RiskManagementCTA from '@/components/shared/RiskManagementCTA';
 
 export const metadata = {
   title: 'About Hilltop Global Group | Diaspora-Led Education Consulting for Africa',
@@ -17,6 +18,7 @@ export default function AboutPage() {
       <FeaturedVideo />
       <JourneyInteractive />
       <ImpactMetrics />
+      <RiskManagementCTA />
       <NewsletterSignup />
       <AboutCTA />
     </main>

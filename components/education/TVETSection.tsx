@@ -16,12 +16,12 @@ const signals = [
   {
     title: 'Government Partnership',
     description:
-      'Active MOU with Ghana TVET Service (GTVETS), the national body responsible for all public technical and vocational education delivery.',
+      'Partnership with national TVET authorities responsible for public technical and vocational education delivery across Africa.',
   },
   {
-    title: 'U.S. Faculty Pipeline',
+    title: 'U.S. Institutional Partners',
     description:
-      'Facilitation agreement with the Community Colleges for International Development (CCID), a consortium of 90+ U.S. community and technical colleges.',
+      'Collaboration with U.S. institutional networks to bring experienced faculty and curriculum expertise to African TVET programs.',
   },
   {
     title: 'Priority Growth Sectors',
@@ -110,7 +110,7 @@ export default function TVETSection() {
             <div className="hidden md:block w-px bg-gray-200 self-stretch flex-shrink-0" />
             <FadeIn delay={0.1} className="md:max-w-lg">
               <p className="font-sans text-gray-500 text-base leading-relaxed">
-                Hilltop is partnering with national TVET authorities and U.S. community college networks to build
+                Hilltop is partnering with national TVET authorities and U.S. institutional networks to build
                 capacity in Africa&apos;s technical and vocational education systems.
               </p>
             </FadeIn>
@@ -134,10 +134,9 @@ export default function TVETSection() {
             </FadeIn>
             <FadeIn delay={0.2} className="md:col-span-2">
               <p className="font-sans text-gray-600 text-base leading-relaxed">
-                This work is anchored by a formal Memorandum of Understanding with Ghana&apos;s TVET Service (GTVETS)
-                and a facilitation agreement with the Community Colleges for International Development (CCID), a
-                consortium of 90+ U.S. institutions. Hilltop has been designated by CCID as the lead organization for
-                community college global workforce development programming in Africa.
+                This work is anchored by formal partnerships with national TVET authorities and leading U.S. institutional
+                networks. Hilltop serves as a bridge between African vocational systems and international expertise,
+                driving workforce development programming across the continent.
               </p>
             </FadeIn>
           </div>

@@ -1,27 +1,29 @@
 'use client';
 
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, MapPin } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { DecorativeUnderline, DottedAfricaMap, HighlightWord } from './shared/HilltopBrand';
 
 const services = [
   {
-    title: 'Design and Academics',
-    description: "Custom faculty-led programs with contact hours and credit alignment built through faculty co-creation. Pre-departure orientation covering culture, logistics, and learning objectives.",
-    cta: 'Learn More',
+    title: 'Experiential Education Programs',
+    subtitle: 'Turnkey Study Abroad',
+    description: 'Customizable study abroad, internship, and co-curricular experiences that connect participants to Africa\'s vibrant cultural, academic, and entrepreneurial ecosystems.',
+    cta: 'Explore Programs',
     href: '/education',
     images: [
       '/images/Turnkey-study-abroad3.jpg',
       '/images/Turnkey-study-abroad2.jpg',
       '/images/Turnkey-study-abroad1.JPG',
     ],
-    imageAlt: 'Students participating in a Hilltop turnkey education abroad program in Africa',
+    imageAlt: 'Students participating in a Hilltop education abroad program in Africa',
   },
   {
-    title: 'Projects and Partnerships',
-    description: 'Live consulting and research sprints with cross-industry organizations. Curated corporate, startup, and innovation hub visits. Public and private sector briefings.',
+    title: 'Faculty Development & Training',
+    subtitle: 'Educator Initiatives',
+    description: 'Tailored programs for educators to experience Africa firsthand, fostering curriculum internationalization and deeper institutional partnerships.',
     cta: 'Learn More',
     href: '/education',
     images: [
@@ -32,8 +34,9 @@ const services = [
     imageAlt: 'Faculty development program participants meeting with African academic leaders',
   },
   {
-    title: 'Operations and Logistics',
-    description: "Accommodation and ground transport with on-site coordinators. End-to-end event and schedule management. Risk management and duty-of-care protocols.",
+    title: 'Consulting Project Sourcing & Design',
+    subtitle: 'Cross-Industry Collaboration',
+    description: 'Cross-industry collaborations in key growth sectors including business, technology, healthcare, and sustainability, designed to provide real-world learning and development opportunities.',
     cta: 'Learn More',
     href: '/internships',
     images: [
@@ -41,11 +44,12 @@ const services = [
       '/images/consult2.JPG',
       '/images/consult3.JPG',
     ],
-    imageAlt: 'Interns working on a consulting project with an African fintech company',
+    imageAlt: 'Participants working on a consulting project with an African organization',
   },
   {
-    title: 'Culture, Impact, and Outcomes',
-    description: "Curated cultural immersions and guided reflection sessions. Community-engaged projects co-created with local partners. Post-program impact reporting with measurable metrics.",
+    title: 'Cultural & Humanitarian Experiences',
+    subtitle: 'Immersion & Impact',
+    description: 'Immersive cultural activities and impactful service projects that leave a lasting impact on participants and host communities alike.',
     cta: 'Learn More',
     href: '/education',
     images: [
@@ -102,6 +106,55 @@ export default function Services() {
           </div>
         </div>
 
+        {/* Focal destinations */}
+        <div className="flex flex-col gap-3 mb-8">
+          <div className="flex flex-wrap items-center gap-4">
+            <span className="font-sans text-xs font-semibold uppercase tracking-[0.2em] text-gray-400">
+              Internship Destinations
+            </span>
+            <div className="flex flex-wrap gap-2">
+              {[
+                { flag: '\u{1F1EC}\u{1F1ED}', label: 'Ghana' },
+                { flag: '\u{1F1F7}\u{1F1FC}', label: 'Rwanda' },
+              ].map((loc) => (
+                <span
+                  key={loc.label}
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 border text-sm font-sans font-medium"
+                  style={{ borderColor: '#1D316025', color: '#1D3160' }}
+                >
+                  <span>{loc.flag}</span>
+                  <MapPin size={12} style={{ color: '#F4A261' }} />
+                  {loc.label}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div className="flex flex-wrap items-center gap-4">
+            <span className="font-sans text-xs font-semibold uppercase tracking-[0.2em] text-gray-400">
+              Focal Destinations
+            </span>
+            <div className="flex flex-wrap gap-2">
+              {[
+                { flag: '\u{1F1EC}\u{1F1ED}', label: 'Ghana' },
+                { flag: '\u{1F1F7}\u{1F1FC}', label: 'Rwanda' },
+                { flag: '\u{1F1F3}\u{1F1EC}', label: 'Nigeria' },
+                { flag: '\u{1F1F0}\u{1F1EA}', label: 'Kenya' },
+                { flag: '\u{1F1F9}\u{1F1FF}', label: 'Tanzania' },
+                { flag: '\u{1F1F3}\u{1F1E6}', label: 'Namibia' },
+                { flag: '\u{1F1FF}\u{1F1E6}', label: 'South Africa' },
+              ].map((loc) => (
+                <span
+                  key={loc.label}
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 border border-gray-200 text-sm font-sans text-gray-600"
+                >
+                  <span>{loc.flag}</span>
+                  {loc.label}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+
         {/* Thin divider */}
         <div className="border-t border-gray-200 mb-12" />
 
@@ -153,9 +206,12 @@ export default function Services() {
 
               {/* Content */}
               <div className="flex flex-col flex-1 p-6 border-t border-gray-200">
-                <h3 className="font-serif font-bold text-xl leading-tight mb-3" style={{ color: '#1D3160' }}>
+                <h3 className="font-serif font-bold text-lg leading-tight mb-1" style={{ color: '#1D3160' }}>
                   {s.title}
                 </h3>
+                <p className="font-sans text-[11px] font-semibold uppercase tracking-[0.15em] mb-3" style={{ color: '#F4A261' }}>
+                  {s.subtitle}
+                </p>
                 <p className="font-sans text-gray-500 text-sm leading-relaxed mb-6 flex-1">
                   {s.description}
                 </p>

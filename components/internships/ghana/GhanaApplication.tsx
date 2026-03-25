@@ -43,7 +43,7 @@ export default function GhanaApplication({
                 <div className="w-52 h-52 mx-auto border border-gray-200 bg-white flex items-center justify-center mb-6 p-3">
                   <img
                     src={QR_SRC}
-                    alt="QR code — scan to apply"
+                    alt="QR code - scan to apply"
                     width={200}
                     height={200}
                     className="w-full h-full object-contain"

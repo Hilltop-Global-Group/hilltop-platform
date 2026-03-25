@@ -46,7 +46,7 @@ export default function FeaturedStories() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          {/* Portrait video — constrained width so it doesn't stretch */}
+          {/* Portrait video, constrained width so it doesn't stretch */}
           <div className="w-full lg:w-5/12 flex justify-center">
             <div className="relative w-full max-w-[340px] sm:max-w-[380px]">
               <div className="relative rounded-sm overflow-hidden border border-gray-100 shadow-lg" style={{ aspectRatio: '9/16' }}>

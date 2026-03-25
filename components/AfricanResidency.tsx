@@ -32,7 +32,7 @@ export default function AfricanResidency() {
 
         {/* Top label */}
         <p className="font-sans text-xs font-semibold uppercase tracking-[0.25em] mb-10" style={{ color: '#F4A261' }}>
-          The Hilltop Residency
+          The Hilltop Experience
         </p>
 
         {/* Section header */}
@@ -46,7 +46,7 @@ export default function AfricanResidency() {
           {/* Vertical divider . desktop only */}
           <div className="hidden md:block w-px bg-white/15 self-stretch flex-shrink-0" />
           <p className="font-sans text-white/50 text-base max-w-sm leading-relaxed md:pt-1 flex-shrink-0">
-            Our residency programs place students, executives, and faculty inside Africa's economies, institutions, and professional networks. Your faculty brings the pedagogy. Hilltop brings the continent.
+            Our programs place students, executives, and faculty inside Africa's economies, institutions, and professional networks. Your faculty brings the pedagogy. Hilltop brings the continent.
           </p>
         </div>
 
@@ -91,7 +91,7 @@ export default function AfricanResidency() {
             href="/education"
             className="group inline-flex items-center gap-3 font-sans font-semibold text-sm uppercase tracking-[0.15em] text-white border-b border-white/30 pb-1 hover:border-white transition-colors duration-200"
           >
-            See the Residency in Action
+            See Our Programs in Action
             <ArrowCTA />
           </Link>
         </div>

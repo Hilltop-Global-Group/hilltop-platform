@@ -24,6 +24,7 @@ const navItems: NavItem[] = [
       { name: 'Our Story', href: '/about', description: 'How Hilltop was founded and what drives us' },
       { name: 'Meet Our Team', href: '/team', description: 'The people building bridges across Africa' },
       { name: 'Mission & Values', href: '/values', description: 'The principles that guide every program' },
+      { name: 'Risk Management', href: '/risk-management', description: 'Our safety and compliance infrastructure' },
     ],
   },
   {

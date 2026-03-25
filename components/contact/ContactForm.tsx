@@ -68,7 +68,7 @@ export default function ContactForm() {
           {/* Right: form */}
           <div className="lg:col-span-3">
             <form onSubmit={handleSubmit} className="space-y-8">
-              {/* Honeypot — invisible to humans, bots fill it in */}
+              {/* Honeypot field, invisible to humans */}
               <div className="absolute opacity-0 -z-10" style={{ position: 'absolute', left: '-9999px' }} aria-hidden="true">
                 <label htmlFor="website">Website</label>
                 <input type="text" id="website" name="website" tabIndex={-1} autoComplete="off" onChange={(e) => setFormData({ ...formData, website: e.target.value } as any)} />
