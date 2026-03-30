@@ -1,6 +1,7 @@
 import InternshipHero from '@/components/internships/InternshipHero';
 import CurrentInternshipsOnly from '@/components/internships/CurrentInternshipsOnly';
 import InternshipCTA from '@/components/internships/InternshipCTA';
+import TestimonialsPartnersCTA from '@/components/shared/TestimonialsPartnersCTA';
 
 export const metadata = {
   title: 'Current Internship Programs | Hilltop Global Group',
@@ -12,6 +13,7 @@ export default function CurrentInternshipsPage() {
     <main>
       <InternshipHero showCTA={false} />
       <CurrentInternshipsOnly />
+      <TestimonialsPartnersCTA />
       <InternshipCTA />
     </main>
   );

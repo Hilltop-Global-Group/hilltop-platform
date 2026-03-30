@@ -10,6 +10,7 @@ import InternshipCTA from '@/components/internships/InternshipCTA';
 import NewsletterSignup from '@/components/news/NewsletterSignup';
 import InternshipCurrentCTABanner from '@/components/internships/InternshipCurrentCTABanner';
 import RiskManagementCTA from '@/components/shared/RiskManagementCTA';
+import TestimonialsPartnersCTA from '@/components/shared/TestimonialsPartnersCTA';
 
 export const metadata = {
   title: 'About Our Internship Programs | Hilltop Global Group',
@@ -30,6 +31,7 @@ export default function InternshipsAboutPage() {
       <ProgramDetails />
       <InternshipFAQ />
       <RiskManagementCTA />
+      <TestimonialsPartnersCTA />
       <NewsletterSignup />
       <InternshipCTA />
     </main>

@@ -72,7 +72,7 @@ export default function Hero() {
 
   useEffect(() => {
     const tick = () => {
-      const dur = currentRef.current === 0 ? 12000 : 9000;
+      const dur = currentRef.current === 0 ? 24000 : 9000;
       timer.current = window.setTimeout(() => {
         setCurrent(p => {
           const next = (p + 1) % slides.length;
@@ -109,11 +109,13 @@ export default function Hero() {
         />
       </AnimatePresence>
 
-      {/* Gradient overlay: strong bottom, light top */}
+      {/* Gradient overlay: tighter on map slide to keep image visible */}
       <div
         className="absolute inset-0 z-[1]"
         style={{
-          background: 'linear-gradient(to top, rgba(8,15,28,0.95) 0%, rgba(8,15,28,0.55) 40%, rgba(8,15,28,0.2) 75%, rgba(8,15,28,0.1) 100%)',
+          background: current === 0
+            ? 'linear-gradient(to top, rgba(8,15,28,0.92) 0%, rgba(8,15,28,0.6) 25%, rgba(8,15,28,0.08) 50%, transparent 100%)'
+            : 'linear-gradient(to top, rgba(8,15,28,0.95) 0%, rgba(8,15,28,0.55) 40%, rgba(8,15,28,0.2) 75%, rgba(8,15,28,0.1) 100%)',
         }}
       />
 
@@ -125,8 +127,16 @@ export default function Hero() {
             key={current}
             initial={{ opacity: 0, y: 32 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -16 }}
-            transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+            exit={{
+              opacity: 0,
+              y: -16,
+              transition: { duration: 0.4, delay: 0, ease: [0.25, 0.1, 0.25, 1] },
+            }}
+            transition={{
+              duration: current === 0 ? 1 : 0.8,
+              delay: current === 0 ? 2.6 : 0,
+              ease: [0.25, 0.1, 0.25, 1],
+            }}
           >
             {/* Eyebrow */}
             <p className="text-xs sm:text-sm font-sans font-semibold uppercase tracking-[0.25em] text-white/60 mb-4">

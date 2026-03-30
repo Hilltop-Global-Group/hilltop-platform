@@ -5,6 +5,7 @@ import { ArrowRight, MapPin } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { DecorativeUnderline, DottedAfricaMap, HighlightWord } from './shared/HilltopBrand';
+import DestinationFlag from './shared/DestinationFlag';
 
 const services = [
   {
@@ -114,15 +115,15 @@ export default function Services() {
             </span>
             <div className="flex flex-wrap gap-2">
               {[
-                { flag: '\u{1F1EC}\u{1F1ED}', label: 'Ghana' },
-                { flag: '\u{1F1F7}\u{1F1FC}', label: 'Rwanda' },
+                { code: 'GH', label: 'Ghana' },
+                { code: 'RW', label: 'Rwanda' },
               ].map((loc) => (
                 <span
                   key={loc.label}
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 border text-sm font-sans font-medium"
+                  className="inline-flex items-center gap-2 px-3 py-1.5 border text-sm font-sans font-medium"
                   style={{ borderColor: '#1D316025', color: '#1D3160' }}
                 >
-                  <span>{loc.flag}</span>
+                  <DestinationFlag code={loc.code} label={loc.label} size="sm" />
                   <MapPin size={12} style={{ color: '#F4A261' }} />
                   {loc.label}
                 </span>
@@ -135,19 +136,18 @@ export default function Services() {
             </span>
             <div className="flex flex-wrap gap-2">
               {[
-                { flag: '\u{1F1EC}\u{1F1ED}', label: 'Ghana' },
-                { flag: '\u{1F1F7}\u{1F1FC}', label: 'Rwanda' },
-                { flag: '\u{1F1F3}\u{1F1EC}', label: 'Nigeria' },
-                { flag: '\u{1F1F0}\u{1F1EA}', label: 'Kenya' },
-                { flag: '\u{1F1F9}\u{1F1FF}', label: 'Tanzania' },
-                { flag: '\u{1F1F3}\u{1F1E6}', label: 'Namibia' },
-                { flag: '\u{1F1FF}\u{1F1E6}', label: 'South Africa' },
+                { code: 'GH', label: 'Ghana' },
+                { code: 'RW', label: 'Rwanda' },
+                { code: 'NG', label: 'Nigeria' },
+                { code: 'KE', label: 'Kenya' },
+                { code: 'NA', label: 'Namibia' },
+                { code: 'ZA', label: 'South Africa' },
               ].map((loc) => (
                 <span
                   key={loc.label}
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 border border-gray-200 text-sm font-sans text-gray-600"
+                  className="inline-flex items-center gap-2 px-3 py-1.5 border border-gray-200 text-sm font-sans text-gray-600"
                 >
-                  <span>{loc.flag}</span>
+                  <DestinationFlag code={loc.code} label={loc.label} size="sm" />
                   {loc.label}
                 </span>
               ))}

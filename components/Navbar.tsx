@@ -24,14 +24,15 @@ const navItems: NavItem[] = [
       { name: 'Our Story', href: '/about', description: 'How Hilltop was founded and what drives us' },
       { name: 'Meet Our Team', href: '/team', description: 'The people building bridges across Africa' },
       { name: 'Mission & Values', href: '/values', description: 'The principles that guide every program' },
-      { name: 'Risk Management', href: '/risk-management', description: 'Our safety and compliance infrastructure' },
     ],
   },
   {
     name: 'Education',
     children: [
       { name: 'Education Abroad', href: '/education', description: 'Faculty-led programs and university partnerships across Africa' },
+      { name: 'Focal Destinations', href: '/education/destinations', description: 'Where we operate across the African continent' },
       { name: 'Technical & Vocational Education', href: '/education/tvet', description: 'Building workforce capacity through TVET partnerships' },
+      { name: 'Partners & Universities', href: '/testimonials/partners', description: 'What our institutional partners say' },
     ],
   },
   {
@@ -40,14 +41,12 @@ const navItems: NavItem[] = [
       { name: 'About Our Internships', href: '/internships/about', description: 'How our programs work, industries, and FAQs' },
       { name: 'Current Internships', href: '/internships/current', description: 'Open programs in Ghana and Rwanda' },
       { name: 'Past Internships', href: '/internships/past', description: 'Completed placements and alumni programs' },
+      { name: 'Student Stories', href: '/testimonials', description: 'What students say about their Hilltop experience' },
     ],
   },
   {
-    name: 'Testimonials',
-    children: [
-      { name: 'Student Stories', href: '/testimonials', description: 'What students say about their Hilltop experience' },
-      { name: 'Partners & Universities', href: '/testimonials/partners', description: 'What our university and organizational partners say' },
-    ],
+    name: 'Risk Management',
+    href: '/risk-management',
   },
   {
     name: 'Blogs & News',

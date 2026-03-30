@@ -18,11 +18,11 @@ const quickLinks = [
   { label: 'Home', href: '/' },
   { label: 'Who We Are', href: '/about' },
   { label: 'Education', href: '/education' },
+  { label: 'Focal Destinations', href: '/education/destinations' },
   { label: 'Internships', href: '/internships/about' },
-  { label: 'Testimonials', href: '/testimonials' },
+  { label: 'Risk Management', href: '/risk-management' },
   { label: 'Blogs & News', href: '/news' },
   { label: 'Contact', href: '/contact' },
-  { label: 'Risk Management', href: '/risk-management' },
 ];
 
 export default function Footer() {

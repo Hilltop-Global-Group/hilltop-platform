@@ -5,16 +5,23 @@ import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { KenteDivider } from '../shared/HilltopBrand';
 
-const journeySteps = [
+type JourneyStep = {
+  id: string;
+  year: string;
+  title: string;
+  description: string;
+  image: string;
+  stats: { label: string; value: string }[];
+};
+
+const journeySteps: JourneyStep[] = [
   {
     id: 'foundation',
     year: '',
     title: 'The Mission',
     description: "At Georgetown University, our founders saw a gap that defined the industry: every major MBA program offered immersions in Europe, Asia, and Latin America. Africa was absent. Hilltop was built to close that gap, not as an experiment, but as a conviction that Africa's economies, institutions, and professional networks belong at the center of global education.",
     image: '/images/foundation.JPG',
-    stats: [
-      { label: 'Partners', value: '3' },
-    ],
+    stats: [],
   },
   {
     id: 'leadership',
@@ -24,7 +31,7 @@ const journeySteps = [
     image: '/images/global_validation.JPG',
     stats: [
       { label: 'Students', value: '1000+' },
-      { label: 'Projects', value: '15+' },
+      { label: 'Programs Delivered', value: '50+' },
     ],
   },
 ];
@@ -100,21 +107,23 @@ export default function JourneyInteractive() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
                 {/* Stats */}
-                <div className="absolute bottom-6 left-6 right-6 flex gap-4">
-                  {step.stats.map((stat) => (
-                    <div
-                      key={stat.label}
-                      className="flex-1 bg-white/10 backdrop-blur-sm border border-white/20 p-4"
-                    >
-                      <p className="font-serif font-extrabold text-white text-2xl leading-none mb-1">
-                        {stat.value}
-                      </p>
-                      <p className="font-sans text-white/70 text-xs uppercase tracking-wider">
-                        {stat.label}
-                      </p>
-                    </div>
-                  ))}
-                </div>
+                {step.stats.length > 0 && (
+                  <div className="absolute bottom-6 left-6 right-6 flex gap-4">
+                    {step.stats.map((stat) => (
+                      <div
+                        key={stat.label}
+                        className="flex-1 bg-white/10 backdrop-blur-sm border border-white/20 p-4"
+                      >
+                        <p className="font-serif font-extrabold text-white text-2xl leading-none mb-1">
+                          {stat.value}
+                        </p>
+                        <p className="font-sans text-white/70 text-xs uppercase tracking-wider">
+                          {stat.label}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
 
               {/* Text */}
