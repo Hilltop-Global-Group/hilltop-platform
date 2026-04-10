@@ -53,7 +53,7 @@ export default function FeaturedStories() {
                 <video
                   ref={videoRef}
                   src="/images/testimonial1.mp4"
-                  poster="/images/testimonial1-poster.jpg"
+                  poster="/images/intern.JPG"
                   className="w-full h-full object-cover"
                   controls={playing}
                   playsInline

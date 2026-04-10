@@ -8,7 +8,7 @@ import RiskManagementCTA from '@/components/shared/RiskManagementCTA';
 
 export const metadata = {
   title: 'About Hilltop Global Group | Diaspora-Led Education Consulting for Africa',
-  description: 'Founded by Georgetown EMBA alumni with roots across Africa. Hilltop designs education abroad programs, internships, and faculty development from Washington DC, Accra, and Nairobi.',
+  description: 'Founded by Georgetown EMBA alumni with roots across Africa. Hilltop designs education abroad programs, internships, and faculty development with teams in Washington DC, London, Accra, and Kigali.',
 };
 
 export default function AboutPage() {

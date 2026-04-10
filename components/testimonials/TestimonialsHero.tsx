@@ -11,7 +11,7 @@ export default function TestimonialsHero() {
         <div
           className="absolute inset-0 bg-cover bg-center opacity-40"
           style={{
-            backgroundImage: `url('/images/hero-study-abroad.jpg')`,
+            backgroundImage: `url('/images/intern.JPG')`,
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-br from-[#080f1c]/80 via-[#080f1c]/50 to-[#080f1c]/70" />

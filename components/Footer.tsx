@@ -68,7 +68,7 @@ export default function Footer() {
               Start a Conversation
             </h2>
             <p className="font-sans text-white/55 text-base leading-relaxed mb-8">
-              Whether you are exploring a first partnership or expanding an existing program, our team in Washington, Accra, and Kigali is ready to talk.
+              Whether you are exploring a first partnership or expanding an existing program, our team in Washington DC, London, Accra, and Kigali is ready to talk.
             </p>
 
             {/* Contact Form */}

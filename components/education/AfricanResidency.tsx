@@ -87,7 +87,7 @@ export default function AfricanResidency() {
             <div
               className="absolute inset-0 bg-cover bg-center"
               style={{
-                backgroundImage: `url('/images/hero-study-abroad.jpg')`
+                backgroundImage: `url('/images/intern.JPG')`
               }}
             />
             <div className="absolute inset-0 bg-gradient-to-r from-[#080f1c]/80 via-[#080f1c]/60 to-[#080f1c]/40 flex items-center px-10 md:px-16">

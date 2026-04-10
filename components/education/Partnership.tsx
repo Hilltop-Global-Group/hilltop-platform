@@ -5,6 +5,7 @@ import FadeIn from '../FadeIn';
 import { KenteDivider, DecorativeUnderline, ArrowCTA } from '../shared/HilltopBrand';
 import Link from 'next/link';
 import DestinationFlag from '../shared/DestinationFlag';
+import { focalCountryDetailPath } from '@/lib/focal-destinations-data';
 
 const highlights = [
   'Contact hours and credit alignment co-designed with your faculty',
@@ -30,7 +31,7 @@ export default function Partnership() {
             <div className="relative overflow-hidden shadow-xl" style={{ minHeight: 480 }}>
               <div
                 className="absolute inset-0 bg-cover bg-center transition-transform duration-700 hover:scale-105"
-                style={{ backgroundImage: `url('/images/university.JPG')` }}
+                style={{ backgroundImage: `url('/images/intern.JPG')` }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#080f1c]/50 via-transparent to-transparent" />
               <div className="absolute bottom-6 left-6 right-6">
@@ -97,13 +98,14 @@ export default function Partnership() {
                     { code: 'NA', label: 'Namibia' },
                     { code: 'ZA', label: 'South Africa' },
                   ].map((loc) => (
-                    <span
+                    <Link
                       key={loc.label}
-                      className="inline-flex items-center gap-1.5 px-2.5 py-1 border border-gray-200 text-xs font-sans text-gray-600"
+                      href={focalCountryDetailPath(loc.code)}
+                      className="inline-flex items-center gap-1.5 px-2.5 py-1 border border-gray-200 text-xs font-sans text-gray-600 transition-colors hover:bg-gray-50 hover:border-gray-300"
                     >
                       <DestinationFlag code={loc.code} label={loc.label} size="sm" />
                       {loc.label}
-                    </span>
+                    </Link>
                   ))}
                 </div>
               </div>

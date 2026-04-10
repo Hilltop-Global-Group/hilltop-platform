@@ -7,76 +7,11 @@ import { ArrowRight } from 'lucide-react';
 import FadeIn from '../FadeIn';
 import { KenteDivider, DottedAfricaMap, AfricaWatermark } from '../shared/HilltopBrand';
 import { DESTINATION_FLAG_SRC } from '@/lib/destination-flags';
-
-const regions = [
-  {
-    name: 'West Africa',
-    countries: [
-      {
-        code: 'GH',
-        name: 'Ghana',
-        tagline: 'Hilltop\'s flagship destination',
-        description: 'Africa\'s Gold Coast and one of the continent\'s most stable democracies. Ghana is Hilltop\'s top destination for education abroad, internships, and diaspora engagement. Our deep local presence in Accra ensures seamless cultural and professional immersion.',
-        highlights: ['Internship Programs', 'Education Abroad', 'Faculty Development', 'Cultural Immersion'],
-        href: '/internships/ghana',
-        active: true,
-      },
-      {
-        code: 'NG',
-        name: 'Nigeria',
-        tagline: 'Africa\'s largest economy',
-        description: 'Africa\'s most populous country and one of its largest economies. Nigeria offers unparalleled exposure to Africa\'s entrepreneurial energy, fintech innovation, and cultural diversity.',
-        highlights: ['Faculty-Led Programs', 'Business Immersions'],
-        active: false,
-      },
-    ],
-  },
-  {
-    name: 'East Africa',
-    countries: [
-      {
-        code: 'RW',
-        name: 'Rwanda',
-        tagline: 'Innovation hub of East Africa',
-        description: 'Known globally for its rapid development and innovation-driven economy. Rwanda offers a unique environment for students to engage with technology, governance, and social enterprise. Hilltop partners with ALU and leading Kigali-based organizations.',
-        highlights: ['Internship Programs', 'Education Abroad', 'Tech & Innovation', 'Cultural Immersion'],
-        href: '/internships/rwanda',
-        active: true,
-      },
-      {
-        code: 'KE',
-        name: 'Kenya',
-        tagline: 'East African economic hub',
-        description: 'One of Africa\'s premier destinations and the East African economic and transportation hub. Hilltop has local presence in Nairobi to ensure a seamless cultural and professional experience.',
-        highlights: ['Faculty-Led Programs', 'Business Immersions', 'Cultural Tourism'],
-        active: false,
-      },
-    ],
-  },
-  {
-    name: 'Southern Africa',
-    countries: [
-      {
-        code: 'NA',
-        name: 'Namibia',
-        tagline: 'Mineral-rich southwestern Africa',
-        description: 'A southwestern African nation with strong economic growth and rich mineral resources. Namibia offers unique perspectives on post-colonial development, conservation, and sustainable economic models.',
-        highlights: ['Faculty-Led Programs', 'Cultural Immersions'],
-        active: false,
-      },
-      {
-        code: 'ZA',
-        name: 'South Africa',
-        tagline: 'Africa\'s most developed economy',
-        description: 'One of Africa\'s largest and most developed economies with strong appeal for education, tourism, and trade. South Africa provides exposure to a complex, dynamic society with world-class institutions.',
-        highlights: ['Faculty-Led Programs', 'Business Immersions', 'Cultural Tourism'],
-        active: false,
-      },
-    ],
-  },
-];
+import { groupFocalCountriesByRegion, type FocalCountry } from '@/lib/focal-destinations-data';
 
 export default function FocalDestinations() {
+  const regions = groupFocalCountriesByRegion();
+
   return (
     <main>
       {/* Hero */}
@@ -95,7 +30,7 @@ export default function FocalDestinations() {
             </h1>
             <p className="font-sans text-white/50 text-base sm:text-lg max-w-2xl leading-relaxed">
               Hilltop operates across six countries spanning West, East, and Southern Africa,
-              with active internship programs in Ghana and Rwanda.
+              with active internship programs in Ghana and Rwanda. Select a country to read a full overview.
             </p>
           </FadeIn>
         </div>
@@ -119,15 +54,17 @@ export default function FocalDestinations() {
             </FadeIn>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {region.countries.map((country, ci) => (
+              {region.countries.map((country: FocalCountry, ci: number) => (
                 <FadeIn key={country.code} delay={ci * 0.08}>
                   <motion.div
                     className="flex flex-col h-full bg-white border border-gray-100 overflow-hidden group"
                     whileHover={{ y: -4 }}
                     transition={{ duration: 0.3 }}
                   >
-                    {/* Header */}
-                    <div className="p-6 pb-4">
+                    <Link
+                      href={`/education/destinations/${country.slug}`}
+                      className="p-6 pb-4 block text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#1D3160]"
+                    >
                       <div className="flex items-center gap-3 mb-3">
                         <span className="relative h-10 w-14 flex-shrink-0 overflow-hidden rounded-sm border border-gray-200 bg-gray-50">
                           <Image
@@ -139,7 +76,7 @@ export default function FocalDestinations() {
                           />
                         </span>
                         <div>
-                          <h3 className="font-serif font-bold text-xl" style={{ color: '#080f1c' }}>
+                          <h3 className="font-serif font-bold text-xl group-hover:underline" style={{ color: '#080f1c' }}>
                             {country.name}
                           </h3>
                           <p className="font-sans text-xs text-gray-400">{country.tagline}</p>
@@ -154,12 +91,15 @@ export default function FocalDestinations() {
                         )}
                       </div>
 
-                      <p className="font-sans text-gray-600 text-sm leading-relaxed">
+                      <p className="font-sans text-gray-600 text-sm leading-relaxed line-clamp-4">
                         {country.description}
                       </p>
-                    </div>
+                      <span className="inline-flex items-center gap-1 mt-3 font-sans text-xs font-semibold uppercase tracking-[0.12em]" style={{ color: '#1D3160' }}>
+                        Read full overview
+                        <ArrowRight size={12} className="group-hover:translate-x-0.5 transition-transform" />
+                      </span>
+                    </Link>
 
-                    {/* Highlights */}
                     <div className="px-6 pb-4 flex-1">
                       <div className="flex flex-wrap gap-1.5">
                         {country.highlights.map((h) => (
@@ -173,26 +113,24 @@ export default function FocalDestinations() {
                       </div>
                     </div>
 
-                    {/* Footer */}
-                    <div className="px-6 py-4 border-t border-gray-100">
-                      {country.href ? (
+                    <div className="px-6 py-4 border-t border-gray-100 flex flex-wrap gap-3">
+                      {country.internshipHref ? (
                         <Link
-                          href={country.href}
+                          href={country.internshipHref}
                           className="group/link inline-flex items-center gap-2 font-sans font-semibold text-xs uppercase tracking-[0.12em] transition-colors duration-200"
                           style={{ color: '#1D3160' }}
                         >
-                          View Programs
+                          View internship program
                           <ArrowRight size={13} className="group-hover/link:translate-x-0.5 transition-transform duration-200" />
                         </Link>
-                      ) : (
-                        <Link
-                          href="/contact"
-                          className="group/link inline-flex items-center gap-2 font-sans font-semibold text-xs uppercase tracking-[0.12em] text-gray-400 hover:text-gray-600 transition-colors duration-200"
-                        >
-                          Inquire About Programs
-                          <ArrowRight size={13} className="group-hover/link:translate-x-0.5 transition-transform duration-200" />
-                        </Link>
-                      )}
+                      ) : null}
+                      <Link
+                        href="/contact"
+                        className="group/link inline-flex items-center gap-2 font-sans font-semibold text-xs uppercase tracking-[0.12em] text-gray-400 hover:text-gray-600 transition-colors duration-200"
+                      >
+                        Inquire
+                        <ArrowRight size={13} className="group-hover/link:translate-x-0.5 transition-transform duration-200" />
+                      </Link>
                     </div>
                   </motion.div>
                 </FadeIn>

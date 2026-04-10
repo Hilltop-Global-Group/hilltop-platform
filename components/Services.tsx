@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { DecorativeUnderline, DottedAfricaMap, HighlightWord } from './shared/HilltopBrand';
 import DestinationFlag from './shared/DestinationFlag';
+import { focalCountryDetailPath } from '@/lib/focal-destinations-data';
 
 const services = [
   {
@@ -28,7 +29,7 @@ const services = [
     cta: 'Learn More',
     href: '/education',
     images: [
-      '/images/hero-study-abroad.jpg',
+      '/images/intern.JPG',
       '/images/nkrumah-memorial.jpg',
       '/images/seminar-session.jpg',
     ],
@@ -118,15 +119,16 @@ export default function Services() {
                 { code: 'GH', label: 'Ghana' },
                 { code: 'RW', label: 'Rwanda' },
               ].map((loc) => (
-                <span
+                <Link
                   key={loc.label}
-                  className="inline-flex items-center gap-2 px-3 py-1.5 border text-sm font-sans font-medium"
+                  href={focalCountryDetailPath(loc.code)}
+                  className="inline-flex items-center gap-2 px-3 py-1.5 border text-sm font-sans font-medium transition-colors hover:bg-gray-50"
                   style={{ borderColor: '#1D316025', color: '#1D3160' }}
                 >
                   <DestinationFlag code={loc.code} label={loc.label} size="sm" />
                   <MapPin size={12} style={{ color: '#F4A261' }} />
                   {loc.label}
-                </span>
+                </Link>
               ))}
             </div>
           </div>
@@ -143,13 +145,14 @@ export default function Services() {
                 { code: 'NA', label: 'Namibia' },
                 { code: 'ZA', label: 'South Africa' },
               ].map((loc) => (
-                <span
+                <Link
                   key={loc.label}
-                  className="inline-flex items-center gap-2 px-3 py-1.5 border border-gray-200 text-sm font-sans text-gray-600"
+                  href={focalCountryDetailPath(loc.code)}
+                  className="inline-flex items-center gap-2 px-3 py-1.5 border border-gray-200 text-sm font-sans text-gray-600 transition-colors hover:bg-gray-50 hover:border-gray-300"
                 >
                   <DestinationFlag code={loc.code} label={loc.label} size="sm" />
                   {loc.label}
-                </span>
+                </Link>
               ))}
             </div>
           </div>
