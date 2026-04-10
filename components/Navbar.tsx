@@ -192,7 +192,7 @@ export default function Navbar() {
 
               // Plain link
               return (
-                <Link
+              <Link
                   key={item.name}
                   href={item.href!}
                   className={`relative font-sans text-sm font-medium transition-colors duration-200 pb-0.5 ${
@@ -206,7 +206,7 @@ export default function Navbar() {
                       style={{ backgroundColor: '#F4A261' }}
                     />
                   )}
-                </Link>
+              </Link>
               );
             })}
           </div>
@@ -231,9 +231,9 @@ export default function Navbar() {
           >
             {isMobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
-        </div>
+      </div>
 
-        {/* Mobile Menu */}
+      {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className="lg:hidden py-6 border-t border-gray-100">
             <div className="flex flex-col gap-1">
@@ -260,7 +260,7 @@ export default function Navbar() {
                       {isAccordionOpen && (
                         <div className="pl-4 pb-2 flex flex-col gap-1 border-l-2" style={{ borderColor: '#F4A261' }}>
                           {item.children.map((child) => (
-                            <Link
+              <Link
                               key={child.href}
                               href={child.href}
                               onClick={() => setIsMobileMenuOpen(false)}
@@ -269,8 +269,8 @@ export default function Navbar() {
                               }`}
                             >
                               {child.name}
-                            </Link>
-                          ))}
+              </Link>
+            ))}
                         </div>
                       )}
                     </div>
@@ -304,7 +304,7 @@ export default function Navbar() {
             </div>
           </div>
         )}
-      </div>
+        </div>
     </nav>
   );
 }

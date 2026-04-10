@@ -89,123 +89,123 @@ export default function TestimonialSubmission() {
                 <Send size={40} className="text-white" />
               </div>
               <h3 className="font-serif font-bold text-3xl mb-4" style={{ color: '#1D3160' }}>
-                Thank You!
-              </h3>
+              Thank You!
+            </h3>
               <p className="text-gray-600 text-lg">
                 Your testimonial has been submitted and will be reviewed by our team.
-              </p>
-            </div>
-          ) : (
+            </p>
+          </div>
+        ) : (
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="absolute opacity-0 -z-10" style={{ position: 'absolute', left: '-9999px' }} aria-hidden="true">
                 <label htmlFor="t_website">Website</label>
                 <input type="text" id="t_website" name="t_website" tabIndex={-1} autoComplete="off" onChange={(e) => setFormData({ ...formData, website: e.target.value } as any)} />
               </div>
               <div className="grid md:grid-cols-2 gap-6">
-                <div>
+              <div>
                   <label htmlFor="name" className="block font-sans text-xs font-semibold uppercase tracking-[0.15em] mb-2 text-gray-400" style={{ color: '#1D3160' }}>
                     Full Name *
-                  </label>
-                  <input
-                    type="text"
+                </label>
+                <input
+                  type="text"
                     id="name"
-                    name="name"
-                    required
-                    value={formData.name}
-                    onChange={handleChange}
+                  name="name"
+                  required
+                  value={formData.name}
+                  onChange={handleChange}
                     className="w-full px-0 py-3 border-0 border-b border-gray-200 focus:outline-none focus:border-black transition-colors duration-200 bg-transparent font-sans text-base"
-                    placeholder="John Doe"
-                  />
-                </div>
+                  placeholder="John Doe"
+                />
+              </div>
 
-                <div>
+              <div>
                   <label htmlFor="email" className="block font-sans text-xs font-semibold uppercase tracking-[0.15em] mb-2 text-gray-400" style={{ color: '#1D3160' }}>
                     Email *
-                  </label>
-                  <input
-                    type="email"
+                </label>
+                <input
+                  type="email"
                     id="email"
-                    name="email"
-                    required
-                    value={formData.email}
-                    onChange={handleChange}
+                  name="email"
+                  required
+                  value={formData.email}
+                  onChange={handleChange}
                     className="w-full px-0 py-3 border-0 border-b border-gray-200 focus:outline-none focus:border-black transition-colors duration-200 bg-transparent font-sans text-base"
                     placeholder="you@example.com"
-                  />
+                />
                 </div>
               </div>
 
               <div className="grid md:grid-cols-2 gap-6">
-                <div>
+              <div>
                   <label htmlFor="role" className="block font-sans text-xs font-semibold uppercase tracking-[0.15em] mb-2 text-gray-400" style={{ color: '#1D3160' }}>
                     Role *
-                  </label>
-                  <input
-                    type="text"
+                </label>
+                <input
+                  type="text"
                     id="role"
-                    name="role"
+                  name="role"
                     required
-                    value={formData.role}
-                    onChange={handleChange}
+                  value={formData.role}
+                  onChange={handleChange}
                     className="w-full px-0 py-3 border-0 border-b border-gray-200 focus:outline-none focus:border-black transition-colors duration-200 bg-transparent font-sans text-base"
                     placeholder="Student / Intern / Partner"
-                  />
+                />
                 </div>
               </div>
 
               <div className="grid md:grid-cols-2 gap-6">
-                <div>
+              <div>
                   <label htmlFor="organization" className="block font-sans text-xs font-semibold uppercase tracking-[0.15em] mb-2 text-gray-400" style={{ color: '#1D3160' }}>
                     University / Organization *
-                  </label>
-                  <input
-                    type="text"
+                </label>
+                <input
+                  type="text"
                     id="organization"
-                    name="organization"
+                  name="organization"
                     required
-                    value={formData.organization}
-                    onChange={handleChange}
+                  value={formData.organization}
+                  onChange={handleChange}
                     className="w-full px-0 py-3 border-0 border-b border-gray-200 focus:outline-none focus:border-black transition-colors duration-200 bg-transparent font-sans text-base"
                     placeholder="Howard University"
-                  />
-                </div>
+                />
+              </div>
 
-                <div>
+              <div>
                   <label htmlFor="program" className="block font-sans text-xs font-semibold uppercase tracking-[0.15em] mb-2 text-gray-400" style={{ color: '#1D3160' }}>
                     Program *
-                  </label>
-                  <select
+                </label>
+                <select
                     id="program"
-                    name="program"
+                  name="program"
                     required
-                    value={formData.program}
-                    onChange={handleChange}
+                  value={formData.program}
+                  onChange={handleChange}
                     className="w-full px-0 py-3 border-0 border-b border-gray-200 focus:outline-none focus:border-black transition-colors duration-200 bg-transparent font-sans text-base"
                   >
                     <option value="">Select Program</option>
                     <option value="ghana">Ghana Internship</option>
                     <option value="rwanda">Rwanda Internship</option>
-                    <option value="education">Education Program</option>
-                    <option value="other">Other</option>
-                  </select>
+                  <option value="education">Education Program</option>
+                  <option value="other">Other</option>
+                </select>
                 </div>
               </div>
 
               <div className="grid md:grid-cols-2 gap-6">
-                <div>
+              <div>
                   <label htmlFor="year" className="block font-sans text-xs font-semibold uppercase tracking-[0.15em] mb-2 text-gray-400" style={{ color: '#1D3160' }}>
                     Year Participated *
-                  </label>
-                  <input
-                    type="text"
+                </label>
+                <input
+                  type="text"
                     id="year"
-                    name="year"
+                  name="year"
                     required
-                    value={formData.year}
-                    onChange={handleChange}
+                  value={formData.year}
+                  onChange={handleChange}
                     className="w-full px-0 py-3 border-0 border-b border-gray-200 focus:outline-none focus:border-black transition-colors duration-200 bg-transparent font-sans text-base"
-                    placeholder="2024"
-                  />
+                  placeholder="2024"
+                />
                 </div>
 
                 <div>
@@ -227,40 +227,40 @@ export default function TestimonialSubmission() {
                     <option value="1">⭐ (1 star)</option>
                   </select>
                 </div>
-              </div>
+            </div>
 
               <div>
                 <label htmlFor="testimonial" className="block font-sans text-xs font-semibold uppercase tracking-[0.15em] mb-2 text-gray-400" style={{ color: '#1D3160' }}>
-                  Your Testimonial *
-                </label>
-                <textarea
+                Your Testimonial *
+              </label>
+              <textarea
                   id="testimonial"
-                  name="testimonial"
-                  required
-                  value={formData.testimonial}
-                  onChange={handleChange}
-                  rows={6}
+                name="testimonial"
+                required
+                value={formData.testimonial}
+                onChange={handleChange}
+                rows={6}
                   className="w-full px-0 py-3 border-0 border-b border-gray-200 focus:outline-none focus:border-black transition-colors duration-200 bg-transparent font-sans text-base resize-none"
                   placeholder="Share your experience with Hilltop Global Group..."
-                />
-              </div>
+              />
+            </div>
 
-              <button
-                type="submit"
+            <button
+              type="submit"
                 disabled={status === 'sending'}
                 className="w-full inline-flex items-center justify-center gap-3 px-8 py-4 font-sans font-semibold text-sm uppercase tracking-[0.15em] text-white transition-opacity duration-200 hover:opacity-80 disabled:opacity-50"
-                style={{ backgroundColor: '#1D3160' }}
-              >
+              style={{ backgroundColor: '#1D3160' }}
+            >
                 {status === 'sending' ? 'Submitting...' : 'Submit Testimonial'}
                 <Send size={16} />
-              </button>
+            </button>
               {status === 'error' && (
                 <p className="font-sans text-red-500 text-sm mt-3 text-center">
                   Something went wrong. Please try again or email us directly.
                 </p>
               )}
-            </form>
-          )}
+          </form>
+        )}
         </div>
       </div>
     </section>

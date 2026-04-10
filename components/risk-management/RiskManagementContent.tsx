@@ -35,7 +35,7 @@ const pillars = [
   },
   {
     icon: FileCheck,
-    title: 'Due Diligence & Partner Assessment',
+      title: 'Due Diligence & Partner Assessment',
     description:
       'Every in-country partner, housing provider, and placement site undergoes rigorous vetting before any student-facing operations begin. Assessments are continuous, not one-time.',
   },
@@ -110,13 +110,13 @@ export default function RiskManagementContent() {
             <div className="flex flex-wrap justify-center gap-3">
               {['FEA Standards 6th Ed.', 'ISO 31030:2021', 'FERPA / Title IX / Clery Act'].map(
                 (badge) => (
-                  <span
+                <span
                     key={badge}
                     className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-2 text-sm font-sans text-white backdrop-blur-sm"
                   >
                     <CheckCircle size={14} style={{ color: C.green }} />
                     {badge}
-                  </span>
+                </span>
                 ),
               )}
             </div>
@@ -132,7 +132,7 @@ export default function RiskManagementContent() {
           <FadeIn>
             <h2 className="font-serif text-3xl md:text-4xl font-bold mb-6" style={{ color: C.navy }}>
               Our Commitment to Duty of Care
-            </h2>
+              </h2>
             <p className="font-sans text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">
               Hilltop holds itself to the highest standards of participant
               safety and institutional accountability. Our risk management
@@ -141,7 +141,7 @@ export default function RiskManagementContent() {
               improved to protect every stakeholder in our programs.
             </p>
           </FadeIn>
-        </div>
+            </div>
       </section>
 
       {/* ── Five Pillars ── */}
@@ -181,7 +181,7 @@ export default function RiskManagementContent() {
               );
             })}
           </div>
-        </div>
+              </div>
       </section>
 
       {/* ── Key Highlights ── */}
@@ -269,8 +269,8 @@ export default function RiskManagementContent() {
 
       {/* ── Final CTA ── */}
       <section className="pb-20 md:pb-28">
-        <FadeIn>
-          <div
+          <FadeIn>
+            <div
             className="mx-auto max-w-4xl rounded-2xl px-8 py-14 text-center"
             style={{ backgroundColor: C.navy }}
           >
@@ -289,8 +289,8 @@ export default function RiskManagementContent() {
               Get in Touch
               <ArrowRight size={18} />
             </Link>
-          </div>
-        </FadeIn>
+            </div>
+          </FadeIn>
       </section>
     </main>
   );

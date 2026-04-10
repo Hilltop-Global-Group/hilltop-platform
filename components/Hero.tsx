@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { DecorativeUnderline, ArrowCTA } from './shared/HilltopBrand';
 
 const slides = [
@@ -66,26 +67,21 @@ const slides = [
 
 export default function Hero() {
   const [current, setCurrent] = useState(0);
-
-  const currentRef = useRef(current);
-  currentRef.current = current;
+  const advanceTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
-    const tick = () => {
-      const dur = currentRef.current === 0 ? 24000 : 9000;
-      timer.current = window.setTimeout(() => {
-        setCurrent(p => {
-          const next = (p + 1) % slides.length;
-          currentRef.current = next;
-          tick();
-          return next;
-        });
-      }, dur);
+    if (advanceTimerRef.current) clearTimeout(advanceTimerRef.current);
+    const dur = current === 0 ? 24000 : 9000;
+    advanceTimerRef.current = setTimeout(() => {
+      setCurrent((p) => (p + 1) % slides.length);
+    }, dur);
+    return () => {
+      if (advanceTimerRef.current) clearTimeout(advanceTimerRef.current);
     };
-    const timer = { current: 0 as number };
-    tick();
-    return () => clearTimeout(timer.current);
-  }, []);
+  }, [current]);
+
+  const goNext = () => setCurrent((p) => (p + 1) % slides.length);
+  const goPrev = () => setCurrent((p) => (p - 1 + slides.length) % slides.length);
 
   const slide = slides[current];
 
@@ -118,6 +114,26 @@ export default function Hero() {
             : 'linear-gradient(to top, rgba(8,15,28,0.95) 0%, rgba(8,15,28,0.55) 40%, rgba(8,15,28,0.2) 75%, rgba(8,15,28,0.1) 100%)',
         }}
       />
+
+      {/* Prev / next: icon-only, restarts auto-advance via current change */}
+      <div className="absolute inset-y-0 left-0 right-0 z-[5] pointer-events-none flex items-center justify-between px-3 sm:px-5 md:px-8 max-w-[1600px] mx-auto">
+        <button
+          type="button"
+          onClick={goPrev}
+          className="pointer-events-auto flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-full border border-white/25 bg-[#080f1c]/40 text-white/90 backdrop-blur-sm transition-colors hover:bg-[#080f1c]/60 hover:border-white/45"
+          aria-label="Previous slide"
+        >
+          <ChevronLeft className="h-6 w-6 sm:h-7 sm:w-7" strokeWidth={2} />
+        </button>
+        <button
+          type="button"
+          onClick={goNext}
+          className="pointer-events-auto flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-full border border-white/25 bg-[#080f1c]/40 text-white/90 backdrop-blur-sm transition-colors hover:bg-[#080f1c]/60 hover:border-white/45"
+          aria-label="Next slide"
+        >
+          <ChevronRight className="h-6 w-6 sm:h-7 sm:w-7" strokeWidth={2} />
+        </button>
+      </div>
 
       {/* Content: bottom-left aligned like Dalberg */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pb-24 pt-40">
@@ -183,8 +199,8 @@ export default function Hero() {
           </motion.div>
         </AnimatePresence>
 
-        {/* Slide indicators: bottom right */}
-        <div className="absolute bottom-8 right-6 sm:right-8 lg:right-12 flex gap-2">
+        {/* Slide indicators: bottom right (above chevron hit area) */}
+        <div className="absolute bottom-8 right-6 sm:right-8 lg:right-12 z-[6] flex gap-2">
           {slides.map((_, i) => (
             <button
               key={i}

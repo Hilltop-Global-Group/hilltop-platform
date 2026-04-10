@@ -9,13 +9,13 @@ export default function RwandaProgramHero({ applicationUrl }: { applicationUrl?:
   return (
     <section className="relative pt-32 pb-20 overflow-hidden" style={{ backgroundColor: '#080f1c' }}>
       <div className="absolute inset-0">
-        <div
+        <div 
           className="absolute inset-0 bg-cover bg-center opacity-40"
           style={{ backgroundImage: `url('/images/kigali-hero.webp')` }}
         />
         <div className="absolute inset-0 bg-gradient-to-br from-[#080f1c]/85 via-[#080f1c]/55 to-[#080f1c]/70" />
       </div>
-
+      
       <div className="pointer-events-none absolute right-0 top-0 bottom-0 flex items-center pr-4 md:pr-12" aria-hidden>
         <AfricaWatermark className="w-64 md:w-80 h-auto" opacity={0.07} />
       </div>

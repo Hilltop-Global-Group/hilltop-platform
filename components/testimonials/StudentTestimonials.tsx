@@ -20,6 +20,18 @@ const fallbackTestimonials: Testimonial[] = [
     affiliation: 'University at Buffalo',
   },
   {
+    title: 'Above and beyond in Ghana',
+    quote: 'Thank you so much for all your hard work organising this trip and making sure to check every detail. You really went above and beyond on this trip. I had so much fun and I want to thank you for taking care of us and helping us find good spots to make our trip memorable. You dealt with any problems with grace and made sure everything went as smoothly as possible. Thank you for all your recommendations! I hope your future travels go well and maybe we will run into each other when I return to Africa!',
+    name: 'Theresa',
+    affiliation: 'New York University (Ghana program)',
+  },
+  {
+    title: 'A warm welcome to Ghana',
+    quote: 'Thank you so much for giving us such a warm welcome to Ghana. I deeply appreciated my time here and you guys made me much more comfortable. I will be eating Ghanaian food more frequently and already found a restaurant I will be ordering from. Thank you so much for making this experience so enriching for us, as some of us were coming back for the first time. I have learned so much about myself and my family from this trip. Everything is starting to make sense now. I absolutely loved it in the Motherland and I now feel like a piece of me that was missing is found. I would love to come back… Thank you, Willow.',
+    name: 'Willow',
+    affiliation: 'New York University (Ghana program)',
+  },
+  {
     title: 'The Highlight of my MBA Experience!',
     quote: 'I had the privilege of being a part of the study abroad trip facilitated by Hilltop Global as part of Georgetown University\'s Global Business Experience. Hilltop planned and coordinated the whole trip, and twenty years from now, it will be the experience I remember most from my time as a business school student. What I thought set Hilltop Global apart from any other group I\'ve traveled with is the projects and clients they were able to connect us with. It was such a unique way to learn! Hilltop connected us with experts in their respective fields who were willing to teach us about their industries as well as the cultural context of those industries in Ghana.',
     name: 'Kelly B.',
@@ -32,39 +44,9 @@ const fallbackTestimonials: Testimonial[] = [
     affiliation: 'Georgetown University',
   },
   {
-    title: 'A Well Rounded In Country Experience',
-    quote: 'The Hilltop team was able to coordinate an in country experience that simultaneously provided a peak into the local culture in Ghana, insight into the business environment and engines of the economy, and some of the history that shaped both of these elements of the country. Despite the short timeline of one week, the Hilltop team did an excellent job of scheduling the types of activities that made it feel like we were experiencing a deep dive of Ghana beyond the surface level. The trip was successful in complementing our MBA educational experiences with on-the-ground insights of an emerging market.',
-    name: 'Kyle O.',
-    affiliation: 'Georgetown University',
-  },
-  {
-    title: 'So grateful for Hilltop Global',
-    quote: 'I\'m part of a group of graduating Georgetown MBA students, and as part of a capstone class, a section of our overall MBA class had the opportunity to consult and meet with a number of companies in Ghana. Prior to joining this class, Hilltop Global Group had sourced and coordinated all the consulting projects my section of the class took on, and it also served as a fantastic guide for learning how to do business in Ghana. We were set to visit the country after about 6 weeks of consulting and support, and prior to our trip, my section was able to visit the Embassy of Ghana, thanks to Hilltop Global. We even met with Ghana\'s Ambassador to the United States!',
-    name: 'Audrey D.',
-    affiliation: 'Georgetown University',
-  },
-  {
-    title: 'Personal and Professional Culmination',
-    quote: 'Emerging market deep-dive, powerful professional skill building, and valuable cultural immersion. Thank you Hilltop Global Group for an unforgettable week! My MBA capstone week in Ghana was beyond complete. I had the opportunity of working side-by-side with deeply-invested Ghanaian startup founders and visiting local agriculture, history, manufacturing, and infrastructure landmarks in a distinctly well-organized and stress-free trip. Hilltop Global Group coordinated an engaging and eye-opening week in Ghana that I will never forget.',
-    name: 'Audrey V.',
-    affiliation: 'Georgetown University',
-  },
-  {
     title: 'An eye-opening, amazing experience',
     quote: 'Hilltop Global Group arranged our Ghana trip for the Global Business Experience (GBE), a capstone course for second year Georgetown MBAs. The professional and cultural activities were simply incredible. Professionally, my team had an amazing time working with our client, ProFish, a start-up working to enhance the local market for fish and seafood. In terms of cultural immersion, we did an Accra city tour, as well as visited Kakum National Park, the Cocoa Research Institute of Ghana, Elmina Castle, and Jamestown. Phil and the rest of the Hilltop team did a wonderful job coordinating the logistics and programming and ensuring we had a great time.',
     name: 'Tory P.',
-    affiliation: 'Georgetown University',
-  },
-  {
-    title: 'Professional service and great programming',
-    quote: 'Our school\'s global business experience trip to Ghana was a great success thanks to the expert local knowledge and facilitation provided by Phil and the Hilltop team. The programming and trips included in our experience added tremendous depth to our academic work in Ghana.',
-    name: 'Joseph D.',
-    affiliation: 'Georgetown University',
-  },
-  {
-    title: 'Fantastic Experience',
-    quote: 'Hilltop provided a first class experience during our MBA trip to Ghana. The Hilltop team offered us the chance to learn about Ghana from a diverse network of on-the-ground experts and provided us access inside some of Ghana\'s largest companies. The team was exceptionally accommodating to ensure everyone was comfortable and had the necessary contacts and material to conduct our research and projects. Hilltop is a "must use" for any group heading to Ghana!',
-    name: 'Philip H.',
     affiliation: 'Georgetown University',
   },
   {
@@ -74,46 +56,16 @@ const fallbackTestimonials: Testimonial[] = [
     affiliation: 'Georgetown University',
   },
   {
-    title: 'A Transformative Experience',
-    quote: 'My work and education have taken me all over the world; yet nothing has inspired such a dramatic perspective shift like the visit to Ghana with Hilltop Global Group. Each day Hilltop orchestrated a broad range of fascinating, immersive interactions; serving as not only a logistical coordinator, but a partner in the experiences. Every step of the way, Hilltop ensured comfortable arrangements, while also challenging our group to experience each moment fully and honestly. Interactions ranged from audience with local chiefs, conversations at Parliament, business debates with executives and professionals from a range of sectors and industries, to raw, unfiltered immersions in local culture. I cannot recommend Hilltop Global Group enough.',
-    name: 'Steven D.',
-    affiliation: 'Georgetown University',
-  },
-  {
-    title: 'First-Rate Experience! Incredible Benefit to my Company',
-    quote: 'In the first quarter of 2019, Ghana Cyber City became the first repeat client of the Georgetown Global Business Experience (GBE) Program, facilitated by Hilltop Global Group. The 5 MBA students assigned to my company shared groundbreaking ideas towards restructuring and repackaging Ghana Cyber City to maximize its marketability to future investors and anchor firms. Notably, the GBE team stepped outside the scope of their assignment to pitch the project to a New York-based strategic consulting firm and a Silicon Valley software as a service company that runs a successful incubator in Africa. Thank you for an incredible and intellectually stimulating engagement that is sure to shape the trajectory of our firm.',
-    name: 'Yaw O.',
-    affiliation: 'Ghana Cyber City',
-  },
-  {
-    title: 'Eye opening experience',
-    quote: 'It was an amazing journey, experience, and true eye opener. Hilltop Global provided us a tailored experience that showcased the diverse culture and business environment in Ghana. During the trip, we were able to meet with our Ghanaian clients seamlessly and had an amazing encounter experiencing the local culture.',
-    name: 'Irene O.',
-    affiliation: 'Georgetown University',
-  },
-  {
     title: 'Thank You Hilltop for the Experience',
     quote: 'Hilltop provided me with an in-depth experience of business and culture in Ghana. As someone from another west African country, Nigeria, I visited Ghana a few times before but only got a superficial understanding of the Ghanaian culture. With the global business experience, it was a complete immersion into the Ghanaian culture. Thanks to Hilltop, now I understand how and why Ghana leads the pack in the percentage of women that are entrepreneurs. Women in Ghana are more likely to be entrepreneurs than women in any other country in the world. That is a fact!',
     name: 'Olatunji F.',
     affiliation: 'Georgetown University',
   },
   {
-    title: 'Perfect partner for an authentic experience in Ghana!',
-    quote: 'The Global Business Experience course is the Capstone project and highlight of our two-year MBA Program, and Hilltop Global ensured that our experience much exceeded our expectations. Hilltop served as a true business partner for us by providing information, guidance and continuous support before, during and even after our journey to Ghana. I was pleasantly surprised by the planning of our comprehensive itinerary and seamless experience in Ghana made possible by the team of Hilltop Global. Every day of our journey was carefully planned to balance comfort in a new country with authentic exposure to the local culture, people and businesses.',
-    name: 'Summi S.',
+    title: 'Personal and Professional Culmination',
+    quote: 'Emerging market deep-dive, powerful professional skill building, and valuable cultural immersion. Thank you Hilltop Global Group for an unforgettable week! My MBA capstone week in Ghana was beyond complete. I had the opportunity of working side-by-side with deeply-invested Ghanaian startup founders and visiting local agriculture, history, manufacturing, and infrastructure landmarks in a distinctly well-organized and stress-free trip. Hilltop Global Group coordinated an engaging and eye-opening week in Ghana that I will never forget.',
+    name: 'Audrey V.',
     affiliation: 'Georgetown University',
-  },
-  {
-    title: 'True Immersion',
-    quote: 'An incredible experience that will be remembered always. Hilltop Global Group set an itinerary that covered the key highlights of Accra, but more importantly, provided for us an immersion that was above and beyond anything we\'ve experienced before.',
-    name: 'Greg M.',
-    affiliation: 'Georgetown University',
-  },
-  {
-    title: 'Excellent Insights with Practical Observations',
-    quote: 'This was a truly profound experience with Hilltop Global, the Georgetown Team, and all related protocols in facilitating and coming up with a more diverse way to build on top of our existing strategies with regards to our core business as a start up company. We were impressed with the step by step scrutinization of all corridors of the business with a priceless solution provided as an add on. This alone is a big motivation and perfect example of how we can improve, drive and change the livestock poultry industry in Ghana and beyond with innovations that create meaningful and measurable impact. A big thank you for such competent service provided.',
-    name: 'Patrick A.',
-    affiliation: 'Ghana Startup Founder',
   },
   {
     title: 'Highlight of the MBA Program',

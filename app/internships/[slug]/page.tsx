@@ -170,7 +170,7 @@ export default async function InternshipPage({ params }: { params: Promise<{ slu
       <section className="relative pt-32 pb-20 overflow-hidden" style={{ backgroundColor: '#080f1c' }}>
         <div className="absolute inset-0">
           {featuredImage && (
-            <div
+            <div 
               className="absolute inset-0 bg-cover bg-center opacity-40"
               style={{ backgroundImage: `url('${featuredImage}')` }}
             />
@@ -181,41 +181,41 @@ export default async function InternshipPage({ params }: { params: Promise<{ slu
         <div className="pointer-events-none absolute right-0 top-0 bottom-0 flex items-center pr-4 md:pr-12" aria-hidden>
           <AfricaWatermark className="w-64 md:w-80 h-auto" opacity={0.07} />
         </div>
-
+        
         <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ backgroundColor: '#F4A261' }} />
 
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
           {/* Back link */}
-          <Link
+            <Link
             href="/internships/current"
             className="group inline-flex items-center gap-2 font-sans text-sm text-white/60 hover:text-white transition-colors duration-200 mb-8"
-          >
+            >
             <ArrowLeft size={16} />
             Back to Current Internships
-          </Link>
+            </Link>
 
           <p className="font-sans text-xs font-semibold uppercase tracking-[0.25em] mb-5" style={{ color: '#F4A261' }}>
             {isPast ? 'Completed Program' : 'Applications Open'}
           </p>
 
-          <h1
+            <h1 
             className="font-serif font-extrabold text-white leading-none mb-6"
             style={{ fontSize: 'clamp(2.6rem, 6vw, 5rem)' }}
-            dangerouslySetInnerHTML={{ __html: internship.title.rendered }}
-          />
-
+              dangerouslySetInnerHTML={{ __html: internship.title.rendered }}
+            />
+            
           {(startDate && endDate) && (
             <p className="font-sans text-white/60 text-base mb-6">
               {formatShortDate(startDate)} \u2013 {formatShortDate(endDate)}
               {locationTerms.length > 0 && <> &middot; {locationTerms.map((l: any) => l.name).join(', ')}</>}
-            </p>
-          )}
+              </p>
+            )}
 
-          <div
+            <div 
             className="font-sans text-white/70 text-base sm:text-lg max-w-2xl leading-relaxed [&>p]:mb-0"
-            dangerouslySetInnerHTML={{ __html: internship.excerpt.rendered }}
-          />
-        </div>
+              dangerouslySetInnerHTML={{ __html: internship.excerpt.rendered }}
+            />
+          </div>
       </section>
 
       {/* ── Feature cards ── */}
@@ -231,7 +231,7 @@ export default async function InternshipPage({ params }: { params: Promise<{ slu
                 <card.Icon size={28} className="mb-4" style={{ color: i % 2 === 0 ? '#1D3160' : '#F4A261' }} strokeWidth={1.5} />
                 <h3 className="font-serif font-bold text-lg mb-2" style={{ color: '#1D3160' }}>{card.title}</h3>
                 <p className="font-sans text-gray-500 text-sm leading-relaxed">{card.desc}</p>
-              </div>
+            </div>
             ))}
           </div>
         </div>
@@ -252,7 +252,7 @@ export default async function InternshipPage({ params }: { params: Promise<{ slu
           </h2>
           <div className="border-t border-gray-200 mb-10" />
 
-          <div
+          <div 
             className="prose prose-lg max-w-none
               prose-p:font-sans prose-p:text-gray-600 prose-p:leading-relaxed prose-p:mb-5
               prose-headings:font-serif prose-headings:font-bold
@@ -329,7 +329,7 @@ export default async function InternshipPage({ params }: { params: Promise<{ slu
                         <p className="font-sans text-gray-600 text-sm">{t}</p>
                       </div>
                     ))}
-                  </div>
+              </div>
                 </div>
               )}
             </div>
@@ -357,11 +357,11 @@ export default async function InternshipPage({ params }: { params: Promise<{ slu
               <div key={i} className="flex items-start gap-4">
                 <div className="w-10 h-10 flex items-center justify-center flex-shrink-0" style={{ backgroundColor: detail.accent }}>
                   <detail.icon size={18} className="text-white" />
-                </div>
-                <div>
+              </div>
+              <div>
                   <p className="font-sans text-gray-400 text-xs uppercase tracking-wider mb-1">{detail.label}</p>
                   <p className="font-serif font-bold text-lg" style={{ color: '#1D3160' }}>{detail.value}</p>
-                </div>
+              </div>
               </div>
             ))}
           </div>
@@ -377,15 +377,15 @@ export default async function InternshipPage({ params }: { params: Promise<{ slu
             style={{ backgroundColor: isPast ? '#6B7280' : '#10B981' }}
           >
             {isPast ? 'Applications Closed' : 'Applications Open'}
-          </span>
+              </span>
           <h2 className="font-serif font-extrabold text-white leading-none mb-4" style={{ fontSize: 'clamp(2rem, 4vw, 3.2rem)' }}>
             Apply to This Program
-          </h2>
+              </h2>
           {deadline && (
             <p className="font-sans text-white/50 text-sm mb-6">
               Deadline: <span className="text-white/80 font-semibold">{formatDate(deadline)}</span>
-            </p>
-          )}
+                </p>
+              )}
           <p className="font-sans text-white/50 text-base mb-10">
             Spots are limited. Early application is strongly advised.
           </p>
@@ -456,7 +456,7 @@ export default async function InternshipPage({ params }: { params: Promise<{ slu
               <div key={i} className="border border-gray-100 bg-white p-6">
                 <p className="font-serif font-bold text-lg mb-2" style={{ color: item.accent }}>{item.day}</p>
                 <p className="font-sans text-gray-500 text-sm leading-relaxed">{item.desc}</p>
-              </div>
+            </div>
             ))}
           </div>
         </div>

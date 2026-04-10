@@ -7,28 +7,11 @@ import FadeIn from '../FadeIn';
 
 const partnerTestimonials = [
   {
-    name: "James K.",
-    role: "CEO",
-    company: "TechStart Ghana",
-    quote: "Our company has hired three interns from Hilltop, and all were excellent additions. They came prepared, professional, and eager to contribute. The screening and matching process is top-notch.",
-  },
-  {
-    name: "Anita B.",
-    role: "Program Director",
-    company: "Innovation Hub Kigali",
-    quote: "They handle all the logistics perfectly, allowing us to focus on teaching and mentoring. The students are well-prepared and the support from Hilltop coordinators makes the entire process seamless.",
-  },
-  {
-    name: "Dr. Patricia Mensah",
-    role: "Director of International Programs",
-    company: "Howard University",
-    quote: "Hilltop has been an invaluable partner in expanding our Africa programs. Their on-ground support, cultural competency, and commitment to student success is unmatched.",
-  },
-  {
-    name: "Samuel Nkrumah",
-    role: "Founder",
-    company: "AgriTech Solutions",
-    quote: "Working with Hilltop interns has brought fresh perspectives to our team. The students are motivated, skilled, and genuinely interested in making an impact in African agriculture.",
+    name: 'Happy Feet Youth Project & iThuba Innovation Hub',
+    role: 'Community partners',
+    company: 'Accra, Ghana',
+    quote:
+      'Our beneficiaries at Happy Feet Youth Project and iThuba Innovation Hub had a truly meaningful experience engaging with the students during their January visit, facilitated by Hilltop Global Group. We strongly believe in creating interactions that benefit both our learners and visiting groups, and this exchange was a powerful example of that. Our students felt inspired to share their stories, culture, and aspirations, while the visiting students brought openness, curiosity, and a genuine willingness to connect. This experience beautifully demonstrated the spirit of Ubuntu, the idea that we grow through one another, and reflected the kind of thoughtful, mutually beneficial global partnerships that Hilltop Global Group is committed to building. It reinforced for us the value of these collaborations in shaping young leaders and fostering deeper cross cultural understanding.',
   },
 ];
 
@@ -57,18 +40,18 @@ export default function PartnerTestimonials() {
             </h2>
             <div className="hidden md:block w-px bg-gray-200 self-stretch flex-shrink-0" />
             <p className="font-sans text-gray-500 text-base max-w-sm leading-relaxed md:pt-1 flex-shrink-0">
-              Trusted by leading organizations and universities worldwide.
+              Voices from organizations that host and co-create experiences with Hilltop.
             </p>
           </div>
         </FadeIn>
 
         <div className="border-t border-gray-200 mb-12" />
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="max-w-3xl mx-auto">
           {partnerTestimonials.map((testimonial, index) => (
             <motion.div
               key={index}
-              className="bg-white border border-gray-100 p-7 hover:shadow-md transition-all duration-300"
+              className="bg-white border border-gray-100 p-7 sm:p-10 hover:shadow-md transition-all duration-300"
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

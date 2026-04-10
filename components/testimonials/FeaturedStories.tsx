@@ -1,17 +1,66 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Play, Quote } from 'lucide-react';
 import { KenteDivider, DecorativeUnderline } from '../shared/HilltopBrand';
 
+const VIDEO_SRC = '/images/testimonial1.mp4';
+
 export default function FeaturedStories() {
   const [playing, setPlaying] = useState(false);
+  const [posterDataUrl, setPosterDataUrl] = useState<string | undefined>(undefined);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const posterCapturedRef = useRef(false);
+
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v) return;
+
+    const captureAfterSeek = () => {
+      if (posterCapturedRef.current) return;
+      if (v.videoWidth === 0 || v.videoHeight === 0) return;
+      const canvas = document.createElement('canvas');
+      canvas.width = v.videoWidth;
+      canvas.height = v.videoHeight;
+      const ctx = canvas.getContext('2d');
+      if (!ctx) return;
+      ctx.drawImage(v, 0, 0);
+      try {
+        setPosterDataUrl(canvas.toDataURL('image/jpeg', 0.88));
+        posterCapturedRef.current = true;
+      } catch {
+        /* canvas tainted or unsupported */
+      }
+      v.removeEventListener('seeked', captureAfterSeek);
+      v.currentTime = 0;
+    };
+
+    const startCapture = () => {
+      if (posterCapturedRef.current) return;
+      v.addEventListener('seeked', captureAfterSeek);
+      const d = v.duration;
+      const t =
+        d && !Number.isNaN(d) && d > 0 ? Math.min(0.08, Math.max(0.03, d * 0.015)) : 0.05;
+      v.currentTime = t;
+    };
+
+    if (v.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
+      startCapture();
+    } else {
+      v.addEventListener('loadeddata', startCapture, { once: true });
+    }
+
+    return () => {
+      v.removeEventListener('loadeddata', startCapture);
+      v.removeEventListener('seeked', captureAfterSeek);
+    };
+  }, []);
 
   const handlePlay = () => {
     if (videoRef.current) {
-      videoRef.current.play();
+      videoRef.current.muted = false;
+      void videoRef.current.play();
       setPlaying(true);
     }
   };
@@ -46,22 +95,26 @@ export default function FeaturedStories() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          {/* Portrait video, constrained width so it doesn't stretch */}
           <div className="w-full lg:w-5/12 flex justify-center">
             <div className="relative w-full max-w-[340px] sm:max-w-[380px]">
-              <div className="relative rounded-sm overflow-hidden border border-gray-100 shadow-lg" style={{ aspectRatio: '9/16' }}>
+              <div
+                className="relative rounded-sm overflow-hidden border border-gray-100 shadow-lg bg-gray-100"
+                style={{ aspectRatio: '9/16' }}
+              >
                 <video
                   ref={videoRef}
-                  src="/images/testimonial1.mp4"
-                  poster="/images/intern.JPG"
+                  src={VIDEO_SRC}
+                  poster={posterDataUrl}
                   className="w-full h-full object-cover"
                   controls={playing}
                   playsInline
+                  muted
+                  preload="auto"
                   onEnded={() => setPlaying(false)}
-                  preload="metadata"
                 />
                 {!playing && (
                   <button
+                    type="button"
                     onClick={handlePlay}
                     className="absolute inset-0 flex items-center justify-center bg-black/20 hover:bg-black/30 transition-colors duration-300 group"
                     aria-label="Play video"
@@ -78,7 +131,6 @@ export default function FeaturedStories() {
             </div>
           </div>
 
-          {/* Quote / text side */}
           <div className="w-full lg:w-7/12">
             <Quote size={32} style={{ color: '#F4A261' }} className="mb-5" />
             <blockquote
