@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Mail, Phone, MapPin, Linkedin, Instagram, Facebook, Send } from 'lucide-react';
 import { FaTiktok, FaXTwitter } from 'react-icons/fa6';
 import { AfricaWatermark, KenteDivider } from './shared/HilltopBrand';
+import MembershipBadges from './shared/MembershipBadges';
 
 const socialLinks = [
   { icon: Linkedin, href: 'https://www.linkedin.com/company/hilltopglobally', label: 'LinkedIn' },
@@ -186,6 +187,11 @@ export default function Footer() {
 
         {/* Divider */}
         <div className="border-t border-white/10" />
+
+        {/* Memberships */}
+        <div className="py-8 border-b border-white/10">
+          <MembershipBadges variant="dark" />
+        </div>
 
         {/* Bottom: nav + copyright */}
         <div className="py-10 flex flex-col md:flex-row md:items-center gap-6">

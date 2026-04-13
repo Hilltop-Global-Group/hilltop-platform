@@ -5,6 +5,7 @@ import ImpactMetrics from '@/components/about/ImpactMetrics';
 import AboutCTA from '@/components/about/AboutCTA';
 import NewsletterSignup from '@/components/news/NewsletterSignup';
 import RiskManagementCTA from '@/components/shared/RiskManagementCTA';
+import MembershipBadges from '@/components/shared/MembershipBadges';
 
 export const metadata = {
   title: 'About Hilltop Global Group | Diaspora-Led Education Consulting for Africa',
@@ -18,6 +19,11 @@ export default function AboutPage() {
       <FeaturedVideo />
       <JourneyInteractive />
       <ImpactMetrics />
+      <section className="py-10 bg-white border-t border-gray-100">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+          <MembershipBadges variant="light" />
+        </div>
+      </section>
       <RiskManagementCTA />
       <NewsletterSignup />
       <AboutCTA />

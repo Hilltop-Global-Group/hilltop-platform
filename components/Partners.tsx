@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { DottedAfricaMap } from './shared/HilltopBrand';
+import MembershipBadges from './shared/MembershipBadges';
 
 const universities = [
   'Georgetown University',
@@ -44,6 +45,11 @@ export default function Partners() {
               {name}
             </motion.span>
           ))}
+        </div>
+
+        {/* Industry memberships */}
+        <div className="border-t border-gray-100 pt-8 mb-10">
+          <MembershipBadges variant="light" />
         </div>
 
         {/* Stats divider */}

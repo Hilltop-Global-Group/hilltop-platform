@@ -105,18 +105,18 @@ export default function Hero() {
         />
       </AnimatePresence>
 
-      {/* Gradient overlay: tighter on map slide to keep image visible */}
+      {/* Base dark tint across the whole image */}
+      <div className="absolute inset-0 z-[1] bg-[#080f1c]/45" />
+      {/* Bottom-to-top gradient overlay for strong text readability */}
       <div
-        className="absolute inset-0 z-[1]"
+        className="absolute inset-0 z-[2]"
         style={{
-          background: current === 0
-            ? 'linear-gradient(to top, rgba(8,15,28,0.92) 0%, rgba(8,15,28,0.6) 25%, rgba(8,15,28,0.08) 50%, transparent 100%)'
-            : 'linear-gradient(to top, rgba(8,15,28,0.95) 0%, rgba(8,15,28,0.55) 40%, rgba(8,15,28,0.2) 75%, rgba(8,15,28,0.1) 100%)',
+          background: 'linear-gradient(to top, rgba(8,15,28,0.98) 0%, rgba(8,15,28,0.80) 35%, rgba(8,15,28,0.45) 65%, rgba(8,15,28,0.15) 100%)',
         }}
       />
 
       {/* Prev / next: icon-only, restarts auto-advance via current change */}
-      <div className="absolute inset-y-0 left-0 right-0 z-[5] pointer-events-none flex items-center justify-between px-3 sm:px-5 md:px-8 max-w-[1600px] mx-auto">
+      <div className="absolute inset-y-0 left-0 right-0 z-20 pointer-events-none flex items-center justify-between px-3 sm:px-5 md:px-8 max-w-[1600px] mx-auto">
         <button
           type="button"
           onClick={goPrev}
