@@ -14,6 +14,11 @@ const memberships = [
     alt: 'The Forum on Education Abroad',
     displayHeight: 140,
   },
+  {
+    src: '/images/embac.png',
+    alt: 'EMBAC: Executive MBA Council',
+    displayHeight: 72,
+  },
 ];
 
 interface MembershipBadgesProps {
@@ -97,20 +102,20 @@ export default function MembershipBadges({
   const isDark = variant === 'dark';
 
   return (
-    <div className="flex flex-wrap items-center gap-4 sm:gap-6">
+    <div className="flex flex-col items-center gap-6">
       <motion.span
-        initial={{ opacity: 0, x: -20 }}
-        whileInView={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, y: -10 }}
+        whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.5 }}
         transition={{ duration: 0.5, ease: 'easeOut' }}
-        className={`font-sans text-xs font-semibold uppercase tracking-[0.2em] flex-shrink-0 ${
+        className={`font-sans text-xs font-semibold uppercase tracking-[0.2em] ${
           isDark ? 'text-white/40' : 'text-gray-400'
         }`}
       >
         {label}
       </motion.span>
 
-      <div className="flex items-center gap-6 sm:gap-8">
+      <div className="flex items-center justify-center gap-10 sm:gap-16 w-full">
         {memberships.map((m, i) => (
           <TiltLogo key={m.alt} m={m} isDark={isDark} index={i} />
         ))}
