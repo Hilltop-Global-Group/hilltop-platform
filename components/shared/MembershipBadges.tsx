@@ -7,17 +7,20 @@ const memberships = [
   {
     src: '/images/nafsa_logo_blue.png',
     alt: 'NAFSA: Association of International Educators',
-    displayHeight: 72,
+    height: 72,
+    offsetBottom: 0,
   },
   {
     src: '/images/forum-logo-final.png',
     alt: 'The Forum on Education Abroad',
-    displayHeight: 140,
+    height: 120,
+    offsetBottom: 10,
   },
   {
     src: '/images/embac.png',
     alt: 'EMBAC: Executive MBA Council',
-    displayHeight: 72,
+    height: 68,
+    offsetBottom: 0,
   },
 ];
 
@@ -69,12 +72,11 @@ function TiltLogo({ m, isDark, index }: { m: typeof memberships[0]; isDark: bool
         whileTap={{ scale: 0.93 }}
         style={{ rotateX, rotateY, transformStyle: 'preserve-3d', position: 'relative' }}
         className={`flex items-center justify-center rounded cursor-pointer ${
-          isDark ? 'bg-white px-5 py-3' : ''
+          isDark ? 'bg-white px-5 pt-3 pb-2' : ''
         }`}
       >
         {/* Glow layer */}
         <motion.div
-          style={{ opacity: glowOpacity }}
           className="absolute inset-0 rounded pointer-events-none"
           style={{
             opacity: glowOpacity,
@@ -88,7 +90,7 @@ function TiltLogo({ m, isDark, index }: { m: typeof memberships[0]; isDark: bool
         <img
           src={m.src}
           alt={m.alt}
-          style={{ height: `${m.displayHeight}px`, width: 'auto', objectFit: 'contain', position: 'relative', zIndex: 1 }}
+          style={{ height: `${m.height}px`, width: 'auto', objectFit: 'contain', position: 'relative', zIndex: 1, marginBottom: `-${m.offsetBottom}px` }}
         />
       </motion.div>
     </motion.div>
@@ -115,7 +117,7 @@ export default function MembershipBadges({
         {label}
       </motion.span>
 
-      <div className="flex items-center justify-center gap-10 sm:gap-16 w-full">
+      <div className="flex items-end justify-center gap-10 sm:gap-16 w-full">
         {memberships.map((m, i) => (
           <TiltLogo key={m.alt} m={m} isDark={isDark} index={i} />
         ))}
