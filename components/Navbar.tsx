@@ -50,10 +50,7 @@ const navItems: NavItem[] = [
   },
   {
     name: 'Blogs & News',
-    children: [
-      { name: 'All Posts', href: '/news', description: 'The latest news, updates, and insights' },
-      { name: 'Program Updates', href: '/news?category=programs', description: 'Announcements from our Ghana and Rwanda programs' },
-    ],
+    href: '/news',
   },
 ];
 
