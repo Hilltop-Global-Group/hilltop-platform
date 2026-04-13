@@ -20,7 +20,7 @@ export const teamMembers: TeamMember[] = [
     name: 'Osa Imohe',
     role: 'Co-Founder',
     category: 'leadership',
-    image: 'https://via.placeholder.com/400x480/2d4a6e/FFFFFF?text=OI',
+    image: '/images/osa.jpg',
     linkedin: 'https://www.linkedin.com/in/osaimohe/',
     bio: 'Healthcare technology and global education leader; co-founded Hilltop with Georgetown EMBA colleagues. Provides leadership and strategic support across programs.',
   },
