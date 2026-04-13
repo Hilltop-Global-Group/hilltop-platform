@@ -1,3 +1,8 @@
+'use client';
+
+import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
+import { useRef } from 'react';
+
 const memberships = [
   {
     src: '/images/nafsa_logo_blue.png',
@@ -12,9 +17,77 @@ const memberships = [
 ];
 
 interface MembershipBadgesProps {
-  /** 'dark' for footer/dark backgrounds, 'light' for white/light sections */
   variant?: 'dark' | 'light';
   label?: string;
+}
+
+function TiltLogo({ m, isDark, index }: { m: typeof memberships[0]; isDark: boolean; index: number }) {
+  const ref = useRef<HTMLDivElement>(null);
+
+  const rawX = useMotionValue(0);
+  const rawY = useMotionValue(0);
+  const rotateX = useSpring(useTransform(rawY, [-0.5, 0.5], [18, -18]), { stiffness: 300, damping: 20 });
+  const rotateY = useSpring(useTransform(rawX, [-0.5, 0.5], [-18, 18]), { stiffness: 300, damping: 20 });
+  const glowOpacity = useSpring(0, { stiffness: 200, damping: 20 });
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = ref.current?.getBoundingClientRect();
+    if (!rect) return;
+    rawX.set((e.clientX - rect.left) / rect.width - 0.5);
+    rawY.set((e.clientY - rect.top) / rect.height - 0.5);
+    glowOpacity.set(1);
+  };
+
+  const handleMouseLeave = () => {
+    rawX.set(0);
+    rawY.set(0);
+    glowOpacity.set(0);
+  };
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 60, scale: 0.7, rotate: index === 0 ? -8 : 8 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1, rotate: 0 }}
+      viewport={{ once: true, amount: 0.5 }}
+      transition={{
+        type: 'spring',
+        stiffness: 180,
+        damping: 14,
+        delay: 0.15 + index * 0.18,
+      }}
+      style={{ perspective: 800 }}
+    >
+      <motion.div
+        ref={ref}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+        whileTap={{ scale: 0.93 }}
+        style={{ rotateX, rotateY, transformStyle: 'preserve-3d', position: 'relative' }}
+        className={`flex items-center justify-center rounded cursor-pointer ${
+          isDark ? 'bg-white px-5 py-3' : ''
+        }`}
+      >
+        {/* Glow layer */}
+        <motion.div
+          style={{ opacity: glowOpacity }}
+          className="absolute inset-0 rounded pointer-events-none"
+          style={{
+            opacity: glowOpacity,
+            background: isDark
+              ? 'radial-gradient(circle at 50% 50%, rgba(244,162,97,0.35) 0%, transparent 70%)'
+              : 'radial-gradient(circle at 50% 50%, rgba(29,49,96,0.15) 0%, transparent 70%)',
+            filter: 'blur(8px)',
+          }}
+        />
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={m.src}
+          alt={m.alt}
+          style={{ height: `${m.displayHeight}px`, width: 'auto', objectFit: 'contain', position: 'relative', zIndex: 1 }}
+        />
+      </motion.div>
+    </motion.div>
+  );
 }
 
 export default function MembershipBadges({
@@ -25,28 +98,21 @@ export default function MembershipBadges({
 
   return (
     <div className="flex flex-wrap items-center gap-4 sm:gap-6">
-      <span
+      <motion.span
+        initial={{ opacity: 0, x: -20 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: 0.5, ease: 'easeOut' }}
         className={`font-sans text-xs font-semibold uppercase tracking-[0.2em] flex-shrink-0 ${
           isDark ? 'text-white/40' : 'text-gray-400'
         }`}
       >
         {label}
-      </span>
+      </motion.span>
+
       <div className="flex items-center gap-6 sm:gap-8">
-        {memberships.map((m) => (
-          <div
-            key={m.alt}
-            className={`flex items-center justify-center rounded ${
-              isDark ? 'bg-white px-5 py-3' : ''
-            }`}
-          >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={m.src}
-              alt={m.alt}
-              style={{ height: `${m.displayHeight}px`, width: 'auto', objectFit: 'contain' }}
-            />
-          </div>
+        {memberships.map((m, i) => (
+          <TiltLogo key={m.alt} m={m} isDark={isDark} index={i} />
         ))}
       </div>
     </div>
