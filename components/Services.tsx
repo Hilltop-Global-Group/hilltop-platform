@@ -11,8 +11,8 @@ import { focalCountryDetailPath } from '@/lib/focal-destinations-data';
 const services = [
   {
     title: 'Experiential Education Programs',
-    subtitle: 'Turnkey Study Abroad',
-    description: 'Customizable study abroad, internship, and co-curricular experiences that connect participants to Africa\'s vibrant cultural, academic, and entrepreneurial ecosystems.',
+    subtitle: 'Turnkey Education Abroad',
+    description: 'Customizable education abroad, internship, and co-curricular experiences that connect participants to Africa\'s vibrant cultural, academic, and entrepreneurial ecosystems.',
     cta: 'Explore Programs',
     href: '/education',
     images: [

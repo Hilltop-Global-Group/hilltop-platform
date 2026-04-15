@@ -33,6 +33,7 @@ const navItems: NavItem[] = [
       { name: 'Focal Destinations', href: '/education/destinations', description: 'Where we operate across the African continent' },
       { name: 'Technical & Vocational Education', href: '/education/tvet', description: 'Building workforce capacity through TVET partnerships' },
       { name: 'Partners & Universities', href: '/testimonials/partners', description: 'What our institutional partners say' },
+      { name: 'Student Stories', href: '/testimonials', description: 'What students say about their Hilltop experience' },
     ],
   },
   {
@@ -41,7 +42,6 @@ const navItems: NavItem[] = [
       { name: 'About Our Internships', href: '/internships/about', description: 'How our programs work, industries, and FAQs' },
       { name: 'Current Internships', href: '/internships/current', description: 'Open programs in Ghana and Rwanda' },
       { name: 'Past Internships', href: '/internships/past', description: 'Completed placements and alumni programs' },
-      { name: 'Student Stories', href: '/testimonials', description: 'What students say about their Hilltop experience' },
     ],
   },
   {
@@ -119,6 +119,7 @@ export default function Navbar() {
 
               if (item.children) {
                 const isOpen = openDropdown === item.name;
+                const defaultHref = item.children[0].href;
                 return (
                   <div
                     key={item.name}
@@ -126,8 +127,9 @@ export default function Navbar() {
                     onMouseEnter={() => setOpenDropdown(item.name)}
                     onMouseLeave={() => setOpenDropdown(null)}
                   >
-                    <button
-                      onClick={() => setOpenDropdown(isOpen ? null : item.name)}
+                    {/* Desktop: parent label navigates to first submenu page; hover still opens dropdown */}
+                    <Link
+                      href={defaultHref}
                       className={`group relative flex items-center gap-1 font-sans text-sm font-medium transition-colors duration-200 pb-0.5 ${
                         active ? 'text-black' : 'text-gray-500 hover:text-black'
                       }`}
@@ -136,6 +138,7 @@ export default function Navbar() {
                       <ChevronDown
                         size={13}
                         className={`transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
+                        aria-hidden
                       />
                       {active && (
                         <span
@@ -143,7 +146,7 @@ export default function Navbar() {
                           style={{ backgroundColor: '#F4A261' }}
                         />
                       )}
-                    </button>
+                    </Link>
 
                     {/* Invisible bridge fills the mt-3 gap so hover doesn't break */}
                     <div className="absolute top-full left-0 right-0 h-3" />

@@ -13,6 +13,13 @@ const partnerTestimonials = [
     quote:
       'Our beneficiaries at Happy Feet Youth Project and iThuba Innovation Hub had a truly meaningful experience engaging with the students during their January visit, facilitated by Hilltop Global Group. We strongly believe in creating interactions that benefit both our learners and visiting groups, and this exchange was a powerful example of that. Our students felt inspired to share their stories, culture, and aspirations, while the visiting students brought openness, curiosity, and a genuine willingness to connect. This experience beautifully demonstrated the spirit of Ubuntu, the idea that we grow through one another, and reflected the kind of thoughtful, mutually beneficial global partnerships that Hilltop Global Group is committed to building. It reinforced for us the value of these collaborations in shaping young leaders and fostering deeper cross cultural understanding.',
   },
+  {
+    name: 'Yaw Owusu',
+    role: 'Ghana Cyber City',
+    company: 'Georgetown GBE industry partner · Ghana',
+    quote:
+      'In the first quarter of 2019, Ghana Cyber City became the first repeat client of the Georgetown Global Business Experience (GBE) Program, facilitated by Hilltop Global Group. The 5 MBA students assigned to my company shared groundbreaking ideas towards restructuring and repackaging Ghana Cyber City to maximize its marketability to future investors and anchor firms. Notably, the GBE team stepped outside the scope of their assignment to pitch the project to a New York-based strategic consulting firm and a Silicon Valley software as a service company that runs a successful incubator in Africa. Thank you for an incredible and intellectually stimulating engagement that is sure to shape the trajectory of our firm.',
+  },
 ];
 
 export default function PartnerTestimonials() {
@@ -47,18 +54,18 @@ export default function PartnerTestimonials() {
 
         <div className="border-t border-gray-200 mb-12" />
 
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
           {partnerTestimonials.map((testimonial, index) => (
             <motion.div
               key={index}
-              className="bg-white border border-gray-100 p-7 sm:p-10 hover:shadow-md transition-all duration-300"
+              className="bg-white border border-gray-100 p-7 sm:p-10 hover:shadow-md transition-all duration-300 h-full flex flex-col"
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.08, duration: 0.5 }}
             >
               <Quote size={20} style={{ color: '#F4A261' }} className="mb-4" />
-              <p className="font-sans text-gray-600 text-base leading-relaxed mb-6">
+              <p className="font-sans text-gray-600 text-base leading-relaxed mb-6 flex-1">
                 &ldquo;{testimonial.quote}&rdquo;
               </p>
               <div className="border-t border-gray-100 pt-5 flex items-center gap-4">

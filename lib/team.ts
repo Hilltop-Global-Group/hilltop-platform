@@ -3,7 +3,7 @@ export interface TeamMember {
   role: string;
   category: 'leadership' | 'staff';
   image: string;
-  linkedin: string;
+  linkedin?: string;
   bio?: string;
 }
 
@@ -12,9 +12,9 @@ export const teamMembers: TeamMember[] = [
     name: 'Phil Agbeko',
     role: 'Founder & CEO',
     category: 'leadership',
-    image: 'https://via.placeholder.com/400x480/1D3160/FFFFFF?text=PA',
+    image: '/images/Phil-profile.jpeg',
     linkedin: 'https://www.linkedin.com/in/philagbeko/',
-    bio: 'Georgetown EMBA alumnus and visionary behind Hilltop Global Group, building bridges between U.S. institutions and Africa\'s most dynamic markets.',
+    bio: 'Visionary behind Hilltop Global Group and Georgetown EMBA alumnus, building bridges between U.S. institutions and Africa\'s most dynamic markets.',
   },
   {
     name: 'Osa Imohe',
@@ -22,7 +22,7 @@ export const teamMembers: TeamMember[] = [
     category: 'leadership',
     image: '/images/osa.jpg',
     linkedin: 'https://www.linkedin.com/in/osaimohe/',
-    bio: 'Healthcare technology and global education leader; co-founded Hilltop with Georgetown EMBA colleagues. Provides leadership and strategic support across programs.',
+    bio: 'Healthcare technology and global education leader, co-founded Hilltop with Georgetown EMBA colleagues. Provides advice, leadership, and strategic support.',
   },
   {
     name: 'Faata Faleera Adam',
@@ -30,7 +30,7 @@ export const teamMembers: TeamMember[] = [
     category: 'staff',
     image: 'https://via.placeholder.com/400x480/1D3160/FFFFFF?text=FA',
     linkedin: 'https://www.linkedin.com/in/faata-faleera-a-170683a1/',
-    bio: 'Based across West Africa, Faata oversees on-the-ground operations in Ghana and Rwanda, coordinating with local partners and host organizations.',
+    bio: 'Faata oversees Hilltop\'s on-the-ground operations across the organization\'s focal markets, coordinating with local partners and host organizations.',
   },
   {
     name: 'Nanya Osamor',
@@ -47,5 +47,13 @@ export const teamMembers: TeamMember[] = [
     image: 'https://via.placeholder.com/400x480/1D3160/FFFFFF?text=Nkem+O',
     linkedin: 'https://www.linkedin.com/in/nkem-osamor-22572a226',
     bio: 'Supports program design and delivery, working with partners and participants to keep Hilltop engagements organized and on track.',
+  },
+  {
+    name: 'Sadick Achuli',
+    role: 'Technology Transformation Lead',
+    category: 'staff',
+    image: '/images/sadick-profile.jpeg',
+    linkedin: 'https://www.linkedin.com/in/sadick-achuli-81955b249/',
+    bio: 'Leads technology transformation at Hilltop, modernizing digital infrastructure and systems that support programs across focal markets and global outreach.',
   },
 ];

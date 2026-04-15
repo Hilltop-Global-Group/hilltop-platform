@@ -7,39 +7,29 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const APPLICATION_DEADLINE = new Date('2026-04-15T23:59:59');
 
-function useCountdown(target: Date) {
-  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-
-  useEffect(() => {
-    const calc = () => {
-      const diff = target.getTime() - Date.now();
-      if (diff <= 0) return { days: 0, hours: 0, minutes: 0, seconds: 0 };
-      return {
-        days: Math.floor(diff / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
-        minutes: Math.floor((diff / (1000 * 60)) % 60),
-        seconds: Math.floor((diff / 1000) % 60),
-      };
-    };
-    setTimeLeft(calc());
-    const id = setInterval(() => setTimeLeft(calc()), 1000);
-    return () => clearInterval(id);
-  }, [target]);
-
-  return timeLeft;
+function computeCountdown(target: Date) {
+  const diff = target.getTime() - Date.now();
+  if (diff <= 0) return null;
+  return {
+    days: Math.floor(diff / (1000 * 60 * 60 * 24)),
+    hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
+    minutes: Math.floor((diff / (1000 * 60)) % 60),
+    seconds: Math.floor((diff / 1000) % 60),
+  };
 }
 
 export default function EducationAbroadBanner() {
-  const countdown = useCountdown(APPLICATION_DEADLINE);
+  const [countdown, setCountdown] = useState(() => computeCountdown(APPLICATION_DEADLINE));
   const [dismissed, setDismissed] = useState(false);
 
-  const deadlinePassed =
-    countdown.days === 0 &&
-    countdown.hours === 0 &&
-    countdown.minutes === 0 &&
-    countdown.seconds === 0;
+  useEffect(() => {
+    const tick = () => setCountdown(computeCountdown(APPLICATION_DEADLINE));
+    tick();
+    const id = setInterval(tick, 1000);
+    return () => clearInterval(id);
+  }, []);
 
-  if (deadlinePassed) return null;
+  if (countdown === null || dismissed) return null;
 
   return (
     <AnimatePresence>

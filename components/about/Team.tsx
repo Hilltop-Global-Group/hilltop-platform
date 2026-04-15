@@ -56,18 +56,20 @@ export default function Team() {
                       {member.name}
                     </h3>
 
-                    <div className="flex gap-3">
-                      <a
-                        href={member.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="p-3 rounded-full hover:bg-white transition-all duration-300 hover:scale-110"
-                        style={{ backgroundColor: '#F4A261' }}
-                        aria-label={`${member.name} LinkedIn`}
-                      >
-                        <Linkedin size={20} style={{ color: '#1D3160' }} />
-                      </a>
-                    </div>
+                    {member.linkedin && (
+                      <div className="flex gap-3">
+                        <a
+                          href={member.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="p-3 rounded-full hover:bg-white transition-all duration-300 hover:scale-110"
+                          style={{ backgroundColor: '#F4A261' }}
+                          aria-label={`${member.name} LinkedIn`}
+                        >
+                          <Linkedin size={20} style={{ color: '#1D3160' }} />
+                        </a>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>

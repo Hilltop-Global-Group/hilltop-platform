@@ -131,18 +131,20 @@ function TeamCard({ member, index }: { member: TeamMember; index: number }) {
               {member.bio}
             </p>
           )}
-          <div className="mt-5 pt-5 border-t border-gray-100">
-            <a
-              href={member.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group/link inline-flex items-center gap-2 font-sans text-xs font-semibold uppercase tracking-[0.15em] text-gray-400 hover:text-black transition-colors duration-200"
-              aria-label={`${member.name} on LinkedIn`}
-            >
-              <Linkedin size={14} />
-              LinkedIn
-            </a>
-          </div>
+          {member.linkedin && (
+            <div className="mt-5 pt-5 border-t border-gray-100">
+              <a
+                href={member.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group/link inline-flex items-center gap-2 font-sans text-xs font-semibold uppercase tracking-[0.15em] text-gray-400 hover:text-black transition-colors duration-200"
+                aria-label={`${member.name} on LinkedIn`}
+              >
+                <Linkedin size={14} />
+                LinkedIn
+              </a>
+            </div>
+          )}
         </div>
 
       </div>
