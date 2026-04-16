@@ -39,40 +39,71 @@ export default function Team() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {teamMembers.map((member, index) => (
-            <FadeIn key={index} delay={index * 0.15}>
-              <div className="group relative bg-white overflow-hidden hover:shadow-xl transition-all duration-500 hover:-translate-y-1 border border-gray-100">
-                <div className="relative h-[500px] overflow-hidden">
-                  <div
-                    className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                    style={{ backgroundImage: `url('${member.image}')` }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
+            <FadeIn key={member.name} delay={index * 0.15}>
+              {member.image ? (
+                <div className="group relative bg-white overflow-hidden hover:shadow-xl transition-all duration-500 hover:-translate-y-1 border border-gray-100">
+                  <div className="relative h-[500px] overflow-hidden">
+                    <div
+                      className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                      style={{ backgroundImage: `url('${member.image}')` }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
 
-                  <div className="absolute bottom-0 left-0 right-0 p-8">
-                    <p className="text-sm font-bold mb-2 uppercase tracking-wide" style={{ color: '#F4A261' }}>
-                      {member.role}
-                    </p>
-                    <h3 className="font-serif font-bold text-3xl mb-6" style={{ color: '#FFFFFF' }}>
-                      {member.name}
-                    </h3>
+                    <div className="absolute bottom-0 left-0 right-0 p-8">
+                      <p className="text-sm font-bold mb-2 uppercase tracking-wide" style={{ color: '#F4A261' }}>
+                        {member.role}
+                      </p>
+                      <h3 className="font-serif font-bold text-3xl mb-6" style={{ color: '#FFFFFF' }}>
+                        {member.name}
+                      </h3>
 
-                    {member.linkedin && (
-                      <div className="flex gap-3">
-                        <a
-                          href={member.linkedin}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="p-3 rounded-full hover:bg-white transition-all duration-300 hover:scale-110"
-                          style={{ backgroundColor: '#F4A261' }}
-                          aria-label={`${member.name} LinkedIn`}
-                        >
-                          <Linkedin size={20} style={{ color: '#1D3160' }} />
-                        </a>
-                      </div>
-                    )}
+                      {member.linkedin && (
+                        <div className="flex gap-3">
+                          <a
+                            href={member.linkedin}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="p-3 rounded-full hover:bg-white transition-all duration-300 hover:scale-110"
+                            style={{ backgroundColor: '#F4A261' }}
+                            aria-label={`${member.name} LinkedIn`}
+                          >
+                            <Linkedin size={20} style={{ color: '#1D3160' }} />
+                          </a>
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </div>
-              </div>
+              ) : (
+                <div className="group relative bg-white overflow-hidden hover:shadow-xl transition-all duration-500 hover:-translate-y-1 border border-gray-100 flex flex-col h-full min-h-[280px] p-8">
+                  <span
+                    className="self-start font-sans text-[10px] font-bold uppercase tracking-[0.2em] px-3 py-1.5 mb-5"
+                    style={{ backgroundColor: '#F4A261', color: '#080f1c' }}
+                  >
+                    {member.category === 'leadership' ? 'Leadership' : 'Staff'}
+                  </span>
+                  <p className="text-sm font-bold mb-2 uppercase tracking-wide" style={{ color: '#F4A261' }}>
+                    {member.role}
+                  </p>
+                  <h3 className="font-serif font-bold text-3xl mb-6" style={{ color: '#080f1c' }}>
+                    {member.name}
+                  </h3>
+                  {member.linkedin && (
+                    <div className="mt-auto flex gap-3">
+                      <a
+                        href={member.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-3 rounded-full border border-gray-200 hover:border-[#1D3160] transition-all duration-300"
+                        style={{ color: '#1D3160' }}
+                        aria-label={`${member.name} LinkedIn`}
+                      >
+                        <Linkedin size={20} />
+                      </a>
+                    </div>
+                  )}
+                </div>
+              )}
             </FadeIn>
           ))}
         </div>

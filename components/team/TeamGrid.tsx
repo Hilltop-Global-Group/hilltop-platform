@@ -97,28 +97,40 @@ function TeamCard({ member, index }: { member: TeamMember; index: number }) {
     <FadeIn delay={index * 0.1}>
       <div className="group bg-white overflow-hidden flex flex-col h-full">
 
-        {/* Photo */}
-        <div className="relative overflow-hidden" style={{ height: '320px' }}>
-          <div
-            className="absolute inset-0 bg-cover bg-top transition-transform duration-700 group-hover:scale-105"
-            style={{ backgroundImage: `url('${member.image}')` }}
-          />
-          {/* Gradient for text legibility */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#080f1c]/70 via-transparent to-transparent" />
-
-          {/* Role pill */}
-          <div className="absolute top-4 left-4">
-            <span
-              className="font-sans text-[10px] font-bold uppercase tracking-[0.2em] px-3 py-1.5"
-              style={{ backgroundColor: '#F4A261', color: '#080f1c' }}
-            >
-              {member.category === 'leadership' ? 'Leadership' : 'Staff'}
-            </span>
+        {member.image && (
+          <div className="relative overflow-hidden" style={{ height: '320px' }}>
+            <div
+              className="absolute inset-0 bg-cover bg-top transition-transform duration-700 group-hover:scale-105"
+              style={{ backgroundImage: `url('${member.image}')` }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#080f1c]/70 via-transparent to-transparent" />
+            <div className="absolute top-4 left-4">
+              <span
+                className="font-sans text-[10px] font-bold uppercase tracking-[0.2em] px-3 py-1.5"
+                style={{ backgroundColor: '#F4A261', color: '#080f1c' }}
+              >
+                {member.category === 'leadership' ? 'Leadership' : 'Staff'}
+              </span>
+            </div>
           </div>
-        </div>
+        )}
 
         {/* Text content */}
-        <div className="p-7 flex flex-col flex-1 border-t-0 border border-gray-100">
+        <div
+          className={`p-7 flex flex-col flex-1 border border-gray-100 ${
+            member.image ? 'border-t-0' : ''
+          }`}
+        >
+          {!member.image && (
+            <div className="mb-4">
+              <span
+                className="font-sans text-[10px] font-bold uppercase tracking-[0.2em] px-3 py-1.5 inline-block"
+                style={{ backgroundColor: '#F4A261', color: '#080f1c' }}
+              >
+                {member.category === 'leadership' ? 'Leadership' : 'Staff'}
+              </span>
+            </div>
+          )}
           <div className="w-6 h-[3px] mb-4" style={{ backgroundColor: '#F4A261' }} />
           <h3 className="font-serif font-bold text-xl mb-1" style={{ color: '#080f1c' }}>
             {member.name}
