@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Calendar, MapPin, Clock, DollarSign, ArrowLeft, Users, Globe, TrendingUp, Mail, Phone, Building, Check } from 'lucide-react';
 import { KenteDivider, ArrowCTA, DecorativeUnderline, AfricaWatermark } from '@/components/shared/HilltopBrand';
+import { isWordPressInternshipApplicationsOpen } from '@/lib/internship-application-status';
 
 interface Internship {
   id: number;
@@ -145,7 +146,6 @@ export default async function InternshipPage({ params }: { params: Promise<{ slu
   const endDate = getField(internship, 'end_date');
   const deadline = getField(internship, 'application_deadline');
   const duration = getField(internship, 'duration');
-  const appStatus = getField(internship, 'application_status');
   const appUrl = internship.acf?.application_url || '';
   const highlights = internship.acf?.highlights
     ? internship.acf.highlights.split('\n').filter(Boolean)
@@ -161,7 +161,8 @@ export default async function InternshipPage({ params }: { params: Promise<{ slu
     return new Date(dateString).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
   };
 
-  const isPast = appStatus === 'closed';
+  const applicationsOpen = isWordPressInternshipApplicationsOpen(internship);
+  const isPast = !applicationsOpen;
 
   return (
     <main className="min-h-screen bg-white">

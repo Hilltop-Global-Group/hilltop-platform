@@ -4,8 +4,9 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { X, Clock, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { FEATURED_COHORT_APPLICATION_END } from '@/lib/internship-application-status';
 
-const APPLICATION_DEADLINE = new Date('2026-04-15T23:59:59');
+const APPLICATION_DEADLINE = FEATURED_COHORT_APPLICATION_END;
 
 function computeCountdown(target: Date) {
   const diff = target.getTime() - Date.now();

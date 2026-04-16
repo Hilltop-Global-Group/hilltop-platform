@@ -2,22 +2,27 @@
 
 import Link from 'next/link';
 import { ArrowCTA, KenteDivider } from '../shared/HilltopBrand';
+import { isFeaturedCohortApplicationDeadlinePassed } from '@/lib/internship-application-status';
 
 interface Props {
   variant?: 'top' | 'middle';
 }
 
 export default function InternshipCurrentCTABanner({ variant = 'top' }: Props) {
+  const featuredClosed = isFeaturedCohortApplicationDeadlinePassed();
+
   if (variant === 'top') {
     return (
       <section className="py-10 border-b border-gray-100 bg-white">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5">
           <div>
             <p className="font-sans text-xs font-semibold uppercase tracking-[0.25em] mb-1" style={{ color: '#F4A261' }}>
-              Applications Open
+              {featuredClosed ? 'Applications closed' : 'Applications Open'}
             </p>
             <p className="font-serif font-bold text-black text-lg leading-snug">
-              Summer 2026 internship programs across Ghana and Rwanda are now open.
+              {featuredClosed
+                ? 'Summer 2026 Ghana and Rwanda internship applications are closed. Program pages still have full details.'
+                : 'Summer 2026 internship programs across Ghana and Rwanda are now open.'}
             </p>
           </div>
           <Link
@@ -25,7 +30,7 @@ export default function InternshipCurrentCTABanner({ variant = 'top' }: Props) {
             className="flex-shrink-0 inline-flex items-center gap-3 px-8 py-3.5 font-sans font-semibold text-sm uppercase tracking-[0.15em] text-white transition-opacity duration-200 hover:opacity-80"
             style={{ backgroundColor: '#F4A261' }}
           >
-            View Current Internships
+            View Internships
             <ArrowCTA color="#fff" />
           </Link>
         </div>

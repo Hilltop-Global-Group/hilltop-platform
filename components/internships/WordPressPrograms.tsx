@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Calendar, MapPin, Clock, ArrowRight } from 'lucide-react';
+import { isWordPressInternshipApplicationsOpen } from '@/lib/internship-application-status';
 
 async function getInternships() {
   try {
@@ -11,10 +12,7 @@ async function getInternships() {
     if (!res.ok) return [];
     const allInternships = await res.json();
     
-    // Filter for OPEN internships only
-    return allInternships.filter((internship: any) => 
-      internship.meta._internship_application_status !== 'closed'
-    );
+    return allInternships.filter((internship: any) => isWordPressInternshipApplicationsOpen(internship));
   } catch (error) {
     console.error('Error fetching WordPress internships:', error);
     return [];
@@ -88,7 +86,7 @@ export default async function WordPressPrograms() {
               location = internship.internship_locations.map((term: any) => term.name).join(', ');
             }
             const cardColor = index % 2 === 0 ? '#1D3160' : '#F4A261';
-            const isClosed = internship.meta._internship_application_status === 'closed';
+            const isClosed = !isWordPressInternshipApplicationsOpen(internship);
             
             const cardClassName = `bg-white rounded-lg overflow-hidden shadow-md transition-all duration-500 ${
               isClosed 

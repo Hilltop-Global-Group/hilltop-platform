@@ -5,8 +5,14 @@ import { MapPin, Clock, Calendar } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { KenteDivider, ArrowCTA, DecorativeUnderline } from '../shared/HilltopBrand';
 import FadeIn from '../FadeIn';
+import {
+  isFeaturedCohortApplicationDeadlinePassed,
+  isWordPressInternshipApplicationsOpen,
+} from '@/lib/internship-application-status';
 
 const APPLICATION_URL = 'https://8xlyl7wsuni.typeform.com/to/ygqGReCF';
+
+const featuredAppsOpen = !isFeaturedCohortApplicationDeadlinePassed();
 
 const programs = [
   {
@@ -15,8 +21,8 @@ const programs = [
     href: '/internships/ghana',
     image: '/images/akwaaba-gh.jpeg',
     accent: '#1D3160',
-    tagColor: '#10B981',
-    tag: 'Applications Open',
+    tagColor: featuredAppsOpen ? '#10B981' : '#DC2626',
+    tag: featuredAppsOpen ? 'Applications Open' : 'Applications Closed',
     duration: '4 weeks in-country',
     deadline: 'April 15, 2026',
     description:
@@ -29,8 +35,8 @@ const programs = [
     href: '/internships/rwanda',
     image: '/images/kcc-scaled.webp',
     accent: '#F4A261',
-    tagColor: '#10B981',
-    tag: 'Applications Open',
+    tagColor: featuredAppsOpen ? '#10B981' : '#DC2626',
+    tag: featuredAppsOpen ? 'Applications Open' : 'Applications Closed',
     duration: '4 weeks in-country',
     deadline: 'April 15, 2026',
     description:
@@ -121,15 +127,21 @@ function ProgramCard({ prog, index }: { prog: typeof programs[0]; index: number 
 
       {/* Apply Now lives OUTSIDE the Link to avoid nested <a> */}
       <div className="px-6 pb-6">
-        <a
-          href={APPLICATION_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block w-full text-center py-3 font-sans font-semibold text-sm uppercase tracking-[0.15em] text-white transition-opacity duration-200 hover:opacity-80"
-          style={{ backgroundColor: prog.accent }}
-        >
-          Apply Now
-        </a>
+        {prog.tag === 'Applications Open' ? (
+          <a
+            href={APPLICATION_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full text-center py-3 font-sans font-semibold text-sm uppercase tracking-[0.15em] text-white transition-opacity duration-200 hover:opacity-80"
+            style={{ backgroundColor: prog.accent }}
+          >
+            Apply Now
+          </a>
+        ) : (
+          <p className="text-center py-3 font-sans font-semibold text-sm uppercase tracking-[0.15em] text-gray-400 border border-gray-200">
+            Applications closed
+          </p>
+        )}
       </div>
     </motion.div>
   );
@@ -157,7 +169,9 @@ export default function CurrentInternshipsGrid({ internships }: { internships: a
             </h2>
             <div className="hidden md:block w-px bg-gray-200 self-stretch flex-shrink-0" />
             <p className="font-sans text-gray-500 text-base max-w-sm leading-relaxed md:pt-1 flex-shrink-0">
-              Explore our open internship programs across Africa&apos;s most dynamic markets. Deadline: April 15, 2026.
+              {featuredAppsOpen
+                ? "Explore our open internship programs across Africa's most dynamic markets. Deadline: April 15, 2026."
+                : 'Applications for the Summer 2026 Ghana and Rwanda cohorts are closed. Browse program pages for details or contact us about future cycles.'}
             </p>
           </div>
         </FadeIn>
@@ -196,6 +210,8 @@ export default function CurrentInternshipsGrid({ internships }: { internships: a
                   try { return new Date(d).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }); } catch { return d; }
                 };
 
+                const wpOpen = isWordPressInternshipApplicationsOpen(internship);
+
                 return (
                   <motion.div
                     key={internship.id}
@@ -212,8 +228,11 @@ export default function CurrentInternshipsGrid({ internships }: { internships: a
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-[#080f1c]/80 via-[#080f1c]/30 to-transparent" />
                         <div className="absolute top-4 left-4">
-                          <span className="px-3 py-1.5 text-white text-xs font-bold uppercase tracking-wider" style={{ backgroundColor: '#10B981' }}>
-                            Applications Open
+                          <span
+                            className="px-3 py-1.5 text-white text-xs font-bold uppercase tracking-wider"
+                            style={{ backgroundColor: wpOpen ? '#10B981' : '#DC2626' }}
+                          >
+                            {wpOpen ? 'Applications Open' : 'Applications Closed'}
                           </span>
                         </div>
                         <div className="absolute bottom-4 left-4 right-4">
@@ -248,9 +267,15 @@ export default function CurrentInternshipsGrid({ internships }: { internships: a
                     </Link>
                     {appUrl && (
                       <div className="px-5 pb-5">
-                        <a href={appUrl} target="_blank" rel="noopener noreferrer" className="block w-full text-center py-2.5 font-sans font-semibold text-xs uppercase tracking-[0.15em] text-white transition-opacity duration-200 hover:opacity-80" style={{ backgroundColor: '#1D3160' }}>
-                          Apply Now
-                        </a>
+                        {wpOpen ? (
+                          <a href={appUrl} target="_blank" rel="noopener noreferrer" className="block w-full text-center py-2.5 font-sans font-semibold text-xs uppercase tracking-[0.15em] text-white transition-opacity duration-200 hover:opacity-80" style={{ backgroundColor: '#1D3160' }}>
+                            Apply Now
+                          </a>
+                        ) : (
+                          <p className="block w-full text-center py-2.5 font-sans font-semibold text-xs uppercase tracking-[0.15em] text-gray-400 border border-gray-200">
+                            Applications closed
+                          </p>
+                        )}
                       </div>
                     )}
                   </motion.div>

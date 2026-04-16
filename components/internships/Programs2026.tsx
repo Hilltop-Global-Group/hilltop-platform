@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Calendar, MapPin, Clock } from 'lucide-react';
+import { isWordPressInternshipApplicationsOpen } from '@/lib/internship-application-status';
 
 async function getClosedInternships() {
   try {
@@ -11,10 +12,7 @@ async function getClosedInternships() {
     if (!res.ok) return [];
     const allInternships = await res.json();
     
-    // Filter for closed internships only
-    return allInternships.filter((internship: any) => 
-      internship.meta._internship_application_status === 'closed'
-    );
+    return allInternships.filter((internship: any) => !isWordPressInternshipApplicationsOpen(internship));
   } catch (error) {
     console.error('Error fetching closed internships:', error);
     return [];

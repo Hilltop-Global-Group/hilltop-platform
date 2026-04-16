@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Calendar, MapPin, Clock, ArrowRight, History, Zap } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { isWordPressInternshipApplicationsOpen } from '@/lib/internship-application-status';
 
 function decodeHtmlEntities(text: string) {
   const entities: { [key: string]: string } = {
@@ -35,7 +36,16 @@ function formatDeadline(dateString: string) {
   return date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
 }
 
-function InternshipCard({ internship, index, isPast = false }: { internship: any; index: number; isPast?: boolean }) {
+function InternshipCard({ internship, index, variant }: { internship: any; index: number; variant: 'current' | 'past' }) {
+  const isHistoricalPast = variant === 'past';
+  const applicationsOpen = isWordPressInternshipApplicationsOpen(internship);
+  const badgeText = isHistoricalPast
+    ? 'Past Program'
+    : applicationsOpen
+      ? 'Applications Open'
+      : 'Applications Closed';
+  const badgeColor = isHistoricalPast ? '#6B7280' : applicationsOpen ? '#10B981' : '#DC2626';
+
   const cardColor = index % 2 === 0 ? '#1D3160' : '#F4A261';
   const featuredImage = internship._embedded?.['wp:featuredmedia']?.[0]?.source_url;
 
@@ -63,9 +73,9 @@ function InternshipCard({ internship, index, isPast = false }: { internship: any
         <div className="absolute top-4 left-4">
           <span
             className="px-4 py-2 rounded-full text-white text-sm font-bold backdrop-blur-sm shadow-lg"
-            style={{ backgroundColor: isPast ? '#6B7280' : '#10B981' }}
+            style={{ backgroundColor: badgeColor }}
           >
-            {isPast ? 'Past Program' : 'Applications Open'}
+            {badgeText}
           </span>
         </div>
         <div className="absolute bottom-4 left-4 right-4">
@@ -157,7 +167,7 @@ function InternshipCard({ internship, index, isPast = false }: { internship: any
         )}
 
         <div className="flex flex-col sm:flex-row gap-4">
-          {isPast ? (
+          {isHistoricalPast ? (
             <div
               className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3 font-serif font-bold text-white rounded-xl cursor-not-allowed opacity-50"
               style={{ backgroundColor: '#6B7280' }}
@@ -173,7 +183,7 @@ function InternshipCard({ internship, index, isPast = false }: { internship: any
               <ArrowRight size={18} />
             </div>
           )}
-          {internship.meta._internship_application_deadline && !isPast && (
+          {internship.meta._internship_application_deadline && !isHistoricalPast && (
             <div className="text-center sm:text-left">
               <p className="text-sm text-gray-600">Application deadline</p>
               <p className="font-bold" style={{ color: cardColor }}>
@@ -186,7 +196,7 @@ function InternshipCard({ internship, index, isPast = false }: { internship: any
     </>
   );
 
-  if (isPast) {
+  if (isHistoricalPast) {
     return (
       <motion.div
         initial={{ opacity: 0, y: 24 }}
@@ -288,7 +298,7 @@ export default function InternshipTabs({ currentInternships, pastInternships }: 
               {hasCurrent ? (
                 <div className="grid lg:grid-cols-2 gap-8">
                   {currentInternships.map((internship, index) => (
-                    <InternshipCard key={internship.id} internship={internship} index={index} isPast={false} />
+                    <InternshipCard key={internship.id} internship={internship} index={index} variant="current" />
                   ))}
                 </div>
               ) : (
@@ -327,7 +337,7 @@ export default function InternshipTabs({ currentInternships, pastInternships }: 
                 <>
                   <div className="grid lg:grid-cols-2 gap-8">
                     {pastInternships.map((internship, index) => (
-                      <InternshipCard key={internship.id} internship={internship} index={index} isPast={true} />
+                      <InternshipCard key={internship.id} internship={internship} index={index} variant="past" />
                     ))}
                   </div>
                   <p className="text-center text-sm text-gray-500 mt-8">

@@ -1,3 +1,8 @@
+import {
+  isFeaturedCohortApplicationDeadlinePassed,
+  isWordPressInternshipApplicationsOpen,
+} from '@/lib/internship-application-status';
+
 export interface ProgramData {
   applicationDeadline: string;
   applicationUrl: string;
@@ -47,18 +52,25 @@ function formatWPDate(dateStr: string): string {
   }
 }
 
+function withDeadlineResolvedStatus(data: ProgramData): ProgramData {
+  if (isFeaturedCohortApplicationDeadlinePassed()) {
+    return { ...data, applicationStatus: 'closed' };
+  }
+  return data;
+}
+
 export async function fetchProgramData(country: 'ghana' | 'rwanda'): Promise<ProgramData> {
   const defaults = DEFAULTS[country];
 
   try {
     const apiUrl = process.env.NEXT_PUBLIC_WORDPRESS_API_URL;
-    if (!apiUrl) return defaults;
+    if (!apiUrl) return withDeadlineResolvedStatus(defaults);
 
     const res = await fetch(
       `${apiUrl}/internships?_embed&per_page=50&orderby=date&order=desc`,
       { next: { revalidate: 120 } }
     );
-    if (!res.ok) return defaults;
+    if (!res.ok) return withDeadlineResolvedStatus(defaults);
 
     const internships = await res.json();
 
@@ -70,12 +82,18 @@ export async function fetchProgramData(country: 'ghana' | 'rwanda'): Promise<Pro
       return (i.acf?.country || '').toLowerCase() === country;
     });
 
-    if (!match) return defaults;
+    if (!match) return withDeadlineResolvedStatus(defaults);
 
     const acf = match.acf || {};
     const meta = match.meta || {};
 
-    return {
+    const hasDeadlineField = !!(acf.application_deadline || meta._internship_application_deadline);
+    let applicationsOpen = isWordPressInternshipApplicationsOpen(match);
+    if (!hasDeadlineField && isFeaturedCohortApplicationDeadlinePassed()) {
+      applicationsOpen = false;
+    }
+
+    const merged: ProgramData = {
       applicationDeadline: acf.application_deadline ? formatWPDate(acf.application_deadline) : defaults.applicationDeadline,
       applicationUrl: acf.application_url || defaults.applicationUrl,
       startDate: acf.start_date ? formatWPDate(acf.start_date) : defaults.startDate,
@@ -83,13 +101,15 @@ export async function fetchProgramData(country: 'ghana' | 'rwanda'): Promise<Pro
       costFull: acf.cost || meta._internship_cost || defaults.costFull,
       costHybrid: acf.cost_hybrid || defaults.costHybrid,
       duration: acf.duration || meta._internship_duration || defaults.duration,
-      applicationStatus: (acf.application_status || meta._internship_application_status || 'open') as 'open' | 'closed',
+      applicationStatus: applicationsOpen ? 'open' : 'closed',
       overviewText: acf.overview_text || defaults.overviewText,
       highlights: acf.highlights
         ? acf.highlights.split('\n').filter(Boolean)
         : defaults.highlights,
     };
+
+    return merged;
   } catch {
-    return defaults;
+    return withDeadlineResolvedStatus(defaults);
   }
 }
