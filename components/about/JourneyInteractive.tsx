@@ -12,6 +12,7 @@ type JourneyStep = {
   description: string;
   image: string;
   stats: { label: string; value: string }[];
+  links?: { label: string; href: string }[];
 };
 
 const journeySteps: JourneyStep[] = [
@@ -27,11 +28,18 @@ const journeySteps: JourneyStep[] = [
     id: 'leadership',
     year: '',
     title: 'Global Validation',
-    description: "From a single program to a Pan-African operation spanning six countries with on-the-ground teams in Accra, Kigali, Nairobi, and London. Our CEO was named to The PIE News 50 Voices Americas List as one of international education's most influential leaders and holds an active U.S. State Department Fulbright Specialist appointment. Today, Hilltop partners with institutions including Georgetown, Imperial College London, UConn, and the University of Maryland to deliver programs backed by government MOUs and 100+ cross-industry partners.",
+    description:
+      "From a single program to a Pan-African operation with teams in Accra, Kigali, Nairobi, and London. Phil S. Agbeko, Co-Founder & CEO and Fulbright Specialist at Hilltop Global Group, was named to The PIE's 50 Voices Americas List for 2025, recognizing leaders shaping international education across the Americas. He is a featured speaker at AIEA, CCID, EMBAC, the Forum on Education Abroad, DA Global Access Network, NAFSA-aligned events, and global business and development forums. Hilltop has designed and delivered transformative programs for 1,000+ students, built collaborations with 100+ cross-industry partners, and works with institutions including Georgetown, Imperial College London, UConn, and the University of Maryland, alongside government MOUs.",
     image: '/images/global_validation.JPG',
     stats: [
       { label: 'Students', value: '1000+' },
       { label: 'Programs Delivered', value: '50+' },
+    ],
+    links: [
+      {
+        label: 'The PIE: 50 Voices Americas List for 2025',
+        href: 'https://thepienews.com/the-pie-reveals-50-voices-americas-list-for-2025/',
+      },
     ],
   },
 ];
@@ -140,9 +148,27 @@ export default function JourneyInteractive() {
                 >
                   {step.title}
                 </h3>
-                <p className="font-sans text-gray-600 text-base leading-relaxed mb-8">
+                <p className="font-sans text-gray-600 text-base leading-relaxed mb-6">
                   {step.description}
                 </p>
+                {step.links && step.links.length > 0 && (
+                  <ul className="mb-8 space-y-2">
+                    {step.links.map((link) => (
+                      <li key={link.href}>
+                        <a
+                          href={link.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-sans text-sm font-semibold underline decoration-[#F4A261] decoration-2 underline-offset-4 hover:opacity-80 transition-opacity"
+                          style={{ color: '#1D3160' }}
+                        >
+                          {link.label}
+                          <span className="sr-only"> (opens in new tab)</span>
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                )}
 
                 {/* Progress dots + nav */}
                 <div className="flex items-center gap-4 flex-wrap">

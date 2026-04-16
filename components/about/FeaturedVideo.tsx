@@ -31,7 +31,7 @@ export default function FeaturedVideo() {
           {/* Vertical divider: desktop only */}
           <div className="hidden md:block w-px bg-gray-200 self-stretch flex-shrink-0" />
           <p className="font-sans text-gray-500 text-sm max-w-xs leading-relaxed md:pt-1 flex-shrink-0">
-            Hear directly from our CEO and Fulbright Specialist on why Africa belongs at the center of global education and how Hilltop is making that case.
+            Hear directly from Phil Agbeko, Co-Founder & CEO of Hilltop Global Group, Fulbright Specialist, and The PIE 50 Voices Americas honoree (2025), on why Africa belongs at the center of global education and how Hilltop is making that case.
           </p>
         </div>
         <div className="border-t border-gray-200 mb-12" />
@@ -50,7 +50,7 @@ export default function FeaturedVideo() {
                 {/* YouTube Thumbnail */}
                 <Image
                   src="https://img.youtube.com/vi/TePyT3KoOZk/maxresdefault.jpg"
-                  alt="Phil Agbeko, Founder and CEO of Hilltop Global Group, speaking about African education"
+                  alt="Phil Agbeko, Co-Founder and CEO of Hilltop Global Group, Fulbright Specialist, speaking about African education"
                   fill
                   className="object-cover"
                 />
@@ -123,7 +123,7 @@ export default function FeaturedVideo() {
             &ldquo;Shaping the African narrative is taking control of our story and showcasing it to the world.&rdquo;
           </p>
           <p className="font-sans text-gray-400 text-xs uppercase tracking-[0.2em]">
-            Phil Agbeko - Founder and CEO, Hilltop Global Group
+            Phil Agbeko, Co-Founder & CEO, Hilltop Global Group
           </p>
         </div>
       </div>

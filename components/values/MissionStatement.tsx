@@ -36,7 +36,7 @@ export default function MissionStatement() {
                 <p className="font-serif font-bold text-gray-800 text-lg leading-snug">
                   "Africa is not the periphery of global education. It is the future. Hilltop was built to make that case."
                 </p>
-                <p className="font-sans text-sm text-gray-400 mt-2">Phil Agbeko, Founder & CEO</p>
+                <p className="font-sans text-sm text-gray-400 mt-2">Phil Agbeko, Co-Founder & CEO, Hilltop Global Group</p>
               </div>
             </div>
           </div>

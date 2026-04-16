@@ -41,7 +41,7 @@ export default function WhyChoose() {
 
             <div className="border-l-2 pl-6 mb-8" style={{ borderColor: '#F4A261' }}>
               <p className="font-sans text-gray-700 text-base sm:text-lg leading-relaxed">
-                Founded by Georgetown Executive MBA alumni with 25+ years spanning the World Bank Group, Fortune 500 leadership, and international development, Hilltop combines deep diaspora insight with institutional credibility few firms can match. Our teams in Accra, Kigali, Nairobi, and London do not facilitate visits. We architect learning experiences grounded in Africa's professional ecosystems and institutional frameworks.
+                Founded by Georgetown Executive MBA alumni, Hilltop is led by a Co-Founder, Fulbright Specialist, and CEO of Hilltop Global Group, named to The PIE&apos;s 50 Voices Americas List (2025), with 25+ years spanning the World Bank Group, Fortune 500 executive leadership, and international development. Our teams in Accra, Kigali, Nairobi, and London do not facilitate visits. We architect learning experiences grounded in Africa&apos;s professional ecosystems and institutional frameworks.
               </p>
             </div>
 

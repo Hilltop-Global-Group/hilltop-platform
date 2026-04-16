@@ -9,7 +9,7 @@ import MembershipBadges from '@/components/shared/MembershipBadges';
 
 export const metadata = {
   title: 'About Hilltop Global Group | Diaspora-Led Education Consulting for Africa',
-  description: 'Founded by Georgetown EMBA alumni with roots across Africa. Hilltop designs education abroad programs, internships, and faculty development with teams in Washington DC, London, Accra, and Kigali.',
+  description: 'Diaspora-led education consulting led by Phil Agbeko, Fulbright Specialist, Co-Founder & CEO of Hilltop Global Group, and The PIE 50 Voices Americas honoree (2025). Hilltop designs education abroad programs, internships, and faculty development with teams in Washington DC, London, Accra, and Kigali.',
 };
 
 export default function AboutPage() {
