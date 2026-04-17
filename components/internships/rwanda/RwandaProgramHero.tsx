@@ -5,7 +5,14 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { AfricaWatermark, DecorativeUnderline, ArrowCTA } from '../../shared/HilltopBrand';
 
-export default function RwandaProgramHero({ applicationUrl }: { applicationUrl?: string }) {
+export default function RwandaProgramHero({
+  applicationUrl,
+  applicationStatus = 'open',
+}: {
+  applicationUrl?: string;
+  applicationStatus?: 'open' | 'closed';
+}) {
+  const applicationsOpen = applicationStatus === 'open';
   return (
     <section className="relative pt-32 pb-20 overflow-hidden" style={{ backgroundColor: '#080f1c' }}>
       <div className="absolute inset-0">
@@ -70,15 +77,21 @@ export default function RwandaProgramHero({ applicationUrl }: { applicationUrl?:
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          <a
-            href={applicationUrl || 'https://8xlyl7wsuni.typeform.com/to/ygqGReCF'}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group inline-flex items-center gap-3 font-sans font-semibold text-sm uppercase tracking-[0.15em] text-white border-b border-white/40 pb-1 hover:border-white transition-colors duration-200"
-          >
-            Apply Now
-            <ArrowCTA />
-          </a>
+          {applicationsOpen ? (
+            <a
+              href={applicationUrl || 'https://8xlyl7wsuni.typeform.com/to/ygqGReCF'}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-3 font-sans font-semibold text-sm uppercase tracking-[0.15em] text-white border-b border-white/40 pb-1 hover:border-white transition-colors duration-200"
+            >
+              Apply Now
+              <ArrowCTA />
+            </a>
+          ) : (
+            <span className="inline-flex items-center gap-3 font-sans font-semibold text-sm uppercase tracking-[0.15em] text-white/45 border-b border-white/15 pb-1 cursor-default">
+              Applications closed
+            </span>
+          )}
         </motion.div>
       </div>
     </section>

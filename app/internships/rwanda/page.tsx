@@ -21,7 +21,7 @@ export default async function RwandaInternshipPage() {
 
   return (
     <main>
-      <RwandaProgramHero applicationUrl={program.applicationUrl} />
+      <RwandaProgramHero applicationUrl={program.applicationUrl} applicationStatus={program.applicationStatus} />
       <RwandaCollabBanner />
       <RwandaProgramOverview />
       <RwandaProgramFormat />

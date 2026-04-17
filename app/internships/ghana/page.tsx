@@ -20,7 +20,7 @@ export default async function GhanaInternshipPage() {
 
   return (
     <main>
-      <GhanaProgramHero applicationUrl={program.applicationUrl} />
+      <GhanaProgramHero applicationUrl={program.applicationUrl} applicationStatus={program.applicationStatus} />
       <GhanaProgramOverview overviewText={program.overviewText} />
       <GhanaProgramFormat />
       <GhanaKeyDetails
