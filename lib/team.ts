@@ -13,7 +13,7 @@ export const teamMembers: TeamMember[] = [
     name: 'Phil Agbeko',
     role: 'Founder & CEO',
     category: 'leadership',
-    image: '/images/Phil-profile.jpeg',
+    image: '/images/philnew-profile.jpeg',
     linkedin: 'https://www.linkedin.com/in/philagbeko/',
     bio: 'Visionary behind Hilltop Global Group and Georgetown EMBA alumnus, building bridges between U.S. institutions and Africa\'s most dynamic markets. Fulbright Specialist and The PIE 50 Voices Americas honoree (2025). His 25+ year career spans the World Bank Group, Fortune 500 executive leadership, and global strategy.',
   },
