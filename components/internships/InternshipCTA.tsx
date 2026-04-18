@@ -111,7 +111,7 @@ export default function InternshipCTA() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.5 }}
           >
-            Students from Georgetown · Howard · ALU · KNUST and beyond
+            Students from Georgetown · ALU · KNUST and beyond
           </motion.p>
         </div>
       </div>

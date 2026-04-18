@@ -166,7 +166,7 @@ export default function TestimonialSubmission() {
                   value={formData.organization}
                   onChange={handleChange}
                     className="w-full px-0 py-3 border-0 border-b border-gray-200 focus:outline-none focus:border-black transition-colors duration-200 bg-transparent font-sans text-base"
-                    placeholder="Howard University"
+                    placeholder="Your university"
                 />
               </div>
 

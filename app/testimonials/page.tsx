@@ -8,7 +8,7 @@ import NewsletterSignup from '@/components/news/NewsletterSignup';
 
 export const metadata = {
   title: 'Student Stories | Education Abroad & Internships in Africa | Hilltop Global Group',
-  description: 'Read what students from Georgetown, Howard, Spelman, and Duke say about their Hilltop internship and education abroad experience in Ghana and Rwanda.',
+  description: 'Read what students from Georgetown and other partner universities say about their Hilltop internship and education abroad experience in Ghana and Rwanda.',
 };
 
 export default function TestimonialsPage() {

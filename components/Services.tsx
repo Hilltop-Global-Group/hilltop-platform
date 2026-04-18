@@ -42,9 +42,9 @@ const services = [
     cta: 'Learn More',
     href: '/internships',
     images: [
-      '/images/consult1.jpg',
+      '/images/consult-new1.jpeg',
       '/images/consult2.JPG',
-      '/images/consult3.JPG',
+      '/images/consult-new2.jpeg',
     ],
     imageAlt: 'Participants working on a consulting project with an African organization',
   },

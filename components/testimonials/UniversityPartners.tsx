@@ -3,16 +3,12 @@
 import { motion } from 'framer-motion';
 
 const universities = [
-  { name: 'Howard University', location: 'Washington, DC' },
   { name: 'Georgetown University', location: 'Washington, DC' },
   { name: 'American University', location: 'Washington, DC' },
   { name: 'African Leadership University', location: 'Kigali, Rwanda' },
   { name: 'University of Ghana', location: 'Accra, Ghana' },
   { name: 'KNUST', location: 'Kumasi, Ghana' },
-  { name: 'Spelman College', location: 'Atlanta, GA' },
-  { name: 'Morehouse College', location: 'Atlanta, GA' },
-  { name: 'Duke University', location: 'Durham, NC' },
-  { name: 'UNC Chapel Hill', location: 'Chapel Hill, NC' },
+  { name: 'And More', location: '' },
 ];
 
 export default function UniversityPartners() {
@@ -34,7 +30,7 @@ export default function UniversityPartners() {
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4">
           {universities.map((university, index) => (
             <motion.div
-              key={index}
+              key={university.name}
               className="py-8 pr-6 border-b border-r border-gray-200 last:border-r-0"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -44,13 +40,15 @@ export default function UniversityPartners() {
               <p className="font-serif font-bold text-base mb-1" style={{ color: '#1D3160' }}>
                 {university.name}
               </p>
-              <p className="font-sans text-gray-400 text-xs">{university.location}</p>
+              {university.location ? (
+                <p className="font-sans text-gray-400 text-xs">{university.location}</p>
+              ) : null}
             </motion.div>
           ))}
         </div>
 
         <p className="font-sans text-gray-400 text-xs mt-8 uppercase tracking-wider">
-          And many more institutions worldwide
+          Partner roster grows each cycle
         </p>
       </div>
     </section>

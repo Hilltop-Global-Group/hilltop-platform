@@ -6,21 +6,17 @@ import MembershipBadges from './shared/MembershipBadges';
 
 const universities = [
   'Georgetown University',
-  'Howard University',
   'New York University',
-  'Duke University',
   'University of Connecticut (UCONN)',
   'Emerson College',
   'Imperial College London',
   'Florida Atlantic University (FAU)',
-  'Morehouse College',
-  'Spelman College',
   'Fisk University',
   'University of Maryland (UMD)',
   'Wake Forest University',
-  'UNC Chapel Hill',
   'TNCIS Colleges',
   'Kirkwood Community College',
+  'And More',
 ];
 
 export default function Partners() {

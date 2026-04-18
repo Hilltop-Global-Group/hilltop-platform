@@ -7,7 +7,7 @@ import { AfricaWatermark, KenteDivider, ArrowCTA } from '../shared/HilltopBrand'
 const highlights = [
   { label: 'Customized Programs', detail: 'Itineraries built around your curriculum and budget.' },
   { label: 'Full-Service Management', detail: 'Pre-departure to post-program. All handled.' },
-  { label: 'Proven Track Record', detail: 'Trusted by Georgetown, Howard, Morehouse, and more.' },
+  { label: 'Proven Track Record', detail: 'Trusted by Georgetown, American University, ALU, and more.' },
 ];
 
 export default function EducationCTA() {
