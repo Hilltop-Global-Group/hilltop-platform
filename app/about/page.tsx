@@ -8,7 +8,7 @@ import RiskManagementCTA from '@/components/shared/RiskManagementCTA';
 import MembershipBadges from '@/components/shared/MembershipBadges';
 
 export const metadata = {
-  title: 'About Hilltop Global Group | Diaspora-Led Education Consulting for Africa',
+  title: 'Our Story | Who We Are | Hilltop Global Group',
   description: 'Diaspora-led education consulting led by Phil Agbeko, Fulbright Specialist, Co-Founder & CEO of Hilltop Global Group, and The PIE 50 Voices Americas honoree (2025). Hilltop designs education abroad programs, internships, and faculty development with teams in Washington DC, London, Accra, and Kigali.',
 };
 

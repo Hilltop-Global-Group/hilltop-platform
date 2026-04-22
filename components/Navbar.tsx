@@ -218,7 +218,7 @@ export default function Navbar() {
               className="group inline-flex items-center gap-2 font-sans font-semibold text-sm uppercase tracking-[0.15em] border-b-2 pb-0.5 transition-colors duration-200"
               style={{ color: '#1D3160', borderColor: '#1D3160' }}
             >
-              Partner With Us
+              Design with Hilltop
             </Link>
           </div>
 
@@ -298,7 +298,7 @@ export default function Navbar() {
                   className="inline-flex items-center gap-2 font-sans font-semibold text-sm uppercase tracking-[0.15em]"
                   style={{ color: '#1D3160' }}
                 >
-                  Partner With Us →
+                  Design with Hilltop →
                 </Link>
               </div>
             </div>

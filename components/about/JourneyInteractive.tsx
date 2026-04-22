@@ -20,7 +20,8 @@ const journeySteps: JourneyStep[] = [
     id: 'foundation',
     year: '',
     title: 'The Mission',
-    description: "At Georgetown University, our founders saw a gap that defined the industry: every major MBA program offered immersions in Europe, Asia, and Latin America. Africa was absent. Hilltop was built to close that gap, not as an experiment, but as a conviction that Africa's economies, institutions, and professional networks belong at the center of global education.",
+    description:
+      "Hilltop was founded at Georgetown University, where we named a gap the industry had quietly accepted. Many industry publications consistently report that Africa accounts for less than 15% of all U.S. outbound programs. Europe, Asia, and Latin America claim the rest. We built Hilltop to close that gap, not as an experiment, but as a conviction that Africa's economies, institutions, and professional networks belong at the center of global education, not on its margins.",
     image: '/images/foundation.JPG',
     stats: [],
   },
@@ -29,7 +30,7 @@ const journeySteps: JourneyStep[] = [
     year: '',
     title: 'Global Validation',
     description:
-      "From a single program to a Pan-African operation with teams in Accra, Kigali, Nairobi, and London. Phil S. Agbeko, Co-Founder & CEO and Fulbright Specialist at Hilltop Global Group, was named to The PIE's 50 Voices Americas List for 2025, recognizing leaders shaping international education across the Americas. He is a featured speaker at AIEA, CCID, EMBAC, the Forum on Education Abroad, DA Global Access Network, NAFSA-aligned events, and global business and development forums. Hilltop has designed and delivered transformative programs for 1,000+ students, built collaborations with 100+ cross-industry partners, and works with institutions including Georgetown, Imperial College London, UConn, and the University of Maryland, alongside government MOUs.",
+      "From a single program to a Pan-African operation, Hilltop has turned conviction into infrastructure. Teams from Ghana, Rwanda, Kenya, South Africa, and Namibia now support programs across the continent, and the footprint is still expanding. Phil S. Agbeko, Co-Founder and CEO of Hilltop Global Group and a Fulbright Specialist, was named to The PIE's 50 Voices Americas List for 2025, recognizing leaders shaping international education across the Americas. He is a featured speaker at AIEA, CCID, EMBAC, the Forum on Education Abroad, the DA Global Access Network, NAFSA-aligned events, and global business and development forums. Hilltop has designed and delivered transformative programs for more than 1,000 students, built collaborations with 100+ cross-industry partners, and works with institutions including Georgetown, Imperial College London, UConn, Emerson College, the University of Maryland, and more, alongside government recognition and ministry-level partnerships across the continent.",
     image: '/images/global_validation.JPG',
     stats: [
       { label: 'Students', value: '1000+' },

@@ -9,9 +9,9 @@ const benefits = [
   'Deliverable-based consulting experience with cross-industry organizations',
   'Cross-cultural professional fluency developed through guided immersion and reflection',
   'Direct access to Africa\'s professional networks: founders, executives, and institutional leaders',
-  'Applied problem-solving in emerging-market contexts across fintech, agribusiness, and healthcare',
+  'Applied problem-solving in emerging-market contexts across fintech, agribusiness, healthcare, and more',
   'Cultural engagement co-designed with host communities, not performed for visitors',
-  'Portfolio-ready work products and documented learning outcomes',
+  'Documented learning outcomes and a record of contributions suitable for academic and professional portfolios',
 ];
 
 export default function ProgramBenefits() {
@@ -25,13 +25,13 @@ export default function ProgramBenefits() {
                 <KenteDivider count={5} color="#F4A261" />
               </div>
               <p className="font-sans text-xs font-semibold uppercase tracking-[0.25em] mb-5" style={{ color: '#F4A261' }}>
-                Program Outcomes
+                PROGRAM OUTCOMES
               </p>
               <h2
                 className="font-serif font-extrabold text-black leading-none mb-6"
                 style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)' }}
               >
-                What Students Take Home
+                WHAT STUDENTS TAKE HOME
               </h2>
               <p className="font-sans text-gray-500 text-base leading-relaxed mb-10">
                 What participants gain from a Hilltop program, measured through post-program evaluations and partner feedback.

@@ -6,7 +6,8 @@ import FadeIn from '../FadeIn';
 const includes = [
   {
     title: 'Professional Engagement and Deliverables',
-    description: 'Participants contribute to live consulting projects, research sprints, and organizational deliverables with vetted industry partners across fintech, agribusiness, healthcare, and creative sectors.',
+    description:
+      'Participants contribute to consulting projects, research sprints, and organizational assignments alongside vetted industry partners across fintech, agribusiness, healthcare, creative sectors, and more.',
     image: '/images/professional-engagement.jpeg',
     accent: '#1D3160',
   },
@@ -37,7 +38,7 @@ export default function ProgramIncludes() {
         <FadeIn>
           <div className="text-center mb-14">
             <h2 className="font-serif font-bold text-4xl sm:text-5xl mb-4" style={{ color: '#1D3160' }}>
-              Each Education Abroad Program Includes
+              EACH EDUCATION ABROAD PROGRAM INCLUDES
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               A structured experience combining academic rigor, professional engagement, cultural immersion, and guided reflection.

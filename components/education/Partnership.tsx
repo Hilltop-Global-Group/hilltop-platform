@@ -11,7 +11,7 @@ const highlights = [
   'Contact hours and credit alignment co-designed with your faculty',
   'End-to-end logistics with dedicated on-site coordinators',
   'Curated industry visits, institutional briefings, and cultural immersions',
-  'Deliverable-based projects with 100+ vetted host organizations',
+  'Deliverable-based projects across vetted host organizations',
 ];
 
 export default function Partnership() {
@@ -52,7 +52,7 @@ export default function Partnership() {
             <FadeIn>
               <KenteDivider className="mb-8" />
               <p className="font-sans text-xs font-semibold uppercase tracking-[0.25em] mb-5" style={{ color: '#F4A261' }}>
-                Education Programs
+                UNIVERSITY PARTNERSHIPS
               </p>
               <h2
                 className="font-serif font-extrabold text-black leading-tight mb-6"
@@ -65,10 +65,10 @@ export default function Partnership() {
                 </span>
               </h2>
               <p className="font-sans text-gray-600 text-base leading-relaxed mb-4">
-                Hilltop does not hand your faculty a pre-packaged itinerary. We co-create programs from the ground up: aligning contact hours to your curriculum, sourcing industry partners matched to your learning objectives, and embedding your students inside Africa's professional ecosystems.
+                Hilltop does not hand your faculty a pre-packaged itinerary. We co-create programs from the ground up: aligning contact hours with your curriculum, sourcing industry partners aligned with your learning objectives, and embedding your students within Africa&apos;s professional ecosystems.
               </p>
               <p className="font-sans text-gray-600 text-base leading-relaxed mb-8">
-                Your institution provides the academic framework. Hilltop provides the continent, the access, and the infrastructure to make it rigorous, safe, and academically meaningful. Students return with deliverables, professional networks, and cross-cultural competencies that show up on resumes, not just in journals.
+                Your institution provides the academic framework. Hilltop provides the continent, the access, and the operational infrastructure to make it rigorous, safe, and academically meaningful. Students return with deliverables, professional networks, and cross-cultural competencies that show up on resumes, not just in reflection journals.
               </p>
             </FadeIn>
 
@@ -114,7 +114,7 @@ export default function Partnership() {
                 className="group inline-flex items-center gap-3 font-sans font-semibold text-sm uppercase tracking-[0.15em] border-b pb-1 transition-colors duration-200"
                 style={{ color: '#080f1c', borderColor: '#080f1c' }}
               >
-                Partner With Us
+                Design with Hilltop
                 <ArrowCTA />
               </Link>
             </FadeIn>

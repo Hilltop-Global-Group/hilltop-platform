@@ -9,8 +9,9 @@ const values = [
     id: 'excellence',
     number: '01',
     title: 'Authenticity',
-    tagline: 'Rooted in the Continent',
-    description: 'We are of Africa, not visiting it. Our programs are led by teams with deep roots across the continent and decades of experience bridging African and international institutions. That is not a marketing line. It is our operating model.',
+    tagline: 'ROOTED IN THE CONTINENT',
+    description:
+      'We are of Africa, not visiting it. Our programs are led by teams whose roots, careers, and credibility were built on this continent, with decades of combined experience bridging African institutions and international universities. That is not a marketing line. It is our operating model.',
     image: '/images/authenticity.jpg',
     imageAlt: 'Hilltop students engaged in a business session in Accra, Ghana',
     accent: '#F4A261',
@@ -20,7 +21,8 @@ const values = [
     number: '02',
     title: 'Integrity',
     tagline: 'Built on Agreements, Not Promises',
-    description: 'Our partnerships are formalized through signed MOUs and institutional agreements, not handshake deals. We align every program to the Standards of Good Practice for Education Abroad and maintain full transparency with university partners on costs, risks, and outcomes.',
+    description:
+      'Our partnerships are formalized in writing, not through handshake deals. Every program is designed to meet recognized international standards for education abroad, giving our university partners clear visibility into risks, outcomes, and the agreements that govern them.',
     image: '/images/kente-market.jpg',
     imageAlt: 'Hilltop team members collaborating with African university partners',
     accent: '#1D3160',
@@ -29,8 +31,9 @@ const values = [
     id: 'innovation',
     number: '03',
     title: 'Innovation',
-    tagline: 'New Models for a New Continent',
-    description: 'From deliverable-based internship placements to a train-the-trainer TVET partnership with Ghana\'s national technical education authority, we build program models that did not exist before us. Seven countries. Government-level access. Curriculum co-designed with faculty, not handed to them.',
+    tagline: 'NEW MODELS FOR A NEW CONTINENT',
+    description:
+      'From deliverable-based internships to technical and vocational training, Hilltop designs locally grounded, comprehensive programs tailored to each context. Delivered across multiple destinations, each program is built in partnership with the institutions and communities where it runs. Curriculum co-designed with faculty, not handed to them.',
     image: '/images/innovation.jpg',
     imageAlt: 'Hilltop interns working with an innovative African startup in Kigali, Rwanda',
     accent: '#F4A261',
@@ -39,8 +42,9 @@ const values = [
     id: 'impact',
     number: '04',
     title: 'Community',
-    tagline: 'Partners, Not Beneficiaries',
-    description: 'Our local partners are collaborators, not host sites. Community-engaged projects are co-designed so that host organizations receive usable outcomes and students gain perspectives shaped by genuine exchange. We work with communities as equals because the best learning is reciprocal.',
+    tagline: 'PARTNERS, NOT BENEFICIARIES',
+    description:
+      'Our institutional and other partners are collaborators, not host sites. Community projects are co-designed, so host organizations leave with usable outcomes, and students leave with perspectives earned, not observed. We work with communities as equals. The best learning is reciprocal.',
     image: '/images/community.JPG',
     imageAlt: 'Hilltop education abroad participants experiencing cultural immersion in Africa',
     accent: '#1D3160',
@@ -69,7 +73,6 @@ function ValueRow({ value, index }: { value: typeof values[0]; index: number }) 
 
   return (
     <div ref={ref} className="relative">
-      {/* Connector line between rows */}
       {index < values.length - 1 && (
         <div
           className="absolute left-1/2 -translate-x-1/2 w-px bg-gradient-to-b from-gray-200 to-transparent"
@@ -82,7 +85,6 @@ function ValueRow({ value, index }: { value: typeof values[0]; index: number }) 
           isEven ? '' : ''
         }`}
       >
-        {/* Text Side */}
         <motion.div
           className={`flex flex-col justify-center px-6 py-10 md:px-12 md:py-16 bg-white relative overflow-hidden ${
             isEven ? 'md:order-1' : 'md:order-2'
@@ -91,7 +93,6 @@ function ValueRow({ value, index }: { value: typeof values[0]; index: number }) 
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
         >
-          {/* Large ghost number */}
           <span
             className="absolute top-4 left-4 font-serif font-bold select-none pointer-events-none"
             style={{ fontSize: 120, color: '#F4F6FB', lineHeight: 1, zIndex: 0 }}
@@ -100,7 +101,6 @@ function ValueRow({ value, index }: { value: typeof values[0]; index: number }) 
           </span>
 
           <div className="relative z-10 pr-4">
-            {/* Tagline */}
             <p
               className="text-xs font-bold uppercase tracking-[0.25em] mb-3"
               style={{ color: value.accent }}
@@ -108,12 +108,10 @@ function ValueRow({ value, index }: { value: typeof values[0]; index: number }) 
               {value.tagline}
             </p>
 
-            {/* Title */}
             <h3 className="font-serif font-bold text-4xl mb-5" style={{ color: '#1D3160' }}>
               {value.title}
             </h3>
 
-            {/* Animated accent line */}
             <motion.div
               className="h-1 rounded-full mb-6 origin-left"
               style={{ backgroundColor: value.accent, width: 64 }}
@@ -122,12 +120,10 @@ function ValueRow({ value, index }: { value: typeof values[0]; index: number }) 
               animate={isInView ? 'visible' : 'hidden'}
             />
 
-            {/* Description */}
             <p className="text-gray-600 text-lg leading-relaxed">
               {value.description}
             </p>
 
-            {/* Number badge */}
             <div
               className="inline-flex items-center gap-2 mt-8 px-4 py-2 rounded-full border-2 font-serif font-bold text-sm"
               style={{ borderColor: value.accent, color: value.accent }}
@@ -137,8 +133,6 @@ function ValueRow({ value, index }: { value: typeof values[0]; index: number }) 
             </div>
           </div>
         </motion.div>
-
-        {/* Image Side */}
         <motion.div
           className={`relative overflow-hidden ${
             isEven ? 'md:order-2' : 'md:order-1'
@@ -148,7 +142,6 @@ function ValueRow({ value, index }: { value: typeof values[0]; index: number }) 
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
         >
-          {/* Background image with zoom on hover */}
           <motion.div
             className="absolute inset-0 bg-cover bg-center"
             style={{ backgroundImage: `url('${value.image}')` }}
@@ -156,7 +149,6 @@ function ValueRow({ value, index }: { value: typeof values[0]; index: number }) 
             transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
           />
 
-          {/* Gradient overlay */}
           <div
             className="absolute inset-0"
             style={{
@@ -166,7 +158,6 @@ function ValueRow({ value, index }: { value: typeof values[0]; index: number }) 
             }}
           />
 
-          {/* Decorative corner accent */}
           <div
             className={`absolute top-0 ${isEven ? 'left-0' : 'right-0'} w-20 h-20`}
             style={{
@@ -178,7 +169,6 @@ function ValueRow({ value, index }: { value: typeof values[0]; index: number }) 
             }}
           />
 
-          {/* Value label overlay: bottom of image */}
           <div className={`absolute bottom-6 ${isEven ? 'left-6' : 'right-6'} `}>
             <motion.div
               className="px-5 py-3 rounded-xl backdrop-blur-md"
@@ -203,7 +193,6 @@ export default function MinimalValues() {
   return (
     <section className="py-24 sm:py-32 bg-white border-t border-gray-100">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        {/* Section Header */}
         <motion.div
           className="mb-16"
           initial={{ opacity: 0, y: 30 }}
@@ -228,7 +217,6 @@ export default function MinimalValues() {
           </p>
         </motion.div>
 
-        {/* Values Rows */}
         <div className="space-y-12 px-2 sm:px-4">
           {values.map((value, index) => (
             <ValueRow key={value.id} value={value} index={index} />

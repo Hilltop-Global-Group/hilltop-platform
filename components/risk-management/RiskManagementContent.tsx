@@ -1,22 +1,16 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import {
   Shield,
-  FileCheck,
   AlertTriangle,
   ClipboardList,
-  Monitor,
+  Eye,
   ArrowRight,
   CheckCircle,
 } from 'lucide-react';
 import Link from 'next/link';
 import FadeIn from '@/components/FadeIn';
-import {
-  KenteDivider,
-  DottedAfricaMap,
-  AfricaWatermark,
-} from '@/components/shared/HilltopBrand';
+import { KenteDivider, AfricaWatermark } from '@/components/shared/HilltopBrand';
 
 const C = {
   dark: '#080f1c',
@@ -31,56 +25,25 @@ const pillars = [
     icon: Shield,
     title: 'Policy & Governance',
     description:
-      'Formal risk governance with clear accountability from CEO to on-site staff. Every program is assessed through a standardized risk framework before approval.',
-  },
-  {
-    icon: FileCheck,
-      title: 'Due Diligence & Partner Assessment',
-    description:
-      'Every in-country partner, housing provider, and placement site undergoes rigorous vetting before any student-facing operations begin. Assessments are continuous, not one-time.',
+      'Formal risk and operational governance with clear accountability from the CEO to on-site staff. Every program is assessed through a standardized risk framework at every stage.',
   },
   {
     icon: AlertTriangle,
     title: 'Incident Response',
     description:
-      'FEA-aligned incident classification with tiered escalation protocols. 24/7 emergency communication and defined response timeframes for every severity level.',
+      'Tiered incident classification with escalation protocols that activate on defined triggers. 24/7 emergency communication and committed response timeframes at every severity level.',
   },
   {
     icon: ClipboardList,
     title: 'Operational Readiness',
     description:
-      'Comprehensive pre-departure, on-site, and post-program protocols ensure consistent execution. Staff are equipped with emergency response training and real-time tools.',
+      'Comprehensive pre-departure, on-site, and post-program protocols ensure consistent execution. Our teams are practiced in every protocol and bring the training, experience, and judgment each situation requires.',
   },
   {
-    icon: Monitor,
-    title: 'Technology & Compliance',
+    icon: Eye,
+    title: 'Intelligence & Compliance',
     description:
-      'Real-time monitoring across security, health, and weather domains. Full regulatory compliance with FERPA, Title IX, Clery Act, and ISO 31030.',
-  },
-];
-
-const highlights = [
-  '24/7 Emergency Support',
-  '5×5 Risk Assessment Matrix',
-  'FEA-Aligned Protocols',
-  'Continuous Partner Monitoring',
-];
-
-const complianceFrameworks = [
-  {
-    label: 'FEA Standards, 6th Edition',
-    description:
-      'Our risk management infrastructure is built on the Forum on Education Abroad\'s Standards of Good Practice, the benchmark for responsible international education.',
-  },
-  {
-    label: 'ISO 31030:2021',
-    description:
-      'Travel risk management aligned with the international standard for organizational duty of care during business and educational travel.',
-  },
-  {
-    label: 'FERPA / Title IX / Clery Act',
-    description:
-      'Full compliance with U.S. federal regulations governing student data privacy, gender equity protections, and campus security reporting, extended to abroad contexts.',
+      'Proactive risk awareness across security, health, and environmental conditions, informed by local knowledge and available local information. Programs are built to operate within the compliance frameworks our university partners are accountable to, and to meet international standards for travel risk management.',
   },
 ];
 
@@ -93,72 +56,28 @@ export default function RiskManagementContent() {
 
         <div className="relative z-10 mx-auto max-w-5xl px-6 text-center">
           <FadeIn>
-            <p className="font-sans text-sm uppercase tracking-[0.2em] mb-4" style={{ color: C.accent }}>
-              Safety &amp; Compliance
-            </p>
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-              Risk Management Infrastructure
+              Safety and Risk Management
             </h1>
-            <p className="font-sans text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-10">
-              A comprehensive, standards-aligned framework ensuring the safety
-              and security of every student, staff member, and institutional
-              partner across our Africa-based programs.
+            <p className="font-sans text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
+              Hilltop maintains a comprehensive risk management infrastructure aligned with the Forum on Education Abroad (FEA) Standards and ISO 31030. Local teams, trusted partners, and continuous in-country monitoring stand behind every program. The safety of your students, faculty, and participants is where every program begins, and where every decision is tested.
             </p>
-          </FadeIn>
-
-          <FadeIn delay={0.2}>
-            <div className="flex flex-wrap justify-center gap-3">
-              {['FEA Standards 6th Ed.', 'ISO 31030:2021', 'FERPA / Title IX / Clery Act'].map(
-                (badge) => (
-                <span
-                    key={badge}
-                    className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-2 text-sm font-sans text-white backdrop-blur-sm"
-                  >
-                    <CheckCircle size={14} style={{ color: C.green }} />
-                    {badge}
-                </span>
-                ),
-              )}
-            </div>
           </FadeIn>
         </div>
       </section>
 
       <KenteDivider className="mx-auto my-0" />
 
-      {/* ── Our Commitment ── */}
-      <section className="py-20 md:py-28">
-        <div className="mx-auto max-w-4xl px-6 text-center">
-          <FadeIn>
-            <h2 className="font-serif text-3xl md:text-4xl font-bold mb-6" style={{ color: C.navy }}>
-              Our Commitment to Duty of Care
-              </h2>
-            <p className="font-sans text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">
-              Hilltop holds itself to the highest standards of participant
-              safety and institutional accountability. Our risk management
-              infrastructure is designed not as a formality, but as a living
-              operational system, continuously reviewed, stress-tested, and
-              improved to protect every stakeholder in our programs.
-            </p>
-          </FadeIn>
-            </div>
-      </section>
-
-      {/* ── Five Pillars ── */}
-      <section className="pb-20 md:pb-28">
+      {/* ── Full Infrastructure ── */}
+      <section className="pb-20 md:py-28 pt-20 md:pt-28">
         <div className="mx-auto max-w-6xl px-6">
           <FadeIn>
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-center mb-4" style={{ color: C.navy }}>
-              Five Pillars of Risk Management
+            <h2 className="font-serif text-3xl md:text-4xl font-bold text-center mb-14" style={{ color: C.navy }}>
+              Full Infrastructure
             </h2>
-            <p className="font-sans text-gray-500 text-center max-w-2xl mx-auto mb-14">
-              Every Hilltop program is governed by an integrated five-module
-              framework covering policy, partners, incidents, operations, and
-              technology.
-            </p>
           </FadeIn>
 
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-6 sm:grid-cols-2">
             {pillars.map((pillar, i) => {
               const Icon = pillar.icon;
               return (
@@ -181,54 +100,6 @@ export default function RiskManagementContent() {
               );
             })}
           </div>
-              </div>
-      </section>
-
-      {/* ── Key Highlights ── */}
-      <section className="py-16" style={{ backgroundColor: '#f8f9fb' }}>
-        <div className="mx-auto max-w-5xl px-6">
-          <FadeIn>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {highlights.map((item) => (
-                <div
-                  key={item}
-                  className="flex flex-col items-center text-center gap-3 rounded-xl bg-white p-6 shadow-sm border border-gray-100"
-                >
-                  <CheckCircle size={22} style={{ color: C.green }} />
-                  <span className="font-sans text-sm font-semibold" style={{ color: C.navy }}>
-                    {item}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* ── Gated CTA ── */}
-      <section className="relative overflow-hidden py-20 md:py-28" style={{ background: C.dark }}>
-        <DottedAfricaMap className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[360px] opacity-[0.06] pointer-events-none" />
-
-        <div className="relative z-10 mx-auto max-w-3xl px-6 text-center">
-          <FadeIn>
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-white mb-6">
-              Access the Full Framework
-            </h2>
-            <p className="font-sans text-gray-400 text-lg leading-relaxed mb-10 max-w-2xl mx-auto">
-              Full risk management documentation, including detailed
-              protocols, matrices, and operational playbooks, is available
-              to institutional partners upon program engagement. Contact us
-              to learn more.
-            </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 rounded-full px-8 py-4 font-sans font-semibold text-white transition-colors"
-              style={{ backgroundColor: C.accent }}
-            >
-              Contact Us
-              <ArrowRight size={18} />
-            </Link>
-          </FadeIn>
         </div>
       </section>
 
@@ -236,61 +107,55 @@ export default function RiskManagementContent() {
 
       {/* ── Compliance Alignment ── */}
       <section className="py-20 md:py-28">
-        <div className="mx-auto max-w-5xl px-6">
+        <div className="mx-auto max-w-3xl px-6">
           <FadeIn>
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-center mb-4" style={{ color: C.navy }}>
-              Compliance Alignment
+            <h2 className="font-serif text-3xl md:text-4xl font-bold text-center mb-6" style={{ color: C.navy }}>
+              Compliance alignment
             </h2>
-            <p className="font-sans text-gray-500 text-center max-w-2xl mx-auto mb-14">
-              Our framework is mapped to the leading standards in
-              international education safety and U.S. regulatory compliance.
+            <p className="font-sans text-gray-600 text-center leading-relaxed mb-12">
+              Our framework meets the leading international standards for education abroad, safety, and travel risk, and supports the regulatory obligations our university partners carry.
             </p>
           </FadeIn>
 
-          <div className="grid gap-6 md:grid-cols-3">
-            {complianceFrameworks.map((fw, i) => (
-              <FadeIn key={fw.label} delay={i * 0.1}>
-                <div className="rounded-2xl border border-gray-200 bg-white p-7 shadow-sm h-full">
-                  <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full" style={{ backgroundColor: `${C.green}15` }}>
-                    <CheckCircle size={20} style={{ color: C.green }} />
-                  </div>
-                  <h3 className="font-serif text-base font-bold mb-2" style={{ color: C.dark }}>
-                    {fw.label}
-                  </h3>
-                  <p className="font-sans text-sm text-gray-600 leading-relaxed">
-                    {fw.description}
-                  </p>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
+          <FadeIn delay={0.1}>
+            <div className="rounded-2xl border border-gray-200 bg-white p-7 shadow-sm">
+              <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full" style={{ backgroundColor: `${C.green}15` }}>
+                <CheckCircle size={20} style={{ color: C.green }} />
+              </div>
+              <h3 className="font-serif text-base font-bold mb-2" style={{ color: C.dark }}>
+                FERPA / Title IX / Clery Act
+              </h3>
+              <p className="font-sans text-sm text-gray-600 leading-relaxed">
+                Our processes are designed to support our university partners in meeting their FERPA, Title IX, and Clery Act obligations, including student data handled with care, incidents reported through institutional channels, and recordkeeping aligned with program-abroad contexts.
+              </p>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
       {/* ── Final CTA ── */}
       <section className="pb-20 md:pb-28">
-          <FadeIn>
-            <div
+        <FadeIn>
+          <div
             className="mx-auto max-w-4xl rounded-2xl px-8 py-14 text-center"
             style={{ backgroundColor: C.navy }}
           >
             <h2 className="font-serif text-2xl md:text-3xl font-bold text-white mb-4">
-              Ready to Partner with Hilltop?
+              Let&apos;s Build Your Next Program in Africa.
             </h2>
-            <p className="font-sans text-gray-300 mb-8 max-w-xl mx-auto">
-              Explore how our risk management infrastructure supports safe,
-              impactful programming across the African continent.
+            <p className="font-sans text-gray-300 mb-8 max-w-xl mx-auto leading-relaxed">
+              Our risk management infrastructure is the foundation. The program your students remember is what we build on top of it. Tell us what you&apos;re trying to create, and we will walk you through what a Hilltop partnership looks like.
             </p>
             <Link
               href="/contact"
               className="inline-flex items-center gap-2 rounded-full px-8 py-4 font-sans font-semibold transition-colors"
               style={{ backgroundColor: C.accent, color: C.white }}
             >
-              Get in Touch
+              Book a Discovery Call
               <ArrowRight size={18} />
             </Link>
-            </div>
-          </FadeIn>
+          </div>
+        </FadeIn>
       </section>
     </main>
   );

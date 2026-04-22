@@ -48,11 +48,10 @@ export default function RiskManagementCTA({ variant = 'banner' }: Props) {
             </div>
             <div>
               <h3 className="font-serif font-bold text-lg mb-1" style={{ color: '#1D3160' }}>
-                Safety &amp; Risk Management
+                Safety and Risk Management
               </h3>
               <p className="font-sans text-gray-500 text-sm leading-relaxed max-w-lg">
-                Hilltop maintains a comprehensive risk management infrastructure aligned with
-                FEA Standards, ISO 31030, and U.S. federal regulations. Your students&apos; safety is our foundation.
+                Hilltop maintains a comprehensive risk management infrastructure aligned with the Forum on Education Abroad (FEA) Standards and ISO 31030. Local teams, trusted partners, and continuous in-country monitoring stand behind every program.
               </p>
             </div>
           </div>

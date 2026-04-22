@@ -60,17 +60,24 @@ export default function Footer() {
         <div className="pt-16 pb-14 flex flex-col lg:flex-row lg:items-start lg:justify-between gap-12">
           <div className="flex-1 max-w-xl">
             <p className="font-sans text-xs font-semibold uppercase tracking-[0.25em] text-white/40 mb-5">
-              Get In Touch
+              Work With Us
             </p>
             <h2
               className="font-serif font-extrabold text-white leading-none mb-3"
               style={{ fontSize: 'clamp(2rem, 4vw, 3.2rem)' }}
             >
-              Start a Conversation
+              Let&apos;s Build Your Next Program in Africa.
             </h2>
-            <p className="font-sans text-white/55 text-base leading-relaxed mb-8">
-              Whether you are exploring a first partnership or expanding an existing program, our team in Washington DC, London, Accra, and Kigali is ready to talk.
+            <p className="font-sans text-white/55 text-base leading-relaxed mb-6">
+              Whether you are designing a first program on the continent or scaling one that already works, Hilltop is ready to build it with you. Headquartered in Washington DC, we maintain in-country teams across every destination we support in Africa: Ghana, Rwanda, Kenya, South Africa, and Namibia, with the footprint still expanding.
             </p>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 font-sans font-semibold text-sm uppercase tracking-[0.15em] px-6 py-3 mb-8 border transition-colors duration-200 hover:bg-white/5"
+              style={{ borderColor: '#F4A261', color: '#F4A261' }}
+            >
+              Book a Discovery Call
+            </Link>
 
             {/* Contact Form */}
             {status === 'sent' ? (

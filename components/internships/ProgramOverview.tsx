@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import FadeIn from '../FadeIn';
-import { KenteDivider, DecorativeUnderline } from '../shared/HilltopBrand';
+import { KenteDivider } from '../shared/HilltopBrand';
 
 export default function ProgramOverview() {
   return (
@@ -45,24 +45,20 @@ export default function ProgramOverview() {
             <FadeIn>
               <KenteDivider className="mb-8" />
               <p className="font-sans text-xs font-semibold uppercase tracking-[0.25em] mb-5" style={{ color: '#F4A261' }}>
-                How It Works
+                HOW IT WORKS
               </p>
               <h2
                 className="font-serif font-extrabold text-black leading-tight mb-6"
                 style={{ fontSize: 'clamp(2rem, 4vw, 3.2rem)' }}
               >
-                How the{' '}
-                <span className="relative inline-block whitespace-nowrap" style={{ color: '#F4A261' }}>
-                  Program Works
-                  <DecorativeUnderline color="#F4A261" />
-                </span>
+                HOW THE PROGRAM WORKS
               </h2>
               <div className="space-y-4 mb-8">
                 <p className="font-sans text-gray-600 text-base leading-relaxed">
-                  Participants spend four weeks embedded in organizations across Accra, Ghana or Kigali, Rwanda, contributing to structured, deliverable-based assignments alongside local teams. Each placement is designed to strengthen professional competencies, expand global networks, and deepen cross-cultural understanding through direct participation in Africa's professional ecosystems.
+                  Participants spend four weeks embedded in organizations across Accra, Ghana, and Kigali, Rwanda, contributing to structured, deliverable-based assignments alongside local teams. Each placement is designed to strengthen professional competencies, expand global networks, and deepen cross-cultural understanding through direct participation in Africa&apos;s professional ecosystems.
                 </p>
                 <p className="font-sans text-gray-600 text-base leading-relaxed">
-                  Hilltop's 100+ vetted host organizations span fintech, agribusiness, healthcare, creative industries, and social enterprise. In Rwanda, students are paired with African Leadership University peers for collaborative learning. Every program includes pre-departure orientation, on-site mentorship, guided reflection sessions, and post-program impact documentation.
+                  Hilltop&apos;s vetted host organizations span fintech, agribusiness, healthcare, creative industries, social enterprise, and more. In Rwanda, students are paired with peers from African Leadership University for collaborative learning. Every program includes pre-departure orientation, on-site mentorship, guided reflection sessions, and post-program impact documentation.
                 </p>
               </div>
             </FadeIn>

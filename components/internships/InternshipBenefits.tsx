@@ -2,38 +2,43 @@
 
 import { Users, Briefcase, Globe, TrendingUp, Heart } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { KenteDivider, DecorativeUnderline, HighlightWord } from '../shared/HilltopBrand';
+import { KenteDivider } from '../shared/HilltopBrand';
 import FadeIn from '../FadeIn';
 
 const benefits = [
   {
     icon: Users,
-    title: 'Develop cross-cultural professional fluency',
-    description: 'Navigate workplace norms across cultures, communicate effectively in international teams, and build the adaptability that global employers actively recruit for.',
+    title: 'Develop cross-cultural professional fluency.',
+    description:
+      'Navigate workplace norms across cultures, communicate effectively in international teams, and build the adaptability that global employers actively recruit for.',
     image: '/images/nyu-sa14.jpg',
   },
   {
     icon: Briefcase,
-    title: 'Deliver real work products to real organizations',
-    description: 'Every placement is structured around deliverables. You leave with portfolio-ready output that your host organization actually uses, not an observation report.',
+    title: 'Contribute to assignments with professional weight.',
+    description:
+      'Every placement is built around a defined scope of work with your host organization. You contribute alongside their teams, document what you do, and leave with evidence of the experience that holds up in a professional setting.',
     image: '/images/real-work.jpg',
   },
   {
     icon: Globe,
-    title: 'Work inside Africa\'s fastest-growing sectors',
-    description: 'Placements span fintech, agritech, healthtech, creative industries, and social enterprise across organizations vetted by Hilltop\'s on-ground teams.',
+    title: 'Work inside Africa\'s fastest-growing sectors.',
+    description:
+      'Placements span fintech, agritech, healthtech, creative industries, social enterprise, and more, across organizations vetted by Hilltop\'s on-ground teams.',
     image: '/images/innovation-center.jpg',
   },
   {
     icon: TrendingUp,
-    title: 'Build professional networks that last beyond the program',
-    description: 'Direct mentorship from African founders, executives, and industry professionals. Leadership workshops designed to convert international experience into career-ready competencies.',
+    title: 'Build professional networks that last beyond the program.',
+    description:
+      'Direct mentorship from African founders, executives, and industry professionals, paired with leadership workshops designed to translate international experience into career-ready competencies.',
     image: '/images/professional-network.jpeg',
   },
   {
     icon: Heart,
-    title: 'Engage with communities as a participant, not a spectator',
-    description: 'Guided cultural immersions and reflection sessions connect your professional experience to the history, creative economies, and civic life of your host city.',
+    title: 'Engage with communities as a participant, not a spectator.',
+    description:
+      'Guided cultural immersions and reflection sessions connect your professional experience to the history, creative economies, and civic life of your host city.',
     image: '/images/spec1.jpg',
   },
 ];
@@ -45,14 +50,11 @@ export default function InternshipBenefits() {
 
         <FadeIn>
           <KenteDivider className="mb-6" />
-          <p className="font-sans text-xs font-semibold uppercase tracking-[0.25em] mb-4" style={{ color: '#F4A261' }}>
-            Why Intern With Hilltop
-          </p>
           <h2
-            className="font-serif font-extrabold text-black leading-none mb-14"
+            className="font-serif font-extrabold text-black leading-tight mb-14"
             style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)' }}
           >
-            What You Gain From a Hilltop <HighlightWord>Placement</HighlightWord>
+            WHAT YOU GAIN FROM A HILLTOP PLACEMENT
           </h2>
         </FadeIn>
 

@@ -8,7 +8,6 @@ import {
   KenteDivider,
   ArrowCTA,
   DottedAfricaMap,
-  HighlightWord,
 } from '../shared/HilltopBrand';
 import FadeIn from '../FadeIn';
 
@@ -16,22 +15,22 @@ const signals = [
   {
     title: 'Government Partnership',
     description:
-      'Partnership with national TVET authorities responsible for public technical and vocational education delivery across Africa.',
+      'Collaboration with national TVET authorities responsible for public technical and vocational education, embedding Hilltop\'s work inside the systems that deliver it at scale.',
   },
   {
     title: 'U.S. Institutional Partners',
     description:
-      'Collaboration with U.S. institutional networks to bring experienced faculty and curriculum expertise to African TVET programs.',
+      'Partnership with U.S. institutional networks that bring experienced faculty, modern curriculum frameworks, and sector expertise to African TVET programs.',
   },
   {
     title: 'Priority Growth Sectors',
     description:
-      'Renewable energy, construction technology, digital systems, agro-processing, and advanced manufacturing, aligned to national economic priorities.',
+      'Renewable energy, construction technology, digital systems, agro-processing, advanced manufacturing, and more, aligned to the economic priorities of each partner country.',
   },
   {
     title: 'Scalable Impact Model',
     description:
-      'Train-the-trainer approach that builds institutional capacity by equipping TVET instructors, reaching thousands of students through strengthened teaching.',
+      'A train-the-trainer approach that equips TVET instructors whose classrooms extend the work year after year, compounding reach with each new cohort.',
   },
 ];
 
@@ -94,7 +93,7 @@ export default function TVETSection() {
           <FadeIn>
             <KenteDivider className="mb-6" />
             <p className="font-sans text-xs font-semibold uppercase tracking-[0.25em] mb-5" style={{ color: '#F4A261' }}>
-              Our Approach
+              OUR APPROACH
             </p>
           </FadeIn>
 
@@ -104,14 +103,13 @@ export default function TVETSection() {
                 className="font-serif font-extrabold text-black leading-none"
                 style={{ fontSize: 'clamp(2rem, 4vw, 3.2rem)' }}
               >
-                Closing the Skills <HighlightWord>Gap</HighlightWord>
+                CLOSING THE SKILLS GAP
               </h2>
             </FadeIn>
             <div className="hidden md:block w-px bg-gray-200 self-stretch flex-shrink-0" />
             <FadeIn delay={0.1} className="md:max-w-lg">
               <p className="font-sans text-gray-500 text-base leading-relaxed">
-                Hilltop is partnering with national TVET authorities and U.S. institutional networks to build
-                capacity in Africa&apos;s technical and vocational education systems.
+                Hilltop partners with national TVET authorities and U.S. institutional networks to strengthen Africa&apos;s technical and vocational education systems.
               </p>
             </FadeIn>
           </div>
@@ -121,22 +119,17 @@ export default function TVETSection() {
           <div className="grid md:grid-cols-2 gap-x-16 gap-y-6">
             <FadeIn>
               <p className="font-sans text-gray-600 text-base leading-relaxed">
-                Through curriculum co-design and faculty exchange, we are working to close the gap between the skills
-                young Africans are learning and the skills their economies need.
+                Through curriculum co-design and faculty exchange, we work to close the distance between the skills young Africans are learning and the skills their economies need.
               </p>
             </FadeIn>
             <FadeIn delay={0.1}>
               <p className="font-sans text-gray-600 text-base leading-relaxed">
-                Our approach centers on training instructors, not just students, creating a multiplier effect that
-                reaches thousands of learners through strengthened institutional capacity. Every trained instructor
-                becomes a permanent asset within the national TVET system.
+                Our approach centers on training instructors, not just students. Every trained instructor becomes a lasting asset inside the national TVET system, reaching classroom after classroom long after the initial engagement.
               </p>
             </FadeIn>
             <FadeIn delay={0.2} className="md:col-span-2">
               <p className="font-sans text-gray-600 text-base leading-relaxed">
-                This work is anchored by formal partnerships with national TVET authorities and leading U.S. institutional
-                networks. Hilltop serves as a bridge between African vocational systems and international expertise,
-                driving workforce development programming across the continent.
+                This work is anchored by formal partnerships with national TVET authorities and leading U.S. institutional networks. Hilltop serves as a bridge between African vocational systems and international expertise, supporting technical and vocational education across the continent.
               </p>
             </FadeIn>
           </div>
@@ -150,13 +143,13 @@ export default function TVETSection() {
           <FadeIn>
             <KenteDivider className="mb-6" />
             <p className="font-sans text-xs font-semibold uppercase tracking-[0.25em] mb-5" style={{ color: '#F4A261' }}>
-              Why It Works
+              WHY IT WORKS
             </p>
             <h2
               className="font-serif font-extrabold text-black leading-none mb-12"
               style={{ fontSize: 'clamp(2rem, 4vw, 3.2rem)' }}
             >
-              Four Pillars of Our TVET Model
+              FOUR PILLARS OF OUR TVET MODEL
             </h2>
           </FadeIn>
 
@@ -226,20 +219,19 @@ export default function TVETSection() {
               <FadeIn>
                 <KenteDivider className="mb-6" />
                 <p className="font-sans text-xs font-semibold uppercase tracking-[0.25em] mb-5" style={{ color: '#F4A261' }}>
-                  The Multiplier Effect
+                  THE MULTIPLIER EFFECT
                 </p>
                 <h2
                   className="font-serif font-extrabold text-black leading-tight mb-6"
                   style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)' }}
                 >
-                  One Trained Instructor.<br />
-                  <HighlightWord>Thousands</HighlightWord> of Students.
+                  ONE TRAINED INSTRUCTOR. THOUSANDS OF STUDENTS.
                 </h2>
                 <p className="font-sans text-gray-600 text-base leading-relaxed mb-4">
                   Rather than running one-off student workshops, Hilltop embeds change at the institutional level. U.S. technical college faculty work directly alongside African TVET instructors to co-develop and modernize curricula in high-demand fields.
                 </p>
                 <p className="font-sans text-gray-600 text-base leading-relaxed">
-                  The result is a lasting upgrade to what gets taught inside TVET classrooms long after the initial exchange, delivering sustainable impact that compounds with every new cohort of students.
+                  The result is a lasting upgrade to what gets taught inside TVET classrooms, compounding with every new cohort long after the initial exchange.
                 </p>
               </FadeIn>
             </div>
