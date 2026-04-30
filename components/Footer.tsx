@@ -6,6 +6,7 @@ import { Mail, Phone, MapPin, Linkedin, Instagram, Facebook, Send } from 'lucide
 import { FaTiktok, FaXTwitter } from 'react-icons/fa6';
 import { AfricaWatermark, KenteDivider } from './shared/HilltopBrand';
 import MembershipBadges from './shared/MembershipBadges';
+import { BookingButton } from './shared/BookingQualifier';
 
 const socialLinks = [
   { icon: Linkedin, href: 'https://www.linkedin.com/company/hilltopglobally', label: 'LinkedIn' },
@@ -37,7 +38,7 @@ export default function Footer() {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, subject: 'Footer Inquiry' }),
       });
       setStatus(res.ok ? 'sent' : 'error');
     } catch {
@@ -71,13 +72,13 @@ export default function Footer() {
             <p className="font-sans text-white/55 text-base leading-relaxed mb-6">
               Whether you are designing a first program on the continent or scaling one that already works, Hilltop is ready to build it with you. Headquartered in Washington DC, we maintain in-country teams across every destination we support in Africa: Ghana, Rwanda, Kenya, South Africa, and Namibia, with the footprint still expanding.
             </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 font-sans font-semibold text-sm uppercase tracking-[0.15em] px-6 py-3 mb-8 border transition-colors duration-200 hover:bg-white/5"
-              style={{ borderColor: '#F4A261', color: '#F4A261' }}
-            >
-              Book a Discovery Call
-            </Link>
+            <div className="mb-8">
+              <BookingButton
+                variant="dark"
+                className="inline-flex items-center gap-2 font-sans font-semibold text-sm uppercase tracking-[0.15em] px-6 py-3 border transition-colors duration-200 hover:bg-white/5"
+                style={{ borderColor: '#F4A261', color: '#F4A261' }}
+              />
+            </div>
 
             {/* Contact Form */}
             {status === 'sent' ? (

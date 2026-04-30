@@ -5,11 +5,10 @@ import {
   AlertTriangle,
   ClipboardList,
   Eye,
-  ArrowRight,
   CheckCircle,
 } from 'lucide-react';
-import Link from 'next/link';
 import FadeIn from '@/components/FadeIn';
+import { BookingButton } from '@/components/shared/BookingQualifier';
 import { KenteDivider, AfricaWatermark } from '@/components/shared/HilltopBrand';
 
 const C = {
@@ -74,7 +73,7 @@ export default function RiskManagementContent() {
           <FadeIn>
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-center mb-14" style={{ color: C.navy }}>
               Full Infrastructure
-            </h2>
+              </h2>
           </FadeIn>
 
           <div className="grid gap-6 sm:grid-cols-2">
@@ -94,9 +93,9 @@ export default function RiskManagementContent() {
                     </h3>
                     <p className="font-sans text-sm text-gray-600 leading-relaxed">
                       {pillar.description}
-                    </p>
-                  </div>
-                </FadeIn>
+              </p>
+            </div>
+          </FadeIn>
               );
             })}
           </div>
@@ -121,7 +120,7 @@ export default function RiskManagementContent() {
             <div className="rounded-2xl border border-gray-200 bg-white p-7 shadow-sm">
               <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full" style={{ backgroundColor: `${C.green}15` }}>
                 <CheckCircle size={20} style={{ color: C.green }} />
-              </div>
+          </div>
               <h3 className="font-serif text-base font-bold mb-2" style={{ color: C.dark }}>
                 FERPA / Title IX / Clery Act
               </h3>
@@ -146,14 +145,11 @@ export default function RiskManagementContent() {
             <p className="font-sans text-gray-300 mb-8 max-w-xl mx-auto leading-relaxed">
               Our risk management infrastructure is the foundation. The program your students remember is what we build on top of it. Tell us what you&apos;re trying to create, and we will walk you through what a Hilltop partnership looks like.
             </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 rounded-full px-8 py-4 font-sans font-semibold transition-colors"
+            <BookingButton
+              variant="dark"
+              className="inline-flex items-center gap-2 rounded-full px-8 py-4 font-sans font-semibold transition-colors hover:opacity-90"
               style={{ backgroundColor: C.accent, color: C.white }}
-            >
-              Book a Discovery Call
-              <ArrowRight size={18} />
-            </Link>
+            />
           </div>
         </FadeIn>
       </section>
