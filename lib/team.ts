@@ -42,14 +42,6 @@ export const teamMembers: TeamMember[] = [
     bio: 'Supports program design and delivery, working with partners and participants to keep Hilltop engagements organized and on track.',
   },
   {
-    name: 'Sadick Achuli',
-    role: 'Technology Transformation Lead',
-    category: 'staff',
-    image: '/images/sadick-profile.jpeg',
-    linkedin: 'https://www.linkedin.com/in/sadick-achuli-81955b249/',
-    bio: 'Leads technology transformation at Hilltop, modernizing digital infrastructure and systems that support programs across focal markets and global outreach.',
-  },
-  {
     name: 'Faata Faleera Adam',
     role: 'Africa Operations Manager',
     category: 'staff',
