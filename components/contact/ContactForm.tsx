@@ -13,6 +13,7 @@ export default function ContactForm() {
     message: '',
   });
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
+  const [loadedAt] = useState(() => Date.now());
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -21,7 +22,7 @@ export default function ContactForm() {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...formData, _t: Date.now() }),
+        body: JSON.stringify({ ...formData, _t: loadedAt }),
       });
       if (res.ok) {
         setStatus('sent');

@@ -17,6 +17,7 @@ export default function TestimonialSubmission() {
   });
 
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
+  const [loadedAt] = useState(() => Date.now());
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -35,7 +36,7 @@ export default function TestimonialSubmission() {
           quote: formData.testimonial,
           rating: formData.rating,
           website: (formData as any).website || '',
-          _t: Date.now(),
+          _t: loadedAt,
         }),
       });
       if (res.ok) {
