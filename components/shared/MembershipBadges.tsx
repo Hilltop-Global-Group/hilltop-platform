@@ -16,12 +16,6 @@ const memberships = [
     height: 120,
     offsetBottom: 10,
   },
-  {
-    src: '/images/embac.png',
-    alt: 'EMBAC: Executive MBA Council',
-    height: 68,
-    offsetBottom: 0,
-  },
 ];
 
 interface MembershipBadgesProps {
