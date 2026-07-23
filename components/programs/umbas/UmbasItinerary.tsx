@@ -22,8 +22,12 @@ export default function UmbasItinerary() {
               </span>
             </h2>
             <KenteDivider className="mx-auto mt-6 mb-6" />
-            <p className="font-sans text-white/55 max-w-2xl mx-auto">
+            <p className="font-sans text-white/55 max-w-2xl mx-auto mb-4">
               A high-level day-by-day snapshot. Full logistics are shared with registered participants in the Pre-Departure Kit.
+            </p>
+            <p className="font-sans text-white/45 text-sm max-w-2xl mx-auto italic leading-relaxed">
+              This itinerary is a draft and is subject to change. Any changes will be communicated ahead of the
+              pre-departure session, where the final itinerary will be reviewed.
             </p>
           </div>
         </FadeIn>

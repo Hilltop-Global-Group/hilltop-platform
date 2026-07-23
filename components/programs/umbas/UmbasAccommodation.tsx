@@ -12,7 +12,7 @@ export default function UmbasAccommodation() {
             <div className="relative overflow-hidden shadow-xl" style={{ minHeight: 420 }}>
               <div
                 className="absolute inset-0 bg-cover bg-center"
-                style={{ backgroundImage: `url('/images/accommodation.jpg')` }}
+                style={{ backgroundImage: `url('/images/umbas-lancaster-hotel.png')` }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#080f1c]/50 via-transparent to-transparent" />
               <div className="absolute bottom-6 left-6 right-6">

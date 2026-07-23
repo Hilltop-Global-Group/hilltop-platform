@@ -5,16 +5,16 @@ import { KenteDivider, DecorativeUnderline, Eyebrow } from '@/components/shared/
 
 const timeline = [
   {
-    label: '$500 non-refundable deposit to confirm your spot',
-    date: 'Due [date TBC]',
+    label: '$500 non-refundable deposit',
+    date: 'Due upon registration and confirmation that we have received your application',
   },
   {
-    label: 'Recommended installments of ~$350/month thereafter',
-    date: '[start date TBC] – [end date TBC]',
+    label: 'Recommended installments of approximately $490 per month (four payments)',
+    date: 'September through December 2026',
   },
   {
-    label: 'Final balance due no later than 45 days before departure',
-    date: 'Due [date TBC]',
+    label: 'Final balance due no later than January 20, 2027',
+    date: '45 days before departure',
   },
 ];
 
@@ -78,11 +78,11 @@ export default function UmbasPricing() {
           <h3 className="font-serif font-extrabold text-xl mb-6" style={{ color: '#1D3160' }}>
             Suggested payment timeline
           </h3>
-          <div className="space-y-4 mb-8">
+          <div className="space-y-4">
             {timeline.map((step, i) => (
               <div
                 key={step.label}
-                className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 border border-gray-100 bg-white p-5"
+                className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 border border-gray-100 bg-white p-5"
               >
                 <div className="flex items-start gap-3">
                   <span
@@ -93,16 +93,12 @@ export default function UmbasPricing() {
                   </span>
                   <p className="font-sans text-gray-700 text-sm leading-relaxed">{step.label}</p>
                 </div>
-                <p className="font-sans text-xs font-semibold uppercase tracking-wider sm:text-right pl-10 sm:pl-0" style={{ color: '#F4A261' }}>
+                <p className="font-sans text-xs font-semibold tracking-wide sm:text-right pl-10 sm:pl-0 sm:max-w-[45%]" style={{ color: '#F4A261' }}>
                   {step.date}
                 </p>
               </div>
             ))}
           </div>
-          <p className="font-sans text-gray-500 text-sm leading-relaxed">
-            Note: pricing is based on a minimum of 20 participants. If enrollment falls below 20, per-person
-            cost may be adjusted and a revised invoice issued.
-          </p>
         </FadeIn>
       </div>
     </section>

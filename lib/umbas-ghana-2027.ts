@@ -43,7 +43,7 @@ export const umbasItinerary = [
     date: 'Thu, Mar 11',
     title: 'Cultural Immersion',
     description: 'A hands-on artisanal experience, beach time, and a celebratory Farewell Dinner.',
-    image: '/images/cocoa-farm.jpg',
+    image: '/images/umbas-cultural-immersion.png',
   },
   {
     day: 'Day 7',
@@ -73,7 +73,7 @@ export const umbasHighlights = [
   {
     title: 'Assin Manso Ancestral Slave River',
     description: 'Riverside memorial and heritage site',
-    image: '/images/nkrumah-memorial.jpg',
+    image: '/images/umbas-assin-manso.png',
   },
   {
     title: 'Kakum National Park',

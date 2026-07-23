@@ -66,6 +66,11 @@ export default function UmbasRegistration() {
                     {step.title}
                   </h3>
                   <p className="font-sans text-gray-600 text-sm leading-relaxed">{step.body}</p>
+                  {i === 0 && (
+                    <p className="font-sans text-gray-500 text-xs leading-relaxed mt-3 italic">
+                      *If you have already applied or registered, you do not need to register again.
+                    </p>
+                  )}
                 </div>
               </div>
             </FadeIn>

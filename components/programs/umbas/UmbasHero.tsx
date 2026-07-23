@@ -26,29 +26,34 @@ export default function UmbasHero() {
       <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ backgroundColor: '#F4A261' }} />
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+        {/* Light plate so full-color logos (navy Hilltop + orange/green Miami) remain readable */}
         <motion.div
-          className="flex flex-wrap items-center gap-4 mb-10"
+          className="inline-flex flex-wrap items-center gap-4 mb-10 bg-white px-5 py-3 shadow-sm"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
           <Link href="/" className="inline-flex items-center">
-            <img src="/logos/logo.png" alt="Hilltop Global Group" className="h-10 w-auto" />
+            <img
+              src="/logos/logo.png"
+              alt="Hilltop Global Group"
+              className="h-9 sm:h-10 w-auto"
+            />
           </Link>
-          <span className="text-white/30 text-2xl font-light select-none" aria-hidden>
+          <span className="text-gray-300 text-2xl font-light select-none" aria-hidden>
             |
           </span>
           {miamiLogoOk ? (
             <img
               src="/logos/umbas-miami.png"
-              alt="University of Miami Black Alumni Society"
-              className="h-10 w-auto object-contain"
+              alt="University of Miami"
+              className="h-9 sm:h-10 w-auto object-contain"
               onError={() => setMiamiLogoOk(false)}
             />
           ) : (
-            <p className="font-serif font-bold text-white text-sm leading-tight">
+            <p className="font-serif font-bold text-sm leading-tight" style={{ color: '#005030' }}>
               University of Miami
-              <span className="block font-sans font-normal text-white/60 text-xs tracking-wide mt-0.5">
+              <span className="block font-sans font-normal text-xs tracking-wide mt-0.5" style={{ color: '#F47321' }}>
                 Black Alumni Society
               </span>
             </p>
