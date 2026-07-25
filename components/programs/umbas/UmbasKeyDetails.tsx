@@ -7,7 +7,7 @@ import UmbasRegisterButton from './UmbasRegisterButton';
 const details = [
   { label: 'Destination', value: 'Accra & Cape Coast, Ghana', accent: false },
   { label: 'Dates', value: 'March 6–12, 2027 (7 days, 6 nights)', accent: false },
-  { label: 'Who', value: 'UMBAS students and alumni (min. 20 participants)', accent: false },
+  { label: 'Who', value: 'UMBAS students and alumni', accent: false },
   { label: 'Accommodation', value: '4-star hotel — Lancaster Hotel, Accra (or similar)', accent: false },
   { label: 'Program cost', value: '$2,950 per participant', accent: true, large: true },
   { label: 'To secure a spot', value: '$500 non-refundable deposit', accent: true, large: true },
