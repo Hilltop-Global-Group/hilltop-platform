@@ -9,7 +9,7 @@ const timeline = [
     date: 'Due upon registration and confirmation that we have received your application',
   },
   {
-    label: 'Recommended installments of approximately $490 per month (four payments)',
+    label: 'Recommended installments of approximately $490 per month (five payments)',
     date: 'September through December 2026',
   },
   {
