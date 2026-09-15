@@ -6,6 +6,7 @@ import { Calendar, User } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { KenteDivider, SectionBrushstroke, ArrowCTA } from '../shared/HilltopBrand';
+import BMCCFeaturedCard from './BMCCFeaturedCard';
 
 interface WordPressPost {
   id: number;
@@ -115,6 +116,8 @@ export default function NewsGrid({ posts, categories }: NewsGridProps) {
         </div>
 
         <div className="border-t border-gray-200 mb-12" />
+
+        <BMCCFeaturedCard />
 
         {/* Posts Grid */}
         {filteredPosts.length === 0 ? (
