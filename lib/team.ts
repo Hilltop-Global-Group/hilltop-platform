@@ -41,11 +41,4 @@ export const teamMembers: TeamMember[] = [
     linkedin: 'https://www.linkedin.com/in/nkem-osamor-22572a226',
     bio: 'Supports program design and delivery, working with partners and participants to keep Hilltop engagements organized and on track.',
   },
-  {
-    name: 'Faata Faleera Adam',
-    role: 'Africa Operations Manager',
-    category: 'staff',
-    linkedin: 'https://www.linkedin.com/in/faata-faleera-a-170683a1/',
-    bio: 'Faata oversees Hilltop\'s on-the-ground operations across the organization\'s focal markets, coordinating with local partners and host organizations.',
-  },
 ];
