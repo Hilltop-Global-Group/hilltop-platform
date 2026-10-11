@@ -1,8 +1,9 @@
 import { MetadataRoute } from 'next';
 import { focalCountries } from '@/lib/focal-destinations-data';
+import { SITE_URL } from '@/lib/site';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://hilltop-platform.vercel.app';
+  const baseUrl = SITE_URL;
 
   const destinationPages: MetadataRoute.Sitemap = [
     {
@@ -44,6 +45,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.95,
+    },
+    {
+      url: `${baseUrl}/internships/ghana`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.95,
+    },
+    {
+      url: `${baseUrl}/internships/current`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/internships/past`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.5,
     },
     {
       url: `${baseUrl}/testimonials`,

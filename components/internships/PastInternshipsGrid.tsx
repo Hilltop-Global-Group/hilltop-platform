@@ -1,92 +1,71 @@
 'use client';
 
-import { Calendar, MapPin, Clock } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { Calendar } from 'lucide-react';
 import { KenteDivider, DecorativeUnderline } from '../shared/HilltopBrand';
 import FadeIn from '../FadeIn';
+import InternshipCard, { type InternshipCardData } from './InternshipCard';
+import {
+  presentationFor,
+  cardImage,
+  parseHighlights,
+  formatProgramDate,
+  type WpInternship,
+} from '@/lib/internship-presentation';
 
 function decodeHtmlEntities(text: string) {
   const entities: { [key: string]: string } = {
-    '&#8211;': '\u2013', '&#8212;': '\u2014', '&amp;': '&',
+    '&#8211;': '–', '&#8212;': '—', '&amp;': '&',
     '&lt;': '<', '&gt;': '>', '&quot;': '"', '&#039;': "'", '&nbsp;': ' ',
   };
   return text.replace(/&#?\w+;/g, match => entities[match] || match);
 }
 
-function formatDate(dateString: string) {
-  if (!dateString) return '';
-  return new Date(dateString).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
-}
+function toCardData(internship: WpInternship): InternshipCardData {
+  const acf = internship.acf || {};
+  const meta = internship.meta || {};
+  const country = acf.country || '';
+  const city = acf.city || '';
+  const presentation = presentationFor(country);
 
-function PastCard({ internship, index }: { internship: any; index: number }) {
   const featuredImage = internship._embedded?.['wp:featuredmedia']?.[0]?.source_url;
 
-  const city = internship.acf?.city || '';
-  const country = internship.acf?.country || '';
-  let location = city && country ? `${city}, ${country}` : 'Location TBD';
-  if (location === 'Location TBD' && internship.internship_locations?.length > 0) {
-    location = internship.internship_locations.map((t: any) => t.name).join(', ');
+  const start = formatProgramDate(acf.start_date || meta._internship_start_date);
+  const end = formatProgramDate(acf.end_date || meta._internship_end_date);
+  const ran = start && end ? `${start} – ${end}` : start || end || '';
+
+  let location = city && country ? `${city}, ${country}` : '';
+  if (!location && (internship.internship_locations?.length ?? 0) > 0) {
+    location = internship.internship_locations!.map((t: { name: string }) => t.name).join(', ');
   }
 
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 24 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: index * 0.08 }}
-      className="bg-white border border-gray-100 overflow-hidden"
-    >
-      <div className="relative h-48 overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center grayscale-[30%]"
-          style={{
-            backgroundImage: featuredImage
-              ? `url('${featuredImage}')`
-              : 'linear-gradient(135deg, #1D3160 0%, #F4A261 100%)',
-          }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#080f1c]/80 via-[#080f1c]/30 to-transparent" />
-        <div className="absolute top-4 left-4">
-          <span className="px-3 py-1.5 text-white text-xs font-bold uppercase tracking-wider bg-gray-500">
-            Completed
-          </span>
-        </div>
-        <div className="absolute bottom-4 left-4 right-4">
-          <h3 className="font-serif font-bold text-lg text-white line-clamp-2">
-            {decodeHtmlEntities(internship.title.rendered)}
-          </h3>
-        </div>
-      </div>
+  const description =
+    acf.overview_text ||
+    (internship.excerpt?.rendered
+      ? decodeHtmlEntities(internship.excerpt.rendered.replace(/<[^>]*>/g, '')).trim()
+      : '');
 
-      <div className="p-6">
-        <div className="space-y-2 mb-4">
-          {(internship.acf?.start_date || internship.meta?._internship_start_date) && (internship.acf?.end_date || internship.meta?._internship_end_date) && (
-            <div className="flex items-center gap-3">
-              <Calendar size={14} className="flex-shrink-0 text-gray-400" />
-              <span className="font-sans text-gray-500 text-sm">
-                {formatDate(internship.acf?.start_date || internship.meta._internship_start_date)} \u2013 {formatDate(internship.acf?.end_date || internship.meta._internship_end_date)}
-              </span>
-            </div>
-          )}
-          <div className="flex items-center gap-3">
-            <MapPin size={14} className="flex-shrink-0 text-gray-400" />
-            <span className="font-sans text-gray-500 text-sm">{location}</span>
-          </div>
-          {(internship.acf?.duration || internship.meta?._internship_duration) && (
-            <div className="flex items-center gap-3">
-              <Clock size={14} className="flex-shrink-0 text-gray-400" />
-              <span className="font-sans text-gray-500 text-sm">{internship.acf?.duration || internship.meta._internship_duration}</span>
-            </div>
-          )}
-        </div>
-        <div className="pt-4 border-t border-gray-100">
-          <p className="font-sans text-gray-400 text-xs uppercase tracking-wider">Program Ended</p>
-        </div>
-      </div>
-    </motion.div>
-  );
+  return {
+    title: decodeHtmlEntities(internship.title?.rendered || 'Internship Program'),
+    eyebrow: city || location,
+    city,
+    country,
+    // Completed programs link to their own archived record, not the live program page,
+    // which now carries the current cycle's content.
+    href: `/internships/${internship.slug}`,
+    image: cardImage(featuredImage, country),
+    accent: presentation.accent,
+    status: 'closed',
+    badgeLabel: 'Completed',
+    duration: acf.duration || meta._internship_duration || '',
+    deadline: ran,
+    deadlineLabel: 'Ran',
+    description,
+    highlights: parseHighlights(acf.highlights),
+    closedLabel: 'Program ended',
+  };
 }
 
-export default function PastInternshipsGrid({ internships }: { internships: any[] }) {
+export default function PastInternshipsGrid({ internships }: { internships: WpInternship[] }) {
   return (
     <section className="py-20 sm:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
@@ -116,9 +95,9 @@ export default function PastInternshipsGrid({ internships }: { internships: any[
         <div className="border-t border-gray-200 mb-12" />
 
         {internships.length > 0 ? (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {internships.map((internship: any, index: number) => (
-              <PastCard key={internship.id} internship={internship} index={index} />
+          <div className="grid lg:grid-cols-2 gap-8">
+            {internships.map((internship: WpInternship, index: number) => (
+              <InternshipCard key={internship.id} data={toCardData(internship)} index={index} />
             ))}
           </div>
         ) : (

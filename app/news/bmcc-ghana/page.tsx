@@ -8,7 +8,8 @@ import NewsletterSignup from '@/components/news/NewsletterSignup';
 import RiskManagementCTA from '@/components/shared/RiskManagementCTA';
 import { bmccVideos, isPublished } from '@/lib/bmcc-ghana-data';
 
-const SITE_URL = 'https://hilltop-platform.vercel.app';
+import { SITE_URL } from '@/lib/site';
+
 const PAGE_URL = `${SITE_URL}/news/bmcc-ghana`;
 
 /** Publication date for the series. Adjust if the videos go live on a different date. */

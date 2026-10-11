@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { SITE_URL } from '@/lib/site';
 
 const barlowCondensed = Barlow_Condensed({
   variable: "--font-barlow-condensed",
@@ -40,8 +41,8 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "EducationalOrganization",
     "name": "Hilltop Global Group",
-    "url": "https://hilltop-platform.vercel.app",
-    "logo": "https://hilltop-platform.vercel.app/logos/logo.png",
+    "url": SITE_URL,
+    "logo": `${SITE_URL}/logos/logo.png`,
     "description": "Diaspora-led education consulting firm delivering education abroad programs, internships, and faculty development across Ghana, Rwanda, Kenya, and beyond.",
     "address": {
       "@type": "PostalAddress",

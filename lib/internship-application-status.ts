@@ -1,8 +1,11 @@
 /**
- * End of the featured Ghana & Rwanda cohort application window (static cards + banner).
- * Keep in sync with WordPress program deadlines when you change the cycle.
+ * End of the current featured cohort application window, used by the homepage banner and
+ * the internships CTA banner. Program cards themselves read their deadline from WordPress.
+ * Keep in sync with the live cycle's deadline in WordPress when you roll over to a new year.
+ *
+ * Current cycle: Ghana Summer 2027, applications close 2 April 2027.
  */
-export const FEATURED_COHORT_APPLICATION_END = new Date('2026-04-15T23:59:59');
+export const FEATURED_COHORT_APPLICATION_END = new Date('2027-04-02T23:59:59');
 
 export function isFeaturedCohortApplicationDeadlinePassed(now = Date.now()): boolean {
   return now > FEATURED_COHORT_APPLICATION_END.getTime();
