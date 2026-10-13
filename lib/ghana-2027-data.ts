@@ -129,12 +129,16 @@ export type ApplicationWindowState = 'before-open' | 'open' | 'closed';
  * While this is the placeholder, the page renders the pre-open state so it is
  * safe to deploy before the form is built.
  */
-export const GOOGLE_FORM_URL: string = 'PENDING_FORM_URL';
+export const APPLICATION_FORM_URL: string = 'https://tally.so/r/Y5El8d';
+
+/** Embeddable variant of the same Tally form. */
+export const APPLICATION_FORM_EMBED_URL: string =
+  'https://tally.so/embed/Y5El8d?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1';
 
 export const FORM_URL_PLACEHOLDER = 'PENDING_FORM_URL';
 
 export function isFormReady(): boolean {
-  return GOOGLE_FORM_URL.trim() !== '' && GOOGLE_FORM_URL !== FORM_URL_PLACEHOLDER;
+  return APPLICATION_FORM_URL.trim() !== '' && APPLICATION_FORM_URL !== FORM_URL_PLACEHOLDER;
 }
 
 export const APPLICATIONS_OPEN = new Date('2026-10-16T00:00:00');
@@ -299,7 +303,7 @@ export const timeline: TimelineStage[] = [
     stage: 'Departure',
     dates: 'Saturday, July 31, 2027',
     description:
-      'Final presentations and a farewell dinner before group transfer to the airport.',
+      'Group debrief, final presentations and a farewell dinner before group transfer to the airport.',
   },
   {
     stage: 'Post-program virtual reflection',
@@ -340,7 +344,13 @@ export const whyGhana: WhyGhanaReason[] = [
 /* Industries and placements                                          */
 /* ------------------------------------------------------------------ */
 
-export const HOST_ORGANIZATION_COUNT = '50+';
+/** Item 4: the explicit host-organization count was removed at Nanya's request. */
+export const PLACEMENT_SOURCING_NOTE =
+  'Placements are drawn from our network of vetted host organizations in Accra and matched to your academic background, career interests and each organization\u2019s capacity to supervise meaningful work.';
+
+/** Item 5: the sector list is illustrative, not exhaustive. */
+export const SECTORS_NOT_EXHAUSTIVE_NOTE =
+  'These sectors are examples, not a complete list. Placements in other fields may be possible depending on your interests and host availability.';
 
 /**
  * REVIEW: placement examples below are illustrative of the kind of work interns
@@ -502,9 +512,9 @@ export const curriculum: CurriculumComponent[] = [
       'Orientation, the company meet and greet and three remote working days front-load context, scoping and background research before travel.',
   },
   {
-    title: 'Supervision and coaching',
+    title: 'Project supervision',
     description:
-      'A host-company supervisor directs the work and a Hilltop on-ground coordinator supports progress, check-ins and problem-solving throughout.',
+      'Your host-company supervisor directs the work on your project, and a Hilltop on-ground coordinator supports progress and check-ins throughout.',
   },
   {
     title: 'Community-engaged learning',
@@ -535,7 +545,7 @@ export const culturalHighlights: CulturalHighlight[] = [
   },
   {
     title: 'Accra Arts Centre',
-    description: 'Markets and creative streets',
+    description: 'Arts, crafts and cultural heritage',
     image: '/images/Accra-Art-Centre-16.webp',
   },
   {
@@ -754,7 +764,7 @@ export const preDepartureRequirements: PreDepartureRequirement[] = [
     icon: 'flights',
     title: 'Flights',
     description:
-      'Participants book their own international flights to/from Accra (ATL/ACC).',
+      'Participants book their own international flights to and from Accra.',
   },
   {
     icon: 'insurance',
@@ -792,8 +802,6 @@ export const applicationChecklist: string[] = [
   'Emergency contact details',
 ];
 
-export const APPLICATION_GOOGLE_ACCOUNT_NOTE =
-  'You will need a Google account to upload your documents.';
 
 export const APPLICATION_PRIVACY_NOTE =
   'Your documents are received securely and used only for application review.';
@@ -816,7 +824,7 @@ export const faqs: FaqItem[] = [
   {
     question: 'Who books my flights?',
     answer:
-      'You book your own international flights to and from Accra (ATL/ACC). Flights are not included in the program fee. Plan to arrive on Saturday, July 10, 2027 and depart on Saturday, July 31, 2027. Airport pickup on arrival is included.',
+      'You book your own international flights to and from Accra. Flights are not included in the program fee. Plan to arrive on Saturday, July 10, 2027 and depart on Saturday, July 31, 2027. Airport pickup on arrival is included.',
   },
   {
     question: 'Is insurance included?',

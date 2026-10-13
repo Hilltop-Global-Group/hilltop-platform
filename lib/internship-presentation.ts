@@ -96,10 +96,25 @@ export function parseHighlights(raw?: string): string[] {
     .filter(Boolean);
 }
 
+/**
+ * Format a program date for display.
+ *
+ * ACF date fields arrive as plain calendar dates ("2027-04-02") with no timezone.
+ * `new Date('2027-04-02')` parses that as UTC midnight, so a reader west of UTC sees
+ * the previous day. A deadline of 2 April rendered as 1 April for anyone on US time.
+ * Date-only strings are therefore built from their parts, which creates a local date
+ * and formats as the same calendar day everywhere.
+ */
 export function formatProgramDate(dateString?: string): string {
   if (!dateString) return '';
   try {
-    const d = new Date(dateString);
+    const trimmed = dateString.trim();
+    const dateOnly = /^(\d{4})-(\d{2})-(\d{2})$/.exec(trimmed);
+
+    const d = dateOnly
+      ? new Date(Number(dateOnly[1]), Number(dateOnly[2]) - 1, Number(dateOnly[3]))
+      : new Date(trimmed);
+
     if (Number.isNaN(d.getTime())) return dateString;
     return d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
   } catch {

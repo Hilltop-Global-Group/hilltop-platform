@@ -5,7 +5,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import FadeIn from '@/components/FadeIn';
 import { KenteDivider, DecorativeUnderline, Eyebrow } from '@/components/shared/HilltopBrand';
-import { HOST_ORGANIZATION_COUNT, sectors } from '@/lib/ghana-2027-data';
+import {
+  PLACEMENT_SOURCING_NOTE,
+  SECTORS_NOT_EXHAUSTIVE_NOTE,
+  sectors,
+} from '@/lib/ghana-2027-data';
 
 export default function Ghana2027Industries() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -61,9 +65,7 @@ export default function Ghana2027Industries() {
             </h2>
             <KenteDivider className="mb-8" />
             <p className="font-sans text-gray-600 text-lg leading-relaxed max-w-3xl">
-              Placements are drawn from {HOST_ORGANIZATION_COUNT} vetted host organizations in Accra and
-              matched to your academic background, career interests and each organization&apos;s capacity to
-              supervise meaningful work. Select a sector to see the kind of placements it offers.
+              {PLACEMENT_SOURCING_NOTE} Select a sector to see the kind of placements it offers.
             </p>
           </div>
         </FadeIn>
@@ -102,6 +104,11 @@ export default function Ghana2027Industries() {
               );
             })}
           </div>
+
+          {/* Item 5: the sector list is illustrative, not exhaustive. */}
+          <p className="font-sans text-gray-500 text-sm leading-relaxed mb-10 max-w-3xl">
+            {SECTORS_NOT_EXHAUSTIVE_NOTE}
+          </p>
         </FadeIn>
 
         <div

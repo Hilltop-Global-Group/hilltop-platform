@@ -3,7 +3,7 @@
 import { ArrowCTA } from '@/components/shared/HilltopBrand';
 import {
   APPLICATION_ANCHOR,
-  GOOGLE_FORM_URL,
+  APPLICATION_FORM_URL,
   type ApplicationWindowState,
 } from '@/lib/ghana-2027-data';
 
@@ -76,7 +76,7 @@ export default function Ghana2027ApplyButton({
 
   return (
     <a
-      href={GOOGLE_FORM_URL}
+      href={APPLICATION_FORM_URL}
       target="_blank"
       rel="noopener noreferrer"
       className={classes}

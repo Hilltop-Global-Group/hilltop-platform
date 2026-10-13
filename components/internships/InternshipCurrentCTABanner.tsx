@@ -54,7 +54,7 @@ export default function InternshipCurrentCTABanner({ variant = 'top' }: Props) {
           Explore What&apos;s Available Right Now
         </h2>
         <p className="font-sans text-gray-500 text-base max-w-xl mx-auto mb-8">
-          Browse currently open programs in Accra and Kigali and find your placement.
+          Browse our currently open programs and find your placement.
         </p>
         <Link
           href="/internships/current"

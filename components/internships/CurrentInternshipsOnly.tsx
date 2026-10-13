@@ -5,6 +5,7 @@ import {
   program,
   sectors,
   APPLICATIONS_CLOSE,
+  APPLICATION_FORM_URL,
 } from '@/lib/ghana-2027-data';
 
 async function fetchCurrentInternships(): Promise<WpInternship[]> {
@@ -43,7 +44,7 @@ function previewPlaceholder(): WpInternship {
       duration: '3 weeks in-country',
       application_deadline: deadlineIso,
       application_status: 'open',
-      application_url: '',
+      application_url: APPLICATION_FORM_URL,
       overview_text: program.overview,
       highlights: sectors.map((s) => s.name).join('\n'),
     },

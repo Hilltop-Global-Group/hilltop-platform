@@ -9,7 +9,7 @@ import {
   APPLICATIONS_CLOSE,
   APPLICATIONS_OPEN_LABEL,
   APPLICATIONS_CLOSE_LABEL,
-  GOOGLE_FORM_URL,
+  APPLICATION_FORM_URL,
   isFormReady,
   program,
 } from '@/lib/ghana-2027-data';
@@ -183,7 +183,7 @@ export default function ApplicationPopup() {
             </Link>
             {showApply && (
               <a
-                href={GOOGLE_FORM_URL}
+                href={APPLICATION_FORM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={dismiss}

@@ -51,7 +51,7 @@ export default function RiskManagementCTA({ variant = 'banner' }: Props) {
                 Safety and Risk Management
               </h3>
               <p className="font-sans text-gray-500 text-sm leading-relaxed max-w-lg">
-                Hilltop maintains a comprehensive risk management infrastructure aligned with the Forum on Education Abroad (FEA) Standards and ISO 31030. Local teams, trusted partners, and continuous in-country monitoring stand behind every program.
+                Hilltop maintains a comprehensive risk management infrastructure aligned with the Forum on Education Abroad Standards and ISO 31030. Local teams, trusted partners, and continuous in-country monitoring stand behind every program.
               </p>
             </div>
           </div>

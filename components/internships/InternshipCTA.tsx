@@ -48,7 +48,7 @@ export default function InternshipCTA() {
             viewport={{ once: true }}
             transition={{ duration: 0.55, delay: 0.2 }}
           >
-            Current programs in Accra and Kigali, structured around real assignments, on-site mentorship, and cultural immersion. Find the placement that matches where your career is heading.
+            Our open programs are built around real assignments, on-site mentorship, and cultural immersion. Find the placement that matches where your career is heading.
           </motion.p>
 
           <motion.p

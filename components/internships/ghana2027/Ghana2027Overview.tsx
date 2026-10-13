@@ -5,9 +5,10 @@ import { KenteDivider, DecorativeUnderline, Eyebrow } from '@/components/shared/
 import { eligibility, program } from '@/lib/ghana-2027-data';
 
 const photos = [
-  { src: '/images/business.webp', caption: 'Accra skyline and business districts' },
+  // Item 12: these must not repeat any image used in Cultural Highlights.
+  { src: '/images/intern.JPG', caption: 'Interns with their host organizations' },
   { src: '/images/innovation-center.jpg', caption: 'Innovation and enterprise hubs' },
-  { src: '/images/Accra-Art-Centre-16.webp', caption: 'Markets and creative streets' },
+  { src: '/images/cultural-procession.jpg', caption: 'Cultural immersion in Accra' },
 ];
 
 export default function Ghana2027Overview() {
@@ -61,10 +62,10 @@ export default function Ghana2027Overview() {
               {program.overview}
             </p>
             <p className="font-sans text-gray-600 text-base leading-relaxed">
-              Placements span fintech and technology, agribusiness, healthcare, creative industries and
-              social enterprise. Four days a week are spent on site with your host company. Friday
-              afternoons are given to a community service project, and weekends to guided cultural
-              excursions and community engagement.
+              Placements include fintech and technology, agribusiness, healthcare, creative industries
+              and social enterprise. Monday to Thursday and Friday mornings are spent on site with your
+              host company. Friday afternoons are given to a community service project, and weekends to
+              guided cultural excursions and community engagement.
             </p>
           </div>
         </FadeIn>

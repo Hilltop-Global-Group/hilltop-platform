@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Script from 'next/script';
 import { Check, Clock } from 'lucide-react';
 import FadeIn from '@/components/FadeIn';
 import {
@@ -13,8 +14,9 @@ import {
   APPLICATIONS_CLOSE_LABEL,
   APPLICATIONS_OPEN_LABEL,
   APPLICATION_ANCHOR,
-  APPLICATION_GOOGLE_ACCOUNT_NOTE,
   APPLICATION_INTRO,
+  APPLICATION_FORM_EMBED_URL,
+  APPLICATION_FORM_URL,
   APPLICATION_PRIVACY_NOTE,
   applicationChecklist,
   type ApplicationWindowState,
@@ -120,16 +122,34 @@ export default function Ghana2027Application({ state, daysRemaining }: Props) {
               </div>
             </FadeIn>
 
-            <FadeIn delay={0.25}>
-              <div
-                className="border-l-4 p-6 mb-10"
-                style={{ borderColor: '#F4A261', backgroundColor: '#FFF8F1' }}
-              >
-                <p className="font-sans text-gray-700 text-sm leading-relaxed">
-                  {APPLICATION_GOOGLE_ACCOUNT_NOTE}
-                </p>
-              </div>
-            </FadeIn>
+            {isOpen && (
+              <FadeIn delay={0.25}>
+                <div className="border border-gray-100 bg-white p-4 sm:p-6 mb-10">
+                  <iframe
+                    data-tally-src={APPLICATION_FORM_EMBED_URL}
+                    loading="lazy"
+                    width="100%"
+                    height={1100}
+                    title="Ghana 2027 Internship Program application form"
+                    className="w-full border-0"
+                  />
+                  <Script src="https://tally.so/widgets/embed.js" strategy="lazyOnload" />
+                  <p className="font-sans text-gray-500 text-xs mt-4 text-center">
+                    Having trouble with the form?{' '}
+                    <a
+                      href={APPLICATION_FORM_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-semibold underline"
+                      style={{ color: '#1D3160' }}
+                    >
+                      Open it in a new tab
+                    </a>
+                    .
+                  </p>
+                </div>
+              </FadeIn>
+            )}
 
             <FadeIn delay={0.3}>
               <div className="text-center">
@@ -139,13 +159,15 @@ export default function Ghana2027Application({ state, daysRemaining }: Props) {
                   </p>
                 )}
 
-                <Ghana2027ApplyButton
-                  state={state}
-                  mode="form"
-                  variant="primary"
-                  size="xl"
-                  className="w-full sm:w-auto"
-                />
+                {!isOpen && (
+                  <Ghana2027ApplyButton
+                    state={state}
+                    mode="form"
+                    variant="primary"
+                    size="xl"
+                    className="w-full sm:w-auto"
+                  />
+                )}
 
                 {!isOpen && (
                   <p className="font-sans text-gray-600 text-sm mt-6">
