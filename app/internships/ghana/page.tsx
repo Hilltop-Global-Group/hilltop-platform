@@ -22,6 +22,7 @@ import RiskManagementCTA from '@/components/shared/RiskManagementCTA';
 import {
   APPLICATIONS_CLOSE,
   APPLICATIONS_OPEN,
+  APPLICATIONS_OPEN_LABEL,
   daysUntilApplicationsClose,
   getApplicationWindowState,
   program,
@@ -73,7 +74,15 @@ export const metadata: Metadata = {
 };
 
 export default function GhanaInternshipPage() {
-  const state = getApplicationWindowState();
+  /**
+   * PREVIEW ONLY. Branch deployments render the page in its "applications open" state
+   * so the form and live copy can be reviewed before 16 October. Vercel sets VERCEL_ENV
+   * to 'production' on the live site, so production always uses the real date gate.
+   * REMOVE the override (not the rest) once applications are open.
+   */
+  const isPreviewDeployment = process.env.VERCEL_ENV === 'preview';
+  const realState = getApplicationWindowState();
+  const state = isPreviewDeployment && realState === 'before-open' ? 'open' : realState;
   const daysRemaining = daysUntilApplicationsClose();
 
   const jsonLd = {
@@ -124,6 +133,15 @@ export default function GhanaInternshipPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
+      {isPreviewDeployment && realState !== state && (
+        <div
+          className="px-6 py-3 text-center font-sans text-sm"
+          style={{ backgroundColor: '#F4A261', color: '#1D3160' }}
+        >
+          <strong>Preview only.</strong> This page is shown as it will appear once applications
+          open on {APPLICATIONS_OPEN_LABEL}. The live site still shows the pre-open state.
+        </div>
+      )}
       <Ghana2027Hero state={state} />
       <Ghana2027Overview />
       <Ghana2027Format />
