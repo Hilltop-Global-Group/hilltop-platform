@@ -125,15 +125,30 @@ export default function Ghana2027Application({ state, daysRemaining }: Props) {
             {isOpen && (
               <FadeIn delay={0.25}>
                 <div className="border border-gray-100 bg-white p-4 sm:p-6 mb-10">
+                  {/*
+                    src is set directly rather than via data-tally-src, so the form renders
+                    even if Tally's embed script is blocked or slow. The script is still
+                    loaded afterwards purely to resize the iframe as the user moves through
+                    the form's pages.
+                  */}
                   <iframe
+                    src={APPLICATION_FORM_EMBED_URL}
                     data-tally-src={APPLICATION_FORM_EMBED_URL}
                     loading="lazy"
                     width="100%"
                     height={1100}
                     title="Ghana 2027 Internship Program application form"
                     className="w-full border-0"
+                    style={{ minHeight: 1100 }}
                   />
-                  <Script src="https://tally.so/widgets/embed.js" strategy="lazyOnload" />
+                  <Script
+                    src="https://tally.so/widgets/embed.js"
+                    strategy="afterInteractive"
+                    onLoad={() => {
+                      const w = window as unknown as { Tally?: { loadEmbeds: () => void } };
+                      w.Tally?.loadEmbeds();
+                    }}
+                  />
                   <p className="font-sans text-gray-500 text-xs mt-4 text-center">
                     Having trouble with the form?{' '}
                     <a
