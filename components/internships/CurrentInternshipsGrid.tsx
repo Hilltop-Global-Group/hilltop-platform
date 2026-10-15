@@ -14,7 +14,13 @@ import {
 } from '@/lib/internship-presentation';
 import { isWordPressInternshipApplicationsOpen } from '@/lib/internship-application-status';
 
-function wpToCardData(internship: WpInternship): InternshipCardData {
+/**
+ * `opensAt` lets a program be listed before applications open, so visitors can read about
+ * an upcoming cycle instead of seeing an empty page. When it is in the future the card
+ * shows an "Applications Open Soon" state and no Apply button. Once the date passes the
+ * card becomes fully open on its own, with no code change or manual step.
+ */
+function wpToCardData(internship: WpInternship, opensAt?: Date): InternshipCardData {
   const acf = internship.acf || {};
   const meta = internship.meta || {};
   const country = acf.country || '';
@@ -39,7 +45,19 @@ function wpToCardData(internship: WpInternship): InternshipCardData {
     href: presentation.href ?? `/internships/${internship.slug}`,
     image: cardImage(featuredImage, country),
     accent: presentation.accent,
-    status: isWordPressInternshipApplicationsOpen(internship) ? 'open' : 'closed',
+    status: !isWordPressInternshipApplicationsOpen(internship)
+      ? 'closed'
+      : opensAt && Date.now() < opensAt.getTime()
+        ? 'upcoming'
+        : 'open',
+    opensAtLabel: opensAt
+      ? opensAt.toLocaleDateString('en-US', {
+          weekday: 'long',
+          month: 'long',
+          day: 'numeric',
+          year: 'numeric',
+        })
+      : undefined,
     duration: acf.duration || meta._internship_duration || '',
     deadline: formatProgramDate(acf.application_deadline || meta._internship_application_deadline),
     description,
@@ -49,7 +67,14 @@ function wpToCardData(internship: WpInternship): InternshipCardData {
 }
 
 
-export default function CurrentInternshipsGrid({ internships }: { internships: WpInternship[] }) {
+export default function CurrentInternshipsGrid({
+  internships,
+  opensAt,
+}: {
+  internships: WpInternship[];
+  /** Applied to every listed program. One featured cycle at a time, so this is sufficient. */
+  opensAt?: Date;
+}) {
   return (
     <section className="py-20 sm:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
@@ -82,7 +107,7 @@ export default function CurrentInternshipsGrid({ internships }: { internships: W
         {internships.length > 0 ? (
           <div className="grid lg:grid-cols-2 gap-8">
             {internships.map((internship: WpInternship, i: number) => (
-              <InternshipCard key={internship.id} data={wpToCardData(internship)} index={i} />
+              <InternshipCard key={internship.id} data={wpToCardData(internship, opensAt)} index={i} />
             ))}
           </div>
         ) : (

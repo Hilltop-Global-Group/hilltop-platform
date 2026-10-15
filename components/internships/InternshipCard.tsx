@@ -17,7 +17,9 @@ export interface InternshipCardData {
   /** Already resolved by cardImage(), so this is never empty. */
   image: string;
   accent: string;
-  status: 'open' | 'closed';
+  status: 'open' | 'closed' | 'upcoming';
+  /** Shown on an upcoming program, e.g. "Friday, October 16, 2026". */
+  opensAtLabel?: string;
   /** Overrides the default badge text. */
   badgeLabel?: string;
   duration?: string;
@@ -44,8 +46,11 @@ export default function InternshipCard({
   index?: number;
 }) {
   const isOpen = data.status === 'open';
-  const badge = data.badgeLabel ?? (isOpen ? 'Applications Open' : 'Applications Closed');
-  const badgeColor = isOpen ? '#10B981' : '#6B7280';
+  const isUpcoming = data.status === 'upcoming';
+  const badge =
+    data.badgeLabel ??
+    (isOpen ? 'Applications Open' : isUpcoming ? 'Applications Open Soon' : 'Applications Closed');
+  const badgeColor = isOpen ? '#10B981' : isUpcoming ? '#F4A261' : '#6B7280';
   const eyebrow = data.eyebrow ?? data.city;
   const location =
     data.city && data.country ? `${data.city}, ${data.country}` : data.city || data.country || '';
@@ -175,6 +180,13 @@ export default function InternshipCard({
           >
             Apply Now
           </a>
+        ) : isUpcoming ? (
+          <p
+            className="text-center py-3 font-sans font-semibold text-sm uppercase tracking-[0.15em] border"
+            style={{ color: data.accent, borderColor: `${data.accent}40`, backgroundColor: `${data.accent}08` }}
+          >
+            {data.opensAtLabel ? `Applications open ${data.opensAtLabel}` : 'Applications open soon'}
+          </p>
         ) : (
           <p className="text-center py-3 font-sans font-semibold text-sm uppercase tracking-[0.15em] text-gray-400 border border-gray-200">
             {isOpen ? 'Applications open soon' : data.closedLabel ?? 'Applications closed'}

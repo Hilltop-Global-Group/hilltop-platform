@@ -12,7 +12,6 @@ import {
 } from '@/components/shared/HilltopBrand';
 import {
   APPLICATIONS_CLOSE_LABEL,
-  APPLICATIONS_OPEN_LABEL,
   APPLICATION_ANCHOR,
   APPLICATION_INTRO,
   APPLICATION_FORM_EMBED_URL,
@@ -22,6 +21,7 @@ import {
   type ApplicationWindowState,
 } from '@/lib/ghana-2027-data';
 import Ghana2027ApplyButton from './Ghana2027ApplyButton';
+import Ghana2027OpensCountdown from './Ghana2027OpensCountdown';
 
 interface Props {
   state: ApplicationWindowState;
@@ -80,6 +80,12 @@ export default function Ghana2027Application({ state, daysRemaining }: Props) {
                 {APPLICATION_INTRO}
               </p>
             </FadeIn>
+
+            {!isOpen && (
+              <FadeIn delay={0.12}>
+                <Ghana2027OpensCountdown />
+              </FadeIn>
+            )}
 
             <FadeIn delay={0.15}>
               <div className="border border-gray-100 bg-white p-8 text-center mb-10">
@@ -168,11 +174,6 @@ export default function Ghana2027Application({ state, daysRemaining }: Props) {
 
             <FadeIn delay={0.3}>
               <div className="text-center">
-                {!isOpen && (
-                  <p className="font-serif font-extrabold text-xl mb-6" style={{ color: '#1D3160' }}>
-                    Applications open {APPLICATIONS_OPEN_LABEL}
-                  </p>
-                )}
 
                 {!isOpen && (
                   <Ghana2027ApplyButton
