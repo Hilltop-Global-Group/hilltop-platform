@@ -34,7 +34,7 @@ const OG_IMAGE = `${SITE_URL}/images/ghana-hero.webp`;
 
 const TITLE = '2027 Ghana Internship Program | Accra | Hilltop Global Group';
 const DESCRIPTION =
-  'A three-week internship in Accra, Ghana, with a three-day virtual component. Social Innovation and Entrepreneurial Leadership in Africa. July 10 to 31, 2027. Open to undergraduate students and above from anywhere.';
+  'A three-week internship in Accra, Ghana, with a three-day virtual component. Social Innovation and Entrepreneurial Leadership in Africa. July 10 to 31, 2027. Open to undergraduate students and above from US universities.';
 
 export const metadata: Metadata = {
   title: TITLE,

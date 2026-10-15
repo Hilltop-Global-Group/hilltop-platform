@@ -61,7 +61,7 @@ export default function Ghana2027Overview() {
             <p className="font-sans text-gray-700 text-lg leading-relaxed mb-6">
               {program.overview}
             </p>
-            <p className="font-sans text-gray-600 text-base leading-relaxed">
+            <p className="font-sans text-gray-700 text-lg leading-relaxed">
               Placements include fintech and technology, agribusiness, healthcare, creative industries
               and social enterprise. Monday to Thursday and Friday mornings are spent on site with your
               host company. Friday afternoons are given to a community service project, and weekends to

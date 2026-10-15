@@ -20,7 +20,11 @@ import { isWordPressInternshipApplicationsOpen } from '@/lib/internship-applicat
  * shows an "Applications Open Soon" state and no Apply button. Once the date passes the
  * card becomes fully open on its own, with no code change or manual step.
  */
-function wpToCardData(internship: WpInternship, opensAt?: Date): InternshipCardData {
+function wpToCardData(
+  internship: WpInternship,
+  opensAt?: Date,
+  opensAtLabel?: string
+): InternshipCardData {
   const acf = internship.acf || {};
   const meta = internship.meta || {};
   const country = acf.country || '';
@@ -50,14 +54,9 @@ function wpToCardData(internship: WpInternship, opensAt?: Date): InternshipCardD
       : opensAt && Date.now() < opensAt.getTime()
         ? 'upcoming'
         : 'open',
-    opensAtLabel: opensAt
-      ? opensAt.toLocaleDateString('en-US', {
-          weekday: 'long',
-          month: 'long',
-          day: 'numeric',
-          year: 'numeric',
-        })
-      : undefined,
+    // A fixed label, not a formatted Date. Formatting here renders the previous day for
+    // anyone in a timezone behind the one the date was created in.
+    opensAtLabel,
     duration: acf.duration || meta._internship_duration || '',
     deadline: formatProgramDate(acf.application_deadline || meta._internship_application_deadline),
     description,
@@ -70,10 +69,13 @@ function wpToCardData(internship: WpInternship, opensAt?: Date): InternshipCardD
 export default function CurrentInternshipsGrid({
   internships,
   opensAt,
+  opensAtLabel,
 }: {
   internships: WpInternship[];
   /** Applied to every listed program. One featured cycle at a time, so this is sufficient. */
   opensAt?: Date;
+  /** Shown verbatim, e.g. "Friday, October 16, 2026". */
+  opensAtLabel?: string;
 }) {
   return (
     <section className="py-20 sm:py-28 bg-white">
@@ -107,7 +109,7 @@ export default function CurrentInternshipsGrid({
         {internships.length > 0 ? (
           <div className="grid lg:grid-cols-2 gap-8">
             {internships.map((internship: WpInternship, i: number) => (
-              <InternshipCard key={internship.id} data={wpToCardData(internship, opensAt)} index={i} />
+              <InternshipCard key={internship.id} data={wpToCardData(internship, opensAt, opensAtLabel)} index={i} />
             ))}
           </div>
         ) : (

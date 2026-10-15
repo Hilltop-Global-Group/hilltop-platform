@@ -1,7 +1,7 @@
 import CurrentInternshipsGrid from './CurrentInternshipsGrid';
 import { isWordPressInternshipApplicationsOpen } from '@/lib/internship-application-status';
 import type { WpInternship } from '@/lib/internship-presentation';
-import { APPLICATIONS_OPEN } from '@/lib/ghana-2027-data';
+import { APPLICATIONS_OPEN, APPLICATIONS_OPEN_LABEL } from '@/lib/ghana-2027-data';
 
 async function fetchCurrentInternships(): Promise<WpInternship[]> {
   try {
@@ -23,5 +23,11 @@ export default async function CurrentInternshipsOnly() {
 
   // Programs are listed as soon as they are published. Before the opening date the card
   // shows "Applications Open Soon"; afterwards it switches to Apply Now by itself.
-  return <CurrentInternshipsGrid internships={current} opensAt={APPLICATIONS_OPEN} />;
+  return (
+    <CurrentInternshipsGrid
+      internships={current}
+      opensAt={APPLICATIONS_OPEN}
+      opensAtLabel={APPLICATIONS_OPEN_LABEL}
+    />
+  );
 }

@@ -141,8 +141,17 @@ export function isFormReady(): boolean {
   return APPLICATION_FORM_URL.trim() !== '' && APPLICATION_FORM_URL !== FORM_URL_PLACEHOLDER;
 }
 
-export const APPLICATIONS_OPEN = new Date('2026-10-16T00:00:00');
-export const APPLICATIONS_CLOSE = new Date('2027-04-02T23:59:59');
+/**
+ * Anchored to US Eastern, where the program is administered, so the moment applications
+ * open and close is the same for every visitor rather than depending on where they are.
+ *
+ * The offset is explicit on purpose. A bare '2026-10-16T00:00:00' is parsed in whatever
+ * timezone the code happens to run in, which previously made the opening date render as
+ * 15 October for anyone west of UTC. Dates shown on the page always come from the
+ * _LABEL constants below, never from formatting these values.
+ */
+export const APPLICATIONS_OPEN = new Date('2026-10-16T00:00:00-04:00');
+export const APPLICATIONS_CLOSE = new Date('2027-04-02T23:59:59-04:00');
 
 /** Display strings for the two gate boundaries. */
 export const APPLICATIONS_OPEN_LABEL = 'Friday, October 16, 2026';
@@ -198,7 +207,7 @@ export const eligibility: EligibilityItem[] = [
   },
   {
     label: 'Where you study',
-    detail: 'Open to students from anywhere. No partner-university affiliation is required.',
+    detail: 'Open to students from US universities. No partner-university affiliation is required.',
   },
 ];
 
@@ -288,7 +297,7 @@ export const timeline: TimelineStage[] = [
       'Three remote working days. You scope your deliverable with your supervisor, complete the preparatory curriculum and begin background research before you fly.',
   },
   {
-    stage: 'Travel to Accra',
+    stage: 'Arrive in Accra',
     dates: 'Saturday, July 10, 2027',
     description:
       'Arrival in Accra with airport pickup, accommodation check-in and a group welcome dinner.',
@@ -300,10 +309,14 @@ export const timeline: TimelineStage[] = [
       'Three weeks on site with your host organization, with weekly community-engaged learning, guided cultural immersion and regular coordinator check-ins.',
   },
   {
+    stage: 'Closing ceremony',
+    dates: 'Friday, July 30, 2027',
+    description: 'Final presentations, closing ceremony and farewell dinner.',
+  },
+  {
     stage: 'Departure',
     dates: 'Saturday, July 31, 2027',
-    description:
-      'Group debrief, final presentations and a farewell dinner before group transfer to the airport.',
+    description: 'Check-out and group transfer to the airport.',
   },
   {
     stage: 'Post-program virtual reflection',
@@ -615,7 +628,7 @@ export const notIncluded: string[] = [
 
 export const accommodation = {
   image: '/images/accom.JPG',
-  captionTitle: 'Safe, comfortable accommodation.',
+  captionTitle: 'Safe, comfortable accommodation',
   captionSubtitle: 'Pre-vetted hotels near placement sites',
   paragraphs: [
     'Interns stay at Hilltop-vetted partner hotels, selected for safety, comfort, and proximity to placement sites. Rooms are same-sex, twin-share by default, with daily breakfast included.',
@@ -635,19 +648,17 @@ export const COST_NOTES: string[] = [
 export const paymentTerms: PaymentTerm[] = [
   {
     label: '$500 deposit on acceptance',
-    detail: 'The deposit secures your place and is credited against the total fee.',
+    detail:
+      'The deposit secures your place and is credited against the total fee. Instructions to pay your deposit will be sent to you by email.',
   },
   {
-    label: 'Balance due 45 days before the program start',
-    detail: 'The remaining balance must be paid in full no later than 45 days before the program starts.',
+    label: 'Balance due Wednesday, May 26, 2027',
+    detail:
+      'The remaining balance must be paid in full no later than 45 days before the program start date of Saturday, July 10, 2027.',
   },
   {
     label: 'Flexible installment plans',
     detail: 'Payments can be spread across installments between acceptance and the balance due date.',
-  },
-  {
-    label: 'Late acceptances',
-    detail: 'Participants accepted within 45 days of the start date pay the full fee on acceptance.',
   },
   {
     label: 'All payments completed before arrival',
@@ -657,16 +668,16 @@ export const paymentTerms: PaymentTerm[] = [
 
 export const cancellationTiers: CancellationTier[] = [
   {
-    window: 'More than 90 days before the program start',
+    window: 'On or before Sunday, April 11, 2027',
     outcome:
       'A $250 processing fee is retained and all other payments are refunded.',
   },
   {
-    window: '45 to 90 days before the program start',
-    outcome: '50% of the program fee is retained.',
+    window: 'April 12 to May 26, 2027',
+    outcome: '50% of the program fee ($2,250) is retained.',
   },
   {
-    window: 'Within 45 days of the program start',
+    window: 'From May 27, 2027',
     outcome: 'No refund is available.',
   },
 ];
@@ -712,7 +723,7 @@ export const funders: Funder[] = [
   {
     name: 'Fund for Education Abroad (FEA)',
     description:
-      'For U.S. undergraduates with financial need who are abroad for at least 14 days, earning academic credit, and have not studied abroad before. Applications for summer 2027 open in fall 2026.',
+      'For U.S. undergraduates with financial need who are abroad for at least 14 days, earning academic credit, and have not studied abroad before. Applications for summer 2027 open in fall 2026. Applications open in November 2026 and are due in early February 2027.',
     url: 'https://www.fundforeducationabroad.org',
   },
   {
@@ -735,7 +746,7 @@ export const funders: Funder[] = [
 ];
 
 export const FUNDING_INSTALLMENTS_NOTE =
-  'Paying in installments: Hilltop offers a payment plan. A $500 deposit secures your place on acceptance, and the balance can be paid in installments, with the final payment due 45 days before the program starts.';
+  'Paying in installments: Hilltop offers a payment plan. A $500 deposit secures your place on acceptance, and the balance can be paid in installments, with the final payment due by Wednesday, May 26, 2027.';
 
 /* ------------------------------------------------------------------ */
 /* Pre-departure requirements                                         */
@@ -837,12 +848,12 @@ export const faqs: FaqItem[] = [
   {
     question: 'What does the program cost and how do I pay?',
     answer:
-      'The fee is $4,500 per participant. A $500 deposit secures your place on acceptance and counts toward the total. The balance is due in full no later than 45 days before the program starts, and you can spread payments across installments in between. If you are accepted within 45 days of the start date, full payment is required on acceptance.',
+      'The fee is $4,500 per participant. A $500 deposit secures your place on acceptance and counts toward the total. Instructions to pay your deposit will be sent to you by email. The balance is due in full by Wednesday, May 26, 2027, and you can spread payments across installments in between.',
   },
   {
     question: 'Who is eligible to apply?',
     answer:
-      'You must be 18 or older and at undergraduate level or above. The program is open to students from anywhere, and no partner-university affiliation is required.',
+      'You must be 18 or older and at undergraduate level or above. The program is open to students from US universities, and no partner-university affiliation is required.',
   },
   {
     question: 'Can I earn academic credit?',
@@ -852,7 +863,7 @@ export const faqs: FaqItem[] = [
   {
     question: 'What happens if I need to cancel?',
     answer:
-      'Cancellations more than 90 days before the start date are refunded in full apart from a $250 processing fee. Between 45 and 90 days, 50% of the fee is retained. Within 45 days, no refund is available. All cancellations must be submitted in writing, and certain suppliers may have different terms that are charged accordingly.',
+      'Cancellations on or before April 11, 2027 are refunded in full apart from a $250 processing fee. From April 12 to May 26, 2027, 50% of the fee ($2,250) is retained. From May 27, 2027, no refund is available. All cancellations must be submitted in writing, and certain suppliers may have different terms that are charged accordingly.',
   },
   {
     question: 'Where will I stay?',
