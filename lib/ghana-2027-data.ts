@@ -794,17 +794,20 @@ export const APPLICATION_ANCHOR = 'apply';
 export const APPLICATION_INTRO =
   'Applications are reviewed on a rolling basis and applicants are notified within four weeks. Places are limited, so applying early is strongly advised.';
 
+/**
+ * Mirrors exactly what the application form asks for. The CV is the only file upload,
+ * so nothing else should be listed here as a document to prepare.
+ */
 export const applicationChecklist: string[] = [
-  'CV or resume',
-  'Unofficial transcript (optional)',
-  'Headshot (optional)',
-  'Passport bio page (optional)',
-  'Emergency contact details',
+  'Your CV or resume, as a PDF, Word document or image, up to 10MB',
+  'Your current school, level of study and field of study',
+  'Emergency contact details: name, relationship to you, phone and email',
+  'Written answers to a few short questions, including a 250 to 300 word outline of the internship project you would design',
 ];
 
 
 export const APPLICATION_PRIVACY_NOTE =
-  'Your documents are received securely and used only for application review.';
+  'Your CV and application details are received securely and used only for application review.';
 
 /* ------------------------------------------------------------------ */
 /* FAQ                                                                */
