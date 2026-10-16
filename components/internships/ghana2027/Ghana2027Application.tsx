@@ -21,6 +21,7 @@ import {
   type ApplicationWindowState,
 } from '@/lib/ghana-2027-data';
 import Ghana2027ApplyButton from './Ghana2027ApplyButton';
+import { useApplicationWindow } from './useApplicationWindow';
 import Ghana2027OpensCountdown from './Ghana2027OpensCountdown';
 
 interface Props {
@@ -28,7 +29,9 @@ interface Props {
   daysRemaining: number;
 }
 
-export default function Ghana2027Application({ state, daysRemaining }: Props) {
+export default function Ghana2027Application({ state: serverState, daysRemaining: serverDays }: Props) {
+  const { state, daysRemaining: liveDays } = useApplicationWindow(serverState);
+  const daysRemaining = liveDays ?? serverDays;
   const isOpen = state === 'open';
   const isClosed = state === 'closed';
 

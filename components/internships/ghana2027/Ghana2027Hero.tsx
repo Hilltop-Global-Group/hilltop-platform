@@ -12,12 +12,14 @@ import {
   type ApplicationWindowState,
 } from '@/lib/ghana-2027-data';
 import Ghana2027ApplyButton from './Ghana2027ApplyButton';
+import { useApplicationWindow } from './useApplicationWindow';
 
 interface Props {
   state: ApplicationWindowState;
 }
 
-export default function Ghana2027Hero({ state }: Props) {
+export default function Ghana2027Hero({ state: serverState }: Props) {
+  const { state } = useApplicationWindow(serverState);
   return (
     <section className="relative pt-32 pb-20 overflow-hidden" style={{ backgroundColor: '#080f1c' }}>
       <div className="absolute inset-0">

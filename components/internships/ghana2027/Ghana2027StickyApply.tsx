@@ -10,6 +10,7 @@ import {
   type ApplicationWindowState,
 } from '@/lib/ghana-2027-data';
 import Ghana2027ApplyButton from './Ghana2027ApplyButton';
+import { useApplicationWindow } from './useApplicationWindow';
 
 interface Props {
   state: ApplicationWindowState;
@@ -18,7 +19,9 @@ interface Props {
 
 const SHOW_AFTER_PX = 700;
 
-export default function Ghana2027StickyApply({ state, daysRemaining }: Props) {
+export default function Ghana2027StickyApply({ state: serverState, daysRemaining: serverDays }: Props) {
+  const { state, daysRemaining: liveDays } = useApplicationWindow(serverState);
+  const daysRemaining = liveDays ?? serverDays;
   const [scrolledPast, setScrolledPast] = useState(false);
   const [applySectionVisible, setApplySectionVisible] = useState(false);
   const shouldReduce = useReducedMotion();

@@ -11,12 +11,14 @@ import {
   type ApplicationWindowState,
 } from '@/lib/ghana-2027-data';
 import Ghana2027ApplyButton from './Ghana2027ApplyButton';
+import { useApplicationWindow } from './useApplicationWindow';
 
 interface Props {
   state: ApplicationWindowState;
 }
 
-export default function Ghana2027Funding({ state }: Props) {
+export default function Ghana2027Funding({ state: serverState }: Props) {
+  const { state } = useApplicationWindow(serverState);
   return (
     <section id="funding" className="py-20 sm:py-28 bg-gray-50/60">
       <div className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-12">

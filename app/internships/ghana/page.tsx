@@ -36,6 +36,13 @@ const TITLE = '2027 Ghana Internship Program | Accra | Hilltop Global Group';
 const DESCRIPTION =
   'A three-week internship in Accra, Ghana, with a three-day virtual component. Social Innovation and Entrepreneurial Leadership in Africa. July 10 to 31, 2027. Open to undergraduate students and above from US universities.';
 
+/**
+ * The application window is date-gated, so this page must not be frozen as build-time
+ * HTML. Client components resolve the window themselves, and this keeps the server-rendered
+ * parts (metadata, structured data) fresh as well.
+ */
+export const revalidate = 1800;
+
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
