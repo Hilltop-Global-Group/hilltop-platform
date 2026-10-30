@@ -41,6 +41,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     ...destinationPages,
     {
+      url: `${baseUrl}/tvet`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/education/spring-programs`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/programs/black-british-experience`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/internships`,
       lastModified: new Date(),
       changeFrequency: 'weekly',

@@ -41,4 +41,21 @@ export const teamMembers: TeamMember[] = [
     linkedin: 'https://www.linkedin.com/in/nkem-osamor-22572a226',
     bio: 'Supports program design and delivery, working with partners and participants to keep Hilltop engagements organized and on track.',
   },
+  // Roles and bios as supplied by Phil, 30 October 2026. Both portraits are
+  // cropped from the same team photograph taken in Accra, so they sit together
+  // on the grid without looking mismatched.
+  {
+    name: 'Emelia Dabire',
+    role: 'Senior Education Abroad Facilitator',
+    category: 'staff',
+    image: '/images/emelia-profile.jpg',
+    bio: 'Facilitates education abroad programs across Ghana, from planning through delivery, keeping participants safe and the learning meaningful.',
+  },
+  {
+    name: 'Rabania Alfani',
+    role: 'Project Coordinator',
+    category: 'staff',
+    image: '/images/rabania-profile.jpg',
+    bio: 'Coordinates travel, accommodation, and on-the-ground guest hospitality so every visit to Ghana feels seamless and personal.',
+  },
 ];

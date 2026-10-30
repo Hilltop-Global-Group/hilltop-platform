@@ -24,6 +24,8 @@ const config: Config = {
         heading: ["var(--font-barlow-condensed)", "sans-serif"],
         display: ["var(--font-barlow-condensed)", "sans-serif"],
         body:    ["var(--font-inter)", "sans-serif"],
+        // Display serif for the Black British Experience program page only.
+        bbe:     ["var(--font-dm-serif)", "Georgia", "serif"],
       },
     },
   },

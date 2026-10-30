@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Barlow_Condensed, Inter } from "next/font/google";
+import { Barlow_Condensed, DM_Serif_Display, Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -18,6 +18,18 @@ const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
+  display: "swap",
+});
+
+/**
+ * Display serif, used only by the Black British Experience program page via the
+ * `font-bbe` utility. The rest of the site keeps Barlow Condensed for headings,
+ * so adding this changes nothing anywhere else: it only loads where it is used.
+ */
+const dmSerifDisplay = DM_Serif_Display({
+  variable: "--font-dm-serif",
+  subsets: ["latin"],
+  weight: ["400"],
   display: "swap",
 });
 
@@ -76,7 +88,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${barlowCondensed.variable} ${inter.variable} font-sans antialiased`}
+        className={`${barlowCondensed.variable} ${inter.variable} ${dmSerifDisplay.variable} font-sans antialiased`}
       >
         <Navbar />
         {children}

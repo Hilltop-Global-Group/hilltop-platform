@@ -31,10 +31,15 @@ const navItems: NavItem[] = [
     children: [
       { name: 'Education Abroad', href: '/education', description: 'Faculty-led programs and university partnerships across Africa' },
       { name: 'Focal Destinations', href: '/education/destinations', description: 'Where we operate across the African continent' },
-      { name: 'Technical & Vocational Education', href: '/education/tvet', description: 'Building workforce capacity through TVET partnerships' },
+      { name: 'Spring Programs', href: '/education/spring-programs', description: 'Short programs over the spring break window' },
       { name: 'Partners & Universities', href: '/testimonials/partners', description: 'What our institutional partners say' },
       { name: 'Student Stories', href: '/testimonials', description: 'What students say about their Hilltop experience' },
     ],
+  },
+  {
+    // Promoted out of the Education dropdown to its own top level tab.
+    name: 'TVET',
+    href: '/tvet',
   },
   {
     name: 'Internships',
