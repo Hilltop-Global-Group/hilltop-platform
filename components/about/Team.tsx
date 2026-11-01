@@ -80,7 +80,7 @@ export default function Team() {
                     className="self-start font-sans text-[10px] font-bold uppercase tracking-[0.2em] px-3 py-1.5 mb-5"
                     style={{ backgroundColor: '#F4A261', color: '#080f1c' }}
                   >
-                    {member.category === 'leadership' ? 'Leadership' : 'Staff'}
+                    {member.category === 'leadership' ? 'Leadership' : 'Builders'}
                   </span>
                   <p className="text-sm font-bold mb-2 uppercase tracking-wide" style={{ color: '#F4A261' }}>
                     {member.role}

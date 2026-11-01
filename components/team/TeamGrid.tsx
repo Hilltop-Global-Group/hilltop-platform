@@ -12,7 +12,7 @@ type FilterCategory = 'all' | 'leadership' | 'staff';
 const filters: { label: string; value: FilterCategory }[] = [
   { label: 'All', value: 'all' },
   { label: 'Leadership', value: 'leadership' },
-  { label: 'Staff', value: 'staff' },
+  { label: 'Builders', value: 'staff' },
 ];
 
 export default function TeamGrid() {
@@ -109,7 +109,7 @@ function TeamCard({ member, index }: { member: TeamMember; index: number }) {
                 className="font-sans text-[10px] font-bold uppercase tracking-[0.2em] px-3 py-1.5"
                 style={{ backgroundColor: '#F4A261', color: '#080f1c' }}
               >
-                {member.category === 'leadership' ? 'Leadership' : 'Staff'}
+                {member.category === 'leadership' ? 'Leadership' : 'Builders'}
               </span>
             </div>
           </div>
@@ -127,7 +127,7 @@ function TeamCard({ member, index }: { member: TeamMember; index: number }) {
                 className="font-sans text-[10px] font-bold uppercase tracking-[0.2em] px-3 py-1.5 inline-block"
                 style={{ backgroundColor: '#F4A261', color: '#080f1c' }}
               >
-                {member.category === 'leadership' ? 'Leadership' : 'Staff'}
+                {member.category === 'leadership' ? 'Leadership' : 'Builders'}
               </span>
             </div>
           )}
