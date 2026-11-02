@@ -3,44 +3,9 @@
  * Reusable Africa-specific decorative elements for the Hilltop design system.
  */
 
-/** Africa continent silhouette . used as a background watermark on dark sections */
-export function AfricaWatermark({ className = '', opacity = 0.06 }: { className?: string; opacity?: number }) {
-  return (
-    <svg
-      viewBox="0 0 360 440"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={className}
-      aria-hidden
-    >
-      <path
-        d="M 162 18
-           C 178 10, 205 8, 232 12
-           C 258 16, 280 26, 298 45
-           C 316 63, 322 88, 318 112
-           C 314 132, 325 152, 332 175
-           C 339 198, 335 222, 348 244
-           C 360 264, 357 290, 342 314
-           C 327 337, 308 357, 285 374
-           C 262 391, 235 404, 207 407
-           C 180 410, 156 400, 134 383
-           C 113 366, 97 342, 88 313
-           C 80 287, 85 260, 90 234
-           C 94 215, 76 193, 68 168
-           C 60 144, 66 116, 78 91
-           C 90 68, 108 49, 131 33
-           C 148 20, 155 24, 162 18 Z"
-        fill="white"
-        fillOpacity={opacity}
-      />
-      {/* Horn of Africa detail */}
-      <path
-        d="M 318 112 C 332 120, 345 130, 348 144 C 340 138, 330 128, 318 112 Z"
-        fill="white"
-        fillOpacity={opacity * 0.8}
-      />
-    </svg>
-  );
+/** Africa continent silhouette . disabled site-wide (returns null). */
+export function AfricaWatermark(_props?: { className?: string; opacity?: number }) {
+  return null;
 }
 
 /** Kente-inspired diamond divider . a row of orange diamonds as a decorative section border */
@@ -162,51 +127,16 @@ export function DecorativeUnderline({
 }
 
 /**
- * SectionBrushstroke . a large abstract flowing arc used as a background
- * decorative element in content sections (inspired by GlobalGlimpse's
- * "We Have Stories That Inspire" section treatment).
- * Place it as an absolutely-positioned child inside a relative section.
+ * SectionBrushstroke . disabled site-wide (returns null).
+ * Call sites can stay; nothing renders.
  */
-export function SectionBrushstroke({
-  color = '#F4A261',
-  opacity = 0.05,
-  className = '',
-  flip = false,
-}: {
+export function SectionBrushstroke(_props?: {
   color?: string;
   opacity?: number;
   className?: string;
   flip?: boolean;
 }) {
-  return (
-    <svg
-      viewBox="0 0 800 400"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden
-      style={{ transform: flip ? 'scaleX(-1)' : undefined }}
-      className={`absolute pointer-events-none ${className}`}
-    >
-      {/* Large sweeping arc . primary stroke */}
-      <path
-        d="M -60 350 C 80 200, 280 50, 500 120 C 680 180, 750 320, 860 280"
-        stroke={color}
-        strokeWidth="120"
-        strokeLinecap="round"
-        fill="none"
-        opacity={opacity}
-      />
-      {/* Secondary thinner arc for depth */}
-      <path
-        d="M -40 380 C 100 220, 300 80, 520 150 C 700 210, 770 360, 880 310"
-        stroke={color}
-        strokeWidth="40"
-        strokeLinecap="round"
-        fill="none"
-        opacity={opacity * 0.5}
-      />
-    </svg>
-  );
+  return null;
 }
 
 /**
