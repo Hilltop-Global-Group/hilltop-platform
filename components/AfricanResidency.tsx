@@ -19,7 +19,7 @@ const cards = [
   },
   {
     title: 'Continental Reach',
-    image: '/images/Continental%20Reach.jpg',
+    image: '/images/tvet-3.jpg',
     imageAlt: 'Professionals and entrepreneurs from seven African countries connected through Hilltop',
     description: 'Access to 100+ vetted partners and professional networks spanning seven African countries.',
   },

@@ -11,7 +11,7 @@ export default function AboutHero() {
         <div
           className="absolute inset-0 bg-cover bg-center opacity-35"
           style={{
-            backgroundImage: `url('/images/innovation-center.jpg')`,
+            backgroundImage: `url('/images/curriculum-1.jpg')`,
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-br from-[#080f1c]/80 via-[#080f1c]/50 to-[#080f1c]/70" />

@@ -16,7 +16,7 @@ const slides = [
     accentColor: '#F4A261',
   },
   {
-    image: '/images/hero-cultural.jpg',
+    image: '/images/int-partners-3.jpg',
     alt: 'Hilltop Global Group participants during cultural immersion in Africa',
     eyebrow: 'For Universities and Institutions',
     headline: 'Your Faculty Brings the Pedagogy. Hilltop Brings the Continent.',
@@ -32,7 +32,7 @@ const slides = [
     accentColor: '#F4A261',
   },
   {
-    image: '/images/nyu-sa16.jpg',
+    image: '/images/sectors.jpg',
     alt: 'Hilltop students engaged in professional development session in Africa',
     eyebrow: 'Professional Immersion',
     headline: 'Inside Africa\'s Fastest-Growing Sectors.',
@@ -40,7 +40,7 @@ const slides = [
     accentColor: '#ffffff',
   },
   {
-    image: '/images/nkrumah-memorial.jpg',
+    image: '/images/real-paartners.jpg',
     alt: 'Hilltop program cohort at a cultural heritage site in Africa',
     eyebrow: 'Deliverable-Based Programs',
     headline: 'Real Work Products. Real African Partners. Real Impact.',

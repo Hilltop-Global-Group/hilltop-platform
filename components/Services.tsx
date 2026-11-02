@@ -29,9 +29,9 @@ const services = [
     cta: 'Learn More',
     href: '/education',
     images: [
-      '/images/intern.JPG',
-      '/images/nkrumah-memorial.jpg',
-      '/images/seminar-session.jpg',
+      '/images/faculty-dev-2.jpg',
+      '/images/faculty-dev-1.jpg',
+      '/images/faculty-dev-3.jpg',
     ],
     imageAlt: 'Faculty development program participants meeting with African academic leaders',
   },
