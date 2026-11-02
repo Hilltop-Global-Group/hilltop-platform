@@ -42,7 +42,7 @@ export default function TVETSection() {
         <div className="absolute inset-0">
           <div
             className="absolute inset-0 bg-cover bg-center opacity-40"
-            style={{ backgroundImage: `url('/images/seminar-session.jpg')` }}
+            style={{ backgroundImage: `url('/images/tvet-4.1.jpg')` }}
           />
           <div className="absolute inset-0 bg-gradient-to-br from-[#080f1c]/80 via-[#080f1c]/50 to-[#080f1c]/70" />
         </div>
@@ -201,7 +201,7 @@ export default function TVETSection() {
               <div className="relative overflow-hidden shadow-xl" style={{ minHeight: 420 }}>
                 <div
                   className="absolute inset-0 bg-cover bg-center transition-transform duration-700 hover:scale-105"
-                  style={{ backgroundImage: `url('/images/innovation-center.jpg')` }}
+                  style={{ backgroundImage: `url('/images/train-2.jpg')` }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#080f1c]/50 via-transparent to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6">
@@ -245,9 +245,9 @@ export default function TVETSection() {
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-16 sm:py-20">
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {[
-              { src: '/images/international-programmes.jpg', caption: 'International Partnerships' },
-              { src: '/images/consult1.jpg', caption: 'Curriculum Co-Design' },
-              { src: '/images/seminar-session.jpg', caption: 'Faculty Exchange Sessions' },
+              { src: '/images/int-partners-3.jpg', caption: 'International Partnerships' },
+              { src: '/images/curriculum-2.jpg', caption: 'Curriculum Co-Design' },
+              { src: '/images/faculty-2.jpg', caption: 'Faculty Exchange Sessions' },
             ].map((img, i) => (
               <motion.div
                 key={img.src}
