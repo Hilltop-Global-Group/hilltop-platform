@@ -16,6 +16,12 @@ const memberships = [
     height: 120,
     offsetBottom: 10,
   },
+  {
+    src: '/images/AIEA-logo-fullcolor.png',
+    alt: 'Association of International Exchange Administrators',
+    height: 120,
+    offsetBottom: 10,
+  },
 ];
 
 interface MembershipBadgesProps {
